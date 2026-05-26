@@ -1,0 +1,32 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ConvTiempoTool from '@/components/tools/ConvTiempoTool';
+---
+<CalcLayout slug="conversor-tiempo" faqs={[
+  {
+    q: '¿Cuántos segundos tiene un día?',
+    a: 'Un día tiene 86.400 segundos (24 horas × 60 minutos × 60 segundos). Con este conversor puedes comprobarlo introduciendo 1 en "Días" y seleccionando "Segundos" como unidad de destino.'
+  },
+  {
+    q: '¿Cuántos días tiene un año según este conversor?',
+    a: 'El conversor usa el año promedio gregoriano, que equivale a 365,25 días (31.557.600 segundos). Esto tiene en cuenta los años bisiestos, que ocurren cada 4 años aproximadamente.'
+  },
+  {
+    q: '¿Qué es un mes promedio y cuántos segundos tiene?',
+    a: 'Un mes promedio son 30,4375 días, equivalente a 2.629.800 segundos. Este valor es la media del calendario gregoriano y se usa para conversiones generales, ya que los meses reales varían entre 28 y 31 días.'
+  },
+  {
+    q: '¿Para qué sirve convertir milisegundos a segundos?',
+    a: 'La conversión de milisegundos es muy útil en programación y electrónica, donde los tiempos de respuesta, latencias de red o intervalos de animación se expresan habitualmente en milisegundos. 1.000 ms equivalen a 1 segundo.'
+  },
+  {
+    q: '¿Cuántas semanas tiene un año?',
+    a: 'Un año tiene aproximadamente 52,18 semanas. Si introduces 1 en "Años" y seleccionas "Semanas" como destino, obtendrás ese resultado con precisión decimal.'
+  },
+  {
+    q: '¿Es posible convertir horas a días y minutos a la vez?',
+    a: 'Este conversor realiza una conversión directa entre dos unidades a la vez. Para convertir horas a días, selecciona "Horas" como origen y "Días" como destino. Para horas a minutos, cambia el destino a "Minutos".'
+  },
+]}>
+  <ConvTiempoTool client:load />
+</CalcLayout>

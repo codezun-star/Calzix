@@ -1,0 +1,33 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ConvLongitudTool from '@/components/tools/ConvLongitudTool';
+---
+
+<CalcLayout slug="conversor-longitud" faqs={[
+  {
+    q: '¿Cuántos centímetros tiene un metro?',
+    a: 'Un metro equivale exactamente a 100 centímetros. Esta es una de las conversiones más habituales dentro del Sistema Internacional de Unidades (SI).',
+  },
+  {
+    q: '¿Cuántos metros hay en una milla?',
+    a: 'Una milla terrestre (milla estatutaria) equivale a 1 609,344 metros, o aproximadamente 1,609 kilómetros. Esta unidad se utiliza principalmente en Estados Unidos y el Reino Unido.',
+  },
+  {
+    q: '¿Qué diferencia hay entre una yarda y un pie?',
+    a: 'Una yarda equivale exactamente a 3 pies o 0,9144 metros. Ambas son unidades del sistema imperial anglosajón muy utilizadas en construcción y deportes.',
+  },
+  {
+    q: '¿Cuántas pulgadas tiene un pie?',
+    a: 'Un pie equivale exactamente a 12 pulgadas. En el sistema métrico, una pulgada equivale a 2,54 centímetros, por lo que un pie mide 30,48 cm.',
+  },
+  {
+    q: '¿Cómo se convierte kilómetros a millas?',
+    a: 'Para convertir kilómetros a millas, divide el valor en kilómetros entre 1,60934. Por ejemplo, 100 km equivalen a aproximadamente 62,14 millas. Esta conversión es habitual al consultar velocidades o distancias entre países.',
+  },
+  {
+    q: '¿Qué unidad de longitud se usa en astronomía?',
+    a: 'En astronomía se usan unidades especiales como el año luz (aprox. 9,46 × 10¹² km), la unidad astronómica (UA, la distancia Tierra-Sol, unos 149 600 000 km) y el pársec (3,26 años luz). Este conversor cubre las unidades cotidianas del SI y del sistema imperial.',
+  },
+]}>
+  <ConvLongitudTool client:load />
+</CalcLayout>

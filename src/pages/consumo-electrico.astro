@@ -1,0 +1,32 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ConsumoElectricoTool from '@/components/tools/ConsumoElectricoTool';
+---
+<CalcLayout slug="consumo-electrico" faqs={[
+  {
+    q: '¿Cómo se calcula el consumo eléctrico de un aparato?',
+    a: 'El consumo se calcula multiplicando la potencia del aparato en kilovatios (kW) por las horas de uso. Por ejemplo, un calefactor de 1.500 W (1,5 kW) encendido 8 horas al día consume 12 kWh ese día. Al multiplicarlo por los días del mes y el precio del kWh obtienes el coste en euros.'
+  },
+  {
+    q: '¿Cuánto cuesta tener el televisor encendido todo el día?',
+    a: 'Un televisor moderno de 55 pulgadas LED consume entre 80 y 150 W. Si asumimos 100 W y 8 horas de uso diario a 0,15 €/kWh: 0,1 kW × 8 h × 30 días × 0,15 €/kWh = 3,60 € al mes. Introduce estos valores en el calculador para personalizar el resultado.'
+  },
+  {
+    q: '¿Qué precio del kWh debo usar?',
+    a: 'En España, el precio medio del kWh para uso doméstico oscilaba entre 0,13 y 0,22 €/kWh en 2024, dependiendo de la tarifa, la hora del día (PVPC) y el comercializador. Consulta tu última factura eléctrica para obtener tu precio real y obtener un resultado más preciso.'
+  },
+  {
+    q: '¿Qué electrodomésticos consumen más electricidad en el hogar?',
+    a: 'Los mayores consumidores son la calefacción eléctrica o bomba de calor (1.000-3.000 W), el termo eléctrico o calentador de agua (1.200-2.000 W), la secadora (2.000-3.000 W), la vitrocerámica o inducción (1.500-3.500 W) y el frigorífico (150-400 W continuo). Los más visibles en la factura son los que se usan muchas horas o tienen alta potencia.'
+  },
+  {
+    q: '¿Para qué sirve saber el consumo anual de un aparato?',
+    a: 'Conocer el coste anual te permite comparar el gasto real de diferentes aparatos, justificar el cambio a modelos más eficientes y estimar el ahorro al adoptar hábitos de consumo más responsables. Por ejemplo, comparar un frigorífico antiguo con uno de clase A+++ puede revelar un ahorro de 50-100 € al año.'
+  },
+  {
+    q: '¿Cómo puedo reducir el consumo eléctrico de mis aparatos?',
+    a: 'Las principales medidas son: desconectar aparatos del standby (pueden suponer hasta el 10% del consumo), usar electrodomésticos en horas valle si tienes tarifa discriminación horaria, sustituir bombillas por LED, ajustar el termostato del frigorífico entre 3 y 5 °C, y usar lavadora y lavavajillas solo a carga completa.'
+  },
+]}>
+  <ConsumoElectricoTool client:load />
+</CalcLayout>

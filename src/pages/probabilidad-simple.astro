@@ -1,0 +1,29 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ProbabilidadTool from '@/components/tools/ProbabilidadTool';
+---
+
+<CalcLayout slug="probabilidad-simple" faqs={[
+  {
+    q: '¿Qué es la probabilidad de un evento?',
+    a: 'La probabilidad mide la posibilidad de que ocurra un evento. Se calcula dividiendo el número de casos favorables entre el número de casos totales posibles. Su valor oscila entre 0 (imposible) y 1 (seguro).'
+  },
+  {
+    q: '¿Qué significa el evento contrario o complemento?',
+    a: 'El evento contrario es el que ocurre cuando el evento original no ocurre. Su probabilidad es siempre 1 menos la probabilidad del evento original. Por ejemplo, si la probabilidad de ganar es 0,25, la de no ganar es 0,75.'
+  },
+  {
+    q: '¿Cómo interpreto la probabilidad como porcentaje?',
+    a: 'Multiplica la probabilidad decimal por 100. Una probabilidad de 0,25 equivale al 25%, lo que significa que, en promedio, el evento ocurrirá 25 veces de cada 100 intentos.'
+  },
+  {
+    q: '¿Puedo tener más casos favorables que totales?',
+    a: 'No. Los casos favorables siempre deben ser iguales o menores que los casos totales. La calculadora mostrará un error si introduces una combinación inválida.'
+  },
+  {
+    q: '¿Esta calculadora sirve para probabilidades compuestas?',
+    a: 'Esta herramienta calcula probabilidades simples (un solo evento). Para probabilidades compuestas como unión, intersección o probabilidad condicional, necesitarías una calculadora específica para esos casos.'
+  },
+]}>
+  <ProbabilidadTool client:load />
+</CalcLayout>

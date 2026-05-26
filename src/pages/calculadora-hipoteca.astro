@@ -1,0 +1,32 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import HipotecaTool from '@/components/tools/HipotecaTool';
+---
+<CalcLayout slug="calculadora-hipoteca" faqs={[
+  {
+    q: '¿Qué es el sistema de amortización francés?',
+    a: 'El sistema francés es el más habitual en España para las hipotecas. En él, la cuota mensual es constante durante toda la vida del préstamo. Al principio, la mayor parte de la cuota va a pagar intereses y solo una pequeña parte amortiza capital. Con el tiempo, esta proporción se invierte: se pagan menos intereses y más capital.'
+  },
+  {
+    q: '¿Cómo se calcula la cuota mensual de una hipoteca?',
+    a: 'La fórmula es: Cuota = Capital × r × (1+r)^n / ((1+r)^n − 1), donde r es el tipo de interés mensual (tipo anual / 12 / 100) y n es el número total de cuotas (años × 12). Si el interés es 0%, la cuota es simplemente el capital dividido entre el número de meses.'
+  },
+  {
+    q: '¿Qué tipo de interés debo introducir, el TIN o la TAE?',
+    a: 'Introduce el TIN (Tipo de Interés Nominal) anual, que es el interés puro sin comisiones. La TAE (Tasa Anual Equivalente) incluye comisiones y gastos adicionales, por lo que es más alta. El cálculo de la cuota mensual usa el TIN; la TAE sirve para comparar hipotecas entre entidades.'
+  },
+  {
+    q: '¿Cuánto más pagaré en total respecto al capital prestado?',
+    a: 'El calculador muestra el total de intereses pagados, que es la diferencia entre el total pagado y el capital inicial. Por ejemplo, una hipoteca de 150.000 € a 30 años al 3,5% supone pagar unos 92.000 € en intereses, es decir, el 61% extra sobre el capital. A mayor plazo o mayor tipo, más intereses totales.'
+  },
+  {
+    q: '¿Me compensa amortizar capital anticipadamente?',
+    a: 'Generalmente sí, ya que reduce los intereses totales. En hipotecas a tipo variable o con tipos bajos, a veces es más rentable invertir ese dinero. El efecto de la amortización anticipada es mayor al inicio del préstamo, cuando los intereses pendientes son más elevados. Consulta con tu banco las condiciones y posibles comisiones por amortización anticipada.'
+  },
+  {
+    q: '¿Qué plazo de hipoteca es el más habitual en España?',
+    a: 'El plazo más habitual en España es de 25 a 30 años, aunque los bancos pueden ofrecerlos de hasta 40 años. Un plazo mayor reduce la cuota mensual pero aumenta significativamente el coste total en intereses. Un plazo más corto implica más esfuerzo mensual pero un ahorro considerable en intereses totales.'
+  },
+]}>
+  <HipotecaTool client:load />
+</CalcLayout>

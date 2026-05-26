@@ -1,0 +1,29 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import VelocidadFisicaTool from '@/components/tools/VelocidadFisicaTool';
+---
+
+<CalcLayout slug="velocidad-distancia-tiempo" faqs={[
+  {
+    q: '¿Cuál es la fórmula entre velocidad, distancia y tiempo?',
+    a: 'La relación fundamental es: velocidad = distancia / tiempo. De ahí se derivan las otras dos: distancia = velocidad × tiempo, y tiempo = distancia / velocidad. Las tres son equivalentes.'
+  },
+  {
+    q: '¿En qué unidades trabaja esta calculadora?',
+    a: 'La calculadora usa kilómetros para la distancia, horas para el tiempo y km/h para la velocidad. Si tienes datos en otras unidades (metros, minutos, m/s), conviértelos primero antes de introducirlos.'
+  },
+  {
+    q: '¿Cómo convierto m/s a km/h?',
+    a: 'Multiplica los m/s por 3,6. Por ejemplo, 10 m/s × 3,6 = 36 km/h. A la inversa, divide los km/h entre 3,6 para obtener m/s.'
+  },
+  {
+    q: '¿Por qué el tiempo aparece también en minutos?',
+    a: 'Cuando calculas el tiempo, la calculadora muestra el resultado en horas y también en minutos para mayor comodidad. Por ejemplo, 1,5 horas equivale a 90 minutos.'
+  },
+  {
+    q: '¿Puedo calcular la velocidad media de un trayecto con paradas?',
+    a: 'Sí. Introduce la distancia total recorrida y el tiempo total (incluyendo las paradas) para obtener la velocidad media del trayecto completo.'
+  },
+]}>
+  <VelocidadFisicaTool client:load />
+</CalcLayout>

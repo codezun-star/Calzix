@@ -1,0 +1,33 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import NominaTool from '@/components/tools/NominaTool';
+---
+
+<CalcLayout slug="calculadora-nomina" faqs={[
+  {
+    q: '¿Qué deducciones tiene en cuenta esta calculadora?',
+    a: 'La calculadora aplica dos deducciones principales sobre el salario bruto: la cotización a la Seguridad Social a cargo del trabajador (6,4%, que incluye contingencias comunes, desempleo y formación profesional) y la retención de IRPF calculada por tramos según la escala general del impuesto para 2024. No incluye otras deducciones personales como mínimo familiar o deducciones autonómicas.'
+  },
+  {
+    q: '¿Por qué el IRPF se calcula por tramos?',
+    a: 'El IRPF en España es un impuesto progresivo: cada tramo de renta tributa a un tipo diferente. Los primeros 12.450 € tributan al 19%, los siguientes hasta 20.200 € al 24%, y así sucesivamente hasta el 45% para rentas superiores a 60.000 €. Solo el exceso de cada tramo paga el tipo más alto, no toda la renta.'
+  },
+  {
+    q: '¿Cuál es la diferencia entre neto en 12 pagas y en 14 pagas?',
+    a: 'El neto anual total es el mismo en ambos casos. La diferencia está en cómo se distribuye: con 12 pagas recibes el neto completo repartido en 12 mensualidades iguales. Con 14 pagas, la empresa abona pagas extraordinarias en junio y diciembre, por lo que las mensualidades ordinarias son menores pero hay dos ingresos extra al año.'
+  },
+  {
+    q: '¿Por qué el resultado es orientativo?',
+    a: 'El IRPF real depende de tu situación personal: estado civil, hijos o ascendientes a cargo, tipo de contrato, si tienes discapacidad reconocida, deducciones autonómicas o ingresos de otras fuentes. La empresa calcula la retención adaptada a cada trabajador mediante el modelo 145. Esta calculadora usa la escala general sin ningún mínimo personal ni familiar adicional.'
+  },
+  {
+    q: '¿Qué porcentaje cotiza la empresa por el trabajador?',
+    a: 'Además del 6,4% que paga el trabajador, la empresa cotiza aproximadamente un 30% adicional sobre el salario bruto (contingencias comunes, accidentes, desempleo, FOGASA y formación). Este coste extra no aparece en tu nómina pero sí forma parte del coste total de personal para la empresa.'
+  },
+  {
+    q: '¿Cómo puedo reducir mi retención de IRPF?',
+    a: 'Puedes comunicar a la empresa tu situación familiar (hijos, cónyuge sin rentas, discapacidad) mediante el modelo 145, lo que reduce la retención mensual. También puedes solicitar un porcentaje de retención inferior si prevés deducciones importantes en tu declaración de la renta anual. Consulta siempre con un asesor fiscal para optimizar tu situación.'
+  },
+]}>
+  <NominaTool client:load />
+</CalcLayout>

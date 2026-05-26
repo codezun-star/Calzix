@@ -1,0 +1,78 @@
+---
+import { SITE } from '@/lib/constants/seo';
+
+const COLUMNS = [
+  {
+    heading: 'Ciencia',
+    links: [
+      { label: 'Matemáticas', href: '/matematicas' },
+      { label: 'Ciencias',    href: '/ciencias' },
+      { label: 'Conversión',  href: '/conversion' },
+    ],
+  },
+  {
+    heading: 'Vida diaria',
+    links: [
+      { label: 'Hogar',      href: '/hogar' },
+      { label: 'Trabajo',    href: '/trabajo' },
+      { label: 'Educación',  href: '/educacion' },
+    ],
+  },
+  {
+    heading: 'Estilo de vida',
+    links: [
+      { label: 'Viaje',       href: '/viaje' },
+      { label: 'Naturaleza',  href: '/naturaleza' },
+      { label: 'Ocio',        href: '/ocio' },
+    ],
+  },
+  {
+    heading: 'Calzix',
+    links: [
+      { label: 'Inicio',      href: '/' },
+      { label: 'Privacidad',  href: '/privacidad' },
+      { label: 'Términos',    href: '/terminos' },
+      { label: 'Aviso legal', href: '/aviso-legal' },
+      { label: 'Contacto',    href: '/contacto' },
+    ],
+  },
+];
+---
+
+<footer class="border-t border-[var(--color-border)] bg-[var(--color-surface)] mt-20">
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6">
+    <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
+      {COLUMNS.map(({ heading, links }) => (
+        <div>
+          <h3 class="mb-3 text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">
+            {heading}
+          </h3>
+          <ul class="space-y-2">
+            {links.map(({ label, href }) => (
+              <li>
+                <a
+                  href={href}
+                  class="text-sm text-[var(--color-text-secondary)] transition-colors hover:text-[var(--color-text)]"
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-10 border-t border-[var(--color-border)] pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-xs text-[var(--color-text-muted)]">
+        &copy; {new Date().getFullYear()} {SITE.name}. Todos los derechos reservados.
+      </p>
+      <a
+        href={`mailto:${SITE.email}`}
+        class="text-xs text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors"
+      >
+        {SITE.email}
+      </a>
+    </div>
+  </div>
+</footer>

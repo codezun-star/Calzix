@@ -1,0 +1,33 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ReciclajeTool from '@/components/tools/ReciclajeTool';
+---
+
+<CalcLayout slug="calculadora-reciclaje" faqs={[
+  {
+    q: '¿Por qué reciclar reduce las emisiones de CO₂?',
+    a: 'Fabricar productos a partir de materiales reciclados consume mucho menos energía que hacerlo desde materias primas. Por ejemplo, reciclar aluminio ahorra hasta un 95% de la energía necesaria para producirlo desde la bauxita, y reciclar papel evita talar árboles que capturan CO₂. Al reducir el consumo energético industrial, se emiten menos gases de efecto invernadero.'
+  },
+  {
+    q: '¿Qué material tiene mayor impacto al reciclarlo?',
+    a: 'Los metales, especialmente el aluminio, tienen el mayor impacto por kilogramo reciclado: evitan unos 2 kg de CO₂ por cada kg reciclado. Le sigue el plástico con 1,5 kg de CO₂/kg. El vidrio tiene un factor más bajo (0,3 kg/kg) porque su producción desde arena ya es relativamente eficiente. En todo caso, cualquier reciclaje es mejor que enviar residuos al vertedero.'
+  },
+  {
+    q: '¿Qué es el compostaje y por qué reduce emisiones?',
+    a: 'El compostaje es el proceso de descomposición controlada de residuos orgánicos (restos de comida, poda, etc.) para producir abono natural. Cuando la materia orgánica va al vertedero, se descompone sin oxígeno y produce metano, un gas de efecto invernadero 25 veces más potente que el CO₂. Al compostar, se evita esta emisión y se crea un fertilizante que reemplaza a los químicos de síntesis.'
+  },
+  {
+    q: '¿Cuánto recicla un español de media al año?',
+    a: 'Según datos de Eurostat, España recicla alrededor del 35% de sus residuos municipales, por debajo de la media europea. Un hogar español genera unos 500 kg de residuos al año por persona. Países como Alemania o Austria reciclan más del 60%. Hay margen de mejora significativo, especialmente en la separación de residuos orgánicos.'
+  },
+  {
+    q: '¿El reciclaje de plásticos es realmente efectivo?',
+    a: 'El reciclaje de plásticos es efectivo pero complejo. Solo algunos tipos de plástico son fácilmente reciclables (PET, HDPE). Muchos envases multicapa o plásticos de un solo uso acaban en el vertedero o incinerados. Lo más efectivo para el plástico es reducir su consumo en primer lugar, luego reutilizar, y finalmente reciclar. La calculadora usa el factor medio de plásticos reciclados efectivamente.'
+  },
+  {
+    q: '¿Cómo debo preparar los materiales para reciclar correctamente?',
+    a: 'Para el papel y cartón: aplana las cajas, retira cintas y grapas cuando sea posible. Para el plástico y latas: enjuaga los envases para eliminar restos de comida. Para el vidrio: retira tapas metálicas (van al amarillo). Para el orgánico: puedes compostar en casa o usar el contenedor marrón. Los envases sucios o contaminados pueden inutilizar toda una carga de reciclaje.'
+  },
+]}>
+  <ReciclajeTool client:load />
+</CalcLayout>

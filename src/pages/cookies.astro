@@ -1,0 +1,31 @@
+---
+import LegalLayout from '@/components/layout/LegalLayout.astro';
+import { SITE } from '@/lib/constants/seo';
+---
+
+<LegalLayout slug="cookies">
+  <h1>Política de cookies</h1>
+
+  <h2>¿Usamos cookies?</h2>
+  <p>
+    <strong>{SITE.name} no utiliza cookies de seguimiento, analíticas ni publicitarias.</strong>
+    No hay ningún script de terceros (Google Analytics, Facebook Pixel, etc.) en el sitio.
+  </p>
+
+  <h2>Cookies técnicas</h2>
+  <p>
+    El navegador puede guardar preferencias mínimas (por ejemplo, el tab activo en el home) usando
+    <code>localStorage</code>. Estos datos permanecen en tu dispositivo y nunca se transmiten a ningún servidor.
+  </p>
+
+  <h2>Cookies de terceros</h2>
+  <p>
+    Si el sitio está alojado en Cloudflare Pages, este proveedor puede establecer cookies técnicas
+    propias. Consulta la política de cookies de Cloudflare para más información.
+  </p>
+
+  <h2>Contacto</h2>
+  <p>
+    Dudas sobre privacidad: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+  </p>
+</LegalLayout>

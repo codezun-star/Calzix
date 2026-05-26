@@ -1,0 +1,33 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ConsumoAguaTool from '@/components/tools/ConsumoAguaTool';
+---
+
+<CalcLayout slug="consumo-agua" faqs={[
+  {
+    q: '¿Cuánta agua consume una persona al día de media en España?',
+    a: 'Según datos del Instituto Nacional de Estadística, el consumo medio de agua en los hogares españoles es de unos 130 litros por persona y día. Esta cifra incluye el uso en ducha, inodoro, lavadora, cocina y otras actividades domésticas, pero no el agua utilizada en la producción de alimentos o industria.'
+  },
+  {
+    q: '¿Qué actividad doméstica consume más agua?',
+    a: 'El inodoro es la actividad que más agua consume en la mayoría de los hogares, seguido de la ducha. Un inodoro convencional puede usar hasta 9 litros por descarga. Instalar cisternas de doble descarga puede reducir este consumo a la mitad. La ducha también tiene un gran impacto: reducir 2 minutos el tiempo de ducha puede ahorrar hasta 20 litros al día por persona.'
+  },
+  {
+    q: '¿Cuánto cuesta el agua en España?',
+    a: 'El precio del agua varía mucho según el municipio. La media nacional ronda los 1,90-2,50 €/m³, aunque en algunas ciudades puede superar los 3 €/m³. Este precio suele incluir la tarifa de suministro, saneamiento y el canon de regulación. La calculadora permite ajustar el precio según tu recibo real.'
+  },
+  {
+    q: '¿Cuánta agua gasta una lavadora por ciclo?',
+    a: 'Las lavadoras modernas de alta eficiencia consumen entre 40 y 60 litros por ciclo, mientras que los modelos más antiguos podían superar los 100 litros. Esta calculadora utiliza 60 litros como estimación media. Lavar con carga completa y a temperaturas bajas (30-40°C) es la forma más eficiente de usar la lavadora.'
+  },
+  {
+    q: '¿Cómo puedo reducir el consumo de agua en casa?',
+    a: 'Las medidas más efectivas son: instalar reductores de caudal en grifos y duchas (ahorran hasta el 50% sin perder comodidad), reparar fugas (un grifo que gotea puede desperdiciar hasta 30 litros al día), usar el lavavajillas y la lavadora solo con carga completa, ducharse en lugar de bañarse, y recoger agua de lluvia para el jardín. Pequeños cambios de hábitos pueden reducir el consumo hasta un 30%.'
+  },
+  {
+    q: '¿El precio del agua incluye el IVA?',
+    a: 'En España, el agua para uso doméstico tiene un tipo de IVA reducido del 10%. El precio que aparece en tu factura ya incluye este IVA, así como otros conceptos como el canon de saneamiento y la tasa de alcantarillado. Te recomendamos usar el precio final que aparece en tu factura para obtener un coste más preciso.'
+  },
+]}>
+  <ConsumoAguaTool client:load />
+</CalcLayout>

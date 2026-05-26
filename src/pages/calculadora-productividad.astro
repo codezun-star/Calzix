@@ -1,0 +1,33 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ProductividadTool from '@/components/tools/ProductividadTool';
+---
+
+<CalcLayout slug="calculadora-productividad" faqs={[
+  {
+    q: '¿Qué mide la tasa de completación?',
+    a: 'La tasa de completación es el porcentaje de tareas que has terminado respecto a las que tenías planificadas para el período. Un 80% significa que completaste 8 de cada 10 tareas previstas. Por encima del 100% indica que hiciste más de lo planificado, lo que se considera una productividad excepcional.'
+  },
+  {
+    q: '¿Qué significa tareas por hora?',
+    a: 'Es la velocidad media de trabajo: cuántas tareas completas por cada hora dedicada. Un valor alto indica que resuelves tareas rápidamente. Este dato es útil para estimar cuánto tiempo necesitas para completar un número determinado de tareas en el futuro y para comparar tu rendimiento entre distintos períodos.'
+  },
+  {
+    q: '¿Por qué la valoración cambia según el porcentaje?',
+    a: 'La escala de valoración (Baja, Media, Alta, Excepcional) ayuda a contextualizar el resultado: por debajo del 50% de completación indica que hay problemas de planificación o ejecución significativos; entre 50-80% es un rendimiento mejorable; 80-100% es un buen rendimiento; y superar el 100% refleja un desempeño excepcional.'
+  },
+  {
+    q: '¿Cómo puedo mejorar mi índice de productividad?',
+    a: 'Las estrategias más efectivas incluyen priorizar tareas con técnicas como la Matriz de Eisenhower o el método MoSCoW, reducir las interrupciones durante bloques de trabajo enfocado (técnica Pomodoro), planificar de forma realista evitando sobrecargar la jornada, y revisar al final del día qué impidió completar las tareas pendientes.'
+  },
+  {
+    q: '¿Qué unidad de tiempo debo usar para las horas?',
+    a: 'Puedes usar el período que más te convenga: un día, una semana o un mes. Lo importante es que las tareas completadas y planificadas correspondan al mismo período. Por ejemplo, si introduces 8 horas de trabajo y las tareas del día, obtendrás métricas diarias. Si introduces 40 horas y las tareas semanales, obtendrás métricas semanales.'
+  },
+  {
+    q: '¿Es útil esta calculadora para equipos, no solo para individuos?',
+    a: 'Sí. Puedes usarla para medir la productividad de un equipo sumando las tareas completadas y planificadas por todos sus miembros y las horas totales del equipo en el período. Esto permite comparar el rendimiento entre sprints, semanas o meses y detectar tendencias en la capacidad de entrega del grupo.'
+  },
+]}>
+  <ProductividadTool client:load />
+</CalcLayout>

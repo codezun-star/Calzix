@@ -1,0 +1,39 @@
+---
+import LegalLayout from '@/components/layout/LegalLayout.astro';
+import { SITE } from '@/lib/constants/seo';
+---
+
+<LegalLayout slug="terminos">
+  <h1>Términos de uso</h1>
+
+  <p>Al acceder a {SITE.name} aceptas los siguientes términos.</p>
+
+  <h2>Uso del servicio</h2>
+  <p>
+    {SITE.name} ofrece calculadoras online de forma gratuita y sin registro. Los resultados son
+    orientativos; no constituyen asesoramiento financiero, médico ni de ningún otro tipo.
+  </p>
+
+  <h2>Precisión de los cálculos</h2>
+  <p>
+    Nos esforzamos por ofrecer resultados correctos, pero no garantizamos la exactitud absoluta.
+    Para decisiones importantes consulta siempre a un profesional cualificado.
+  </p>
+
+  <h2>Propiedad intelectual</h2>
+  <p>
+    El código, diseño y contenidos de {SITE.name} son propiedad de sus autores. Queda prohibida
+    su reproducción sin autorización expresa.
+  </p>
+
+  <h2>Modificaciones</h2>
+  <p>
+    Podemos actualizar estos términos en cualquier momento. La versión vigente siempre estará
+    disponible en esta página.
+  </p>
+
+  <h2>Contacto</h2>
+  <p>
+    Para cualquier consulta: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+  </p>
+</LegalLayout>

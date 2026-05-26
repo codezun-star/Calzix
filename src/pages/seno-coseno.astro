@@ -1,0 +1,29 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import SinCosTanTool from '@/components/tools/SinCosTanTool';
+---
+
+<CalcLayout slug="seno-coseno" faqs={[
+  {
+    q: '¿Qué son el seno, el coseno y la tangente?',
+    a: 'Son las tres razones trigonométricas básicas. En un triángulo rectángulo, el seno es el cociente entre el cateto opuesto y la hipotenusa, el coseno entre el cateto adyacente y la hipotenusa, y la tangente entre el cateto opuesto y el adyacente.'
+  },
+  {
+    q: '¿Cuándo está la tangente indefinida?',
+    a: 'La tangente es indefinida cuando el coseno del ángulo es cero, es decir, para ángulos de 90°, 270°, etc. (o π/2 y 3π/2 radianes). En esos puntos la función tiene una asíntota vertical.'
+  },
+  {
+    q: '¿Cómo convierto grados a radianes?',
+    a: 'Multiplica los grados por π/180. Por ejemplo, 90° = 90 × π/180 = π/2 ≈ 1,5708 radianes. La calculadora hace esta conversión automáticamente según la unidad que selecciones.'
+  },
+  {
+    q: '¿Qué son el arcoseno, el arcocoseno y el arcotangente?',
+    a: 'Son las funciones inversas: dado un valor trigonométrico, devuelven el ángulo correspondiente. Por ejemplo, arcsen(0,5) = 30° porque sen(30°) = 0,5. El arcocoseno y el arcotangente funcionan de forma análoga.'
+  },
+  {
+    q: '¿El resultado se actualiza al instante?',
+    a: 'Sí. La calculadora recalcula automáticamente cada vez que cambias el ángulo o la unidad, sin necesidad de pulsar ningún botón.'
+  },
+]}>
+  <SinCosTanTool client:load />
+</CalcLayout>

@@ -1,0 +1,32 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ConvMonedasTool from '@/components/tools/ConvMonedasTool';
+---
+<CalcLayout slug="conversor-monedas" faqs={[
+  {
+    q: '¿Son exactas las tasas de cambio de este conversor?',
+    a: 'Las tasas son orientativas y corresponden a valores aproximados de 2024. Los tipos de cambio fluctúan constantemente en los mercados financieros, por lo que para operaciones reales —transferencias bancarias, compras internacionales o cambio de divisas— siempre debes consultar la tasa actualizada de tu banco o plataforma de cambio.'
+  },
+  {
+    q: '¿Cuántos dólares vale 1 euro actualmente?',
+    a: 'Las tasas de cambio varían a diario. Este conversor usa como referencia orientativa 1 EUR ≈ 1,08 USD (dato de 2024). Para el tipo de cambio en tiempo real, consulta plataformas financieras como el Banco Central Europeo, XE.com o tu entidad bancaria.'
+  },
+  {
+    q: '¿Qué monedas latinoamericanas incluye este conversor?',
+    a: 'El conversor incluye el Peso mexicano (MXN), el Real brasileño (BRL), el Peso chileno (CLP) y el Peso colombiano (COP). Son las cuatro monedas latinoamericanas con mayor volumen de intercambio comercial con Europa.'
+  },
+  {
+    q: '¿Cómo se calcula la conversión entre dos monedas que no son el euro?',
+    a: 'El conversor usa el euro como moneda base (pivot). Para convertir, por ejemplo, USD a JPY, primero convierte USD a EUR y luego EUR a JPY. Este método estándar garantiza consistencia en todos los pares de divisas disponibles.'
+  },
+  {
+    q: '¿Por qué el yen japonés tiene un valor tan diferente al resto de monedas?',
+    a: 'El yen japonés (JPY) tiene denominaciones mucho más elevadas porque Japón nunca hizo una redenominación de su moneda. Mientras que 1 EUR equivale a poco más de 1 USD, equivale a unos 161 JPY. Esto es normal y no significa que el yen sea una moneda débil, sino que sus billetes y monedas tienen otro rango de valores.'
+  },
+  {
+    q: '¿Cuándo conviene usar un conversor de monedas?',
+    a: 'Un conversor de divisas es útil para planificar viajes internacionales, comparar precios en tiendas extranjeras, entender facturas de servicios en otra moneda o hacer presupuestos de proyectos con componentes en distintos países. Recuerda añadir siempre las comisiones bancarias al resultado.'
+  },
+]}>
+  <ConvMonedasTool client:load />
+</CalcLayout>

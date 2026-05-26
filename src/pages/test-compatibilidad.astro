@@ -1,0 +1,33 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import CompatibilidadTool from '@/components/tools/CompatibilidadTool';
+---
+
+<CalcLayout slug="test-compatibilidad" faqs={[
+  {
+    q: '¿Cómo funciona este test de compatibilidad?',
+    a: 'El test utiliza un algoritmo determinista basado en los nombres introducidos: combina ambos nombres, suma los valores numéricos de cada letra y calcula un porcentaje entre 0 y 100. El resultado es siempre el mismo para los mismos nombres, lo que hace el test reproducible. Es una herramienta de entretenimiento, no una predicción científica del amor.'
+  },
+  {
+    q: '¿El resultado cambia si escribo los nombres en diferente orden?',
+    a: 'Sí, el algoritmo es sensible al orden de los nombres, ya que los concatena antes de calcular. María + Carlos puede dar un resultado diferente a Carlos + María. Esto forma parte de la naturaleza lúdica del test. ¡Prueba las dos opciones y quédate con el resultado que más te guste!'
+  },
+  {
+    q: '¿Tiene algún fundamento científico este test?',
+    a: 'No, este test es completamente lúdico y no tiene ningún fundamento científico. La compatibilidad real entre personas depende de factores como valores compartidos, comunicación, empatía, intereses comunes y mucho más. Ningún algoritmo puede predecir el amor o la compatibilidad real entre dos personas.'
+  },
+  {
+    q: '¿Por qué el resultado es siempre el mismo para los mismos nombres?',
+    a: 'A diferencia de otros tests similares que usan números aleatorios, este usa un cálculo determinista: los mismos nombres siempre producen el mismo resultado. Esto significa que el algoritmo trata los nombres como datos objetivos, no como sorteo. Puedes compartir tu resultado con la otra persona y ambos obtendrán el mismo número.'
+  },
+  {
+    q: '¿Puedo usar nombres con tildes o caracteres especiales?',
+    a: 'Sí, la calculadora acepta nombres con tildes (á, é, í, ó, ú), ñ y otros caracteres especiales del español. Cada carácter tiene su propio valor numérico en la suma, por lo que "María" y "Maria" producirán resultados ligeramente diferentes. Introduce el nombre tal como lo escribes normalmente.'
+  },
+  {
+    q: '¿Funciona solo con nombres de personas o puedo poner cualquier texto?',
+    a: 'Puedes introducir cualquier texto en los campos, no solo nombres de personas. Algunas personas lo usan para comparar nombres de equipos, apodos o incluso nombres de mascotas. El algoritmo funciona igual con cualquier texto que tenga al menos 2 caracteres. La creatividad es tuya.'
+  },
+]}>
+  <CompatibilidadTool client:load />
+</CalcLayout>

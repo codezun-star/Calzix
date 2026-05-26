@@ -1,0 +1,33 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import PesoEquipajeTool from '@/components/tools/PesoEquipajeTool';
+---
+
+<CalcLayout slug="peso-equipaje" faqs={[
+  {
+    q: '¿Cómo funciona la calculadora de peso de equipaje?',
+    a: 'Añade cada artículo de tu equipaje con su nombre y peso en kilogramos. La calculadora suma los pesos en tiempo real y los compara con el límite de la aerolínea que selecciones. Si superas el límite, se indica el exceso en rojo; si tienes margen, se muestra en verde.'
+  },
+  {
+    q: '¿Cuáles son los límites habituales de equipaje en las aerolíneas?',
+    a: 'Las aerolíneas de bajo coste (Ryanair, Vueling, EasyJet) suelen permitir equipaje de cabina de 8 a 10 kg. Para equipaje facturado, los límites más comunes son 20 kg para aerolíneas de bajo coste, 23 kg para la mayoría de aerolíneas convencionales, y 32 kg como máximo permitido por pieza en facturación. Siempre consulta la política exacta de tu aerolínea.'
+  },
+  {
+    q: '¿Qué ocurre si el peso de mi maleta supera el límite?',
+    a: 'Si tu maleta supera el límite permitido, la aerolínea puede cobrar una tarifa por exceso de equipaje en el aeropuerto, que suele ser significativamente más cara que pagar el exceso de antemano. Algunas compañías no aceptan piezas de más de 32 kg por razones de seguridad para el personal de tierra.'
+  },
+  {
+    q: '¿Debo incluir el peso de la propia maleta?',
+    a: 'Sí. El límite de peso aplica al peso total incluyendo la maleta o mochila. Una maleta rígida estándar de 55 cm pesa entre 2,5 y 4 kg; una maleta grande de 75 cm puede pesar entre 4 y 6 kg. Las mochilas de cabina suelen pesar entre 0,5 y 1,5 kg. Añade siempre la maleta como un artículo más en la lista.'
+  },
+  {
+    q: '¿El límite de peso aplica también a los líquidos?',
+    a: 'El límite de peso aplica a todo el contenido de la maleta. Para equipaje de cabina, además del peso hay restricciones de formato para líquidos: recipientes de máximo 100 ml en una bolsa transparente de 1 litro por pasajero. Esta calculadora no verifica las restricciones de líquidos, solo el peso total.'
+  },
+  {
+    q: '¿Puedo llevar varios bultos sumando su peso?',
+    a: 'No necesariamente. Cada pieza de equipaje se pesa por separado. Si tienes dos maletas facturadas, cada una debe cumplir individualmente el límite de peso, no la suma de ambas. Sin embargo, en algunos vuelos se permite redistribuir el peso entre piezas en el mostrador de facturación. Consulta la política de tu aerolínea.'
+  },
+]}>
+  <PesoEquipajeTool client:load />
+</CalcLayout>

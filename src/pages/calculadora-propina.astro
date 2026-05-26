@@ -1,0 +1,33 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import PropinaTool from '@/components/tools/PropinaTool';
+---
+
+<CalcLayout slug="calculadora-propina" faqs={[
+  {
+    q: '¿Cuánto se suele dejar de propina en España?',
+    a: 'En España no existe una norma fija, pero en restaurantes es habitual dejar entre el 5% y el 10% para un buen servicio, o simplemente redondear la cuenta. En bares o cafeterías es común dejar las monedas de cambio. Los porcentajes más generosos (15-20%) son más frecuentes en entornos turísticos o de alta gama, siguiendo la costumbre anglosajona.'
+  },
+  {
+    q: '¿La propina está incluida en la cuenta del restaurante?',
+    a: 'En España la propina nunca está incluida automáticamente en la factura, salvo que se indique explícitamente en el menú o se trate de eventos con cargo por servicio. Revisa siempre la cuenta antes de añadir una propina para no pagar dos veces.'
+  },
+  {
+    q: '¿Cómo se divide la cuenta de forma justa entre varias personas?',
+    a: 'La calculadora divide el total (cuenta + propina) entre el número de comensales de forma equitativa. Si cada persona quiere pagar solo lo que consumió, necesitarías calcular la propina proporcional de cada uno por separado, pero para el método más habitual de "a partes iguales" esta calculadora te da el resultado directo.'
+  },
+  {
+    q: '¿Se puede dejar propina con tarjeta en España?',
+    a: 'Cada vez más restaurantes en España permiten añadir la propina al cobro con tarjeta, especialmente desde el auge de los datáfonos modernos. Sin embargo, en muchos establecimientos la propina en efectivo llega directamente al camarero, mientras que la propina en tarjeta puede estar sujeta a la política interna del local sobre su distribución.'
+  },
+  {
+    q: '¿Cuál es el porcentaje de propina estándar en otros países?',
+    a: 'En Estados Unidos el estándar es del 15% al 20% (incluso el 25% para un servicio excelente). En el Reino Unido ronda el 10-12,5%. En Francia y Alemania es habitual redondear o dejar un 5-10%. En Japón dar propina puede incluso considerarse de mala educación. Los presets de esta calculadora cubren los rangos más habituales a nivel internacional.'
+  },
+  {
+    q: '¿La propina tributa en el IRPF del trabajador?',
+    a: 'Sí, en España las propinas recibidas por trabajadores de hostelería son rendimientos del trabajo y deben declararse en el IRPF, aunque en la práctica su control es complejo. Los empleadores tienen la obligación de informar sobre las propinas que pasen por sistemas de cobro electrónico.'
+  },
+]}>
+  <PropinaTool client:load />
+</CalcLayout>

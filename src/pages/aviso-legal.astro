@@ -1,0 +1,32 @@
+---
+import LegalLayout from '@/components/layout/LegalLayout.astro';
+import { SITE } from '@/lib/constants/seo';
+---
+
+<LegalLayout slug="aviso-legal">
+  <h1>Aviso legal</h1>
+
+  <h2>Titular del sitio</h2>
+  <p>
+    El presente sitio web ({SITE.url}) es operado de forma independiente.
+    Para contacto: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+  </p>
+
+  <h2>Objeto</h2>
+  <p>
+    {SITE.name} pone a disposición de los usuarios calculadoras online gratuitas con fines
+    informativos y orientativos.
+  </p>
+
+  <h2>Limitación de responsabilidad</h2>
+  <p>
+    Los resultados ofrecidos son meramente orientativos. {SITE.name} no se hace responsable de
+    decisiones tomadas basándose exclusivamente en los cálculos del sitio.
+  </p>
+
+  <h2>Legislación aplicable</h2>
+  <p>
+    Este aviso se rige por la legislación española. Para cualquier litigio, las partes se someten
+    a los juzgados y tribunales del domicilio del titular.
+  </p>
+</LegalLayout>

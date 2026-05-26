@@ -1,0 +1,33 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ConvAreaTool from '@/components/tools/ConvAreaTool';
+---
+
+<CalcLayout slug="conversor-area" faqs={[
+  {
+    q: '¿Cuántos metros cuadrados tiene una hectárea?',
+    a: 'Una hectárea equivale exactamente a 10 000 m². Es la unidad más usada en agricultura y planificación territorial. Un kilómetro cuadrado equivale a 100 hectáreas.',
+  },
+  {
+    q: '¿Cuántos metros cuadrados tiene un acre?',
+    a: 'Un acre equivale a 4 046,8564 m² o aproximadamente 0,4047 hectáreas. El acre es la unidad de área estándar en países anglosajones como Estados Unidos y el Reino Unido.',
+  },
+  {
+    q: '¿Cómo se convierte m² a cm²?',
+    a: 'Multiplica los metros cuadrados por 10 000 para obtener centímetros cuadrados, ya que 1 m = 100 cm y 1 m² = 100 × 100 = 10 000 cm². Por ejemplo, 5 m² = 50 000 cm².',
+  },
+  {
+    q: '¿Cuántos pies cuadrados tiene un metro cuadrado?',
+    a: 'Un metro cuadrado equivale a aproximadamente 10,764 pies cuadrados (ft²). Esta conversión es muy útil al consultar superficies de inmuebles en listados de países que usan el sistema imperial.',
+  },
+  {
+    q: '¿Cuántas hectáreas tiene un kilómetro cuadrado?',
+    a: 'Un kilómetro cuadrado equivale exactamente a 100 hectáreas o 1 000 000 m². Es la unidad habitual para medir grandes extensiones de terreno como municipios, parques naturales o provincias.',
+  },
+  {
+    q: '¿Para qué se usa la pulgada cuadrada (in²)?',
+    a: 'La pulgada cuadrada se usa en ingeniería, impresión y electrónica en países anglosajones para medir pequeñas superficies, como pantallas de dispositivos o secciones de materiales. Una pulgada cuadrada equivale a aproximadamente 6,4516 cm².',
+  },
+]}>
+  <ConvAreaTool client:load />
+</CalcLayout>

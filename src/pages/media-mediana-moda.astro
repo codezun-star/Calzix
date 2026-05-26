@@ -1,0 +1,29 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import MediaMedianaTool from '@/components/tools/MediaMedianaTool';
+---
+
+<CalcLayout slug="media-mediana-moda" faqs={[
+  {
+    q: '¿Cuál es la diferencia entre media, mediana y moda?',
+    a: 'La media es el promedio aritmético (suma dividida entre la cantidad). La mediana es el valor central cuando los datos están ordenados. La moda es el valor que más se repite. Cada una describe el conjunto de datos desde un ángulo diferente.'
+  },
+  {
+    q: '¿Cuándo es más útil usar la mediana en lugar de la media?',
+    a: 'La mediana es preferible cuando hay valores extremos (outliers) que distorsionan la media. Por ejemplo, en salarios, unos pocos ingresos muy altos elevan la media, pero la mediana refleja mejor el ingreso típico.'
+  },
+  {
+    q: '¿Qué pasa si hay más de una moda?',
+    a: 'Un conjunto de datos puede ser bimodal (dos modas) o multimodal (varias). La calculadora muestra todas las modas cuando más de un valor tiene la misma frecuencia máxima.'
+  },
+  {
+    q: '¿Cómo se interpreta la desviación estándar?',
+    a: 'La desviación estándar mide cuánto se dispersan los datos respecto a la media. Un valor bajo indica que los datos están concentrados cerca de la media; un valor alto indica mayor variabilidad.'
+  },
+  {
+    q: '¿Cuántos números necesito para calcular la estadística?',
+    a: 'Necesitas al menos 2 números. Sepáralos con comas, espacios o punto y coma. Puedes introducir hasta cientos de valores sin problema.'
+  },
+]}>
+  <MediaMedianaTool client:load />
+</CalcLayout>

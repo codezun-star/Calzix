@@ -1,0 +1,33 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ConvPesoTool from '@/components/tools/ConvPesoTool';
+---
+
+<CalcLayout slug="conversor-peso" faqs={[
+  {
+    q: '¿Cuántos gramos tiene un kilogramo?',
+    a: 'Un kilogramo equivale exactamente a 1 000 gramos. Es la unidad base de masa en el Sistema Internacional de Unidades (SI).',
+  },
+  {
+    q: '¿Cuántos kilogramos son una libra?',
+    a: 'Una libra (lb) equivale a 0,45359237 kilogramos. A la inversa, un kilogramo equivale a aproximadamente 2,205 libras. Esta conversión es muy frecuente entre el sistema métrico y el anglosajón.',
+  },
+  {
+    q: '¿Qué es un stone y cómo se convierte a kilogramos?',
+    a: 'El stone es una unidad de masa del sistema imperial usada principalmente en el Reino Unido para medir el peso corporal. Un stone equivale a 14 libras o aproximadamente 6,35 kilogramos.',
+  },
+  {
+    q: '¿Cuántas onzas tiene una libra?',
+    a: 'Una libra equivale exactamente a 16 onzas (oz). En gramos, una onza equivale a 28,3495 g. Esta relación es muy útil en recetas de cocina anglosajona.',
+  },
+  {
+    q: '¿Cuántos kilogramos tiene una tonelada métrica?',
+    a: 'Una tonelada métrica equivale exactamente a 1 000 kilogramos o 1 000 000 gramos. No debe confundirse con la tonelada corta (907 kg, usada en EE. UU.) ni con la tonelada larga (1 016 kg, usada en el Reino Unido).',
+  },
+  {
+    q: '¿Cómo convierto mi peso de kilogramos a libras?',
+    a: 'Multiplica tu peso en kilogramos por 2,20462 para obtenerlo en libras. Por ejemplo, 70 kg equivalen a 154,32 lb. Puedes usar directamente este conversor seleccionando "Kilogramos" como unidad de origen y "Libras" como destino.',
+  },
+]}>
+  <ConvPesoTool client:load />
+</CalcLayout>

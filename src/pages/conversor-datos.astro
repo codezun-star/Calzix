@@ -1,0 +1,32 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ConvDatosTool from '@/components/tools/ConvDatosTool';
+---
+<CalcLayout slug="conversor-datos" faqs={[
+  {
+    q: '¿Cuál es la diferencia entre GB y GiB?',
+    a: 'Un Gigabyte (GB) equivale a 1.000.000.000 bytes (potencia de 10), mientras que un Gibibyte (GiB) equivale a 1.073.741.824 bytes (potencia de 2). Los fabricantes de discos duros usan GB, pero los sistemas operativos suelen mostrar GiB, lo que genera confusión en la capacidad real.'
+  },
+  {
+    q: '¿Cuántos MB tiene 1 GB?',
+    a: 'Un Gigabyte (GB) tiene exactamente 1.000 Megabytes (MB) en el sistema decimal. Sin embargo, si hablamos de Gibibytes (GiB) y Mebibytes (MiB), la equivalencia es 1 GiB = 1.024 MiB.'
+  },
+  {
+    q: '¿Por qué mi disco duro de 1 TB aparece con menos capacidad en el ordenador?',
+    a: 'Los fabricantes de discos miden en Terabytes decimales (1 TB = 1.000.000.000.000 bytes), pero Windows y otros sistemas operativos muestran la capacidad en Tebibytes (TiB). 1 TB ≈ 0,909 TiB, por eso un disco de 1 TB aparece como unos 931 GiB en el sistema.'
+  },
+  {
+    q: '¿Cuántos Megabytes tiene una canción típica?',
+    a: 'Una canción en formato MP3 de calidad estándar (128 kbps) ocupa aproximadamente 1 MB por minuto, por lo que una canción de 4 minutos pesa unos 4 MB. En calidad alta (320 kbps) puede llegar a 10 MB.'
+  },
+  {
+    q: '¿Qué significa kibibyte (KiB)?',
+    a: 'El Kibibyte (KiB) es una unidad binaria establecida por el IEC en 1998 para eliminar la ambigüedad del kilobyte. 1 KiB = 1.024 bytes exactos, mientras que 1 KB = 1.000 bytes en el sistema decimal. Su nombre viene de "kilo binary byte".'
+  },
+  {
+    q: '¿Cuántos Gigabytes tiene un Terabyte?',
+    a: 'En el sistema decimal, 1 Terabyte (TB) = 1.000 Gigabytes (GB). En el sistema binario, 1 Tebibyte (TiB) = 1.024 Gibibytes (GiB). Selecciona las unidades correctas en el conversor para obtener el resultado exacto.'
+  },
+]}>
+  <ConvDatosTool client:load />
+</CalcLayout>

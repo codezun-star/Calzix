@@ -1,0 +1,33 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ConvEnergiaTool from '@/components/tools/ConvEnergiaTool';
+---
+
+<CalcLayout slug="conversor-energia" faqs={[
+  {
+    q: '¿Qué es un julio (J) y para qué se usa?',
+    a: 'El julio es la unidad de energía del Sistema Internacional. Equivale al trabajo realizado por una fuerza de un newton a lo largo de un metro. Se usa en física, química y en el cálculo de cualquier forma de energía.',
+  },
+  {
+    q: '¿Cuántos julios tiene un kilovatio-hora (kWh)?',
+    a: 'Un kilovatio-hora equivale exactamente a 3 600 000 julios (3,6 MJ). Es la unidad que aparece en las facturas de electricidad: consumir 1 000 W durante 1 hora equivale a 1 kWh.',
+  },
+  {
+    q: '¿Qué diferencia hay entre una caloría y una kilocaloría?',
+    a: 'Una kilocaloría (kcal) equivale a 1 000 calorías (cal). En nutrición, cuando se habla de "calorías" de los alimentos, en realidad se hace referencia a kilocalorías. 1 kcal = 4 184 J.',
+  },
+  {
+    q: '¿Qué es un BTU y cuándo se usa?',
+    a: 'El BTU (British Thermal Unit) es la cantidad de calor necesaria para elevar 1 grado Fahrenheit la temperatura de 1 libra de agua. Equivale a 1 055,06 J. Se usa en climatización, calderas y aparatos de aire acondicionado en países anglosajones.',
+  },
+  {
+    q: '¿Cuántas kilocalorías tiene un kilovatio-hora?',
+    a: 'Un kilovatio-hora (kWh) equivale a aproximadamente 860 kilocalorías (kcal). Esta relación es útil en comparaciones de consumo energético entre electricidad y alimentación.',
+  },
+  {
+    q: '¿Cómo se convierte vatios-hora a julios?',
+    a: 'Multiplica los vatios-hora por 3 600 para obtener julios, ya que 1 Wh = 3 600 J. Esta conversión es útil para calcular la energía almacenada en baterías o el consumo de pequeños dispositivos electrónicos.',
+  },
+]}>
+  <ConvEnergiaTool client:load />
+</CalcLayout>

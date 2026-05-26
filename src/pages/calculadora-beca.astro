@@ -1,0 +1,33 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import BecaTool from '@/components/tools/BecaTool';
+---
+
+<CalcLayout slug="calculadora-beca" faqs={[
+  {
+    q: '¿Qué nota mínima necesito para obtener la beca general del Ministerio de Educación?',
+    a: 'Para la beca general de carácter compensatorio del Ministerio de Educación y Formación Profesional de España, la nota mínima del expediente académico es de 5,00 sobre 10, con independencia de la rama de estudios (Artes y Humanidades, Ciencias Sociales y Jurídicas, Ciencias, Ingeniería y Arquitectura o Ciencias de la Salud).'
+  },
+  {
+    q: '¿Qué es la cuantía fija ligada al rendimiento académico?',
+    a: 'Es un componente adicional de la beca que premia el buen rendimiento. Para acceder a ella se exige una nota media de expediente igual o superior a 6,50. Es compatible con la beca general y se añade a las cuantías variables que pueda corresponder al estudiante.'
+  },
+  {
+    q: '¿A partir de qué nota se concede la beca de excelencia?',
+    a: 'La cuantía de excelencia, que complementa la beca con un importe adicional, requiere una nota media de expediente de 8,00 o superior. Esta cuantía reconoce el alto rendimiento académico y se suma al resto de componentes de la beca.'
+  },
+  {
+    q: '¿Basta con cumplir el umbral de nota para recibir la beca?',
+    a: 'No. La nota media es solo uno de los criterios de concesión. También se evalúan los criterios económicos (renta y patrimonio de la unidad familiar), la matrícula en el número mínimo de créditos exigido y otros requisitos administrativos. Esta calculadora solo comprueba el criterio de nota.'
+  },
+  {
+    q: '¿Cómo se calcula la nota media del expediente?',
+    a: 'La nota media se obtiene dividiendo la suma de los créditos superados multiplicados por la calificación obtenida en cada asignatura entre el total de créditos superados. Las asignaturas convalidadas o adaptadas pueden computar de forma diferente según la normativa de cada universidad. Consulta siempre tu secretaría académica.'
+  },
+  {
+    q: '¿Dónde puedo consultar la convocatoria oficial?',
+    a: 'La convocatoria anual de becas y ayudas al estudio se publica en el Boletín Oficial del Estado (BOE) y en el portal del Ministerio de Educación, Formación Profesional y Deportes en la sección "Becas y ayudas a la educación". Los plazos y requisitos concretos pueden variar cada curso académico.'
+  },
+]}>
+  <BecaTool client:load />
+</CalcLayout>

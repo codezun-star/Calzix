@@ -1,0 +1,33 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import VelocidadLecturaTool from '@/components/tools/VelocidadLecturaTool';
+---
+
+<CalcLayout slug="velocidad-lectura" faqs={[
+  {
+    q: '¿Cómo se mide la velocidad de lectura?',
+    a: 'La velocidad de lectura se mide en palabras por minuto (ppm). Para medirla, lee un fragmento de texto durante un tiempo determinado (por ejemplo, 1 minuto) y cuenta las palabras leídas. La calculadora lo hace automáticamente: introduces las palabras o páginas leídas y el tiempo empleado, y te devuelve las ppm.'
+  },
+  {
+    q: '¿Cuál es una velocidad de lectura normal para un adulto?',
+    a: 'Un adulto con nivel educativo medio lee entre 200 y 300 palabras por minuto en lectura silenciosa con buena comprensión. La lectura en voz alta suele rondar las 120-180 ppm. Lectores entrenados pueden superar las 400 ppm, aunque la comprensión puede verse afectada a velocidades muy elevadas.'
+  },
+  {
+    q: '¿Cuántas palabras tiene una página de libro?',
+    a: 'La calculadora usa el estándar de 250 palabras por página, que es el valor de referencia habitual en edición. Una página real puede tener entre 200 y 350 palabras según el formato del libro, el tamaño de fuente y los márgenes. Para más precisión, puedes contar las palabras de una página representativa y usar el modo "por palabras".'
+  },
+  {
+    q: '¿Puedo mejorar mi velocidad de lectura?',
+    a: 'Sí. Algunas técnicas efectivas son: reducir la subvocalización (el "habla interna" que acompaña a la lectura), ampliar el campo visual para captar más palabras por fijación ocular, y leer con un guía (dedo o bolígrafo) para mantener el ritmo. La práctica diaria sostenida es el factor más determinante en la mejora.'
+  },
+  {
+    q: '¿Cuánto tarda un lector promedio en terminar una novela?',
+    a: 'Una novela media tiene entre 70.000 y 100.000 palabras. A 250 ppm, leer 80.000 palabras supone unos 320 minutos, equivalentes a algo más de 5 horas de lectura efectiva. Si lees 30 minutos al día, tardarías entre 10 y 11 días en terminarla.'
+  },
+  {
+    q: '¿La velocidad de lectura afecta a la comprensión?',
+    a: 'Sí, existe una relación inversa: a mayor velocidad, menor comprensión si no se ha entrenado específicamente. La velocidad óptima es aquella que maximiza la comprensión sin sacrificar fluidez. Para el estudio, una velocidad moderada (150-250 ppm) con paradas frecuentes para reflexionar suele ser más eficaz que la lectura rápida.'
+  },
+]}>
+  <VelocidadLecturaTool client:load />
+</CalcLayout>

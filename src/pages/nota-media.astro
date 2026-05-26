@@ -1,0 +1,33 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import NotaMediaTool from '@/components/tools/NotaMediaTool';
+---
+
+<CalcLayout slug="nota-media" faqs={[
+  {
+    q: '¿Qué diferencia hay entre la media simple y la media ponderada?',
+    a: 'La media simple suma todas las notas y divide entre el número de asignaturas, dando el mismo peso a todas. La media ponderada tiene en cuenta los créditos o el peso de cada asignatura: una materia de 12 créditos influye más en el resultado final que una de 3. En la mayoría de planes universitarios, la nota del expediente es la media ponderada por créditos ECTS.'
+  },
+  {
+    q: '¿Qué son los créditos ECTS?',
+    a: 'El ECTS (European Credit Transfer and Accumulation System) es la unidad de medida del trabajo académico en la universidad europea. Un crédito ECTS equivale aproximadamente a 25 horas de trabajo del estudiante (clases + estudio). Las asignaturas suelen valer entre 3 y 12 créditos según su carga lectiva.'
+  },
+  {
+    q: '¿Puedo usar pesos personalizados si no tengo créditos ECTS?',
+    a: 'Sí. El campo de créditos admite cualquier número positivo como peso relativo. Si no tienes créditos formales, puedes introducir el número de horas semanales de clase o simplemente el mismo número para todas las materias (lo que equivaldría a la media simple). La calculadora usa los valores tal como los introduces.'
+  },
+  {
+    q: '¿Qué nota mínima se necesita para aprobar en España?',
+    a: 'El mínimo aprobado en el sistema universitario español es un 5 sobre 10. La calculadora lo indica automáticamente si tu media ponderada supera o no ese umbral. En algunos centros o convocatorias específicas (como oposiciones) el mínimo puede ser diferente; ajusta tus objetivos según las bases de cada convocatoria.'
+  },
+  {
+    q: '¿Cuántas asignaturas puedo añadir?',
+    a: 'Puedes añadir tantas filas como necesites pulsando el botón "Añadir asignatura". No hay límite. La calculadora actualiza el resultado en tiempo real cada vez que modificas una nota o un crédito, por lo que no necesitas pulsar ningún botón para obtener el resultado.'
+  },
+  {
+    q: '¿Qué pasa si dejo una fila sin rellenar?',
+    a: 'Las filas con campos vacíos o con valores inválidos se ignoran en el cálculo. Solo se tienen en cuenta las asignaturas donde tanto la nota (entre 0 y 10) como los créditos (mayor que 0) estén correctamente introducidos. Esto te permite dejar filas preparadas sin que afecten al resultado hasta que las completes.'
+  },
+]}>
+  <NotaMediaTool client:load />
+</CalcLayout>

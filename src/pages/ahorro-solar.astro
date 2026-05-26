@@ -1,0 +1,33 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import AhorroSolarTool from '@/components/tools/AhorroSolarTool';
+---
+
+<CalcLayout slug="ahorro-solar" faqs={[
+  {
+    q: '¿Qué son las horas de sol pico (HSP)?',
+    a: 'Las horas de sol pico (HSP) son una medida estandarizada de la radiación solar disponible en una ubicación, equivalente al número de horas al día con una irradiancia de 1.000 W/m². En España, la media varía entre 3,5 HSP en el norte (Galicia, País Vasco) y 5,5 HSP en el sur (Andalucía, Murcia). Esta calculadora usa 4,5 HSP como valor medio nacional.'
+  },
+  {
+    q: '¿Cuántos paneles solares necesito para cubrir mi consumo?',
+    a: 'Para un hogar con un consumo de 350 kWh/mes en una zona con 4,5 HSP, una instalación de 3 kWp (unos 7-10 paneles de 350-400 W) puede cubrir aproximadamente el 60-70% del consumo. Para cubrir más, necesitarías mayor potencia o un sistema con baterías para aprovechar la energía generada por la noche. Un instalador certificado puede hacer un estudio personalizado.'
+  },
+  {
+    q: '¿Qué es el autoconsumo y cómo funciona la compensación de excedentes?',
+    a: 'El autoconsumo es la energía solar que consumes directamente de tus paneles, sin pasar por la red. Los excedentes son la electricidad que generas pero no consumes y que viertes a la red eléctrica. En España, desde 2019, puedes compensar esos excedentes en tu factura a un precio pactado con tu comercializadora, generalmente entre 0,04 y 0,07 €/kWh.'
+  },
+  {
+    q: '¿Cuánto cuesta una instalación solar fotovoltaica en España?',
+    a: 'Una instalación típica de 3 kWp para un hogar cuesta entre 6.000 y 9.000 euros, incluyendo paneles, inversor, estructura e instalación. Con los ahorros en la factura eléctrica, el periodo de amortización suele ser de 6 a 10 años. Además, muchas comunidades autónomas y ayuntamientos ofrecen deducciones fiscales de hasta el 30% de la inversión.'
+  },
+  {
+    q: '¿Los paneles solares funcionan en días nublados?',
+    a: 'Sí, aunque con menor rendimiento. Los paneles fotovoltaicos aprovechan la luz del día, no solo la luz solar directa. En días nublados pueden generar entre el 10% y el 25% de su potencia máxima. Por eso, las HSP ya tienen en cuenta este factor y representan la media anual real de generación, no solo los días perfectamente soleados.'
+  },
+  {
+    q: '¿Cuánto duran los paneles solares?',
+    a: 'Los paneles solares tienen una vida útil garantizada de 25-30 años. Los fabricantes garantizan que al cabo de 25 años mantienen al menos el 80% de su potencia inicial. El inversor, que es el componente que más se desgasta, suele tener una vida de 10-15 años y puede necesitar sustitución durante la vida de la instalación.'
+  },
+]}>
+  <AhorroSolarTool client:load />
+</CalcLayout>

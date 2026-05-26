@@ -1,0 +1,33 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ConvVolumenTool from '@/components/tools/ConvVolumenTool';
+---
+
+<CalcLayout slug="conversor-volumen" faqs={[
+  {
+    q: '¿Cuántos mililitros tiene un litro?',
+    a: 'Un litro equivale exactamente a 1 000 mililitros. El mililitro también coincide con el centímetro cúbico (cm³), lo que facilita muchas conversiones en cocina y medicina.',
+  },
+  {
+    q: '¿Cuántos litros tiene un galón americano?',
+    a: 'Un galón estadounidense (US gallon) equivale a 3,785411784 litros. No debe confundirse con el galón imperial británico, que es mayor: 4,54609 litros.',
+  },
+  {
+    q: '¿Qué es una onza líquida (fl oz)?',
+    a: 'La onza líquida estadounidense (US fl oz) equivale a aproximadamente 29,5735 mL. Se usa en recetas y etiquetas de productos en EE. UU. La onza líquida imperial del Reino Unido es ligeramente distinta: 28,4131 mL.',
+  },
+  {
+    q: '¿Cuántos litros tiene un metro cúbico?',
+    a: 'Un metro cúbico (m³) equivale exactamente a 1 000 litros. Esta relación es fundamental en hidráulica, construcción y cálculo de depósitos.',
+  },
+  {
+    q: '¿Cuántas tazas hay en un litro?',
+    a: 'Usando la taza americana estándar (240 mL aprox.), un litro equivale a unas 4,23 tazas. Este conversor usa la taza exacta de 236,5882 mL definida por el sistema de medidas de EE. UU.',
+  },
+  {
+    q: '¿Cómo se convierte centímetros cúbicos a litros?',
+    a: 'Divide los centímetros cúbicos entre 1 000 para obtener litros, ya que 1 L = 1 000 cm³. Por ejemplo, un motor de 2 000 cm³ (2 000 cc) equivale a 2 litros de cilindrada.',
+  },
+]}>
+  <ConvVolumenTool client:load />
+</CalcLayout>

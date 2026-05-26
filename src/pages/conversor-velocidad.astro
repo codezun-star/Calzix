@@ -1,0 +1,33 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ConvVelocidadTool from '@/components/tools/ConvVelocidadTool';
+---
+
+<CalcLayout slug="conversor-velocidad" faqs={[
+  {
+    q: '¿Cuántos km/h son 100 mph?',
+    a: '100 millas por hora equivalen a aproximadamente 160,93 km/h. La conversión exacta es multiplicar las mph por 1,60934. Esta conversión es útil al comparar velocidades en países con distintos sistemas de medida.',
+  },
+  {
+    q: '¿Cómo se convierte m/s a km/h?',
+    a: 'Multiplica los metros por segundo por 3,6 para obtener kilómetros por hora. Por ejemplo, 10 m/s equivalen a 36 km/h. Esta conversión es habitual en física y meteorología.',
+  },
+  {
+    q: '¿Qué es un nudo (kn) y cómo se usa?',
+    a: 'Un nudo equivale a una milla náutica por hora, es decir, 1,852 km/h o 0,5144 m/s. Es la unidad estándar para expresar velocidades en navegación marítima y aviación.',
+  },
+  {
+    q: '¿Cuál es la velocidad del sonido en km/h?',
+    a: 'La velocidad del sonido en el aire a 20 °C es de aproximadamente 343 m/s, lo que equivale a unos 1 235 km/h o 767 mph. Esta velocidad varía según la temperatura y el medio de propagación.',
+  },
+  {
+    q: '¿Cuántos m/s es 1 km/h?',
+    a: 'Un kilómetro por hora equivale a 1/3,6 metros por segundo, es decir, aproximadamente 0,2778 m/s. A la inversa, 1 m/s son exactamente 3,6 km/h.',
+  },
+  {
+    q: '¿Para qué sirve convertir pies por segundo (ft/s)?',
+    a: 'Los pies por segundo (ft/s) se usan en ingeniería aeroespacial, balística y algunas normas técnicas de Estados Unidos. Un ft/s equivale a 0,3048 m/s o 1,09728 km/h.',
+  },
+]}>
+  <ConvVelocidadTool client:load />
+</CalcLayout>

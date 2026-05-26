@@ -1,0 +1,142 @@
+---
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import { PAGE_SEO, SITE } from '@/lib/constants/seo';
+import { getCalcBySlug, getRelatedCalcs, getDomainGroup } from '@/lib/constants/calcs';
+
+interface Props {
+  slug: string;
+  faqs?: Array<{ q: string; a: string }>;
+}
+
+const { slug, faqs = [] } = Astro.props;
+
+const seo   = PAGE_SEO[slug];
+const calc  = getCalcBySlug(slug);
+const related = getRelatedCalcs(slug);
+
+const title       = seo?.title       ?? `${calc?.name ?? slug} — ${SITE.name}`;
+const description = seo?.description ?? calc?.description ?? SITE.description;
+const canonical   = seo?.canonical   ?? `${SITE.url}/${slug}`;
+
+const group = calc ? getDomainGroup(calc.domain) : undefined;
+const breadcrumb = [
+  { name: SITE.name, href: '/' },
+  ...(group ? [{ name: group.label, href: `/${group.slug}` }] : []),
+  { name: calc?.name ?? slug, href: canonical },
+];
+
+const faqSchema = faqs.length > 0
+  ? JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map(({ q, a }) => ({
+        '@type': 'Question',
+        name: q,
+        acceptedAnswer: { '@type': 'Answer', text: a },
+      })),
+    })
+  : null;
+
+const appSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: calc?.name ?? slug,
+  description,
+  url: canonical,
+  applicationCategory: 'UtilitiesApplication',
+  operatingSystem: 'Any',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+});
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <!-- OpenGraph -->
+    <meta property="og:type"        content="website" />
+    <meta property="og:url"         content={canonical} />
+    <meta property="og:title"       content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name"   content={SITE.name} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card"        content="summary" />
+    <meta name="twitter:title"       content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- JSON-LD -->
+    <script is:inline type="application/ld+json" set:html={appSchema} />
+    {faqSchema && <script is:inline type="application/ld+json" set:html={faqSchema} />}
+
+    <link rel="stylesheet" href="/src/styles/global.css" />
+  </head>
+  <body class="bg-[var(--color-bg)]">
+    <Header />
+
+    <main class="mx-auto max-w-3xl px-4 py-10 sm:px-6">
+      <!-- Breadcrumb -->
+      <nav class="mb-6 flex items-center gap-1.5 text-sm text-[var(--color-text-muted)]" aria-label="Ruta">
+        {breadcrumb.map(({ name, href }, i) => (
+          <>
+            {i > 0 && <span aria-hidden="true">/</span>}
+            {i < breadcrumb.length - 1
+              ? <a href={href} class="hover:text-[var(--color-text)] transition-colors">{name}</a>
+              : <span class="text-[var(--color-text-secondary)]">{name}</span>
+            }
+          </>
+        ))}
+      </nav>
+
+      <!-- Título de la calculadora -->
+      {calc && (
+        <h1 class="mb-2 text-3xl font-extrabold text-[var(--color-text)]">{calc.name}</h1>
+        <p class="mb-8 text-[var(--color-text-secondary)]">{calc.longDescription}</p>
+      )}
+
+      <!-- Componente React de la calculadora -->
+      <slot />
+
+      <!-- Calculadoras relacionadas -->
+      {related.length > 0 && (
+        <section class="mt-14">
+          <h2 class="mb-4 text-lg font-bold text-[var(--color-text)]">Calculadoras relacionadas</h2>
+          <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
+            {related.map((r) => (
+              <a
+                href={`/${r.slug}`}
+                class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4 text-sm font-medium text-[var(--color-text-secondary)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-text)]"
+              >
+                {r.name}
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- FAQs -->
+      {faqs.length > 0 && (
+        <section class="mt-14">
+          <h2 class="mb-6 text-lg font-bold text-[var(--color-text)]">Preguntas frecuentes</h2>
+          <dl class="space-y-4">
+            {faqs.map(({ q, a }) => (
+              <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5">
+                <dt class="font-semibold text-[var(--color-text)]">{q}</dt>
+                <dd class="mt-1.5 text-sm text-[var(--color-text-secondary)]">{a}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      )}
+    </main>
+
+    <Footer />
+  </body>
+</html>

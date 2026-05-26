@@ -1,0 +1,29 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ConcentracionMolarTool from '@/components/tools/ConcentracionMolarTool';
+---
+
+<CalcLayout slug="concentracion-molar" faqs={[
+  {
+    q: '¿Qué es la concentración molar?',
+    a: 'La concentración molar (también llamada molaridad) indica cuántos moles de soluto hay en un litro de disolución. Se expresa en mol/L o M. Es la forma más común de expresar concentración en química.'
+  },
+  {
+    q: '¿Qué es un mol?',
+    a: 'Un mol es la cantidad de sustancia que contiene 6,022 × 10²³ partículas (número de Avogadro). En la práctica, los moles se calculan dividiendo la masa en gramos entre la masa molar de la sustancia (g/mol).'
+  },
+  {
+    q: '¿Dónde encuentro la masa molar de una sustancia?',
+    a: 'La masa molar se obtiene sumando las masas atómicas de todos los átomos de la fórmula química. Por ejemplo, el agua (H₂O) tiene masa molar = 2×1,008 + 15,999 ≈ 18,015 g/mol. También puedes consultarla en tablas periódicas.'
+  },
+  {
+    q: '¿Cuál es la diferencia entre mol/L y g/L?',
+    a: 'mol/L (molaridad) expresa la cantidad de sustancia por volumen, independientemente del peso molecular. g/L expresa la masa por volumen. Para convertir entre ellas necesitas la masa molar: g/L = mol/L × masa molar.'
+  },
+  {
+    q: '¿Puedo usar mililitros en lugar de litros?',
+    a: 'La calculadora usa litros como unidad de volumen. Si tienes el volumen en mililitros, divídelo entre 1000 antes de introducirlo. Por ejemplo, 250 mL = 0,25 L.'
+  },
+]}>
+  <ConcentracionMolarTool client:load />
+</CalcLayout>

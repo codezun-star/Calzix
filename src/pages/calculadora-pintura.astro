@@ -1,0 +1,32 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import PinturaTool from '@/components/tools/PinturaTool';
+---
+<CalcLayout slug="calculadora-pintura" faqs={[
+  {
+    q: '¿Por qué el calculador solo cuenta las paredes y no el techo?',
+    a: 'La fórmula calcula el perímetro de la habitación multiplicado por la altura (2 × (largo + ancho) × alto), que corresponde únicamente a las cuatro paredes. El techo queda excluido porque muchas veces se pinta con un producto diferente (pintura de techo) y suele requerir menos manos. Si quieres incluir el techo, suma el área largo × ancho a tu cálculo manualmente.'
+  },
+  {
+    q: '¿Qué rendimiento de pintura debo introducir?',
+    a: 'El rendimiento en m²/L depende del tipo de pintura. Una pintura plástica estándar rinde entre 10 y 14 m²/L por mano. Las pinturas con mayor cubrición pueden llegar a 16 m²/L. Revisa siempre la ficha técnica del producto que vayas a usar; suele indicar el rendimiento teórico en la etiqueta.'
+  },
+  {
+    q: '¿Cuántas manos de pintura necesito?',
+    a: 'Para pintar sobre fondo blanco o el mismo color, normalmente 2 manos son suficientes. Si vas a cambiar de un color oscuro a uno claro, o si la pared tiene manchas o irregularidades, se recomiendan 3 manos. La primera mano siempre cubre menos que las siguientes.'
+  },
+  {
+    q: '¿Para qué sirve el 10% adicional que añade el calculador?',
+    a: 'El margen del 10% cubre irregularidades de las paredes (textura, rugosidad), el desperdicio al limpiar rodillos y pinceles, zonas de repaso y los bordes junto a ventanas y zócalos que se cubren con mayor detalle. Evita quedarte sin pintura a mitad del trabajo comprando siempre ese margen de seguridad.'
+  },
+  {
+    q: '¿Debo restar las puertas y ventanas del cálculo?',
+    a: 'Para habitaciones estándar con una o dos ventanas y una puerta, el margen del 10% extra compensa. Si la habitación tiene muchos huecos grandes (ventanales, puertas dobles), puedes restar manualmente el área de los huecos. Suma el área de cada hueco (ancho × alto) y réstasela al resultado de litros exactos.'
+  },
+  {
+    q: '¿Qué formato de envase de pintura me conviene comprar?',
+    a: 'Las pinturas plásticas suelen venderse en botes de 1 L, 4 L, 5 L, 10 L y 15 L. Una habitación estándar de 12 m² con 2 manos necesita unos 10-12 L. Para optimizar el gasto, combina formatos grandes para la mayor parte y un bote pequeño para los repasos. Compra siempre del mismo lote para garantizar uniformidad de color.'
+  },
+]}>
+  <PinturaTool client:load />
+</CalcLayout>

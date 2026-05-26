@@ -1,0 +1,33 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import CosteViajeTool from '@/components/tools/CosteViajeTool';
+---
+
+<CalcLayout slug="coste-viaje" faqs={[
+  {
+    q: '¿Qué categorías de gasto incluye la calculadora?',
+    a: 'La calculadora contempla cinco categorías: transporte (vuelos, tren, autobús…), alojamiento (precio por noche × número de noches), comida (gasto diario × número de días), actividades y entradas (museos, excursiones, tours…) y otros gastos (seguros, compras, propinas, SIM de datos…). El total se puede dividir entre el número de viajeros.'
+  },
+  {
+    q: '¿El coste por viajero incluye todos los gastos?',
+    a: 'Sí. La calculadora divide el coste total —suma de todas las categorías— entre el número de viajeros que introduzcas. Esto funciona bien cuando todos los gastos son compartidos. Si algunos gastos son individuales (ropa, souvenirs, gustos personales), añádelos a "Otros gastos" o calcula esa parte de forma separada.'
+  },
+  {
+    q: '¿Cuánto debería presupuestar para comida por día en Europa?',
+    a: 'Los gastos de alimentación varían mucho según el destino. En España, un presupuesto de 25-40 €/día por persona (menú del día + cena informal) es razonable. En destinos del norte de Europa (Noruega, Suiza) puede duplicarse fácilmente. En Europa del Este o Portugal suele ser bastante inferior. Investiga siempre los precios locales antes de presupuestar.'
+  },
+  {
+    q: '¿Debo añadir el seguro de viaje como gasto?',
+    a: 'Sí, es recomendable incluirlo en la categoría "Otros gastos". Un seguro básico de viaje para una semana en Europa cuesta entre 20 y 60 € por persona. Para viajes fuera de la UE, a destinos con sanidad cara (EE.UU., Canadá, Japón) o con actividades de riesgo, el coste puede ser mayor pero es altamente recomendable.'
+  },
+  {
+    q: '¿La calculadora tiene en cuenta las comisiones de cambio de divisa?',
+    a: 'No. La herramienta trabaja en euros y no aplica comisiones de cambio. Si viajas a un destino con moneda diferente, añade un margen del 2-5% al presupuesto total para cubrir las comisiones bancarias o de casas de cambio, y usa la calculadora de monedas de Calzix para estimar el equivalente en la divisa local.'
+  },
+  {
+    q: '¿Cómo puedo usar este presupuesto para ahorrar?',
+    a: 'Una vez que tienes el total estimado, divide el importe entre los meses que faltan para el viaje. Ese es el ahorro mensual mínimo necesario. También puedes ajustar las categorías para ver cómo cambia el total: reducir el alojamiento buscando apartamentos en lugar de hoteles, o limitar el número de noches, puede tener un impacto significativo en el presupuesto final.'
+  },
+]}>
+  <CosteViajeTool client:load />
+</CalcLayout>

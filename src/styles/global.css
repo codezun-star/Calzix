@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fondos */
+  --color-bg: #F0FAF4;
+  --color-surface: #FFFFFF;
+  --color-border: #B8DAC7;
+
+  /* Texto */
+  --color-text: #0D2118;
+  --color-text-secondary: #35664A;
+  --color-text-muted: #7AAE90;
+
+  /* Acento — verde esmeralda vivo */
+  --color-accent: #18A357;
+  --color-accent-hover: #13894A;
+  --color-accent-bg: #DCF7E9;
+
+  /* Zona de calculadoras (home grid) */
+  --color-calcs-bg: #E4F7ED;
+  --color-calcs-border: #A8CEBC;
+  --color-calcs-icon: #239658;
+
+  /* Tipografía */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+html {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}

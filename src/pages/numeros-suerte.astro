@@ -1,0 +1,33 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import NumerosSuerteTool from '@/components/tools/NumerosSuerteTool';
+---
+
+<CalcLayout slug="numeros-suerte" faqs={[
+  {
+    q: '¿Qué es la Lotería Primitiva española?',
+    a: 'La Lotería Primitiva es uno de los juegos de azar más populares de España, gestionado por la Sociedad Estatal de Loterías y Apuestas del Estado (SELAE). El jugador elige 6 números del 1 al 49. En el sorteo se extraen 6 números principales y 1 complementario. Los premios principales se consiguen acertando 6, 5, 4 o 3 números. Hay sorteos los jueves y sábados.'
+  },
+  {
+    q: '¿Los números generados son realmente aleatorios?',
+    a: 'Sí. Esta calculadora utiliza la función crypto.getRandomValues(), que accede al generador de números aleatorios criptográficamente seguro del navegador o del sistema operativo. Es mucho más aleatorio que Math.random(), que usa un algoritmo pseudoaleatorio determinista. Los números generados son impredecibles y no siguen ningún patrón.'
+  },
+  {
+    q: '¿Hay números que salen más en la Lotería Primitiva?',
+    a: 'Estadísticamente, en un sorteo perfectamente aleatorio todos los números tienen exactamente la misma probabilidad de salir: 1 entre 49. Aunque algunas personas analizan la frecuencia histórica de cada número, la estadística demuestra que los sorteos pasados no influyen en los futuros. Cada bola tiene siempre la misma probabilidad independientemente de cuándo haya salido antes.'
+  },
+  {
+    q: '¿Cuál es la probabilidad de ganar el primer premio?',
+    a: 'La probabilidad de acertar los 6 números principales de la Primitiva es de 1 entre 13.983.816 (aproximadamente 1 entre 14 millones). Es decir, si compras un boleto, tienes un 0,0000071% de probabilidades. Para ponerlo en perspectiva, es más probable que te caiga un rayo dos veces en la vida. Juega con moderación y por diversión.'
+  },
+  {
+    q: '¿Qué es el número complementario?',
+    a: 'El número complementario es una séptima bola que se extrae tras los 6 principales. No influye en el primer premio (6 aciertos), pero sí determina algunos premios secundarios. Por ejemplo, para ganar el segundo premio se necesitan 5 aciertos más el complementario. Esta calculadora genera el complementario asegurándose de que sea diferente a los 6 principales.'
+  },
+  {
+    q: '¿Puedo usar estos números para otros sorteos como la EuroMillones?',
+    a: 'Esta calculadora genera números específicamente para la Lotería Primitiva (6 números del 1 al 49). Para la EuroMillones necesitarías 5 números del 1 al 50 más 2 "estrellas" del 1 al 12, lo que tiene una distribución diferente. Para el Eurodreams serían 6 del 1 al 40 más 1 "dream". Usa esta calculadora como inspiración, adaptando los rangos si es necesario.'
+  },
+]}>
+  <NumerosSuerteTool client:load />
+</CalcLayout>

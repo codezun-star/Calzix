@@ -1,0 +1,33 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ConvPresionTool from '@/components/tools/ConvPresionTool';
+---
+
+<CalcLayout slug="conversor-presion" faqs={[
+  {
+    q: '¿Qué es un pascal (Pa) y cuándo se usa?',
+    a: 'El pascal es la unidad de presión del Sistema Internacional. Equivale a una fuerza de un newton aplicada sobre un área de un metro cuadrado. Se usa en meteorología, física y la mayoría de cálculos técnicos de ingeniería.',
+  },
+  {
+    q: '¿Cuántos pascales tiene una atmósfera (atm)?',
+    a: 'Una atmósfera estándar (atm) equivale exactamente a 101 325 pascales (Pa) o aproximadamente 101,325 kPa. Es la presión media del aire a nivel del mar y se usa como referencia habitual en química y física.',
+  },
+  {
+    q: '¿Cuántos bar son una atmósfera?',
+    a: 'Una atmósfera equivale aproximadamente a 1,01325 bar. El bar es una unidad práctica muy usada en industria e ingeniería de fluidos porque su valor se aproxima mucho al de la presión atmosférica.',
+  },
+  {
+    q: '¿Qué es el PSI y dónde se usa?',
+    a: 'PSI son las siglas de "Pounds per Square Inch" (libras por pulgada cuadrada). Un PSI equivale a 6 894,757 Pa o 0,06895 bar. Se usa principalmente en EE. UU. para medir la presión de neumáticos, tuberías y sistemas hidráulicos.',
+  },
+  {
+    q: '¿Qué es el mmHg (Torr) y en qué contexto se utiliza?',
+    a: 'El milímetro de mercurio (mmHg), también llamado Torr, equivale a 133,322 Pa. Se usa en medicina para medir la presión arterial (p. ej., 120/80 mmHg) y en física para medir presiones de vacío.',
+  },
+  {
+    q: '¿Cuántos kPa son 1 bar?',
+    a: 'Un bar equivale exactamente a 100 kilopascales (kPa). Esta relación hace que el bar sea muy práctico en meteorología: la presión atmosférica media (1 013,25 hPa) equivale aproximadamente a 1,013 bar.',
+  },
+]}>
+  <ConvPresionTool client:load />
+</CalcLayout>

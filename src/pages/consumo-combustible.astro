@@ -1,0 +1,33 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ConsumoCombustibleTool from '@/components/tools/ConsumoCombustibleTool';
+---
+
+<CalcLayout slug="consumo-combustible" faqs={[
+  {
+    q: '¿Cómo calcula la herramienta los litros necesarios?',
+    a: 'La fórmula es simple: litros = distancia (km) × consumo (L/100 km) ÷ 100. Por ejemplo, si tienes que recorrer 350 km con un coche que consume 7 L/100 km, necesitarás 350 × 7 ÷ 100 = 24,5 litros de combustible.'
+  },
+  {
+    q: '¿Qué consumo medio debo introducir si no lo sé?',
+    a: 'El consumo oficial del fabricante (WLTP) es un buen punto de partida, aunque en conducción real suele ser un 10-20% mayor. Un turismo gasolina medio consume entre 6 y 8 L/100 km en carretera. Un diésel equivalente, entre 5 y 7 L/100 km. Los SUV suelen consumir entre 8 y 12 L/100 km.'
+  },
+  {
+    q: '¿Por qué el cálculo de CO₂ es diferente para gasolina y diésel?',
+    a: 'Gasolina y diésel tienen densidades y composiciones químicas distintas. Al quemarse, cada litro de gasolina emite aproximadamente 2,392 kg de CO₂, mientras que cada litro de diésel emite unos 2,640 kg de CO₂. El diésel emite más CO₂ por litro quemado, aunque su mayor eficiencia energética puede compensarlo en trayectos largos.'
+  },
+  {
+    q: '¿Puedo usar esta calculadora para viajes de ida y vuelta?',
+    a: 'Sí. Simplemente dobla la distancia del trayecto de ida para obtener el total de la ida y vuelta. Por ejemplo, si el destino está a 200 km, introduce 400 km como distancia total.'
+  },
+  {
+    q: '¿Cómo se reparte el coste entre varias personas?',
+    a: 'La calculadora divide el coste total del combustible entre el número de personas que viajen. Así, si el coste total es de 40 € y viajáis 4 personas, cada uno paga 10 €. Esta división es equitativa pero no incluye el desgaste del vehículo ni los peajes, que deberías añadir si quieres un reparto completamente justo.'
+  },
+  {
+    q: '¿Influye la velocidad de circulación en el consumo real?',
+    a: 'Sí, de forma significativa. La mayoría de vehículos tienen un consumo óptimo entre 90 y 110 km/h. A 120 km/h el consumo puede ser un 20% mayor que a 90 km/h. En ciudad, el consumo aumenta considerablemente por las aceleraciones y frenadas frecuentes. Para mayor precisión, consulta el consumo real de tu coche en aplicaciones de seguimiento de conducción.'
+  },
+]}>
+  <ConsumoCombustibleTool client:load />
+</CalcLayout>

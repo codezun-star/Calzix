@@ -1,0 +1,32 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import MaterialesConstruccionTool from '@/components/tools/MaterialesConstruccionTool';
+---
+<CalcLayout slug="materiales-construccion" faqs={[
+  {
+    q: '¿Por qué se añade un 5% de desperdicio en el cálculo de ladrillos?',
+    a: 'El margen del 5% cubre roturas durante el transporte y el trabajo, cortes necesarios para ajustar esquinas, huecos de puertas y ventanas, y diferencias en la colocación. En obras más complejas o con muchos cortes angulares, algunos profesionales recomiendan aumentar el margen al 8-10%.'
+  },
+  {
+    q: '¿Cuántos ladrillos caben en un metro cuadrado de pared?',
+    a: 'Depende del tipo: un ladrillo estándar (24×11,5×7 cm) ocupa unos 60 unidades por m², el ladrillo perforado (24×11,5×9 cm) unas 45 unidades, y el bloque de hormigón (40×20×20 cm) unas 12,5 unidades por m². Estas densidades ya incluyen las juntas de mortero habituales.'
+  },
+  {
+    q: '¿Qué tipo de ladrillo debo elegir para una pared interior?',
+    a: 'Para paredes interiores no estructurales se suele usar el ladrillo perforado o hueco, que es más ligero y tiene mejor aislamiento térmico y acústico. El ladrillo estándar macizo se usa más en paredes estructurales o de cerramiento exterior. El bloque de hormigón es ideal para sótanos, muros de contención o construcciones industriales.'
+  },
+  {
+    q: '¿Cómo se calcula la cantidad de cemento y arena para una pared de ladrillo?',
+    a: 'Este calculador usa una estimación práctica: aproximadamente 1 saco de cemento (25 kg) por cada 50 ladrillos, y 1 saco de arena por cada 30 ladrillos. Estas proporciones corresponden a un mortero estándar de dosificación 1:4 (cemento:arena) para una junta de 1 cm de grosor. Los resultados siempre se redondean hacia arriba.'
+  },
+  {
+    q: '¿El calculador tiene en cuenta puertas y ventanas?',
+    a: 'No. El cálculo se basa en el área total de la pared (largo × alto). Para tener en cuenta huecos de puertas y ventanas, resta sus áreas al resultado final. Por ejemplo, si tu pared tiene una ventana de 1,2 × 1 m = 1,2 m², introduce un largo y alto que excluyan esa superficie, o réstale el porcentaje correspondiente al resultado.'
+  },
+  {
+    q: '¿Son suficientes los sacos de arena calculados?',
+    a: 'La estimación de arena es orientativa. La cantidad exacta varía según el grosor de la junta de mortero, el tipo de mezcla y el desperdicio en obra. Se recomienda comprar un 10-15% más de arena de lo calculado para cubrir imprevistos. Para una obra grande, consulta siempre con un aparejador o maestro de obras.'
+  },
+]}>
+  <MaterialesConstruccionTool client:load />
+</CalcLayout>

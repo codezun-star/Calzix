@@ -1,0 +1,33 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import DescuentoTool from '@/components/tools/DescuentoTool';
+---
+
+<CalcLayout slug="calculadora-descuento" faqs={[
+  {
+    q: '¿Cómo se calcula el precio final con descuento?',
+    a: 'El ahorro se obtiene multiplicando el precio original por el porcentaje de descuento y dividiendo entre 100. El precio con descuento es la diferencia entre el precio original y el ahorro. Si además activas la opción de IVA, el precio final se calcula aplicando el porcentaje de IVA sobre el precio ya descontado.'
+  },
+  {
+    q: '¿Por qué el IVA se aplica después del descuento?',
+    a: 'Según la normativa fiscal española, el IVA se aplica sobre la base imponible, que ya incluye los descuentos comerciales. Es decir, si un producto tiene un precio de 100 € con un descuento del 20%, la base sobre la que se calcula el IVA es 80 €, no 100 €. Esto beneficia al comprador porque paga menos IVA.'
+  },
+  {
+    q: '¿Puedo calcular descuentos encadenados (descuento sobre descuento)?',
+    a: 'Esta calculadora aplica un único descuento porcentual. Para descuentos encadenados (por ejemplo, 20% + 10% adicional), aplica el primero para obtener el precio intermedio e introdúcelo de nuevo en la calculadora para aplicar el segundo descuento.'
+  },
+  {
+    q: '¿Cuánto ahorro supone un descuento del 20% frente a uno del 30%?',
+    a: 'La diferencia no es lineal en euros, pero sí en porcentaje. En un producto de 200 €, un 20% ahorra 40 € y un 30% ahorra 60 €. El 30% no es un 50% más de ahorro que el 20%, sino un 50% más relativo. Usa la calculadora introduciendo el mismo precio con distintos porcentajes para comparar al instante.'
+  },
+  {
+    q: '¿Para qué sirve la opción de incluir IVA?',
+    a: 'Es útil cuando el precio original mostrado no incluye IVA (como suele ocurrir en facturas entre empresas o presupuestos de servicios) y quieres saber el coste total que acabarás pagando, incluyendo el impuesto, ya después de aplicar el descuento comercial.'
+  },
+  {
+    q: '¿Hay diferencia entre un descuento del 50% y pagar la mitad?',
+    a: 'No, son exactamente lo mismo. Un descuento del 50% significa que pagas la mitad del precio original. La calculadora lo confirma: un artículo de 80 € con 50% de descuento sale a 40 €, independientemente del precio de partida.'
+  },
+]}>
+  <DescuentoTool client:load />
+</CalcLayout>

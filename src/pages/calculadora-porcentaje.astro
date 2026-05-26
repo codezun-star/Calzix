@@ -1,0 +1,29 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import PorcentajeTool from '@/components/tools/PorcentajeTool';
+---
+
+<CalcLayout slug="calculadora-porcentaje" faqs={[
+  {
+    q: '¿Cómo calculo el porcentaje de un número?',
+    a: 'Para calcular el X% de un número N, multiplica N por X y divide entre 100. Por ejemplo, el 20% de 150 es 150 × 20 / 100 = 30.'
+  },
+  {
+    q: '¿Cómo sé qué porcentaje representa un valor respecto a un total?',
+    a: 'Divide el valor parcial entre el total y multiplica por 100. Por ejemplo, si tienes 25 de un total de 200, el porcentaje es 25 / 200 × 100 = 12,5%.'
+  },
+  {
+    q: '¿Cómo encuentro el total si conozco el valor y el porcentaje?',
+    a: 'Divide el valor entre el porcentaje expresado en decimal. Por ejemplo, si 60 es el 30% de un número, el total es 60 / 0,30 = 200.'
+  },
+  {
+    q: '¿Cuál es la diferencia entre descuento y porcentaje?',
+    a: 'El descuento es una aplicación del porcentaje: si algo cuesta 80 € y tiene un descuento del 15%, el descuento en euros es el 15% de 80 = 12 €, por lo que el precio final es 68 €.'
+  },
+  {
+    q: '¿Puedo calcular porcentajes con números decimales?',
+    a: 'Sí. La calculadora acepta números decimales tanto en el porcentaje como en el valor total. Puedes usar el punto o la coma como separador decimal.'
+  },
+]}>
+  <PorcentajeTool client:load />
+</CalcLayout>

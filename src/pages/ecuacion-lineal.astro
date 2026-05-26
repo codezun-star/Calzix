@@ -1,0 +1,29 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import EcuacionLinealTool from '@/components/tools/EcuacionLinealTool';
+---
+
+<CalcLayout slug="ecuacion-lineal" faqs={[
+  {
+    q: '¿Qué es una ecuación lineal de primer grado?',
+    a: 'Es una ecuación donde la incógnita x aparece con exponente 1, de la forma ax + b = c. La solución es siempre un único valor de x (siempre que a sea distinto de cero).'
+  },
+  {
+    q: '¿Por qué el coeficiente "a" no puede ser cero?',
+    a: 'Si a = 0, la ecuación deja de tener incógnita y se convierte en "b = c". En ese caso o es siempre verdadera (b = c) o nunca lo es (b ≠ c), pero no tiene solución para x.'
+  },
+  {
+    q: '¿Cómo se despeja x paso a paso?',
+    a: 'Partiendo de ax + b = c, primero se resta b en ambos lados para obtener ax = c − b, y luego se divide entre a para obtener x = (c − b) / a.'
+  },
+  {
+    q: '¿Qué hago si el resultado es un número muy largo?',
+    a: 'La calculadora muestra hasta 6 decimales. Si la solución es una fracción irreducible con muchos decimales, puedes usarla como decimal o expresarla como fracción manualmente.'
+  },
+  {
+    q: '¿Puedo usar esta calculadora para ecuaciones con decimales o negativos?',
+    a: 'Sí. Los tres campos aceptan números negativos y decimales. Por ejemplo, −2x + 3,5 = 10 se resuelve introduciendo a = −2, b = 3,5, c = 10.'
+  },
+]}>
+  <EcuacionLinealTool client:load />
+</CalcLayout>

@@ -1,0 +1,23 @@
+---
+import LegalLayout from '@/components/layout/LegalLayout.astro';
+import { SITE } from '@/lib/constants/seo';
+---
+
+<LegalLayout slug="contacto">
+  <h1>Contacto</h1>
+
+  <p>
+    Si tienes alguna sugerencia, has encontrado un error en alguna calculadora o quieres
+    proponer una nueva herramienta, escríbenos:
+  </p>
+
+  <p>
+    <a href={`mailto:${SITE.email}`} class="font-medium text-[var(--color-accent)]">
+      {SITE.email}
+    </a>
+  </p>
+
+  <p class="text-sm text-[var(--color-text-secondary)]">
+    Respondemos en un plazo de 1-2 días laborables.
+  </p>
+</LegalLayout>

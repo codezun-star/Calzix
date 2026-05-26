@@ -1,0 +1,67 @@
+---
+import Header from '@/components/layout/Header.astro';
+import Footer from '@/components/layout/Footer.astro';
+import HomeCalcs from '@/components/ui/HomeCalcs';
+import { PAGE_SEO, SITE } from '@/lib/constants/seo';
+import { CALCS } from '@/lib/constants/calcs';
+
+const seo = PAGE_SEO.home;
+const totalCalcs = CALCS.length;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{seo.title}</title>
+    <meta name="description" content={seo.description} />
+    <link rel="canonical" href={seo.canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <meta property="og:type"        content="website" />
+    <meta property="og:url"         content={seo.canonical} />
+    <meta property="og:title"       content={seo.title} />
+    <meta property="og:description" content={seo.description} />
+    <meta property="og:site_name"   content={SITE.name} />
+
+    <meta name="twitter:card"        content="summary" />
+    <meta name="twitter:title"       content={seo.title} />
+    <meta name="twitter:description" content={seo.description} />
+
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebApplication',
+      name: SITE.name,
+      description: SITE.description,
+      url: SITE.url,
+      applicationCategory: 'UtilitiesApplication',
+      operatingSystem: 'Any',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+    })} />
+
+    <link rel="stylesheet" href="/src/styles/global.css" />
+  </head>
+  <body class="bg-[var(--color-bg)]">
+    <Header />
+
+    <!-- Hero -->
+    <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 text-center">
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-[var(--color-text)] leading-tight tracking-tight">
+        Calculadoras online<br />gratuitas
+      </h1>
+      <p class="mt-4 text-lg text-[var(--color-text-secondary)] max-w-xl mx-auto">
+        {totalCalcs > 0
+          ? `${totalCalcs} calculadoras de matemáticas, ciencias, conversión y mucho más. Sin registro, resultados al instante.`
+          : 'Matemáticas, ciencias, conversión, hogar, trabajo, viaje y más. Sin registro, resultados al instante.'}
+      </p>
+    </section>
+
+    <!-- Grid de calculadoras -->
+    <div class="mx-auto max-w-7xl px-4 pb-20 sm:px-6">
+      <HomeCalcs />
+    </div>
+
+    <Footer />
+  </body>
+</html>

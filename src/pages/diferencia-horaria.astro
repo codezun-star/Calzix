@@ -1,0 +1,33 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import DiferenciaHorariaTool from '@/components/tools/DiferenciaHorariaTool';
+---
+
+<CalcLayout slug="diferencia-horaria" faqs={[
+  {
+    q: '¿Cómo funciona la calculadora de diferencia horaria?',
+    a: 'Introduces la hora en tu zona de origen y seleccionas tanto la zona origen como la zona destino. La herramienta calcula automáticamente la diferencia de offsets UTC y convierte tu hora local a la hora equivalente en el destino. El resultado se actualiza en tiempo real sin necesidad de pulsar ningún botón.'
+  },
+  {
+    q: '¿Qué es el offset UTC?',
+    a: 'El Tiempo Universal Coordinado (UTC) es la referencia global de tiempo a partir de la cual se definen todas las zonas horarias. Un offset de UTC+2 significa que esa zona va 2 horas por delante del UTC; UTC-5 va 5 horas por detrás. España peninsular está en UTC+1 (UTC+2 en horario de verano).'
+  },
+  {
+    q: '¿La calculadora tiene en cuenta el horario de verano?',
+    a: 'No. La herramienta usa offsets fijos y no aplica automáticamente el cambio de horario de verano (DST). Por eso encontrarás zonas como UTC+1 para Madrid/París, que en verano operarían en UTC+2. Para obtener la hora exacta en tiempo real, comprueba si el destino está actualmente en horario de verano y selecciona el offset correspondiente.'
+  },
+  {
+    q: '¿Qué significa "día siguiente" o "día anterior" en el resultado?',
+    a: 'Si la conversión horaria hace que la hora resultante supere las 23:59, significa que en el destino ya es el día siguiente. Si baja por debajo de las 00:00, en el destino aún es el día anterior. Esto es especialmente relevante cuando se programan videollamadas internacionales o se hacen reservas.'
+  },
+  {
+    q: '¿Por qué hay un offset de UTC+5:30 (Nueva Delhi)?',
+    a: 'India usa el Horario Estándar de India (IST), que es UTC+5:30 — es decir, 5 horas y 30 minutos por delante de UTC. Es uno de los pocos países del mundo que usa un offset de media hora. Nepal va incluso más lejos con UTC+5:45, aunque no está incluido en esta calculadora.'
+  },
+  {
+    q: '¿Cuál es la mayor diferencia horaria posible entre dos zonas?',
+    a: 'La diferencia máxima entre las zonas incluidas en esta calculadora es de 24 horas, entre UTC-12 (Línea Internacional de Cambio de Fecha, Samoa Americana) y UTC+12 (Auckland, Nueva Zelanda). En la práctica, cuando es medianoche del lunes en UTC-12, en UTC+12 ya es medianoche del martes.'
+  },
+]}>
+  <DiferenciaHorariaTool client:load />
+</CalcLayout>

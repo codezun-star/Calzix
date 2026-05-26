@@ -1,0 +1,33 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import IvaTool from '@/components/tools/IvaTool';
+---
+
+<CalcLayout slug="calculadora-iva" faqs={[
+  {
+    q: '¿Cuáles son los tipos de IVA en España?',
+    a: 'En España existen tres tipos de IVA: el tipo general del 21%, que se aplica a la mayoría de bienes y servicios; el tipo reducido del 10%, que afecta a alimentos no básicos, hostelería, transporte de viajeros y ciertos servicios; y el tipo superreducido del 4%, que aplica a alimentos básicos, libros, medicamentos y otros bienes de primera necesidad.'
+  },
+  {
+    q: '¿Qué diferencia hay entre añadir IVA y extraer IVA?',
+    a: 'Añadir IVA significa calcular el precio final partiendo de la base imponible (precio sin impuesto). Extraer IVA, en cambio, permite conocer la base imponible y la cuota de IVA cuando ya tienes el precio total con el impuesto incluido. Este segundo modo es útil para contabilidad o para saber cuánto IVA puedes deducir de una compra.'
+  },
+  {
+    q: '¿Qué es la base imponible?',
+    a: 'La base imponible es el precio del bien o servicio antes de aplicar el IVA. Es el importe sobre el que se calcula el porcentaje del impuesto. En una factura, la base imponible y la cuota de IVA siempre deben aparecer desglosadas por separado.'
+  },
+  {
+    q: '¿Puedo usar esta calculadora para hacer facturas?',
+    a: 'Sí, es ideal para verificar los importes de una factura antes de emitirla. Introduce la base imponible y el tipo de IVA aplicable y obtendrás la cuota exacta y el total. Recuerda que los importes en facturas oficiales se redondean a dos decimales, tal como muestra esta calculadora.'
+  },
+  {
+    q: '¿El IVA es el mismo en toda España?',
+    a: 'No exactamente. Las Islas Canarias no aplican el IVA estándar, sino el IGIC (Impuesto General Indirecto Canario), con tipos distintos. Ceuta y Melilla aplican el IPSI. Esta calculadora está diseñada para el régimen general del IVA peninsular y Baleares.'
+  },
+  {
+    q: '¿Cómo calculo el IVA de una cantidad con decimales?',
+    a: 'La calculadora admite cualquier importe con decimales. Simplemente escríbelo con coma o punto decimal (por ejemplo, 85,50) y selecciona el tipo correspondiente. El resultado se mostrará redondeado a dos decimales, igual que en una factura real.'
+  },
+]}>
+  <IvaTool client:load />
+</CalcLayout>

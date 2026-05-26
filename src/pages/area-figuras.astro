@@ -1,0 +1,29 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import AreaFigurasTool from '@/components/tools/AreaFigurasTool';
+---
+
+<CalcLayout slug="area-figuras" faqs={[
+  {
+    q: '¿Cómo se calcula el área de un círculo?',
+    a: 'El área de un círculo es π × r², donde r es el radio. Por ejemplo, un círculo de radio 5 tiene un área de π × 25 ≈ 78,54 unidades cuadradas.'
+  },
+  {
+    q: '¿Cuál es la diferencia entre área y perímetro?',
+    a: 'El área mide la superficie interior de una figura (en unidades cuadradas), mientras que el perímetro mide la longitud total del contorno exterior (en unidades lineales).'
+  },
+  {
+    q: '¿Por qué el triángulo solo muestra área y no perímetro?',
+    a: 'Con solo la base y la altura no es posible calcular el perímetro exacto, ya que los otros dos lados son desconocidos. Para el perímetro del triángulo necesitarías conocer los tres lados.'
+  },
+  {
+    q: '¿En qué unidades están los resultados?',
+    a: 'Los resultados se expresan en las mismas unidades que introduzcas. Si introduces medidas en metros, el área estará en m² y el perímetro en m. Asegúrate de usar unidades consistentes.'
+  },
+  {
+    q: '¿Cómo calculo el área de un trapecio?',
+    a: 'El área del trapecio es (base mayor + base menor) × altura / 2. Necesitas conocer las dos bases paralelas y la altura perpendicular entre ellas.'
+  },
+]}>
+  <AreaFigurasTool client:load />
+</CalcLayout>

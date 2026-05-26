@@ -1,0 +1,32 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ConvAngulosTool from '@/components/tools/ConvAngulosTool';
+---
+<CalcLayout slug="conversor-angulos" faqs={[
+  {
+    q: '¿Cuántos radianes tiene un ángulo de 180 grados?',
+    a: 'Un ángulo de 180 grados equivale exactamente a π radianes (aproximadamente 3,141593 rad). Es el ángulo de una línea recta y uno de los valores más importantes en trigonometría y matemáticas.'
+  },
+  {
+    q: '¿Qué es un radián?',
+    a: 'Un radián es la unidad de ángulo del Sistema Internacional (SI). Se define como el ángulo central de una circunferencia que abarca un arco de longitud igual al radio. Una vuelta completa equivale a 2π radianes (≈ 6,2832 rad).'
+  },
+  {
+    q: '¿Qué es un gradián y para qué se usa?',
+    a: 'El gradián (también llamado gon o grad) divide el ángulo recto en 100 partes iguales, por lo que una vuelta completa tiene 400 gradianes. Se usa principalmente en topografía, geodesia y levantamientos de terrenos, especialmente en Europa.'
+  },
+  {
+    q: '¿Cuántos grados tiene una vuelta completa?',
+    a: 'Una vuelta completa equivale a 360 grados, 2π radianes (≈ 6,2832 rad) o 400 gradianes. En el conversor puedes seleccionar "Vueltas completas" para convertir directamente entre este concepto y cualquier otra unidad de ángulo.'
+  },
+  {
+    q: '¿Por qué se usan radianes en matemáticas en lugar de grados?',
+    a: 'Los radianes simplifican muchas fórmulas matemáticas, especialmente en cálculo diferencial e integral. Las derivadas de las funciones trigonométricas (sin, cos) son más limpias en radianes. Además, el radián es la unidad natural del ángulo en el Sistema Internacional.'
+  },
+  {
+    q: '¿Cómo convierto grados, minutos y segundos a grados decimales?',
+    a: 'Para convertir DMS (grados, minutos, segundos) a grados decimales, usa la fórmula: grados + minutos/60 + segundos/3600. Por ejemplo, 45° 30\' 0" = 45 + 30/60 = 45,5°. Una vez en grados decimales, puedes usar este conversor para pasar a radianes u otras unidades.'
+  },
+]}>
+  <ConvAngulosTool client:load />
+</CalcLayout>

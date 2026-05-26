@@ -1,0 +1,33 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import AhorroEnergeticoTool from '@/components/tools/AhorroEnergeticoTool';
+---
+
+<CalcLayout slug="ahorro-energetico" faqs={[
+  {
+    q: '¿Qué significa la mejora de eficiencia?',
+    a: 'Es el porcentaje en que reduces tu consumo eléctrico respecto al actual. Por ejemplo, si instalas iluminación LED y estimas que consumes un 30% menos, introduces 30. La calculadora aplica esa reducción a tu consumo mensual y calcula el ahorro económico y medioambiental.'
+  },
+  {
+    q: '¿Cómo sé cuánto consumo en kWh al mes?',
+    a: 'Puedes consultarlo en tu factura de la luz, donde suele aparecer el consumo del período (normalmente bimestral). Divídelo entre 2 para obtener el mensual. También puedes consultarlo en la app o área privada de tu distribuidora eléctrica.'
+  },
+  {
+    q: '¿Qué precio de electricidad debo usar?',
+    a: 'El precio por kWh varía según tu tarifa y el tramo horario. En España el precio medio ronda los 0,15 €/kWh, aunque puede oscilar bastante con el mercado libre o la tarifa regulada PVPC. Mira tu última factura y divide el importe de energía entre los kWh consumidos.'
+  },
+  {
+    q: '¿Cómo se calcula el CO₂ evitado?',
+    a: 'Se usa el factor de emisión medio de la red eléctrica española, aproximadamente 0,233 kg de CO₂ por kWh consumido. Este valor varía anualmente según el mix energético del país, pero es una buena estimación orientativa para conocer el impacto medioambiental de tu ahorro.'
+  },
+  {
+    q: '¿Qué mejoras de eficiencia energética tienen mayor impacto?',
+    a: 'La calefacción y el agua caliente sanitaria representan más del 60% del consumo doméstico. Mejorar el aislamiento, instalar una bomba de calor o cambiar a LED son las medidas con mayor retorno. En el ámbito empresarial, la automatización del alumbrado y los motores de alta eficiencia también generan grandes ahorros.'
+  },
+  {
+    q: '¿La calculadora tiene en cuenta la tarifa por tramos horarios?',
+    a: 'No, trabaja con un precio medio por kWh. Si tienes una tarifa con discriminación horaria (valle, llano, punta), puedes calcular un precio promedio ponderado por tus horas de consumo habitual e introducirlo en el campo de precio.'
+  },
+]}>
+  <AhorroEnergeticoTool client:load />
+</CalcLayout>

@@ -1,0 +1,104 @@
+---
+const NAV_LINKS = [
+  { label: 'Matemáticas', href: '/matematicas' },
+  { label: 'Ciencias',    href: '/ciencias' },
+  { label: 'Conversión',  href: '/conversion' },
+  { label: 'Hogar',       href: '/hogar' },
+  { label: 'Trabajo',     href: '/trabajo' },
+  { label: 'Educación',   href: '/educacion' },
+  { label: 'Viaje',       href: '/viaje' },
+  { label: 'Naturaleza',  href: '/naturaleza' },
+  { label: 'Ocio',        href: '/ocio' },
+];
+---
+
+<header class="sticky top-0 z-50 border-b border-[var(--color-border)] bg-[var(--color-surface)]/95 backdrop-blur-sm">
+  <div class="mx-auto max-w-7xl px-4 py-3 sm:px-6">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2 font-extrabold text-[var(--color-text)] text-xl tracking-tight">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="7" fill="var(--color-accent)" />
+          <text x="14" y="20" text-anchor="middle" font-family="system-ui" font-weight="800" font-size="16" fill="white">C</text>
+        </svg>
+        Calzix
+      </a>
+
+      <!-- Nav desktop -->
+      <nav class="hidden md:flex items-center gap-1" aria-label="Categorías">
+        {NAV_LINKS.map(({ label, href }) => (
+          <a
+            href={href}
+            class="rounded-md px-3 py-1.5 text-sm font-medium text-[var(--color-text-secondary)] transition-colors hover:bg-[var(--color-accent-bg)] hover:text-[var(--color-text)]"
+          >
+            {label}
+          </a>
+        ))}
+      </nav>
+
+      <!-- Mobile menu button -->
+      <button
+        id="menu-btn"
+        class="flex md:hidden items-center justify-center rounded-md p-2 text-[var(--color-text-secondary)] hover:bg-[var(--color-accent-bg)] transition-colors"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <!-- Icono hamburguesa -->
+        <svg id="icon-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+        <!-- Icono X -->
+        <svg id="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <nav
+      id="mobile-menu"
+      class="hidden md:hidden pt-3 pb-2 border-t border-[var(--color-border)] mt-3"
+      aria-label="Categorías móvil"
+    >
+      <div class="grid grid-cols-2 gap-1">
+        {NAV_LINKS.map(({ label, href }) => (
+          <a
+            href={href}
+            class="rounded-md px-3 py-2.5 text-sm font-medium text-[var(--color-text-secondary)] transition-colors hover:bg-[var(--color-accent-bg)] hover:text-[var(--color-text)]"
+          >
+            {label}
+          </a>
+        ))}
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script is:inline>
+  const btn  = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen  = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+
+  btn.addEventListener('click', () => {
+    const isOpen = !menu.classList.contains('hidden');
+    menu.classList.toggle('hidden', isOpen);
+    btn.setAttribute('aria-expanded', String(!isOpen));
+    iconOpen.classList.toggle('hidden', !isOpen);
+    iconClose.classList.toggle('hidden', isOpen);
+  });
+
+  // Cerrar al navegar a otra página
+  menu.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      btn.setAttribute('aria-expanded', 'false');
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+    });
+  });
+</script>

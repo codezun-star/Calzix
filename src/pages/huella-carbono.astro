@@ -1,0 +1,33 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import HuellaCarbonTool from '@/components/tools/HuellaCarbonTool';
+---
+
+<CalcLayout slug="huella-carbono" faqs={[
+  {
+    q: '¿Qué es la huella de carbono personal?',
+    a: 'La huella de carbono personal es la cantidad total de gases de efecto invernadero, principalmente CO₂, que genera una persona a través de sus actividades cotidianas: transporte, consumo energético, alimentación y viajes. Se mide en kilogramos o toneladas de CO₂ equivalente al año.'
+  },
+  {
+    q: '¿Cuál es la huella de carbono media en España?',
+    a: 'La huella de carbono media de un ciudadano español ronda las 7-9 toneladas de CO₂ al año. Para cumplir con los objetivos climáticos del Acuerdo de París, sería necesario reducirla a menos de 2 toneladas por persona antes de 2050.'
+  },
+  {
+    q: '¿Por qué la dieta tiene tanto impacto en la huella de carbono?',
+    a: 'La producción de alimentos, especialmente la ganadería, genera grandes cantidades de metano y CO₂. Una dieta carnívora puede emitir hasta 2.500 kg de CO₂ al año, mientras que una dieta vegana se queda en torno a 900 kg, casi tres veces menos. Reducir el consumo de carne roja es una de las acciones individuales con mayor impacto.'
+  },
+  {
+    q: '¿Cómo puedo reducir mi huella de carbono?',
+    a: 'Las acciones más efectivas son: cambiar el coche de combustión por uno eléctrico o usar transporte público, reducir los vuelos (especialmente los de larga distancia), adoptar una dieta con menos carne, mejorar la eficiencia energética del hogar con aislamiento y electrodomésticos eficientes, y contratar electricidad de fuentes renovables.'
+  },
+  {
+    q: '¿Cuántos árboles hacen falta para compensar mi huella de carbono?',
+    a: 'Un árbol adulto absorbe aproximadamente 22 kg de CO₂ al año. Si tu huella anual es de 7 toneladas (7.000 kg), necesitarías plantar unos 318 árboles y mantenerlos durante décadas para compensarla. Por eso, plantar árboles es una medida complementaria, no sustituta de la reducción de emisiones.'
+  },
+  {
+    q: '¿El factor de emisión de la electricidad es el mismo en todos los países?',
+    a: 'No. El factor de 0,233 kg/kWh usado en esta calculadora corresponde al mix eléctrico español, que tiene una proporción significativa de energías renovables. En países con más carbón en su mix, como Polonia o Alemania, el factor puede superar 0,5 kg/kWh. En países con mucha hidroeléctrica o nuclear, puede ser inferior a 0,1 kg/kWh.'
+  },
+]}>
+  <HuellaCarbonTool client:load />
+</CalcLayout>

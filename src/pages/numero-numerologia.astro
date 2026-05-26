@@ -1,0 +1,33 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import NumerologiaTool from '@/components/tools/NumerologiaTool';
+---
+
+<CalcLayout slug="numero-numerologia" faqs={[
+  {
+    q: '¿Qué es el número del camino de vida en numerología?',
+    a: 'El número del camino de vida es el número más importante en la numerología. Se obtiene sumando todos los dígitos de la fecha de nacimiento completa (día, mes y año) y reduciéndolos a un solo dígito (excepto los llamados "números maestros": 11, 22 y 33). Se considera que este número refleja la energía, propósito y lecciones principales de una persona en esta vida.'
+  },
+  {
+    q: '¿Cómo se calcula el número del camino de vida?',
+    a: 'Se suman todos los dígitos de la fecha de nacimiento. Por ejemplo, para el 15 de marzo de 1990 (15/03/1990): 1+5+0+3+1+9+9+0 = 28. Como 28 es mayor que 9 y no es un número maestro, se sigue reduciendo: 2+8 = 10, luego 1+0 = 1. El número del camino de vida sería 1. Los números 11, 22 y 33 no se reducen más porque son números maestros.'
+  },
+  {
+    q: '¿Qué son los números maestros (11, 22, 33)?',
+    a: 'Los números maestros son considerados en numerología como vibraciones especialmente potentes que no se reducen a un solo dígito. El 11 se asocia con la intuición y la iluminación espiritual; el 22 con la capacidad de materializar grandes sueños y construir algo duradero; el 33 con la enseñanza compasiva y el servicio desinteresado. No todos los numerólogos reconocen el 33 como número maestro.'
+  },
+  {
+    q: '¿Tiene base científica la numerología?',
+    a: 'No. La numerología es una práctica esotérica y pseudocientífica sin respaldo empírico. No existe ninguna evidencia científica de que los números derivados de una fecha de nacimiento determinen la personalidad, el destino o las características de una persona. Esta calculadora se ofrece exclusivamente con fines de entretenimiento y curiosidad cultural.'
+  },
+  {
+    q: '¿Cuál es el origen de la numerología?',
+    a: 'La numerología tiene raíces en culturas antiguas como la griega, con Pitágoras (siglo VI a.C.) como figura central, aunque también aparece en tradiciones hebreas (Cabalá), chinas e indias. La numerología occidental moderna, la más extendida en Occidente, se basa principalmente en el sistema pitagórico, que asigna valores del 1 al 9 a las letras del alfabeto y a los números de la vida.'
+  },
+  {
+    q: '¿Hay diferencia entre el número del camino de vida y el número de la suerte?',
+    a: 'Sí. En numerología existen varios números personales, cada uno derivado de diferente forma. El número del camino de vida se calcula con la fecha de nacimiento y representa tu misión vital. El número de la suerte (o destino) se calcula a partir de las letras del nombre completo. El número del alma se obtiene solo de las vocales del nombre. Cada uno refleja un aspecto diferente según esta práctica.'
+  },
+]}>
+  <NumerologiaTool client:load />
+</CalcLayout>

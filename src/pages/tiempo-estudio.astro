@@ -1,0 +1,33 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import TiempoEstudioTool from '@/components/tools/TiempoEstudioTool';
+---
+
+<CalcLayout slug="tiempo-estudio" faqs={[
+  {
+    q: '¿Cómo funciona el cálculo del tiempo de estudio?',
+    a: 'La calculadora estima primero las horas de lectura inicial dividiendo el total de páginas (número de temas × páginas por tema) entre tu velocidad de lectura. Después añade las horas de repaso según el porcentaje que indiques. La suma de ambas es el tiempo total estimado.'
+  },
+  {
+    q: '¿Cuál es una velocidad de lectura normal para el estudio?',
+    a: 'La velocidad de lectura comprensiva de estudio suele situarse entre 15 y 25 páginas por hora, dependiendo de la densidad del contenido y del nivel de comprensión requerido. Para materia muy técnica (matemáticas, física, derecho) puede bajar a 10 páginas/hora, mientras que para textos más narrativos puede superar las 30.'
+  },
+  {
+    q: '¿Qué porcentaje de repaso debo añadir?',
+    a: 'Los expertos en técnicas de estudio recomiendan dedicar entre un 20% y un 40% del tiempo de lectura inicial a repasos y consolidación. Un 30% es un valor razonable para la mayoría de asignaturas. Para exámenes de alta exigencia memorística puede ser conveniente subir al 50%.'
+  },
+  {
+    q: '¿El resultado incluye la resolución de ejercicios o test?',
+    a: 'No. La calculadora estima el tiempo de lectura y repaso del material teórico. Si tu método de estudio incluye ejercicios, problemas o test de autoevaluación, deberías añadir ese tiempo de forma manual al resultado obtenido.'
+  },
+  {
+    q: '¿Cómo organizo el tiempo de estudio en días?',
+    a: 'La calculadora muestra cuántos días necesitas si estudias 2, 4 o 6 horas al día. Lo ideal es repartir el estudio de forma progresiva: empieza con sesiones cortas y ve aumentando la intensidad conforme se acerca el examen, respetando siempre descansos entre bloques de estudio (técnica Pomodoro: 25 min de estudio + 5 min de descanso).'
+  },
+  {
+    q: '¿Qué hago si me sale un número de horas muy elevado?',
+    a: 'Revisa el número de páginas por tema y la velocidad de lectura: puede que estés infraestimando tu velocidad o sobreestimando el volumen real. También puedes plantearte técnicas de lectura más eficientes (lectura activa, mapas conceptuales, resúmenes) que reducen el tiempo total manteniendo la comprensión.'
+  },
+]}>
+  <TiempoEstudioTool client:load />
+</CalcLayout>

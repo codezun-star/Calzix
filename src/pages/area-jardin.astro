@@ -1,0 +1,33 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import AreaJardinTool from '@/components/tools/AreaJardinTool';
+---
+
+<CalcLayout slug="area-jardin" faqs={[
+  {
+    q: '¿Para qué sirve calcular el área de mi jardín?',
+    a: 'Conocer el área te permite estimar cuántas plantas necesitas para cubrir el espacio, cuánto abono o sustrato debes comprar, cuánta agua de riego necesitarás semanalmente y cuánto costaría, por ejemplo, colocar césped o grava. Es el punto de partida para planificar cualquier proyecto de jardinería.'
+  },
+  {
+    q: '¿Qué densidad de siembra debo usar?',
+    a: 'Depende del tipo de planta. Para plantas de temporada o flores de bordura, 4-6 plantas/m² es habitual. Para arbustos medianos, 1-2/m². Para tapizantes como tomillo o lavanda, puede llegar a 9/m². Consulta las fichas de las plantas que quieras usar para obtener la densidad recomendada por el productor.'
+  },
+  {
+    q: '¿Cómo calculo el área si mi jardín no es una forma geométrica perfecta?',
+    a: 'Para formas irregulares, divide el espacio en secciones más simples (rectángulos o triángulos), calcula el área de cada una por separado y súmalas. También puedes usar la opción de triángulo para zonas con ángulos oblicuos. Para terrenos muy complejos, existen aplicaciones de mapeo que permiten trazar el perímetro.'
+  },
+  {
+    q: '¿La estimación de riego de 5 L/m² a la semana es válida para todo tipo de plantas?',
+    a: 'Es una estimación media para jardines de clima mediterráneo en verano con plantas de consumo moderado. Plantas de bajo consumo como la lavanda o el romero necesitan menos (2-3 L/m²/semana), mientras que especies tropicales o céspedes finos pueden requerir el doble o más. Ajusta el valor en función de tu clima y las plantas elegidas.'
+  },
+  {
+    q: '¿Cómo mido el radio de una zona circular del jardín?',
+    a: 'El radio es la distancia desde el centro hasta el borde exterior del círculo. Coloca una cinta métrica en el punto central y mide hasta el perímetro. Si solo sabes el diámetro (el ancho total), divídelo entre 2 para obtener el radio.'
+  },
+  {
+    q: '¿Puedo usar esta calculadora para estimar el coste de césped o grava?',
+    a: 'Sí. Una vez que tienes el área en m², multiplícala por el precio por m² del material (césped en rollo, grava, corteza...) que te haya dado el proveedor. La mayoría de los materiales de jardinería se venden por m² o por kg/m², así que el área es siempre el dato de partida.'
+  },
+]}>
+  <AreaJardinTool client:load />
+</CalcLayout>
