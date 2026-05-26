@@ -4,6 +4,7 @@ import Footer from './Footer.astro';
 import CalcCard from '@/components/ui/CalcCard';
 import { PAGE_SEO, SITE } from '@/lib/constants/seo';
 import { getGroupBySlug, type CalcMeta } from '@/lib/constants/calcs';
+import '@/styles/global.css';
 
 interface Props {
   groupSlug: string;
@@ -49,7 +50,6 @@ const nextUrl = page < totalPages ? `/${groupSlug}/${page + 1}` : null;
     <meta name="twitter:title"       content={title} />
     <meta name="twitter:description" content={description} />
 
-    <link rel="stylesheet" href="/src/styles/global.css" />
   </head>
   <body class="bg-[var(--color-bg)]">
     <Header />

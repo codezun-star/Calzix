@@ -2,6 +2,7 @@
 import Header from './Header.astro';
 import Footer from './Footer.astro';
 import { PAGE_SEO, SITE } from '@/lib/constants/seo';
+import '@/styles/global.css';
 
 interface Props {
   slug: string;
@@ -25,7 +26,6 @@ const canonical   = seo?.canonical   ?? `${SITE.url}/${slug}`;
     <link rel="canonical" href={canonical} />
     <meta name="robots" content="noindex, follow" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/src/styles/global.css" />
   </head>
   <body class="bg-[var(--color-bg)]">
     <Header />

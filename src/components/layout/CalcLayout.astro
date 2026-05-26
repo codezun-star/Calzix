@@ -3,6 +3,7 @@ import Header from './Header.astro';
 import Footer from './Footer.astro';
 import { PAGE_SEO, SITE } from '@/lib/constants/seo';
 import { getCalcBySlug, getRelatedCalcs, getDomainGroup } from '@/lib/constants/calcs';
+import '@/styles/global.css';
 
 interface Props {
   slug: string;
@@ -76,7 +77,6 @@ const appSchema = JSON.stringify({
     <script is:inline type="application/ld+json" set:html={appSchema} />
     {faqSchema && <script is:inline type="application/ld+json" set:html={faqSchema} />}
 
-    <link rel="stylesheet" href="/src/styles/global.css" />
   </head>
   <body class="bg-[var(--color-bg)]">
     <Header />

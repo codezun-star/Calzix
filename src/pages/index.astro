@@ -4,6 +4,7 @@ import Footer from '@/components/layout/Footer.astro';
 import HomeCalcs from '@/components/ui/HomeCalcs';
 import { PAGE_SEO, SITE } from '@/lib/constants/seo';
 import { CALCS } from '@/lib/constants/calcs';
+import '@/styles/global.css';
 
 const seo = PAGE_SEO.home;
 const totalCalcs = CALCS.length;
@@ -40,7 +41,6 @@ const totalCalcs = CALCS.length;
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
     })} />
 
-    <link rel="stylesheet" href="/src/styles/global.css" />
   </head>
   <body class="bg-[var(--color-bg)]">
     <Header />
