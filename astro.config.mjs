@@ -9,7 +9,15 @@ export default defineConfig({
   output: 'static',
   integrations: [
     react(),
-    sitemap(),
+    sitemap({
+      filter: (page) => ![
+        'https://calzix.com/privacidad/',
+        'https://calzix.com/terminos/',
+        'https://calzix.com/cookies/',
+        'https://calzix.com/aviso-legal/',
+        'https://calzix.com/contacto/',
+      ].includes(page),
+    }),
   ],
   vite: {
     plugins: [tailwindcss()],
