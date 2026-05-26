@@ -249,6 +249,60 @@ El índice general está en [CALCULADORAS.md](CALCULADORAS.md).
 
 ---
 
+## Regla crítica: importar CSS en el frontmatter, nunca con `<link>`
+
+En Astro, el CSS procesado por Vite (Tailwind v4) **nunca** se referencia con una etiqueta `<link>` en el `<head>`. La ruta `/src/styles/global.css` no existe en el build de producción.
+
+**Correcto — en el frontmatter de cualquier layout:**
+```astro
+---
+import '@/styles/global.css';
+---
+```
+
+**Incorrecto — rompe los estilos en producción:**
+```html
+<link rel="stylesheet" href="/src/styles/global.css" />
+```
+
+Los 4 layouts que importan el CSS son:
+- `src/pages/index.astro`
+- `src/components/layout/CalcLayout.astro`
+- `src/components/layout/GroupLayout.astro`
+- `src/components/layout/LegalLayout.astro`
+
+---
+
+## Sitemap
+
+El sitemap es **completamente automático** — generado por `@astrojs/sitemap` en cada build.
+
+- Cada nueva calculadora (nuevo `.astro` en `src/pages/`) aparece automáticamente en el siguiente deploy.
+- Las páginas de paginación (`/matematicas/2`, `/matematicas/3`…) también se incluyen solas.
+- Las páginas legales están **excluidas** del sitemap (filtro en `astro.config.mjs`) porque tienen `noindex`.
+- Límite: 50.000 URLs por archivo. Con 900+ calculadoras seguirá siendo un solo archivo.
+- URL del sitemap: `https://calzix.com/sitemap-index.xml`
+
+No hace falta tocar `astro.config.mjs` al añadir calculadoras.
+
+---
+
+## Repositorio y deploy
+
+| Recurso | URL |
+|---|---|
+| GitHub | https://github.com/codezun-star/Calzix |
+| Deploy | Cloudflare Pages — `calzix.pages.dev` |
+| Dominio producción | https://calzix.com |
+
+**Flujo de trabajo:**
+1. Desarrollar en local con `npm run dev`
+2. Verificar build con `npm run build` (debe terminar sin errores)
+3. `git add` de los archivos modificados → `git commit` → `git push origin main`
+4. Cloudflare Pages detecta el push y redespliega automáticamente (~1-2 min)
+
+---
+
 ## Comandos
 
 ```bash

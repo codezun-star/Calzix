@@ -59,3 +59,38 @@
 ## Próximo número de serie
 
 Al agregar una nueva calculadora, el número siguiente es **#49**.
+
+---
+
+## Slugs en uso (referencia rápida para evitar duplicados)
+
+```
+calculadora-porcentaje   ecuacion-lineal          area-figuras
+media-mediana-moda       seno-coseno              probabilidad-simple
+velocidad-distancia-tiempo  concentracion-molar
+conversor-longitud       conversor-peso           conversor-temperatura
+conversor-velocidad      conversor-area           conversor-volumen
+conversor-energia        conversor-presion        conversor-tiempo
+conversor-datos          conversor-angulos        conversor-monedas
+materiales-construccion  calculadora-pintura      consumo-electrico
+calculadora-hipoteca     ahorro-energetico        area-jardin
+calculadora-iva          calculadora-descuento    calculadora-nomina
+calculadora-productividad  calculadora-propina
+nota-media               calculadora-beca         tiempo-estudio
+velocidad-lectura
+consumo-combustible      calculadora-distancia    diferencia-horaria
+peso-equipaje            coste-viaje
+huella-carbono           consumo-agua             ahorro-solar
+calculadora-reciclaje
+test-compatibilidad      numeros-suerte           numero-numerologia
+calculadora-sueno
+```
+
+---
+
+## Notas de arquitectura
+
+- **Paginación automática**: cuando una categoría supere 12 calculadoras, `src/pages/[grupo]/[pagina].astro` genera las páginas adicionales sin intervención manual.
+- **Sitemap automático**: cada slug nuevo aparece en el sitemap en el siguiente build/deploy.
+- **Iconos Lucide**: registrar cada icono nuevo en `src/components/ui/CalcCard.tsx` (import + entrada en `ICONS`).
+- **SEO**: añadir entrada en `src/lib/constants/seo.ts` con `title`, `description` y `canonical` para cada calculadora.
