@@ -124,6 +124,7 @@ Paleta verde-blanquiza animada:
 4. **Cada calculadora es un componente React independiente** en `src/components/tools/`. Se monta con `client:load`.
 5. **`formatNumber()`, `formatCurrency()`, `formatPercent()`** solo desde `src/lib/utils/format.ts`.
 6. **`triggerDownload()` / `downloadText()` / `downloadCsv()`** solo desde `src/lib/utils/download.ts`.
+7. **Todas las URLs sin trailing slash.** Nunca crear rutas ni enlaces con `/` al final. El sitio usa `trailingSlash: 'never'` en `astro.config.mjs` y `build.format: 'file'` (genera `page.html`, no `page/index.html`). Cloudflare Pages redirige automáticamente `/page/` → `/page` (301) vía `public/_redirects`. Cualquier enlace interno con slash final romperá el canonical y generará un redirect innecesario.
 
 ### Patrón estándar de calculadora
 
