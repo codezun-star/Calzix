@@ -17,7 +17,7 @@ export const PAGE_SEO: Record<string, PageSEO> = {
   home: {
     title: 'Calzix — Calculadoras online gratuitas',
     description: 'Más de 50 calculadoras gratuitas: hipotecas, IMC, porcentajes, conversión de unidades y mucho más. Sin registro, al instante.',
-    canonical: 'https://calzix.com/',
+    canonical: 'https://calzix.com',
   },
   privacidad: {
     title: 'Política de privacidad — Calzix',

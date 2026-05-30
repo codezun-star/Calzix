@@ -313,3 +313,11 @@ npm run preview  # Preview del build local
 
 **El build genera actualmente 63 páginas HTML estáticas** (home + 5 legales + 9 categorías + 48 calculadoras).
 Actualizar este contador al añadir calculadoras.
+
+---
+
+## Registro de cambios
+
+| Fecha | Acción |
+|---|---|
+| 2026-05-29 | SEO/URLs: `trailingSlash: 'never'` en `astro.config.mjs`. Canonical del home corregida en `seo.ts` (`calzix.com/` → `calzix.com`). URLs del filtro de sitemap actualizadas sin slash final. Redirect 301 `/*/→/:splat` en `public/_redirects` (Cloudflare Pages) para normalizar URLs con slash final. |
