@@ -8,6 +8,9 @@ export default defineConfig({
   site: 'https://calzix.com',
   output: 'static',
   trailingSlash: 'never',
+  build: {
+    format: 'file',
+  },
   integrations: [
     react(),
     sitemap({
