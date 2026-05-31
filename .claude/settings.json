@@ -20,7 +20,15 @@
       "PowerShell(ls 'c:\\\\Users\\\\Jose\\\\calzix\\\\dist' | Where-Object { $_.Name -match 'calculadora|conversor' } | Select-Object -First 10)",
       "Bash(node fix-encoding.js)",
       "Bash(node fix-encoding.mjs)",
-      "Bash(git commit -m 'fix: Corregir codificación UTF-8 en todos los archivos .astro \\(178 páginas\\) *)"
+      "Bash(git commit -m 'fix: Corregir codificación UTF-8 en todos los archivos .astro \\(178 páginas\\) *)",
+      "Bash(timeout 20 bash -c 'until curl -s http://localhost:4321 >/dev/null 2>&1; do sleep 1; done')",
+      "Bash(curl -s http://localhost:4321/calculadora-descuento)",
+      "Bash(node expand-faqs-final.mjs)",
+      "Bash(git checkout *)",
+      "Bash(node expand-faqs-safe.mjs)",
+      "Bash(node expand-all-faqs.mjs)",
+      "Bash(node expand-all-faqs-universal.mjs)",
+      "Bash(git commit -m 'feat: Expandir respuestas de FAQs para mejorar SEO \\(respuestas más largas\\) *)"
     ],
     "additionalDirectories": [
       "C:\\Users\\Jose\\calzix",
