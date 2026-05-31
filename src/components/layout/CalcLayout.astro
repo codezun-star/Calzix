@@ -1,8 +1,6 @@
 ---
-import Header from './Header.astro';
-import Footer from './Footer.astro';
 import { PAGE_SEO, SITE } from '@/lib/constants/seo';
-import { getCalcBySlug, getRelatedCalcs, getDomainGroup } from '@/lib/constants/calcs';
+import { getCalcBySlug, getRelatedCalcs, getDomainGroup, CALC_GROUPS } from '@/lib/constants/calcs';
 import '@/styles/global.css';
 
 interface Props {
@@ -12,8 +10,8 @@ interface Props {
 
 const { slug, faqs = [] } = Astro.props;
 
-const seo   = PAGE_SEO[slug];
-const calc  = getCalcBySlug(slug);
+const seo     = PAGE_SEO[slug];
+const calc    = getCalcBySlug(slug);
 const related = getRelatedCalcs(slug);
 
 const title       = seo?.title       ?? `${calc?.name ?? slug} — ${SITE.name}`;
@@ -49,6 +47,18 @@ const appSchema = JSON.stringify({
   operatingSystem: 'Any',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
 });
+
+const GROUP_TABLER: Record<string, string> = {
+  matematicas: 'ti-math-function',
+  ciencias:    'ti-atom',
+  conversion:  'ti-arrows-exchange',
+  hogar:       'ti-home',
+  trabajo:     'ti-briefcase',
+  educacion:   'ti-school',
+  viaje:       'ti-plane',
+  naturaleza:  'ti-leaf',
+  ocio:        'ti-puzzle',
+};
 ---
 
 <!doctype html>
@@ -60,6 +70,12 @@ const appSchema = JSON.stringify({
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <!-- Tabler Icons webfont (sidebar icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
 
     <!-- OpenGraph -->
     <meta property="og:type"        content="website" />
@@ -76,67 +92,215 @@ const appSchema = JSON.stringify({
     <!-- JSON-LD -->
     <script is:inline type="application/ld+json" set:html={appSchema} />
     {faqSchema && <script is:inline type="application/ld+json" set:html={faqSchema} />}
-
   </head>
-  <body class="bg-[var(--color-bg)]">
-    <Header />
 
-    <main class="mx-auto max-w-3xl px-4 py-10 sm:px-6">
-      <!-- Breadcrumb -->
-      <nav class="mb-6 flex items-center gap-1.5 text-sm text-[var(--color-text-muted)]" aria-label="Ruta">
-        {breadcrumb.map(({ name, href }, i) => (
-          <>
-            {i > 0 && <span aria-hidden="true">/</span>}
-            {i < breadcrumb.length - 1
-              ? <a href={href} class="hover:text-[var(--color-text)] transition-colors">{name}</a>
-              : <span class="text-[var(--color-text-secondary)]">{name}</span>
-            }
-          </>
-        ))}
+  <body style="margin:0;padding:0;background:#EDE8DF;">
+
+    <!-- ── Sticky topbar ──────────────────────────────────────── -->
+    <header class="rt-topbar" style="position:sticky;top:0;z-index:100;">
+      <div class="rt-traffic">
+        <span class="rt-dot rt-dot--red"></span>
+        <span class="rt-dot rt-dot--yellow"></span>
+        <span class="rt-dot rt-dot--green"></span>
+      </div>
+
+      <a href="/" class="rt-logo">⊞ Calzix</a>
+
+      <div style="flex:1;"></div>
+
+      <!-- Mobile hamburger -->
+      <button id="calc-ham" class="rt-hamburger" aria-label="Abrir menú" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+
+      <span id="calc-clock" class="rt-clock"></span>
+    </header>
+
+    <!-- ── Body row ────────────────────────────────────────────── -->
+    <div style="display:flex;min-height:calc(100vh - 36px);position:relative;">
+
+      <!-- Mobile overlay -->
+      <div id="calc-overlay" class="rt-overlay" aria-hidden="true"></div>
+
+      <!-- Static sidebar (sticky on desktop, slide-in on mobile) -->
+      <nav
+        id="calc-sidebar"
+        class="rt-sidebar"
+        style="position:sticky;top:36px;height:calc(100vh - 36px);overflow-y:auto;"
+        aria-label="Categorías"
+      >
+        {CALC_GROUPS.map((g) => {
+          const isActive = g.id === group?.id;
+          return (
+            <a
+              href={`/${g.slug}`}
+              class={`rt-nav-item${isActive ? ' rt-nav-item--active' : ''}`}
+              aria-current={isActive ? 'page' : undefined}
+            >
+              <i
+                class={`ti ${GROUP_TABLER[g.id] ?? 'ti-calculator'} rt-nav-icon`}
+                aria-hidden="true"
+              ></i>
+              <span class="rt-nav-label">{g.label}</span>
+            </a>
+          );
+        })}
       </nav>
 
-      <!-- Título de la calculadora -->
-      {calc && (
-        <h1 class="mb-2 text-3xl font-extrabold text-[var(--color-text)]">{calc.name}</h1>
-        <p class="mb-8 text-[var(--color-text-secondary)]">{calc.longDescription}</p>
-      )}
+      <!-- Main content -->
+      <main class="rt-main" style="flex:1;">
 
-      <!-- Componente React de la calculadora -->
-      <slot />
+        <!-- Breadcrumb -->
+        <nav
+          aria-label="Ruta"
+          style="display:flex;align-items:center;gap:6px;font-size:12px;color:#999;margin-bottom:16px;flex-wrap:wrap;"
+        >
+          {breadcrumb.map(({ name, href }, i) => (
+            <>
+              {i > 0 && <span aria-hidden="true" style="color:#D5D2CA;">/</span>}
+              {i < breadcrumb.length - 1
+                ? <a href={href} class="rt-bc-link">{name}</a>
+                : <span style="color:#6b6860;">{name}</span>
+              }
+            </>
+          ))}
+        </nav>
 
-      <!-- Calculadoras relacionadas -->
-      {related.length > 0 && (
-        <section class="mt-14">
-          <h2 class="mb-4 text-lg font-bold text-[var(--color-text)]">Calculadoras relacionadas</h2>
-          <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
-            {related.map((r) => (
-              <a
-                href={`/${r.slug}`}
-                class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4 text-sm font-medium text-[var(--color-text-secondary)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-text)]"
-              >
-                {r.name}
-              </a>
-            ))}
+        <!-- H1 — no se modifica (instrucción: no tocar H1) -->
+        {calc && (
+          <>
+            <h1 style="font-size:22px;font-weight:700;color:#1a1a18;margin:0 0 6px;">{calc.name}</h1>
+            <p style="font-size:14px;color:#6b6860;line-height:1.55;margin:0 0 24px;">{calc.longDescription}</p>
+          </>
+        )}
+
+        <!-- Calculator React island -->
+        <slot />
+
+        <!-- Related calculators -->
+        {related.length > 0 && (
+          <section>
+            <h2 class="rt-section-title">Calculadoras relacionadas</h2>
+            <div class="rt-related-grid">
+              {related.map((r) => (
+                <a href={`/${r.slug}`} class="rt-related-card">{r.name}</a>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <!-- FAQs -->
+        {faqs.length > 0 && (
+          <section>
+            <h2 class="rt-section-title">Preguntas frecuentes</h2>
+            <dl class="rt-faq-list">
+              {faqs.map(({ q, a }) => (
+                <div class="rt-faq-item">
+                  <dt class="rt-faq-q">{q}</dt>
+                  <dd class="rt-faq-a">{a}</dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+        )}
+
+        <!-- Minimal footer -->
+        <footer class="rt-page-footer">
+          <p class="rt-page-footer-text">© {new Date().getFullYear()} {SITE.name}</p>
+          <div class="rt-page-footer-links">
+            <a href="/privacidad" class="rt-page-footer-link">Privacidad</a>
+            <a href="/terminos"   class="rt-page-footer-link">Términos</a>
+            <a href="/contacto"   class="rt-page-footer-link">Contacto</a>
           </div>
-        </section>
-      )}
+        </footer>
+      </main>
+    </div>
 
-      <!-- FAQs -->
-      {faqs.length > 0 && (
-        <section class="mt-14">
-          <h2 class="mb-6 text-lg font-bold text-[var(--color-text)]">Preguntas frecuentes</h2>
-          <dl class="space-y-4">
-            {faqs.map(({ q, a }) => (
-              <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5">
-                <dt class="font-semibold text-[var(--color-text)]">{q}</dt>
-                <dd class="mt-1.5 text-sm text-[var(--color-text-secondary)]">{a}</dd>
-              </div>
-            ))}
-          </dl>
-        </section>
-      )}
-    </main>
+    <!-- ── Modo iframe: oculta shell cuando la página se embebe en una ventana ── -->
+    <script is:inline>
+      (function () {
+        if (window.self === window.top) return; // no estamos en iframe, salir
+        function stripShell() {
+          var topbar  = document.querySelector('.rt-topbar');
+          var sidebar = document.getElementById('calc-sidebar');
+          var overlay = document.getElementById('calc-overlay');
+          var ham     = document.getElementById('calc-ham');
+          [topbar, sidebar, overlay, ham].forEach(function (el) {
+            if (el) el.style.display = 'none';
+          });
+          // El body y la fila del layout se ajustan para llenar el iframe
+          document.body.style.background = '#F5F3EC';
+          var row = document.querySelector('body > div');
+          if (row) { row.style.minHeight = '100%'; row.style.paddingTop = '0'; }
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', stripShell);
+        } else {
+          stripShell();
+        }
+      })();
+    </script>
 
-    <Footer />
+    <!-- ── Scripts ─────────────────────────────────────────────── -->
+    <script is:inline>
+      // Live clock
+      (function () {
+        var el = document.getElementById('calc-clock');
+        function tick() {
+          if (el) {
+            el.textContent = new Date().toLocaleTimeString('es-ES', {
+              hour: '2-digit', minute: '2-digit', second: '2-digit',
+            });
+          }
+        }
+        tick();
+        setInterval(tick, 1000);
+      })();
+
+      // Mobile sidebar toggle
+      (function () {
+        var ham     = document.getElementById('calc-ham');
+        var sidebar = document.getElementById('calc-sidebar');
+        var overlay = document.getElementById('calc-overlay');
+        var isOpen  = false;
+
+        function openSidebar() {
+          isOpen = true;
+          sidebar.classList.add('rt-sidebar--open');
+          overlay.classList.add('rt-overlay--open');
+          ham.setAttribute('aria-expanded', 'true');
+        }
+        function closeSidebar() {
+          isOpen = false;
+          sidebar.classList.remove('rt-sidebar--open');
+          overlay.classList.remove('rt-overlay--open');
+          ham.setAttribute('aria-expanded', 'false');
+        }
+
+        if (ham)     ham.addEventListener('click', function () { isOpen ? closeSidebar() : openSidebar(); });
+        if (overlay) overlay.addEventListener('click', closeSidebar);
+      })();
+    </script>
+
+    <style>
+      .rt-bc-link {
+        color: #999;
+        text-decoration: none;
+        transition: color 0.1s;
+      }
+      .rt-bc-link:hover { color: #1a1a18; }
+
+      /* On mobile the sidebar is positioned fixed — compensate for topbar */
+      @media (max-width: 767px) {
+        #calc-sidebar {
+          top: 36px !important;
+          height: calc(100vh - 36px) !important;
+        }
+      }
+    </style>
   </body>
 </html>

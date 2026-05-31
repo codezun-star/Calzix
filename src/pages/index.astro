@@ -1,13 +1,9 @@
 ---
-import Header from '@/components/layout/Header.astro';
-import Footer from '@/components/layout/Footer.astro';
-import HomeCalcs from '@/components/ui/HomeCalcs';
+import AppShell from '@/components/ui/AppShell';
 import { PAGE_SEO, SITE } from '@/lib/constants/seo';
-import { CALCS } from '@/lib/constants/calcs';
 import '@/styles/global.css';
 
 const seo = PAGE_SEO.home;
-const totalCalcs = CALCS.length;
 ---
 
 <!doctype html>
@@ -20,16 +16,25 @@ const totalCalcs = CALCS.length;
     <link rel="canonical" href={seo.canonical} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
+    <!-- Tabler Icons webfont (sidebar icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+
+    <!-- OpenGraph -->
     <meta property="og:type"        content="website" />
     <meta property="og:url"         content={seo.canonical} />
     <meta property="og:title"       content={seo.title} />
     <meta property="og:description" content={seo.description} />
     <meta property="og:site_name"   content={SITE.name} />
 
+    <!-- Twitter -->
     <meta name="twitter:card"        content="summary" />
     <meta name="twitter:title"       content={seo.title} />
     <meta name="twitter:description" content={seo.description} />
 
+    <!-- JSON-LD -->
     <script is:inline type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'WebApplication',
@@ -40,28 +45,9 @@ const totalCalcs = CALCS.length;
       operatingSystem: 'Any',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
     })} />
-
   </head>
-  <body class="bg-[var(--color-bg)]">
-    <Header />
 
-    <!-- Hero -->
-    <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 text-center">
-      <h1 class="text-4xl sm:text-5xl font-extrabold text-[var(--color-text)] leading-tight tracking-tight">
-        Calculadoras online<br />gratuitas
-      </h1>
-      <p class="mt-4 text-lg text-[var(--color-text-secondary)] max-w-xl mx-auto">
-        {totalCalcs > 0
-          ? `${totalCalcs} calculadoras de matemáticas, ciencias, conversión y mucho más. Sin registro, resultados al instante.`
-          : 'Matemáticas, ciencias, conversión, hogar, trabajo, viaje y más. Sin registro, resultados al instante.'}
-      </p>
-    </section>
-
-    <!-- Grid de calculadoras -->
-    <div class="mx-auto max-w-7xl px-4 pb-20 sm:px-6">
-      <HomeCalcs />
-    </div>
-
-    <Footer />
+  <body style="margin:0;padding:0;background:#EDE8DF;">
+    <AppShell client:load initialGroup="matematicas" />
   </body>
 </html>

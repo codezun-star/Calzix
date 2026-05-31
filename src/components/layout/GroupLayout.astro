@@ -1,19 +1,17 @@
 ---
-import Header from './Header.astro';
-import Footer from './Footer.astro';
-import CalcCard from '@/components/ui/CalcCard';
+import AppShell from '@/components/ui/AppShell';
 import { PAGE_SEO, SITE } from '@/lib/constants/seo';
-import { getGroupBySlug, type CalcMeta } from '@/lib/constants/calcs';
+import { getGroupBySlug } from '@/lib/constants/calcs';
 import '@/styles/global.css';
 
 interface Props {
   groupSlug: string;
-  calcs: CalcMeta[];
+  calcs: import('@/lib/constants/calcs').CalcMeta[];
   page: number;
   totalPages: number;
 }
 
-const { groupSlug, calcs, page, totalPages } = Astro.props;
+const { groupSlug, page, totalPages } = Astro.props;
 
 const group = getGroupBySlug(groupSlug);
 const seo   = PAGE_SEO[groupSlug];
@@ -24,7 +22,7 @@ const baseTitle   = seo?.title ?? `${group?.label ?? groupSlug} — ${SITE.name}
 const title       = page === 1 ? baseTitle : baseTitle.replace(' —', ` — Página ${page} —`);
 const description = seo?.description ?? group?.description ?? SITE.description;
 
-const prevUrl = page > 1       ? (page === 2 ? `/${groupSlug}` : `/${groupSlug}/${page - 1}`) : null;
+const prevUrl = page > 1        ? (page === 2 ? `/${groupSlug}` : `/${groupSlug}/${page - 1}`) : null;
 const nextUrl = page < totalPages ? `/${groupSlug}/${page + 1}` : null;
 ---
 
@@ -40,103 +38,26 @@ const nextUrl = page < totalPages ? `/${groupSlug}/${page + 1}` : null;
     {prevUrl && <link rel="prev" href={`${SITE.url}${prevUrl}`} />}
     {nextUrl && <link rel="next" href={`${SITE.url}${nextUrl}`} />}
 
+    <!-- Tabler Icons webfont (sidebar icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
+
+    <!-- OpenGraph -->
     <meta property="og:type"        content="website" />
     <meta property="og:url"         content={canonical} />
     <meta property="og:title"       content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:site_name"   content={SITE.name} />
 
+    <!-- Twitter -->
     <meta name="twitter:card"        content="summary" />
     <meta name="twitter:title"       content={title} />
     <meta name="twitter:description" content={description} />
-
   </head>
-  <body class="bg-[var(--color-bg)]">
-    <Header />
 
-    <main class="mx-auto max-w-7xl px-4 py-10 sm:px-6">
-      <!-- Breadcrumb -->
-      <nav class="mb-6 flex items-center gap-1.5 text-sm text-[var(--color-text-muted)]" aria-label="Ruta">
-        <a href="/" class="hover:text-[var(--color-text)] transition-colors">{SITE.name}</a>
-        <span aria-hidden="true">/</span>
-        <span class="text-[var(--color-text-secondary)]">{group?.label ?? groupSlug}</span>
-        {page > 1 && (
-          <>
-            <span aria-hidden="true">/</span>
-            <span class="text-[var(--color-text-secondary)]">Página {page}</span>
-          </>
-        )}
-      </nav>
-
-      <!-- Título -->
-      <h1 class="mb-2 text-3xl font-extrabold text-[var(--color-text)]">
-        {group?.label}{page > 1 && ` — Página ${page}`}
-      </h1>
-      {page === 1 && group?.description && (
-        <p class="mb-10 text-[var(--color-text-secondary)] max-w-2xl">{group.description}</p>
-      )}
-      {page > 1 && <div class="mb-10" />}
-
-      <!-- Grid -->
-      {calcs.length > 0 ? (
-        <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-          {calcs.map((calc) => (
-            <CalcCard calc={calc} />
-          ))}
-        </div>
-      ) : (
-        <p class="text-sm text-[var(--color-text-muted)]">Próximamente.</p>
-      )}
-
-      <!-- Paginación -->
-      {totalPages > 1 && (
-        <nav class="mt-12 flex items-center justify-center gap-2" aria-label="Paginación">
-          {prevUrl ? (
-            <a
-              href={prevUrl}
-              class="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] text-sm font-medium text-[var(--color-text-secondary)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
-              aria-label="Página anterior"
-            >
-              &larr;
-            </a>
-          ) : (
-            <span class="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] text-sm text-[var(--color-text-muted)] opacity-40 cursor-not-allowed">
-              &larr;
-            </span>
-          )}
-
-          {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
-            <a
-              href={p === 1 ? `/${groupSlug}` : `/${groupSlug}/${p}`}
-              class={[
-                'flex h-9 w-9 items-center justify-center rounded-lg border text-sm font-medium transition-colors',
-                p === page
-                  ? 'border-[var(--color-accent)] bg-[var(--color-accent)] text-white'
-                  : 'border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-text-secondary)] hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]',
-              ].join(' ')}
-              aria-current={p === page ? 'page' : undefined}
-            >
-              {p}
-            </a>
-          ))}
-
-          {nextUrl ? (
-            <a
-              href={nextUrl}
-              class="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] text-sm font-medium text-[var(--color-text-secondary)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
-              aria-label="Página siguiente"
-            >
-              &rarr;
-            </a>
-          ) : (
-            <span class="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] text-sm text-[var(--color-text-muted)] opacity-40 cursor-not-allowed">
-              &rarr;
-            </span>
-          )}
-        </nav>
-      )}
-    </main>
-
-    <Footer />
+  <body style="margin:0;padding:0;background:#EDE8DF;">
+    <AppShell client:load initialGroup={groupSlug} />
   </body>
 </html>
