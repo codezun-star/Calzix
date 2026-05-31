@@ -28,7 +28,8 @@
       "Bash(node expand-faqs-safe.mjs)",
       "Bash(node expand-all-faqs.mjs)",
       "Bash(node expand-all-faqs-universal.mjs)",
-      "Bash(git commit -m 'feat: Expandir respuestas de FAQs para mejorar SEO \\(respuestas más largas\\) *)"
+      "Bash(git commit -m 'feat: Expandir respuestas de FAQs para mejorar SEO \\(respuestas más largas\\) *)",
+      "Bash(git commit -m 'chore: Eliminar archivos de scripts temporales *)"
     ],
     "additionalDirectories": [
       "C:\\Users\\Jose\\calzix",
