@@ -29,7 +29,9 @@
       "Bash(node expand-all-faqs.mjs)",
       "Bash(node expand-all-faqs-universal.mjs)",
       "Bash(git commit -m 'feat: Expandir respuestas de FAQs para mejorar SEO \\(respuestas más largas\\) *)",
-      "Bash(git commit -m 'chore: Eliminar archivos de scripts temporales *)"
+      "Bash(git commit -m 'chore: Eliminar archivos de scripts temporales *)",
+      "Bash(rm -f generate-all-calcs.ps1 generate-calcs-entries.ps1 generate-calcs.ps1 complete-all-metadata.ps1 complete-metadata.ps1)",
+      "Bash(git commit -m 'chore: Eliminar scripts de generación/completado antiguos *)"
     ],
     "additionalDirectories": [
       "C:\\Users\\Jose\\calzix",
