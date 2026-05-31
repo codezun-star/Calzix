@@ -9,7 +9,10 @@
       "Bash(curl -s http://localhost:4321)",
       "Bash(pkill -f \"npm run dev\")",
       "Bash(git commit -m 'audit: completar auditoría de 132 calculadoras nuevas - FASE 1 EXITOSA *)",
-      "Bash(git commit -m 'feat: completar 132 nuevas calculadoras - TODO EL PROCESO FINALIZADO *)"
+      "Bash(git commit -m 'feat: completar 132 nuevas calculadoras - TODO EL PROCESO FINALIZADO *)",
+      "Bash(cd \"c:\\\\Users\\\\Jose\\\\calzix\" && ls src/pages/*.astro | sed 's/.*\\\\///;s/\\\\.astro//' | sort | tail -92 > /tmp/missing_slugs.txt && head -20 /tmp/missing_slugs.txt)",
+      "Read(//tmp/**)",
+      "Bash(git commit -m 'feat: PROYECTO COMPLETADO AL 100% - 180 CALCULADORAS TOTALES *)"
     ],
     "additionalDirectories": [
       "C:\\Users\\Jose\\calzix",
