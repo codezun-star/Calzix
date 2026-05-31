@@ -5,7 +5,11 @@
       "Bash(dir \"C:\\\\Users\\\\Jose\\\\calzix\\\\src\\\\pages\")",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4321/)",
       "Bash(npx playwright *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(curl -s http://localhost:4321)",
+      "Bash(pkill -f \"npm run dev\")",
+      "Bash(git commit -m 'audit: completar auditoría de 132 calculadoras nuevas - FASE 1 EXITOSA *)",
+      "Bash(git commit -m 'feat: completar 132 nuevas calculadoras - TODO EL PROCESO FINALIZADO *)"
     ],
     "additionalDirectories": [
       "C:\\Users\\Jose\\calzix",
