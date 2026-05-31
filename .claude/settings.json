@@ -12,7 +12,8 @@
       "Bash(git commit -m 'feat: completar 132 nuevas calculadoras - TODO EL PROCESO FINALIZADO *)",
       "Bash(cd \"c:\\\\Users\\\\Jose\\\\calzix\" && ls src/pages/*.astro | sed 's/.*\\\\///;s/\\\\.astro//' | sort | tail -92 > /tmp/missing_slugs.txt && head -20 /tmp/missing_slugs.txt)",
       "Read(//tmp/**)",
-      "Bash(git commit -m 'feat: PROYECTO COMPLETADO AL 100% - 180 CALCULADORAS TOTALES *)"
+      "Bash(git commit -m 'feat: PROYECTO COMPLETADO AL 100% - 180 CALCULADORAS TOTALES *)",
+      "Bash(git commit -m 'feat: PROYECTO 100% COMPLETADO - TODOS LOS 180 CALCULADORES CON METADATOS COMPLETOS *)"
     ],
     "additionalDirectories": [
       "C:\\Users\\Jose\\calzix",
