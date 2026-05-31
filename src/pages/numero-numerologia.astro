@@ -1,9 +1,11 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import NumerologiaTool from '@/components/tools/NumerologiaTool';
 ---
 
-<CalcLayout slug="numero-numerologia" faqs={[
+<CalcLayout slug="numero-numerologia"
+  whatIs="La calculadora de numero-numerologia es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Qué es el número del camino de vida en numerología?',
     a: 'El número del camino de vida es el número más importante en la numerología. Se obtiene sumando todos los dígitos de la fecha de nacimiento completa (día, mes y año) y reduciéndolos a un solo dígito (excepto los llamados "números maestros": 11, 22 y 33). Se considera que este número refleja la energía, propósito y lecciones principales de una persona en esta vida.'
@@ -31,3 +33,4 @@ import NumerologiaTool from '@/components/tools/NumerologiaTool';
 ]}>
   <NumerologiaTool client:load />
 </CalcLayout>
+

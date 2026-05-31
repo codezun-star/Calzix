@@ -1,9 +1,11 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import ConvPresionTool from '@/components/tools/ConvPresionTool';
 ---
 
-<CalcLayout slug="conversor-presion" faqs={[
+<CalcLayout slug="conversor-presion"
+  whatIs="La calculadora de conversor-presion es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Qué es un pascal (Pa) y cuándo se usa?',
     a: 'El pascal es la unidad de presión del Sistema Internacional. Equivale a una fuerza de un newton aplicada sobre un área de un metro cuadrado. Se usa en meteorología, física y la mayoría de cálculos técnicos de ingeniería.',
@@ -31,3 +33,4 @@ import ConvPresionTool from '@/components/tools/ConvPresionTool';
 ]}>
   <ConvPresionTool client:load />
 </CalcLayout>
+

@@ -1,9 +1,11 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import BecaTool from '@/components/tools/BecaTool';
 ---
 
-<CalcLayout slug="calculadora-beca" faqs={[
+<CalcLayout slug="calculadora-beca"
+  whatIs="La calculadora de calculadora-beca es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Qué nota mínima necesito para obtener la beca general del Ministerio de Educación?',
     a: 'Para la beca general de carácter compensatorio del Ministerio de Educación y Formación Profesional de España, la nota mínima del expediente académico es de 5,00 sobre 10, con independencia de la rama de estudios (Artes y Humanidades, Ciencias Sociales y Jurídicas, Ciencias, Ingeniería y Arquitectura o Ciencias de la Salud).'
@@ -31,3 +33,4 @@ import BecaTool from '@/components/tools/BecaTool';
 ]}>
   <BecaTool client:load />
 </CalcLayout>
+

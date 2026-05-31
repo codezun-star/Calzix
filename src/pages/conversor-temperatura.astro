@@ -1,28 +1,30 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import ConvTemperaturaTool from '@/components/tools/ConvTemperaturaTool';
 ---
 
-<CalcLayout slug="conversor-temperatura" faqs={[
+<CalcLayout slug="conversor-temperatura"
+  whatIs="La calculadora de conversor-temperatura es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Cómo se convierte Celsius a Fahrenheit?',
-    a: 'Multiplica los grados Celsius por 9/5 y suma 32. Fórmula: °F = (°C × 9/5) + 32. Por ejemplo, 20 °C equivalen a 68 °F.',
+    a: 'Multiplica los grados Celsius por 9/5 y suma 32. Fórmula: °F = (°C Í— 9/5) + 32. Por ejemplo, 20 °C equivalen a 68 °F.',
   },
   {
     q: '¿Cómo se convierte Fahrenheit a Celsius?',
-    a: 'Resta 32 a los grados Fahrenheit y multiplica por 5/9. Fórmula: °C = (°F − 32) × 5/9. Por ejemplo, 98,6 °F equivalen a 37 °C (temperatura corporal normal).',
+    a: 'Resta 32 a los grados Fahrenheit y multiplica por 5/9. Fórmula: °C = (°F âˆ’ 32) Í— 5/9. Por ejemplo, 98,6 °F equivalen a 37 °C (temperatura corporal normal).',
   },
   {
     q: '¿Qué es el Kelvin y cuándo se usa?',
-    a: 'El Kelvin (K) es la unidad de temperatura del Sistema Internacional. Se usa en ciencia y física porque parte del cero absoluto (−273,15 °C), el punto de menor energía posible. No se escribe "grados Kelvin", solo "Kelvin".',
+    a: 'El Kelvin (K) es la unidad de temperatura del Sistema Internacional. Se usa en ciencia y física porque parte del cero absoluto (âˆ’273,15 °C), el punto de menor energía posible. No se escribe "grados Kelvin", solo "Kelvin".',
   },
   {
     q: '¿Cuál es el cero absoluto en Celsius y Fahrenheit?',
-    a: 'El cero absoluto corresponde a 0 K, que equivale a −273,15 °C o −459,67 °F. Por debajo de esta temperatura no puede existir ninguna sustancia en el universo.',
+    a: 'El cero absoluto corresponde a 0 K, que equivale a âˆ’273,15 °C o âˆ’459,67 °F. Por debajo de esta temperatura no puede existir ninguna sustancia en el universo.',
   },
   {
     q: '¿A qué temperatura coinciden Celsius y Fahrenheit?',
-    a: 'Las escalas Celsius y Fahrenheit coinciden exactamente en −40 grados: −40 °C = −40 °F. Este punto único sirve a veces como curiosidad o como referencia en trabajos de conversión.',
+    a: 'Las escalas Celsius y Fahrenheit coinciden exactamente en âˆ’40 grados: âˆ’40 °C = âˆ’40 °F. Este punto único sirve a veces como curiosidad o como referencia en trabajos de conversión.',
   },
   {
     q: '¿Cuál es la temperatura de ebullición del agua en cada escala?',
@@ -31,3 +33,4 @@ import ConvTemperaturaTool from '@/components/tools/ConvTemperaturaTool';
 ]}>
   <ConvTemperaturaTool client:load />
 </CalcLayout>
+

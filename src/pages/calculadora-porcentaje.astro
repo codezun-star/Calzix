@@ -3,7 +3,11 @@ import CalcLayout from '@/components/layout/CalcLayout.astro';
 import PorcentajeTool from '@/components/tools/PorcentajeTool';
 ---
 
-<CalcLayout slug="calculadora-porcentaje" faqs={[
+<CalcLayout
+  slug="calculadora-porcentaje"
+  whatIs="Un porcentaje es una manera de expresar un número como parte de 100. Se utiliza el símbolo % para representarlo. Por ejemplo, el 25% significa 25 de cada 100 unidades. Nuestro calculador te permite obtener instantáneamente resultados precisos para cualquier cálculo de porcentajes sin necesidad de realizar operaciones manuales."
+  whyUse="Los porcentajes están en todas partes: descuentos en compras, intereses bancarios, cambios de precio, probabilidades y muchísimo más. Ya sea que necesites calcular un descuento en la tienda, saber qué porcentaje representa una cantidad respecto a un total, o encontrar el valor original de un precio con descuento, esta herramienta te ahorra tiempo y evita errores de cálculo."
+  faqs={[
   {
     q: '¿Cómo calculo el porcentaje de un número?',
     a: 'Para calcular el X% de un número N, multiplica N por X y divide entre 100. Por ejemplo, el 20% de 150 es 150 × 20 / 100 = 30.'

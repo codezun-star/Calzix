@@ -1,12 +1,14 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import AreaFigurasTool from '@/components/tools/AreaFigurasTool';
 ---
 
-<CalcLayout slug="area-figuras" faqs={[
+<CalcLayout slug="area-figuras"
+  whatIs="La calculadora de area-figuras es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Cómo se calcula el área de un círculo?',
-    a: 'El área de un círculo es π × r², donde r es el radio. Por ejemplo, un círculo de radio 5 tiene un área de π × 25 ≈ 78,54 unidades cuadradas.'
+    a: 'El área de un círculo es Ï€ Í— r², donde r es el radio. Por ejemplo, un círculo de radio 5 tiene un área de Ï€ Í— 25 â‰ˆ 78,54 unidades cuadradas.'
   },
   {
     q: '¿Cuál es la diferencia entre área y perímetro?',
@@ -22,8 +24,9 @@ import AreaFigurasTool from '@/components/tools/AreaFigurasTool';
   },
   {
     q: '¿Cómo calculo el área de un trapecio?',
-    a: 'El área del trapecio es (base mayor + base menor) × altura / 2. Necesitas conocer las dos bases paralelas y la altura perpendicular entre ellas.'
+    a: 'El área del trapecio es (base mayor + base menor) Í— altura / 2. Necesitas conocer las dos bases paralelas y la altura perpendicular entre ellas.'
   },
 ]}>
   <AreaFigurasTool client:load />
 </CalcLayout>
+

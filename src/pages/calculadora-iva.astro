@@ -1,9 +1,11 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import IvaTool from '@/components/tools/IvaTool';
 ---
 
-<CalcLayout slug="calculadora-iva" faqs={[
+<CalcLayout slug="calculadora-iva"
+  whatIs="La calculadora de calculadora-iva es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Cuáles son los tipos de IVA en España?',
     a: 'En España existen tres tipos de IVA: el tipo general del 21%, que se aplica a la mayoría de bienes y servicios; el tipo reducido del 10%, que afecta a alimentos no básicos, hostelería, transporte de viajeros y ciertos servicios; y el tipo superreducido del 4%, que aplica a alimentos básicos, libros, medicamentos y otros bienes de primera necesidad.'
@@ -31,3 +33,4 @@ import IvaTool from '@/components/tools/IvaTool';
 ]}>
   <IvaTool client:load />
 </CalcLayout>
+

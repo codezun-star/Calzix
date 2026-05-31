@@ -1,9 +1,11 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import ProductividadTool from '@/components/tools/ProductividadTool';
 ---
 
-<CalcLayout slug="calculadora-productividad" faqs={[
+<CalcLayout slug="calculadora-productividad"
+  whatIs="La calculadora de calculadora-productividad es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Qué mide la tasa de completación?',
     a: 'La tasa de completación es el porcentaje de tareas que has terminado respecto a las que tenías planificadas para el período. Un 80% significa que completaste 8 de cada 10 tareas previstas. Por encima del 100% indica que hiciste más de lo planificado, lo que se considera una productividad excepcional.'
@@ -31,3 +33,4 @@ import ProductividadTool from '@/components/tools/ProductividadTool';
 ]}>
   <ProductividadTool client:load />
 </CalcLayout>
+

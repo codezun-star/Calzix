@@ -1,9 +1,11 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import PesoEquipajeTool from '@/components/tools/PesoEquipajeTool';
 ---
 
-<CalcLayout slug="peso-equipaje" faqs={[
+<CalcLayout slug="peso-equipaje"
+  whatIs="La calculadora de peso-equipaje es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Cómo funciona la calculadora de peso de equipaje?',
     a: 'Añade cada artículo de tu equipaje con su nombre y peso en kilogramos. La calculadora suma los pesos en tiempo real y los compara con el límite de la aerolínea que selecciones. Si superas el límite, se indica el exceso en rojo; si tienes margen, se muestra en verde.'
@@ -31,3 +33,4 @@ import PesoEquipajeTool from '@/components/tools/PesoEquipajeTool';
 ]}>
   <PesoEquipajeTool client:load />
 </CalcLayout>
+

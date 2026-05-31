@@ -1,9 +1,11 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import ConvLongitudTool from '@/components/tools/ConvLongitudTool';
 ---
 
-<CalcLayout slug="conversor-longitud" faqs={[
+<CalcLayout slug="conversor-longitud"
+  whatIs="La calculadora de conversor-longitud es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Cuántos centímetros tiene un metro?',
     a: 'Un metro equivale exactamente a 100 centímetros. Esta es una de las conversiones más habituales dentro del Sistema Internacional de Unidades (SI).',
@@ -26,8 +28,9 @@ import ConvLongitudTool from '@/components/tools/ConvLongitudTool';
   },
   {
     q: '¿Qué unidad de longitud se usa en astronomía?',
-    a: 'En astronomía se usan unidades especiales como el año luz (aprox. 9,46 × 10¹² km), la unidad astronómica (UA, la distancia Tierra-Sol, unos 149 600 000 km) y el pársec (3,26 años luz). Este conversor cubre las unidades cotidianas del SI y del sistema imperial.',
+    a: 'En astronomía se usan unidades especiales como el año luz (aprox. 9,46 Í— 10¹² km), la unidad astronómica (UA, la distancia Tierra-Sol, unos 149 600 000 km) y el pársec (3,26 años luz). Este conversor cubre las unidades cotidianas del SI y del sistema imperial.',
   },
 ]}>
   <ConvLongitudTool client:load />
 </CalcLayout>
+

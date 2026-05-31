@@ -1,9 +1,11 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import NumerosSuerteTool from '@/components/tools/NumerosSuerteTool';
 ---
 
-<CalcLayout slug="numeros-suerte" faqs={[
+<CalcLayout slug="numeros-suerte"
+  whatIs="La calculadora de numeros-suerte es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Qué es la Lotería Primitiva española?',
     a: 'La Lotería Primitiva es uno de los juegos de azar más populares de España, gestionado por la Sociedad Estatal de Loterías y Apuestas del Estado (SELAE). El jugador elige 6 números del 1 al 49. En el sorteo se extraen 6 números principales y 1 complementario. Los premios principales se consiguen acertando 6, 5, 4 o 3 números. Hay sorteos los jueves y sábados.'
@@ -31,3 +33,4 @@ import NumerosSuerteTool from '@/components/tools/NumerosSuerteTool';
 ]}>
   <NumerosSuerteTool client:load />
 </CalcLayout>
+

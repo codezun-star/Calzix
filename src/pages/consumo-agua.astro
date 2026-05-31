@@ -1,9 +1,11 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import ConsumoAguaTool from '@/components/tools/ConsumoAguaTool';
 ---
 
-<CalcLayout slug="consumo-agua" faqs={[
+<CalcLayout slug="consumo-agua"
+  whatIs="La calculadora de consumo-agua es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Cuánta agua consume una persona al día de media en España?',
     a: 'Según datos del Instituto Nacional de Estadística, el consumo medio de agua en los hogares españoles es de unos 130 litros por persona y día. Esta cifra incluye el uso en ducha, inodoro, lavadora, cocina y otras actividades domésticas, pero no el agua utilizada en la producción de alimentos o industria.'
@@ -31,3 +33,4 @@ import ConsumoAguaTool from '@/components/tools/ConsumoAguaTool';
 ]}>
   <ConsumoAguaTool client:load />
 </CalcLayout>
+

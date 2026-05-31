@@ -1,9 +1,11 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import ConvEnergiaTool from '@/components/tools/ConvEnergiaTool';
 ---
 
-<CalcLayout slug="conversor-energia" faqs={[
+<CalcLayout slug="conversor-energia"
+  whatIs="La calculadora de conversor-energia es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Qué es un julio (J) y para qué se usa?',
     a: 'El julio es la unidad de energía del Sistema Internacional. Equivale al trabajo realizado por una fuerza de un newton a lo largo de un metro. Se usa en física, química y en el cálculo de cualquier forma de energía.',
@@ -31,3 +33,4 @@ import ConvEnergiaTool from '@/components/tools/ConvEnergiaTool';
 ]}>
   <ConvEnergiaTool client:load />
 </CalcLayout>
+

@@ -1,9 +1,11 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import PropinaTool from '@/components/tools/PropinaTool';
 ---
 
-<CalcLayout slug="calculadora-propina" faqs={[
+<CalcLayout slug="calculadora-propina"
+  whatIs="La calculadora de calculadora-propina es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Cuánto se suele dejar de propina en España?',
     a: 'En España no existe una norma fija, pero en restaurantes es habitual dejar entre el 5% y el 10% para un buen servicio, o simplemente redondear la cuenta. En bares o cafeterías es común dejar las monedas de cambio. Los porcentajes más generosos (15-20%) son más frecuentes en entornos turísticos o de alta gama, siguiendo la costumbre anglosajona.'
@@ -31,3 +33,4 @@ import PropinaTool from '@/components/tools/PropinaTool';
 ]}>
   <PropinaTool client:load />
 </CalcLayout>
+

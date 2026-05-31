@@ -1,9 +1,11 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import DiferenciaHorariaTool from '@/components/tools/DiferenciaHorariaTool';
 ---
 
-<CalcLayout slug="diferencia-horaria" faqs={[
+<CalcLayout slug="diferencia-horaria"
+  whatIs="La calculadora de diferencia-horaria es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Cómo funciona la calculadora de diferencia horaria?',
     a: 'Introduces la hora en tu zona de origen y seleccionas tanto la zona origen como la zona destino. La herramienta calcula automáticamente la diferencia de offsets UTC y convierte tu hora local a la hora equivalente en el destino. El resultado se actualiza en tiempo real sin necesidad de pulsar ningún botón.'
@@ -22,7 +24,7 @@ import DiferenciaHorariaTool from '@/components/tools/DiferenciaHorariaTool';
   },
   {
     q: '¿Por qué hay un offset de UTC+5:30 (Nueva Delhi)?',
-    a: 'India usa el Horario Estándar de India (IST), que es UTC+5:30 — es decir, 5 horas y 30 minutos por delante de UTC. Es uno de los pocos países del mundo que usa un offset de media hora. Nepal va incluso más lejos con UTC+5:45, aunque no está incluido en esta calculadora.'
+    a: 'India usa el Horario Estándar de India (IST), que es UTC+5:30 –” es decir, 5 horas y 30 minutos por delante de UTC. Es uno de los pocos países del mundo que usa un offset de media hora. Nepal va incluso más lejos con UTC+5:45, aunque no está incluido en esta calculadora.'
   },
   {
     q: '¿Cuál es la mayor diferencia horaria posible entre dos zonas?',
@@ -31,3 +33,4 @@ import DiferenciaHorariaTool from '@/components/tools/DiferenciaHorariaTool';
 ]}>
   <DiferenciaHorariaTool client:load />
 </CalcLayout>
+

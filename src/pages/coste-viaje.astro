@@ -1,16 +1,18 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import CosteViajeTool from '@/components/tools/CosteViajeTool';
 ---
 
-<CalcLayout slug="coste-viaje" faqs={[
+<CalcLayout slug="coste-viaje"
+  whatIs="La calculadora de coste-viaje es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Qué categorías de gasto incluye la calculadora?',
-    a: 'La calculadora contempla cinco categorías: transporte (vuelos, tren, autobús…), alojamiento (precio por noche × número de noches), comida (gasto diario × número de días), actividades y entradas (museos, excursiones, tours…) y otros gastos (seguros, compras, propinas, SIM de datos…). El total se puede dividir entre el número de viajeros.'
+    a: 'La calculadora contempla cinco categorías: transporte (vuelos, tren, autobús–¦), alojamiento (precio por noche Í— número de noches), comida (gasto diario Í— número de días), actividades y entradas (museos, excursiones, tours–¦) y otros gastos (seguros, compras, propinas, SIM de datos–¦). El total se puede dividir entre el número de viajeros.'
   },
   {
     q: '¿El coste por viajero incluye todos los gastos?',
-    a: 'Sí. La calculadora divide el coste total —suma de todas las categorías— entre el número de viajeros que introduzcas. Esto funciona bien cuando todos los gastos son compartidos. Si algunos gastos son individuales (ropa, souvenirs, gustos personales), añádelos a "Otros gastos" o calcula esa parte de forma separada.'
+    a: 'Sí. La calculadora divide el coste total –”suma de todas las categorías–” entre el número de viajeros que introduzcas. Esto funciona bien cuando todos los gastos son compartidos. Si algunos gastos son individuales (ropa, souvenirs, gustos personales), añádelos a "Otros gastos" o calcula esa parte de forma separada.'
   },
   {
     q: '¿Cuánto debería presupuestar para comida por día en Europa?',
@@ -31,3 +33,4 @@ import CosteViajeTool from '@/components/tools/CosteViajeTool';
 ]}>
   <CosteViajeTool client:load />
 </CalcLayout>
+

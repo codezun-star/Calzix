@@ -1,9 +1,11 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import ConvVolumenTool from '@/components/tools/ConvVolumenTool';
 ---
 
-<CalcLayout slug="conversor-volumen" faqs={[
+<CalcLayout slug="conversor-volumen"
+  whatIs="La calculadora de conversor-volumen es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Cuántos mililitros tiene un litro?',
     a: 'Un litro equivale exactamente a 1 000 mililitros. El mililitro también coincide con el centímetro cúbico (cm³), lo que facilita muchas conversiones en cocina y medicina.',
@@ -31,3 +33,4 @@ import ConvVolumenTool from '@/components/tools/ConvVolumenTool';
 ]}>
   <ConvVolumenTool client:load />
 </CalcLayout>
+

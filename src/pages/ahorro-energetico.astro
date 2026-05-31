@@ -1,9 +1,11 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import AhorroEnergeticoTool from '@/components/tools/AhorroEnergeticoTool';
 ---
 
-<CalcLayout slug="ahorro-energetico" faqs={[
+<CalcLayout slug="ahorro-energetico"
+  whatIs="La calculadora de ahorro-energetico es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Qué significa la mejora de eficiencia?',
     a: 'Es el porcentaje en que reduces tu consumo eléctrico respecto al actual. Por ejemplo, si instalas iluminación LED y estimas que consumes un 30% menos, introduces 30. La calculadora aplica esa reducción a tu consumo mensual y calcula el ahorro económico y medioambiental.'
@@ -17,8 +19,8 @@ import AhorroEnergeticoTool from '@/components/tools/AhorroEnergeticoTool';
     a: 'El precio por kWh varía según tu tarifa y el tramo horario. En España el precio medio ronda los 0,15 €/kWh, aunque puede oscilar bastante con el mercado libre o la tarifa regulada PVPC. Mira tu última factura y divide el importe de energía entre los kWh consumidos.'
   },
   {
-    q: '¿Cómo se calcula el CO₂ evitado?',
-    a: 'Se usa el factor de emisión medio de la red eléctrica española, aproximadamente 0,233 kg de CO₂ por kWh consumido. Este valor varía anualmente según el mix energético del país, pero es una buena estimación orientativa para conocer el impacto medioambiental de tu ahorro.'
+    q: '¿Cómo se calcula el COâ‚‚ evitado?',
+    a: 'Se usa el factor de emisión medio de la red eléctrica española, aproximadamente 0,233 kg de COâ‚‚ por kWh consumido. Este valor varía anualmente según el mix energético del país, pero es una buena estimación orientativa para conocer el impacto medioambiental de tu ahorro.'
   },
   {
     q: '¿Qué mejoras de eficiencia energética tienen mayor impacto?',
@@ -31,3 +33,4 @@ import AhorroEnergeticoTool from '@/components/tools/AhorroEnergeticoTool';
 ]}>
   <AhorroEnergeticoTool client:load />
 </CalcLayout>
+

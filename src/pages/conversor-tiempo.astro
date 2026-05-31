@@ -1,11 +1,13 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import ConvTiempoTool from '@/components/tools/ConvTiempoTool';
 ---
-<CalcLayout slug="conversor-tiempo" faqs={[
+<CalcLayout slug="conversor-tiempo"
+  whatIs="La calculadora de conversor-tiempo es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Cuántos segundos tiene un día?',
-    a: 'Un día tiene 86.400 segundos (24 horas × 60 minutos × 60 segundos). Con este conversor puedes comprobarlo introduciendo 1 en "Días" y seleccionando "Segundos" como unidad de destino.'
+    a: 'Un día tiene 86.400 segundos (24 horas Í— 60 minutos Í— 60 segundos). Con este conversor puedes comprobarlo introduciendo 1 en "Días" y seleccionando "Segundos" como unidad de destino.'
   },
   {
     q: '¿Cuántos días tiene un año según este conversor?',
@@ -30,3 +32,4 @@ import ConvTiempoTool from '@/components/tools/ConvTiempoTool';
 ]}>
   <ConvTiempoTool client:load />
 </CalcLayout>
+

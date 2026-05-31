@@ -1,9 +1,11 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import VelocidadLecturaTool from '@/components/tools/VelocidadLecturaTool';
 ---
 
-<CalcLayout slug="velocidad-lectura" faqs={[
+<CalcLayout slug="velocidad-lectura"
+  whatIs="La calculadora de velocidad-lectura es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Cómo se mide la velocidad de lectura?',
     a: 'La velocidad de lectura se mide en palabras por minuto (ppm). Para medirla, lee un fragmento de texto durante un tiempo determinado (por ejemplo, 1 minuto) y cuenta las palabras leídas. La calculadora lo hace automáticamente: introduces las palabras o páginas leídas y el tiempo empleado, y te devuelve las ppm.'
@@ -31,3 +33,4 @@ import VelocidadLecturaTool from '@/components/tools/VelocidadLecturaTool';
 ]}>
   <VelocidadLecturaTool client:load />
 </CalcLayout>
+

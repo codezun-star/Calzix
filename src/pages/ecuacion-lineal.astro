@@ -1,20 +1,22 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import EcuacionLinealTool from '@/components/tools/EcuacionLinealTool';
 ---
 
-<CalcLayout slug="ecuacion-lineal" faqs={[
+<CalcLayout slug="ecuacion-lineal"
+  whatIs="La calculadora de ecuacion-lineal es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Qué es una ecuación lineal de primer grado?',
     a: 'Es una ecuación donde la incógnita x aparece con exponente 1, de la forma ax + b = c. La solución es siempre un único valor de x (siempre que a sea distinto de cero).'
   },
   {
     q: '¿Por qué el coeficiente "a" no puede ser cero?',
-    a: 'Si a = 0, la ecuación deja de tener incógnita y se convierte en "b = c". En ese caso o es siempre verdadera (b = c) o nunca lo es (b ≠ c), pero no tiene solución para x.'
+    a: 'Si a = 0, la ecuación deja de tener incógnita y se convierte en "b = c". En ese caso o es siempre verdadera (b = c) o nunca lo es (b â‰  c), pero no tiene solución para x.'
   },
   {
     q: '¿Cómo se despeja x paso a paso?',
-    a: 'Partiendo de ax + b = c, primero se resta b en ambos lados para obtener ax = c − b, y luego se divide entre a para obtener x = (c − b) / a.'
+    a: 'Partiendo de ax + b = c, primero se resta b en ambos lados para obtener ax = c âˆ’ b, y luego se divide entre a para obtener x = (c âˆ’ b) / a.'
   },
   {
     q: '¿Qué hago si el resultado es un número muy largo?',
@@ -22,8 +24,9 @@ import EcuacionLinealTool from '@/components/tools/EcuacionLinealTool';
   },
   {
     q: '¿Puedo usar esta calculadora para ecuaciones con decimales o negativos?',
-    a: 'Sí. Los tres campos aceptan números negativos y decimales. Por ejemplo, −2x + 3,5 = 10 se resuelve introduciendo a = −2, b = 3,5, c = 10.'
+    a: 'Sí. Los tres campos aceptan números negativos y decimales. Por ejemplo, âˆ’2x + 3,5 = 10 se resuelve introduciendo a = âˆ’2, b = 3,5, c = 10.'
   },
 ]}>
   <EcuacionLinealTool client:load />
 </CalcLayout>
+

@@ -1,11 +1,13 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import PinturaTool from '@/components/tools/PinturaTool';
 ---
-<CalcLayout slug="calculadora-pintura" faqs={[
+<CalcLayout slug="calculadora-pintura"
+  whatIs="La calculadora de calculadora-pintura es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Por qué el calculador solo cuenta las paredes y no el techo?',
-    a: 'La fórmula calcula el perímetro de la habitación multiplicado por la altura (2 × (largo + ancho) × alto), que corresponde únicamente a las cuatro paredes. El techo queda excluido porque muchas veces se pinta con un producto diferente (pintura de techo) y suele requerir menos manos. Si quieres incluir el techo, suma el área largo × ancho a tu cálculo manualmente.'
+    a: 'La fórmula calcula el perímetro de la habitación multiplicado por la altura (2 Í— (largo + ancho) Í— alto), que corresponde únicamente a las cuatro paredes. El techo queda excluido porque muchas veces se pinta con un producto diferente (pintura de techo) y suele requerir menos manos. Si quieres incluir el techo, suma el área largo Í— ancho a tu cálculo manualmente.'
   },
   {
     q: '¿Qué rendimiento de pintura debo introducir?',
@@ -21,7 +23,7 @@ import PinturaTool from '@/components/tools/PinturaTool';
   },
   {
     q: '¿Debo restar las puertas y ventanas del cálculo?',
-    a: 'Para habitaciones estándar con una o dos ventanas y una puerta, el margen del 10% extra compensa. Si la habitación tiene muchos huecos grandes (ventanales, puertas dobles), puedes restar manualmente el área de los huecos. Suma el área de cada hueco (ancho × alto) y réstasela al resultado de litros exactos.'
+    a: 'Para habitaciones estándar con una o dos ventanas y una puerta, el margen del 10% extra compensa. Si la habitación tiene muchos huecos grandes (ventanales, puertas dobles), puedes restar manualmente el área de los huecos. Suma el área de cada hueco (ancho Í— alto) y réstasela al resultado de litros exactos.'
   },
   {
     q: '¿Qué formato de envase de pintura me conviene comprar?',
@@ -30,3 +32,4 @@ import PinturaTool from '@/components/tools/PinturaTool';
 ]}>
   <PinturaTool client:load />
 </CalcLayout>
+

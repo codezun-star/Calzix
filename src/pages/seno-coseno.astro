@@ -1,20 +1,22 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import SinCosTanTool from '@/components/tools/SinCosTanTool';
 ---
 
-<CalcLayout slug="seno-coseno" faqs={[
+<CalcLayout slug="seno-coseno"
+  whatIs="La calculadora de seno-coseno es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Qué son el seno, el coseno y la tangente?',
     a: 'Son las tres razones trigonométricas básicas. En un triángulo rectángulo, el seno es el cociente entre el cateto opuesto y la hipotenusa, el coseno entre el cateto adyacente y la hipotenusa, y la tangente entre el cateto opuesto y el adyacente.'
   },
   {
     q: '¿Cuándo está la tangente indefinida?',
-    a: 'La tangente es indefinida cuando el coseno del ángulo es cero, es decir, para ángulos de 90°, 270°, etc. (o π/2 y 3π/2 radianes). En esos puntos la función tiene una asíntota vertical.'
+    a: 'La tangente es indefinida cuando el coseno del ángulo es cero, es decir, para ángulos de 90°, 270°, etc. (o Ï€/2 y 3Ï€/2 radianes). En esos puntos la función tiene una asíntota vertical.'
   },
   {
     q: '¿Cómo convierto grados a radianes?',
-    a: 'Multiplica los grados por π/180. Por ejemplo, 90° = 90 × π/180 = π/2 ≈ 1,5708 radianes. La calculadora hace esta conversión automáticamente según la unidad que selecciones.'
+    a: 'Multiplica los grados por Ï€/180. Por ejemplo, 90° = 90 Í— Ï€/180 = Ï€/2 â‰ˆ 1,5708 radianes. La calculadora hace esta conversión automáticamente según la unidad que selecciones.'
   },
   {
     q: '¿Qué son el arcoseno, el arcocoseno y el arcotangente?',
@@ -27,3 +29,4 @@ import SinCosTanTool from '@/components/tools/SinCosTanTool';
 ]}>
   <SinCosTanTool client:load />
 </CalcLayout>
+

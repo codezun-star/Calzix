@@ -1,9 +1,11 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import MediaMedianaTool from '@/components/tools/MediaMedianaTool';
 ---
 
-<CalcLayout slug="media-mediana-moda" faqs={[
+<CalcLayout slug="media-mediana-moda"
+  whatIs="La calculadora de media-mediana-moda es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Cuál es la diferencia entre media, mediana y moda?',
     a: 'La media es el promedio aritmético (suma dividida entre la cantidad). La mediana es el valor central cuando los datos están ordenados. La moda es el valor que más se repite. Cada una describe el conjunto de datos desde un ángulo diferente.'
@@ -27,3 +29,4 @@ import MediaMedianaTool from '@/components/tools/MediaMedianaTool';
 ]}>
   <MediaMedianaTool client:load />
 </CalcLayout>
+

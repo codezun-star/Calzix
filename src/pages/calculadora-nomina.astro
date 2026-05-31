@@ -1,9 +1,11 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import NominaTool from '@/components/tools/NominaTool';
 ---
 
-<CalcLayout slug="calculadora-nomina" faqs={[
+<CalcLayout slug="calculadora-nomina"
+  whatIs="La calculadora de calculadora-nomina es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Qué deducciones tiene en cuenta esta calculadora?',
     a: 'La calculadora aplica dos deducciones principales sobre el salario bruto: la cotización a la Seguridad Social a cargo del trabajador (6,4%, que incluye contingencias comunes, desempleo y formación profesional) y la retención de IRPF calculada por tramos según la escala general del impuesto para 2024. No incluye otras deducciones personales como mínimo familiar o deducciones autonómicas.'
@@ -31,3 +33,4 @@ import NominaTool from '@/components/tools/NominaTool';
 ]}>
   <NominaTool client:load />
 </CalcLayout>
+

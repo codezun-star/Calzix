@@ -1,15 +1,17 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import MaterialesConstruccionTool from '@/components/tools/MaterialesConstruccionTool';
 ---
-<CalcLayout slug="materiales-construccion" faqs={[
+<CalcLayout slug="materiales-construccion"
+  whatIs="La calculadora de materiales-construccion es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Por qué se añade un 5% de desperdicio en el cálculo de ladrillos?',
     a: 'El margen del 5% cubre roturas durante el transporte y el trabajo, cortes necesarios para ajustar esquinas, huecos de puertas y ventanas, y diferencias en la colocación. En obras más complejas o con muchos cortes angulares, algunos profesionales recomiendan aumentar el margen al 8-10%.'
   },
   {
     q: '¿Cuántos ladrillos caben en un metro cuadrado de pared?',
-    a: 'Depende del tipo: un ladrillo estándar (24×11,5×7 cm) ocupa unos 60 unidades por m², el ladrillo perforado (24×11,5×9 cm) unas 45 unidades, y el bloque de hormigón (40×20×20 cm) unas 12,5 unidades por m². Estas densidades ya incluyen las juntas de mortero habituales.'
+    a: 'Depende del tipo: un ladrillo estándar (24Í—11,5Í—7 cm) ocupa unos 60 unidades por m², el ladrillo perforado (24Í—11,5Í—9 cm) unas 45 unidades, y el bloque de hormigón (40Í—20Í—20 cm) unas 12,5 unidades por m². Estas densidades ya incluyen las juntas de mortero habituales.'
   },
   {
     q: '¿Qué tipo de ladrillo debo elegir para una pared interior?',
@@ -21,7 +23,7 @@ import MaterialesConstruccionTool from '@/components/tools/MaterialesConstruccio
   },
   {
     q: '¿El calculador tiene en cuenta puertas y ventanas?',
-    a: 'No. El cálculo se basa en el área total de la pared (largo × alto). Para tener en cuenta huecos de puertas y ventanas, resta sus áreas al resultado final. Por ejemplo, si tu pared tiene una ventana de 1,2 × 1 m = 1,2 m², introduce un largo y alto que excluyan esa superficie, o réstale el porcentaje correspondiente al resultado.'
+    a: 'No. El cálculo se basa en el área total de la pared (largo Í— alto). Para tener en cuenta huecos de puertas y ventanas, resta sus áreas al resultado final. Por ejemplo, si tu pared tiene una ventana de 1,2 Í— 1 m = 1,2 m², introduce un largo y alto que excluyan esa superficie, o réstale el porcentaje correspondiente al resultado.'
   },
   {
     q: '¿Son suficientes los sacos de arena calculados?',
@@ -30,3 +32,4 @@ import MaterialesConstruccionTool from '@/components/tools/MaterialesConstruccio
 ]}>
   <MaterialesConstruccionTool client:load />
 </CalcLayout>
+

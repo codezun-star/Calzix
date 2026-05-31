@@ -1,9 +1,11 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import ConvAreaTool from '@/components/tools/ConvAreaTool';
 ---
 
-<CalcLayout slug="conversor-area" faqs={[
+<CalcLayout slug="conversor-area"
+  whatIs="La calculadora de conversor-area es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Cuántos metros cuadrados tiene una hectárea?',
     a: 'Una hectárea equivale exactamente a 10 000 m². Es la unidad más usada en agricultura y planificación territorial. Un kilómetro cuadrado equivale a 100 hectáreas.',
@@ -14,7 +16,7 @@ import ConvAreaTool from '@/components/tools/ConvAreaTool';
   },
   {
     q: '¿Cómo se convierte m² a cm²?',
-    a: 'Multiplica los metros cuadrados por 10 000 para obtener centímetros cuadrados, ya que 1 m = 100 cm y 1 m² = 100 × 100 = 10 000 cm². Por ejemplo, 5 m² = 50 000 cm².',
+    a: 'Multiplica los metros cuadrados por 10 000 para obtener centímetros cuadrados, ya que 1 m = 100 cm y 1 m² = 100 Í— 100 = 10 000 cm². Por ejemplo, 5 m² = 50 000 cm².',
   },
   {
     q: '¿Cuántos pies cuadrados tiene un metro cuadrado?',
@@ -31,3 +33,4 @@ import ConvAreaTool from '@/components/tools/ConvAreaTool';
 ]}>
   <ConvAreaTool client:load />
 </CalcLayout>
+

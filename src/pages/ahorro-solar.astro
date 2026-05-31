@@ -1,9 +1,11 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import AhorroSolarTool from '@/components/tools/AhorroSolarTool';
 ---
 
-<CalcLayout slug="ahorro-solar" faqs={[
+<CalcLayout slug="ahorro-solar"
+  whatIs="La calculadora de ahorro-solar es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Qué son las horas de sol pico (HSP)?',
     a: 'Las horas de sol pico (HSP) son una medida estandarizada de la radiación solar disponible en una ubicación, equivalente al número de horas al día con una irradiancia de 1.000 W/m². En España, la media varía entre 3,5 HSP en el norte (Galicia, País Vasco) y 5,5 HSP en el sur (Andalucía, Murcia). Esta calculadora usa 4,5 HSP como valor medio nacional.'
@@ -31,3 +33,4 @@ import AhorroSolarTool from '@/components/tools/AhorroSolarTool';
 ]}>
   <AhorroSolarTool client:load />
 </CalcLayout>
+

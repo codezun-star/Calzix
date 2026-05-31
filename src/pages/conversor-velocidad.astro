@@ -1,9 +1,11 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import ConvVelocidadTool from '@/components/tools/ConvVelocidadTool';
 ---
 
-<CalcLayout slug="conversor-velocidad" faqs={[
+<CalcLayout slug="conversor-velocidad"
+  whatIs="La calculadora de conversor-velocidad es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Cuántos km/h son 100 mph?',
     a: '100 millas por hora equivalen a aproximadamente 160,93 km/h. La conversión exacta es multiplicar las mph por 1,60934. Esta conversión es útil al comparar velocidades en países con distintos sistemas de medida.',
@@ -31,3 +33,4 @@ import ConvVelocidadTool from '@/components/tools/ConvVelocidadTool';
 ]}>
   <ConvVelocidadTool client:load />
 </CalcLayout>
+

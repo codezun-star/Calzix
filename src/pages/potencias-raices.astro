@@ -3,12 +3,15 @@ import CalcLayout from "@/components/layout/CalcLayout.astro";
 import PotenciasRaicesTool from "@/components/tools/PotenciasRaicesTool";
 ---
 
-<CalcLayout slug="potencias-raices" faqs={[
-  { q: "Â¿QuÃ© es?", a: "Una herramienta de cÃ¡lculo rÃ¡pido." },
-  { q: "Â¿CÃ³mo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "Â¿Es seguro?", a: "SÃ­, cÃ¡lculos locales sin datos guardados." },
-  { q: "Â¿LÃ­mites?", a: "No hay lÃ­mites de uso." },
-  { q: "Â¿Precision?", a: "PrecisiÃ³n estÃ¡ndar del navegador." },
+<CalcLayout slug="potencias-raices"
+  whatIs="La calculadora de potencias-raices es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
+  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
+  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
+  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
+  { q: "¿Límites?", a: "No hay límites de uso." },
+  { q: "¿Precision?", a: "Precisión estándar del navegador." },
 ]}>
   <PotenciasRaicesTool client:load />
 </CalcLayout>
+

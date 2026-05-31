@@ -1,15 +1,17 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import ConvMonedasTool from '@/components/tools/ConvMonedasTool';
 ---
-<CalcLayout slug="conversor-monedas" faqs={[
+<CalcLayout slug="conversor-monedas"
+  whatIs="La calculadora de conversor-monedas es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Son exactas las tasas de cambio de este conversor?',
-    a: 'Las tasas son orientativas y corresponden a valores aproximados de 2024. Los tipos de cambio fluctúan constantemente en los mercados financieros, por lo que para operaciones reales —transferencias bancarias, compras internacionales o cambio de divisas— siempre debes consultar la tasa actualizada de tu banco o plataforma de cambio.'
+    a: 'Las tasas son orientativas y corresponden a valores aproximados de 2024. Los tipos de cambio fluctúan constantemente en los mercados financieros, por lo que para operaciones reales –”transferencias bancarias, compras internacionales o cambio de divisas–” siempre debes consultar la tasa actualizada de tu banco o plataforma de cambio.'
   },
   {
     q: '¿Cuántos dólares vale 1 euro actualmente?',
-    a: 'Las tasas de cambio varían a diario. Este conversor usa como referencia orientativa 1 EUR ≈ 1,08 USD (dato de 2024). Para el tipo de cambio en tiempo real, consulta plataformas financieras como el Banco Central Europeo, XE.com o tu entidad bancaria.'
+    a: 'Las tasas de cambio varían a diario. Este conversor usa como referencia orientativa 1 EUR â‰ˆ 1,08 USD (dato de 2024). Para el tipo de cambio en tiempo real, consulta plataformas financieras como el Banco Central Europeo, XE.com o tu entidad bancaria.'
   },
   {
     q: '¿Qué monedas latinoamericanas incluye este conversor?',
@@ -30,3 +32,4 @@ import ConvMonedasTool from '@/components/tools/ConvMonedasTool';
 ]}>
   <ConvMonedasTool client:load />
 </CalcLayout>
+

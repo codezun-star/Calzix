@@ -1,9 +1,11 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import AreaJardinTool from '@/components/tools/AreaJardinTool';
 ---
 
-<CalcLayout slug="area-jardin" faqs={[
+<CalcLayout slug="area-jardin"
+  whatIs="La calculadora de area-jardin es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Para qué sirve calcular el área de mi jardín?',
     a: 'Conocer el área te permite estimar cuántas plantas necesitas para cubrir el espacio, cuánto abono o sustrato debes comprar, cuánta agua de riego necesitarás semanalmente y cuánto costaría, por ejemplo, colocar césped o grava. Es el punto de partida para planificar cualquier proyecto de jardinería.'
@@ -31,3 +33,4 @@ import AreaJardinTool from '@/components/tools/AreaJardinTool';
 ]}>
   <AreaJardinTool client:load />
 </CalcLayout>
+

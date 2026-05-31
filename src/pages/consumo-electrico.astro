@@ -1,15 +1,17 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import ConsumoElectricoTool from '@/components/tools/ConsumoElectricoTool';
 ---
-<CalcLayout slug="consumo-electrico" faqs={[
+<CalcLayout slug="consumo-electrico"
+  whatIs="La calculadora de consumo-electrico es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Cómo se calcula el consumo eléctrico de un aparato?',
     a: 'El consumo se calcula multiplicando la potencia del aparato en kilovatios (kW) por las horas de uso. Por ejemplo, un calefactor de 1.500 W (1,5 kW) encendido 8 horas al día consume 12 kWh ese día. Al multiplicarlo por los días del mes y el precio del kWh obtienes el coste en euros.'
   },
   {
     q: '¿Cuánto cuesta tener el televisor encendido todo el día?',
-    a: 'Un televisor moderno de 55 pulgadas LED consume entre 80 y 150 W. Si asumimos 100 W y 8 horas de uso diario a 0,15 €/kWh: 0,1 kW × 8 h × 30 días × 0,15 €/kWh = 3,60 € al mes. Introduce estos valores en el calculador para personalizar el resultado.'
+    a: 'Un televisor moderno de 55 pulgadas LED consume entre 80 y 150 W. Si asumimos 100 W y 8 horas de uso diario a 0,15 €/kWh: 0,1 kW Í— 8 h Í— 30 días Í— 0,15 €/kWh = 3,60 € al mes. Introduce estos valores en el calculador para personalizar el resultado.'
   },
   {
     q: '¿Qué precio del kWh debo usar?',
@@ -30,3 +32,4 @@ import ConsumoElectricoTool from '@/components/tools/ConsumoElectricoTool';
 ]}>
   <ConsumoElectricoTool client:load />
 </CalcLayout>
+

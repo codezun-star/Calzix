@@ -1,8 +1,10 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import ConvDatosTool from '@/components/tools/ConvDatosTool';
 ---
-<CalcLayout slug="conversor-datos" faqs={[
+<CalcLayout slug="conversor-datos"
+  whatIs="La calculadora de conversor-datos es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Cuál es la diferencia entre GB y GiB?',
     a: 'Un Gigabyte (GB) equivale a 1.000.000.000 bytes (potencia de 10), mientras que un Gibibyte (GiB) equivale a 1.073.741.824 bytes (potencia de 2). Los fabricantes de discos duros usan GB, pero los sistemas operativos suelen mostrar GiB, lo que genera confusión en la capacidad real.'
@@ -13,7 +15,7 @@ import ConvDatosTool from '@/components/tools/ConvDatosTool';
   },
   {
     q: '¿Por qué mi disco duro de 1 TB aparece con menos capacidad en el ordenador?',
-    a: 'Los fabricantes de discos miden en Terabytes decimales (1 TB = 1.000.000.000.000 bytes), pero Windows y otros sistemas operativos muestran la capacidad en Tebibytes (TiB). 1 TB ≈ 0,909 TiB, por eso un disco de 1 TB aparece como unos 931 GiB en el sistema.'
+    a: 'Los fabricantes de discos miden en Terabytes decimales (1 TB = 1.000.000.000.000 bytes), pero Windows y otros sistemas operativos muestran la capacidad en Tebibytes (TiB). 1 TB â‰ˆ 0,909 TiB, por eso un disco de 1 TB aparece como unos 931 GiB en el sistema.'
   },
   {
     q: '¿Cuántos Megabytes tiene una canción típica?',
@@ -21,7 +23,7 @@ import ConvDatosTool from '@/components/tools/ConvDatosTool';
   },
   {
     q: '¿Qué significa kibibyte (KiB)?',
-    a: 'El Kibibyte (KiB) es una unidad binaria establecida por el IEC en 1998 para eliminar la ambigüedad del kilobyte. 1 KiB = 1.024 bytes exactos, mientras que 1 KB = 1.000 bytes en el sistema decimal. Su nombre viene de "kilo binary byte".'
+    a: 'El Kibibyte (KiB) es una unidad binaria establecida por el IEC en 1998 para eliminar la ambigÍ¼edad del kilobyte. 1 KiB = 1.024 bytes exactos, mientras que 1 KB = 1.000 bytes en el sistema decimal. Su nombre viene de "kilo binary byte".'
   },
   {
     q: '¿Cuántos Gigabytes tiene un Terabyte?',
@@ -30,3 +32,4 @@ import ConvDatosTool from '@/components/tools/ConvDatosTool';
 ]}>
   <ConvDatosTool client:load />
 </CalcLayout>
+

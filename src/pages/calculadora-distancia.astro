@@ -1,9 +1,11 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import DistanciaTool from '@/components/tools/DistanciaTool';
 ---
 
-<CalcLayout slug="calculadora-distancia" faqs={[
+<CalcLayout slug="calculadora-distancia"
+  whatIs="La calculadora de calculadora-distancia es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Cómo se calcula el tiempo de viaje?',
     a: 'El tiempo de conducción se obtiene dividiendo la distancia (km) entre la velocidad media (km/h). Al resultado se añade el tiempo de paradas expresado en minutos convertidos a horas. Por ejemplo, 450 km a 90 km/h dan 5 horas de conducción. Con 30 minutos de parada, el tiempo total sería 5 h 30 min.'
@@ -31,3 +33,4 @@ import DistanciaTool from '@/components/tools/DistanciaTool';
 ]}>
   <DistanciaTool client:load />
 </CalcLayout>
+

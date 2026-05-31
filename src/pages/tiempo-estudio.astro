@@ -1,12 +1,14 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import TiempoEstudioTool from '@/components/tools/TiempoEstudioTool';
 ---
 
-<CalcLayout slug="tiempo-estudio" faqs={[
+<CalcLayout slug="tiempo-estudio"
+  whatIs="La calculadora de tiempo-estudio es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Cómo funciona el cálculo del tiempo de estudio?',
-    a: 'La calculadora estima primero las horas de lectura inicial dividiendo el total de páginas (número de temas × páginas por tema) entre tu velocidad de lectura. Después añade las horas de repaso según el porcentaje que indiques. La suma de ambas es el tiempo total estimado.'
+    a: 'La calculadora estima primero las horas de lectura inicial dividiendo el total de páginas (número de temas Í— páginas por tema) entre tu velocidad de lectura. Después añade las horas de repaso según el porcentaje que indiques. La suma de ambas es el tiempo total estimado.'
   },
   {
     q: '¿Cuál es una velocidad de lectura normal para el estudio?',
@@ -31,3 +33,4 @@ import TiempoEstudioTool from '@/components/tools/TiempoEstudioTool';
 ]}>
   <TiempoEstudioTool client:load />
 </CalcLayout>
+

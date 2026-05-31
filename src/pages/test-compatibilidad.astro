@@ -1,9 +1,11 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import CompatibilidadTool from '@/components/tools/CompatibilidadTool';
 ---
 
-<CalcLayout slug="test-compatibilidad" faqs={[
+<CalcLayout slug="test-compatibilidad"
+  whatIs="La calculadora de test-compatibilidad es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Cómo funciona este test de compatibilidad?',
     a: 'El test utiliza un algoritmo determinista basado en los nombres introducidos: combina ambos nombres, suma los valores numéricos de cada letra y calcula un porcentaje entre 0 y 100. El resultado es siempre el mismo para los mismos nombres, lo que hace el test reproducible. Es una herramienta de entretenimiento, no una predicción científica del amor.'
@@ -31,3 +33,4 @@ import CompatibilidadTool from '@/components/tools/CompatibilidadTool';
 ]}>
   <CompatibilidadTool client:load />
 </CalcLayout>
+

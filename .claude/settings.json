@@ -13,7 +13,14 @@
       "Bash(cd \"c:\\\\Users\\\\Jose\\\\calzix\" && ls src/pages/*.astro | sed 's/.*\\\\///;s/\\\\.astro//' | sort | tail -92 > /tmp/missing_slugs.txt && head -20 /tmp/missing_slugs.txt)",
       "Read(//tmp/**)",
       "Bash(git commit -m 'feat: PROYECTO COMPLETADO AL 100% - 180 CALCULADORAS TOTALES *)",
-      "Bash(git commit -m 'feat: PROYECTO 100% COMPLETADO - TODOS LOS 180 CALCULADORES CON METADATOS COMPLETOS *)"
+      "Bash(git commit -m 'feat: PROYECTO 100% COMPLETADO - TODOS LOS 180 CALCULADORES CON METADATOS COMPLETOS *)",
+      "PowerShell(\\(Get-Content 'c:\\\\Users\\\\Jose\\\\calzix\\\\src\\\\lib\\\\constants\\\\seo.ts' | Measure-Object -Line\\).Lines)",
+      "PowerShell(\\(Get-Content 'c:\\\\Users\\\\Jose\\\\calzix\\\\src\\\\lib\\\\constants\\\\calcs.ts' | Measure-Object -Line\\).Lines)",
+      "PowerShell(\"Limpiado\")",
+      "PowerShell(ls 'c:\\\\Users\\\\Jose\\\\calzix\\\\dist' | Where-Object { $_.Name -match 'calculadora|conversor' } | Select-Object -First 10)",
+      "Bash(node fix-encoding.js)",
+      "Bash(node fix-encoding.mjs)",
+      "Bash(git commit -m 'fix: Corregir codificación UTF-8 en todos los archivos .astro \\(178 páginas\\) *)"
     ],
     "additionalDirectories": [
       "C:\\Users\\Jose\\calzix",

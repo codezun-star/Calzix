@@ -1,20 +1,22 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import ReciclajeTool from '@/components/tools/ReciclajeTool';
 ---
 
-<CalcLayout slug="calculadora-reciclaje" faqs={[
+<CalcLayout slug="calculadora-reciclaje"
+  whatIs="La calculadora de calculadora-reciclaje es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
-    q: '¿Por qué reciclar reduce las emisiones de CO₂?',
-    a: 'Fabricar productos a partir de materiales reciclados consume mucho menos energía que hacerlo desde materias primas. Por ejemplo, reciclar aluminio ahorra hasta un 95% de la energía necesaria para producirlo desde la bauxita, y reciclar papel evita talar árboles que capturan CO₂. Al reducir el consumo energético industrial, se emiten menos gases de efecto invernadero.'
+    q: '¿Por qué reciclar reduce las emisiones de COâ‚‚?',
+    a: 'Fabricar productos a partir de materiales reciclados consume mucho menos energía que hacerlo desde materias primas. Por ejemplo, reciclar aluminio ahorra hasta un 95% de la energía necesaria para producirlo desde la bauxita, y reciclar papel evita talar árboles que capturan COâ‚‚. Al reducir el consumo energético industrial, se emiten menos gases de efecto invernadero.'
   },
   {
     q: '¿Qué material tiene mayor impacto al reciclarlo?',
-    a: 'Los metales, especialmente el aluminio, tienen el mayor impacto por kilogramo reciclado: evitan unos 2 kg de CO₂ por cada kg reciclado. Le sigue el plástico con 1,5 kg de CO₂/kg. El vidrio tiene un factor más bajo (0,3 kg/kg) porque su producción desde arena ya es relativamente eficiente. En todo caso, cualquier reciclaje es mejor que enviar residuos al vertedero.'
+    a: 'Los metales, especialmente el aluminio, tienen el mayor impacto por kilogramo reciclado: evitan unos 2 kg de COâ‚‚ por cada kg reciclado. Le sigue el plástico con 1,5 kg de COâ‚‚/kg. El vidrio tiene un factor más bajo (0,3 kg/kg) porque su producción desde arena ya es relativamente eficiente. En todo caso, cualquier reciclaje es mejor que enviar residuos al vertedero.'
   },
   {
     q: '¿Qué es el compostaje y por qué reduce emisiones?',
-    a: 'El compostaje es el proceso de descomposición controlada de residuos orgánicos (restos de comida, poda, etc.) para producir abono natural. Cuando la materia orgánica va al vertedero, se descompone sin oxígeno y produce metano, un gas de efecto invernadero 25 veces más potente que el CO₂. Al compostar, se evita esta emisión y se crea un fertilizante que reemplaza a los químicos de síntesis.'
+    a: 'El compostaje es el proceso de descomposición controlada de residuos orgánicos (restos de comida, poda, etc.) para producir abono natural. Cuando la materia orgánica va al vertedero, se descompone sin oxígeno y produce metano, un gas de efecto invernadero 25 veces más potente que el COâ‚‚. Al compostar, se evita esta emisión y se crea un fertilizante que reemplaza a los químicos de síntesis.'
   },
   {
     q: '¿Cuánto recicla un español de media al año?',
@@ -31,3 +33,4 @@ import ReciclajeTool from '@/components/tools/ReciclajeTool';
 ]}>
   <ReciclajeTool client:load />
 </CalcLayout>
+

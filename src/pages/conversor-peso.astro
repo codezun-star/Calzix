@@ -1,9 +1,11 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import ConvPesoTool from '@/components/tools/ConvPesoTool';
 ---
 
-<CalcLayout slug="conversor-peso" faqs={[
+<CalcLayout slug="conversor-peso"
+  whatIs="La calculadora de conversor-peso es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Cuántos gramos tiene un kilogramo?',
     a: 'Un kilogramo equivale exactamente a 1 000 gramos. Es la unidad base de masa en el Sistema Internacional de Unidades (SI).',
@@ -31,3 +33,4 @@ import ConvPesoTool from '@/components/tools/ConvPesoTool';
 ]}>
   <ConvPesoTool client:load />
 </CalcLayout>
+

@@ -1,12 +1,14 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import VelocidadFisicaTool from '@/components/tools/VelocidadFisicaTool';
 ---
 
-<CalcLayout slug="velocidad-distancia-tiempo" faqs={[
+<CalcLayout slug="velocidad-distancia-tiempo"
+  whatIs="La calculadora de velocidad-distancia-tiempo es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Cuál es la fórmula entre velocidad, distancia y tiempo?',
-    a: 'La relación fundamental es: velocidad = distancia / tiempo. De ahí se derivan las otras dos: distancia = velocidad × tiempo, y tiempo = distancia / velocidad. Las tres son equivalentes.'
+    a: 'La relación fundamental es: velocidad = distancia / tiempo. De ahí se derivan las otras dos: distancia = velocidad Í— tiempo, y tiempo = distancia / velocidad. Las tres son equivalentes.'
   },
   {
     q: '¿En qué unidades trabaja esta calculadora?',
@@ -14,7 +16,7 @@ import VelocidadFisicaTool from '@/components/tools/VelocidadFisicaTool';
   },
   {
     q: '¿Cómo convierto m/s a km/h?',
-    a: 'Multiplica los m/s por 3,6. Por ejemplo, 10 m/s × 3,6 = 36 km/h. A la inversa, divide los km/h entre 3,6 para obtener m/s.'
+    a: 'Multiplica los m/s por 3,6. Por ejemplo, 10 m/s Í— 3,6 = 36 km/h. A la inversa, divide los km/h entre 3,6 para obtener m/s.'
   },
   {
     q: '¿Por qué el tiempo aparece también en minutos?',
@@ -27,3 +29,4 @@ import VelocidadFisicaTool from '@/components/tools/VelocidadFisicaTool';
 ]}>
   <VelocidadFisicaTool client:load />
 </CalcLayout>
+

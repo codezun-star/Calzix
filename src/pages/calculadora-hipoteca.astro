@@ -2,7 +2,11 @@
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import HipotecaTool from '@/components/tools/HipotecaTool';
 ---
-<CalcLayout slug="calculadora-hipoteca" faqs={[
+<CalcLayout
+  slug="calculadora-hipoteca"
+  whatIs="Una hipoteca es un préstamo que solicitas al banco para comprar una vivienda. El banco te presta dinero y tú te comprometes a devolverlo en cuotas mensuales durante un período de tiempo (normalmente 20-30 años), pagando además intereses. Nuestra calculadora te muestra exactamente cuánto pagarás cada mes, el total de intereses y cómo se distribuye el dinero entre capital e intereses."
+  whyUse="Comprender los detalles de tu hipoteca es fundamental antes de solicitarla. Saber cuál será la cuota mensual, cuánto pagarás en total y cómo cambian los intereses a lo largo del tiempo te ayuda a tomar una decisión financiera inteligente. Esta herramienta te permite simular diferentes escenarios: cambiar el plazo, la cantidad prestada o la tasa de interés para encontrar la opción que mejor se adapte a tu presupuesto."
+  faqs={[
   {
     q: '¿Qué es el sistema de amortización francés?',
     a: 'El sistema francés es el más habitual en España para las hipotecas. En él, la cuota mensual es constante durante toda la vida del préstamo. Al principio, la mayor parte de la cuota va a pagar intereses y solo una pequeña parte amortiza capital. Con el tiempo, esta proporción se invierte: se pagan menos intereses y más capital.'

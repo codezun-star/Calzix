@@ -1,9 +1,11 @@
----
+﻿---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import ProbabilidadTool from '@/components/tools/ProbabilidadTool';
 ---
 
-<CalcLayout slug="probabilidad-simple" faqs={[
+<CalcLayout slug="probabilidad-simple"
+  whatIs="La calculadora de probabilidad-simple es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
+  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
   {
     q: '¿Qué es la probabilidad de un evento?',
     a: 'La probabilidad mide la posibilidad de que ocurra un evento. Se calcula dividiendo el número de casos favorables entre el número de casos totales posibles. Su valor oscila entre 0 (imposible) y 1 (seguro).'
@@ -27,3 +29,4 @@ import ProbabilidadTool from '@/components/tools/ProbabilidadTool';
 ]}>
   <ProbabilidadTool client:load />
 </CalcLayout>
+

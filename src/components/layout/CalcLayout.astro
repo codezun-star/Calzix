@@ -6,9 +6,11 @@ import '@/styles/global.css';
 interface Props {
   slug: string;
   faqs?: Array<{ q: string; a: string }>;
+  whatIs?: string;
+  whyUse?: string;
 }
 
-const { slug, faqs = [] } = Astro.props;
+const { slug, faqs = [], whatIs = '', whyUse = '' } = Astro.props;
 
 const seo     = PAGE_SEO[slug];
 const calc    = getCalcBySlug(slug);
@@ -178,7 +180,7 @@ const GROUP_TABLER: Record<string, string> = {
           </>
         )}
 
-        <!-- Calculator React island -->
+        <!-- Calculator React island — PRIMERO -->
         <slot />
 
         <!-- Related calculators -->
@@ -193,7 +195,23 @@ const GROUP_TABLER: Record<string, string> = {
           </section>
         )}
 
-        <!-- FAQs -->
+        <!-- ¿Qué es? section — DESPUÉS -->
+        {whatIs && (
+          <section style="margin-bottom:32px;padding:20px;background:#F5F3EC;border-radius:12px;border-left:4px solid #18A357;">
+            <h2 style="font-size:18px;font-weight:600;color:#1a1a18;margin:0 0 12px;">¿Qué es?</h2>
+            <p style="font-size:14px;color:#6b6860;line-height:1.6;margin:0;" set:html={whatIs} />
+          </section>
+        )}
+
+        <!-- ¿Para qué sirve? section — DESPUÉS -->
+        {whyUse && (
+          <section style="margin-bottom:32px;padding:20px;background:#F5F3EC;border-radius:12px;border-left:4px solid #18A357;">
+            <h2 style="font-size:18px;font-weight:600;color:#1a1a18;margin:0 0 12px;">¿Para qué sirve?</h2>
+            <p style="font-size:14px;color:#6b6860;line-height:1.6;margin:0;" set:html={whyUse} />
+          </section>
+        )}
+
+        <!-- FAQs — AL FINAL -->
         {faqs.length > 0 && (
           <section>
             <h2 class="rt-section-title">Preguntas frecuentes</h2>
