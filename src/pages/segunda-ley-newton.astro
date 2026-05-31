@@ -1,0 +1,14 @@
+﻿---
+import CalcLayout from "@/components/layout/CalcLayout.astro";
+import NewtonTool from "@/components/tools/NewtonTool";
+---
+
+<CalcLayout slug="segunda-ley-newton" faqs={[
+  { q: "Â¿QuÃ© es?", a: "Una herramienta de cÃ¡lculo rÃ¡pido." },
+  { q: "Â¿CÃ³mo usar?", a: "Introduce datos y haz clic en calcular." },
+  { q: "Â¿Es seguro?", a: "SÃ­, cÃ¡lculos locales sin datos guardados." },
+  { q: "Â¿LÃ­mites?", a: "No hay lÃ­mites de uso." },
+  { q: "Â¿PrecisiÃ³n?", a: "PrecisiÃ³n estÃ¡ndar del navegador." },
+]}>
+  <NewtonTool client:load />
+</CalcLayout>

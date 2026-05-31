@@ -339,4 +339,75 @@ export const PAGE_SEO: Record<string, PageSEO> = {
     description: 'Calcula la hora ideal para despertar según los ciclos de sueño de 90 minutos.',
     canonical: 'https://calzix.com/calculadora-sueno',
   },
+  // ── Matemáticas (nuevas) ─────────────────────────────────────────────────
+  'calculadora-factorial': {
+    title: 'Calculadora de Factorial — Calzix',
+    description: 'Calcula el factorial de cualquier número entero n! al instante.',
+    canonical: 'https://calzix.com/calculadora-factorial',
+  },
+  'potencias-raices': {
+    title: 'Calculadora de Potencias y Raíces — Calzix',
+    description: 'Calcula potencias, raíces cuadradas, cúbicas y de orden n.',
+    canonical: 'https://calzix.com/potencias-raices',
+  },
+  'mcm-mcd': {
+    title: 'Calculadora de MCM y MCD — Calzix',
+    description: 'Calcula el mínimo común múltiplo y máximo común divisor de dos números.',
+    canonical: 'https://calzix.com/mcm-mcd',
+  },
+  'numero-primo': {
+    title: 'Verificador de Número Primo — Calzix',
+    description: 'Comprueba si un número es primo o compuesto al instante.',
+    canonical: 'https://calzix.com/numero-primo',
+  },
+  'sistema-ecuaciones': {
+    title: 'Calculadora de Sistema de Ecuaciones — Calzix',
+    description: 'Resuelve sistemas de ecuaciones lineales 2x2 o 3x3 fácilmente.',
+    canonical: 'https://calzix.com/sistema-ecuaciones',
+  },
+  'funcion-cuadratica': {
+    title: 'Calculadora de Función Cuadrática — Calzix',
+    description: 'Calcula raíces, vértice y propiedades de una parábola.',
+    canonical: 'https://calzix.com/funcion-cuadratica',
+  },
+  'perimetro-figuras': {
+    title: 'Calculadora de Perímetro de Figuras — Calzix',
+    description: 'Calcula el perímetro de círculos, triángulos, rectángulos y más.',
+    canonical: 'https://calzix.com/perimetro-figuras',
+  },
+  'volumen-solidos': {
+    title: 'Calculadora de Volumen de Sólidos — Calzix',
+    description: 'Calcula el volumen de esferas, cilindros, conos, cubos y más.',
+    canonical: 'https://calzix.com/volumen-solidos',
+  },
+  'teorema-pitagoras': {
+    title: 'Calculadora del Teorema de Pitágoras — Calzix',
+    description: 'Calcula la hipotenusa o catetos de un triángulo rectángulo.',
+    canonical: 'https://calzix.com/teorema-pitagoras',
+  },
+  'varianza-desviacion': {
+    title: 'Calculadora de Varianza y Desviación Típica — Calzix',
+    description: 'Calcula la varianza, desviación estándar y otros indicadores estadísticos.',
+    canonical: 'https://calzix.com/varianza-desviacion',
+  },
+  'correlacion-datos': {
+    title: 'Calculadora de Correlación de Pearson — Calzix',
+    description: 'Calcula el coeficiente de correlación entre dos series de datos.',
+    canonical: 'https://calzix.com/correlacion-datos',
+  },
+  'permutaciones-combinaciones': {
+    title: 'Calculadora de Permutaciones y Combinaciones — Calzix',
+    description: 'Calcula P(n,r) y C(n,r) para problemas de combinatoria.',
+    canonical: 'https://calzix.com/permutaciones-combinaciones',
+  },
+  'distribucion-normal': {
+    title: 'Calculadora de Distribución Normal — Calzix',
+    description: 'Calcula probabilidades de la distribución normal estándar.',
+    canonical: 'https://calzix.com/distribucion-normal',
+  },
+  'regla-tres': {
+    title: 'Calculadora de Regla de Tres — Calzix',
+    description: 'Resuelve reglas de tres simples y compuestas al instante.',
+    canonical: 'https://calzix.com/regla-tres',
+  },
 };

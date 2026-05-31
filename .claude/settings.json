@@ -4,7 +4,8 @@
       "Bash(dir \"C:\\\\Users\\\\Jose\\\\calzix\\\\src\\\\components\\\\tools\")",
       "Bash(dir \"C:\\\\Users\\\\Jose\\\\calzix\\\\src\\\\pages\")",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4321/)",
-      "Bash(npx playwright *)"
+      "Bash(npx playwright *)",
+      "Bash(git commit -m ' *)"
     ],
     "additionalDirectories": [
       "C:\\Users\\Jose\\calzix",
