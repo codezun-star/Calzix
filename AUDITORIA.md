@@ -1,88 +1,71 @@
-# Auditoría de Generación: 132 Calculadoras Nuevas
+# Auditoría de Calidad — Calculadoras Calzix
 
-## Resumen Ejecutivo
-Se han generado exitosamente **132 nuevas calculadoras** (20 por grupo, para 9 grupos), elevando el total de **48 a 180 calculadoras**. El build compila sin errores y todas las páginas HTML son funcionales.
+Revisión por fases de los 180 componentes `Tool.tsx` para detectar bugs de lógica, errores de estado, inputs mal mapeados, y violaciones de las reglas del proyecto.
 
-## Resultados por Categoría
-
-| Grupo | Nuevas | Status |
-|---|---|---|
-| Matemáticas | 14 | ✓ Completo |
-| Ciencias | 18 | ✓ Generado |
-| Conversión | 8 | ✓ Generado |
-| Hogar | 14 | ✓ Generado |
-| Trabajo | 15 | ✓ Generado |
-| Educación | 16 | ✓ Generado |
-| Viaje | 15 | ✓ Generado |
-| Naturaleza | 16 | ✓ Generado |
-| Ocio | 16 | ✓ Generado |
-| **TOTAL** | **132** | **✓ EXITOSO** |
-
-## Estructura Generada
-
-### Archivos Creados
-- **179** archivos `Tool.tsx` (React components)
-- **185** archivos `.astro` (páginas)
-- **196** páginas HTML estáticas compiladas
-- **0** errores TypeScript en el build
-
-### Tamaño de Archivos
-- Promedio por página HTML: ~17-18 KB
-- Tamaño total del dist: ~14 MB (estimado)
-
-## Verificaciones Realizadas
-
-### ✓ Verificaciones Exitosas
-1. **Build Compilation**: npm run build completó sin errores
-2. **HTML Generation**: 196 páginas HTML generadas correctamente
-3. **Content Validation**: Todas las páginas contienen:
-   - Título correcto (`<title>`)
-   - Botón "Calcular"
-   - Layout válido de Calzix
-   - FAQs (5 preguntas por página)
-4. **File Integrity**: Todos los archivos .tsx y .astro fueron creados correctamente
-5. **No Breaking Changes**: El sitio existing sigue funcionando
-
-### Muestra de Validación
-Probadas 7 calculadoras nuevas aleatorias:
-- calculadora-factorial.html → ✓ 18200 bytes
-- mcm-mcd.html → ✓ 18195 bytes
-- segunda-ley-newton.html → ✓ 17301 bytes
-- presupuesto-obra.html → ✓ 17304 bytes
-- nota-necesaria.html → ✓ 17284 bytes
-- autonomia-electrico.html → ✓ 17316 bytes
-- compatibilidad-zodiacal.html → ✓ 17374 bytes
-
-**Resultado**: 100% exitoso
-
-## Estado de Metadatos
-
-| Componente | Entradas | Status |
-|---|---|---|
-| calcs.ts | 76/180 | ⚠️ Parcial (Grupo 1 completo) |
-| seo.ts | 63/180 | ⚠️ Parcial (Grupo 1 completo) |
-| CALCULADORAS.md | Pendiente | ⚠️ No actualizado |
-
-**Nota**: Las páginas HTML se generan correctamente incluso sin metadatos en calcs.ts/seo.ts. El SEO y metadata no afectan la compilación.
-
-## Recomendaciones
-
-### Próximas Acciones
-1. **Alta prioridad**: Agregar entradas en calcs.ts para Grupos 2-9
-2. **Alta prioridad**: Agregar entradas en seo.ts para Grupos 2-9
-3. **Media**: Actualizar CALCULADORAS.md con nuevos números de serie
-4. **Baja**: Mejorar descripciones en las FAQs (actualmente genéricas)
-
-### Scripts Disponibles
-- `generate-calcs.ps1`: Genera archivos Grupo 1
-- `generate-all-calcs.ps1`: Genera archivos Grupos 2-9
-
-## Conclusión
-
-**Estado**: ✓ AUDITORIA COMPLETADA
-
-Todas las 132 calculadoras nuevas se han generado exitosamente y compiladas sin errores. El sitio es totalmente funcional. Los metadatos pendientes son necesarios para SEO y la página de inicio, pero NO afectan la disponibilidad de las calculadoras.
+**Criterios evaluados por tool:**
+- Tipado TypeScript correcto (sin `any`)
+- Inputs y estados correctamente mapeados a la fórmula
+- Validación y mensajes de error en español
+- Uso de `formatNumber` / `formatCurrency` / `formatPercent` desde `@/lib/utils/format`
+- Uso de `crypto.getRandomValues()` en lugar de `Math.random()` si genera valores aleatorios
+- Lógica de cálculo matemáticamente correcta
 
 ---
-**Generado**: 2026-05-31
-**Revisor**: Claude Haiku 4.5
+
+## Fase 1 — Tools 1-20 (A–CaminoVida)
+
+**Fecha:** 2026-06-01
+**Estado:** ✅ Completada — 1 bug corregido
+
+| # | Componente | Estado | Observaciones |
+|---|---|---|---|
+| 1 | AguaAlimentosTool | ✅ OK | |
+| 2 | AhorroEnergeticoTool | ✅ OK | |
+| 3 | AhorroSolarTool | ✅ OK | |
+| 4 | AlojamientoTool | ✅ OK | |
+| 5 | AlquilerVsCompraTool | ✅ OK | Maneja correctamente interés=0 (cuota=capital/n) |
+| 6 | AmortizacionHipotecaTool | ✅ OK | |
+| 7 | AnguloSolarTool | ✅ OK | |
+| 8 | AprendizajeEspaciadoTool | ✅ OK | |
+| 9 | AreaFigurasTool | ✅ OK | |
+| 10 | AreaJardinTool | ✅ OK | |
+| 11 | AutonomiaTool | ✅ OK | |
+| 12 | BaldosasSueloTool | ✅ OK | |
+| 13 | BateriaSolarTool | ✅ OK | |
+| 14 | BecaTool | ✅ OK | |
+| 15 | CableElectricoTool | ✅ OK | |
+| 16 | CaidaLibreTool | ✅ OK | |
+| 17 | CalidadAguaTool | ✅ OK | |
+| 18 | CalorEspecificoTool | 🔴 **CORREGIDO** | Ver detalle abajo |
+| 19 | CambioDivisasTool | ✅ OK | Tipos de cambio estáticos — aviso visible en UI |
+| 20 | CaminoVidaTool | ✅ OK | |
+
+### Bug #1 — CalorEspecificoTool
+
+**Síntoma:** Solo el modo `calor` funcionaba. Los modos `masa`, `especifico` y `delta` nunca producían resultado.
+
+**Causa raíz:**
+- El código declaraba `const m = parseFloat(masa...)` al inicio del bloque, usando siempre el estado `masa` como masa (kg). Sin embargo, en los modos no-calor el estado `masa` representa Q (calor), no la masa. Esto hacía que `m === q` y la fórmula fuera incorrecta.
+- El input de calor específico (`ce`) estaba oculto con `{modo !== 'masa' && ...}` pero la fórmula lo leía igualmente → `cv = NaN` → error siempre.
+- El input de ΔT (`delta`) estaba oculto con `{modo !== 'delta' && ...}` pero era necesario en el modo `delta`.
+- En modo `especifico`: `setResult(q / (m * dt))` con `q === m` → resultado = `1/dt`, fórmula incorrecta.
+
+**Corrección aplicada:**
+Reescritura completa del componente. Ahora muestra siempre los 3 inputs con labels dinámicos por modo (array `MODOS` con `inputs: [string, string, string]`), y usa una sola fórmula limpia:
+- Modo `calor`: `a * b * c`
+- Resto de modos: `a / (b * c)`
+
+---
+
+## Fases pendientes
+
+| Fase | Tools | Estado |
+|---|---|---|
+| Fase 2 | 21-40 (CaptacionLluvia → ConvMonedas) | Pendiente |
+| Fase 3 | 41-60 | Pendiente |
+| Fase 4 | 61-80 | Pendiente |
+| Fase 5 | 81-100 | Pendiente |
+| Fase 6 | 101-120 | Pendiente |
+| Fase 7 | 121-140 | Pendiente |
+| Fase 8 | 141-160 | Pendiente |
+| Fase 9 | 161-180 | Pendiente |
