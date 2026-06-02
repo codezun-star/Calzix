@@ -169,16 +169,59 @@ Reescritura completa del componente. Ahora muestra siempre los 3 inputs con labe
 
 ---
 
+## Fase 5 — Tools 81-100 (EficienciaEnergetica–HorasIdioma)
+
+**Fecha:** 2026-06-02
+**Estado:** ✅ Completada — 1 bug corregido
+
+| # | Componente | Estado | Observaciones |
+|---|---|---|---|
+| 81 | EficienciaEnergeticaTool | ✅ OK | |
+| 82 | EnergiaCineticaTool | ✅ OK | Ec = ½mv² |
+| 83 | EnergiaPotencialTool | ✅ OK | Ep = mgh |
+| 84 | EquilibrioQuimicoTool | ✅ OK | Kc = [C]^c[D]^d / [A]^a[B]^b |
+| 85 | EstequiometriaTool | ✅ OK | |
+| 86 | EtiquetaEnergeticaTool | ✅ OK | Estado `tipo` no se usa en cálculo (sin impacto funcional) |
+| 87 | ExcesoEquipajeTool | ✅ OK | |
+| 88 | FactorialTool | ✅ OK | Usa BigInt para resultados exactos hasta 170! |
+| 89 | FacturaGasTool | ✅ OK | |
+| 90 | FertilizanteJardinTool | ✅ OK | |
+| 91 | FiniquitoTool | ✅ OK | |
+| 92 | FormulaMolecularTool | ✅ OK | Normaliza subíndices Unicode antes de parsear |
+| 93 | FrecuenciaOndaTool | ✅ OK | v=f·λ — 3 modos correctos |
+| 94 | FuncionCuadraticaTool | ✅ OK | Discriminante, raíces y vértice correctos |
+| 95 | GasIdealTool | ✅ OK | PV=nRT — 4 modos, R=8.314 J/(mol·K) |
+| 96 | GeneradorLoteriaTool | ✅ OK | Usa `crypto.getRandomValues()` ✅ |
+| 97 | HipotecaTool | ✅ OK | Maneja interés=0, misma fórmula que AmortizacionHipotecaTool |
+| 98 | HoraMelatoninaTool | ✅ OK | `addMinutes` con manejo correcto de negativos |
+| 99 | HorasExtraTool | ✅ OK | 1800 h/año = jornada laboral española estándar |
+| 100 | HorasIdiomaTool | ✅ OK | Horas MCER bien establecidas |
+
+### Bug #5 — CiclosSuenoTool (addMinutes)
+
+**Detectado en:** Fase 5 (revisión de código de Fase 2)
+
+**Síntoma:** En modo "despertar", horas de bedtime que cruzan medianoche hacia atrás (resultado negativo en minutos) se mostraban como valores inválidos, ej. `-3:-14` en vez de `21:46`.
+
+**Causa raíz:** La función `addMinutes` original usaba `Math.floor(total / 60) % 24` y `total % 60`. El operador `%` en JavaScript conserva el signo del dividendo, por lo que valores negativos producían horas y minutos negativos. Para una hora de despertar a las 07:00, calcular 5 o 6 ciclos hacia atrás produce `total` negativo (-44, -134 min).
+
+**Corrección aplicada:** Mismo patrón de `HoraMelatoninaTool` que ya lo resolvía correctamente:
+- Horas: `Math.floor(((total % 1440) + 1440) % 1440 / 60)`
+- Minutos: `((total % 60) + 60) % 60`
+
+---
+
 ## Fases pendientes
 
 | Fase | Tools | Estado |
 |---|---|---|
-| Fase 5 | 81-100 | Pendiente |
+| Fase 6 | 101-120 | Pendiente |
 | Fase 4 | 61-80 | Pendiente |
 | Fase 5 | 81-100 | Pendiente |
 | Fase 6 | 101-120 | Pendiente |
 | Fase 7 | 121-140 | Pendiente |
 | Fase 8 | 141-160 | Pendiente |
 | Fase 9 | 161-180 | Pendiente |
+
 
 

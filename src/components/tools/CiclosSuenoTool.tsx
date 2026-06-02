@@ -5,8 +5,8 @@ const CICLO_MIN = 90;
 function addMinutes(time: string, mins: number): string {
   const [h, m] = time.split(':').map(Number);
   const total = h * 60 + m + mins;
-  const hh = Math.floor(total / 60) % 24;
-  const mm = total % 60;
+  const hh = Math.floor(((total % 1440) + 1440) % 1440 / 60);
+  const mm = ((total % 60) + 60) % 60;
   return `${String(hh).padStart(2, '0')}:${String(mm).padStart(2, '0')}`;
 }
 
