@@ -57,11 +57,62 @@ Reescritura completa del componente. Ahora muestra siempre los 3 inputs con labe
 
 ---
 
+## Fase 2 — Tools 21-40 (CaptacionLluvia–ConvAngulos)
+
+**Fecha:** 2026-06-02
+**Estado:** ✅ Completada — 3 bugs corregidos
+
+| # | Componente | Estado | Observaciones |
+|---|---|---|---|
+| 21 | CaptacionLluviaTool | ✅ OK | |
+| 22 | CaraCruzTool | 🔴 **CORREGIDO** | Ver Bug #2 |
+| 23 | CementoMorteroTool | ✅ OK | |
+| 24 | CiclosPersonalesTool | ✅ OK | |
+| 25 | CiclosSuenoTool | 🔴 **CORREGIDO** | Ver Bug #3 |
+| 26 | CircuitoElectricoTool | ✅ OK | |
+| 27 | Co2TransporteTool | ✅ OK | |
+| 28 | CompatibilidadNumerologicaTool | ✅ OK | Números maestros 22/33 se tratan como 11 por simplificación (aceptable) |
+| 29 | CompatibilidadTool | ✅ OK | |
+| 30 | CompatibilidadZodiacalTool | 🔴 **CORREGIDO** | Ver Bug #4 |
+| 31 | CompensacionCo2Tool | ✅ OK | |
+| 32 | CompostOrganicoTool | ✅ OK | |
+| 33 | ComprensionLectoraTool | ✅ OK | |
+| 34 | ConcentracionMolarTool | ✅ OK | Dos calculadoras independientes en un componente |
+| 35 | ConsumoAguaHogarTool | ✅ OK | |
+| 36 | ConsumoAguaTool | ✅ OK | |
+| 37 | ConsumoCombustibleTool | ✅ OK | |
+| 38 | ConsumoDuchaTool | ✅ OK | |
+| 39 | ConsumoElectricoTool | ✅ OK | |
+| 40 | ConvAngulosTool | ✅ OK | Patrón base-unit correcto |
+
+### Bug #2 — CaraCruzTool
+
+**Síntoma:** Emojis 🪙 y 🎰 en la interfaz, violando la regla del proyecto "sin emojis en la UI, solo iconos Lucide React".
+
+**Corrección aplicada:** Sustituidos por `<Sun>` (Cara) y `<Moon>` (Cruz) de Lucide React.
+
+### Bug #3 — CiclosSuenoTool
+
+**Síntoma:** En el modo "despertar" (¿cuándo me acuesto?), las etiquetas de ciclos eran incorrectas. Mostraba "4 ciclos (6h)" para la hora correspondiente a 6 ciclos de sueño, y "6 ciclos (9h)" para la de 4 ciclos.
+
+**Causa raíz:** El array se calculaba para ciclos [4, 5, 6] y luego se invertía con `.reverse()` para mostrar el bedtime más temprano primero. Pero el label `{4 + i}` asumía el orden original no invertido, dejando ciclos y horas desfasados.
+
+**Corrección aplicada:** Cambiado a almacenar tuplas `{ ciclos, hora }` en lugar de solo strings. Modo "despertar" genera [6, 5, 4] en ese orden (ya cronológico), modo "dormir" genera [4, 5, 6]. El render usa `entry.ciclos` directamente, eliminando el error de índice.
+
+### Bug #4 — CompatibilidadZodiacalTool
+
+**Síntoma:** Fechas del 1 al 19 de enero devolvían signo Piscis en lugar de Capricornio.
+
+**Causa raíz:** La función `getSigno` itera los signos hacia atrás buscando el primero cuyo `fechaInicio` sea anterior a la fecha dada. Capricornio empieza el 22 de diciembre, por lo que para enero (mes 1) no existe ningún signo con `mes <= 1` excepto Acuario (desde el 20), dejando el loop sin resultado. El fallback era `return SIGNOS[11]` (Piscis), que es incorrecto.
+
+**Corrección aplicada:** El fallback cambiado a `return SIGNOS[9]` (Capricornio), que es el único signo que cubre fechas de enero anteriores al 20.
+
+---
+
 ## Fases pendientes
 
 | Fase | Tools | Estado |
 |---|---|---|
-| Fase 2 | 21-40 (CaptacionLluvia → ConvMonedas) | Pendiente |
 | Fase 3 | 41-60 | Pendiente |
 | Fase 4 | 61-80 | Pendiente |
 | Fase 5 | 81-100 | Pendiente |
