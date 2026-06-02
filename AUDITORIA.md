@@ -286,7 +286,48 @@ Reescritura completa del componente. Ahora muestra siempre los 3 inputs con labe
 
 | Fase | Tools | Estado |
 |---|---|---|
-| Fase 8 | 141-160 | Pendiente |
+## Fase 8 — Tools 141-160 (Porcentaje–ResiduosElectronicos)
+
+**Fecha:** 2026-06-02
+**Estado:** ✅ Completada — 1 bug corregido
+
+| # | Componente | Estado | Observaciones |
+|---|---|---|---|
+| 141 | PorcentajeTool | ✅ OK | 3 modos correctos: X% de N, qué % es X de N, X es Y% de qué N |
+| 142 | PotenciaElectricaTool | ✅ OK | P=V×I — 3 modos correctos |
+| 143 | PotenciasRaicesTool | ✅ OK | Maneja bases negativas en raíces impares |
+| 144 | PrecioCosteMasTool | ✅ OK | Markup sobre coste; muestra margen sobre venta además |
+| 145 | PrecioHoraTool | ✅ OK | |
+| 146 | PrecioOriginalDescuentoTool | ✅ OK | original = pf/(1-d/100) correcto |
+| 147 | PresionHidrostaticaTool | ✅ OK | P=ρgh; permite h=0 |
+| 148 | PresupuestoBodaTool | ✅ OK | |
+| 149 | PresupuestoObraTool | ✅ OK | Cocina/baño = precio fijo; resto = €/m² |
+| 150 | PresupuestoViajeTool | ✅ OK | comida×días×personas correcto |
+| 151 | ProbabilidadTool | ✅ OK | |
+| 152 | ProductividadTool | ✅ OK | |
+| 153 | PropinaGrupoTool | ✅ OK | |
+| 154 | PropinaPorcentajeTool | ✅ OK | |
+| 155 | PropinaTool | ✅ OK | |
+| 156 | PuntoEquilibrioTool | ✅ OK | Break-even = CF/(PV-CV) correcto |
+| 157 | ReciclajeTool | ✅ OK | |
+| 158 | ReglaTresTool | 🔴 **CORREGIDO** | Ver Bug #6 |
+| 159 | RentabilidadRoiTool | ✅ OK | ROI simple (no compuesto), bien etiquetado |
+| 160 | ResiduosElectronicosTool | ✅ OK | |
+
+### Bug #6 — ReglaTresTool
+
+**Síntoma:** En modo inversa, si el usuario introduce `C = 0`, la división `(na × nb) / 0` produce `Infinity` que se muestra en pantalla sin mensaje de error.
+
+**Causa raíz:** La validación solo cubría `na === 0` (válida para ambos modos), pero no validaba `nc === 0` en el modo inversa, donde `nc` es el divisor.
+
+**Corrección aplicada:** Añadida validación `if (nc === 0) throw new Error('C no puede ser cero en proporción inversa.')` dentro del bloque inversa.
+
+---
+
+## Fases pendientes
+
+| Fase | Tools | Estado |
+|---|---|---|
 | Fase 9 | 161-180 | Pendiente |
 
 
