@@ -139,15 +139,46 @@ Reescritura completa del componente. Ahora muestra siempre los 3 inputs con labe
 
 ---
 
+## Fase 4 — Tools 61-80 (CorrelacionDatos–EcuacionLineal)
+
+**Fecha:** 2026-06-02
+**Estado:** ✅ Completada — 0 bugs
+
+| # | Componente | Estado | Observaciones |
+|---|---|---|---|
+| 61 | CorrelacionDatosTool | ✅ OK | Pearson correcto, guarda de varianza cero |
+| 62 | CosteCarreraTool | ✅ OK | Costes mensuales × 10 meses lectivos documentado en UI |
+| 63 | CosteReunionTool | ✅ OK | |
+| 64 | CosteViajeTool | ✅ OK | |
+| 65 | CostoGasolinera | ✅ OK | Nombre sin sufijo `Tool` — inconsistencia menor, no afecta funcionamiento |
+| 66 | CostoPeajesTool | ✅ OK | |
+| 67 | DadoVirtualTool | ✅ OK | Usa `crypto.getRandomValues()` ✅ |
+| 68 | DescuentoTool | ✅ OK | IVA opcional bien implementado |
+| 69 | DescuentoVolumenTool | ✅ OK | |
+| 70 | DeudaSuenoTool | ✅ OK | |
+| 71 | DiasJuntosTool | ✅ OK | |
+| 72 | DiferenciaHorariaTool | ✅ OK | Cruces de medianoche y día siguiente correctos |
+| 73 | DilucionesTool | ✅ OK | C₁V₁=C₂V₂ — los 4 modos bien mapeados a la fórmula |
+| 74 | DimensionsMaletaTool | ✅ OK | Límite IATA usa suma lineal (≤158 cm) correctamente |
+| 75 | DistanciaApieTool | ✅ OK | |
+| 76 | DistanciaCiclismoTool | ✅ OK | |
+| 77 | DistanciaTool | ✅ OK | Hora de llegada con detección de día siguiente |
+| 78 | DistribucionNormalTool | ✅ OK | Aproximación erf (Abramowitz & Stegun, error ≤1.5e-7) |
+| 79 | DuracionVueloTool | ✅ OK | |
+| 80 | EcuacionLinealTool | ✅ OK | Muestra pasos intermedios, buen UX |
+
+---
+
 ## Fases pendientes
 
 | Fase | Tools | Estado |
 |---|---|---|
-| Fase 4 | 61-80 | Pendiente |
+| Fase 5 | 81-100 | Pendiente |
 | Fase 4 | 61-80 | Pendiente |
 | Fase 5 | 81-100 | Pendiente |
 | Fase 6 | 101-120 | Pendiente |
 | Fase 7 | 121-140 | Pendiente |
 | Fase 8 | 141-160 | Pendiente |
 | Fase 9 | 161-180 | Pendiente |
+
 
