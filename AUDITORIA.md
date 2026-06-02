@@ -217,8 +217,40 @@ Reescritura completa del componente. Ahora muestra siempre los 3 inputs con labe
 |---|---|---|
 | Fase 6 | 101-120 | Pendiente |
 | Fase 4 | 61-80 | Pendiente |
-| Fase 5 | 81-100 | Pendiente |
-| Fase 6 | 101-120 | Pendiente |
+## Fase 6 — Tools 101-120 (HuellaAlimentaria–NotaPonderada)
+
+**Fecha:** 2026-06-02
+**Estado:** ✅ Completada — 0 bugs
+
+| # | Componente | Estado | Observaciones |
+|---|---|---|---|
+| 101 | HuellaAlimentariaTool | ✅ OK | |
+| 102 | HuellaCarbonTool | ✅ OK | |
+| 103 | InstalacionSolarHogarTool | ✅ OK | Factor 0.8 eficiencia y 1.200€/kWp correctos |
+| 104 | IrpfRetencionTool | ✅ OK | Tramos IRPF 2024 verificados (hasta 47% para >300k) |
+| 105 | IvaTool | ✅ OK | Añadir y extraer IVA correctos |
+| 106 | JetLagTool | ✅ OK | |
+| 107 | LeyOhmTool | ✅ OK | V=IR — 3 modos correctos |
+| 108 | LibrosAnioTool | ✅ OK | |
+| 109 | LitrosRepostajeTool | ✅ OK | Campos opcionales bien manejados |
+| 110 | MargenBeneficioTool | ✅ OK | Margen sobre precio (no markup) — fórmulas correctas |
+| 111 | MaterialesConstruccionTool | ✅ OK | 5% de desperdicio documentado en UI |
+| 112 | McmMcdTool | ✅ OK | Euclídeo correcto; MCM = (a/mcd)×b evita overflow |
+| 113 | MediaMedianaTool | ✅ OK | Varianza poblacional (÷n), estadísticas completas |
+| 114 | MolMasaTool | ✅ OK | |
+| 115 | NewtonTool | ✅ OK | F=ma — 3 modos correctos |
+| 116 | NombreAmorTool | ✅ OK | Hash unsigned con `>>> 0`; disclaimer visible |
+| 117 | NominaTool | ✅ OK | SS 6,4% + IRPF progresivo sobre base neta SS |
+| 118 | NotaMediaTool | ✅ OK | Media simple y ponderada en tiempo real (useMemo) |
+| 119 | NotaNecesariaTool | ✅ OK | Fórmula `(min×total - actual×pasados) / restantes` correcta |
+| 120 | NotaPonderadaTool | ✅ OK | |
+
+---
+
+## Fases pendientes
+
+| Fase | Tools | Estado |
+|---|---|---|
 | Fase 7 | 121-140 | Pendiente |
 | Fase 8 | 141-160 | Pendiente |
 | Fase 9 | 161-180 | Pendiente |
