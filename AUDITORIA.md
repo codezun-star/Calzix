@@ -109,14 +109,45 @@ Reescritura completa del componente. Ahora muestra siempre los 3 inputs con labe
 
 ---
 
+## Fase 3 — Tools 41-60 (ConvArea–ConversionNotas)
+
+**Fecha:** 2026-06-02
+**Estado:** ✅ Completada — 0 bugs
+
+| # | Componente | Estado | Observaciones |
+|---|---|---|---|
+| 41 | ConvAreaTool | ✅ OK | |
+| 42 | ConvCaudalTool | ✅ OK | |
+| 43 | ConvDatosTool | ✅ OK | Distinción correcta SI (×1000) vs binario (×1024) |
+| 44 | ConvDensidadTool | ✅ OK | g/L = kg/m³ correctamente tratados como equivalentes |
+| 45 | ConvEficienciaTool | ✅ OK | Escala inversa (L/100km ↔ km/L) correctamente implementada |
+| 46 | ConvEnergiaTool | ✅ OK | |
+| 47 | ConvFrecuenciaTool | ✅ OK | RPM→Hz (÷60) y rad/s→Hz (÷2π) correctos |
+| 48 | ConvFuerzaTool | ✅ OK | |
+| 49 | ConvIluminacionTool | ✅ OK | |
+| 50 | ConvLongitudTool | ✅ OK | |
+| 51 | ConvMonedasTool | ✅ OK | Tasas estáticas con aviso en UI |
+| 52 | ConvParMotorTool | ✅ OK | |
+| 53 | ConvPesoTool | ✅ OK | |
+| 54 | ConvPotenciaTool | ✅ OK | |
+| 55 | ConvPresionTool | ✅ OK | |
+| 56 | ConvTemperaturaTool | ✅ OK | Conversión vía Celsius como base correcta |
+| 57 | ConvTiempoTool | ✅ OK | Mes = 30.4375 días (365.25/12), año = 365.25 días |
+| 58 | ConvVelocidadTool | ✅ OK | |
+| 59 | ConvVolumenTool | ✅ OK | |
+| 60 | ConversionNotasTool | ✅ OK | Escala eu5 (1–5) usa offset correcto en toBase/fromBase |
+
+---
+
 ## Fases pendientes
 
 | Fase | Tools | Estado |
 |---|---|---|
-| Fase 3 | 41-60 | Pendiente |
+| Fase 4 | 61-80 | Pendiente |
 | Fase 4 | 61-80 | Pendiente |
 | Fase 5 | 81-100 | Pendiente |
 | Fase 6 | 101-120 | Pendiente |
 | Fase 7 | 121-140 | Pendiente |
 | Fase 8 | 141-160 | Pendiente |
 | Fase 9 | 161-180 | Pendiente |
+
