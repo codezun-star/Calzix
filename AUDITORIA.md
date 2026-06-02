@@ -252,6 +252,40 @@ Reescritura completa del componente. Ahora muestra siempre los 3 inputs con labe
 | Fase | Tools | Estado |
 |---|---|---|
 | Fase 7 | 121-140 | Pendiente |
+## Fase 7 — Tools 121-140 (NotaSelectividad–Pomodoro)
+
+**Fecha:** 2026-06-02
+**Estado:** ✅ Completada — 0 bugs
+
+| # | Componente | Estado | Observaciones |
+|---|---|---|---|
+| 121 | NotaSelectividadTool | ✅ OK | Fórmula 0.6×Bach + 0.4×EvAU + bonificación, tope 14 correctos |
+| 122 | NumeroExpresionTool | ✅ OK | Tabla pitagórica; filtra solo letras latinas |
+| 123 | NumeroOxidacionTool | ✅ OK | Herramienta de referencia (no calcula) |
+| 124 | NumeroPlacasTool | ✅ OK | Misma fórmula validada que InstalacionSolarHogarTool |
+| 125 | NumeroPrimoTool | ✅ OK | Test primo O(√n); factorización correcta |
+| 126 | NumerologiaTool | ✅ OK | |
+| 127 | NumerosSuerteTool | ✅ OK | Usa `crypto.getRandomValues()` ✅; complementario = 7ª bola única |
+| 128 | PaginasPorDiaTool | ✅ OK | |
+| 129 | PalabrasMinutoTool | ✅ OK | |
+| 130 | PapelRecicladoTool | ✅ OK | |
+| 131 | PerimetroFigurasTool | ✅ OK | Rombo: `2√(d1²+d2²)` correcto |
+| 132 | PermutacionesTool | ✅ OK | P=n!/(n-r)!, C=n!/(r!(n-r)!) correctos |
+| 133 | PesoEquipajeTool | ✅ OK | Cálculo en tiempo real; iconos Lucide (Plus, Trash2) |
+| 134 | PhTool | ✅ OK | pH, pOH, [H⁺], [OH⁻] — 3 modos correctos |
+| 135 | PinturaExteriorTool | ✅ OK | Descuento ventana 1.5m², puerta 2m² |
+| 136 | PinturaTechosTool | ✅ OK | |
+| 137 | PinturaTool | ✅ OK | Área = 2×(l+an)×al; 10% buffer incluido |
+| 138 | PlanEstudioTool | ✅ OK | |
+| 139 | PlasticoRecicladoTool | ✅ OK | |
+| 140 | PomodoroTool | ✅ OK | `(pomodoros-bloques)×mdc` = nº descansos cortos, verificado |
+
+---
+
+## Fases pendientes
+
+| Fase | Tools | Estado |
+|---|---|---|
 | Fase 8 | 141-160 | Pendiente |
 | Fase 9 | 161-180 | Pendiente |
 
