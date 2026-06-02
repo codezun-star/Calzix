@@ -21,7 +21,7 @@ function calcularTrig(angulo: number, enGrados: boolean): TrigValues {
 
   const arcsenVal = Math.abs(senVal) <= 1 ? Math.asin(senVal) : null;
   const arccosVal = Math.abs(cosVal) <= 1 ? Math.acos(cosVal) : null;
-  const arctanVal = Math.atan(senVal);
+  const arctanVal = Math.atan2(senVal, cosVal);
 
   const toUnit = (r: number | null): number | null => {
     if (r === null) return null;

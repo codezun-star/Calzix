@@ -324,11 +324,74 @@ Reescritura completa del componente. Ahora muestra siempre los 3 inputs con labe
 
 ---
 
-## Fases pendientes
+## Fase 9 — Tools 161-180 (RiegoJardin–VolumenSolidos) — ÚLTIMA FASE
 
-| Fase | Tools | Estado |
+**Fecha:** 2026-06-02
+**Estado:** ✅ Completada — 3 bugs corregidos (en 3 archivos)
+
+| # | Componente | Estado | Observaciones |
+|---|---|---|---|
+| 161 | RiegoJardinTool | ✅ OK | |
+| 162 | RuletaDecisionTool | ✅ OK | Usa `crypto.getRandomValues()` ✅ |
+| 163 | RutaSenderismoTool | ✅ OK | Regla de Naismith: +1h por cada 300m desnivel |
+| 164 | SeguroViajeTool | ✅ OK | Claramente etiquetado como orientativo |
+| 165 | SesionEstudioTool | ✅ OK | |
+| 166 | SiestaOptimaTool | ✅ OK | `addMinutes` con duraciones siempre positivas — `% 24` correcto |
+| 167 | SimuladorBecaTool | 🔴 **CORREGIDO** | Ver Bug #8 (mismo patrón que UmbralRentaTool) |
+| 168 | SinCosTanTool | 🔴 **CORREGIDO** | Ver Bug #7 |
+| 169 | SistemaEcuacionesTool | ✅ OK | Regla de Cramer correcta; detecta determinante=0 |
+| 170 | SolucionConcentracionTool | ✅ OK | Molar, masa% y ppm correctos |
+| 171 | SuenoTool | ✅ OK | `minutosAHora` con manejo de negativos correcto desde origen |
+| 172 | TeoremaPitagorasTool | ✅ OK | |
+| 173 | TiempoEstudioTool | ✅ OK | |
+| 174 | TiempoLibroTool | ✅ OK | |
+| 175 | UmbralRentaTool | 🔴 **CORREGIDO** | Ver Bug #8 |
+| 176 | VacacionesTool | ✅ OK | |
+| 177 | VarianzaDesviacionTool | ✅ OK | Opción poblacional (÷n) y muestral (÷n-1) |
+| 178 | VelocidadFisicaTool | ✅ OK | v=d/t — 3 modos correctos |
+| 179 | VelocidadLecturaTool | ✅ OK | |
+| 180 | VolumenSolidosTool | ✅ OK | 6 sólidos con fórmulas correctas |
+
+### Bug #7 — SinCosTanTool
+
+**Síntoma:** La fila `arctan` mostraba valores erróneos. Para 45°, mostraba 35,26° en vez de 45°.
+
+**Causa raíz:** `Math.atan(senVal)` calcula arctan(sin(ángulo)) en lugar de arctan(tan(ángulo)). Para 45°: arctan(sin(45°)) = arctan(0.707) = 35.26° — incorrecto.
+
+**Corrección aplicada:** Cambiado a `Math.atan2(senVal, cosVal)`, que equivale al ángulo original en el rango [-π, π] y es numéricamente estable (no divide por cero cuando cos=0).
+
+### Bug #8 — UmbralRentaTool y SimuladorBecaTool
+
+**Síntoma:** Familias con más de 8 miembros siempre recibían el umbral de 8 miembros en lugar del umbral extrapolado (umbral[8] + extras×3000).
+
+**Causa raíz:** El patrón `UMBRALES[Math.min(n, 8)] ?? fallback` nunca activa el `??` porque `Math.min(n, 8)` siempre devuelve un índice válido (≤8 = definido en la tabla). El operador `??` solo se activa cuando el resultado es `null` o `undefined`.
+
+**Corrección aplicada:** Eliminado el `Math.min`. Ahora: `UMBRALES[n] ?? (UMBRALES[8] + (n-8) × 3000)` — el `??` activa correctamente cuando n > 8 (índice no definido en la tabla).
+
+---
+
+## Resumen global de la auditoría
+
+**Estado:** ✅ COMPLETADA — 9 fases, 180 tools
+
+| Métrica | Valor |
+|---|---|
+| Tools auditados | 180 / 180 |
+| Bugs corregidos | **8 bugs en 9 archivos** |
+| Tools sin bugs | 171 |
+
+### Bugs corregidos (resumen)
+
+| # | Archivo | Descripción |
 |---|---|---|
-| Fase 9 | 161-180 | Pendiente |
+| 1 | CalorEspecificoTool | Modos masa/especifico/delta completamente rotos — inputs ocultos mal mapeados |
+| 2 | CaraCruzTool | Emojis 🪙/🎰 en UI (violación regla "sin emojis") → Sun/Moon Lucide |
+| 3 | CiclosSuenoTool | Labels ciclos invertidos tras `.reverse()` + `addMinutes` con negativos |
+| 4 | CompatibilidadZodiacalTool | `getSigno` devolvía Piscis para 1-19 enero (correcto: Capricornio) |
+| 5 | CiclosSuenoTool | `addMinutes` producía tiempos negativos al cruzar medianoche hacia atrás |
+| 6 | ReglaTresTool | Modo inversa con C=0 producía Infinity sin mensaje de error |
+| 7 | SinCosTanTool | `arctan` usaba `Math.atan(sin)` en vez de `Math.atan2(sin, cos)` |
+| 8 | UmbralRentaTool + SimuladorBecaTool | `Math.min(n,8)` impedía el fallback `??` para familias >8 miembros |
 
 
 
