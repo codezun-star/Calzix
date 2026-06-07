@@ -1,78 +1,76 @@
 ---
 import { SITE } from '@/lib/constants/seo';
 
-const COLUMNS = [
-  {
-    heading: 'Ciencia',
-    links: [
-      { label: 'Matemáticas', href: '/matematicas' },
-      { label: 'Ciencias',    href: '/ciencias' },
-      { label: 'Conversión',  href: '/conversion' },
-    ],
-  },
-  {
-    heading: 'Vida diaria',
-    links: [
-      { label: 'Hogar',      href: '/hogar' },
-      { label: 'Trabajo',    href: '/trabajo' },
-      { label: 'Educación',  href: '/educacion' },
-    ],
-  },
-  {
-    heading: 'Estilo de vida',
-    links: [
-      { label: 'Viaje',       href: '/viaje' },
-      { label: 'Naturaleza',  href: '/naturaleza' },
-      { label: 'Ocio',        href: '/ocio' },
-    ],
-  },
-  {
-    heading: 'Calzix',
-    links: [
-      { label: 'Inicio',      href: '/' },
-      { label: 'Privacidad',  href: '/privacidad' },
-      { label: 'Términos',    href: '/terminos' },
-      { label: 'Aviso legal', href: '/aviso-legal' },
-      { label: 'Contacto',    href: '/contacto' },
-    ],
-  },
-];
+const year = new Date().getFullYear();
 ---
 
-<footer class="border-t border-[var(--color-border)] bg-[var(--color-surface)] mt-20">
-  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6">
-    <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
-      {COLUMNS.map(({ heading, links }) => (
-        <div>
-          <h3 class="mb-3 text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">
-            {heading}
-          </h3>
-          <ul class="space-y-2">
-            {links.map(({ label, href }) => (
-              <li>
-                <a
-                  href={href}
-                  class="text-sm text-[var(--color-text-secondary)] transition-colors hover:text-[var(--color-text)]"
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
+<footer class="border-t border-[var(--color-border)] bg-white mt-20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10">
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 mb-8 text-sm">
+      <div>
+        <p class="font-bold text-[var(--color-text)] mb-3">Matemáticas</p>
+        <nav class="space-y-2 text-[var(--color-text-muted)]">
+          <a href="/calculadora-porcentaje" class="block hover:text-[var(--color-text)] transition-colors">Porcentaje</a>
+          <a href="/area-figuras"           class="block hover:text-[var(--color-text)] transition-colors">Área de figuras</a>
+          <a href="/ecuacion-lineal"        class="block hover:text-[var(--color-text)] transition-colors">Ecuación lineal</a>
+          <a href="/seno-coseno"            class="block hover:text-[var(--color-text)] transition-colors">Seno y coseno</a>
+          <a href="/matematicas" class="block hover:text-[var(--color-accent)] transition-colors text-xs mt-1">Ver todas →</a>
+        </nav>
+      </div>
+      <div>
+        <p class="font-bold text-[var(--color-text)] mb-3">Ciencias</p>
+        <nav class="space-y-2 text-[var(--color-text-muted)]">
+          <a href="/velocidad-distancia-tiempo" class="block hover:text-[var(--color-text)] transition-colors">Velocidad</a>
+          <a href="/ley-ohm"                    class="block hover:text-[var(--color-text)] transition-colors">Ley de Ohm</a>
+          <a href="/calculadora-ph"             class="block hover:text-[var(--color-text)] transition-colors">pH</a>
+          <a href="/energia-cinetica"           class="block hover:text-[var(--color-text)] transition-colors">Energía cinética</a>
+          <a href="/ciencias" class="block hover:text-[var(--color-accent)] transition-colors text-xs mt-1">Ver todas →</a>
+        </nav>
+      </div>
+      <div>
+        <p class="font-bold text-[var(--color-text)] mb-3">Conversión</p>
+        <nav class="space-y-2 text-[var(--color-text-muted)]">
+          <a href="/conversor-temperatura" class="block hover:text-[var(--color-text)] transition-colors">Temperatura</a>
+          <a href="/conversor-longitud"    class="block hover:text-[var(--color-text)] transition-colors">Longitud</a>
+          <a href="/conversor-peso"        class="block hover:text-[var(--color-text)] transition-colors">Peso</a>
+          <a href="/conversor-monedas"     class="block hover:text-[var(--color-text)] transition-colors">Monedas</a>
+          <a href="/conversion" class="block hover:text-[var(--color-accent)] transition-colors text-xs mt-1">Ver todas →</a>
+        </nav>
+      </div>
+      <div>
+        <p class="font-bold text-[var(--color-text)] mb-3">Hogar</p>
+        <nav class="space-y-2 text-[var(--color-text-muted)]">
+          <a href="/calculadora-hipoteca"  class="block hover:text-[var(--color-text)] transition-colors">Hipoteca</a>
+          <a href="/calculadora-pintura"   class="block hover:text-[var(--color-text)] transition-colors">Pintura</a>
+          <a href="/consumo-electrico"     class="block hover:text-[var(--color-text)] transition-colors">Consumo eléctrico</a>
+          <a href="/ahorro-energetico"     class="block hover:text-[var(--color-text)] transition-colors">Ahorro energético</a>
+          <a href="/hogar" class="block hover:text-[var(--color-accent)] transition-colors text-xs mt-1">Ver todas →</a>
+        </nav>
+      </div>
+      <div>
+        <p class="font-bold text-[var(--color-text)] mb-3">Trabajo</p>
+        <nav class="space-y-2 text-[var(--color-text-muted)]">
+          <a href="/calculadora-iva"       class="block hover:text-[var(--color-text)] transition-colors">IVA</a>
+          <a href="/calculadora-descuento" class="block hover:text-[var(--color-text)] transition-colors">Descuentos</a>
+          <a href="/calculadora-nomina"    class="block hover:text-[var(--color-text)] transition-colors">Nómina</a>
+          <a href="/calculadora-propina"   class="block hover:text-[var(--color-text)] transition-colors">Propina</a>
+          <a href="/trabajo" class="block hover:text-[var(--color-accent)] transition-colors text-xs mt-1">Ver todas →</a>
+        </nav>
+      </div>
+      <div>
+        <p class="font-bold text-[var(--color-text)] mb-3">Calzix</p>
+        <nav class="space-y-2 text-[var(--color-text-muted)]">
+          <a href="/"            class="block hover:text-[var(--color-text)] transition-colors">Inicio</a>
+          <a href="/contacto"    class="block hover:text-[var(--color-text)] transition-colors">Contacto</a>
+          <a href="/privacidad"  class="block hover:text-[var(--color-text)] transition-colors">Privacidad</a>
+          <a href="/terminos"    class="block hover:text-[var(--color-text)] transition-colors">Términos</a>
+          <a href="/aviso-legal" class="block hover:text-[var(--color-text)] transition-colors">Aviso legal</a>
+        </nav>
+      </div>
     </div>
-
-    <div class="mt-10 border-t border-[var(--color-border)] pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-      <p class="text-xs text-[var(--color-text-muted)]">
-        &copy; {new Date().getFullYear()} {SITE.name}. Todos los derechos reservados.
-      </p>
-      <a
-        href={`mailto:${SITE.email}`}
-        class="text-xs text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors"
-      >
-        {SITE.email}
-      </a>
+    <div class="border-t border-[var(--color-border)] pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[var(--color-text-muted)]">
+      <p>© {year} {SITE.name} · Calculadoras gratuitas · Resultados al instante, sin registro</p>
+      <a href="/cookies" class="hover:text-[var(--color-text)] transition-colors">Política de cookies</a>
     </div>
   </div>
 </footer>
