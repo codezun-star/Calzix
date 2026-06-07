@@ -1,0 +1,274 @@
+---
+import Header from '@/components/layout/Header.astro';
+import Footer from '@/components/layout/Footer.astro';
+import { SITE } from '@/lib/constants/seo';
+import { getCollection, getEntry, render } from 'astro:content';
+import '@/styles/global.css';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', (e) => e.data.publicado !== false);
+  return posts.map((p) => ({ params: { slug: p.id } }));
+}
+
+const { slug } = Astro.params;
+const post = await getEntry('blog', slug as string);
+
+if (!post || post.data.publicado === false) return Astro.redirect('/blog');
+
+const { Content } = await render(post);
+
+const CATEGORIA_LABEL: Record<string, string> = {
+  guias:      'Guías',
+  tips:       'Consejos',
+  tutoriales: 'Tutoriales',
+  finanzas:   'Finanzas',
+  general:    'General',
+};
+
+const canonical  = `${SITE.url}/blog/${post.id}`;
+const pageTitle  = `${post.data.titulo} | ${SITE.name}`;
+const pageDesc   = post.data.descripcion ?? '';
+const fechaISO   = post.data.fecha + 'T00:00:00Z';
+const fechaLabel = new Date(fechaISO).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="monetag" content="9ca0907e42e5335f11365db777da534e" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDesc} />
+    {post.data.keywords.length > 0 && (
+      <meta name="keywords" content={post.data.keywords.join(', ')} />
+    )}
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <meta property="og:type"              content="article" />
+    <meta property="og:url"               content={canonical} />
+    <meta property="og:title"             content={pageTitle} />
+    <meta property="og:description"       content={pageDesc} />
+    <meta property="og:site_name"         content={SITE.name} />
+    <meta property="article:published_time" content={fechaISO} />
+
+    <meta name="twitter:card"        content="summary" />
+    <meta name="twitter:title"       content={pageTitle} />
+    <meta name="twitter:description" content={pageDesc} />
+
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+      '@context':       'https://schema.org',
+      '@type':          'Article',
+      headline:          post.data.titulo,
+      description:       pageDesc,
+      author: { '@type': 'Organization', name: post.data.autor },
+      publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+      datePublished:     fechaISO,
+      url:               canonical,
+      keywords:          post.data.keywords.join(', '),
+    })} />
+  </head>
+
+  <body>
+    <Header />
+
+    <!-- Cabecera del artículo -->
+    <div class="bg-[var(--color-text)]">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+        <nav class="flex items-center gap-2 text-xs text-[var(--color-text-muted)] mb-6 flex-wrap">
+          <a href="/" class="hover:text-white transition-colors">Inicio</a>
+          <span>/</span>
+          <a href="/blog" class="hover:text-white transition-colors">Blog</a>
+          <span>/</span>
+          <span class="truncate max-w-[200px]" style="color: var(--color-accent);">{post.data.titulo}</span>
+        </nav>
+
+        {post.data.categoria && (
+          <span class="inline-block text-[10px] font-semibold uppercase tracking-widest bg-[var(--color-accent)] text-white px-2.5 py-1 rounded-full mb-4">
+            {CATEGORIA_LABEL[post.data.categoria] ?? post.data.categoria}
+          </span>
+        )}
+
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight mb-4" style="letter-spacing: -0.3px;">
+          {post.data.titulo}
+        </h1>
+
+        {post.data.descripcion && (
+          <p class="text-[var(--color-text-muted)] text-base leading-relaxed mb-5">
+            {post.data.descripcion}
+          </p>
+        )}
+
+        <div class="flex items-center gap-4 text-xs text-[var(--color-text-muted)] flex-wrap">
+          <span>{post.data.autor}</span>
+          <span>·</span>
+          <time datetime={fechaISO}>{fechaLabel}</time>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenido del artículo -->
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 min-h-[50vh]">
+      <div class="prose">
+        <Content />
+      </div>
+
+      <!-- Compartir -->
+      <div class="mt-12 pt-8 border-t border-[var(--color-border)]">
+        <p class="text-xs font-semibold uppercase tracking-widest text-[var(--color-text-muted)] mb-3">
+          Compartir artículo
+        </p>
+        <div class="flex items-center gap-3 flex-wrap">
+          <a
+            href={`https://wa.me/?text=${encodeURIComponent(post.data.titulo + ' — ' + canonical)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 px-4 py-2.5 border border-[var(--color-border)] bg-white text-sm font-medium text-[var(--color-text-secondary)] hover:border-[#25D366] hover:text-[#128C7E] transition-colors rounded-lg"
+          >
+            WhatsApp
+          </a>
+          <button
+            id="copy-link-btn"
+            class="flex items-center gap-2 px-4 py-2.5 border border-[var(--color-border)] bg-white text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors rounded-lg cursor-pointer"
+          >
+            Copiar enlace
+          </button>
+        </div>
+      </div>
+
+      <!-- Volver -->
+      <div class="mt-6">
+        <a
+          href="/blog"
+          class="inline-flex items-center gap-2 text-xs text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors uppercase tracking-wider"
+        >
+          ← Volver al blog
+        </a>
+      </div>
+    </main>
+
+    <Footer />
+    <script is:inline>(function(s){s.dataset.zone='11097742',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    <script is:inline>(function(s){s.dataset.zone='11097743',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    <script is:inline>(function(s){s.dataset.zone='11095273',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+  </body>
+</html>
+
+<style is:global>
+  .prose h2 {
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--color-text);
+    margin: 2.2rem 0 0.75rem;
+    letter-spacing: -0.3px;
+    line-height: 1.25;
+  }
+  .prose h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 1.6rem 0 0.5rem;
+  }
+  .prose p {
+    font-size: 15px;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin: 0 0 1rem;
+  }
+  .prose ul,
+  .prose ol {
+    font-size: 15px;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    padding-left: 1.4rem;
+    margin: 0 0 1rem;
+  }
+  .prose li { margin-bottom: 0.4rem; }
+  .prose strong { color: var(--color-text); font-weight: 700; }
+  .prose a {
+    color: var(--color-text);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+    transition: color 0.15s;
+  }
+  .prose a:hover { color: var(--color-accent); }
+  .prose table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.2rem 0;
+    font-size: 14px;
+  }
+  .prose th {
+    background: var(--color-text);
+    color: white;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 8px 12px;
+    text-align: left;
+    font-weight: 700;
+  }
+  .prose td {
+    border-bottom: 1px solid var(--color-border);
+    padding: 8px 12px;
+    color: var(--color-text-secondary);
+  }
+  .prose blockquote {
+    border-left: 3px solid var(--color-accent);
+    margin: 1.2rem 0;
+    padding: 0.75rem 1.25rem;
+    background: var(--color-accent-bg);
+    color: var(--color-text);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .prose code {
+    background: var(--color-calcs-bg);
+    color: var(--color-accent);
+    font-size: 13px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+  }
+  .prose pre {
+    background: var(--color-text);
+    color: #F5F1E8;
+    padding: 1.2rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 13px;
+    line-height: 1.7;
+    margin: 1.2rem 0;
+  }
+  .prose pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+    border-radius: 0;
+    font-size: inherit;
+  }
+  .prose hr {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: 2rem 0;
+  }
+  .prose img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 1.2rem 0;
+  }
+</style>
+
+<script>
+  const btn = document.getElementById('copy-link-btn');
+  btn?.addEventListener('click', async () => {
+    await navigator.clipboard.writeText(window.location.href);
+    const old = btn.textContent;
+    btn.textContent = '¡Copiado!';
+    setTimeout(() => { btn.textContent = old; }, 2000);
+  });
+</script>

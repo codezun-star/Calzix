@@ -1,0 +1,84 @@
+---
+import Header from '@/components/layout/Header.astro';
+import Footer from '@/components/layout/Footer.astro';
+import BlogList from '@/components/blog/BlogList';
+import { SITE } from '@/lib/constants/seo';
+import { getCollection } from 'astro:content';
+import '@/styles/global.css';
+
+const todos = await getCollection('blog', (e) => e.data.publicado !== false);
+const articles = todos
+  .sort((a, b) => b.data.fecha.localeCompare(a.data.fecha))
+  .map((art) => ({
+    id:          art.id,
+    titulo:      art.data.titulo,
+    descripcion: art.data.descripcion ?? '',
+    categoria:   art.data.categoria,
+    fecha:       art.data.fecha,
+  }));
+
+const title       = `Blog — Guías y consejos sobre cálculo | ${SITE.name}`;
+const description = 'Artículos, guías y tutoriales para entender fórmulas, hacer mejores cálculos financieros y aprovechar al máximo las calculadoras de Calzix.';
+const canonical   = `${SITE.url}/blog`;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="monetag" content="9ca0907e42e5335f11365db777da534e" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <meta property="og:type"        content="website" />
+    <meta property="og:url"         content={canonical} />
+    <meta property="og:title"       content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name"   content={SITE.name} />
+
+    <meta name="twitter:card"        content="summary" />
+    <meta name="twitter:title"       content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type':    'Blog',
+      name:        title,
+      description,
+      url:         canonical,
+      publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+    })} />
+  </head>
+
+  <body>
+    <Header />
+
+    <div class="bg-[var(--color-text)]">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+        <nav class="flex items-center gap-2 text-xs text-[var(--color-text-muted)] mb-6">
+          <a href="/" class="hover:text-white transition-colors">Inicio</a>
+          <span>/</span>
+          <span style="color: var(--color-accent);">Blog</span>
+        </nav>
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-white leading-tight mb-3" style="letter-spacing: -0.5px;">
+          Blog
+        </h1>
+        <p class="text-[var(--color-text-muted)] text-base max-w-xl leading-relaxed">
+          Guías, fórmulas y consejos para sacarle partido a tus cálculos.
+        </p>
+      </div>
+    </div>
+
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 min-h-[60vh]">
+      <BlogList articles={articles} client:load />
+    </main>
+
+    <Footer />
+    <script is:inline>(function(s){s.dataset.zone='11097742',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    <script is:inline>(function(s){s.dataset.zone='11097743',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    <script is:inline>(function(s){s.dataset.zone='11095273',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+  </body>
+</html>
