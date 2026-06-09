@@ -1,17 +1,45 @@
-﻿---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import McmMcdTool from "@/components/tools/McmMcdTool";
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import McmMcdTool from '@/components/tools/McmMcdTool';
 ---
 
 <CalcLayout slug="mcm-mcd"
-  whatIs="La calculadora de mcm-mcd es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precision?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="El Mínimo Común Múltiplo (MCM) de dos números es el número positivo más pequeño divisible exactamente por ambos. El Máximo Común Divisor (MCD) es el número más grande que divide exactamente a los dos. Ejemplo: MCM(12, 18) = 36 y MCD(12, 18) = 6. Nuestra calculadora obtiene ambos valores simultáneamente usando el algoritmo de Euclides, el método más eficiente existente para este cálculo."
+  whyUse="MCM y MCD son herramientas fundamentales en aritmética: el MCM se necesita para sumar y restar fracciones con distinto denominador, para resolver problemas de ciclos o períodos, y para sincronizar eventos repetitivos. El MCD se usa para simplificar fracciones a su mínima expresión y para resolver problemas de reparto equitativo. Ambos conceptos son parte esencial del currículo matemático de primaria y secundaria en toda Latinoamérica."
+  faqs={[
+    {
+      q: '¿Qué es el Mínimo Común Múltiplo (MCM)?',
+      a: 'El MCM de dos números a y b es el número entero positivo más pequeño que es múltiplo de ambos a la vez; es decir, divisible exactamente entre a y entre b. Ejemplo: los múltiplos de 4 son 4, 8, 12, 16, 20, 24, 28, 32, 36… Los de 6 son 6, 12, 18, 24, 30, 36… El primero que aparece en ambas listas es 12, por tanto MCM(4, 6)=12. El MCM siempre es mayor o igual al mayor de los dos números. Si uno divide al otro, el MCM es el mayor de los dos.'
+    },
+    {
+      q: '¿Qué es el Máximo Común Divisor (MCD)?',
+      a: 'El MCD de dos números a y b es el número entero positivo más grande que divide exactamente a ambos (sin resto). Ejemplo: los divisores de 24 son 1,2,3,4,6,8,12,24 y los de 36 son 1,2,3,4,6,9,12,18,36. El mayor número en ambas listas es 12, por tanto MCD(24,36)=12. Si el MCD de dos números es 1, se llaman coprimos o primos entre sí. El MCD nunca es mayor que el menor de los dos números. Si uno divide al otro, el MCD es el menor.'
+    },
+    {
+      q: '¿Cómo funciona el algoritmo de Euclides para calcular el MCD?',
+      a: 'El algoritmo de Euclides es el método más eficiente: divide el mayor entre el menor, toma el resto, y repite con el divisor y el resto hasta que el resto sea 0. El último divisor distinto de cero es el MCD. Ejemplo paso a paso para MCD(48, 18): 48 = 2×18 + 12 → 18 = 1×12 + 6 → 12 = 2×6 + 0. El último divisor es 6, por tanto MCD(48,18)=6. Para el MCM usa la relación: MCM(a,b) = (a × b) ÷ MCD(a,b). MCM(48,18) = 48×18÷6 = 864÷6 = 144.'
+    },
+    {
+      q: '¿Para qué se usa el MCM al sumar fracciones?',
+      a: 'El MCM es imprescindible para sumar o restar fracciones con diferente denominador: hay que convertirlas a un denominador común, que es el MCM de los denominadores. Ejemplo: 1/4 + 1/6. MCM(4,6)=12. Entonces: 1/4 = 3/12 y 1/6 = 2/12. Suma: 3/12 + 2/12 = 5/12. Sin el MCM habría que usar denominadores más grandes e incómodos. Este procedimiento se enseña en primaria y secundaria en Argentina, Chile, Colombia, México, Perú, Venezuela y toda Latinoamérica.'
+    },
+    {
+      q: '¿Para qué se usa el MCD al simplificar fracciones?',
+      a: 'El MCD sirve para reducir fracciones a su forma mínima: divide numerador y denominador entre su MCD. Ejemplo: simplifica 48/72. MCD(48,72)=24. Entonces 48/72 = (48÷24)/(72÷24) = 2/3. La fracción 2/3 es equivalente a 48/72 pero está en su expresión más simple. Si el MCD es 1, la fracción ya está en su mínima expresión. También se usa para simplificar el resultado de operaciones con fracciones y en problemas de reparto equitativo sin sobras.'
+    },
+    {
+      q: '¿Cómo se aplican MCM y MCD en problemas cotidianos de Latinoamérica?',
+      a: 'Ejemplos prácticos: (1) Transporte urbano — dos líneas de colectivo (bus) salen del mismo punto: una cada 15 min y otra cada 20 min. ¿Cada cuánto coinciden? MCM(15,20)=60 min. (2) Producción — una fábrica produce lotes de 12 y de 18 unidades. ¿Cuándo producen la misma cantidad acumulada? MCM(12,18)=36 unidades. (3) Reparto — una tianguis quiere repartir 48 tamales y 36 atoles en bolsas iguales sin sobras. ¿Cuántas bolsas como máximo? MCD(48,36)=12 bolsas de 4 tamales y 3 atoles cada una.'
+    },
+    {
+      q: '¿Cómo se calcula el MCM y MCD de tres o más números?',
+      a: 'Para tres o más números se aplica el proceso de forma iterativa: MCM(a,b,c) = MCM(MCM(a,b), c). Ejemplo: MCM(4,6,10). Paso 1: MCM(4,6)=12. Paso 2: MCM(12,10)=60. Para el MCD: MCD(a,b,c) = MCD(MCD(a,b), c). Ejemplo: MCD(48,36,24). Paso 1: MCD(48,36)=12. Paso 2: MCD(12,24)=12. Nuestra calculadora resuelve dos números; para más, usa el resultado del primer cálculo como entrada del segundo, repitiendo el proceso.'
+    },
+    {
+      q: '¿Qué relación matemática existe entre MCM y MCD?',
+      a: 'Para dos números positivos a y b, se cumple siempre: MCM(a,b) × MCD(a,b) = a × b. Ejemplo: MCM(12,18)=36 y MCD(12,18)=6; verificación: 36×6=216 y 12×18=216. Esta propiedad permite calcular el MCM conociendo el MCD y viceversa. Caso especial: si MCD(a,b)=1 (son coprimos, como 4 y 9), entonces MCM(a,b)=a×b=36. Esto simplifica muchos cálculos en teoría de números y álgebra de preparatoria y universidad en toda Latinoamérica.'
+    },
+  ]}
+>
   <McmMcdTool client:load />
 </CalcLayout>
-

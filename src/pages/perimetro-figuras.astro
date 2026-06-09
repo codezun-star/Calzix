@@ -1,17 +1,45 @@
-﻿---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import PerimetroFigurasTool from "@/components/tools/PerimetroFigurasTool";
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import PerimetroFigurasTool from '@/components/tools/PerimetroFigurasTool';
 ---
 
 <CalcLayout slug="perimetro-figuras"
-  whatIs="La calculadora de perimetro-figuras es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precision?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="El perímetro es la longitud total del contorno de una figura geométrica, es decir, la suma de todos sus lados o la longitud de su borde exterior. Esta calculadora obtiene el perímetro de las siete figuras planas más comunes: círculo (2×π×r), cuadrado (4×lado), rectángulo (2×(ancho+alto)), triángulo (suma de los tres lados), rombo (4×lado), pentágono regular (5×lado) y hexágono regular (6×lado). Introduce las medidas en cualquier unidad y el resultado estará en la misma unidad."
+  whyUse="Conocer el perímetro es fundamental para calcular la cantidad de material de borde necesario en proyectos de construcción y jardinería en toda Latinoamérica: metros de zócalo, cerco, malla ciclónica, tela para dobladillo, marcos de cuadros, tubería perimetral o alambre para delimitar terrenos. En matemáticas escolares, el perímetro es un tema esencial en primaria y secundaria en México, Colombia, Argentina, Chile, Perú y todos los países de la región, y es contenido habitual en exámenes de admisión universitaria."
+  faqs={[
+    {
+      q: '¿Qué es el perímetro y en qué se diferencia del área?',
+      a: 'El perímetro es la distancia total alrededor del borde exterior de una figura, medida en unidades lineales (cm, m, km). El área, en cambio, mide la superficie interior y se expresa en unidades cuadradas (cm², m²). Un ejemplo claro: para vallar un terreno rectangular de 20 m × 15 m necesitas P = 2×(20+15) = 70 m de malla (perímetro). Para pavimentarlo necesitas A = 20×15 = 300 m² de material (área). Los dos valores son completamente distintos. Nunca confundas unidades: el perímetro siempre es lineal y el área siempre es cuadrado.'
+    },
+    {
+      q: '¿Cuál es la fórmula del perímetro del círculo (circunferencia)?',
+      a: 'La longitud del contorno de un círculo se llama circunferencia y se calcula con C = 2 × π × r, donde r es el radio y π ≈ 3,14159. Si conoces el diámetro d, la fórmula es C = π × d. Ejemplo: una piscina circular de radio 4 m tiene circunferencia C = 2 × 3,14159 × 4 ≈ 25,13 m. Si quieres rodearla con una reja de hierro, necesitarías 25,13 m de material más el margen de unión. En México, Colombia y Argentina es habitual encontrar fuentes, rotondas y estadios circulares donde este cálculo se aplica en ingeniería civil.'
+    },
+    {
+      q: '¿Cómo calculo el perímetro de un triángulo?',
+      a: 'El perímetro de cualquier triángulo es la suma de sus tres lados: P = a + b + c. Para un triángulo equilátero (tres lados iguales) la fórmula simplifica a P = 3 × lado. Para un triángulo isósceles (dos lados iguales) P = 2×a + b. Para el triángulo rectángulo, si conoces los dos catetos a y b, la hipotenusa c = √(a² + b²) (Teorema de Pitágoras), y entonces P = a + b + √(a²+b²). Ejemplo: triángulo rectángulo con catetos 3 m y 4 m — hipotenusa = 5 m — P = 3+4+5 = 12 m. En techos de dos aguas, la sección transversal es un triángulo isósceles cuyo perímetro define la cantidad de alero necesario.'
+    },
+    {
+      q: '¿Cuál es la fórmula del perímetro del rombo y cómo difiere del cuadrado?',
+      a: 'El rombo es un cuadrilátero con cuatro lados iguales (igual que el cuadrado), pero sus ángulos no son de 90°. La fórmula del perímetro es P = 4 × lado (idéntica al cuadrado). La diferencia es que el cuadrado tiene todos sus ángulos rectos y sus diagonales son iguales, mientras que el rombo tiene diagonales desiguales y ángulos oblicuos. Ejemplo: un rombo de lado 6 cm tiene P = 4×6 = 24 cm, igual que un cuadrado de 6 cm. Sin embargo, sus áreas son distintas: el cuadrado tiene A = 36 cm², y el rombo A = (d₁×d₂)÷2. El perímetro igual no implica área igual.'
+    },
+    {
+      q: '¿Cómo se calculan los perímetros del pentágono y hexágono regular?',
+      a: 'En un polígono regular todos los lados miden lo mismo. Pentágono regular (5 lados): P = 5 × lado. Hexágono regular (6 lados): P = 6 × lado. Ejemplo: pentágono de lado 8 cm — P = 40 cm; hexágono de lado 5 m — P = 30 m. El hexágono regular aparece en la naturaleza (panal de abejas) y en diseño: las baldosas hexagonales de pisos son populares en México y Colombia. Cuando el número de lados de un polígono regular crece mucho, su perímetro se aproxima a la circunferencia del círculo inscrito, lo que fue la base del método de Arquímedes para calcular pi.'
+    },
+    {
+      q: '¿En qué unidades trabajar y cómo convierto los resultados?',
+      a: 'La calculadora trabaja en las unidades que tú introduces: si tecleas metros, el perímetro estará en metros. Si mezclas unidades (por ejemplo, una dimensión en cm y otra en m), primero convierte todo a la misma unidad. Las conversiones más comunes en Latinoamérica: 1 m = 100 cm; 1 km = 1.000 m; 1 pie = 30,48 cm; 1 pulgada = 2,54 cm; 1 vara (usada en Centroamérica) ≈ 83,6 cm. Ejemplo práctico: una habitación de 350 cm × 420 cm. Convertida a metros: 3,5 m × 4,2 m — P = 2×(3,5+4,2) = 2×7,7 = 15,4 m. Para comprar zócalo de madera, necesita 15,4 m más un 5-10% de desperdicio.'
+    },
+    {
+      q: '¿Cómo se aplica el perímetro en proyectos de construcción en LATAM?',
+      a: 'En construcción latinoamericana, el perímetro se usa constantemente: (1) Cimentación: el volumen de concreto para la traza del cimiento depende del perímetro del edificio. (2) Cerco o malla: para delimitar un terreno rectangular de 25 m × 18 m se necesitan P = 2×(25+18) = 86 m de malla ciclónica, más los postes. (3) Pintura de bordes: los metros lineales de zócalo o moldura a pintar o instalar. (4) Irrigación: el perímetro de un campo de cultivo determina la longitud de la tubería de riego perimetral. (5) Tapajuntas y marcos: en carpintería, el perímetro de puertas y ventanas define la cantidad de marco, sellador o burletes necesarios.'
+    },
+    {
+      q: '¿Cómo calculo el perímetro de una figura irregular?',
+      a: 'Para figuras irregulares, el perímetro es siempre la suma de la longitud de todos sus lados. Si la figura tiene n lados con longitudes L1, L2, ..., Ln, entonces P = L1 + L2 + ... + Ln. Ejemplo: un terreno en L con lados de 10 m, 5 m, 6 m, 3 m, 4 m y 8 m — P = 10+5+6+3+4+8 = 36 m. Si los lados son curvos, divide la curva en segmentos pequeños, mide cada uno y súmalos. En sistemas de información geográfica (SIG) como los usados en catastros de México, Colombia y Argentina, el perímetro de parcelas se calcula automáticamente sumando las longitudes de cada segmento poligonal.'
+    },
+  ]}
+>
   <PerimetroFigurasTool client:load />
 </CalcLayout>
-

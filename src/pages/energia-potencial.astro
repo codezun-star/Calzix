@@ -1,17 +1,45 @@
-﻿---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import EnergiaPotencialTool from "@/components/tools/EnergiaPotencialTool";
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import EnergiaPotencialTool from '@/components/tools/EnergiaPotencialTool';
 ---
 
 <CalcLayout slug="energia-potencial"
-  whatIs="La calculadora de energia-potencial es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precisión?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="La energía potencial gravitatoria es la energía almacenada en un objeto debido a su posición en un campo gravitatorio. Se calcula con la fórmula Ep = m × g × h, donde m es la masa (kg), g es la aceleración de la gravedad (m/s²) y h es la altura respecto a un nivel de referencia (m). El resultado se expresa en Joules (J) y kiloJoules (kJ). La calculadora permite configurar g para distintos cuerpos celestes o distintas latitudes, lo que la hace útil para comparaciones geográficas en Latinoamérica."
+  whyUse="La energía potencial gravitatoria es fundamental para entender la conservación de la energía mecánica, el funcionamiento de presas hidroeléctricas, la seguridad de objetos en altura, el diseño de montañas rusas y toboganes, y numerosos problemas de física escolar y universitaria. Es materia central en bachillerato y primer año de universidad en México, Colombia, Argentina, Chile, Perú y toda la región. La región latinoamericana tiene algunas de las represas hidroeléctricas más grandes del mundo (Itaipú, Belo Monte, Guri), donde la energía potencial del agua se convierte en electricidad."
+  faqs={[
+    {
+      q: '¿Qué es la energía potencial gravitatoria y de qué depende?',
+      a: 'La energía potencial gravitatoria Ep = mgh depende de tres factores: (1) Masa m — a mayor masa, mayor energía almacenada. (2) Gravedad g — varía ligeramente con la latitud y altitud: en el ecuador (Quito, Ecuador) g ≈ 9,780 m/s²; en latitudes medias (México DF, Bogotá) g ≈ 9,79-9,81 m/s²; en latitudes altas (Buenos Aires) g ≈ 9,83 m/s²; en los polos g ≈ 9,832 m/s². (3) Altura h — respecto a un nivel de referencia arbitrario. La energía potencial solo tiene sentido como cambio: Delta_Ep = mg(h2 - h1). Su valor absoluto depende del nivel de referencia elegido (suelo, nivel del mar, etc.).'
+    },
+    {
+      q: '¿Cómo se usa la calculadora con distintos valores de gravedad?',
+      a: 'La calculadora muestra g = 9,81 m/s² por defecto (valor estándar internacional), pero puedes cambiarlo. Valores de g en distintos lugares: Ecuador (nivel del mar): 9,780 m/s². Bogotá (2.640 m de altitud): ≈ 9,774 m/s². Ciudad de México (2.240 m): ≈ 9,779 m/s². Buenos Aires: 9,797 m/s². Marte: 3,721 m/s². Luna: 1,620 m/s². Ejemplo: un objeto de 50 kg a 10 m de altura en la Luna tiene Ep = 50 × 1,62 × 10 = 810 J, frente a los 4.905 J que tendría en la Tierra. Esto explica por qué los astronautas pueden saltar mucho más alto en la Luna.'
+    },
+    {
+      q: '¿Cómo se relaciona Ep con la conservación de la energía mecánica?',
+      a: 'En ausencia de fricción, la energía mecánica total E = Ec + Ep es constante. Al caer un objeto desde altura h, toda su Ep se convierte en Ec: mgh = ½mv² → v = raíz(2gh). Ejemplo: una pelota lanzada desde lo alto del Ángel de la Independencia en México (h ≈ 45 m). Al llegar al suelo: v = raíz(2 × 9,81 × 45) ≈ 29,7 m/s ≈ 107 km/h. En la práctica, el aire disipa algo de energía, así que la velocidad real sería menor. En el plano inclinado: si un bloque desciende h metros por un plano sin fricción, alcanza la misma velocidad que en la caída libre.'
+    },
+    {
+      q: '¿Cómo se aplica la energía potencial en las represas hidroeléctricas latinoamericanas?',
+      a: 'Las represas hidroeléctricas convierten la energía potencial del agua almacenada en electricidad. La potencia generada es P = rho × g × Q × h, donde Q es el caudal (m³/s) y h es la altura de la presa. Itaipú (Brasil-Paraguay, 220 m de presa, 14.000 m³/s de caudal): P = 1000 × 9,81 × 14000 × 220 ≈ 30.000 MW de potencia teórica. Guri (Venezuela, presa de 162 m): P ≈ 10.235 MW. Belo Monte (Brasil, ≈88 m): P ≈ 11.233 MW. Estas tres represas están entre las más grandes del mundo y demuestran la importancia de la energía potencial en la matriz energética de LATAM.'
+    },
+    {
+      q: '¿Qué es la energía potencial elástica y cómo difiere de la gravitatoria?',
+      a: 'La energía potencial elástica se almacena en objetos deformados (resortes, bandas elásticas): Ep_elastica = ½kx², donde k es la constante del resorte (N/m) y x es la deformación (m). A diferencia de la gravitatoria (que depende de la posición en el campo gravitatorio), la elástica depende de la deformación respecto a la posición de equilibrio. Ejemplo: un resorte con k = 500 N/m comprimido 0,1 m almacena Ep = ½ × 500 × 0,01 = 2,5 J. En los amortiguadores de autos (muellos), la energía potencial elástica amortigua los golpes del camino y mejora el confort y la seguridad.'
+    },
+    {
+      q: '¿Cómo se usa Ep = mgh en problemas de seguridad laboral en LATAM?',
+      a: 'En seguridad laboral, calcular la energía potencial de objetos en altura es fundamental para evaluar riesgos de caída. OSHA (EUA), IMSS (México), ARL (Colombia) y organismos similares de toda la región establecen protocolos basados en la energía de impacto. Ejemplo: un ladrillo de 2,5 kg a 10 m de altura tiene Ep = 2,5 × 9,81 × 10 = 245,25 J. Al caer, alcanza v = raíz(2 × 9,81 × 10) ≈ 14 m/s y genera un impacto que puede ser mortal. La norma de seguridad en obras de construcción en México (NOM-009-STPS) y Colombia (NTC 4116) exige protección de caída de objetos en todo trabajo en altura.'
+    },
+    {
+      q: '¿Qué es la energía potencial gravitatoria en un plano inclinado?',
+      a: 'En un plano inclinado de ángulo theta y longitud L, la altura vertical ganada/perdida es h = L × sen(theta). La energía potencial relativa al fondo es Ep = mgh = mg × L × sen(theta). Ejemplo: una caja de 100 kg que sube por una rampa de 5 m con inclinación 30° gana h = 5 × sen(30°) = 5 × 0,5 = 2,5 m de altura. Ep ganada = 100 × 9,81 × 2,5 = 2.452,5 J. El trabajo para subirla (sin fricción) es exactamente 2.452,5 J. En diseño de rampas de accesibilidad (código NMX de México, NSR-10 de Colombia), la inclinación máxima está limitada para que el trabajo requerido sea manejable para personas en silla de ruedas.'
+    },
+    {
+      q: '¿Cómo se aplica Ep en el deporte latinoamericano?',
+      a: 'En atletismo de salto (salto de altura, salto con pértiga), el objetivo es convertir toda la energía cinética de la carrera en energía potencial para elevar el centro de masa sobre la barra. Un saltador de 75 kg que supera 2,20 m: Ep = 75 × 9,81 × 2,20 ≈ 1.619 J (pero su centro de masa empieza ya a ≈1,0 m de altura, así que solo necesita elevar el centro ≈1,2 m → Ep ≈ 882 J). El récord latinoamericano de salto de altura masculino es de ≈ 2,36 m (Javier Sotomayor de Cuba tiene el récord mundial con 2,45 m). El saltador de pértiga puede alcanzar 6 m convirtiendo Ec de carrera en Ep elástica (pértiga) y luego en Ep gravitatoria.'
+    },
+  ]}
+>
   <EnergiaPotencialTool client:load />
 </CalcLayout>
-

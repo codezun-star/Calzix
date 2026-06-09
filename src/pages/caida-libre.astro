@@ -1,17 +1,45 @@
-﻿---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import CaidaLibreTool from "@/components/tools/CaidaLibreTool";
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import CaidaLibreTool from '@/components/tools/CaidaLibreTool';
 ---
 
 <CalcLayout slug="caida-libre"
-  whatIs="La calculadora de caida-libre es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precisión?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="La caída libre es el movimiento de un objeto que cae solo bajo la acción de la gravedad, sin resistencia del aire. Es un caso especial de movimiento uniformemente acelerado (MRUA) con aceleración a = g. Las fórmulas son: altura h = ½ × g × t², velocidad v = g × t, y combinando: v² = 2 × g × h. Esta calculadora acepta cualquiera de los tres datos (tiempo, altura o velocidad) y calcula los otros dos, con g configurable (por defecto 9,81 m/s²)."
+  whyUse="La caída libre es el experimento mental más famoso de la física, atribuido a Galileo Galilei en la Torre de Pisa. Es el primer ejemplo de movimiento acelerado que se estudia en secundaria y bachillerato en toda Latinoamérica, y aparece en el COMIPEMS, ICFES, PAES, PSU y todos los exámenes de admisión universitaria de la región. También tiene aplicaciones prácticas en ingeniería (seguridad en construcción, impacto de objetos en caída) y en deporte (paracaidismo, salto de altura)."
+  faqs={[
+    {
+      q: '¿Qué es la caída libre y cuáles son sus hipótesis?',
+      a: 'La caída libre es el movimiento de un objeto que solo está sujeto a la fuerza gravitacional, sin resistencia del aire (vacío ideal). Sus hipótesis: (1) La aceleración es constante: g = 9,81 m/s² (aproximación válida cerca de la superficie terrestre). (2) La resistencia del aire es despreciable (válida para objetos densos y velocidades no muy altas). (3) No hay fuerzas laterales. En la realidad, el aire sí resiste y los objetos alcanzan una velocidad terminal (cuando la resistencia del aire iguala el peso). Una pluma y una bola de metal caen igual en el vacío (experimento de Galileo, demostrado en la Luna en 1971 por el astronauta David Scott).'
+    },
+    {
+      q: '¿Cuáles son las fórmulas de la caída libre y cómo se usan?',
+      a: 'Partiendo del reposo (v0 = 0): (1) Velocidad en función del tiempo: v = g × t. (2) Altura caída en función del tiempo: h = ½ × g × t². (3) Velocidad en función de la altura: v = raíz(2 × g × h). Despejando: (4) Tiempo a partir de la altura: t = raíz(2h/g). (5) Tiempo a partir de la velocidad: t = v/g. (6) Altura a partir de la velocidad: h = v²/(2g). La calculadora aplica automáticamente el par de fórmulas correcto según el dato que introduces (tiempo, altura o velocidad) y muestra los otros dos resultados.'
+    },
+    {
+      q: '¿Cuánto vale g en distintos lugares de Latinoamérica?',
+      a: 'La aceleración de la gravedad varía con la latitud y la altitud: Ecuador (nivel del mar): 9,780 m/s² (menor del mundo por ser Ecuador). Ciudad de México (2.240 m sobre el nivel del mar): ≈ 9,776 m/s² (altitud alta, latitud media). Bogotá (2.640 m): ≈ 9,774 m/s². Lima (154 m, latitud 12°S): ≈ 9,782 m/s². Buenos Aires (25 m, latitud 34°S): ≈ 9,797 m/s². Santiago (520 m, latitud 33°S): ≈ 9,795 m/s². Polo Sur: 9,832 m/s². Luna: 1,620 m/s². Marte: 3,721 m/s². Para problemas con alta precisión en zonas de montaña (Andes, altiplano), usar el valor de g local mejora los resultados.'
+    },
+    {
+      q: '¿Qué es la velocidad terminal y cuándo deja de ser válida la caída libre?',
+      a: 'En presencia de aire, un objeto que cae experimenta resistencia aerodinámica proporcional a v² (para velocidades altas). Cuando la resistencia iguala al peso, la aceleración neta es cero y el objeto alcanza velocidad terminal constante. Velocidades terminales aproximadas: una persona (posición boca abajo) ≈ 195 km/h (54 m/s); con traje de alas (wingsuit) ≈ 160 km/h; granizo ≈ 25-50 km/h; lluvia fina ≈ 20 km/h. Las fórmulas de caída libre son válidas solo cuando la resistencia del aire es despreciable: para objetos densos y compactos (balas, bolas de metal) en los primeros metros, o en el vacío. Para alturas grandes o objetos ligeros, se necesitan ecuaciones diferenciales con resistencia del aire.'
+    },
+    {
+      q: '¿Cómo aplica la caída libre en seguridad en obras de construcción?',
+      a: 'En obras de construcción en Latinoamérica, un objeto en caída libre desde 10 m (piso 3) alcanza: t = raíz(2×10/9,81) ≈ 1,43 s; v = 9,81×1,43 ≈ 14 m/s ≈ 50 km/h. La energía de impacto de un ladrillo de 2,5 kg: Ec = ½×2,5×196 ≈ 245 J (suficiente para causar traumatismo craneoencefálico grave sin casco). Desde 40 m (piso 10): v = raíz(2×9,81×40) ≈ 28 m/s ≈ 100 km/h. Ec ≈ 980 J para el mismo ladrillo. Las normas de seguridad NOM-009-STPS (México), Resolución 2400 (Colombia) y sus equivalentes en LATAM exigen redes de protección y señalización para prevenir estos impactos.'
+    },
+    {
+      q: '¿Cuánto tarda en caer un objeto desde distintas alturas?',
+      a: 'Tiempos de caída libre (g = 9,81 m/s²): 5 m (balcón 2° piso) — t ≈ 1,01 s, v = 9,9 m/s (35,6 km/h). 10 m (3er piso) — t ≈ 1,43 s, v = 14 m/s (50,4 km/h). 20 m (6to piso) — t ≈ 2,02 s, v = 19,8 m/s (71,3 km/h). 44 m (Torre de Cancún) — t ≈ 3 s, v = 29,4 m/s (105,8 km/h). 100 m — t ≈ 4,52 s, v = 44,3 m/s (159 km/h). 443 m (Empire State) — t ≈ 9,51 s, v = 93,3 m/s (336 km/h) en vacío (en la realidad, la resistencia del aire limita v a unos 60-70 m/s). La calculadora usa g = 9,81 m/s² por defecto; puedes ajustarlo si el problema lo requiere.'
+    },
+    {
+      q: '¿Qué es el tiro vertical y cómo se relaciona con la caída libre?',
+      a: 'El tiro vertical es el movimiento de un objeto lanzado hacia arriba con velocidad inicial v0. Las fórmulas son: v(t) = v0 - gt (velocidad, que se hace cero en el punto máximo); h(t) = v0×t - ½gt² (altura). Tiempo hasta el punto máximo: t_max = v0/g. Altura máxima: h_max = v0²/(2g). Tiempo total hasta volver al punto de lanzamiento: t_total = 2×v0/g. Ejemplo: lanzar una pelota hacia arriba a 20 m/s: h_max = 400/(2×9,81) ≈ 20,4 m; t_max ≈ 2,04 s; t_total ≈ 4,08 s. El regreso es idéntico a la caída libre desde h_max, por lo que al regresar al punto de lanzamiento la velocidad es v0 (misma magnitud, dirección contraria).'
+    },
+    {
+      q: '¿Cómo se aplica la caída libre en el deporte latinoamericano?',
+      a: 'En básquetbol (NBA, Liga MX de Baloncesto, Liga Nacional Argentina): al hacer una canasta, la pelota cae desde ≈ 3 m (aro a 3,05 m del suelo): v_impacto = raíz(2×9,81×0,05) ≈ 1 m/s (la pelota pasa por el aro con poca velocidad vertical). En salto de trampolín (clavados olímpicos, populares en México): desde la plataforma de 10 m: v al impactar el agua = raíz(2×9,81×10) ≈ 14 m/s = 50,4 km/h en 1,43 s. Para un clavadista de 70 kg: Ec ≈ ½×70×196 ≈ 6.860 J al entrar al agua. La posición y técnica de entrada reducen el impacto. En los famosos clavadistas de La Quebrada (Acapulco), los buzos caen ≈ 35 m: v = raíz(2×9,81×35) ≈ 26,2 m/s = 94 km/h.'
+    },
+  ]}
+>
   <CaidaLibreTool client:load />
 </CalcLayout>
-

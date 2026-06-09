@@ -1,17 +1,45 @@
-﻿---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import VolumenSolidosTool from "@/components/tools/VolumenSolidosTool";
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import VolumenSolidosTool from '@/components/tools/VolumenSolidosTool';
 ---
 
 <CalcLayout slug="volumen-solidos"
-  whatIs="La calculadora de volumen-solidos es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precision?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="El volumen es la cantidad de espacio tridimensional que ocupa un sólido, expresado en unidades cúbicas (cm³, m³, litros). Esta calculadora obtiene el volumen de los seis sólidos geométricos más comunes: cubo (lado³), esfera (4/3×π×r³), cilindro (π×r²×h), cono (1/3×π×r²×h), prisma rectangular (largo×ancho×alto) y pirámide cuadrada (1/3×lado²×altura). El resultado se muestra en metros cúbicos y su equivalente en litros (1 m³ = 1.000 litros)."
+  whyUse="Calcular volúmenes es indispensable en construcción (concreto, relleno de zanjas, piscinas, tanques de agua), ingeniería química y alimentaria, farmacia, transporte de carga y en problemas de física escolar en toda Latinoamérica. Los estudiantes de México, Colombia, Argentina, Chile, Perú y toda la región trabajan con volúmenes desde la secundaria. La conversión automática a litros es especialmente útil para calcular la capacidad de tinacos, cisternas, depósitos y mezcladoras de concreto, herramientas cotidianas en la construcción latinoamericana."
+  faqs={[
+    {
+      q: '¿Qué es el volumen y cómo se diferencia de la capacidad?',
+      a: 'El volumen es la medida del espacio que ocupa un objeto sólido, expresado en unidades cúbicas: cm³, m³, mm³. La capacidad es la cantidad de líquido o gas que puede contener un recipiente hueco, y se expresa en litros, mililitros o galones. Matemáticamente son equivalentes cuando el grosor de las paredes del recipiente es despreciable: 1 litro = 1 dm³ = 0,001 m³; 1 m³ = 1.000 litros. Por tanto, un tinaco de 1.100 litros equivale a un volumen de 1,1 m³. Esta calculadora convierte automáticamente m³ a litros para que puedas saber directamente cuántos litros almacena un tanque cilíndrico o cúbico.'
+    },
+    {
+      q: '¿Cuál es la fórmula del volumen de un cubo y un prisma rectangular?',
+      a: 'Cubo: todos sus lados miden lo mismo, V = lado³. Ejemplo: cubo de 3 m de arista — V = 3³ = 27 m³ = 27.000 litros. Prisma rectangular (caja): V = largo × ancho × alto. Ejemplo: habitación de 5 m × 4 m × 2,8 m (largo × ancho × altura) — V = 5×4×2,8 = 56 m³. Este cálculo es útil para dimensionar el sistema de aire acondicionado o calefacción necesario (en BTU por m³), o para calcular el volumen de una zanja rectangular en obras civiles: largo × ancho × profundidad = m³ de material a excavar o rellenar con concreto.'
+    },
+    {
+      q: '¿Cómo se calcula el volumen de una esfera?',
+      a: 'V = (4/3) × π × r³, donde r es el radio. Si conoces el diámetro d, el radio es r = d/2. Ejemplos: esfera de radio 5 cm — V = (4/3)×π×125 ≈ 523,6 cm³ ≈ 0,524 litros. Esfera de radio 2 m — V ≈ 33,51 m³ ≈ 33.510 litros. En la industria, los tanques esféricos se usan para almacenar gas licuado de petróleo (GLP) a presión en plantas de Pemex, Ecopetrol y YPF, porque la esfera minimiza el estrés en las paredes para un volumen dado. También aplica a pelotas, globos y cuerpos celestes en física escolar latinoamericana.'
+    },
+    {
+      q: '¿Cómo se calcula el volumen de un cilindro y para qué sirve?',
+      a: 'V = π × r² × h, donde r es el radio de la base y h es la altura. Ejemplo: tinaco cilíndrico de 60 cm de radio y 100 cm de altura — V = π × 0,6² × 1 ≈ 1,131 m³ ≈ 1.131 litros (capacidad nominal del tinaco más común en México). Otro ejemplo: columna de concreto de radio 20 cm y altura 3 m — V = π × 0,04 × 3 ≈ 0,377 m³ de mezcla. Los tinacos, tuberías, silos y tanques de gas son cilindros en su mayoría, lo que hace esta fórmula muy práctica en la construcción y en la industria alimentaria latinoamericana (tanques de fermentación de cerveza, jugos y lácteos).'
+    },
+    {
+      q: '¿Cuál es la diferencia entre el volumen del cono y la pirámide?',
+      a: 'Ambos son sólidos apuntados con base y ápice, y ambos se calculan como un tercio del volumen del sólido "completo" de la misma base y altura. Cono: V = (1/3) × π × r² × h (base circular). Pirámide cuadrada: V = (1/3) × lado² × h (base cuadrada). La regla del tercio aplica a todos los sólidos con vértice: el cono es exactamente un tercio del cilindro de la misma base y altura; la pirámide es exactamente un tercio del prisma. Ejemplo: cono de radio 3 m y altura 6 m — V = (1/3)×π×9×6 ≈ 56,55 m³. Pirámide de base 4 m y altura 5 m — V = (1/3)×16×5 ≈ 26,67 m³.'
+    },
+    {
+      q: '¿Cómo calculo cuánto concreto necesito para una losa o cimiento?',
+      a: 'Una losa de concreto es un prisma rectangular: V = largo × ancho × espesor. Ejemplo práctico en LATAM: losa de 6 m × 5 m × 0,12 m de espesor — V = 6×5×0,12 = 3,6 m³. Para pedir la mezcla al proveedor, añade un 5-10% de desperdicio: ≈ 3,8 m³. Para una traza de cimentación continua con sección 0,4 m × 0,3 m y perímetro de 30 m: V = 0,4 × 0,3 × 30 = 3,6 m³. Estos cálculos son cotidianos en autoconstrucción y empresas constructoras de México, Colombia, Argentina, Perú, Chile y toda la región, donde el concreto se vende por m³ (premezclado) o por sacos de cemento de 50 kg.'
+    },
+    {
+      q: '¿Cómo convierto entre unidades de volumen en Latinoamérica?',
+      a: 'Las conversiones de volumen más usadas en LATAM: 1 m³ = 1.000 litros = 1.000.000 cm³. 1 litro = 1.000 cm³ = 1.000 mL. 1 galón americano (EUA) ≈ 3,785 litros. 1 galón inglés (Imperial) ≈ 4,546 litros. 1 barril de petróleo = 158,987 litros. 1 pie³ ≈ 28,317 litros. En México el gas LP para cilindros domésticos (tanque de 20 kg) tiene ≈ 47,8 litros de capacidad. En Chile, el agua potable se factura por m³. En Argentina y Colombia, el gas natural se mide en m³. Conocer estas conversiones permite comparar precios y capacidades correctamente entre distintos países de la región.'
+    },
+    {
+      q: '¿Cómo se aplica el volumen en la física y la ciencia escolar latinoamericana?',
+      a: 'En física, el volumen es clave para calcular la densidad: densidad = masa ÷ volumen, lo que permite determinar si un material flota o se hunde (principio de Arquímedes). Ejemplo: un bloque de acero de 500 cm³ pesa 500 × 7,8 g/cm³ = 3,9 kg. En química, la concentración molar depende del volumen de la solución: C = n ÷ V. En ciencias de la tierra, el volumen de magma erucionado se estima en km³. En las materias de física y química de bachillerato en México (SEP), Colombia (ICFES), Chile (PSU/PAES) y Argentina (CBS/ABP), los cálculos de volumen de sólidos son contenido de evaluación frecuente.'
+    },
+  ]}
+>
   <VolumenSolidosTool client:load />
 </CalcLayout>
-

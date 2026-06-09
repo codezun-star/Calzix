@@ -1,17 +1,45 @@
-﻿---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import FormulaMolecularTool from "@/components/tools/FormulaMolecularTool";
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import FormulaMolecularTool from '@/components/tools/FormulaMolecularTool';
 ---
 
 <CalcLayout slug="formula-molecular"
-  whatIs="La calculadora de formula-molecular es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precisión?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="La fórmula molecular indica el número exacto de átomos de cada elemento en una molécula. Se obtiene multiplicando la fórmula empírica (que da las proporciones mínimas) por el factor n = masa_molecular / masa_empírica. Esta calculadora acepta la fórmula empírica (por ejemplo CH₂O o CH2O) y la masa molecular experimental (g/mol), calcula automáticamente la masa empírica, halla el factor n y devuelve la fórmula molecular completa. Soporta los 29 elementos químicos más comunes."
+  whyUse="Determinar la fórmula molecular es un paso clave en el análisis de compuestos orgánicos e inorgánicos: se aplica en síntesis química, control de calidad farmacéutico, identificación de contaminantes ambientales y en la investigación de productos naturales latinoamericanos. Es contenido de bachillerato de química en México (UNAM, IPN), Colombia (ICFES), Chile (PSU/PAES), Perú (UNMSM) y Argentina (CBC-UBA)."
+  faqs={[
+    {
+      q: '¿Qué diferencia hay entre fórmula empírica, molecular y estructural?',
+      a: 'Fórmula empírica: indica la proporción más simple de átomos, reducida a enteros mínimos. No indica el número real de átomos. Ejemplo: CH₂O (formaldehído, ácido acético, glucosa tienen la misma fórmula empírica CH₂O). Fórmula molecular: indica el número exacto de átomos en la molécula real. Formaldehído = CH₂O (n=1). Ácido acético = C₂H₄O₂ (n=2). Glucosa = C₆H₁₂O₆ (n=6). Fórmula estructural (o desarrollada): muestra cómo se unen los átomos (enlaces). Fórmula semidesarrollada: CH₃COOH (ácido acético). La fórmula molecular se obtiene con la masa molar experimental (espectrometría de masas) y el análisis elemental (% C, H, N, O).'
+    },
+    {
+      q: '¿Cómo calculo la fórmula empírica a partir del análisis elemental?',
+      a: 'El análisis elemental da el porcentaje en masa de cada elemento en el compuesto. Para hallar la fórmula empírica: Paso 1 — Suponer 100 g de muestra: los porcentajes se convierten directamente a gramos. Paso 2 — Convertir gramos a moles: n_elemento = masa_elemento / masa_atómica. Paso 3 — Dividir entre el menor número de moles para obtener la proporción entera. Ejemplo: un compuesto orgánico tiene 40,0% C, 6,7% H, 53,3% O. n_C = 40,0/12,011 = 3,33; n_H = 6,7/1,008 = 6,65; n_O = 53,3/15,999 = 3,33. Dividir entre 3,33: C:H:O = 1:2:1 → fórmula empírica CH₂O. Si la masa molecular es 180 g/mol: n = 180/30 = 6 → C₆H₁₂O₆ (glucosa).'
+    },
+    {
+      q: '¿Cuáles son los compuestos más importantes con cada fórmula molecular?',
+      a: 'Ejemplos de compuestos relevantes en LATAM con sus fórmulas: H₂O (agua, M=18,015) — base de toda la vida, calidad regulada por CONAGUA, IDEAM, SUNASS. CO₂ (dióxido de carbono, M=44,010) — gas de efecto invernadero, base del ciclo del carbono. NaCl (sal común, M=58,443) — condimento universal, producida en salinas de Guerrero Negro (México) y Maras (Perú). C₁₂H₂₂O₁₁ (sacarosa, M=342,297) — azúcar de mesa, exportación clave de Brasil, Colombia, México. C₂H₅OH (etanol, M=46,069) — alcohol de fermentación, base del tequila, mezcal, pisco, aguardiente, cachaça. C₃H₈ (propano, M=44,097) — gas LP doméstico en toda Latinoamérica. C₁₇H₃₃COO⁻ (estearato, jabones) — industria jabonera latinoamericana. Fórmulas que aparecen en COMIPEMS, ICFES, PSU, PAES año tras año.'
+    },
+    {
+      q: '¿Qué elementos reconoce la calculadora y cuáles son sus masas atómicas?',
+      a: 'La calculadora reconoce 29 elementos con sus masas atómicas (g/mol): H=1,008; He=4,003; Li=6,941; Be=9,012; B=10,81; C=12,011; N=14,007; O=15,999; F=18,998; Ne=20,180; Na=22,990; Mg=24,305; Al=26,982; Si=28,086; P=30,974; S=32,065; Cl=35,453; K=39,098; Ca=40,078; Fe=55,845; Cu=63,546; Zn=65,38; Ag=107,868; Sn=118,71; I=126,904; Au=196,967; Hg=200,592; Pb=207,2. Para compuestos con elementos no incluidos (como Br, Cr, Mn, Ni, etc.), deberás calcular la fórmula manualmente. Para introducir la fórmula: usa letras mayúsculas para el símbolo (C, H, O) y números para los subíndices (CH2O, no CH₂O — aunque el Unicode ₂ también funciona).'
+    },
+    {
+      q: '¿Cómo se determina la fórmula molecular experimentalmente en química analítica?',
+      a: 'En la práctica experimental, los pasos son: (1) Análisis elemental (combustión): la muestra orgánica se quema en exceso de O₂; el CO₂ y H₂O producidos se miden para determinar % C y % H. El % N se determina por el método Kjeldahl. El % O se obtiene por diferencia (100% − %C − %H − %N − %S). (2) Determinación de la masa molecular: espectrometría de masas (obtiene el pico molecular M⁺), crioscopía o ebullioscopía. (3) Cálculo: fórmula empírica → factor n → fórmula molecular. En LATAM, los laboratorios de síntesis natural investigan compuestos bioactivos de plantas amazónicas, andinas y mesoamericanas (curare, quina, capsaicina, cocaine, ayahuasca) cuya identificación requiere exactamente este proceso.'
+    },
+    {
+      q: '¿Qué es la fórmula molecular en farmacología y control de calidad en LATAM?',
+      a: 'En el sector farmacéutico latinoamericano (Laboratorios Silanes, Genfar, Bagó, Chile-Quílen, Rowa), la fórmula molecular del principio activo es obligatoria en el registro sanitario ante la COFEPRIS (México), INVIMA (Colombia), ANMAT (Argentina), ISP (Chile), DIGEMID (Perú). Ejemplos de fármacos de uso masivo en LATAM con su fórmula: Ibuprofeno — C₁₃H₁₈O₂ (M=206,28 g/mol). Paracetamol — C₈H₉NO₂ (M=151,16 g/mol). Metformina (diabetes tipo 2, epidemia en LATAM) — C₄H₁₁N₅ (M=129,16 g/mol). Amoxicilina (antibiótico más vendido en LATAM) — C₁₆H₁₉N₃O₅S (M=365,40 g/mol). La coincidencia entre la fórmula molecular del genérico y el innovador garantiza la equivalencia farmacéutica.'
+    },
+    {
+      q: '¿Cómo se aplica la fórmula molecular en la detección de adulterantes en alimentos?',
+      a: 'En la seguridad alimentaria latinoamericana, la determinación de fórmulas moleculares de adulterantes es crítica. Ejemplos: (1) Adulteración de miel (problema frecuente en México, Argentina, Brasil): adición de jarabes de maíz con alto contenido de fructosa (C₆H₁₂O₆) o sacarosa (C₁₂H₂₂O₁₁) — análisis por HPLC + espectrometría de masas identifica las fórmulas de azúcares presentes. (2) Adulteración de aceite de oliva con aceite de palma (México, Colombia): el ácido palmítico (C₁₆H₃₂O₂, M=256 g/mol) vs. oleico (C₁₈H₃₄O₂, M=282 g/mol) — perfil de ácidos grasos por GC-MS. (3) Adulteración de leche con melanina (C₉H₇N₅O, M=213 g/mol) — escándalo chino que generó alertas en toda LATAM y reforzó los controles del Codex Alimentarius y las normativas NOM mexicanas.'
+    },
+    {
+      q: '¿Cuál es la relación entre la fórmula molecular y el grado de insaturación (doble enlace equivalente)?',
+      a: 'El grado de insaturación (GI) o doble enlace equivalente (DBE) indica el número de anillos + dobles enlaces en la molécula. Para compuestos C_xH_yN_zO_w: GI = (2x + 2 − y + z) / 2. Ejemplos: Metano CH₄: GI = (2+2−4)/2 = 0 (sin insaturación). Etileno C₂H₄: GI = (4+2−4)/2 = 1 (un doble enlace C=C). Benceno C₆H₆: GI = (12+2−6)/2 = 4 (3 dobles enlaces + 1 anillo, o equivalente 4 insaturaciones). Glucosa C₆H₁₂O₆: GI = (12+2−12)/2 = 1 (el grupo carbonilo C=O). El GI es fundamental para deducir la estructura de un compuesto desconocido a partir de su fórmula molecular. Con GI ≥ 4, se sospecha de estructura aromática (benceno o derivados), frecuente en colorantes textiles industriales producidos en Brasil, México y Colombia.'
+    },
+  ]}
+>
   <FormulaMolecularTool client:load />
 </CalcLayout>
-

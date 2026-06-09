@@ -1,17 +1,45 @@
-﻿---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import PhTool from "@/components/tools/PhTool";
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import PhTool from '@/components/tools/PhTool';
 ---
 
 <CalcLayout slug="calculadora-ph"
-  whatIs="La calculadora de calculadora-ph es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precisión?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="El pH es una escala logarítmica (0-14) que mide la acidez o basicidad de una disolución acuosa: pH = -log₁₀[H⁺]. Esta calculadora tiene tres modos: conoces el pH y calcula el pOH y las concentraciones de H⁺ y OH⁻; conoces la concentración de H⁺ (mol/L) y calcula el pH; conoces el pOH y calcula el pH. Siempre muestra pH, pOH, [H⁺], [OH⁻] y la clasificación de la disolución (ácido muy fuerte, ácido débil, neutro, base débil, base muy fuerte)."
+  whyUse="El pH es la medida más universal en química, biología, medicina y ciencias ambientales. Desde el análisis de agua potable y residual hasta el control de procesos industriales, pasando por el diagnóstico médico (pH sanguíneo, pH gástrico) y la agricultura (pH del suelo), esta magnitud aparece en todas partes. En Latinoamérica, los organismos de control de calidad del agua como la CONAGUA (México), el IDEAM (Colombia), SUNASS (Perú) y la SISS (Chile) la miden continuamente. Es contenido obligatorio en bachillerato y en el COMIPEMS, ICFES, PAES, PSU y otros exámenes de admisión universitaria."
+  faqs={[
+    {
+      q: '¿Qué es el pH y por qué es logarítmico?',
+      a: 'El pH se define como pH = -log₁₀[H⁺], donde [H⁺] es la concentración de iones hidrógeno (o más exactamente, iones hidronio H₃O⁺) en mol/L. Fue propuesto por Søren Sørensen en 1909. La escala logarítmica es conveniente porque las concentraciones de H⁺ en soluciones acuosas varían en 14 órdenes de magnitud: desde [H⁺] = 10⁰ = 1 mol/L (pH 0, ácido muy fuerte) hasta [H⁺] = 10⁻¹⁴ mol/L (pH 14, base muy fuerte). Cada unidad de pH representa un factor de 10 en la concentración de H⁺: pH 5 tiene 10× más H⁺ que pH 6 y 100× más que pH 7. En agua pura a 25°C: [H⁺] = [OH⁻] = 10⁻⁷ mol/L → pH = 7 (neutro).'
+    },
+    {
+      q: '¿Cuáles son los valores de pH de sustancias cotidianas en LATAM?',
+      a: 'Valores de pH aproximados de sustancias comunes: Ácido clorhídrico concentrado — pH 0. Jugo gástrico — pH 1-2. Refresco de cola (Coca-Cola, Pepsi) — pH 2,5-3,5. Jugo de limón — pH 2-3. Vinagre — pH 2,5-3. Café negro — pH 5. Leche — pH 6,5-7. Agua pura 25°C — pH 7. Agua potable — pH 6,5-8,5 (OMS). Agua de mar — pH 8,1. Bicarbonato de sodio — pH 8,3. Leche de magnesia — pH 10,5. Amoníaco casero — pH 11-12. Lejía (blanqueador) — pH 12-13. NaOH 1 M — pH 14. El suelo agrícola ideal para cultivos como maíz, frijol y papa (pilares de la dieta latinoamericana) es pH 6-7.'
+    },
+    {
+      q: '¿Qué es el pOH y cómo se relaciona con el pH?',
+      a: 'El pOH = -log₁₀[OH⁻] mide la basicidad de la disolución. En cualquier disolución acuosa a 25°C se cumple: pH + pOH = 14 (porque Kw = [H⁺][OH⁻] = 10⁻¹⁴ y tomando logaritmos: pH + pOH = 14). Por tanto, conociendo uno se calcula el otro inmediatamente: si pH = 9 → pOH = 5. También: [H⁺] = 10⁻ᵖᴴ y [OH⁻] = 10⁻ᵖᴼᴴ. Ejemplo: una disolución de NaOH con pH = 11 tiene [H⁺] = 10⁻¹¹ mol/L y [OH⁻] = 10⁻³ = 0,001 mol/L. Este equilibrio solo es exactamente 14 a 25°C; a mayor temperatura, Kw aumenta y la neutralidad ocurre a pH < 7.'
+    },
+    {
+      q: '¿Cómo afecta el pH del agua a la salud y al ambiente en Latinoamérica?',
+      a: 'La norma OMS y las normas nacionales de agua potable fijan el pH entre 6,5 y 8,5. Fuera de ese rango: pH < 6,5 (agua ácida) — corroe tuberías metálicas, libera plomo y cobre al agua; sabor ácido. El agua de lluvia ácida en ciudades industriales latinoamericanas (São Paulo, México DF, Bogotá) puede alcanzar pH 4-5 por contaminación con NOₓ y SO₂. pH > 8,5 (agua alcalina) — puede causar incrustaciones de carbonato cálcico en tuberías; sabor amargo. Para ríos y lagos: el pH óptimo para la vida acuática es 6,5-8,5. La minería artesanal de oro con mercurio en la Amazonía y el Chocó genera drenajes ácidos de mina con pH 2-4, devastadores para los ecosistemas acuáticos.'
+    },
+    {
+      q: '¿Qué son los ácidos y bases fuertes vs. débiles en términos de pH?',
+      a: 'Ácidos fuertes se disocian completamente en agua: HCl → H⁺ + Cl⁻. [H⁺] = concentración inicial. HCl 0,01 M: pH = -log(0,01) = 2. Ácidos débiles se disocian parcialmente: CH₃COOH ⇌ H⁺ + CH₃COO⁻. [H⁺] < concentración inicial; pH > -log(concentración inicial). CH₃COOH 0,01 M: pH ≈ 3,4 (no 2). Bases fuertes: NaOH → Na⁺ + OH⁻. pOH = -log[OH⁻] y pH = 14 - pOH. Bases débiles: NH₃ + H₂O ⇌ NH₄⁺ + OH⁻, pH < 14 - pOH(inicial). La calculadora calcula exactamente pH, pOH, [H⁺] y [OH⁻] a partir del pH introducido, independientemente de si el ácido es fuerte o débil.'
+    },
+    {
+      q: '¿Cómo se usa el pH en agricultura y suelos en LATAM?',
+      a: 'El pH del suelo determina la disponibilidad de nutrientes para las plantas. En suelos ácidos (pH < 6): el aluminio y el manganeso se vuelven tóxicos; el fósforo, el calcio y el magnesio se tornan inaccesibles. En suelos básicos (pH > 7,5): el hierro, el zinc y el manganeso se precipitan. La agricultura latinoamericana trabaja con rangos específicos: Maíz (base de la dieta de México, Guatemala, Colombia) — pH 5,5-7,5 óptimo. Café (Colombia, Brasil, Centroamérica) — pH 5-6. Caña de azúcar (Brasil, México, Colombia) — pH 6-7,5. Soya (Brasil, Argentina, Bolivia) — pH 6-7. Para corregir suelos ácidos se aplica cal (CaCO₃ o Ca(OH)₂); para acidificar suelos básicos, azufre elemental o sulfato ferroso.'
+    },
+    {
+      q: '¿Qué es el pH sanguíneo y por qué es tan crítico en medicina?',
+      a: 'El pH normal de la sangre arterial humana es 7,35-7,45 (ligeramente básico). Es una de las magnitudes más controladas del organismo por el sistema tampón del bicarbonato (H₂CO₃/HCO₃⁻), el tampón de la hemoglobina y la regulación renal. Fuera de ese rango: pH < 7,35 — acidosis (metabólica por cetoacidosis diabética, diarrea severa; o respiratoria por hipoventilación). Taquicardia, confusión, coma. pH > 7,45 — alcalosis (metabólica por vómitos, diuréticos; o respiratoria por hiperventilación). Espasmos musculares, tetania. En LATAM, la cetoacidosis diabética es una de las emergencias hospitalarias más frecuentes, y el control del pH sanguíneo en UCI es fundamental.'
+    },
+    {
+      q: '¿Cómo se mide el pH en la práctica y qué instrumentos se usan en LATAM?',
+      a: 'Los métodos de medición de pH: (1) pH-metro electrónico: electrodo de vidrio selectivo para H⁺ + electrodo de referencia Ag/AgCl. Precisión ± 0,01 pH. Estándar en todos los laboratorios universitarios e industriales de LATAM. Debe calibrarse con tampones de pH conocido (4,0 y 7,0 o 7,0 y 10,0) antes de cada sesión. (2) Papel indicador de pH: tiras con mezcla de indicadores. Precisión ± 1 pH. Económico para uso rápido en campo (análisis de suelos, piscinas). (3) Indicadores colorimétricos: fenolftaleína (incoloro pH<8,2; rosa pH>8,2), azul de bromotimol, naranja de metilo. Usados en titulaciones ácido-base en laboratorios de bachillerato y universidad en toda Latinoamérica.'
+    },
+  ]}
+>
   <PhTool client:load />
 </CalcLayout>
-

@@ -33,7 +33,7 @@ export default function SolucionConcentracionTool() {
         const total = ms + vd;
         setResult({ valor: (ms / total) * 100, unidad: '% (m/m)' });
       } else {
-        setResult({ valor: (ms / vd) * 1000, unidad: 'ppm (mg/L)' });
+        setResult({ valor: ms / vd, unidad: 'ppm (mg/L)' });
       }
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Error al calcular.');

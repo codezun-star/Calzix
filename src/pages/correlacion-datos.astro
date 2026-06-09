@@ -1,17 +1,45 @@
-﻿---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import CorrelacionDatosTool from "@/components/tools/CorrelacionDatosTool";
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import CorrelacionDatosTool from '@/components/tools/CorrelacionDatosTool';
 ---
 
 <CalcLayout slug="correlacion-datos"
-  whatIs="La calculadora de correlacion-datos es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precision?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="La correlación de Pearson mide la fuerza y la dirección de la relación lineal entre dos variables cuantitativas. Esta calculadora recibe dos series de datos (Serie X y Serie Y) con al menos 3 pares de valores y calcula el coeficiente de correlación de Pearson r, que varía entre -1 y +1. Un valor cercano a +1 indica correlación positiva fuerte, cercano a -1 correlación negativa fuerte, y cercano a 0 correlación nula o muy débil. También interpreta automáticamente el tipo de correlación."
+  whyUse="La correlación es una de las herramientas más usadas en análisis de datos científicos, económicos y sociales. En Latinoamérica se aplica para estudiar la relación entre inflación y desempleo, entre horas de estudio y calificaciones, entre variables climáticas y producción agrícola, o entre publicidad y ventas. Es contenido fundamental en los cursos de estadística de bachillerato y universidad en México, Colombia, Argentina, Chile, Perú y toda la región, especialmente en carreras de economía, administración, ciencias de la salud, psicología e ingeniería industrial."
+  faqs={[
+    {
+      q: '¿Qué es el coeficiente de correlación de Pearson y cómo se interpreta?',
+      a: 'El coeficiente de correlación de Pearson r mide la relación lineal entre dos variables X e Y. Varía entre -1 y +1. Interpretación estándar: r entre 0,9 y 1,0 — correlación positiva muy fuerte (a más X, mucho más Y); r entre 0,7 y 0,9 — positiva fuerte; r entre 0,5 y 0,7 — positiva moderada; r entre 0,3 y 0,5 — positiva débil; r entre -0,3 y 0,3 — nula o muy débil (no hay relación lineal); valores negativos indican la relación inversa (a más X, menos Y). Ejemplo: r = 0,95 entre horas de estudio y calificaciones indica que estudiar más está muy asociado con mejores notas.'
+    },
+    {
+      q: '¿Cuál es la fórmula del coeficiente de Pearson?',
+      a: 'r = suma((xi - media_x)(yi - media_y)) ÷ (raíz(suma(xi - media_x)²) × raíz(suma(yi - media_y)²)). En otras palabras, es la covarianza de X e Y dividida entre el producto de sus desviaciones estándar. La fórmula normaliza la covarianza para que el resultado siempre quede entre -1 y +1, independientemente de las unidades de medida. Ejemplo numérico con X = {1,2,3,4,5} e Y = {2,4,5,4,5}: la calculadora obtendrá un r ≈ 0,9091, correlación positiva muy fuerte, lo que indica que Y tiende a crecer cuando X crece.'
+    },
+    {
+      q: '¿Cuál es la diferencia entre correlación positiva y negativa?',
+      a: 'Correlación positiva (r > 0): cuando X aumenta, Y también tiende a aumentar. Ejemplo: ingreso mensual y gasto en consumo (a mayor ingreso, mayor gasto). Correlación negativa (r < 0): cuando X aumenta, Y tiende a disminuir. Ejemplo: precio de un producto y demanda del mismo (a mayor precio, menor demanda — ley de la demanda en economía). Correlación nula (r ≈ 0): no hay relación lineal aparente entre X e Y. Ejemplo: el número del zapato y las calificaciones en matemáticas. La dirección (positiva o negativa) y la magnitud (fuerza) son los dos aspectos que resume el coeficiente r.'
+    },
+    {
+      q: '¿Correlación implica causalidad?',
+      a: 'No. La correlación estadística mide asociación, no causa. Dos variables pueden estar correlacionadas por razones espurias: (1) Causalidad inversa: Y causa X en lugar de X causar Y. (2) Variable confusora: una tercera variable Z causa tanto X como Y. (3) Coincidencia: la correlación es fortuita. Ejemplo clásico: el número de hospitales y el número de muertes en una ciudad están positivamente correlacionados, pero los hospitales no causan las muertes — los hospitales se construyen donde hay más población y, por tanto, más muertes. En ciencias sociales y economía latinoamericana, siempre se exige un argumento teórico para afirmar causalidad.'
+    },
+    {
+      q: '¿Cuáles son las limitaciones de la correlación de Pearson?',
+      a: 'Limitaciones importantes: (1) Solo detecta relaciones lineales; puede haber una relación fuerte no lineal con r ≈ 0. (2) Es sensible a valores atípicos (outliers): un solo punto extremo puede elevar o reducir drásticamente r. (3) Requiere variables cuantitativas continuas; no aplica a variables ordinales o nominales (para esas hay Spearman o phi). (4) No distingue causa de efecto. (5) El umbral de "correlación significativa" depende del tamaño de muestra: con n muy grande, una r = 0,05 puede ser estadísticamente significativa aunque prácticamente irrelevante. Siempre complementar con un gráfico de dispersión y análisis contextual.'
+    },
+    {
+      q: '¿Cómo se aplica la correlación en economía y ciencias sociales latinoamericanas?',
+      a: 'En economía LATAM, la correlación se usa para: (1) Analizar la relación entre el precio del petróleo y el tipo de cambio en México, Venezuela, Ecuador y Colombia. (2) Estudiar la correlación entre inflación y desempleo (curva de Phillips). (3) En salud pública, correlacionar factores de riesgo con enfermedades (tabaquismo-cáncer, obesidad-diabetes). (4) En educación, correlacionar el PIB per cápita de un país con su puntaje en PISA. (5) En agronomía, correlacionar temperatura o precipitación con rendimiento de cosechas de maíz, café o soya. La correlación es la primera exploración de cualquier análisis de regresión.'
+    },
+    {
+      q: '¿Qué requisitos deben cumplir los datos para usar la correlación de Pearson?',
+      a: 'Para que la correlación de Pearson sea válida y significativa: (1) Ambas variables deben ser cuantitativas continuas (no categorías). (2) Los datos deben ser aproximadamente continuos y sin demasiados valores atípicos extremos. (3) La relación entre X e Y debe ser aproximadamente lineal (verificable con un diagrama de dispersión). (4) Se necesitan al menos 3 pares de datos (esta calculadora requiere mínimo 3). Para obtener resultados estadísticamente fiables, se recomiendan al menos 20-30 pares. (5) Las dos series deben tener exactamente el mismo número de elementos. La calculadora muestra un error si las series tienen longitudes distintas.'
+    },
+    {
+      q: '¿Cómo introduzco los datos en la calculadora de correlación?',
+      a: 'Introduce los valores de la Serie X en el primer campo y los valores de la Serie Y en el segundo campo. Separa los números con coma, punto y coma o espacio. Usa punto o coma como decimal (2.5 o 2,5). Ambas series deben tener el mismo número de valores. Ejemplo práctico: Serie X (horas de estudio): "5, 3, 8, 6, 4, 7, 2, 9" y Serie Y (calificación): "70, 55, 90, 80, 65, 85, 45, 95". La calculadora empareja automáticamente los valores por posición (el primer X con el primer Y, etc.) y calcula r al instante. El resultado incluye el valor numérico de r y su interpretación textual.'
+    },
+  ]}
+>
   <CorrelacionDatosTool client:load />
 </CalcLayout>
-

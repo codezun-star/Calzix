@@ -1,17 +1,45 @@
-﻿---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import NumeroPrimoTool from "@/components/tools/NumeroPrimoTool";
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import NumeroPrimoTool from '@/components/tools/NumeroPrimoTool';
 ---
 
 <CalcLayout slug="numero-primo"
-  whatIs="La calculadora de numero-primo es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precision?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="Un número primo es un entero mayor que 1 que solo es divisible exactamente por 1 y por sí mismo. Los primeros primos son: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47… El 2 es el único primo par. Un número compuesto tiene al menos un divisor distinto de 1 y de sí mismo. Esta herramienta comprueba al instante si cualquier número hasta 1.000.000.000 es primo y, si es compuesto, muestra su descomposición en factores primos."
+  whyUse="Los números primos son el fundamento de la criptografía moderna: los algoritmos RSA y el protocolo HTTPS que protegen todas las transacciones bancarias online en América Latina usan primos de cientos de dígitos. En el currículo escolar latinoamericano se estudian desde 4° de primaria. La descomposición en factores primos es necesaria para calcular MCM, MCD, simplificar radicales y resolver problemas de divisibilidad en secundaria y preparatoria."
+  faqs={[
+    {
+      q: '¿Qué es un número primo y cuáles son los primeros 20?',
+      a: 'Un número primo es un entero mayor que 1 con exactamente dos divisores: el 1 y él mismo. Los primeros 20 números primos son: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71. El número 1 NO es primo por definición (tiene un solo divisor). El 2 es el único primo par; todos los demás primos son impares. Existen infinitos números primos, como demostró Euclides hace más de 2.300 años mediante una elegante demostración por contradicción.'
+    },
+    {
+      q: '¿Cómo se verifica si un número es primo sin calculadora?',
+      a: 'Para comprobar si n es primo manualmente: prueba si es divisible por cada primo hasta √n. Ejemplo con n=97: √97≈9,85, así que basta probar 2, 3, 5, 7. 97÷2=48,5 (no), 97÷3=32,3 (no), 97÷5=19,4 (no), 97÷7=13,86 (no) → 97 es primo. Con n=91: 91÷7=13 exacto → 91=7×13 → es compuesto. La calculadora aplica este método (llamado criba de divisores) automáticamente para cualquier número hasta 1.000.000.000 en milisegundos.'
+    },
+    {
+      q: '¿Qué es la descomposición en factores primos y para qué sirve?',
+      a: 'La descomposición en factores primos expresa cualquier número compuesto como producto único de primos (Teorema Fundamental de la Aritmética). Ejemplos: 12=2²×3; 60=2²×3×5; 360=2³×3²×5; 2.310=2×3×5×7×11. Sus aplicaciones: calcular MCM y MCD (tomando los factores comunes y no comunes), simplificar raíces cuadradas (√72=√(4×18)=2√18), resolver problemas de divisibilidad, y en criptografía. La calculadora muestra la factorización completa de cualquier número compuesto.'
+    },
+    {
+      q: '¿Cuál es el número primo más grande conocido?',
+      a: 'En 2024, el número primo más grande conocido es 2^136.279.841 − 1, un primo de Mersenne con más de 41 millones de dígitos, descubierto en octubre de 2024 por el proyecto GIMPS (Great Internet Mersenne Prime Search). Los primos de Mersenne tienen la forma 2^p − 1 donde p también es primo. Encontrar nuevos primos gigantes requiere meses de cómputo distribuido con miles de computadoras colaborando. El récord se actualiza cada pocos años con nuevas potencias de cómputo.'
+    },
+    {
+      q: '¿Por qué los números primos son fundamentales en criptografía y seguridad digital?',
+      a: 'La seguridad de las comunicaciones en internet, los pagos digitales y la banca online en toda Latinoamérica depende de los primos. El algoritmo RSA usa dos primos gigantes p y q (de 512 a 2048 bits, más de 150 dígitos cada uno): los multiplica para obtener n=p×q (operación fácil y rápida), pero factorizar n de vuelta es computacionalmente imposible en tiempo razonable incluso con supercomputadoras. Esta asimetría entre multiplicar (fácil) y factorizar (difícil) es la base de toda la seguridad digital moderna.'
+    },
+    {
+      q: '¿Qué es el Teorema Fundamental de la Aritmética?',
+      a: 'El Teorema Fundamental de la Aritmética establece que todo entero mayor que 1 se puede expresar de manera única como producto de números primos (salvo el orden). Ejemplos: 30=2×3×5, 100=2²×5², 2310=2×3×5×7×11. Esta unicidad hace de los primos los «átomos» de los enteros: así como la materia está formada por átomos elementales, cada número está formado por una combinación única de primos. Este teorema es la base de la factorización y del cálculo de MCM y MCD en toda la aritmética.'
+    },
+    {
+      q: '¿Cuántos números primos existen hasta 100, 1.000 y 1.000.000?',
+      a: 'La cantidad de primos hasta N se estima con el Teorema de los Números Primos: π(N) ≈ N/ln(N). Valores exactos: hasta 10 hay 4 primos; hasta 100 hay 25 primos; hasta 1.000 hay 168; hasta 10.000 hay 1.229; hasta 100.000 hay 9.592; hasta 1.000.000 hay 78.498; hasta 1.000.000.000 hay 50.847.534 primos. A mayor N los primos se espacian más pero nunca se terminan. La conjetura de Goldbach (no demostrada) dice que todo par mayor que 2 es suma de dos primos.'
+    },
+    {
+      q: '¿Qué son los primos gemelos, de Mersenne y de Fermat?',
+      a: 'Primos gemelos: pares de primos con diferencia 2. Ejemplos: (3,5), (5,7), (11,13), (17,19), (29,31), (41,43), (59,61)… Se cree que hay infinitos pero no está demostrado. Primos de Mersenne: tienen la forma 2^p−1 donde p es primo. Ejemplos: 3 (2²−1), 7 (2³−1), 31 (2⁵−1), 127 (2⁷−1). Son los más grandes descubiertos. Primos de Fermat: tienen la forma 2^(2^n)+1. Los primeros: 3, 5, 17, 257, 65537. Solo se conocen 5 primos de Fermat confirmados. Son conceptos de matemáticas avanzadas estudiados en universidades latinoamericanas.'
+    },
+  ]}
+>
   <NumeroPrimoTool client:load />
 </CalcLayout>
-

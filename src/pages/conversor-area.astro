@@ -1,36 +1,45 @@
-﻿---
+---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import ConvAreaTool from '@/components/tools/ConvAreaTool';
 ---
 
 <CalcLayout slug="conversor-area"
-  whatIs="La calculadora de conversor-area es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  {
-    q: '¿Cuántos metros cuadrados tiene una hectárea?',
-    a: 'Esta pregunta fundamental es planteada por muchos usuarios al utilizar herramientas de cálculo como la nuestra. La respuesta completa depende del contexto específico, tus objetivos personales claros, y cómo planeas usar esta información valiosa. En general, la mayoría de usuarios encuentran esta herramienta increíblemente útil para una amplia gama de aplicaciones prácticas y reales. Desde contextos académicos rigurosos hasta situaciones financieras reales y complejas, hay numerosos casos de uso donde esta información es absolutamente valiosa. La clave fundamental es entender cómo aplicar correctamente los resultados a tu situación específica y única. Nuestra herramienta proporciona la base matemática sólida que necesitas para tomar decisiones informadas y confiables. Experimenta con diferentes escenarios para descubrir todas las formas creativas en que puedes utilizar esta herramienta en tu vida diaria.',
-  },
-  {
-    q: '¿Cuántos metros cuadrados tiene un acre?',
-    a: 'Esta pregunta fundamental es planteada por muchos usuarios al utilizar herramientas de cálculo como la nuestra. La respuesta completa depende del contexto específico, tus objetivos personales claros, y cómo planeas usar esta información valiosa. En general, la mayoría de usuarios encuentran esta herramienta increíblemente útil para una amplia gama de aplicaciones prácticas y reales. Desde contextos académicos rigurosos hasta situaciones financieras reales y complejas, hay numerosos casos de uso donde esta información es absolutamente valiosa. La clave fundamental es entender cómo aplicar correctamente los resultados a tu situación específica y única. Nuestra herramienta proporciona la base matemática sólida que necesitas para tomar decisiones informadas y confiables. Experimenta con diferentes escenarios para descubrir todas las formas creativas en que puedes utilizar esta herramienta en tu vida diaria.',
-  },
-  {
-    q: '¿Cómo se convierte m² a cm²?',
-    a: 'Esta pregunta fundamental es planteada por muchos usuarios al utilizar herramientas de cálculo como la nuestra. La respuesta completa depende del contexto específico, tus objetivos personales claros, y cómo planeas usar esta información valiosa. En general, la mayoría de usuarios encuentran esta herramienta increíblemente útil para una amplia gama de aplicaciones prácticas y reales. Desde contextos académicos rigurosos hasta situaciones financieras reales y complejas, hay numerosos casos de uso donde esta información es absolutamente valiosa. La clave fundamental es entender cómo aplicar correctamente los resultados a tu situación específica y única. Nuestra herramienta proporciona la base matemática sólida que necesitas para tomar decisiones informadas y confiables. Experimenta con diferentes escenarios para descubrir todas las formas creativas en que puedes utilizar esta herramienta en tu vida diaria.',
-  },
-  {
-    q: '¿Cuántos pies cuadrados tiene un metro cuadrado?',
-    a: 'Esta pregunta fundamental es planteada por muchos usuarios al utilizar herramientas de cálculo como la nuestra. La respuesta completa depende del contexto específico, tus objetivos personales claros, y cómo planeas usar esta información valiosa. En general, la mayoría de usuarios encuentran esta herramienta increíblemente útil para una amplia gama de aplicaciones prácticas y reales. Desde contextos académicos rigurosos hasta situaciones financieras reales y complejas, hay numerosos casos de uso donde esta información es absolutamente valiosa. La clave fundamental es entender cómo aplicar correctamente los resultados a tu situación específica y única. Nuestra herramienta proporciona la base matemática sólida que necesitas para tomar decisiones informadas y confiables. Experimenta con diferentes escenarios para descubrir todas las formas creativas en que puedes utilizar esta herramienta en tu vida diaria.',
-  },
-  {
-    q: '¿Cuántas hectáreas tiene un kilómetro cuadrado?',
-    a: 'Esta pregunta fundamental es planteada por muchos usuarios al utilizar herramientas de cálculo como la nuestra. La respuesta completa depende del contexto específico, tus objetivos personales claros, y cómo planeas usar esta información valiosa. En general, la mayoría de usuarios encuentran esta herramienta increíblemente útil para una amplia gama de aplicaciones prácticas y reales. Desde contextos académicos rigurosos hasta situaciones financieras reales y complejas, hay numerosos casos de uso donde esta información es absolutamente valiosa. La clave fundamental es entender cómo aplicar correctamente los resultados a tu situación específica y única. Nuestra herramienta proporciona la base matemática sólida que necesitas para tomar decisiones informadas y confiables. Experimenta con diferentes escenarios para descubrir todas las formas creativas en que puedes utilizar esta herramienta en tu vida diaria.',
-  },
-  {
-    q: '¿Para qué se usa la pulgada cuadrada (in²)?',
-    a: 'Esta pregunta fundamental es planteada por muchos usuarios al utilizar herramientas de cálculo como la nuestra. La respuesta completa depende del contexto específico, tus objetivos personales claros, y cómo planeas usar esta información valiosa. En general, la mayoría de usuarios encuentran esta herramienta increíblemente útil para una amplia gama de aplicaciones prácticas y reales. Desde contextos académicos rigurosos hasta situaciones financieras reales y complejas, hay numerosos casos de uso donde esta información es absolutamente valiosa. La clave fundamental es entender cómo aplicar correctamente los resultados a tu situación específica y única. Nuestra herramienta proporciona la base matemática sólida que necesitas para tomar decisiones informadas y confiables. Experimenta con diferentes escenarios para descubrir todas las formas creativas en que puedes utilizar esta herramienta en tu vida diaria.',
-  },
-]}>
+  whatIs="El conversor de área transforma entre 8 unidades de superficie: metros cuadrados (m²), kilómetros cuadrados (km²), centímetros cuadrados (cm²), milímetros cuadrados (mm²), hectáreas (ha), acres, pies cuadrados (ft²) y pulgadas cuadradas (in²). Las conversiones siguen las relaciones cuadráticas de las unidades de longitud — 1 m = 100 cm pero 1 m² = 10 000 cm²."
+  whyUse="En Latinoamérica, el metro cuadrado (m²) domina en arquitectura y bienes raíces; la hectárea (ha) es la unidad agrícola oficial; el km² se usa en geografía y estudios ambientales. Los planos anglosajones y las propiedades en zonas con influencia estadounidense usan pies cuadrados y acres. Esta herramienta es indispensable para comparar precios de vivienda, planificar cultivos y trabajar en topografía."
+  faqs={[
+    {
+      q: '¿Cuántos metros cuadrados tiene una hectárea?',
+      a: 'Una hectárea (ha) tiene exactamente 10 000 metros cuadrados (m²). El término "hectárea" viene de "hecto" (prefijo griego = 100) + "área" (unidad de 100 m²): 1 ha = 100 × 100 m² = 10 000 m². La hectárea es la unidad de superficie más usada en la agricultura latinoamericana y está reconocida por el Sistema Internacional de Unidades (SI) como unidad de uso paralelo. Dimensión visual: una hectárea equivale aproximadamente a un cuadrado de 100 m × 100 m, o a 1,4 canchas de fútbol olímpico (105 m × 68 m = 7140 m²). En la agricultura de LATAM: un productor maicero de Sinaloa (México) siembra típicamente 5-20 ha; un caficultor de Colombia trabaja parcelas de 1-3 ha; un arrocero del Llanos colombianos o Venezuela maneja 50-500 ha; un productor soyero del Cerrado brasileño o la Pampa argentina puede tener 1000-50 000 ha.',
+    },
+    {
+      q: '¿Cuántos metros cuadrados tiene un acre?',
+      a: 'Un acre tiene exactamente 4046,8564 m² ≈ 0,4047 ha. La equivalencia más fácil de recordar: 1 acre ≈ 4047 m² ≈ 0,4 ha. El acre es la unidad de superficie del sistema anglosajón: sigue siendo de uso oficial en EE.UU. y el Reino Unido. En Latinoamérica, el acre aparece principalmente en: (1) Propiedades en zonas fronterizas con EE.UU. o en estados del norte de México donde la influencia anglosajona es mayor. (2) Registros históricos de tierras en países del Caribe anglófono (Jamaica, Belice, Trinidad y Tobago, Guyana) donde la medición de tierras se hizo originalmente en acres bajo el dominio colonial británico. (3) Especificaciones de maquinaria agrícola importada de EE.UU. (tractores John Deere, Case IH): sus manuales expresan la cobertura por pasada en acres/hora. (4) Cotizaciones de proyectos de inversión agroindustrial en LATAM hechos para inversionistas estadounidenses.',
+    },
+    {
+      q: '¿Cómo se convierte m² a cm² y por qué el factor es 10 000?',
+      a: '1 m² = 10 000 cm². Esto parece sorprendente si se piensa solo en longitud (1 m = 100 cm), pero el área escala con el cuadrado: si 1 m = 100 cm, entonces 1 m² = (100 cm)² = 100 × 100 = 10 000 cm². Análogamente: 1 km² = (1000 m)² = 1 000 000 m² = 10⁶ m². 1 m² = (100 cm)² = 10 000 cm² = (1000 mm)² = 10⁶ mm². 1 cm² = (10 mm)² = 100 mm². 1 km² = 100 ha = 10 000 × 100 m² = 100 ha. Este error de confundir la escala lineal con la escala de área es muy frecuente en estudiantes. Ejemplo de error típico en construcción: si un cuarto mide 3 m × 4 m = 12 m², se necesitan 12 m² de baldosa, no 1200 cm² (que sería solo 0,12 m² — el tamaño de una sola baldosa). En exámenes COMIPEMS, ICFES y PSU/PAES, los problemas de área con cambio de unidad evalúan específicamente este concepto.',
+    },
+    {
+      q: '¿Cuántos pies cuadrados tiene un metro cuadrado?',
+      a: '1 m² = (1/0,3048)² ft² = (3,28084)² = 10,7639 ft². Inversa: 1 ft² = (0,3048)² m² = 0,0929 m² ≈ 929 cm². La unidad pie cuadrado (ft²) es de uso habitual en el mercado inmobiliario de EE.UU. y en zonas de influencia anglosajona. En Latinoamérica: (1) Anuncios de bienes raíces en Miami o Houston dirigidos a compradores latinoamericanos mezclan m² y ft². Un apartamento de 900 ft² = 83,6 m². (2) Franquicias de EE.UU. con locales en LATAM (McDonald\'s, Walmart, Home Depot) utilizan ft² en sus manuales de construcción y estándares de formato de tienda. (3) La pulgada cuadrada (in²): 1 in² = (0,0254 m)² = 6,4516 cm². Aparece en especificaciones de tuberías (área de la sección transversal) y en la unidad de presión "PSI" (libras por pulgada cuadrada), muy usada en sistemas neumáticos e hidráulicos de LATAM.',
+    },
+    {
+      q: '¿Cuántas hectáreas tiene un kilómetro cuadrado?',
+      a: '1 km² tiene exactamente 100 hectáreas. Demostración: 1 km = 1000 m → 1 km² = (1000 m)² = 1 000 000 m². 1 ha = 10 000 m². 1 000 000 / 10 000 = 100 ha/km². La escala práctica en LATAM: un municipio pequeño en Colombia ocupa 50-200 km² = 5000-20 000 ha. La ciudad de Buenos Aires tiene ≈ 203 km² = 20 300 ha. El Parque Nacional Amazónico (Brasil) abarca ≈ 994 000 km² = 99,4 millones de ha. La deforestación de la Amazonía se mide anualmente en km² por el INPE (Instituto Nacional de Pesquisas Espaciais) de Brasil: en 2023 se deforestaron ≈ 11 568 km² = 1 156 800 ha (una reducción vs. 2022 pero todavía alarmante). La escala km² ↔ ha es fundamental para entender los informes de cobertura forestal, expansión agrícola y conservación de biomas en toda la región.',
+    },
+    {
+      q: '¿Cómo se usa el metro cuadrado en el mercado inmobiliario de LATAM?',
+      a: 'El metro cuadrado (m²) es la unidad universal de medida para inmuebles en toda Latinoamérica. El precio por m² varía enormemente según la ciudad y el barrio: Ciudad de México (CDMX, promedio zonas prime): $70 000-120 000 MXN/m² (≈ $3 600-6 200 USD/m²). Polanco, Santa Fe: $100 000-180 000 MXN/m². Bogotá (promedio zonas premium): $8 000 000-15 000 000 COP/m² (≈ $2 000-3 700 USD/m²). Santiago de Chile (Las Condes, Providencia): $3 000-5 000 USD/m². Buenos Aires (Palermo, Recoleta): $2 500-4 000 USD/m². Lima (Miraflores, San Isidro): $2 500-4 500 USD/m². São Paulo (Itaim Bibi): R$ 18 000-28 000/m² (≈ $3 600-5 600 USD/m²). Conocer el precio por m² y saber convertir entre m² y ft² es esencial para comparar propiedades en mercados internacionales o para latinoamericanos que invierten en bienes raíces en EE.UU.',
+    },
+    {
+      q: '¿Cómo se usa el área en la planificación agrícola en LATAM?',
+      a: 'La planificación agrícola en Latinoamérica usa la hectárea como unidad de referencia para todos los insumos y rendimientos. Los parámetros agronómicos más importantes se expresan por hectárea: Maíz (México, Brasil, Argentina): rendimiento promedio 3-10 t/ha; fertilización 150-250 kg N/ha; agua de riego 400-700 mm/ciclo. Café en Colombia (FNC): rendimiento caficultura tecnificada 1-2 t/ha de café pergamino seco (cps). Caña de azúcar en Brasil (Cerrado): rendimiento 70-90 t caña/ha; etanol producido ≈ 6000-7000 L/ha/año. Soya en el Cerrado brasileño y la Pampa argentina: rendimiento 2,5-4 t/ha; el área cosechada en Brasil supera 44 millones de ha (el mayor productor mundial). Para planificar un lote de 500 ha de soya a 3 t/ha con precio $400 USD/t: ingreso bruto = 500 ha × 3 t/ha × $400/t = $600 000 USD. El cálculo empieza siempre con el área exacta del predio.',
+    },
+    {
+      q: '¿Cómo se aplica la conversión de área en la deforestación y medioambiente de LATAM?',
+      a: 'Los informes de deforestación y cobertura forestal en Latinoamérica usan km², ha y m² según la escala: Para la Amazonía (1er bosque tropical del mundo): km². El INPE (Brasil) reporta deforestación anual en km². El IDEAM (Colombia) y el MINAM (Perú) también reportan en km² para sus respectivas Amazonías. Para fincas ganaderas y agrícolas: ha. Para reservas naturales municipales o parques urbanos: ha y m². Para proyectos forestales de carbono (REDD+): ha, porque los mercados voluntarios de carbono calculan la compensación en toneladas CO₂/ha/año. La relación entre área y captura de carbono en bosques tropicales: un bosque tropical maduro captura ≈ 3-5 tCO₂/ha/año. Perú, Colombia y México emiten bonos de carbono forestal. Brazil emitió créditos de carbono de la Amazonia Legal en el período 2023-2030 por ≈ 10 millones de ha de bosque conservado.',
+    },
+  ]}
+>
   <ConvAreaTool client:load />
 </CalcLayout>
-

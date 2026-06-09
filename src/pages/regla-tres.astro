@@ -1,17 +1,45 @@
-﻿---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import ReglaTresTool from "@/components/tools/ReglaTresTool";
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ReglaTresTool from '@/components/tools/ReglaTresTool';
 ---
 
 <CalcLayout slug="regla-tres"
-  whatIs="La calculadora de regla-tres es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precision?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="La regla de tres es un método matemático para encontrar el cuarto valor desconocido de una proporción cuando se conocen tres. En la regla de tres directa, si A corresponde a B, entonces C corresponde a X = (B×C)÷A. En la inversa, si A tarda B, entonces C tarda X = (A×B)÷C. Esta calculadora resuelve ambos tipos introduciendo tres valores conocidos y calculando el incógnito al instante."
+  whyUse="La regla de tres es una de las herramientas matemáticas más usadas en la vida cotidiana y profesional de toda Latinoamérica: escalar recetas de cocina, calcular precios en distintas cantidades, hacer conversiones de divisas, mezclar materiales en construcción, calcular tiempos de trabajo, interpretar escalas en mapas y planos, resolver problemas de velocidad y distancia, y muchas más aplicaciones. Es materia obligatoria en primaria y secundaria en todos los países del continente."
+  faqs={[
+    {
+      q: '¿Qué es la regla de tres y cómo se plantea?',
+      a: 'La regla de tres establece una proporción entre cuatro cantidades donde tres son conocidas y una es la incógnita X. Se escribe como: A → B / C → X. Significa «si A corresponde a B, ¿cuánto corresponde a C?». La solución es X = (B × C) ÷ A. Ejemplo directo: si 5 kg de fruta cuestan 50 pesos, ¿cuánto cuestan 8 kg? Planteamos: 5→50 / 8→X. Entonces X = (50×8)÷5 = 400÷5 = 80 pesos. La clave es identificar qué magnitudes son proporcionales entre sí.'
+    },
+    {
+      q: '¿Cuál es la diferencia entre regla de tres directa e inversa?',
+      a: 'Directa: cuando al aumentar una magnitud, la otra también aumenta (proporcionalidad directa). Ejemplo: más kilómetros → más tiempo a misma velocidad. Inversa: cuando al aumentar una magnitud, la otra disminuye (proporcionalidad inversa). Ejemplo: más trabajadores → menos días para terminar el mismo trabajo. Identificar el tipo es esencial para plantear correctamente el problema. La calculadora tiene ambos modos; selecciona «Directa» o «Inversa» según corresponda a tu situación.'
+    },
+    {
+      q: '¿Cómo se usa la regla de tres para escalar recetas de cocina?',
+      a: 'Ejemplo: una receta para 4 personas usa 300 g de harina. ¿Cuánta harina necesitas para 7 personas? Es directa (más personas → más harina). Planteo: 4 personas → 300 g / 7 personas → X. X = (300×7)÷4 = 2100÷4 = 525 g. Con la calculadora: A=4, B=300, C=7, tipo Directa → X=525 g. Aplica igual para cualquier receta: tamales mexicanos para 20 personas, hallacas venezolanas para 15, empanadas argentinas para 12, etc.'
+    },
+    {
+      q: '¿Cómo aplica la regla de tres en conversión de monedas?',
+      a: 'Ejemplo: si 1 dólar USD equivale a 17,50 pesos mexicanos, ¿cuántos pesos equivalen a 85 dólares? Es proporcionalidad directa: 1 USD → 17,50 MXN / 85 USD → X. X = (17,50 × 85) ÷ 1 = 1.487,50 pesos. Con la calculadora: A=1, B=17.50, C=85 → X=1487,50. Este mismo método aplica para calcular equivalencias entre cualquier par de monedas latinoamericanas: pesos colombianos, soles peruanos, guaraníes paraguayos, bolívares venezolanos, colones costarricenses, etc.'
+    },
+    {
+      q: '¿Cómo se usa la regla de tres inversa en problemas de trabajo?',
+      a: 'Ejemplo clásico: 6 albañiles tardan 10 días en construir una pared. ¿Cuántos días tardan 4 albañiles? Es inversa (más trabajadores → menos días). Con la calculadora en modo Inversa: A=6, B=10, C=4. X = (A×B)÷C = (6×10)÷4 = 60÷4 = 15 días. Verificación: 6 albañiles × 10 días = 60 días-albañil de trabajo; 60 ÷ 4 albañiles = 15 días. La clave de la inversa es que el producto A×B siempre es igual al producto C×X (trabajo total constante).'
+    },
+    {
+      q: '¿Cómo se aplica la regla de tres en problemas de escala de mapas y planos?',
+      a: 'En planos arquitectónicos o mapas geográficos, la escala indica la proporción entre la medida en el plano y la medida real. Ejemplo: en un plano a escala 1:100, una habitación mide 3,5 cm. ¿Cuánto mide en realidad? Regla directa: 1 cm → 100 cm / 3,5 cm → X. X = (100×3,5)÷1 = 350 cm = 3,5 m. Inverso: si la habitación real mide 450 cm, ¿cuánto mide en el plano? 100 cm → 1 cm / 450 cm → X. X = (1×450)÷100 = 4,5 cm.'
+    },
+    {
+      q: '¿Qué es la regla de tres compuesta?',
+      a: 'La regla de tres compuesta involucra más de dos magnitudes relacionadas. Ejemplo: 5 máquinas producen 300 piezas en 6 horas. ¿Cuántas piezas producen 8 máquinas en 9 horas? Se resuelve por pasos: primero fija una variable. Con 5 máquinas en 9 horas: X₁ = 300×9÷6 = 450 piezas. Con 8 máquinas en 9 horas: X₂ = 450×8÷5 = 720 piezas. Alternativamente: X = 300 × (8÷5) × (9÷6) = 300 × 1,6 × 1,5 = 720 piezas. Para la calculadora, aplica los pasos secuencialmente usando el resultado de cada paso como entrada del siguiente.'
+    },
+    {
+      q: '¿Cuál es la diferencia entre regla de tres y proporcionalidad directa/inversa?',
+      a: 'La proporcionalidad directa implica que y = k×x, donde k es la constante de proporcionalidad. En la regla de tres directa, k = B/A (si A→B, entonces k=B/A y X=k×C). La proporcionalidad inversa implica y = k/x, donde k = A×B. En la regla de tres inversa, X = A×B/C. La regla de tres es simplemente el procedimiento de cálculo que aplica estos conceptos de proporcionalidad para encontrar el valor desconocido. Son tres formas equivalentes de expresar la misma idea matemática fundamental.'
+    },
+  ]}
+>
   <ReglaTresTool client:load />
 </CalcLayout>
-

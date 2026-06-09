@@ -1,17 +1,45 @@
-﻿---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import SistemaEcuacionesTool from "@/components/tools/SistemaEcuacionesTool";
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import SistemaEcuacionesTool from '@/components/tools/SistemaEcuacionesTool';
 ---
 
 <CalcLayout slug="sistema-ecuaciones"
-  whatIs="La calculadora de sistema-ecuaciones es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precision?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="Un sistema de ecuaciones lineales 2×2 es un conjunto de dos ecuaciones con dos incógnitas x e y que deben satisfacerse simultáneamente: a₁x + b₁y = c₁ y a₂x + b₂y = c₂. Esta calculadora usa el método de Cramer para resolverlo al instante: calcula el determinante de la matriz de coeficientes y obtiene x e y mediante determinantes parciales, indicando si el sistema tiene solución única, infinitas soluciones o es incompatible."
+  whyUse="Los sistemas de ecuaciones 2×2 modelan situaciones donde dos condiciones deben cumplirse a la vez: equilibrio de oferta y demanda en economía, mezclas de sustancias en química, circuitos eléctricos en física, problemas de edades o distancias en matemáticas. Son materia central en álgebra de secundaria y bachillerato en toda Latinoamérica y en las materias de Álgebra Lineal de carreras de ingeniería, economía, ciencias y tecnología."
+  faqs={[
+    {
+      q: '¿Qué es un sistema de ecuaciones lineales 2×2?',
+      a: 'Es un conjunto de dos ecuaciones lineales con dos incógnitas x e y que deben cumplirse simultáneamente. Tiene la forma: a₁x + b₁y = c₁ (ecuación 1) y a₂x + b₂y = c₂ (ecuación 2). La solución es el par (x, y) que satisface ambas ecuaciones al mismo tiempo. Geométricamente, cada ecuación representa una recta en el plano; la solución es el punto de intersección. Si las rectas son paralelas (no se cruzan), el sistema es incompatible. Si son la misma recta, tiene infinitas soluciones.'
+    },
+    {
+      q: '¿Qué es el método de Cramer y cómo funciona?',
+      a: 'El método de Cramer usa determinantes para resolver sistemas. Para a₁x + b₁y = c₁ y a₂x + b₂y = c₂, calcula: Determinante D = a₁×b₂ − a₂×b₁. Si D ≠ 0: x = (c₁×b₂ − c₂×b₁) ÷ D y y = (a₁×c₂ − a₂×c₁) ÷ D. Ejemplo: sistema 2x+3y=7 y 4x−y=1. D=2×(−1)−4×3=−2−12=−14. x=(7×(−1)−1×3)÷(−14)=(−7−3)÷(−14)=−10÷−14=5/7. y=(2×1−4×7)÷(−14)=(2−28)÷(−14)=−26÷−14=13/7.'
+    },
+    {
+      q: '¿Cuáles son los otros métodos para resolver sistemas 2×2?',
+      a: 'Existen tres métodos principales: (1) Sustitución — despeja una incógnita de una ecuación y sustituye en la otra. Más lento pero conceptualmente claro. (2) Eliminación (o suma/resta) — multiplica las ecuaciones por constantes para que al sumarlas se elimine una incógnita. Muy eficiente. (3) Cramer — usa determinantes, ideal para implementación computacional y sistemas grandes. Esta calculadora usa Cramer por su precisión y velocidad. Para estudiar, es útil conocer los tres métodos y elegir el más conveniente según el sistema.'
+    },
+    {
+      q: '¿Qué significa que el determinante sea cero?',
+      a: 'Si el determinante D = a₁×b₂ − a₂×b₁ = 0, el sistema no tiene solución única. Hay dos subcasos: (1) Sistema incompatible (sin solución): las dos rectas son paralelas y no se intersectan. Ejemplo: x+y=3 y x+y=5. No existe (x,y) que cumpla ambas simultáneamente. (2) Sistema compatible indeterminado (infinitas soluciones): las dos ecuaciones describen la misma recta. Ejemplo: x+y=3 y 2x+2y=6. Cualquier punto de la recta es solución. La calculadora muestra un mensaje claro en ambos casos.'
+    },
+    {
+      q: '¿Cómo se plantea un sistema de ecuaciones para un problema cotidiano?',
+      a: 'Ejemplo típico en Latinoamérica: «En una tienda, 3 kg de arroz y 2 kg de frijol cuestan 85 pesos. 5 kg de arroz y 1 kg de frijol cuestan 95 pesos. ¿Cuál es el precio de cada uno?» Planteo: si x=precio arroz y y=precio frijol: ecuación 1: 3x + 2y = 85; ecuación 2: 5x + 1y = 95. Introduciendo en la calculadora: a₁=3, b₁=2, c₁=85; a₂=5, b₂=1, c₂=95. Resultado: x=15 (arroz), y=20 (frijol). Verifica: 3×15+2×20=45+40=85 ✓ y 5×15+1×20=75+20=95 ✓'
+    },
+    {
+      q: '¿Cómo se usan los sistemas de ecuaciones en física y química?',
+      a: 'En física: equilibrio de fuerzas (suma de fuerzas en x = 0, suma en y = 0 → sistema 2×2), análisis de circuitos con las leyes de Kirchhoff (corrientes y voltajes en dos mallas), cinemática con dos incógnitas (velocidad inicial y aceleración). En química: mezclas de soluciones (cuántos ml de cada concentración mezclar para obtener una concentración deseada), estequiometría con dos reactivos. En economía: punto de intersección entre oferta y demanda para encontrar el precio y cantidad de equilibrio del mercado.'
+    },
+    {
+      q: '¿Qué es la solución gráfica de un sistema de ecuaciones?',
+      a: 'Cada ecuación lineal a₁x + b₁y = c₁ representa una recta en el plano cartesiano. Para graficarla, despeja y: y = (c₁ − a₁x) ÷ b₁ y dibuja la recta. La solución del sistema es el punto (x, y) donde se intersectan las dos rectas. Si las rectas se cruzan en un punto → solución única. Si son paralelas (misma pendiente, distinto intercepto) → sin solución. Si son la misma recta (misma pendiente e intercepto) → infinitas soluciones. El método gráfico es intuitivo pero aproximado; el método algebraico (Cramer) es exacto.'
+    },
+    {
+      q: '¿Cómo verifico si mi solución es correcta?',
+      a: 'Sustituye los valores x e y obtenidos en AMBAS ecuaciones originales y comprueba que las igualdades se cumplan. Ejemplo: si obtuviste x=3, y=1 para el sistema 2x+3y=9 y x−y=2. Verificación ecuación 1: 2×3+3×1=6+3=9 ✓. Verificación ecuación 2: 3−1=2 ✓. Si alguna ecuación no se cumple, hay un error de cálculo. La verificación es un hábito matemático fundamental que debe practicarse en todos los niveles educativos de Latinoamérica y que la calculadora facilita al mostrar los resultados con alta precisión decimal.'
+    },
+  ]}
+>
   <SistemaEcuacionesTool client:load />
 </CalcLayout>
-

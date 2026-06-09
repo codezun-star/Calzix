@@ -1,32 +1,45 @@
-﻿---
+---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import ConcentracionMolarTool from '@/components/tools/ConcentracionMolarTool';
 ---
 
 <CalcLayout slug="concentracion-molar"
-  whatIs="La calculadora de concentracion-molar es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  {
-    q: '¿Qué es la concentración molar?',
-    a: 'La concentración molar (también llamada molaridad) indica cuántos moles de soluto hay en un litro de disolución. Se expresa en mol/L o M. Es la forma más común de expresar concentración en química.'
-  },
-  {
-    q: '¿Qué es un mol?',
-    a: 'Un mol es la cantidad de sustancia que contiene 6,022 Í— 10²³ partículas (número de Avogadro). En la práctica, los moles se calculan dividiendo la masa en gramos entre la masa molar de la sustancia (g/mol).'
-  },
-  {
-    q: '¿Dónde encuentro la masa molar de una sustancia?',
-    a: 'La masa molar se obtiene sumando las masas atómicas de todos los átomos de la fórmula química. Por ejemplo, el agua (Hâ‚‚O) tiene masa molar = 2Í—1,008 + 15,999 â‰ˆ 18,015 g/mol. También puedes consultarla en tablas periódicas.'
-  },
-  {
-    q: '¿Cuál es la diferencia entre mol/L y g/L?',
-    a: 'mol/L (molaridad) expresa la cantidad de sustancia por volumen, independientemente del peso molecular. g/L expresa la masa por volumen. Para convertir entre ellas necesitas la masa molar: g/L = mol/L Í— masa molar.'
-  },
-  {
-    q: '¿Puedo usar mililitros en lugar de litros?',
-    a: 'La calculadora usa litros como unidad de volumen. Si tienes el volumen en mililitros, divídelo entre 1000 antes de introducirlo. Por ejemplo, 250 mL = 0,25 L.'
-  },
-]}>
+  whatIs="La concentración molar (molaridad) mide cuántos moles de soluto hay disueltos en un litro de disolución, y se expresa en mol/L (o M). Esta calculadora tiene dos paneles: el primero calcula moles a partir de masa y masa molar (n = m / M); el segundo calcula la concentración molar a partir de moles y volumen (C = n / V). Ambas fórmulas son la base del trabajo cuantitativo en cualquier laboratorio de química."
+  whyUse="La concentración molar es el lenguaje universal de la química cuantitativa. Se usa para preparar reactivos, dosificar medicamentos, analizar muestras de agua o suelo y controlar procesos industriales. En Latinoamérica, los laboratorios de control de calidad de empresas como CEMEX, PEMEX, Ecopetrol, CONICET e institutos de salud como el IMSS, el INVIMA o el MINSA la calculan a diario. Es contenido obligatorio en bachillerato y en las carreras de química, bioquímica, farmacia, ingeniería química y ciencias ambientales en México, Colombia, Argentina, Chile, Perú y toda la región."
+  faqs={[
+    {
+      q: '¿Qué es la concentración molar y por qué se expresa en mol/L?',
+      a: 'La molaridad C = n/V relaciona la cantidad de sustancia (moles) con el volumen de disolución (litros). Se usa el litro como unidad de volumen porque es la unidad estándar en laboratorio: los matraces aforados y las buretas están calibrados en litros y mililitros. 1 M = 1 mol/L significa que hay 6,022 × 10²³ partículas (iones, moléculas…) disueltas en cada litro. Ventajas sobre g/L: la molaridad es independiente de la masa molar del soluto, lo que permite comparar directamente la cantidad de sustancia entre compuestos distintos. El HCl 1 M y el NaOH 1 M reaccionarán exactamente en proporción 1:1 en una neutralización ácido-base.'
+    },
+    {
+      q: '¿Cómo calculo la concentración molar paso a paso?',
+      a: 'Paso 1 — Calcular moles del soluto: n = m / M, donde m es la masa en gramos y M es la masa molar en g/mol. Ejemplo: disolver 5,85 g de NaCl (M = 58,44 g/mol) → n = 5,85 / 58,44 ≈ 0,1 mol. Paso 2 — Calcular molaridad: C = n / V (V en litros). Si disolvemos esos 0,1 mol en 500 mL = 0,5 L: C = 0,1 / 0,5 = 0,2 mol/L = 0,2 M. Nota: siempre usar el volumen FINAL de la disolución, no el volumen del solvente solo. Un matraz aforado garantiza el volumen final exacto.'
+    },
+    {
+      q: '¿Cómo obtengo la masa molar de un compuesto?',
+      a: 'La masa molar se obtiene sumando las masas atómicas de todos los átomos de la fórmula química, consultando la tabla periódica. Masas atómicas principales (g/mol): H = 1,008; C = 12,011; N = 14,007; O = 15,999; Na = 22,990; Cl = 35,453; Ca = 40,078; Fe = 55,845. Ejemplos: Agua H₂O = 2×1,008 + 15,999 = 18,015 g/mol. Glucosa C₆H₁₂O₆ = 6×12,011 + 12×1,008 + 6×15,999 = 180,156 g/mol. NaCl = 22,990 + 35,453 = 58,443 g/mol. Ácido sulfúrico H₂SO₄ = 2×1,008 + 32,065 + 4×15,999 = 98,079 g/mol.'
+    },
+    {
+      q: '¿Cuáles son las concentraciones molares más usadas en laboratorios latinoamericanos?',
+      a: 'Disoluciones de referencia frecuentes: NaOH 0,1 M — valoraciones ácido-base en control de aguas. HCl 1 M y 0,1 M — digestiones y valoraciones. H₂SO₄ 0,05 M — análisis de aguas residuales (DQO). AgNO₃ 0,1 M — determinación de cloruros (método Mohr). Na₂S₂O₃ 0,1 M — yodometría. Solución salina fisiológica 0,9% (NaCl) ≈ 0,154 M — ampliamente usada en hospitales IMSS, ISSSTE, Seguro Social Colombia, Fonasa Chile, ESSALUD Perú. Glucosa intravenosa 5% ≈ 0,28 M. Conocer la molaridad permite calcular exactamente cuánto soluto pesar para cada preparación.'
+    },
+    {
+      q: '¿Qué diferencia hay entre molaridad, molalidad y normalidad?',
+      a: 'Molaridad M (mol/L): moles de soluto por litro de DISOLUCIÓN. La más usada en laboratorio. Cambia ligeramente con la temperatura porque el volumen del líquido se dilata. Molalidad m (mol/kg): moles de soluto por kilogramo de SOLVENTE. Independiente de la temperatura; se usa para propiedades coligativas (elevación ebulloscópica, descenso crioscópico). Normalidad N (eq/L): equivalentes-gramo por litro. Depende del tipo de reacción (ácido-base, redox, precipitación). En ácido-base, los equivalentes son los protones transferidos: H₂SO₄ 1 M = H₂SO₄ 2 N. La IUPAC recomienda usar molaridad; la normalidad sigue siendo frecuente en análisis de aguas en LATAM.'
+    },
+    {
+      q: '¿Cómo se relaciona la concentración molar con las diluciones?',
+      a: 'Al diluir una disolución, los moles de soluto permanecen constantes aunque aumente el volumen: n₁ = n₂, es decir C₁V₁ = C₂V₂. Ejemplo: diluir 10 mL de HCl 12 M (ácido concentrado) hasta 500 mL: C₂ = (12 × 10) / 500 = 0,24 M. ¡Precaución al diluir ácido sulfúrico concentrado!: siempre agregar el ácido AL AGUA, nunca al revés, para evitar salpicaduras peligrosas por el calor de dilución. Esta precaución es estándar en los laboratorios de bachillerato y universidad en todo México, Colombia, Argentina, Chile y Perú según los protocolos de seguridad NOM/RETIE/OHS correspondientes.'
+    },
+    {
+      q: '¿Cómo aplica la molaridad en la industria alimentaria latinoamericana?',
+      a: 'En la industria alimentaria, la molaridad se usa para: (1) Control de acidez: análisis de ácido cítrico en jugos (JUMEX, Del Valle, AJE) por titulación con NaOH. Un jugo de naranja típicamente tiene 0,12-0,18 M de ácido cítrico. (2) Control de azúcar: la concentración de sacarosa se expresa en grados Brix, pero se puede convertir a molaridad: 10 °Brix ≈ 0,29 M sacarosa. (3) Sal en quesos y embutidos: el queso tipo Oaxaca contiene ≈ 1-2% NaCl = 0,17-0,34 M. (4) Sulfitos en vinos: los vinos argentinos (Malbec) y chilenos (Carménère) deben controlar el SO₂ libre ≤ 0,002 M para cumplir con las normativas FDA y UE de exportación.'
+    },
+    {
+      q: '¿Cómo se usa la calculadora de concentración molar para preparar suero oral?',
+      a: 'El suero de rehidratación oral (SRO) de la OMS tiene una formulación precisa: NaCl 2,6 g, KCl 1,5 g, citrato trisódico 2,9 g, glucosa 13,5 g → disolver en 1 litro de agua. Concentraciones molares: NaCl (M=58,44): C = 2,6/58,44/1 ≈ 0,045 M → 45 mmol/L de Na⁺. KCl (M=74,55): C ≈ 20 mmol/L de K⁺. Esta formulación es la recomendada por la OPS/OMS y los ministerios de salud de toda Latinoamérica para tratar la deshidratación por diarrea, que afecta a millones de niños latinoamericanos anualmente. Calcular la concentración molar de cada componente es esencial para que la osmolaridad total sea ≈ 245 mOsm/L (solución hipotónica).'
+    },
+  ]}
+>
   <ConcentracionMolarTool client:load />
 </CalcLayout>
-

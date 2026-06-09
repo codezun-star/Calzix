@@ -1,17 +1,45 @@
-﻿---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import FuncionCuadraticaTool from "@/components/tools/FuncionCuadraticaTool";
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import FuncionCuadraticaTool from '@/components/tools/FuncionCuadraticaTool';
 ---
 
 <CalcLayout slug="funcion-cuadratica"
-  whatIs="La calculadora de funcion-cuadratica es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precision?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="Una función cuadrática tiene la forma f(x) = ax² + bx + c con a ≠ 0. Su gráfica es una parábola que abre hacia arriba si a > 0 o hacia abajo si a < 0. Esta calculadora calcula al instante el discriminante (b² − 4ac), las raíces reales cuando existen (usando la fórmula general), el vértice de la parábola en coordenadas (−b÷2a, f(−b÷2a)) y determina cuántas soluciones reales tiene la ecuación cuadrática ax² + bx + c = 0."
+  whyUse="Las funciones cuadráticas modelan trayectorias de proyectiles en física, la maximización de beneficios y minimización de costos en economía, el diseño de arcos y puentes en ingeniería, y la resistencia de materiales. Son un tema central en álgebra de preparatoria y bachillerato en México, Colombia, Argentina, Chile, Perú y toda Latinoamérica. La fórmula general y el discriminante son contenido obligatorio en los exámenes de admisión universitaria de toda la región."
+  faqs={[
+    {
+      q: '¿Qué es una función cuadrática y cuáles son sus elementos?',
+      a: 'La función cuadrática f(x) = ax² + bx + c (con a ≠ 0) tiene estos elementos: (1) Coeficiente a — determina la apertura: si a>0 la parábola abre hacia arriba (tiene mínimo); si a<0 abre hacia abajo (tiene máximo). (2) Coeficiente b — afecta la posición horizontal del vértice. (3) Coeficiente c — es el valor de f(0), es decir, el punto donde la parábola cruza el eje y. (4) Vértice — el punto más alto o más bajo de la parábola: (−b÷2a, f(−b÷2a)). (5) Raíces o ceros — los valores de x donde f(x)=0, es decir, donde la parábola cruza el eje x.'
+    },
+    {
+      q: '¿Qué es el discriminante y qué indica?',
+      a: 'El discriminante es D = b² − 4ac y determina el número de raíces reales de ax²+bx+c=0: Si D > 0: la ecuación tiene dos raíces reales distintas (la parábola cruza el eje x en dos puntos). Ejemplo: x²−5x+6=0, D=25−24=1>0 → x=3 y x=2. Si D = 0: la ecuación tiene una raíz real doble (la parábola toca el eje x en el vértice). Ejemplo: x²−6x+9=0, D=36−36=0 → x=3 (doble). Si D < 0: la ecuación no tiene raíces reales (la parábola no cruza el eje x). Ejemplo: x²+x+1=0, D=1−4=−3<0 → sin soluciones reales.'
+    },
+    {
+      q: '¿Cómo se usa la fórmula general (cuadrática)?',
+      a: 'La fórmula general resuelve cualquier ecuación ax²+bx+c=0: x = (−b ± √(b²−4ac)) ÷ (2a). El signo ± genera las dos raíces: x₁ = (−b + √D) ÷ (2a) y x₂ = (−b − √D) ÷ (2a). Ejemplo: 2x²−7x+3=0. a=2, b=−7, c=3. D=49−24=25. x₁=(7+5)÷4=12÷4=3. x₂=(7−5)÷4=2÷4=0,5. La calculadora aplica esta fórmula automáticamente para cualquier a, b, c que introduzcas, mostrando discriminante, raíces y vértice simultáneamente.'
+    },
+    {
+      q: '¿Cómo se calcula el vértice de una parábola?',
+      a: 'El vértice es el punto más alto (si a<0) o más bajo (si a>0) de la parábola. Su coordenada x es xᵥ = −b ÷ (2a). Su coordenada y es yᵥ = f(xᵥ) = a×xᵥ² + b×xᵥ + c, que equivale también a yᵥ = c − b²÷(4a). Ejemplo: f(x)=−x²+4x+1. xᵥ=−4÷(2×(−1))=−4÷(−2)=2. yᵥ=−4+8+1=5. Vértice: (2, 5). Como a=−1<0 la parábola abre hacia abajo, por lo que (2,5) es el punto máximo. El valor máximo de f(x) es 5 y se alcanza en x=2.'
+    },
+    {
+      q: '¿Qué es la factorización de una ecuación cuadrática?',
+      a: 'Una ecuación cuadrática ax²+bx+c=0 puede factorizarse si tiene raíces reales: ax²+bx+c = a(x−x₁)(x−x₂), donde x₁ y x₂ son las raíces. Ejemplo: x²−5x+6=0 tiene raíces x₁=3 y x₂=2, por tanto se factoriza como (x−3)(x−2)=0. En trinomio cuadrado perfecto: x²−6x+9=(x−3)²=0, raíz doble x=3. La factorización es útil para simplificar expresiones algebraicas, resolver inecuaciones cuadráticas y en álgebra avanzada. Cuando el discriminante es negativo, la ecuación no puede factorizarse en los reales.'
+    },
+    {
+      q: '¿Cómo se aplica la función cuadrática en problemas de física?',
+      a: 'La trayectoria de un proyectil (una pelota lanzada, un cohete, una piedra) sigue una ecuación cuadrática: h(t) = h₀ + v₀t − (g÷2)t², donde h₀ es la altura inicial, v₀ la velocidad inicial vertical, g=9,81 m/s² la gravedad y t el tiempo. Ejemplo: una pelota lanzada desde 2 m con velocidad inicial 10 m/s: h(t) = 2+10t−4,905t². La altura máxima es el vértice (t=1,02 s, h=7,1 m). Toca el suelo cuando h=0: usa la calculadora con a=−4,905, b=10, c=2 para encontrar el tiempo de vuelo.'
+    },
+    {
+      q: '¿Qué relación existe entre las raíces y los coeficientes (fórmulas de Vieta)?',
+      a: 'Las fórmulas de Vieta relacionan las raíces x₁ y x₂ con los coeficientes de ax²+bx+c: Suma de raíces: x₁+x₂ = −b÷a. Producto de raíces: x₁×x₂ = c÷a. Ejemplo: en x²−5x+6=0 (a=1, b=−5, c=6): x₁+x₂=5 (verificación: 3+2=5 ✓) y x₁×x₂=6 (3×2=6 ✓). Estas relaciones permiten construir una ecuación cuadrática conociendo sus raíces: si quieres la ecuación con raíces 4 y −1: suma=3, producto=−4 → x²−3x−4=0. Son ampliamente usadas en álgebra de preparatoria en toda Latinoamérica.'
+    },
+    {
+      q: '¿Cómo se resuelven inecuaciones cuadráticas?',
+      a: 'Una inecuación cuadrática como ax²+bx+c > 0 (o < 0) se resuelve: (1) Encuentra las raíces x₁ y x₂ de ax²+bx+c=0. (2) Dibuja mentalmente la parábola (a>0 abre arriba, a<0 abajo). (3) Si a>0: ax²+bx+c > 0 para x < x₁ o x > x₂ (fuera de las raíces); ax²+bx+c < 0 para x₁ < x < x₂ (entre las raíces). Si a<0, se invierten los intervalos. Ejemplo: x²−5x+6>0 (a=1>0, raíces 2 y 3): solución x<2 o x>3. La calculadora proporciona las raíces necesarias para completar este análisis.'
+    },
+  ]}
+>
   <FuncionCuadraticaTool client:load />
 </CalcLayout>
-

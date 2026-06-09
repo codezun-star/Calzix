@@ -1,36 +1,45 @@
-﻿---
+---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import ConvVelocidadTool from '@/components/tools/ConvVelocidadTool';
 ---
 
 <CalcLayout slug="conversor-velocidad"
-  whatIs="La calculadora de conversor-velocidad es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  {
-    q: '¿Cuántos km/h son 100 mph?',
-    a: 'Esta pregunta fundamental es planteada por muchos usuarios al utilizar herramientas de cálculo como la nuestra. La respuesta completa depende del contexto específico, tus objetivos personales claros, y cómo planeas usar esta información valiosa. En general, la mayoría de usuarios encuentran esta herramienta increíblemente útil para una amplia gama de aplicaciones prácticas y reales. Desde contextos académicos rigurosos hasta situaciones financieras reales y complejas, hay numerosos casos de uso donde esta información es absolutamente valiosa. La clave fundamental es entender cómo aplicar correctamente los resultados a tu situación específica y única. Nuestra herramienta proporciona la base matemática sólida que necesitas para tomar decisiones informadas y confiables. Experimenta con diferentes escenarios para descubrir todas las formas creativas en que puedes utilizar esta herramienta en tu vida diaria.',
-  },
-  {
-    q: '¿Cómo se convierte m/s a km/h?',
-    a: 'Esta pregunta fundamental es planteada por muchos usuarios al utilizar herramientas de cálculo como la nuestra. La respuesta completa depende del contexto específico, tus objetivos personales claros, y cómo planeas usar esta información valiosa. En general, la mayoría de usuarios encuentran esta herramienta increíblemente útil para una amplia gama de aplicaciones prácticas y reales. Desde contextos académicos rigurosos hasta situaciones financieras reales y complejas, hay numerosos casos de uso donde esta información es absolutamente valiosa. La clave fundamental es entender cómo aplicar correctamente los resultados a tu situación específica y única. Nuestra herramienta proporciona la base matemática sólida que necesitas para tomar decisiones informadas y confiables. Experimenta con diferentes escenarios para descubrir todas las formas creativas en que puedes utilizar esta herramienta en tu vida diaria.',
-  },
-  {
-    q: '¿Qué es un nudo (kn) y cómo se usa?',
-    a: 'Esta pregunta fundamental es planteada por muchos usuarios al utilizar herramientas de cálculo como la nuestra. La respuesta completa depende del contexto específico, tus objetivos personales claros, y cómo planeas usar esta información valiosa. En general, la mayoría de usuarios encuentran esta herramienta increíblemente útil para una amplia gama de aplicaciones prácticas y reales. Desde contextos académicos rigurosos hasta situaciones financieras reales y complejas, hay numerosos casos de uso donde esta información es absolutamente valiosa. La clave fundamental es entender cómo aplicar correctamente los resultados a tu situación específica y única. Nuestra herramienta proporciona la base matemática sólida que necesitas para tomar decisiones informadas y confiables. Experimenta con diferentes escenarios para descubrir todas las formas creativas en que puedes utilizar esta herramienta en tu vida diaria.',
-  },
-  {
-    q: '¿Cuál es la velocidad del sonido en km/h?',
-    a: 'Esta pregunta fundamental es planteada por muchos usuarios al utilizar herramientas de cálculo como la nuestra. La respuesta completa depende del contexto específico, tus objetivos personales claros, y cómo planeas usar esta información valiosa. En general, la mayoría de usuarios encuentran esta herramienta increíblemente útil para una amplia gama de aplicaciones prácticas y reales. Desde contextos académicos rigurosos hasta situaciones financieras reales y complejas, hay numerosos casos de uso donde esta información es absolutamente valiosa. La clave fundamental es entender cómo aplicar correctamente los resultados a tu situación específica y única. Nuestra herramienta proporciona la base matemática sólida que necesitas para tomar decisiones informadas y confiables. Experimenta con diferentes escenarios para descubrir todas las formas creativas en que puedes utilizar esta herramienta en tu vida diaria.',
-  },
-  {
-    q: '¿Cuántos m/s es 1 km/h?',
-    a: 'Esta pregunta fundamental es planteada por muchos usuarios al utilizar herramientas de cálculo como la nuestra. La respuesta completa depende del contexto específico, tus objetivos personales claros, y cómo planeas usar esta información valiosa. En general, la mayoría de usuarios encuentran esta herramienta increíblemente útil para una amplia gama de aplicaciones prácticas y reales. Desde contextos académicos rigurosos hasta situaciones financieras reales y complejas, hay numerosos casos de uso donde esta información es absolutamente valiosa. La clave fundamental es entender cómo aplicar correctamente los resultados a tu situación específica y única. Nuestra herramienta proporciona la base matemática sólida que necesitas para tomar decisiones informadas y confiables. Experimenta con diferentes escenarios para descubrir todas las formas creativas en que puedes utilizar esta herramienta en tu vida diaria.',
-  },
-  {
-    q: '¿Para qué sirve convertir pies por segundo (ft/s)?',
-    a: 'Esta pregunta fundamental es planteada por muchos usuarios al utilizar herramientas de cálculo como la nuestra. La respuesta completa depende del contexto específico, tus objetivos personales claros, y cómo planeas usar esta información valiosa. En general, la mayoría de usuarios encuentran esta herramienta increíblemente útil para una amplia gama de aplicaciones prácticas y reales. Desde contextos académicos rigurosos hasta situaciones financieras reales y complejas, hay numerosos casos de uso donde esta información es absolutamente valiosa. La clave fundamental es entender cómo aplicar correctamente los resultados a tu situación específica y única. Nuestra herramienta proporciona la base matemática sólida que necesitas para tomar decisiones informadas y confiables. Experimenta con diferentes escenarios para descubrir todas las formas creativas en que puedes utilizar esta herramienta en tu vida diaria.',
-  },
-]}>
+  whatIs="El conversor de velocidad transforma entre 5 unidades de velocidad de uso científico, industrial y cotidiano: metros por segundo (m/s), kilómetros por hora (km/h), millas por hora (mph), pies por segundo (ft/s) y nudos (kn). La unidad base del SI es m/s; las conversiones son exactas a partir de las definiciones internacionales."
+  whyUse="El km/h es el estándar de circulación vial en toda Latinoamérica; los nudos son la unidad de la aviación y la navegación marítima regionales; los mph aparecen en vehículos importados de EE.UU. y en contenido deportivo anglosajón. En física, el m/s es indispensable para cinemática, dinámica y problemas de examen. Esta herramienta cubre todos esos contextos."
+  faqs={[
+    {
+      q: '¿Cómo se convierte m/s a km/h y por qué el factor es 3,6?',
+      a: 'La conversión entre m/s y km/h parte de las definiciones: 1 km = 1000 m y 1 hora = 3600 s. Por lo tanto: 1 m/s = 1 m / 1 s = (1/1000 km) / (1/3600 h) = 3600/1000 km/h = 3,6 km/h. Para convertir de km/h a m/s, se divide entre 3,6 (o se multiplica por 1/3,6 ≈ 0,2778). Ejemplos prácticos en LATAM: límite de velocidad urbana 50 km/h = 13,9 m/s; carretera libre 110 km/h = 30,6 m/s; velocímetro de un auto en maniobra de escape 200 km/h = 55,6 m/s. En problemas de física del COMIPEMS o ICFES, el m/s es la unidad del SI requerida para sustituir en fórmulas como F = ma, p = mv, E_c = ½mv². La conversión ×3,6 (km/h → m/s: ÷3,6) es uno de los factores más usados en física de bachillerato de toda LATAM.',
+    },
+    {
+      q: '¿Cuántos km/h son 100 mph? ¿Dónde se usan las mph en Latinoamérica?',
+      a: '100 mph = 100 × 1,609344 km/h = 160,9 km/h. La milla por hora es la unidad oficial de velocidad en EE.UU. y el Reino Unido. En Latinoamérica las mph aparecen principalmente en: (1) Vehículos importados de EE.UU.: los velocímetros muestran mph en la escala exterior y km/h en la interior, o viceversa, dependiendo del modelo y versión. Los autos de segunda mano importados desde EE.UU. que circulan en México, Costa Rica, Guatemala y Honduras frecuentemente muestran mph primero. (2) Béisbol: la velocidad de un lanzamiento de pitcheo se mide siempre en mph — un "pitcher" rápido lanza a 95-102 mph (153-164 km/h). Cuba, Venezuela, México, República Dominicana, Panamá y Colombia son potencias beisboleras donde esta conversión es de uso cotidiano en transmisiones. (3) Fórmula 1 y NASCAR: las velocidades máximas en rectas (355-370 km/h = 220-230 mph) se reportan en ambas unidades.',
+    },
+    {
+      q: '¿Qué es un nudo (kn) y cómo se usa en la aviación y navegación en LATAM?',
+      a: 'Un nudo (knot, kn o kt) = 1 milla náutica por hora = 1852 m/h ≈ 0,5144 m/s ≈ 1,852 km/h. El nudo es la unidad oficial de velocidad en aviación civil internacional (OACI/ICAO) y navegación marítima. En aviación latinoamericana, todas las velocidades de aeronaves se expresan en nudos: Velocidad de crucero Boeing 737-800 (flota de Aeromexico, Copa Airlines, LATAM, Avianca): ≈ 450 kn = 833 km/h. Velocidad de aterrizaje de un A320 (AirBus de LATAM/Avianca): ≈ 140-150 kn. Velocidad indicada de stall (entrada en pérdida): ≈ 65-80 kn dependiendo del peso. En navegación marítima, los buques de carga del Canal de Panamá (que maneja ≈ 14 000 tránsitos/año) navegan a 8-10 kn en tránsito. La Guardia Costera de México, Colombia, Venezuela y Perú reporta velocidades de patrullaje en nudos.',
+    },
+    {
+      q: '¿Cuáles son los límites de velocidad en LATAM y cómo se comparan con EE.UU.?',
+      a: 'Los límites de velocidad en Latinoamérica están siempre en km/h: Zona urbana estándar: 50 km/h (México DF decreto 2022, Bogotá, Lima). Bogotá adoptó 30 km/h en zonas residenciales en 2020 para reducir la accidentalidad — resultados: reducción de 30% en muertes peatonales. Carretera libre: 90-110 km/h (México autopistas federales hasta 110; Colombia autopistas 80-100 km/h). Autopistas concesionadas México: hasta 120 km/h. Chile: carreteras rurales 100 km/h; autopistas urbanas 100-110 km/h. Argentina (rutas nacionales): 110 km/h; algunas autopistas 130 km/h. Brasil: rodovias federales 110 km/h; algunos tramos con velocidad máxima 120 km/h. En EE.UU., las autopistas interestatales tienen límites de 65-80 mph = 105-129 km/h, similares a LATAM pero expresados en mph. El récord de velocidad en pista de un auto de producción fue superado por el Bugatti Chiron en 304,773 mph = 490,48 km/h en 2019.',
+    },
+    {
+      q: '¿Cómo se relaciona la velocidad del sonido con los números Mach?',
+      a: 'La velocidad del sonido en el aire a 20°C y nivel del mar es aproximadamente 343 m/s = 1235 km/h = 767 mph = 667 kn. El número Mach (Ma) es la relación entre la velocidad de un objeto y la velocidad del sonido: Ma = v / v_sonido. Ma < 1: subsónico (todos los aviones comerciales de LATAM: Boeing 737, Airbus A320, A321, 787 vuelan a Ma 0,78-0,85 en crucero). Ma ≈ 1: transónico. Ma > 1: supersónico. Ma > 5: hipersónico. La velocidad del sonido varía con la temperatura: a −56,5°C (altura de crucero de 11 000 m), v_sonido ≈ 295 m/s = 1062 km/h. Por eso los aviones a Ma 0,85 a nivel del mar (≈ 1050 km/h) vuelan al mismo Mach que a 11 000 m (≈ 899 km/h) pero a velocidades absolutas distintas. En aeronáutica de LATAM, las FAA y la DGAC (México y Chile) regulan separaciones de aeronaves en nudos, no en km/h.',
+    },
+    {
+      q: '¿Cuál es la velocidad de los huracanes y ciclones tropicales que afectan LATAM?',
+      a: 'La escala Saffir-Simpson clasifica los huracanes por vientos máximos sostenidos (en mph y km/h): Categoría 1: 119-153 km/h (74-95 mph). Categoría 2: 154-177 km/h (96-110 mph). Categoría 3 (mayor): 178-208 km/h (111-129 mph). Categoría 4: 209-251 km/h (130-156 mph). Categoría 5: ≥ 252 km/h (≥ 157 mph). Huracanes históricos en LATAM: Otis (2023, Acapulco México): llegó a Categoría 5 con vientos de 270 km/h (165 mph) — el más intenso en impactar el Pacífico mexicano. Mitch (1998, Centroamérica): 290 km/h (180 mph). María (2017, Puerto Rico y Rep. Dominicana): 280 km/h (175 mph). El SMN (Servicio Meteorológico Nacional de México) y el CENAMET (Colombia) difunden velocidades de viento en km/h; el National Hurricane Center (NHC) de EEUU las publica en mph. Las alertas tempranas a la población siempre usan km/h en LATAM.',
+    },
+    {
+      q: '¿Cuál es la velocidad de las ondas sísmicas y cómo se miden en LATAM?',
+      a: 'Las ondas sísmicas se propagan a velocidades muy distintas según el tipo: Ondas P (primarias, compresión): 5000-8000 m/s = 18 000-28 800 km/h en roca del manto. En corteza oceánica: ≈ 6000-7000 m/s. Ondas S (secundarias, cizallamiento): 3000-4500 m/s en roca sólida. No se propagan en líquidos (núcleo externo terrestre). Ondas superficiales (Rayleigh, Love): 2000-4000 m/s — las más destructivas. LATAM es una de las regiones sísmicas más activas del mundo por la subducción de las placas de Nazca y Cocos bajo Sudamérica y Centroamérica. Los institutos sismológicos: CENAPRED (México), SGC (Colombia), IGP (Perú), SHOA (Chile), FUNVISIS (Venezuela) detectan ondas P en segundos y tienen sistemas de alerta temprana (SASMEX en México) que aprovechan los ≈ 60 segundos de diferencia entre la llegada de las ondas P (5800 m/s) y las S destructivas para emitir alertas a las ciudades.',
+    },
+    {
+      q: '¿Cómo se usa la velocidad en física de bachillerato y en los exámenes de LATAM?',
+      a: 'La velocidad es el concepto central de la cinemática, la primera unidad de física en bachillerato de toda LATAM. Fórmulas básicas: velocidad media v = Δx/Δt; velocidad instantánea v = dx/dt; en MRUA: v = v₀ + at; x = v₀t + ½at². La unidad del SI es m/s, por lo que siempre se convierte antes de sustituir en fórmulas. En el COMIPEMS (México): problemas de tipo "¿Cuánto tarda un auto en recorrer 450 km a 90 km/h?" (90 km/h = 25 m/s; t = 450 km/90 km/h = 5 h). En el ICFES (Colombia): cinemática vectorial, velocidad relativa. En la PSU/PAES (Chile): tablas de datos con factores de conversión dados; el estudiante convierte y sustituye. En el ENEM (Brasil): contextos de tránsito, seguridad vial y transporte público. En todos los casos, dominar la conversión km/h ↔ m/s (factor 3,6) es el paso previo indispensable a cualquier cálculo cinemático.',
+    },
+  ]}
+>
   <ConvVelocidadTool client:load />
 </CalcLayout>
-

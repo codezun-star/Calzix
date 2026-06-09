@@ -1,17 +1,45 @@
-﻿---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import TeoremaPitagorasTool from "@/components/tools/TeoremaPitagorasTool";
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import TeoremaPitagorasTool from '@/components/tools/TeoremaPitagorasTool';
 ---
 
 <CalcLayout slug="teorema-pitagoras"
-  whatIs="La calculadora de teorema-pitagoras es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precision?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="El Teorema de Pitágoras establece que en todo triángulo rectángulo la suma de los cuadrados de los catetos es igual al cuadrado de la hipotenusa: a² + b² = c², donde c es la hipotenusa (lado opuesto al ángulo recto) y a, b son los catetos. Esta calculadora tiene dos modos: calcular la hipotenusa dados los dos catetos (c = raíz(a²+b²)) o calcular un cateto desconocido dado el otro cateto y la hipotenusa (a = raíz(c²-b²))."
+  whyUse="El Teorema de Pitágoras es uno de los resultados más importantes y aplicados de toda la matemática. Se usa en construcción (verificar ángulos rectos en cimientos y muros), carpintería (calcular diagonales de marcos y puertas), topografía (medir distancias inaccesibles), navegación, telecomunicaciones y resolución de problemas geométricos. Es materia fundamental en secundaria y bachillerato en México, Colombia, Argentina, Chile, Perú y toda Latinoamérica, y pregunta frecuente en exámenes de admisión universitaria de COMIPEMS, ICFES, PAES y PSU."
+  faqs={[
+    {
+      q: '¿Qué es el Teorema de Pitágoras y quién lo descubrió?',
+      a: 'El Teorema de Pitágoras establece que en un triángulo rectángulo con catetos a y b e hipotenusa c, siempre se cumple a² + b² = c². Aunque lleva el nombre del filósofo griego Pitágoras de Samos (siglo VI a. C.), el resultado era conocido en Babilonia (tablilla Plimpton 322, aprox. 1800 a. C.) y en el antiguo Egipto. La demostración más conocida es la de Euclides en los Elementos (proposición I.47). Hoy se conocen más de 370 demostraciones distintas. La hipotenusa es siempre el lado más largo del triángulo rectángulo y queda opuesta al ángulo de 90°. Los catetos son los dos lados que forman el ángulo recto.'
+    },
+    {
+      q: '¿Cómo calculo la hipotenusa con la calculadora?',
+      a: 'Selecciona el modo "Calcular hipotenusa", introduce los valores de los dos catetos a y b, y pulsa Calcular. La calculadora aplica c = raíz(a² + b²). Ejemplo: cateto a = 3 m, cateto b = 4 m — c = raíz(9+16) = raíz(25) = 5 m. Otro ejemplo: a = 7 cm, b = 10 cm — c = raíz(49+100) = raíz(149) ≈ 12,207 cm. Puedes usar cualquier unidad de medida (cm, m, pulgadas) siempre que ambos catetos estén en la misma unidad. Si las unidades son distintas, conviértelas primero antes de calcular.'
+    },
+    {
+      q: '¿Cómo calculo un cateto desconocido?',
+      a: 'Selecciona el modo "Calcular cateto", introduce el cateto conocido (b) y la hipotenusa (c), y la calculadora obtiene el cateto desconocido: a = raíz(c² - b²). Ejemplo: una escalera de 5 m apoyada en una pared llega a 4 m de altura. ¿A qué distancia de la pared está la base? c = 5, b = 4 — a = raíz(25-16) = raíz(9) = 3 m. Importante: c siempre debe ser mayor que b; si introduces un cateto mayor que la hipotenusa, la calculadora muestra un error porque no existe raíz cuadrada de un número negativo. Este caso es matemáticamente imposible en un triángulo rectángulo real.'
+    },
+    {
+      q: '¿Cuáles son las ternas pitagóricas más comunes?',
+      a: 'Una terna pitagórica es un conjunto de tres enteros positivos (a, b, c) que satisfacen a² + b² = c². Las más usadas son: (3, 4, 5) — la más famosa, usada por los antiguos egipcios para trazar ángulos rectos; (5, 12, 13); (8, 15, 17); (7, 24, 25); (6, 8, 10) que es múltiplo de (3,4,5); (9, 12, 15) múltiplo de (3,4,5); (20, 21, 29). Cualquier múltiplo de una terna pitagórica también es una terna: (6,8,10), (9,12,15), (12,16,20) son todas múltiplos de (3,4,5). Estas ternas son útiles en carpintería y albañilería para verificar que un ángulo es exactamente 90° sin usar escuadra.'
+    },
+    {
+      q: '¿Cómo se usa el Teorema de Pitágoras en construcción y carpintería?',
+      a: 'En construcción latinoamericana se usa principalmente para: (1) Verificar ángulos rectos en cimientos: mide 3 m sobre un lado y 4 m sobre el perpendicular; si la diagonal es exactamente 5 m, el ángulo es 90°. (2) Calcular la longitud de vigas diagonales, escaleras y rampas: una rampa de 6 m de largo horizontal y 2 m de desnivel tiene una longitud real de raíz(36+4) = raíz(40) ≈ 6,32 m. (3) Diagonal de puertas y ventanas: una puerta de 90 cm × 200 cm tiene diagonal raíz(8100+40000) ≈ 220 cm. (4) Cálculo de techos: determinar la longitud del par en una estructura de dos aguas conociendo la distancia horizontal y la altura del caballete.'
+    },
+    {
+      q: '¿Cómo determino si un triángulo es rectángulo usando el teorema inverso?',
+      a: 'El recíproco del Teorema de Pitágoras dice: si a² + b² = c² entonces el triángulo es rectángulo, con el ángulo recto frente a c. Para verificarlo: mide los tres lados, ordénalos de menor a mayor (a ≤ b ≤ c), y comprueba si a² + b² = c² exactamente (o casi exactamente, dada la imprecisión de medición). Ejemplo: lados 5, 12, 13 — 5²+12² = 25+144 = 169 = 13² — sí es rectángulo. Lados 4, 5, 7 — 4²+5² = 16+25 = 41, pero 7² = 49, no son iguales — no es rectángulo. Este test es útil en topografía y en verificación de estructuras construidas.'
+    },
+    {
+      q: '¿Cómo se aplica el Teorema de Pitágoras para calcular distancias en un mapa o coordenadas?',
+      a: 'Dados dos puntos A = (x1, y1) y B = (x2, y2) en un plano cartesiano o en un mapa, la distancia entre ellos es d = raíz((x2-x1)² + (y2-y1)²), que es una aplicación directa del Teorema de Pitágoras (la distancia horizontal es un cateto, la vertical otro, y la recta AB es la hipotenusa). Ejemplo: dos ciudades en un mapa a coordenadas (0, 0) y (300, 400) km — d = raíz(90000+160000) = raíz(250000) = 500 km. Este principio sustenta el Sistema de Coordenadas UTM usado en los sistemas cartográficos de México (INEGI), Colombia (IGAC), Argentina (IGN) y los demás países latinoamericanos.'
+    },
+    {
+      q: '¿Tiene el Teorema de Pitágoras aplicaciones en tecnología y telecomunicaciones?',
+      a: 'Sí, es omnipresente. (1) Tamaño de pantallas: el tamaño de una pantalla se declara en diagonal. Un monitor 27" con relación 16:9 tiene catetos proporcionales a 16 y 9; si la diagonal es 27" entonces el ancho es aprox. 23,5" y el alto aprox. 13,2". (2) Transmisión inalámbrica: la distancia entre una antena celular y un dispositivo se calcula con Pitágoras en 3D (tres catetos). (3) Navegación GPS: los algoritmos de posicionamiento usan distancias euclidianas basadas en el teorema. (4) Gráficos por computadora: la distancia entre dos píxeles usa la fórmula euclidiana pitagórica.'
+    },
+  ]}
+>
   <TeoremaPitagorasTool client:load />
 </CalcLayout>
-

@@ -1,17 +1,45 @@
-﻿---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import LeyOhmTool from "@/components/tools/LeyOhmTool";
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import LeyOhmTool from '@/components/tools/LeyOhmTool';
 ---
 
 <CalcLayout slug="ley-ohm"
-  whatIs="La calculadora de ley-ohm es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precisión?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="La Ley de Ohm describe la relación entre las tres magnitudes eléctricas fundamentales en un circuito resistivo: tensión (V, voltios), intensidad de corriente (I, amperios) y resistencia (R, ohmios). La fórmula es V = I × R. Esta calculadora despeja cualquiera de las tres: calcular tensión dados I y R, calcular intensidad dados V y R, o calcular resistencia dados V e I. Los resultados se muestran con hasta 6 decimales de precisión."
+  whyUse="La Ley de Ohm es la ecuación más básica y usada de la electricidad y la electrónica. La usan electricistas para dimensionar cables e instalaciones, técnicos de electrónica para diseñar circuitos, ingenieros para calcular pérdidas de tensión en líneas de distribución, y estudiantes en cursos de física y electrotecnia en toda Latinoamérica. Es contenido obligatorio en bachillerato técnico y en carreras de ingeniería eléctrica, electrónica, mecatrónica y telecomunicaciones en México, Colombia, Argentina, Chile, Perú y toda la región."
+  faqs={[
+    {
+      q: '¿Qué es la Ley de Ohm y quién la descubrió?',
+      a: 'La Ley de Ohm fue formulada por el físico alemán Georg Simon Ohm en 1827 en su obra Das galvanische Kette. Establece que, para un conductor óhmico a temperatura constante, la corriente que fluye por él es directamente proporcional a la tensión aplicada e inversamente proporcional a su resistencia: I = V/R, o equivalentemente V = I × R. El Ohm (símbolo Omega) se define como la resistencia que provoca una caída de tensión de 1 V cuando circula 1 A. No todos los materiales obedecen esta ley: los diodos, transistores y bombillas a alta temperatura no son "óhmicos" porque su resistencia varía con la tensión y la temperatura.'
+    },
+    {
+      q: '¿Cómo se aplica V = I × R en instalaciones eléctricas domiciliarias?',
+      a: 'Ejemplos prácticos en LATAM: (1) Un tomacorriente de 127 V (estándar en México) alimenta un aparato que consume 5 A. Resistencia del aparato: R = V/I = 127/5 = 25,4 Ohm. (2) En Colombia, Argentina y Chile, el estándar es 220 V. Un calentador de 220 V con resistencia de 44 Ohm: I = V/R = 220/44 = 5 A. Potencia: P = V × I = 220 × 5 = 1.100 W. (3) Una bombilla de 220 V y 60 W tiene R = V²/P = 220²/60 ≈ 807 Ohm en caliente. En frío, la resistencia es mucho menor (el tungsteno tiene resistencia dependiente de la temperatura).'
+    },
+    {
+      q: '¿Cuáles son los voltajes domiciliarios estándar en Latinoamérica?',
+      a: 'Los voltajes domiciliarios varían por país: México — 127 V / 60 Hz (tomacorrientes NEMA 5-15, como los de EUA). Guatemala, Honduras, El Salvador, Nicaragua, Costa Rica, Panamá — 120 V / 60 Hz. Cuba, República Dominicana — 110 V / 60 Hz. Colombia, Venezuela, Ecuador, Perú, Bolivia — 110-120 V / 60 Hz (pero algunas industrias usan 220 V). Argentina, Uruguay, Paraguay, Chile, Brasil — 220 V / 50 Hz (Brasil: algunos estados usan 110 V). Esta variedad es importante para electricistas y para viajeros que llevan equipos electrónicos entre países de la región.'
+    },
+    {
+      q: '¿Qué es la resistencia eléctrica y de qué depende?',
+      a: 'La resistencia R mide cuánto se opone un material al flujo de corriente eléctrica. Depende del material (resistividad rho), la longitud L y la sección transversal A del conductor: R = rho × L / A. Resistividades a 20°C: cobre ≈ 1,72 × 10⁻⁸ Ohm·m (muy buen conductor — cables eléctricos en LATAM); aluminio ≈ 2,82 × 10⁻⁸ Ohm·m (cables de alta tensión); hierro ≈ 10⁻⁷ Ohm·m; carbono ≈ 3-60 × 10⁻⁵ Ohm·m; goma ≈ 10¹³ Ohm·m (aislante). Ejemplo: un cable de cobre de 10 m y 2,5 mm² de sección: R = 1,72×10⁻⁸ × 10 / (2,5×10⁻⁶) ≈ 0,069 Ohm.'
+    },
+    {
+      q: '¿Cómo se calculan circuitos con resistencias en serie y en paralelo?',
+      a: 'Resistencias en serie: R_total = R1 + R2 + R3 + ... La corriente es la misma en todas: I = V / R_total. La tensión se divide proporcionalmente. Resistencias en paralelo: 1/R_total = 1/R1 + 1/R2 + 1/R3 + ... La tensión es la misma en todas. La corriente se divide: I_total = V/R_total. Ejemplo en serie: 10 Ohm + 20 Ohm + 30 Ohm en serie con 60 V: R_total = 60 Ohm, I = 1 A, caída en cada resistor: 10 V, 20 V, 30 V (suman 60 V). En paralelo con 60 V: I1 = 6 A, I2 = 3 A, I3 = 2 A, I_total = 11 A. R_equivalente = 60/11 ≈ 5,45 Ohm.'
+    },
+    {
+      q: '¿Qué relación hay entre la Ley de Ohm y la potencia eléctrica?',
+      a: 'Combinando V = IR con P = V × I obtenemos tres formas equivalentes de calcular potencia: P = V × I; P = I² × R; P = V²/R. Ejemplo: un cable de 0,5 Ohm por donde circulan 10 A disipa P = 10² × 0,5 = 50 W en calor (efecto Joule). Esta es la pérdida de energía en las líneas de distribución eléctrica. Para minimizar pérdidas, las líneas de alta tensión transportan electricidad a muy alto voltaje (115 kV, 230 kV, 400 kV en LATAM) y muy baja corriente, ya que las pérdidas son proporcionales a I². Los transformadores suben la tensión en la generación y la bajan para el consumo domiciliario.'
+    },
+    {
+      q: '¿Qué es un cortocircuito y cómo lo explica la Ley de Ohm?',
+      a: 'Un cortocircuito ocurre cuando la resistencia del circuito cae a casi cero (R ≈ 0), lo que provoca una corriente I = V/R enormemente alta. Ejemplo: en una instalación de 220 V con cortocircuito de R = 0,01 Ohm: I = 220/0,01 = 22.000 A. Esta corriente enorme genera calor por efecto Joule (P = I²R) y puede incendiar el cableado en décimas de segundo. Los fusibles y los diferenciales (interruptores automáticos) detectan esta sobrecorriente y cortan el circuito en milisegundos. Dimensionar correctamente los fusibles de protección requiere conocer la corriente máxima esperada mediante la Ley de Ohm.'
+    },
+    {
+      q: '¿Cómo se aplica la Ley de Ohm en electrónica y microcontroladores?',
+      a: 'En electrónica digital, la Ley de Ohm se usa constantemente. Ejemplo típico con Arduino o ESP32 (populares en proyectos maker latinoamericanos): un LED tiene caída de tensión de 2 V y necesita 20 mA (0,02 A). Si la fuente es 5 V, la resistencia limitadora necesaria es R = (5-2)/0,02 = 150 Ohm. Sin esta resistencia, el LED se quemaría por exceso de corriente. En los pines GPIO de un microcontrolador (3,3 V o 5 V), las resistencias pull-up de 10 kOhm limitan la corriente a 0,33 o 0,5 mA. Estos cálculos básicos con V = IR son el primer paso de cualquier diseño electrónico en cursos de robótica y programación de LATAM.'
+    },
+  ]}
+>
   <LeyOhmTool client:load />
 </CalcLayout>
-

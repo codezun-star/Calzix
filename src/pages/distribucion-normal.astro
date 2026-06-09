@@ -1,17 +1,45 @@
-﻿---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import DistribucionNormalTool from "@/components/tools/DistribucionNormalTool";
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import DistribucionNormalTool from '@/components/tools/DistribucionNormalTool';
 ---
 
 <CalcLayout slug="distribucion-normal"
-  whatIs="La calculadora de distribucion-normal es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precision?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="La distribución normal (o campana de Gauss) es la distribución de probabilidad continua más importante en estadística. Esta calculadora recibe la media (mu), la desviación típica (sigma) y un valor x, y calcula la puntuación Z estandarizada (z = (x - mu) / sigma) y las probabilidades acumuladas: P(X menor o igual a x) — la probabilidad de que la variable sea menor o igual al valor dado — y P(X mayor que x) — la probabilidad de que sea mayor. Usa una aproximación de la función de error (erf) con precisión de 4 decimales."
+  whyUse="La distribución normal describe una enorme variedad de fenómenos naturales y sociales: estaturas humanas, pesos al nacer, errores de medición, calificaciones de exámenes estandarizados, rendimientos financieros y muchos otros. Es la base del teorema del límite central, de las pruebas de hipótesis estadísticas y de los intervalos de confianza. Se estudia en estadística de bachillerato y en los cursos de probabilidad y estadística de prácticamente todas las carreras universitarias de México, Colombia, Argentina, Chile, Perú y toda Latinoamérica."
+  faqs={[
+    {
+      q: '¿Qué es la distribución normal y por qué tiene forma de campana?',
+      a: 'La distribución normal o gaussiana es una distribución de probabilidad continua simétrica alrededor de la media (mu), con la mayor concentración de datos cerca de la media y colas que se extienden hacia los extremos siguiendo una curva en forma de campana. Sus dos parámetros son la media mu (que determina la posición del centro) y la desviación típica sigma (que determina el ancho de la campana). La fórmula de la densidad es f(x) = (1/(sigma*raíz(2*pi))) * e^(-(x-mu)²/(2*sigma²)). La curva es simétrica: el 50% de los datos está a la izquierda de la media y el 50% a la derecha.'
+    },
+    {
+      q: '¿Qué es la puntuación Z y cómo se calcula?',
+      a: 'La puntuación Z (o puntaje z, z-score) indica cuántas desviaciones estándar se aleja un valor x de la media: z = (x - mu) / sigma. Un z positivo significa que x está por encima de la media; negativo, por debajo. Ejemplos: si mu = 70 y sigma = 10, entonces x = 85 — z = (85-70)/10 = 1,5 (1,5 desviaciones por encima). x = 55 — z = (55-70)/10 = -1,5 (1,5 desviaciones por debajo). x = 70 — z = 0 (exactamente la media). La puntuación Z estandariza cualquier distribución normal a la distribución normal estándar N(0,1), lo que permite usar tablas estadísticas o esta calculadora para obtener probabilidades.'
+    },
+    {
+      q: '¿Qué son P(X menor o igual a x) y P(X mayor que x)?',
+      a: 'P(X <= x) es la probabilidad acumulada: la fracción de la distribución que queda a la izquierda del valor x. También se llama función de distribución acumulada (CDF). Ejemplo: si las calificaciones de un examen siguen N(mu=70, sigma=10), P(X <= 80) da la probabilidad de que un estudiante sacara 80 o menos, que es la fracción del área bajo la curva hasta x = 80. P(X > x) = 1 - P(X <= x) es la probabilidad de que el valor sea mayor que x. Ejemplo: P(X > 80) = 1 - P(X <= 80) ≈ 1 - 0,8413 = 0,1587, es decir, el 15,87% de los estudiantes sacó más de 80.'
+    },
+    {
+      q: '¿Qué es la regla empírica 68-95-99,7?',
+      a: 'Para cualquier distribución normal N(mu, sigma): el 68,27% de los datos cae dentro de 1 desviación estándar de la media (entre mu - sigma y mu + sigma); el 95,45% dentro de 2 desviaciones (entre mu - 2*sigma y mu + 2*sigma); el 99,73% dentro de 3 desviaciones (entre mu - 3*sigma y mu + 3*sigma). Ejemplo: estaturas de mujeres en México: mu = 157 cm, sigma = 6 cm. El 68% mide entre 151 y 163 cm. El 95% entre 145 y 169 cm. Solo el 0,27% mide menos de 139 cm o más de 175 cm. Esta regla es la base del control de calidad Six Sigma (6 desviaciones estándar = 99,99966% dentro de especificaciones).'
+    },
+    {
+      q: '¿Qué es la distribución normal estándar N(0,1)?',
+      a: 'La distribución normal estándar es la distribución normal con media mu = 0 y desviación típica sigma = 1. Es el caso particular que se obtiene al estandarizar cualquier distribución normal: si X sigue N(mu, sigma), entonces Z = (X - mu)/sigma sigue N(0,1). La calculadora usa esta estandarización internamente: calcula z = (x - mu)/sigma y luego aplica la CDF de N(0,1) para obtener la probabilidad. Para usar la distribución estándar directamente, introduce mu = 0 y sigma = 1 en la calculadora. Las tablas z que encuentras en libros de estadística LATAM (SPSS, Excel, R) corresponden a esta distribución.'
+    },
+    {
+      q: '¿Cómo se aplica la distribución normal en educación latinoamericana?',
+      a: 'Las pruebas estandarizadas de México (COMIPEMS, CENEVAL, EXANI), Colombia (SABER/ICFES), Chile (PAES/PSU), Argentina (UBA/CBS) y Perú (Preuniversitario) están diseñadas para que sus resultados sigan aproximadamente una distribución normal. Esto permite comparar resultados de distintas versiones del examen mediante la estandarización. La puntuación Z indica en qué posición está un estudiante respecto al grupo: z = +2 significa que está en el percentil 97,7% (mejor que el 97,7% de los examinados). El percentil 50 corresponde a z = 0, es decir, exactamente la media del grupo.'
+    },
+    {
+      q: '¿Cómo se aplica la distribución normal en finanzas latinoamericanas?',
+      a: 'En finanzas, los rendimientos diarios de activos bursátiles se modelan frecuentemente como distribuciones normales (aunque la realidad muestra colas más pesadas). La distribución normal es la base del modelo Black-Scholes para valoración de opciones y del concepto de Value at Risk (VaR): el VaR al 95% de un portafolio es el cuantil 5% de su distribución de pérdidas, calculado como mu - 1,645*sigma. Si un fondo en la Bolsa Mexicana de Valores (BMV) tiene rendimiento diario medio 0,05% con sigma 1%, su VaR al 95% es -1,595%, es decir, en días malos (5% de las veces), el fondo pierde más del 1,595%.'
+    },
+    {
+      q: '¿Qué es el teorema del límite central y por qué la distribución normal es tan ubicua?',
+      a: 'El teorema del límite central (TLC) establece que la suma (o media) de un gran número de variables aleatorias independientes, sin importar su distribución original, tiende a seguir una distribución normal. Esta es la razón fundamental por la que la distribución normal aparece en tantos fenómenos: la estatura es la suma de miles de factores genéticos y ambientales; el error de medición es la suma de muchos pequeños errores aleatorios; el rendimiento de un fondo de inversión es la acumulación de muchas variaciones independientes. El TLC se demuestra en los cursos de probabilidad de primer año en todas las universidades latinoamericanas.'
+    },
+  ]}
+>
   <DistribucionNormalTool client:load />
 </CalcLayout>
-

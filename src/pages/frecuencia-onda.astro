@@ -1,17 +1,45 @@
-﻿---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import FrecuenciaOndaTool from "@/components/tools/FrecuenciaOndaTool";
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import FrecuenciaOndaTool from '@/components/tools/FrecuenciaOndaTool';
 ---
 
 <CalcLayout slug="frecuencia-onda"
-  whatIs="La calculadora de frecuencia-onda es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precisión?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="La ecuación fundamental de las ondas relaciona tres magnitudes: velocidad de propagación (v), frecuencia (f) y longitud de onda (lambda): v = f × lambda. La velocidad se mide en m/s, la frecuencia en Hertz (Hz) y la longitud de onda en metros (m). Esta calculadora despeja cualquiera de las tres: calcular velocidad dados frecuencia y longitud de onda, calcular frecuencia dados velocidad y longitud de onda, o calcular longitud de onda dados velocidad y frecuencia."
+  whyUse="La ecuación v = f × lambda es la base de la física de ondas y se aplica en acústica (sonido), óptica (luz), telecomunicaciones (radio, WiFi, 5G), medicina (ultrasonidos, resonancias), sismología y muchos otros campos. Es materia obligatoria en bachillerato y en carreras de ingeniería de telecomunicaciones, electrónica, física y acústica en México, Colombia, Argentina, Chile, Perú y toda Latinoamérica. La comprensión de la frecuencia es fundamental para entender los espectros de radio y el funcionamiento de redes celulares 4G y 5G que millones de latinoamericanos usan a diario."
+  faqs={[
+    {
+      q: '¿Qué es una onda y qué relación hay entre v, f y lambda?',
+      a: 'Una onda es una perturbación que se propaga transportando energía sin transportar materia. Sus magnitudes principales: Frecuencia f (Hz): número de ciclos completos por segundo. Período T (s): T = 1/f, duración de un ciclo. Longitud de onda lambda (m): distancia que avanza la onda en un ciclo completo. Velocidad de propagación v (m/s): v = f × lambda = lambda / T. Ejemplo: una onda de sonido de 440 Hz (nota La musical, estándar de afinación internacional) que se propaga a 343 m/s en el aire tiene lambda = 343/440 ≈ 0,78 m = 78 cm. Esto significa que un período completo de la onda ocupa 78 cm de espacio.'
+    },
+    {
+      q: '¿Cuál es la velocidad del sonido y cómo varía?',
+      a: 'La velocidad del sonido en el aire a 20°C es ≈ 343 m/s ≈ 1.235 km/h. Varía con la temperatura: v ≈ 331 + 0,6×T (m/s) donde T es la temperatura en °C. En agua: ≈ 1.480 m/s (4× más rápido que en el aire). En acero: ≈ 5.120 m/s. En madera: ≈ 3.000-4.000 m/s. En el vacío: el sonido NO se propaga (requiere medio material). La barrera del sonido es Mach 1 ≈ 1.235 km/h. Los aviones supersónicos de las Fuerzas Aéreas de México (FAM) y Chile (FACh) superan Mach 1,5-2. Al pasar un avión a velocidad supersónica, el "boom sónico" es la onda de choque que se forma cuando el avión viaja más rápido que el sonido.'
+    },
+    {
+      q: '¿Cuál es la velocidad de la luz y por qué es especial?',
+      a: 'La velocidad de la luz en el vacío es c ≈ 299.792.458 m/s ≈ 3 × 10⁸ m/s = 300.000 km/s. Es la velocidad máxima posible en el universo (postulado de la relatividad especial de Einstein). Las ondas electromagnéticas (luz, radio, microondas, rayos X) se propagan a esta velocidad en el vacío. En medios materiales, la velocidad es menor: en vidrio ≈ 2 × 10⁸ m/s; en agua ≈ 2,25 × 10⁸ m/s. Ejemplo: la luz del Sol tarda ≈ 8 min 20 s en llegar a la Tierra (distancia ≈ 150 millones de km). Una señal de internet de fibra óptica de Ciudad de México a Buenos Aires (≈7.000 km) tarda ≈ 7000/(2×10⁸) ≈ 35 milisegundos de latencia mínima.'
+    },
+    {
+      q: '¿Qué frecuencias usan las redes de telecomunicaciones en Latinoamérica?',
+      a: 'Las frecuencias de las tecnologías de comunicación más usadas en LATAM: FM Radio — 88-108 MHz (lambda ≈ 3 m). AM Radio — 530-1.600 kHz (lambda = 187-566 m). WiFi 2,4 GHz — lambda ≈ 12,5 cm. WiFi 5 GHz — lambda ≈ 6 cm. Redes 4G LTE — 700 MHz, 1.700/2.100 MHz, 1.900 MHz (lambda = 15-43 cm). Redes 5G — 3,5 GHz y bandas mmWave 26-28 GHz (lambda = 8,6 cm y 1,1 cm). Las frecuencias más bajas (700 MHz) penetran mejor los edificios y cubren mayor distancia. Por eso, en zonas rurales de LATAM con baja densidad de antenas, se prefieren frecuencias bajas (Band 28, 700 MHz). Las operadoras como Telcel, Claro, Entel y Movistar usan distintas bandas en distintos países.'
+    },
+    {
+      q: '¿Qué es el efecto Doppler y cómo se relaciona con la frecuencia?',
+      a: 'El efecto Doppler es el cambio de frecuencia percibida cuando la fuente o el observador están en movimiento relativo. Si la fuente se acerca: f_percibida > f_emitida (tono más agudo). Si se aleja: f_percibida < f_emitida (tono más grave). Fórmula: f_obs = f × (v ± v_obs)/(v ∓ v_fuente). Aplicaciones en LATAM: (1) Radar de velocidad policial: mide la velocidad de vehículos en carretera por el cambio de frecuencia del radar (microondas). (2) Ecografía Doppler: detecta el flujo sanguíneo por el cambio de frecuencia del ultrasonido reflejado por los glóbulos rojos. (3) Astronomía: el corrimiento al rojo de galaxias distantes indica que se alejan (universo en expansión).'
+    },
+    {
+      q: '¿Qué es el espectro electromagnético y cómo se clasifican las ondas?',
+      a: 'Todas las ondas electromagnéticas viajan a c = 3×10⁸ m/s en el vacío, pero con distintas frecuencias y longitudes de onda: Ondas de radio — f < 3 GHz, lambda > 1 cm. Microondas — 3 GHz-300 GHz, lambda 1 mm-10 cm. Infrarrojo — 300 GHz-430 THz, lambda 0,7 µm-1 mm. Luz visible — 430-770 THz (rojo 700 nm a violeta 400 nm). Ultravioleta — 770 THz-3 PHz, lambda 10-400 nm. Rayos X — 3 PHz-30 EHz. Rayos gamma — > 30 EHz. El color de la luz es su frecuencia (o longitud de onda). El rojo tiene la menor frecuencia (mayor lambda) del visible; el violeta la mayor. La melanina en la piel latinoamericana absorbe parte del UV, brindando protección natural contra el sol.'
+    },
+    {
+      q: '¿Cómo se aplica la ecuación de ondas en música y acústica?',
+      a: 'Las notas musicales son frecuencias: Do4 (C4, Do central) = 261,63 Hz. Re4 = 293,66 Hz. Mi4 = 329,63 Hz. La4 (A4, afinación estándar) = 440 Hz. Cada octava superior duplica la frecuencia: Do5 = 523,25 Hz = 2 × Do4. En un tubo de órgano cerrado de 1 m de longitud, la frecuencia fundamental f = v/(4L) = 343/(4×1) ≈ 85,75 Hz (nota Si1). En acústica de salas de concierto (como el Palacio de Bellas Artes en México o el Teatro Colón en Buenos Aires), la longitud de onda determina qué frecuencias se refuerzan o cancelan por reflexiones (modos de resonancia de la sala).'
+    },
+    {
+      q: '¿Cómo se aplica en sismología latinoamericana?',
+      a: 'Latinoamérica es una de las regiones sísmicamente más activas del mundo: México, Chile, Perú, Ecuador, Colombia y América Central están en el Cinturón de Fuego del Pacífico. Las ondas sísmicas son de dos tipos: Ondas P (comprensión, viajan en sólidos y líquidos): v ≈ 6.000-8.000 m/s en corteza terrestre, frecuencia 1-20 Hz, lambda = 300-8.000 m. Ondas S (cizalla, solo en sólidos): v ≈ 3.500 m/s, frecuencia similar. La diferencia de tiempo de llegada entre ondas P y S permite calcular la distancia al epicentro: distancia ≈ t_diferencia × 8 km/s (regla aproximada). Las redes sismológicas del CENAPRED (México), SGC (Colombia) e IGEPN (Ecuador) detectan estas ondas para alertar terremotos.'
+    },
+  ]}
+>
   <FrecuenciaOndaTool client:load />
 </CalcLayout>
-

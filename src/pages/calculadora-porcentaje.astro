@@ -5,29 +5,42 @@ import PorcentajeTool from '@/components/tools/PorcentajeTool';
 
 <CalcLayout
   slug="calculadora-porcentaje"
-  whatIs="Un porcentaje es una manera de expresar un número como parte de 100. Se utiliza el símbolo % para representarlo. Por ejemplo, el 25% significa 25 de cada 100 unidades. Nuestro calculador te permite obtener instantáneamente resultados precisos para cualquier cálculo de porcentajes sin necesidad de realizar operaciones manuales."
-  whyUse="Los porcentajes están en todas partes: descuentos en compras, intereses bancarios, cambios de precio, probabilidades y muchísimo más. Ya sea que necesites calcular un descuento en la tienda, saber qué porcentaje representa una cantidad respecto a un total, o encontrar el valor original de un precio con descuento, esta herramienta te ahorra tiempo y evita errores de cálculo."
+  whatIs="Un porcentaje es una forma de expresar una proporción en relación a 100, usando el símbolo %. Nuestra calculadora de porcentaje online resuelve al instante tres operaciones esenciales: calcular cuánto es el X% de un número, determinar qué porcentaje representa un valor respecto a un total, y hallar el número original cuando conoces el valor y el porcentaje que representa. Todos los cálculos ocurren en tu dispositivo, sin enviar datos a ningún servidor."
+  whyUse="Los porcentajes están presentes en la vida diaria de toda Latinoamérica: descuentos en tiendas, tasas de IVA en México (16%), Colombia (19%), Chile (19%), Argentina (21%), Ecuador (12%), Perú (18%), Uruguay (22%) y más países, intereses bancarios, calificaciones escolares, aumentos salariales y estadísticas. Con esta herramienta gratuita obtienes resultados precisos al instante sin fórmulas manuales ni calculadora científica."
   faqs={[
-  {
-    q: '¿Cómo calculo el porcentaje de un número?',
-    a: 'Para calcular el X% de un número N, multiplica N por X y divide entre 100. Por ejemplo, el 20% de 150 es 150 × 20 / 100 = 30.'
-  },
-  {
-    q: '¿Cómo sé qué porcentaje representa un valor respecto a un total?',
-    a: 'Divide el valor parcial entre el total y multiplica por 100. Por ejemplo, si tienes 25 de un total de 200, el porcentaje es 25 / 200 × 100 = 12,5%.'
-  },
-  {
-    q: '¿Cómo encuentro el total si conozco el valor y el porcentaje?',
-    a: 'Divide el valor entre el porcentaje expresado en decimal. Por ejemplo, si 60 es el 30% de un número, el total es 60 / 0,30 = 200.'
-  },
-  {
-    q: '¿Cuál es la diferencia entre descuento y porcentaje?',
-    a: 'El descuento es una aplicación del porcentaje: si algo cuesta 80 € y tiene un descuento del 15%, el descuento en euros es el 15% de 80 = 12 €, por lo que el precio final es 68 €.'
-  },
-  {
-    q: '¿Puedo calcular porcentajes con números decimales?',
-    a: 'Sí. La calculadora acepta números decimales tanto en el porcentaje como en el valor total. Puedes usar el punto o la coma como separador decimal.'
-  },
-]}>
+    {
+      q: '¿Cómo calculo el porcentaje de un número?',
+      a: 'Para calcular el X% de un número N, multiplica N por X y divide entre 100. Ejemplo: el 20% de 350 es 350 × 20 ÷ 100 = 70. Con la calculadora selecciona el modo «¿Cuánto es X% de N?», introduce el porcentaje y el número, y pulsa Calcular. El resultado es instantáneo. Puedes usar números decimales como 3,5% o 12,75 sin ningún problema; la herramienta acepta tanto punto como coma como separador decimal.'
+    },
+    {
+      q: '¿Cómo sé qué porcentaje representa un valor respecto a un total?',
+      a: 'Divide el valor parcial entre el total y multiplica por 100. Si vendiste 45 de 180 productos, el porcentaje vendido es 45 ÷ 180 × 100 = 25%. Esta operación es esencial para calcular tasas de rendimiento, porcentaje de avance de proyectos, porcentaje de descuento obtenido o el incremento de precios. En educación latinoamericana también sirve para expresar cuántos puntos obtuviste de un total posible en un examen.'
+    },
+    {
+      q: '¿Cómo encuentro el total si conozco el valor y el porcentaje?',
+      a: 'Divide el valor entre el porcentaje expresado en decimal. Si 90 pesos representan el 30% de algo, el total es 90 ÷ 0,30 = 300 pesos. Este cálculo es útil cuando tienes el precio final con IVA incluido y quieres saber el precio base, o cuando conoces el importe de un descuento y necesitas el precio original antes de la rebaja. Aplica para cualquier moneda: pesos mexicanos, soles peruanos, colones costarricenses, guaraníes paraguayos, bolívares venezolanos, etc.'
+    },
+    {
+      q: '¿Cómo calculo el IVA o impuesto al consumo en diferentes países de Latinoamérica?',
+      a: 'El IVA o impuesto al consumo varía por país: México 16%, Colombia 19%, Chile 19%, Argentina 21%, Ecuador 12%, Perú 18%, Venezuela 16%, Guatemala 12%, Costa Rica 13%, Panamá 7%, Bolivia 13%, Paraguay 10%, Uruguay 22%, República Dominicana 18%. Para precio con IVA: base × (1 + tasa ÷ 100). Para extraer el IVA incluido: precio total ÷ (1 + tasa ÷ 100). La calculadora de porcentaje resuelve ambas operaciones instantáneamente.'
+    },
+    {
+      q: '¿Cómo calculo un descuento o aumento de precio?',
+      a: 'Descuento: calcula el X% del precio original y réstalo. Ejemplo: 20% de descuento sobre 1.200 pesos = 240 pesos de descuento → precio final 960 pesos. Aumento: calcula el X% y súmalo. Ejemplo: aumento del 15% sobre un salario de 8.000 pesos = 1.200 pesos → nuevo salario 9.200. Fórmula directa con descuento: precio × (1 − descuento ÷ 100). Estos cálculos aplican igual para cualquier divisa de América Latina.'
+    },
+    {
+      q: '¿Qué es el porcentaje de variación o cambio porcentual?',
+      a: 'El porcentaje de variación mide cuánto cambió una cantidad respecto a su valor original: ((valor nuevo − valor original) ÷ valor original) × 100. Si un producto costaba 200 y ahora cuesta 240, la variación es (240 − 200) ÷ 200 × 100 = 20% de aumento. Si bajó a 170, sería (170 − 200) ÷ 200 × 100 = −15% (disminución). Se usa en inflación, análisis de ventas, economía y estadística en toda la región.'
+    },
+    {
+      q: '¿Cómo se calcula el porcentaje de una nota académica en Latinoamérica?',
+      a: 'Divide la nota obtenida entre la nota máxima posible y multiplica por 100. Si un examen tiene 50 preguntas y respondiste 38 correctamente: 38 ÷ 50 × 100 = 76%. Escalas comunes: México 0-10, Colombia 0-5, Argentina 1-10, Chile 1,0-7,0, Perú 0-20. Para convertir entre escalas: (nota ÷ máximo de escala origen) × máximo de escala destino. Esta calculadora resuelve cualquier conversión de escala en segundos.'
+    },
+    {
+      q: '¿Puedo calcular porcentajes con números muy grandes o decimales?',
+      a: 'Sí. La calculadora acepta números decimales y grandes en todos los campos. Puedes usar punto o coma como separador decimal. Ejemplo: el 3,75% de 1.250.000 = 46.875. O qué porcentaje es 0,025 de 0,4: resultado 6,25%. Los resultados se muestran con hasta 6 decimales para máxima precisión. No hay límite en el tamaño del número ingresado siempre que sea un valor numérico válido.'
+    },
+  ]}
+>
   <PorcentajeTool client:load />
 </CalcLayout>

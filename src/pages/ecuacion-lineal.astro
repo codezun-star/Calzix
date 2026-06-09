@@ -1,32 +1,45 @@
-﻿---
+---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import EcuacionLinealTool from '@/components/tools/EcuacionLinealTool';
 ---
 
 <CalcLayout slug="ecuacion-lineal"
-  whatIs="La calculadora de ecuacion-lineal es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  {
-    q: '¿Qué es una ecuación lineal de primer grado?',
-    a: 'Es una ecuación donde la incógnita x aparece con exponente 1, de la forma ax + b = c. La solución es siempre un único valor de x (siempre que a sea distinto de cero).'
-  },
-  {
-    q: '¿Por qué el coeficiente "a" no puede ser cero?',
-    a: 'Si a = 0, la ecuación deja de tener incógnita y se convierte en "b = c". En ese caso o es siempre verdadera (b = c) o nunca lo es (b â‰  c), pero no tiene solución para x.'
-  },
-  {
-    q: '¿Cómo se despeja x paso a paso?',
-    a: 'Partiendo de ax + b = c, primero se resta b en ambos lados para obtener ax = c âˆ’ b, y luego se divide entre a para obtener x = (c âˆ’ b) / a.'
-  },
-  {
-    q: '¿Qué hago si el resultado es un número muy largo?',
-    a: 'La calculadora muestra hasta 6 decimales. Si la solución es una fracción irreducible con muchos decimales, puedes usarla como decimal o expresarla como fracción manualmente.'
-  },
-  {
-    q: '¿Puedo usar esta calculadora para ecuaciones con decimales o negativos?',
-    a: 'Sí. Los tres campos aceptan números negativos y decimales. Por ejemplo, âˆ’2x + 3,5 = 10 se resuelve introduciendo a = âˆ’2, b = 3,5, c = 10.'
-  },
-]}>
+  whatIs="Una ecuación lineal de primer grado tiene la forma ax + b = c, donde x es la incógnita y a, b, c son coeficientes conocidos. La solución siempre es un único valor de x (cuando a ≠ 0): x = (c − b) ÷ a. Nuestra calculadora resuelve al instante cualquier ecuación de primer grado y muestra el procedimiento completo paso a paso, incluyendo cada operación algebraica aplicada para despejar x."
+  whyUse="Las ecuaciones lineales son la base del álgebra y aparecen en física (cinemática, fuerzas, circuitos), economía (punto de equilibrio, costos variables), química (estequiometría, diluciones), y en problemas cotidianos como calcular el precio original de un artículo con descuento, el tiempo de viaje, el reparto de costos o los intereses de un préstamo. Son materia fundamental en secundaria y bachillerato en México, Colombia, Argentina, Chile, Perú y toda Latinoamérica."
+  faqs={[
+    {
+      q: '¿Qué es una ecuación lineal de primer grado?',
+      a: 'Es una ecuación donde la incógnita x aparece con exponente 1 (de ahí «primer grado»), de la forma ax + b = c o equivalentes como ax = c, x + b = c. La solución es siempre un único valor de x (cuando a ≠ 0). Ejemplos: 2x + 3 = 7 → x = 2; 5x − 10 = 0 → x = 2; −3x + 6 = 15 → x = −3. Se llama «lineal» porque su gráfica es una línea recta en el plano cartesiano. Si a = 0, la ecuación no tiene incógnita y puede ser siempre verdadera (0=0) o imposible (b = c con b ≠ c).'
+    },
+    {
+      q: '¿Cuáles son los pasos para resolver ax + b = c?',
+      a: 'Paso 1: Restar b en ambos lados de la ecuación para aislar el término con x: ax + b − b = c − b → ax = c − b. Paso 2: Dividir ambos lados entre a para despejar x: x = (c − b) ÷ a. Ejemplo completo: 3x + 4 = 16. Paso 1: 3x = 16 − 4 = 12. Paso 2: x = 12 ÷ 3 = 4. Verificación (siempre recomendable): 3×4 + 4 = 12 + 4 = 16 ✓. La calculadora muestra estos pasos automáticamente con los valores que introduzcas.'
+    },
+    {
+      q: '¿Por qué el coeficiente "a" no puede ser cero?',
+      a: 'Si a = 0, la ecuación 0×x + b = c se convierte en b = c, que no depende de x en absoluto. Si b = c es verdadero (por ejemplo 5 = 5), la ecuación tiene infinitas soluciones (cualquier valor de x sirve). Si b ≠ c (por ejemplo 3 = 7), la ecuación es imposible (ningún valor de x la satisface). En ambos casos no existe «la solución» de x, por lo que la calculadora muestra un error si introduces a = 0 para evitar resultados sin sentido.'
+    },
+    {
+      q: '¿Cómo se usa la ecuación lineal en problemas del mundo real?',
+      a: 'Ejemplos cotidianos en Latinoamérica: (1) Precio original: un artículo con 25% de descuento cuesta 300 pesos. ¿Cuál era el precio original? Ecuación: 0,75×x = 300 → x = 400. (2) Tiempo de viaje: un colectivo recorre una distancia a 80 km/h y tarda t horas: 80t = 240 → t = 3 horas. (3) Reparto: si Juan y Pedro juntan su dinero y tienen 850 pesos, y Pedro tiene el doble que Juan: 3x = 850 → Juan tiene 283 pesos. Cualquier problema de proporcionalidad directa genera una ecuación lineal.'
+    },
+    {
+      q: '¿Cómo se resuelven ecuaciones con paréntesis o fracciones?',
+      a: 'Con paréntesis, primero aplica la propiedad distributiva: 2(x + 3) = 10 → 2x + 6 = 10 → 2x = 4 → x = 2. Con fracciones, multiplica toda la ecuación por el MCM de los denominadores para eliminarlas: x/3 + x/4 = 7 → (MCM=12) 4x + 3x = 84 → 7x = 84 → x = 12. Con la calculadora, convierte primero la ecuación a la forma ax + b = c identificando los valores de a, b y c después de simplificar, y luego introduce esos coeficientes.'
+    },
+    {
+      q: '¿Puedo usar la calculadora con coeficientes negativos y decimales?',
+      a: 'Sí. Los tres campos aceptan números negativos y decimales (con punto o coma). Ejemplos: −2x + 3,5 = 10 → a = −2, b = 3,5, c = 10 → x = (10 − 3,5) ÷ (−2) = 6,5 ÷ (−2) = −3,25. Otro ejemplo: 0,5x − 1,2 = 3,8 → a = 0,5, b = −1,2, c = 3,8 → x = (3,8 − (−1,2)) ÷ 0,5 = 5 ÷ 0,5 = 10. La calculadora muestra hasta 6 decimales en el resultado y en el procedimiento paso a paso.'
+    },
+    {
+      q: '¿Qué diferencia hay entre ecuación lineal y función lineal?',
+      a: 'Una ecuación lineal (ax + b = c) se resuelve para encontrar el valor específico de x que hace la igualdad verdadera. Tiene una solución numérica. Una función lineal (f(x) = mx + n, o y = mx + n) describe una relación entre dos variables x e y, y su gráfica es una recta con pendiente m e intercepto n. Para resolver una ecuación lineal gráficamente, representa la función y = ax + b − c y encuentra dónde cruza el eje x (donde y = 0); ese punto es la solución x = (c − b) ÷ a.'
+    },
+    {
+      q: '¿Qué tipos de ecuaciones lineales existen según el número de soluciones?',
+      a: 'Según sus soluciones, las ecuaciones de primer grado se clasifican en: (1) Ecuación compatible determinada — tiene exactamente una solución. Es el caso normal cuando a ≠ 0. Ejemplo: 2x + 1 = 5 → x = 2. (2) Ecuación compatible indeterminada — es verdadera para cualquier valor de x. Ocurre cuando a = 0 y b = c. Ejemplo: 0x + 3 = 3. Infinitas soluciones. (3) Ecuación incompatible o imposible — no tiene ninguna solución. Ocurre cuando a = 0 y b ≠ c. Ejemplo: 0x + 3 = 7. Sin solución.'
+    },
+  ]}
+>
   <EcuacionLinealTool client:load />
 </CalcLayout>
-

@@ -1,32 +1,45 @@
-﻿---
+---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import ProbabilidadTool from '@/components/tools/ProbabilidadTool';
 ---
 
 <CalcLayout slug="probabilidad-simple"
-  whatIs="La calculadora de probabilidad-simple es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  {
-    q: '¿Qué es la probabilidad de un evento?',
-    a: 'La probabilidad mide la posibilidad de que ocurra un evento. Se calcula dividiendo el número de casos favorables entre el número de casos totales posibles. Su valor oscila entre 0 (imposible) y 1 (seguro).'
-  },
-  {
-    q: '¿Qué significa el evento contrario o complemento?',
-    a: 'El evento contrario es el que ocurre cuando el evento original no ocurre. Su probabilidad es siempre 1 menos la probabilidad del evento original. Por ejemplo, si la probabilidad de ganar es 0,25, la de no ganar es 0,75.'
-  },
-  {
-    q: '¿Cómo interpreto la probabilidad como porcentaje?',
-    a: 'Multiplica la probabilidad decimal por 100. Una probabilidad de 0,25 equivale al 25%, lo que significa que, en promedio, el evento ocurrirá 25 veces de cada 100 intentos.'
-  },
-  {
-    q: '¿Puedo tener más casos favorables que totales?',
-    a: 'No. Los casos favorables siempre deben ser iguales o menores que los casos totales. La calculadora mostrará un error si introduces una combinación inválida.'
-  },
-  {
-    q: '¿Esta calculadora sirve para probabilidades compuestas?',
-    a: 'Esta herramienta calcula probabilidades simples (un solo evento). Para probabilidades compuestas como unión, intersección o probabilidad condicional, necesitarías una calculadora específica para esos casos.'
-  },
-]}>
+  whatIs="La probabilidad clásica (o de Laplace) de un evento se calcula dividiendo el número de casos favorables entre el número de casos totales igualmente posibles: P = casos favorables / casos totales. Esta calculadora recibe ambos valores enteros y devuelve la probabilidad expresada en tres formas: fracción (favorable/total), número decimal (entre 0 y 1) y porcentaje. También calcula automáticamente la probabilidad del evento contrario o complemento: P(complemento) = 1 - P(evento)."
+  whyUse="La probabilidad es la base matemática de la toma de decisiones bajo incertidumbre. Se aplica en seguros, finanzas, medicina, juegos de azar, genética, control de calidad y en prácticamente todas las ciencias. En Latinoamérica, la probabilidad elemental se enseña desde la secundaria y es contenido obligatorio en bachillerato en México, Colombia, Argentina, Chile, Perú y toda la región. Entender probabilidades ayuda a evaluar riesgos cotidianos: desde las posibilidades de ganar en una rifa escolar hasta la probabilidad de aprobar un examen si adivinas al azar."
+  faqs={[
+    {
+      q: '¿Qué es la probabilidad y cómo se define en la regla de Laplace?',
+      a: 'La probabilidad mide la posibilidad de que ocurra un evento en una escala de 0 a 1, donde 0 significa imposible y 1 significa seguro. La regla clásica de Laplace define la probabilidad de un evento como P(A) = casos favorables a A / casos totales posibles, siempre que todos los casos sean igualmente posibles. Ejemplo: al lanzar un dado de 6 caras, la probabilidad de obtener un 4 es P = 1/6 ≈ 0,1667 ≈ 16,67% (1 caso favorable, 6 casos totales). Esta definición funciona perfectamente para juegos de azar con resultados equiprobables: dados, monedas, ruletas y rifas.'
+    },
+    {
+      q: '¿Qué es el evento contrario o complemento?',
+      a: 'El evento contrario (o complemento) de un evento A es el conjunto de resultados donde A NO ocurre. Su probabilidad es siempre P(complemento de A) = 1 - P(A). Esto se debe a que la suma de todas las probabilidades posibles siempre es 1 (certeza). Ejemplo: si la probabilidad de sacar cara en una moneda es 0,5, la probabilidad de NO sacar cara (sacar sello) es 1 - 0,5 = 0,5. Ejemplo más complejo: en una bolsa con 3 pelotas rojas y 7 azules, P(roja) = 3/10 = 0,3; P(NO roja) = P(azul) = 1 - 0,3 = 0,7 = 7/10. La calculadora calcula ambas probabilidades simultáneamente.'
+    },
+    {
+      q: '¿Cuál es la diferencia entre probabilidad y frecuencia relativa?',
+      a: 'La probabilidad teórica es el valor calculado con la regla de Laplace (casos favorables / totales) antes de realizar el experimento. La frecuencia relativa es el resultado observado después de realizar el experimento muchas veces: frecuencia relativa = veces que ocurrió el evento / número total de repeticiones. Ejemplo: la probabilidad teórica de cara es 0,5. Si lanzas la moneda 100 veces y obtienes cara 53 veces, la frecuencia relativa es 53/100 = 0,53. Según la ley de los grandes números, a mayor número de repeticiones, la frecuencia relativa se acerca a la probabilidad teórica. Las dos no son iguales pero se aproximan con suficientes ensayos.'
+    },
+    {
+      q: '¿Cómo calculo la probabilidad en una rifa o sorteo latinoamericano?',
+      a: 'Ejemplo 1: En una rifa escolar hay 200 boletos y compras 5. P(ganar) = 5/200 = 0,025 = 2,5%. P(no ganar) = 1 - 0,025 = 0,975 = 97,5%. Ejemplo 2: En el Tris de México, se sortean 3 números del 0 al 9. Si apuestas a una combinación exacta de 3 dígitos, hay 10³ = 1.000 combinaciones posibles y solo 1 favorable. P(ganar exacto) = 1/1.000 = 0,001 = 0,1%. Ejemplo 3: El Chance o Suerte en Colombia sortea 4 dígitos. P(acertar exacto) = 1/10.000 = 0,0001 = 0,01%. Estos ejemplos ilustran por qué la probabilidad de ganar en lotería es extremadamente baja.'
+    },
+    {
+      q: '¿Qué significa que un evento sea imposible o seguro?',
+      a: 'Un evento imposible tiene probabilidad P = 0: nunca puede ocurrir bajo las condiciones del experimento. Ejemplo: sacar un 7 en un dado de 6 caras — no hay casos favorables. P = 0/6 = 0. Un evento seguro tiene probabilidad P = 1: siempre ocurre. Ejemplo: sacar un número entre 1 y 6 en un dado de 6 caras — todos los casos son favorables. P = 6/6 = 1. La probabilidad de cualquier evento real siempre es 0 ≤ P ≤ 1. La calculadora valida automáticamente que los casos favorables no excedan los totales (si F > T mostraría un evento imposible lógicamente).'
+    },
+    {
+      q: '¿Cómo aplica la probabilidad simple en genética?',
+      a: 'La genética mendeliana usa probabilidades para predecir los rasgos de la descendencia. Si ambos progenitores son heterocigotos Aa (portadores de un gen recesivo), el cruce Aa × Aa produce: 1 AA (homocigoto dominante), 2 Aa (heterocigotos) y 1 aa (homocigoto recesivo) en 4 posibles combinaciones. P(aa) = 1/4 = 0,25 = 25%. Si la enfermedad genética se expresa solo con aa, hay 25% de probabilidad de que un hijo la padezca. Este tipo de cálculo se estudia en biología de preparatoria en México (SEP), Colombia (ICFES) y toda Latinoamérica, y es la base de los cuadros de Punnett.'
+    },
+    {
+      q: '¿Qué tipos de probabilidad existen más allá de la probabilidad simple?',
+      a: 'La probabilidad de Laplace (clásica) que calcula esta herramienta es solo el punto de partida. Otros tipos: (1) Probabilidad frecuentista: basada en la frecuencia relativa observada en experimentos reales. (2) Probabilidad bayesiana: actualiza la probabilidad de una hipótesis según nueva evidencia (clave en inteligencia artificial y diagnóstico médico). (3) Probabilidad compuesta: para dos eventos A y B, P(A y B) = P(A) × P(B) si son independientes; P(A o B) = P(A) + P(B) - P(A y B). (4) Probabilidad condicional: P(A dado B) = P(A y B) / P(B). Estos temas avanzados se estudian en cursos universitarios de probabilidad y estadística en toda Latinoamérica.'
+    },
+    {
+      q: '¿Cómo se relaciona la probabilidad con la combinatoria (permutaciones y combinaciones)?',
+      a: 'Cuando los casos totales o favorables son muy numerosos, se usan fórmulas combinatorias para contarlos. Ejemplo: ¿cuál es la probabilidad de ganar el Melate en México? Debes acertar 6 números del 1 al 56. Casos totales = C(56,6) = 56!/(6!×50!) = 12.913.352. Casos favorables = 1. P(ganar) = 1/12.913.352 ≈ 0,0000000775 ≈ 0,0000077%. En el Loto en Chile: C(41,6) = 4.496.388 combinaciones. En Baloto en Colombia: C(43,6) = 6.096.454. En todos estos casos, la probabilidad se calcula con la misma fórmula P = favorables/totales, pero los totales se calculan con combinatoria.'
+    },
+  ]}
+>
   <ProbabilidadTool client:load />
 </CalcLayout>
-

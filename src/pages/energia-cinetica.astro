@@ -1,17 +1,45 @@
-﻿---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import EnergiaCineticaTool from "@/components/tools/EnergiaCineticaTool";
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import EnergiaCineticaTool from '@/components/tools/EnergiaCineticaTool';
 ---
 
 <CalcLayout slug="energia-cinetica"
-  whatIs="La calculadora de energia-cinetica es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precisión?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="La energía cinética es la energía que posee un objeto debido a su movimiento. Se calcula con la fórmula Ec = ½ × m × v², donde m es la masa en kilogramos (kg) y v es la velocidad en metros por segundo (m/s). El resultado se expresa en Joules (J) y kiloJoules (kJ). Esta calculadora calcula la energía cinética a partir de la masa y la velocidad. La velocidad puede ser cero (objeto en reposo, Ec = 0) o cualquier valor positivo."
+  whyUse="La energía cinética es fundamental en física para comprender colisiones, seguridad vial, ingeniería mecánica, biomecánica deportiva y generación de energía eólica e hidráulica. Es materia obligatoria en bachillerato y primer año de universidad en México, Colombia, Argentina, Chile, Perú y toda Latinoamérica. Entender la relación cuadrática Ec ∝ v² explica por qué duplicar la velocidad cuadruplica la distancia de frenado de un vehículo, con directas implicaciones en seguridad vial."
+  faqs={[
+    {
+      q: '¿Qué es la energía cinética y de dónde viene la fórmula ½mv²?',
+      a: 'La energía cinética es la energía asociada al movimiento de un objeto. La fórmula Ec = ½mv² se obtiene del trabajo realizado para acelerar una masa m desde el reposo hasta velocidad v: W = F × d = (ma) × (v²/2a) = ½mv². El factor ½ aparece porque la aceleración es gradual (la velocidad aumenta de 0 a v). Para un objeto en reposo (v = 0), Ec = 0. Para velocidad doble, Ec se cuadruplica (relación cuadrática con v). Esta fórmula fue establecida por Leibniz y perfectamente explicada por Coriolis en 1829, y es universal en la mecánica clásica estudiada en LATAM.'
+    },
+    {
+      q: '¿Cómo calculo la energía cinética de un vehículo en movimiento?',
+      a: 'Ejemplos prácticos en LATAM: (1) Un auto de 1.200 kg a 60 km/h (16,67 m/s): Ec = 0,5 × 1200 × 16,67² ≈ 166.733 J ≈ 167 kJ. (2) Mismo auto a 120 km/h (33,33 m/s): Ec = 0,5 × 1200 × 33,33² ≈ 666.533 J ≈ 667 kJ. Al duplicar la velocidad, la energía cinética se cuadruplica: de 167 a 667 kJ (×4). (3) Una moto de 250 kg (moto + conductor) a 90 km/h (25 m/s): Ec = 0,5 × 250 × 625 = 78.125 J. Esta energía debe disiparse en los frenos al detenerse, explicando por qué frenar de alta velocidad requiere distancias muy largas.'
+    },
+    {
+      q: '¿Qué es el teorema trabajo-energía?',
+      a: 'El teorema trabajo-energía establece que el trabajo neto realizado sobre un objeto es igual al cambio en su energía cinética: W = Ec_final - Ec_inicial = ½mv_f² - ½mv_i². Si una fuerza acelera un auto de 20 m/s a 30 m/s: trabajo = ½ × 1500 × (900-400) = 375.000 J = 375 kJ. Este teorema conecta la dinámica (fuerzas) con la energética (trabajo y energía) y es central en los cursos de física de bachillerato y de Mecánica General en ingenierías de toda Latinoamérica.'
+    },
+    {
+      q: '¿Cómo se aplica la energía cinética en la seguridad vial latinoamericana?',
+      a: 'La distancia de frenado es proporcional a la energía cinética: d_frenado = Ec / F_frenado = mv² / (2 × mu × mg) = v² / (2 × mu × g). Con mu = 0,7 (asfalto seco) y g = 9,81: a 60 km/h (16,67 m/s): d ≈ 16,67² / (2×0,7×9,81) ≈ 20 m. A 120 km/h (33,33 m/s): d ≈ 33,33² / (2×0,7×9,81) ≈ 81 m. En México, Colombia y Argentina, el exceso de velocidad es la primera causa de accidentes de tránsito mortales. Las campañas de seguridad vial de la CONAPRA (México), ANT (Ecuador) y ANSV (Colombia) usan estos datos para justificar los límites de velocidad.'
+    },
+    {
+      q: '¿Qué es la conservación de la energía mecánica?',
+      a: 'En un sistema sin fricción, la energía mecánica total (cinética + potencial) se conserva: Ec + Ep = constante. Ec = ½mv², Ep = mgh. Si un objeto cae desde altura h: toda la Ep se convierte en Ec al llegar al suelo: mgh = ½mv² → v = raíz(2gh). Ejemplo: una pelota que cae desde 20 m: v = raíz(2 × 9,81 × 20) ≈ 19,8 m/s. En la práctica, la fricción del aire disipa parte de la energía en calor. En presencia de fricción, la energía mecánica disminuye y esa diferencia se convierte en calor: es la energía que disipan los frenos al frenar un vehículo.'
+    },
+    {
+      q: '¿Cómo se aplica la energía cinética en la generación de energía eólica en LATAM?',
+      a: 'La potencia extraíble del viento es proporcional a la energía cinética del aire: P = ½ × rho × A × v³, donde rho es la densidad del aire (≈1,225 kg/m³), A es el área del rotor y v la velocidad del viento. La relación cúbica con v explica por qué duplicar la velocidad del viento multiplica la potencia por 8. Los parques eólicos de México (Oaxaca, Nuevo León), Colombia (La Guajira), Brasil (Nordeste), Chile (Atacama) y Argentina (Patagonia) generan electricidad aprovechando la energía cinética del viento. Una turbina de 3 MW extrae energía de vientos de 12-15 m/s.'
+    },
+    {
+      q: '¿Qué unidades se usan para la energía cinética y cómo convertirlas?',
+      a: 'La unidad SI de energía es el Joule (J = kg × m²/s²). En la práctica se usan múltiplos: 1 kJ = 1.000 J; 1 MJ = 1.000.000 J. Otras unidades de energía: 1 kWh = 3.600.000 J (usada en facturas eléctricas en LATAM); 1 cal = 4,184 J (calorías, usadas en nutrición); 1 eV = 1,602 × 10⁻¹⁹ J (física de partículas). El valor calórico de los alimentos se expresa en kcal (kilocalorías): 1 kcal = 4.184 J. Un corredor de 70 kg a 12 km/h (3,33 m/s) tiene Ec = 0,5 × 70 × 11,1 ≈ 388 J ≈ 0,093 kcal, una fracción ínfima del gasto calórico total de la carrera.'
+    },
+    {
+      q: '¿Cómo se relaciona la energía cinética con las colisiones?',
+      a: 'En una colisión elástica (pelotas de billar), la energía cinética total se conserva: Ec_total_antes = Ec_total_después. En una colisión inelástica perfecta (dos objetos que se unen al chocar), parte de la Ec se convierte en deformación, calor y sonido: la Ec disminuye. En los choques de tráfico, la Ec se disipa en deformación de la carrocería (diseñada para absorber energía en zonas de deformación programada). Un choque a 50 km/h (13,89 m/s) de un auto de 1.000 kg tiene Ec = 0,5 × 1000 × 193 ≈ 96.000 J que debe absorberse en milisegundos. Los airbags extienden el tiempo de colisión para reducir la fuerza de impacto.'
+    },
+  ]}
+>
   <EnergiaCineticaTool client:load />
 </CalcLayout>
-

@@ -1,36 +1,45 @@
-﻿---
+---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import ConvLongitudTool from '@/components/tools/ConvLongitudTool';
 ---
 
 <CalcLayout slug="conversor-longitud"
-  whatIs="La calculadora de conversor-longitud es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  {
-    q: '¿Cuántos centímetros tiene un metro?',
-    a: 'Esta pregunta fundamental es planteada por muchos usuarios al utilizar herramientas de cálculo como la nuestra. La respuesta completa depende del contexto específico, tus objetivos personales claros, y cómo planeas usar esta información valiosa. En general, la mayoría de usuarios encuentran esta herramienta increíblemente útil para una amplia gama de aplicaciones prácticas y reales. Desde contextos académicos rigurosos hasta situaciones financieras reales y complejas, hay numerosos casos de uso donde esta información es absolutamente valiosa. La clave fundamental es entender cómo aplicar correctamente los resultados a tu situación específica y única. Nuestra herramienta proporciona la base matemática sólida que necesitas para tomar decisiones informadas y confiables. Experimenta con diferentes escenarios para descubrir todas las formas creativas en que puedes utilizar esta herramienta en tu vida diaria.',
-  },
-  {
-    q: '¿Cuántos metros hay en una milla?',
-    a: 'Esta pregunta fundamental es planteada por muchos usuarios al utilizar herramientas de cálculo como la nuestra. La respuesta completa depende del contexto específico, tus objetivos personales claros, y cómo planeas usar esta información valiosa. En general, la mayoría de usuarios encuentran esta herramienta increíblemente útil para una amplia gama de aplicaciones prácticas y reales. Desde contextos académicos rigurosos hasta situaciones financieras reales y complejas, hay numerosos casos de uso donde esta información es absolutamente valiosa. La clave fundamental es entender cómo aplicar correctamente los resultados a tu situación específica y única. Nuestra herramienta proporciona la base matemática sólida que necesitas para tomar decisiones informadas y confiables. Experimenta con diferentes escenarios para descubrir todas las formas creativas en que puedes utilizar esta herramienta en tu vida diaria.',
-  },
-  {
-    q: '¿Qué diferencia hay entre una yarda y un pie?',
-    a: 'Esta pregunta fundamental es planteada por muchos usuarios al utilizar herramientas de cálculo como la nuestra. La respuesta completa depende del contexto específico, tus objetivos personales claros, y cómo planeas usar esta información valiosa. En general, la mayoría de usuarios encuentran esta herramienta increíblemente útil para una amplia gama de aplicaciones prácticas y reales. Desde contextos académicos rigurosos hasta situaciones financieras reales y complejas, hay numerosos casos de uso donde esta información es absolutamente valiosa. La clave fundamental es entender cómo aplicar correctamente los resultados a tu situación específica y única. Nuestra herramienta proporciona la base matemática sólida que necesitas para tomar decisiones informadas y confiables. Experimenta con diferentes escenarios para descubrir todas las formas creativas en que puedes utilizar esta herramienta en tu vida diaria.',
-  },
-  {
-    q: '¿Cuántas pulgadas tiene un pie?',
-    a: 'Esta pregunta fundamental es planteada por muchos usuarios al utilizar herramientas de cálculo como la nuestra. La respuesta completa depende del contexto específico, tus objetivos personales claros, y cómo planeas usar esta información valiosa. En general, la mayoría de usuarios encuentran esta herramienta increíblemente útil para una amplia gama de aplicaciones prácticas y reales. Desde contextos académicos rigurosos hasta situaciones financieras reales y complejas, hay numerosos casos de uso donde esta información es absolutamente valiosa. La clave fundamental es entender cómo aplicar correctamente los resultados a tu situación específica y única. Nuestra herramienta proporciona la base matemática sólida que necesitas para tomar decisiones informadas y confiables. Experimenta con diferentes escenarios para descubrir todas las formas creativas en que puedes utilizar esta herramienta en tu vida diaria.',
-  },
-  {
-    q: '¿Cómo se convierte kilómetros a millas?',
-    a: 'Esta pregunta fundamental es planteada por muchos usuarios al utilizar herramientas de cálculo como la nuestra. La respuesta completa depende del contexto específico, tus objetivos personales claros, y cómo planeas usar esta información valiosa. En general, la mayoría de usuarios encuentran esta herramienta increíblemente útil para una amplia gama de aplicaciones prácticas y reales. Desde contextos académicos rigurosos hasta situaciones financieras reales y complejas, hay numerosos casos de uso donde esta información es absolutamente valiosa. La clave fundamental es entender cómo aplicar correctamente los resultados a tu situación específica y única. Nuestra herramienta proporciona la base matemática sólida que necesitas para tomar decisiones informadas y confiables. Experimenta con diferentes escenarios para descubrir todas las formas creativas en que puedes utilizar esta herramienta en tu vida diaria.',
-  },
-  {
-    q: '¿Qué unidad de longitud se usa en astronomía?',
-    a: 'Esta pregunta fundamental es planteada por muchos usuarios al utilizar herramientas de cálculo como la nuestra. La respuesta completa depende del contexto específico, tus objetivos personales claros, y cómo planeas usar esta información valiosa. En general, la mayoría de usuarios encuentran esta herramienta increíblemente útil para una amplia gama de aplicaciones prácticas y reales. Desde contextos académicos rigurosos hasta situaciones financieras reales y complejas, hay numerosos casos de uso donde esta información es absolutamente valiosa. La clave fundamental es entender cómo aplicar correctamente los resultados a tu situación específica y única. Nuestra herramienta proporciona la base matemática sólida que necesitas para tomar decisiones informadas y confiables. Experimenta con diferentes escenarios para descubrir todas las formas creativas en que puedes utilizar esta herramienta en tu vida diaria.',
-  },
-]}>
+  whatIs="El conversor de longitud transforma al instante entre 8 unidades del Sistema Internacional y el sistema anglosajón: metros (m), kilómetros (km), centímetros (cm), milímetros (mm), millas (mi), yardas (yd), pies (ft) y pulgadas (in). Opera con precisión de punto flotante — ingresa cualquier valor y obtén la equivalencia al instante."
+  whyUse="En Latinoamérica, la construcción y topografía usan el sistema métrico, pero materiales importados de EE.UU. o planos anglosajones vienen en pies y pulgadas. Estudiantes del COMIPEMS, ICFES, PSU y ENEM necesitan convertir unidades de longitud en problemas de física y geometría. Arquitectos, ingenieros civiles, diseñadores y estudiantes usan este conversor a diario."
+  faqs={[
+    {
+      q: '¿Cuántos centímetros tiene un metro y por qué el sistema métrico usa potencias de 10?',
+      a: 'Un metro tiene exactamente 100 centímetros (1 m = 100 cm) y 1000 milímetros (1 m = 1000 mm). El sistema métrico decimal fue creado en Francia en 1795 con el principio de que cada unidad sea 10 veces la anterior, facilitando los cálculos. Latinoamérica adoptó el sistema métrico durante el siglo XIX: México en 1857, Argentina en 1863, Colombia en 1853, Chile en 1848. Hoy es el sistema oficial en todos los países de LATAM para ciencia, industria, educación y comercio, regido por el Sistema Internacional de Unidades (SI) y por organismos como el INMETRO (Brasil), CENAM (México) y el IPQ (Chile). La conversión entre unidades métricas solo requiere mover el punto decimal: 1,5 km = 1500 m = 150 000 cm. Es el sistema más intuitivo y el que todos los exámenes de física en la región priorizan.',
+    },
+    {
+      q: '¿Cuántos pies tiene un metro? ¿Por qué los planos de EE.UU. usan pies?',
+      a: 'Un metro equivale exactamente a 3,28084 pies (ft). La relación exacta por definición internacional (desde 1959) es: 1 pie = 0,3048 metros. Por lo tanto, 1 metro = 1/0,3048 ≈ 3,28084 pies. El sistema imperial (pies, pulgadas, millas) sigue siendo el estándar oficial en EE.UU. En México, Colombia, Perú y el resto de LATAM esto genera problemas prácticos: catálogos de materiales como tablaroca (drywall), tuberías de PVC importadas de EE.UU. y maquinaria industrial vienen con medidas en pies y pulgadas. Los ingenieros civiles de la región convierten constantemente entre ambos sistemas en proyectos de infraestructura. Asimismo, la altitud en aviación civil se reporta globalmente en pies (el aeropuerto El Dorado de Bogotá está a 8361 ft = 2548 m; el AICM de CDMX a 7316 ft = 2230 m).',
+    },
+    {
+      q: '¿Cuánto mide una milla en kilómetros? ¿Dónde se usan millas en LATAM?',
+      a: 'Una milla estatutaria equivale a 1,609344 km exactos (relación exacta por definición desde 1959). La milla náutica es diferente: 1 milla náutica = 1852 m = 1,852 km. En Latinoamérica, las millas aparecen en: (1) Aeronáutica: distancias entre aeropuertos, planes de vuelo y separación horizontal entre aeronaves se expresan en millas náuticas (LAX a MEX = 1551 nm). (2) Atletismo: carreras importadas de EE.UU. como el "1 Mile Run" y algunas competencias trail. (3) Automovilismo: los velocímetros de vehículos importados de EE.UU. muestran mph (millas por hora) como escala secundaria. (4) Aplicaciones deportivas: Strava, Garmin y Apple Watch permiten configurar entre km y millas, y muchos contenidos de entrenamiento anglosajones usan millas. En seguridad vial en LATAM, los límites de velocidad se expresan siempre en km/h.',
+    },
+    {
+      q: '¿Cuántas pulgadas tiene un pie? ¿Cómo se usa en la construcción en LATAM?',
+      a: 'Un pie tiene 12 pulgadas exactamente (1 ft = 12 in). Una pulgada = 2,54 cm exactos. La industria de la construcción en LATAM convive con ambos sistemas: los ladrillos, bloques y concreto se dimensionan en metros y centímetros según las normas NOM (México), NSR-10 (Colombia), NCh 430 (Chile) y CIRSOC (Argentina). Sin embargo, el acero estructural importado de EE.UU., las tuberías de PVC y los accesorios sanitarios se nombran en pulgadas: "tubo de 1/2 pulgada" (= 12,7 mm diámetro nominal), "tubo de 4 pulgadas" (= 101,6 mm). Las pantallas de TV y monitores siempre se anuncian en pulgadas (55", 65", 75") en toda LATAM. Los plomeros, gasfiteros y maestros de obra manejan cotidianamente pulgadas para tubería y metros para las obras estructurales.',
+    },
+    {
+      q: '¿Qué son las yardas y cuándo se usan en Latinoamérica?',
+      a: 'Una yarda equivale a 3 pies = 0,9144 metros. Las yardas tienen presencia limitada en LATAM comparado con metros, pies y pulgadas. Sus usos más comunes en la región: (1) Telas y textiles: en México, Centroamérica y Colombia es frecuente vender tela por yardas en mercados tradicionales, herencia del comercio histórico con EE.UU. Una yarda de tela ≈ 91,4 cm. (2) Fútbol americano: en la NFL México y las transmisiones deportivas las yardas son la unidad oficial (10 yardas para el primer down = 9,14 m). (3) Golf: los hoyos en campos de LATAM se expresan en yardas (par 3 de 150 yd = 137 m; par 5 de 520 yd = 475 m). (4) Topografía histórica: algunos sistemas catastrales coloniales del Caribe anglófono (Jamaica, Belice, Trinidad) usaron yardas en sus registros de tierras originales.',
+    },
+    {
+      q: '¿Cómo se aplica la conversión de longitud en topografía y catastro de LATAM?',
+      a: 'La topografía y el catastro en Latinoamérica usan el metro como unidad oficial, pero enfrentan retos con datos históricos en varas (unidad colonial ≈ 0,836 m) o en sistemas heredados de EE.UU. Los instrumentos topográficos modernos (estaciones totales Leica, GPS Trimble) pueden trabajar en m o ft y deben configurarse correctamente para evitar errores de escala. Organismos como el INEGI (México), IGAC (Colombia), IGM (Argentina y Chile) e IBGE (Brasil) producen cartografía en el Sistema Métrico con coordenadas UTM en metros. En proyectos de catastro rural con títulos coloniales, los topógrafos convierten varas a metros usando el factor 0,836 m/vara. Un título que dice "100 varas de frente" equivale a 83,6 m de frente en el mapa moderno. La confusión entre varas, pies y metros ha generado litigios de tierras en varias regiones latinoamericanas.',
+    },
+    {
+      q: '¿Cuáles son los errores más comunes al convertir unidades de longitud?',
+      a: 'Los errores más frecuentes en conversión de longitud son: (1) Confundir mm con cm: 50 mm = 5 cm, no 50 cm. En planos de construcción, este error multiplica una dimensión por 10. (2) Confundir milla terrestre con milla náutica: 1 mi terrestre = 1,609 km; 1 milla náutica = 1,852 km — un barco que confunda ambas en 100 millas se desvía ~24 km. (3) Confundir "pulgadas" de longitud con "pulgadas" de área (in²) o presión (psi): tres grandezas distintas con el mismo nombre. (4) Usar factores redondeados: 1 in ≈ 2,5 cm (2% de error vs. 2,54 cm exacto); en 100 mediciones acumuladas el error supera 4 cm. (5) Olvidar que los planos de ingeniería en escala 1:100 expresan 1 cm en papel = 1 m real — la escala ya incorpora la conversión y no debe aplicarse de nuevo.',
+    },
+    {
+      q: '¿Cómo aparece la conversión de longitud en los exámenes de admisión de LATAM?',
+      a: 'La conversión de unidades es contenido básico en Matemáticas y Física de los principales exámenes de admisión universitaria de LATAM. En el COMIPEMS (México): problemas de conversión directa entre km, m y cm en cinemática; también aparece la "vara" y el "pie" en algunos reactivos de geometría histórica. En el ICFES/Saber 11 (Colombia): conversión en problemas de magnitudes físicas y proporcionalidad; la escala 1 m = 100 cm se aplica en geometría. En la PSU/PAES (Chile): factores de conversión como tabla de datos dada al inicio de la prueba de física; el estudiante debe aplicarlos en problemas de cinemática (velocidad promedio, trayectorias). En el ENEM (Brasil): "grandezas e medidas" con conversiones en contextos aplicados (planos de casas, velocímetros). En preparación universitaria, dominar los factores: 1 km = 1000 m, 1 m = 100 cm, 1 pie = 0,3048 m, 1 pulgada = 2,54 cm es el punto de partida.',
+    },
+  ]}
+>
   <ConvLongitudTool client:load />
 </CalcLayout>
-

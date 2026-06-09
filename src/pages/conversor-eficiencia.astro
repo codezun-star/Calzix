@@ -1,17 +1,45 @@
-﻿---
+---
 import CalcLayout from "@/components/layout/CalcLayout.astro";
 import ConvEficienciaTool from "@/components/tools/ConvEficienciaTool";
 ---
 
 <CalcLayout slug="conversor-eficiencia"
-  whatIs="La calculadora de conversor-eficiencia es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precisión?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="El conversor de eficiencia de combustible transforma entre las 4 unidades usadas para medir el rendimiento de vehículos: litros por 100 kilómetros (L/100km), kilómetros por litro (km/L), millas por galón americano (mpg US) y millas por galón británico (mpg UK). Estas unidades son inversas o proporcionales entre sí — la conversión requiere aritmética específica para cada par."
+  whyUse="En Latinoamérica, el rendimiento de combustible se expresa habitualmente en km/L, la unidad más intuitiva: 'mi auto rinde 14 km/L'. Los catálogos europeos usan L/100km. Los vehículos importados de EE.UU. usan mpg. Con la masiva importación de autos usados de EE.UU. a México, Centroamérica y Ecuador, y la creciente presencia de marcas europeas en toda la región, esta conversión es de uso frecuente para comparar modelos y planificar viajes."
+  faqs={[
+    {
+      q: '¿Cómo se convierte km/L a L/100km y viceversa?',
+      a: 'km/L y L/100km son unidades inversas: L/100km = 100 / (km/L). Ejemplos: 10 km/L = 100/10 = 10 L/100km. 14 km/L = 100/14 = 7,14 L/100km. 20 km/L = 100/20 = 5 L/100km. 7 km/L = 100/7 = 14,3 L/100km. La inversión hace que el orden de "mejor" cambie según la unidad: mayor km/L = mejor rendimiento; menor L/100km = mejor rendimiento. Un auto con 4,5 L/100km (muy eficiente, norma Euro 6) equivale a 22,2 km/L — un valor excelente para el mercado latinoamericano. En México, los autos compactos más vendidos (Nissan Versa, Chevrolet Aveo, Volkswagen Vento) rinden entre 14-18 km/L en ciudad y 18-22 km/L en carretera según pruebas de la AMIA (Asociación Mexicana de la Industria Automotriz).',
+    },
+    {
+      q: '¿Cómo se convierte mpg americano a km/L?',
+      a: '1 mpg US = 1 milla / 1 galón US = 1,609344 km / 3,785411 L = 0,42515 km/L. Por lo tanto: km/L = mpg_US × 0,42515, y mpg_US = km/L / 0,42515 = km/L × 2,352. Ejemplos prácticos: 30 mpg US = 30 × 0,42515 = 12,75 km/L. 40 mpg US = 17,0 km/L. 50 mpg US (Toyota Prius híbrido) = 21,3 km/L. Un Ford F-150 pickup con 24 mpg US en carretera equivale a 10,2 km/L. En México, el INEGI reporta que las pickups (Ram, F-150, Silverado) son de los vehículos más vendidos en estados del norte, muchos importados de EE.UU. Sus especificaciones de consumo en mpg requieren conversión a km/L para comparar con opciones del mercado latinoamericano.',
+    },
+    {
+      q: '¿Qué diferencia hay entre el galón americano y el galón imperial (UK)?',
+      a: 'El galón americano (US gal) y el galón imperial (UK gal) son unidades distintas: 1 US gal = 3,785411 L. 1 UK gal = 4,546092 L. El galón imperial es un 20,1% mayor que el americano. Consecuencia directa: el mismo auto que rinde 30 mpg US solo da 30 × 3,785411/4,546092 = 24,95 ≈ 25 mpg UK. Es crucial saber qué galón usa el fabricante al comparar consumos. Las fichas técnicas de autos americanos (Ford, GM, Chrysler/Stellantis) usan mpg US. Los catálogos europeos orientados al mercado del Reino Unido usan mpg UK. En Latinoamérica, los distribuidores oficiales suelen convertir el consumo a L/100km o km/L en sus materiales de marketing para la región.',
+    },
+    {
+      q: '¿Cuáles son los consumos de combustible típicos de los autos más vendidos en LATAM?',
+      a: 'Consumos representativos (ciudad/carretera combinado) de los autos más vendidos en Latinoamérica 2023: Nissan Versa (México, Colombia, Argentina): 15-17 km/L = 6,5-6,7 L/100km. Volkswagen Gol/Polo (Brasil, Argentina): 13-16 km/L = 6,3-7,7 L/100km. Chevrolet Onix (Brasil, Colombia, Argentina): 13-15 km/L = 6,7-7,7 L/100km. Toyota Corolla Cross Híbrido (Chile, Colombia, México): 18-22 km/L = 4,5-5,6 L/100km. Chevrolet Tracker (Colombia, Argentina, Brasil): 11-13 km/L = 7,7-9,1 L/100km. Kia Picanto (Colombia, Perú, Chile): 17-19 km/L = 5,3-5,9 L/100km. Pickups doble cabina (Toyota Hilux, Ford Ranger, VW Amarok): 8-11 km/L = 9-12,5 L/100km. Los autos híbridos y eléctricos crecen aceleradamente en Chile, México y Colombia, donde existen incentivos fiscales (exención de IVA, patente reducida, acceso a carriles preferenciales).',
+    },
+    {
+      q: '¿Cómo calcular el costo de combustible en un viaje usando el rendimiento?',
+      a: 'Fórmula: Costo = (Distancia / Rendimiento) × Precio_combustible. Ejemplo en México: viaje Ciudad de México – Guadalajara (600 km), auto con 15 km/L, gasolina Magna a $22,50 MXN/L (precio promedio 2024): Combustible = 600/15 = 40 L. Costo = 40 × $22,50 = $900 MXN ≈ $47 USD. Ejemplo en Colombia: Bogotá – Medellín (420 km), auto con 13 km/L, gasolina corriente a $11 000 COP/L: Combustible = 420/13 = 32,3 L. Costo = 32,3 × $11 000 = $355 384 COP ≈ $88 USD. Ejemplo en Chile: Santiago – Valparaíso (120 km), auto con 14 km/L, bencina a $1 200 CLP/L: Combustible = 120/14 = 8,6 L. Costo = 8,6 × $1 200 = $10 286 CLP ≈ $10,8 USD. La diferencia en precio del combustible entre países de LATAM (Venezuela subsidiado; Chile, Uruguay más cercanos a precios internacionales) hace que el rendimiento en km/L sea especialmente valioso para planificar viajes.',
+    },
+    {
+      q: '¿Cómo se regulan las emisiones y la eficiencia energética vehicular en LATAM?',
+      a: 'Las normativas de emisiones y eficiencia vehicular en Latinoamérica se están armonizando con estándares internacionales: México: NOM-163-SEMARNAT establece límites de CO₂ en g/km para vehículos nuevos; el etiquetado oficial muestra consumo en L/100km. Colombia: etiquetado de emisiones obligatorio para vehículos nuevos desde 2022, expresando consumo en L/100km y CO₂ en g/km. Chile: programa de etiquetado del Ministerio de Energía, escala A-G, mostrando L/100km y g CO₂/km; también exención de permiso de circulación para VE en varias regiones. Brasil: PROCONVE (Programa de Controle da Poluição do Ar por Veículos Automotores) con límites de emisiones equivalentes a Euro 5/6. Argentina: Resolución ME/2014 con etiquetas de consumo en L/100km. La relación consumo-emisiones: 1 L gasolina quemada emite ≈ 2,31 kg CO₂; 1 L diésel ≈ 2,68 kg CO₂. Un auto con 8 L/100km emite ≈ 184 g CO₂/km.',
+    },
+    {
+      q: '¿Cómo afecta la altitud y el tráfico al rendimiento real en LATAM?',
+      a: 'El rendimiento real de un vehículo en LATAM puede diferir significativamente del valor de catálogo por varios factores: (1) Altitud: a 2240 m (CDMX) un motor atmosférico pierde ≈ 20-25% de potencia por menor densidad del aire, incrementando el consumo. Un auto con 15 km/L en Guadalajara (1566 m) puede rendir 12-13 km/L en CDMX. Los motores turboalimentados compensan mejor este efecto. (2) Tráfico congestionado: la conducción urbana con paradas frecuentes reduce el rendimiento 30-40% vs. carretera. En Bogotá (una de las ciudades más congestionadas de LATAM según TomTom), un auto declarado en 15 km/L puede promediar 9-10 km/L. (3) Aire acondicionado: en climas tropicales (Cartagena, Panamá, Guayaquil, Manaus) el A/C reduce el rendimiento 10-15%. (4) Mantenimiento: filtros de aire sucios reducen eficiencia hasta 10%; neumáticos desinflados entre 2-5%. (5) Combustible adulterado: en algunos mercados informales de LATAM, gasolina con alto porcentaje de etanol o diésel con agua puede reducir el rendimiento hasta 8%.',
+    },
+    {
+      q: '¿Qué diferencias tiene la eficiencia de autos eléctricos vs. combustión en LATAM?',
+      a: 'Los vehículos eléctricos (BEVs) miden su eficiencia en kWh/100km (en lugar de L/100km). La comparación energética: 1 litro de gasolina = ≈ 34,2 MJ = 9,5 kWh de energía química. Un auto de combustión con 10 L/100km consume 10 × 9,5 = 95 kWh de energía química por cada 100 km, pero con eficiencia térmica ≈ 25-35%, aprovecha solo ≈ 24-33 kWh en movimiento. Un BEV (BYD Seagull, MG4, BYD Atto 3 — los más vendidos en LATAM en 2024) consume ≈ 14-20 kWh/100km eléctricos reales con eficiencia de motor eléctrico > 90%. Chile lidera el parque de VE en LATAM (≈ 22 000 unidades en 2024), seguido de México y Colombia, que tienen incentivos tributarios (exención IVA en Colombia, tenencia reducida en CDMX). El costo energético real: 100 km en BEV (15 kWh) a tarifa eléctrica doméstica ($0,12 USD/kWh): ≈ $1,80 USD. 100 km en gasolina (10 km/L, $1,20/L): ≈ $12 USD — 6,7× más costoso para el gasolinero.',
+    },
+  ]}
+>
   <ConvEficienciaTool client:load />
 </CalcLayout>
-

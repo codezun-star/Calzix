@@ -1,17 +1,45 @@
-﻿---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import SolucionConcentracionTool from "@/components/tools/SolucionConcentracionTool";
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import SolucionConcentracionTool from '@/components/tools/SolucionConcentracionTool';
 ---
 
 <CalcLayout slug="solucion-concentracion"
-  whatIs="La calculadora de solucion-concentracion es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precisión?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="Esta calculadora calcula la concentración de una disolución en tres unidades diferentes: (1) Molaridad M (mol/L): moles de soluto por litro de disolución, requiere la masa molar del soluto; (2) Concentración en masa % m/m: porcentaje de la masa del soluto respecto a la masa total de la disolución; (3) Partes por millón ppm (mg/L): miligramos de soluto por litro de disolución, usado en análisis ambiental y de aguas. Introduce la masa de soluto y el volumen o masa de la disolución para obtener el resultado al instante."
+  whyUse="Las tres formas de expresar concentración (M, % m/m y ppm) se usan en distintos contextos y es fundamental saber cuándo aplicar cada una. La molaridad es el estándar en química analítica y de laboratorio. El porcentaje m/m es el de los productos comerciales (lejía 5%, vinagre 5%). Las ppm son la escala de los contaminantes ambientales en agua y aire, regulados por la CONAGUA, el IDEAM, la SUNASS y el MMA de Chile. Es materia de bachillerato y universidad en toda Latinoamérica."
+  faqs={[
+    {
+      q: '¿Cuáles son las formas de expresar la concentración de una disolución?',
+      a: 'Las principales formas de expresar concentración son: Molaridad M (mol/L): la más usada en laboratorio. M = n/V = (m/Mm)/V. Molalidad m (mol/kg solvente): independiente de T, para propiedades coligativas. Fracción molar x: χ_A = n_A/(n_A+n_B+…). Porcentaje m/m (%): (g_soluto/g_solución)×100. Porcentaje m/v (%): (g_soluto/mL_solución)×100 — común en medicina y farmacia. Porcentaje v/v (%): (mL_soluto/mL_solución)×100 — bebidas alcohólicas (el grado Gay-Lussac de una cerveza 5° es 5% v/v). Partes por millón ppm (mg/L ó mg/kg): para concentraciones muy bajas. Partes por billón ppb (µg/L): para contaminantes en agua potable. Esta calculadora cubre M, % m/m y ppm.'
+    },
+    {
+      q: '¿Cuándo uso molaridad, porcentaje m/m o ppm?',
+      a: 'Guía de cuándo usar cada unidad: Molaridad M: en reacciones químicas (estequiometría en solución), titulaciones, preparación de tampones, análisis clínicos (glucosa en sangre 5,5 mmol/L = 99 mg/dL). % m/m: en productos industriales y comerciales con composición declarada — ácido sulfúrico concentrado 98%, ácido clorhídrico 37%, lejía 5% NaClO, alcohol 70%, vinagre 5% ácido acético. ppm (mg/L): en análisis ambiental y de aguas — metales pesados en ríos (plomo, mercurio, arsénico), cloro en agua potable (0,2-1,5 ppm), pesticidas en aguas superficiales. ppb (µg/L): hormonas, dioxinas, plaguicidas organoclorados en agua o sangre. En LATAM, las normas de calidad del agua (NOM-127-SSA1, Res. 2115 Colombia, NCh 409 Chile) expresan los límites en mg/L = ppm.'
+    },
+    {
+      q: '¿Qué son las ppm y cómo se miden en agua en LATAM?',
+      a: 'Una parte por millón (ppm) equivale a 1 mg de soluto por litro de solución acuosa (mg/L), que es lo mismo que 1 mg/kg = 1 g/m³. Para soluciones tan diluidas, se asume densidad ≈ 1 kg/L. Ejemplos de límites en agua potable según normas latinoamericanas: Cloro residual libre: 0,2-1,0 mg/L (México NOM-127, Colombia Res. 2115). Nitratos NO₃⁻: máx. 50 mg/L (OMS). Arsénico: máx. 0,010 mg/L = 10 µg/L = 10 ppb (OMS; estándar alcanzado solo en algunas redes de LATAM). Plomo: máx. 0,010 mg/L (OMS, actualizado 2022). Hierro: máx. 0,3 mg/L (causa sabor y color rojizo). Fluoruro: 0,7-1,5 mg/L (fluoración artificial del agua potable para prevenir caries, practica común en Brasil). Los kits de colorimetría (DPD para cloro, espectrofotometría) miden directamente en ppm en campo.'
+    },
+    {
+      q: '¿Cómo convierto entre M, % m/m y ppm?',
+      a: 'Conversiones entre unidades de concentración (para soluciones acuosas diluidas, densidad ≈ 1 g/mL): ppm (mg/L) → M: M = ppm / (Mm × 1000), donde Mm es la masa molar en g/mol. Ejemplo: arsénico 10 ppm = 10 mg/L, M_As = 74,922 g/mol → M = 10/(74,922×1000) = 1,33×10⁻⁴ M. M → ppm: ppm = M × Mm × 1000. % m/m → M (para solución con densidad ρ g/mL): M = (% × ρ × 10) / Mm. Ejemplo: H₂SO₄ 98%, ρ=1,84 g/mL, Mm=98,079 → M = (98 × 1,84 × 10)/98,079 ≈ 18,4 M. M → % m/m: % = (M × Mm) / (ρ × 10). Conocer estas conversiones es esencial para comparar concentraciones expresadas en distintas unidades en informes de laboratorio ambientales y de salud pública en LATAM.'
+    },
+    {
+      q: '¿Cómo aplica la concentración en la industria del agua en LATAM?',
+      a: 'El tratamiento y control de calidad del agua es uno de los sectores que más usa el concepto de concentración en LATAM. En plantas potabilizadoras como la SACMEX en CDMX, Acueducto Metropolitano de Bogotá, SEDAPAL en Lima o AGOSBA en Buenos Aires: (1) Dosificación de cloro: mantener 0,2-0,5 ppm de Cl₂ residual. Con hipoclorito de sodio al 10% (m/m): calcular cuántos litros añadir a 1 millón de litros de agua para alcanzar 0,3 ppm. (2) Coagulación: sulfato de aluminio Al₂(SO₄)₃ 10-50 ppm para eliminar turbidez. (3) Fluoración: NaF o Na₂SiF₆ para alcanzar 0,7 mg/L de F⁻. (4) Control de pH con CO₂ o cal hidratada. Cada una de estas operaciones requiere cálculos de concentración que esta calculadora resuelve al instante.'
+    },
+    {
+      q: '¿Qué significa el grado alcohólico de las bebidas y cómo se calcula?',
+      a: 'El grado alcohólico Gay-Lussac (°GL) mide los mL de etanol por 100 mL de bebida a 20°C (% v/v). Bebidas latinoamericanas y sus grados: Cerveza (Corona, Modelo, Quilmes, Cristal, Bavaria) — 4-6°GL. Vino (Malbec argentino, Carménère chileno, Syrah colombiano) — 12-14°GL. Pisco (Perú y Chile) — 38-43°GL. Tequila y mezcal (México) — 38-55°GL. Aguardiente (Colombia) — 29-34°GL. Cachaça (Brasil) — 38-48°GL. Ron (Cuba, República Dominicana, Guatemala) — 37-43°GL. Para calcular la concentración molar de etanol en una cerveza 5°GL: densidad_etanol ≈ 0,789 g/mL, Mm_etanol = 46,07 g/mol. M = (50 mL/L × 0,789 g/mL) / 46,07 g/mol = 0,856 M. El etanol es el compuesto psicoactivo cuya concentración sanguínea (g/L o g/dL) mide el alcoholímetro en los operativos de tránsito de toda Latinoamérica.'
+    },
+    {
+      q: '¿Cómo se mide la concentración de glucosa en sangre y por qué importa en LATAM?',
+      a: 'La glucosa en sangre se mide normalmente en mg/dL (dL = 100 mL) o mmol/L (Europa). La conversión: glucosa (mg/dL) = glucosa (mmol/L) × 18,016. Valores de referencia: Ayuno normal: 70-100 mg/dL = 3,9-5,6 mmol/L. Diabetes diagnosticada: ≥ 126 mg/dL = ≥ 7,0 mmol/L. Hipoglucemia: < 70 mg/dL. La diabetes tipo 2 es una epidemia en Latinoamérica: México ocupa el 6° lugar mundial en número de diabéticos (≈ 14 millones), Colombia ≈ 3 millones, Brasil ≈ 16 millones, Argentina ≈ 4 millones. Los glucómetros portátiles (OneTouch, Accu-Chek, FreeStyle) miden la concentración de glucosa en sangre capilar por amperometría enzimática — son la aplicación práctica más masiva de la medición de concentración en LATAM.'
+    },
+    {
+      q: '¿Cómo se controla la concentración de contaminantes en suelos de LATAM?',
+      a: 'La contaminación de suelos por metales pesados (Pb, Cd, Hg, As, Cr) es un problema grave en zonas mineras de Perú (Cerro de Pasco, La Oroya), Bolivia (Potosí, Oruro), Chile (Atacama) y Colombia (Chocó, Córdoba). Las concentraciones se expresan en mg/kg de suelo seco (ppm en sólidos). Límites de remediación típicos: Plomo Pb — < 400 mg/kg (uso residencial), < 1.000 mg/kg (uso industrial). Cadmio Cd — < 3 mg/kg. Arsénico As — < 12 mg/kg. Mercurio Hg — < 23 mg/kg. La minería artesanal del oro (ASGM) usa mercurio elemental para la amalgamación: 1 kg de mercurio por cada 4-5 gramos de oro producido, contaminando suelos y ríos. Medir y expresar correctamente estas concentraciones en ppm es el primer paso para cualquier programa de remediación.'
+    },
+  ]}
+>
   <SolucionConcentracionTool client:load />
 </CalcLayout>
-

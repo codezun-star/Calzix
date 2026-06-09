@@ -1,17 +1,45 @@
-﻿---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import NewtonTool from "@/components/tools/NewtonTool";
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import NewtonTool from '@/components/tools/NewtonTool';
 ---
 
 <CalcLayout slug="segunda-ley-newton"
-  whatIs="La calculadora de segunda-ley-newton es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precisión?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="La Segunda Ley de Newton establece que la fuerza neta aplicada a un objeto es igual al producto de su masa por la aceleración que adquiere: F = m × a, donde F se mide en Newtons (N), m en kilogramos (kg) y a en metros por segundo al cuadrado (m/s²). Esta calculadora tiene tres modos: calcular la fuerza dados masa y aceleración, calcular la masa dada fuerza y aceleración, o calcular la aceleración dada fuerza y masa. Los resultados se muestran con hasta 4 decimales."
+  whyUse="La Segunda Ley de Newton es la ecuación más importante de la mecánica clásica y el fundamento de toda la dinámica. Se aplica en ingeniería civil (cargas en estructuras), ingeniería mecánica (diseño de motores y vehículos), aeronáutica, robótica y en la resolución de problemas de física de bachillerato y universidad en México, Colombia, Argentina, Chile, Perú y toda Latinoamérica. Es pregunta obligatoria en el COMIPEMS, ICFES, PAES, PSU y en los exámenes de admisión de las principales universidades de la región."
+  faqs={[
+    {
+      q: '¿Qué es la Segunda Ley de Newton y qué significa F = m × a?',
+      a: 'La Segunda Ley de Newton (1687, Principia Mathematica) establece que la aceleración de un objeto es directamente proporcional a la fuerza neta aplicada e inversamente proporcional a su masa: a = F/m, o equivalentemente F = m × a. El Newton (N) se define a partir de esta ley: 1 N es la fuerza necesaria para imprimir una aceleración de 1 m/s² a una masa de 1 kg. Interpretación intuitiva: para la misma fuerza, un objeto más masivo se acelera menos; para la misma masa, más fuerza produce más aceleración. Esta es la base de toda la dinámica clásica que se estudia en preparatoria y universidad en LATAM.'
+    },
+    {
+      q: '¿Cómo se diferencia la fuerza del peso?',
+      a: 'El peso es la fuerza gravitatoria que ejerce la Tierra sobre un objeto: W = m × g, donde g ≈ 9,81 m/s² (aceleración de la gravedad). Es un caso particular de F = m × a donde la aceleración es g. Ejemplo: un objeto de 10 kg pesa W = 10 × 9,81 = 98,1 N. La masa (kg) es una propiedad intrínseca del objeto y no cambia con la ubicación. El peso (N) cambia con la gravedad: en la Luna (g = 1,62 m/s²), los mismos 10 kg pesan solo 16,2 N. Esta distinción entre masa y peso es uno de los conceptos más importantes de la física escolar en Latinoamérica y causa de muchos errores conceptuales.'
+    },
+    {
+      q: '¿Qué son las tres Leyes de Newton y cómo se relacionan?',
+      a: 'Las tres Leyes de Newton forman el sistema completo de la mecánica clásica: (1) Primera Ley (Inercia): un objeto en reposo permanece en reposo y uno en movimiento continúa a velocidad constante, a menos que una fuerza neta actúe sobre él. (2) Segunda Ley: F = m × a — la fuerza neta determina la aceleración. (3) Tercera Ley (Acción-Reacción): para cada fuerza hay una fuerza igual y opuesta sobre el otro cuerpo. Ejemplo de la tercera: cuando un cohete expulsa gases hacia atrás (acción), el cohete avanza hacia adelante (reacción). Estas tres leyes son el núcleo de la física de preparatoria en toda Latinoamérica.'
+    },
+    {
+      q: '¿Cómo se usa F = m × a en problemas de transporte en LATAM?',
+      a: 'Ejemplos prácticos: (1) Un automóvil de 1.200 kg acelera de 0 a 100 km/h (27,78 m/s) en 10 s. Aceleración a = 27,78/10 = 2,778 m/s². Fuerza neta F = 1200 × 2,778 = 3.333 N. (2) Una motocicleta de 200 kg (con conductor) desacelera de 80 km/h a cero en 50 m. Usando v² = v0² + 2ad: a = -(22,22²)/(2×50) = -4,94 m/s². Fuerza de frenado F = 200 × 4,94 = 988 N. (3) Un camión de carga de 20.000 kg necesita una fuerza de 60.000 N para subir una rampa. a = 60.000/20.000 = 3 m/s² de aceleración neta.'
+    },
+    {
+      q: '¿Qué es la fuerza de fricción y cómo se combina con F = m × a?',
+      a: 'En la realidad, cuando aplicas una fuerza F sobre un objeto, también actúa la fuerza de fricción f = mu × N (donde mu es el coeficiente de fricción y N la fuerza normal). La fuerza neta es F_neta = F_aplicada - f. La Segunda Ley siempre usa la fuerza NETA: a = F_neta / m. Ejemplo: empujas una caja de 20 kg con 100 N sobre suelo con mu = 0,3. Fricción f = 0,3 × 20 × 9,81 = 58,86 N. F_neta = 100 - 58,86 = 41,14 N. a = 41,14/20 = 2,06 m/s². La calculadora calcula F, m o a a partir de la fuerza neta que tú introduces.'
+    },
+    {
+      q: '¿Cómo se aplica la Segunda Ley en la ingeniería latinoamericana?',
+      a: 'En ingeniería civil, F = m × a determina las cargas sísmicas: durante un terremoto, el suelo se acelera horizontalmente y genera una fuerza sísmica F = m × a_sismo sobre los edificios. Las normas de construcción sísmica de México (NTC), Colombia (NSR-10), Chile (NCh433), Perú (NTE E.030) y otros países latinoamericanos calculan estas fuerzas para diseñar estructuras resistentes. En Chile, uno de los países con mayor actividad sísmica del mundo, el cálculo de fuerzas sísmicas mediante F = m × a es central en cada proyecto de ingeniería civil.'
+    },
+    {
+      q: '¿Qué es el impulso y cómo se relaciona con la Segunda Ley?',
+      a: 'El impulso es la cantidad de movimiento transferida por una fuerza durante un tiempo: Impulso = F × Delta_t. La Segunda Ley en forma integral dice: F × Delta_t = m × Delta_v (cambio de cantidad de movimiento). Esto explica por qué un airbag reduce lesiones: al aumentar el tiempo de colisión Delta_t, reduce la fuerza promedio F que actúa sobre el ocupante. Ejemplo: una pelota de 0,5 kg que cambia su velocidad de -20 a +20 m/s en 0,01 s. F = 0,5 × 40 / 0,01 = 2.000 N. El impulso es F × Delta_t = 20 N·s, igual al cambio de cantidad de movimiento.'
+    },
+    {
+      q: '¿Cuáles son los límites de la Segunda Ley de Newton?',
+      a: 'La Segunda Ley de Newton es válida en el marco de la mecánica clásica pero tiene límites: (1) Velocidades relativistas: cuando v se acerca a la velocidad de la luz, es necesaria la mecánica relativista de Einstein; la masa efectiva crece con la velocidad. (2) Escala cuántica: para partículas subatómicas (electrones, quarks), rigen las leyes de la mecánica cuántica. (3) Referencial inercial: F = m × a solo es exacta en referenciales inerciales (no acelerados). En referenciales acelerados (como un auto que frena), aparecen fuerzas ficticias (fuerza centrífuga, de Coriolis). Para las velocidades y escalas de la vida cotidiana y la ingeniería en Latinoamérica, la Segunda Ley de Newton es exacta.'
+    },
+  ]}
+>
   <NewtonTool client:load />
 </CalcLayout>
-

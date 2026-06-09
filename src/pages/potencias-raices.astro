@@ -1,17 +1,45 @@
-﻿---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import PotenciasRaicesTool from "@/components/tools/PotenciasRaicesTool";
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import PotenciasRaicesTool from '@/components/tools/PotenciasRaicesTool';
 ---
 
 <CalcLayout slug="potencias-raices"
-  whatIs="La calculadora de potencias-raices es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precision?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="Las potencias y raíces son operaciones matemáticas inversas. Una potencia (base^exponente) multiplica la base por sí misma tantas veces como indica el exponente: 2³ = 2×2×2 = 8. Una raíz n-ésima es la inversa: la raíz cúbica de 8 es 2. Esta calculadora resuelve ambas operaciones con cualquier base y exponente, incluyendo valores decimales, negativos y fraccionarios, mostrando resultados con hasta 8 decimales de precisión."
+  whyUse="Potencias y raíces son fundamentales en álgebra, geometría, física, química y finanzas. Calcular el área de un cuadrado, el volumen de una esfera, el interés compuesto, la distancia euclídea o la magnitud de un vector requiere potencias y raíces. Son contenido esencial en secundaria y preparatoria en toda Latinoamérica, y en carreras universitarias de ingeniería, física, matemáticas y economía."
+  faqs={[
+    {
+      q: '¿Qué es una potencia y cómo se calcula?',
+      a: 'Una potencia base^n significa multiplicar la base por sí misma n veces. Ejemplos clave: 2⁴=16, 3³=27, 10²=100, 5⁰=1 (cualquier número elevado a 0 es 1), 4^(−2)=1/16=0,0625 (exponente negativo = inverso de la potencia positiva), 9^0,5=√9=3 (exponente 0,5 = raíz cuadrada), 8^(1/3)=2 (exponente 1/3 = raíz cúbica). Nuestra calculadora acepta bases y exponentes negativos y decimales, cubriendo todos los casos de la matemática escolar y universitaria.'
+    },
+    {
+      q: '¿Qué es una raíz n-ésima y cómo se relaciona con las potencias?',
+      a: 'La raíz n-ésima de un número a es el valor x tal que x^n = a. La raíz cuadrada (índice 2): √25=5 porque 5²=25. La raíz cúbica (índice 3): ³√27=3 porque 3³=27. La raíz cuarta de 81 es 3 porque 3⁴=81. Fórmula general: ⁿ√a = a^(1/n). Entonces calcular una raíz es elevar a una potencia fraccionaria: ³√8 = 8^(1/3) = 2. Esto significa que la calculadora de potencias puede resolver cualquier raíz introduciendo el exponente como fracción decimal.'
+    },
+    {
+      q: '¿Puedo calcular potencias con exponentes decimales y negativos?',
+      a: 'Sí. Exponente decimal: a^0,5=√a (raíz cuadrada), a^0,25=⁴√a (raíz cuarta), a^1,5=a×√a. Exponente negativo: a^(−n) = 1/a^n. Ejemplo: 2^(−3) = 1/8 = 0,125; 10^(−2) = 0,01. Exponente cero: a⁰=1 siempre. La calculadora maneja todos estos casos. Solo hay una restricción: la raíz par de un número negativo no es real; por ejemplo, √(−4) no tiene solución en los números reales (es un número imaginario).'
+    },
+    {
+      q: '¿Cómo se aplican las potencias en el cálculo de interés compuesto?',
+      a: 'El interés compuesto usa la fórmula: Monto = Capital × (1 + tasa)^períodos. Ejemplo: inviertes 10.000 pesos a una tasa anual del 8% durante 5 años: Monto = 10.000 × 1,08⁵ = 10.000 × 1,4693 = 14.693 pesos. Calcula 1,08^5 con la calculadora (base=1.08, exponente=5). Aplica para ahorros en cualquier banco de México, Colombia, Argentina, Chile, Perú o cualquier país latinoamericano, ajustando la tasa según el producto financiero.'
+    },
+    {
+      q: '¿Cómo se usan las raíces en geometría y física?',
+      a: 'Raíces en geometría: diagonal de un cuadrado de lado a es a√2; radio de un círculo de área A es √(A/π); en el Teorema de Pitágoras, hipotenusa c=√(a²+b²); lado de un cubo de volumen V es ³√V. En física: velocidad final en caída libre v=√(2gh); amplitud de una onda; magnitud de un vector en 2D |v|=√(vx²+vy²). En estadística: desviación estándar = √varianza. La calculadora resuelve todas estas raíces instantáneamente con cualquier valor numérico.'
+    },
+    {
+      q: '¿Cuáles son las propiedades fundamentales de las potencias?',
+      a: 'Propiedades esenciales: (1) a^n × a^m = a^(n+m) — misma base, sumar exponentes. Ej: 2³×2⁴=2⁷=128. (2) a^n ÷ a^m = a^(n−m) — misma base, restar exponentes. Ej: 3⁵÷3²=3³=27. (3) (a^n)^m = a^(n×m) — potencia de potencia, multiplicar exponentes. Ej: (2³)²=2⁶=64. (4) (a×b)^n = a^n × b^n. Ej: (2×3)⁴=2⁴×3⁴=16×81=1296. (5) a⁰=1 para todo a≠0. (6) a^(−n)=1/a^n. Estas propiedades son esenciales en álgebra y en todo examen de admisión universitaria de Latinoamérica.'
+    },
+    {
+      q: '¿Cómo se calcula la raíz cuadrada de un número sin calculadora?',
+      a: 'Para estimar √n manualmente: encuentra el cuadrado perfecto más cercano. Ejemplo √50: el más cercano es √49=7. Usando la fórmula de aproximación de Newton: √n ≈ a + (n−a²)÷(2a) donde a²≈n. Para √50: a=7, √50 ≈ 7+(50−49)/14 = 7+0,071 ≈ 7,071. Valor real: 7,07107... Cuadrados perfectos útiles: √4=2, √9=3, √16=4, √25=5, √36=6, √49=7, √64=8, √81=9, √100=10, √121=11, √144=12, √169=13, √196=14, √225=15.'
+    },
+    {
+      q: '¿Qué es la notación científica y cómo se relaciona con las potencias de 10?',
+      a: 'La notación científica expresa números muy grandes o muy pequeños como a × 10^n donde 1 ≤ a < 10. Ejemplos: 6.400.000 = 6,4 × 10⁶; 0,00035 = 3,5 × 10^(−4). En física y química se usa constantemente: la masa de un protón es 1,67 × 10^(−27) kg; la distancia Tierra-Sol es 1,496 × 10^11 m; la velocidad de la luz es 3 × 10⁸ m/s. Para calcular (6,4×10⁶)² = 6,4²×10¹² = 40,96×10¹² = 4,096×10¹³. La calculadora de potencias resuelve cualquier operación con estos valores.'
+    },
+  ]}
+>
   <PotenciasRaicesTool client:load />
 </CalcLayout>
-

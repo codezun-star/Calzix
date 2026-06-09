@@ -1,17 +1,45 @@
-﻿---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import VarianzaDesviacionTool from "@/components/tools/VarianzaDesviacionTool";
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import VarianzaDesviacionTool from '@/components/tools/VarianzaDesviacionTool';
 ---
 
 <CalcLayout slug="varianza-desviacion"
-  whatIs="La calculadora de varianza-desviacion es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precision?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="La varianza y la desviación estándar son medidas de dispersión que cuantifican cuánto se alejan los datos de la media. Esta calculadora obtiene ambas con los dos métodos estadísticos: población (divide entre n, cuando tienes todos los datos del grupo) y muestra (divide entre n-1, corrección de Bessel, cuando tus datos son una muestra de una población más grande). También calcula la media, el número de datos y la suma de cuadrados. Introduce los valores separados por coma, punto y coma o espacio."
+  whyUse="La varianza y la desviación estándar son las medidas de dispersión más importantes en estadística. Se usan en control de calidad industrial, finanzas (riesgo de inversión), ciencias de la salud (variabilidad de resultados clínicos), meteorología, agronomía y en prácticamente cualquier disciplina científica. Son contenido fundamental en los cursos de estadística de bachillerato y universidad en México, Colombia, Argentina, Chile, Perú y toda Latinoamérica, y se evalúan en las pruebas COMIPEMS, ICFES, PAES, PSU, CBS y exámenes universitarios de todas las carreras cuantitativas."
+  faqs={[
+    {
+      q: '¿Qué son la varianza y la desviación estándar?',
+      a: 'La varianza (s²) mide la dispersión promedio de los datos respecto a la media, elevando al cuadrado las diferencias para que los valores positivos y negativos no se cancelen. Fórmula de población: s² = suma(xi - media)² ÷ n. La desviación estándar (s) es la raíz cuadrada de la varianza y se expresa en las mismas unidades que los datos originales, lo que la hace más interpretable. Ejemplo: alturas en cm {160, 165, 170, 175, 180}. Media = 170. Varianza = ((-10)²+(-5)²+0²+5²+10²)÷5 = (100+25+0+25+100)÷5 = 50. Desviación estándar = raíz(50) ≈ 7,07 cm.'
+    },
+    {
+      q: '¿Cuál es la diferencia entre varianza de población y varianza de muestra?',
+      a: 'Cuando calculas con TODOS los elementos de un grupo (por ejemplo, las 30 calificaciones de un grupo completo), usas la varianza de población dividiendo entre n. Cuando calculas con una MUESTRA tomada de un grupo más grande (por ejemplo, encuestas a 200 personas de 1 millón), usas la varianza de muestra dividiendo entre n-1 (corrección de Bessel). La razón: dividir entre n en una muestra tiende a subestimar la varianza real de la población; dividir entre n-1 corrige ese sesgo. En estadística inferencial (lo que aprendes en universidad en LATAM), la varianza de muestra con n-1 es el "estimador insesgado" de la varianza poblacional.'
+    },
+    {
+      q: '¿Por qué la varianza eleva al cuadrado y no usa el valor absoluto?',
+      a: 'Una alternativa a la varianza sería la desviación media absoluta (DMA = suma|xi-media|÷n), que también mide dispersión pero sin elevar al cuadrado. La varianza usa el cuadrado por tres razones técnicas: (1) Las derivadas de la función cuadrática son continuas y diferenciables, lo que facilita la optimización matemática (mínimos cuadrados, regresión lineal). (2) La varianza es aditiva: si X e Y son independientes, Var(X+Y) = Var(X) + Var(Y). (3) La distribución normal se define en términos de la varianza. Desventaja del cuadrado: las unidades quedan elevadas al cuadrado (cm², pesos²), por lo que la desviación estándar devuelve las unidades originales.'
+    },
+    {
+      q: '¿Cómo se interpreta la desviación estándar en la práctica?',
+      a: 'Una regla clave (válida para distribuciones aproximadamente normales): el 68% de los datos cae entre media - s y media + s; el 95% entre media - 2s y media + 2s; el 99,7% entre media - 3s y media + 3s (regla empírica 68-95-99,7). Ejemplo real LATAM: si la estatura media de hombres adultos en México es 169 cm con s = 7 cm, entonces el 68% mide entre 162 y 176 cm, y el 95% entre 155 y 183 cm. En control de calidad en manufactura (Monterrey, Bogotá, São Paulo), si el proceso tiene s muy bajo, los productos son uniformes; si s es alto, hay mucha variabilidad y posibles defectos.'
+    },
+    {
+      q: '¿Cómo se usa la desviación estándar en finanzas latinoamericanas?',
+      a: 'En finanzas, la desviación estándar del rendimiento de un activo mide su riesgo o volatilidad. Un activo con rendimientos mensuales {1%, 2%, 1%, 2%} tiene s muy bajo (poco riesgo). Uno con {-10%, 15%, -5%, 20%} tiene s alto (mucho riesgo). La teoría de portafolios de Markowitz (Nobel de Economía 1990) usa varianza y covarianza para construir portafolios óptimos. En bolsas latinoamericanas (BMV de México, BVC de Colombia, BVL de Perú, Bolsa de Santiago, BCBA de Argentina), la volatilidad de acciones se reporta como desviación estándar anualizada de rendimientos diarios.'
+    },
+    {
+      q: '¿Qué es el coeficiente de variación y cuándo es útil?',
+      a: 'El coeficiente de variación (CV) es CV = (s ÷ media) × 100%, que expresa la desviación estándar como porcentaje de la media. Es útil para comparar la dispersión de conjuntos con medias muy distintas. Ejemplo: (1) Tallas de ropa: media = 40, s = 2 — CV = 5%. (2) Precios de casas: media = 2.000.000 pesos, s = 500.000 pesos — CV = 25%. El CV permite decir que los precios de casas son relativamente más variables que las tallas. En agronomía latinoamericana, el CV se usa para comparar la variabilidad del rendimiento de cultivos en distintas regiones o temporadas.'
+    },
+    {
+      q: '¿Cómo se relaciona la varianza con la correlación y la regresión?',
+      a: 'La varianza es el bloque base de muchos métodos estadísticos avanzados: (1) Covarianza: Cov(X,Y) = suma(xi-media_x)(yi-media_y)÷n mide cómo varían dos variables juntas. (2) Correlación de Pearson: r = Cov(X,Y)÷(sx×sy) — la correlación es la covarianza normalizada. (3) Regresión lineal: el coeficiente de determinación R² indica qué fracción de la varianza de Y explica el modelo. (4) ANOVA (Análisis de Varianza): descompone la varianza total en varianza entre grupos y dentro de grupos para comparar medias. En las carreras de ingeniería, economía, medicina y ciencias sociales de toda Latinoamérica, estos métodos son parte central del currículo.'
+    },
+    {
+      q: '¿Qué significa tener varianza cero?',
+      a: 'Si la varianza s² = 0, todos los datos del conjunto son exactamente iguales a la media, es decir, no hay ninguna variabilidad. Ejemplo: el conjunto {5, 5, 5, 5, 5} tiene media 5 y varianza 0. En la práctica, varianza cero indica que el proceso o fenómeno medido no tiene fluctuación: una máquina de precisión perfecta que siempre corta exactamente 10 mm, o una batería que siempre dura exactamente 8 horas. En la realidad, siempre hay alguna varianza mínima por errores de medición. Si introduces datos idénticos en la calculadora de correlación de Pearson, obtendrás un error de "varianza cero" porque la correlación no está definida para series sin variación.'
+    },
+  ]}
+>
   <VarianzaDesviacionTool client:load />
 </CalcLayout>
-

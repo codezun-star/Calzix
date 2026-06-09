@@ -1,17 +1,45 @@
-﻿---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import FactorialTool from "@/components/tools/FactorialTool";
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import FactorialTool from '@/components/tools/FactorialTool';
 ---
 
 <CalcLayout slug="calculadora-factorial"
-  whatIs="La calculadora de calculadora-factorial es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precision?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="El factorial de un número entero no negativo n, escrito n!, es el producto de todos los enteros positivos desde 1 hasta n. Por convención matemática, 0! = 1. Ejemplos: 5! = 5 × 4 × 3 × 2 × 1 = 120, y 10! = 3.628.800. Esta calculadora de factorial online calcula n! de forma exacta usando aritmética de precisión entera para cualquier n entre 0 y 170, devolviendo el número completo sin redondeos ni notación científica."
+  whyUse="El factorial es una operación fundamental en combinatoria, probabilidad y cálculo. Se usa para calcular permutaciones (cuántas formas de ordenar n elementos: n!), combinaciones (C(n,r) = n! ÷ (r! × (n−r)!)), la distribución binomial y de Poisson, las series de Taylor, y es esencial en algoritmos de programación. Es materia obligatoria en matemáticas discretas, estadística y análisis combinatorio en universidades y preparatorias de toda Latinoamérica."
+  faqs={[
+    {
+      q: '¿Qué es el factorial de un número y cómo se calcula?',
+      a: 'El factorial de n (n!) es el producto de todos los enteros positivos desde 1 hasta n. Se calcula multiplicando en cascada: 1!=1, 2!=2, 3!=6, 4!=24, 5!=120, 6!=720, 7!=5.040, 8!=40.320, 9!=362.880, 10!=3.628.800. Por definición, 0!=1. Los factoriales crecen extremadamente rápido: 20! tiene 19 dígitos, 50! tiene 65 dígitos y 100! tiene 158 dígitos. Esta calculadora muestra el resultado exacto y completo para cualquier n entre 0 y 170.'
+    },
+    {
+      q: '¿Para qué se usa el factorial en matemáticas?',
+      a: 'Las aplicaciones del factorial son muy amplias: (1) Permutaciones — el número de formas de ordenar n objetos distintos es n!. Con 5 libros hay 5!=120 ordenamientos posibles. (2) Combinaciones — C(n,r)=n!÷(r!×(n−r)!) cuenta grupos sin importar el orden. (3) Coeficientes binomiales del triángulo de Pascal. (4) Serie de Taylor del número e: e=1+1/1!+1/2!+1/3!+… (5) Distribuciones de Poisson y binomial en estadística. (6) Análisis de la complejidad de algoritmos en ciencias de la computación.'
+    },
+    {
+      q: '¿Por qué 0! = 1?',
+      a: 'Por definición matemática y coherencia formal: si n! = n × (n−1)!, entonces 1! = 1 × 0!, lo que implica 0! = 1!/1 = 1. Esta definición es necesaria para que las fórmulas combinatorias funcionen: C(n,0) = n!/(0!×n!) = 1, lo cual tiene sentido porque hay exactamente una forma de no elegir ningún elemento de un conjunto. La convención 0!=1 es universal en toda la matemática moderna y en todos los sistemas de cálculo del mundo.'
+    },
+    {
+      q: '¿Cuántos dígitos tiene n! para valores grandes?',
+      a: 'El número de dígitos de n! crece con la fórmula de Stirling: dígitos ≈ n×log₁₀(n) − n×log₁₀(e) + ½×log₁₀(2πn). Valores de referencia: 10! tiene 7 dígitos, 20! tiene 19, 30! tiene 33, 50! tiene 65, 100! tiene 158 y 170! tiene 307 dígitos. El número 170! comienza con 7,257415615... × 10^306. Nuestra calculadora muestra todos los dígitos exactos sin redondear, lo cual es útil para verificar resultados en matemáticas discretas y combinatoria avanzada.'
+    },
+    {
+      q: '¿Cómo calculo permutaciones y combinaciones con factoriales?',
+      a: 'Permutaciones P(n,r) = n! ÷ (n−r)!: cuántos arreglos ordenados de r elementos puedes hacer de n totales (importa el orden). Ejemplo: ¿cuántos podios distintos (1°, 2°, 3°) con 8 atletas? P(8,3) = 8!/5! = 8×7×6 = 336. Combinaciones C(n,r) = n! ÷ (r! × (n−r)!): subconjuntos de r elementos de n (no importa el orden). Ejemplo: ¿cuántos grupos de 3 personas de 8? C(8,3) = 8!/(3!×5!) = 56 grupos distintos.'
+    },
+    {
+      q: '¿El factorial funciona para números negativos o decimales?',
+      a: 'El factorial clásico n! solo está definido para enteros no negativos (0, 1, 2, 3, …). Para números negativos enteros no está definido. Para valores reales existe la función Gamma: Γ(n+1) = n!, que extiende el concepto a todos los reales excepto los enteros negativos. Por ejemplo, Γ(1/2+1) = (1/2)! = √π/2 ≈ 0,8862. Esta calculadora trabaja exclusivamente con enteros de 0 a 170, cubriendo todos los casos prácticos de combinatoria y probabilidad.'
+    },
+    {
+      q: '¿Por qué el límite máximo es 170?',
+      a: 'El número 171! ≈ 1,24 × 10^309 supera el valor máximo representable en punto flotante de doble precisión IEEE 754 (~1,8 × 10^308). A partir de n=171 el resultado numérico en JavaScript es Infinity. Nuestra calculadora usa BigInt para calcular el número exacto hasta 170!, mostrando todos sus 307 dígitos sin pérdida de precisión. Esto la hace más precisa que una calculadora científica estándar para valores grandes de n.'
+    },
+    {
+      q: '¿Cuál es la relación entre el factorial y los juegos de azar en Latinoamérica?',
+      a: 'Los factoriales son la base del cálculo de probabilidades en loterías y juegos de azar. En la Lotería Nacional de México (5 de 35 + 1 de 10): C(35,5)×10 = 324.632×10 = 3.246.320 combinaciones. En Baloto de Colombia (5 de 43 + 1 de 16): C(43,5)×16 ≈ 26.000.000 combinaciones. En el Quini 6 de Argentina (6 de 46): C(46,6) = 9.366.819. Cuantas más combinaciones, menor la probabilidad de ganar el premio mayor. Los factoriales permiten calcular exactamente esas probabilidades.'
+    },
+  ]}
+>
   <FactorialTool client:load />
 </CalcLayout>
-

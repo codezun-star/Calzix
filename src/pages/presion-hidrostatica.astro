@@ -1,17 +1,45 @@
-﻿---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import PresionHidrostaticaTool from "@/components/tools/PresionHidrostaticaTool";
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import PresionHidrostaticaTool from '@/components/tools/PresionHidrostaticaTool';
 ---
 
 <CalcLayout slug="presion-hidrostatica"
-  whatIs="La calculadora de presion-hidrostatica es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precisión?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="La presión hidrostática es la presión ejercida por un fluido en reposo a una profundidad h debida al peso de la columna de fluido que hay por encima. Se calcula con P = rho × g × h, donde rho es la densidad del fluido (kg/m³), g es la aceleración de la gravedad (m/s²) y h es la profundidad (m). El resultado se muestra en Pascales (Pa), kiloPascales (kPa) y atmósferas (atm). La densidad del agua por defecto es 1.000 kg/m³ pero es configurable para otros fluidos."
+  whyUse="La presión hidrostática es fundamental en ingeniería civil e hidráulica (diseño de represas, acueductos, tanques de almacenamiento), en medicina (presión arterial y presión intracraneal), en buceo y natación, en la industria de petróleo y gas (pozos de perforación en México, Colombia y Venezuela), y en meteorología. Es contenido de física e ingeniería en bachillerato y universidad en toda Latinoamérica, y aparece en los exámenes de admisión de carreras de ingeniería civil, mecánica, química y ambiental."
+  faqs={[
+    {
+      q: '¿Qué es la presión hidrostática y cómo se deriva la fórmula P = rho × g × h?',
+      a: 'La presión hidrostática es la fuerza por unidad de área que ejerce un fluido en reposo sobre cualquier superficie horizontal sumergida a profundidad h. Derivación: considera una columna de fluido de altura h, sección transversal A y densidad rho. Su masa es m = rho × A × h. Su peso es F = m × g = rho × A × h × g. La presión es P = F/A = rho × g × h. Nota importante: esta fórmula da la presión MANOMÉTRICA (respecto a la atmósfera). La presión ABSOLUTA incluye la presión atmosférica: P_abs = P_atm + rho × g × h. A nivel del mar, P_atm ≈ 101.325 Pa = 1 atm ≈ 14,7 psi.'
+    },
+    {
+      q: '¿Cuáles son las densidades de los fluidos más comunes en LATAM?',
+      a: 'Densidades a 20°C y presión atmosférica: Agua dulce — 998 kg/m³ (≈1.000 para cálculos rápidos). Agua salada (mar) — 1.025 kg/m³. Gasolina — 720-750 kg/m³. Diésel — 820-845 kg/m³. Petróleo crudo — 820-960 kg/m³ (varía por yacimiento; el petróleo venezolano del Orinoco es extrapesado con densidad > 1.000 kg/m³). Aceite de motor — 860-900 kg/m³. Leche — ≈1.030 kg/m³. Mercurio — 13.600 kg/m³ (por eso los barómetros de mercurio son muy compactos: 1 atm = 76 cm de Hg). Hormigón — no aplica (sólido). La densidad correcta es clave para calcular la presión en tanques industriales latinoamericanos.'
+    },
+    {
+      q: '¿Cómo se aplica la presión hidrostática en el diseño de represas?',
+      a: 'En una represa, la presión hidrostática del agua varía con la profundidad: P(h) = rho × g × h. En el fondo de la represa Itaipú (Brasil-Paraguay, nivel de agua ≈ 220 m): P = 1000 × 9,81 × 220 ≈ 2.158.200 Pa ≈ 21,3 atm ≈ 215 m de columna de agua. Esta presión actúa sobre toda la superficie de la presa y determina su diseño estructural. La presa debe resistir la fuerza total del agua (integración de P×dA desde la superficie hasta el fondo), que para una sección rectangular de ancho B es F = ½ × rho × g × h² × B. Las represas en Latinoamérica (Itaipú, Belo Monte, Guri, El Cajón, Chivor) son estructuras masivas diseñadas para resistir estas fuerzas hidrostáticas.'
+    },
+    {
+      q: '¿Cómo se usa la presión hidrostática en fontanería y sistemas de agua potable?',
+      a: 'En los sistemas de agua potable de ciudades latinoamericanas, la presión en los hogares depende de la altura del tanque elevado respecto al nivel del grifo: P = rho × g × h. Un tanque elevado 10 m sobre el grifo genera P = 1000 × 9,81 × 10 ≈ 98.100 Pa ≈ 0,97 atm ≈ 1 kg/cm². La presión mínima recomendada en fontanería doméstica es ≈ 0,5 atm (5 m de columna de agua) para que las duchas y grifos funcionen correctamente. En edificios altos (México DF, Bogotá, Buenos Aires), los departamentos superiores tienen menos presión que los inferiores por esta fórmula. Los hidroneumáticos (sistemas de presión constante) compensan estas variaciones.'
+    },
+    {
+      q: '¿Cómo se aplica en buceo y actividades acuáticas en el Caribe y el Pacífico latinoamericano?',
+      a: 'La presión absoluta a profundidad h en el mar (rho = 1.025 kg/m³): P_abs = 101.325 + 1025 × 9,81 × h Pa. A 10 m: ≈ 201.500 Pa ≈ 2 atm. A 40 m: ≈ 503.500 Pa ≈ 5 atm. El volumen de aire en los pulmones se comprime según la ley de Boyle (P × V = constante): a 10 m, el volumen se reduce a la mitad. Esto explica la narcosis por nitrógeno en profundidad y la embolia gaseosa al ascender demasiado rápido. El Arrecife Mesoamericano (México-Belice-Guatemala-Honduras) y las Galápagos (Ecuador) son destinos de buceo mundialmente famosos donde bucear requiere entender la presión hidrostática para seguridad.'
+    },
+    {
+      q: '¿Qué es el principio de Arquímedes y cómo se relaciona con la presión hidrostática?',
+      a: 'El principio de Arquímedes establece que un cuerpo sumergido en un fluido experimenta una fuerza de empuje vertical hacia arriba igual al peso del fluido desplazado: E = rho × g × V_sumergido. Este empuje resulta de la diferencia de presión hidrostática entre la cara inferior (mayor profundidad, mayor presión) y la cara superior (menor profundidad, menor presión) del objeto. Si E > peso → flota; si E < peso → se hunde; si E = peso → flota en equilibrio. Aplicaciones en LATAM: diseño de barcos (Buenaventura, Veracruz, Buenos Aires son puertos importantes), submarinos de investigación oceánica, plataformas petrolíferas marinas en el Golfo de México y las costas venezolana y brasileña.'
+    },
+    {
+      q: '¿Cómo se usa la presión hidrostática en la industria petrolera latinoamericana?',
+      a: 'En la industria petrolera (Pemex en México, Ecopetrol en Colombia, PDVSA en Venezuela, Petroperú), la presión hidrostática de la columna de lodo de perforación es crítica para controlar la presión del yacimiento y evitar reventones (blowouts). La fórmula P = rho × g × h determina qué densidad de lodo se necesita para equilibrar la presión del yacimiento a una profundidad dada. Pozos de 3.000 m en el Golfo de México: P_yacimiento ≈ rho_lodo × 9,81 × 3000. Si rho_lodo = 1.200 kg/m³: P ≈ 35,3 MPa ≈ 349 atm. Un lodo demasiado ligero causa reventón; demasiado pesado puede fracturar la formación. Este balance es la base de la ingeniería de perforación en LATAM.'
+    },
+    {
+      q: '¿Cómo se mide la presión y cuáles son las unidades más usadas en LATAM?',
+      a: 'Las unidades de presión más usadas en Latinoamérica y sus equivalencias: 1 Pa (Pascal, SI) = 1 N/m². 1 kPa = 1.000 Pa. 1 MPa = 1.000.000 Pa = 10 bar. 1 atm (atmósfera estándar) = 101.325 Pa. 1 bar = 100.000 Pa ≈ 0,987 atm. 1 psi (libra/pulgada²) = 6.894,76 Pa (usada en neumáticos: los autos usan 30-35 psi ≈ 2,0-2,4 bar). 1 mmHg (milímetro de mercurio) = 133,322 Pa (presión arterial: 120/80 mmHg). 1 m de columna de agua = 9.810 Pa. En ingeniería hidráulica latinoamericana se usa frecuentemente metros de columna de agua (mca) como unidad de presión: 1 mca = 9.810 Pa.'
+    },
+  ]}
+>
   <PresionHidrostaticaTool client:load />
 </CalcLayout>
-

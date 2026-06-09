@@ -1,17 +1,45 @@
-﻿---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import MolMasaTool from "@/components/tools/MolMasaTool";
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import MolMasaTool from '@/components/tools/MolMasaTool';
 ---
 
 <CalcLayout slug="mol-masa-molar"
-  whatIs="La calculadora de mol-masa-molar es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precisión?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="El mol es la unidad SI de cantidad de sustancia: 1 mol contiene 6,022 × 10²³ entidades (número de Avogadro). La masa molar M es la masa de 1 mol de una sustancia, expresada en g/mol, y numéricamente igual a la masa atómica/molecular en uma. Esta calculadora convierte entre moles y gramos en dos modos: (1) Moles → Masa: masa = n × M; (2) Masa → Moles: n = masa / M. Solo necesitas introducir la masa molar del compuesto y el valor conocido (moles o gramos)."
+  whyUse="La conversión mol ↔ masa es el cálculo más frecuente en química cuantitativa. Sin él no es posible preparar disoluciones, calcular estequiometría de reacciones, dosificar fármacos ni controlar procesos industriales. Es el primer cálculo que se aprende en química de bachillerato en toda Latinoamérica, y aparece en el COMIPEMS, ICFES, PSU/PAES, Prueba Enlace y todos los exámenes de admisión universitaria de la región."
+  faqs={[
+    {
+      q: '¿Qué es el mol y por qué se usa esa unidad en química?',
+      a: 'El mol (símbolo mol) es la unidad del Sistema Internacional para la cantidad de sustancia. 1 mol contiene exactamente 6,02214076 × 10²³ entidades elementales (átomos, moléculas, iones, electrones…). Este número es el número de Avogadro, determinado exactamente en 2019 con la redefinición del SI. Se usa porque los átomos son enormemente pequeños: 1 mol de átomos de carbono pesa exactamente 12,011 g pero contiene 602 trillones de átomos. El mol permite trabajar con cantidades "pesables" de sustancia manteniendo la proporcionalidad estequiométrica. Por eso la fórmula n = m/M es el puente entre el mundo macroscópico (gramos en balanza) y el microscópico (partículas, reacciones).'
+    },
+    {
+      q: '¿Cómo calculo la masa molar de cualquier compuesto?',
+      a: 'La masa molar M se calcula sumando las masas atómicas de todos los átomos de la fórmula química. Masas atómicas de uso frecuente (g/mol): H = 1,008; C = 12,011; N = 14,007; O = 15,999; Na = 22,990; Mg = 24,305; S = 32,065; Cl = 35,453; K = 39,098; Ca = 40,078; Fe = 55,845; Zn = 65,38. Ejemplos: NaCl = 22,990 + 35,453 = 58,443 g/mol. CaCO₃ (carbonato de calcio, piedra caliza, muy abundante en México y el Caribe) = 40,078 + 12,011 + 3×15,999 = 100,086 g/mol. C₂H₅OH (etanol) = 2×12,011 + 6×1,008 + 15,999 = 46,069 g/mol. Vitamina C (C₆H₈O₆) = 6×12,011 + 8×1,008 + 6×15,999 = 176,124 g/mol.'
+    },
+    {
+      q: '¿Cuántos átomos hay en una muestra? ¿Cómo uso el número de Avogadro?',
+      a: 'La cadena de conversión completa es: masa (g) → moles → número de partículas. Número de partículas = n × Nₐ = (m/M) × 6,022×10²³. Ejemplo 1: ¿cuántas moléculas hay en 18 g de agua? n = 18/18,015 ≈ 0,999 mol. Número de moléculas ≈ 0,999 × 6,022×10²³ ≈ 6,016×10²³ moléculas. Ejemplo 2: ¿cuántos átomos de Fe hay en un clavo de 5 g? n = 5/55,845 ≈ 0,0896 mol. Átomos = 0,0896 × 6,022×10²³ ≈ 5,39×10²² átomos de Fe. Ejemplo 3: ¿cuántos g de glucosa (M=180,156) son 0,1 mol? masa = 0,1 × 180,156 = 18,016 g. Esta conversión es fundamental en bioquímica clínica para calcular concentraciones plasmáticas.'
+    },
+    {
+      q: '¿Cómo se aplica la conversión mol-masa en la industria latinoamericana?',
+      a: 'En la industria química latinoamericana, la conversión mol-masa es omnipresente: (1) Producción de cemento (CEMEX, Votorantim, Holcim LATAM): la calcinación de CaCO₃ produce CaO + CO₂. Para producir 1 tonelada de CaO (M=56,08): se necesitan 56,08/56,08 × 100,09 ≈ 1,785 t de CaCO₃. (2) Producción de amoniaco (fertilizantes en México, Brasil, Argentina): N₂ + 3H₂ → 2NH₃. Cada mol de N₂ (28 g) produce 2 mol de NH₃ (34 g). (3) Refinación de petróleo (Pemex, Ecopetrol): el octano (C₈H₁₈, M=114,23 g/mol) produce CO₂ y H₂O al quemar, con balance molar preciso. (4) Producción de etanol (Brazil, mayor productor mundial): C₆H₁₂O₆ → 2 C₂H₅OH + 2 CO₂. 1 mol glucosa (180 g) produce 2 mol etanol (92 g).'
+    },
+    {
+      q: '¿Cuál es el mol en el contexto de los medicamentos y la farmacia en LATAM?',
+      a: 'En farmacología, las dosis se expresan en mg o g, pero el mecanismo de acción depende del número de moléculas. Por eso los farmacéuticos trabajan con milimoles (mmol = 10⁻³ mol) y micromoles (µmol = 10⁻⁶ mol). Ejemplo: el paracetamol (acetaminofén, M=151,16 g/mol) se vende en tabletas de 500 mg. Moles por tableta = 0,500/151,16 = 0,00331 mol = 3,31 mmol. Esto equivale a 3,31×10⁻³ × 6,022×10²³ ≈ 1,99×10²¹ moléculas por tableta. El paracetamol es el analgésico más vendido en toda Latinoamérica (marcas: Tempra en México, Dolex en Colombia, Tafirol en Argentina). Calcular la masa molar correctamente es esencial para cualquier análisis de principios activos en farmacia y control de calidad.'
+    },
+    {
+      q: '¿Qué errores comunes se cometen al calcular con moles?',
+      a: 'Errores frecuentes en estudiantes latinoamericanos de bachillerato y primer año universitario: (1) Confundir masa molar (g/mol) con masa atómica (uma) — son numéricamente iguales pero con unidades distintas. (2) Usar el número atómico (número de protones) en vez de la masa atómica — el número atómico de Fe es 26, su masa atómica es 55,845. (3) No multiplicar por el número de átomos del mismo elemento: en Fe₂O₃, hay 2 átomos de Fe (no 1). M = 2×55,845 + 3×15,999 = 159,687 g/mol. (4) Confundir fórmula empírica con molecular: CH₂O (glucosa empírica, M=30) vs. C₆H₁₂O₆ (molecular, M=180). (5) No convertir g a kg o mL a L cuando se necesita SI. Todos estos errores se evitan usando esta calculadora como verificación.'
+    },
+    {
+      q: '¿Cómo se usa la masa molar en estequiometría de reacciones químicas?',
+      a: 'En una reacción química, los coeficientes estequiométricos representan proporciones en MOLES, no en gramos. Por eso la conversión mol-masa es el primer paso de cualquier cálculo estequiométrico: (1) Convertir la masa del reactivo conocido a moles: n_reactivo = m/M. (2) Aplicar la proporción molar de la ecuación para obtener n_producto. (3) Convertir a masa: m_producto = n_producto × M_producto. Ejemplo: combustión de propano (usado en gas LP por millones de hogares en LATAM): C₃H₈ + 5O₂ → 3CO₂ + 4H₂O. Quemar 44 g de propano (M=44,097 ≈ 1 mol) produce 3 mol CO₂ = 3×44,010 = 132,03 g de CO₂. Esta cadena de cálculos es la base de la calculadora de estequiometría complementaria en Calzix.'
+    },
+    {
+      q: '¿Qué importancia tiene la masa molar en análisis ambientales en LATAM?',
+      a: 'En análisis ambiental, las concentraciones se expresan frecuentemente en mg/L (ppm), µg/L (ppb) o mol/L. Convertir entre estas unidades requiere la masa molar. Ejemplo: el límite de arsénico en agua potable según la OMS es 10 µg/L = 10 ppb. En moles: 10 µg/L ÷ 74,922 g/mol = 1,33×10⁻⁷ mol/L = 0,133 µM. En Latinoamérica, el arsénico natural en aguas subterráneas es un problema grave en el norte de México, el Cono Sur de Argentina y Chile (Atacama), afectando a millones de personas. El control de nitratos (límite OMS: 50 mg/L NO₃⁻, M=62,004 g/mol → 0,806 mM) y de metales pesados (plomo Pb, M=207,2 g/mol) en ríos afectados por minería utiliza continuamente esta conversión.'
+    },
+  ]}
+>
   <MolMasaTool client:load />
 </CalcLayout>
-

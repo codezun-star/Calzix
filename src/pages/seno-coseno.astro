@@ -1,32 +1,45 @@
-﻿---
+---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import SinCosTanTool from '@/components/tools/SinCosTanTool';
 ---
 
 <CalcLayout slug="seno-coseno"
-  whatIs="La calculadora de seno-coseno es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  {
-    q: '¿Qué son el seno, el coseno y la tangente?',
-    a: 'Son las tres razones trigonométricas básicas. En un triángulo rectángulo, el seno es el cociente entre el cateto opuesto y la hipotenusa, el coseno entre el cateto adyacente y la hipotenusa, y la tangente entre el cateto opuesto y el adyacente.'
-  },
-  {
-    q: '¿Cuándo está la tangente indefinida?',
-    a: 'La tangente es indefinida cuando el coseno del ángulo es cero, es decir, para ángulos de 90°, 270°, etc. (o Ï€/2 y 3Ï€/2 radianes). En esos puntos la función tiene una asíntota vertical.'
-  },
-  {
-    q: '¿Cómo convierto grados a radianes?',
-    a: 'Multiplica los grados por Ï€/180. Por ejemplo, 90° = 90 Í— Ï€/180 = Ï€/2 â‰ˆ 1,5708 radianes. La calculadora hace esta conversión automáticamente según la unidad que selecciones.'
-  },
-  {
-    q: '¿Qué son el arcoseno, el arcocoseno y el arcotangente?',
-    a: 'Son las funciones inversas: dado un valor trigonométrico, devuelven el ángulo correspondiente. Por ejemplo, arcsen(0,5) = 30° porque sen(30°) = 0,5. El arcocoseno y el arcotangente funcionan de forma análoga.'
-  },
-  {
-    q: '¿El resultado se actualiza al instante?',
-    a: 'Sí. La calculadora recalcula automáticamente cada vez que cambias el ángulo o la unidad, sin necesidad de pulsar ningún botón.'
-  },
-]}>
+  whatIs="Las razones trigonométricas describen las relaciones entre los lados y los ángulos de los triángulos. Esta calculadora obtiene al instante seis valores trigonométricos de cualquier ángulo en grados o radianes: seno (sen), coseno (cos), tangente (tan), arcoseno (arcsen), arcocoseno (arccos) y arcotangente (arctan). Los resultados se muestran con precisión de 6 decimales. La calculadora recalcula automáticamente al cambiar el ángulo o la unidad, sin necesidad de pulsar ningún botón."
+  whyUse="La trigonometría es fundamental en física (movimiento ondulatorio, oscilaciones, óptica), ingeniería civil (estructuras, topografía), arquitectura, navegación (GPS, aviación, marina), telecomunicaciones (señales de radio y audio) y en matemáticas de bachillerato y universidad. Es materia obligatoria en preparatoria y licenciatura en México, Colombia, Argentina, Chile, Perú y toda Latinoamérica. La fórmula senocosenotal y sus aplicaciones aparecen en el COMIPEMS, ICFES, PSU/PAES y todas las pruebas de admisión universitaria de la región."
+  faqs={[
+    {
+      q: '¿Qué son el seno, el coseno y la tangente?',
+      a: 'En un triángulo rectángulo con un ángulo A, hipotenusa h, cateto opuesto a A llamado "op" y cateto adyacente llamado "ad": seno(A) = op/h, coseno(A) = ad/h, tangente(A) = op/ad = seno(A)/coseno(A). La regla mnemotécnica SOH-CAH-TOA (del inglés) es universal: Seno = Opuesto/Hipotenusa, Coseno = Adyacente/Hipotenusa, Tangente = Opuesto/Adyacente. Extendidas a la circunferencia unitaria (radio = 1), estas razones se definen para cualquier ángulo, no solo los agudos de un triángulo rectángulo. Esa generalización es la trigonometría del círculo unitario que se estudia en bachillerato.'
+    },
+    {
+      q: '¿Cuál es la diferencia entre grados y radianes?',
+      a: 'Los grados dividen el círculo completo en 360 partes iguales. Los radianes miden el ángulo como la longitud del arco de la circunferencia unitaria que subtiende: el círculo completo tiene 2*pi ≈ 6,2832 radianes. Conversión: grados = radianes × (180/pi); radianes = grados × (pi/180). Equivalencias clave: 0° = 0 rad; 30° = pi/6 ≈ 0,5236 rad; 45° = pi/4 ≈ 0,7854 rad; 60° = pi/3 ≈ 1,0472 rad; 90° = pi/2 ≈ 1,5708 rad; 180° = pi ≈ 3,1416 rad; 360° = 2*pi ≈ 6,2832 rad. En cálculo diferencial e integral y en física, los radianes son la unidad natural; en geometría y topografía se usan más los grados.'
+    },
+    {
+      q: '¿Para qué ángulos la tangente es indefinida?',
+      a: 'La tangente es indefinida cuando el coseno del ángulo es cero, es decir, para 90°, 270°, -90°, 450°... (y en radianes: pi/2, 3*pi/2, etc.). En esos puntos, la tangente tiene una asíntota vertical — crece hacia +infinito o -infinito. La calculadora muestra "Indefinido" para la tangente cuando el coseno es prácticamente cero (menor que 1e-10 en valor absoluto). Esto es importante en física: la pendiente de una recta vertical (90° de inclinación) es matemáticamente indefinida, lo que se modela con la tangente de 90°.'
+    },
+    {
+      q: '¿Qué son arcoseno, arcocoseno y arcotangente?',
+      a: 'Las funciones inversas de las trigonométricas devuelven el ángulo a partir del valor de la razón trigonométrica. Arcoseno (arcsen): dado un valor v entre -1 y 1, devuelve el ángulo A tal que seno(A) = v, con A en el rango [-90°, 90°]. Ejemplo: arcsen(0,5) = 30° porque seno(30°) = 0,5. Arcocoseno (arccos): devuelve el ángulo con coseno = v, rango [0°, 180°]. Arcotangente (arctan): devuelve el ángulo con tangente = v, rango (-90°, 90°). Estas funciones se usan en ingeniería para recuperar ángulos de edificios, rampas, cables y antenas a partir de medidas de lados.'
+    },
+    {
+      q: '¿Cuáles son los valores exactos de seno y coseno para los ángulos especiales?',
+      a: 'Los ángulos especiales y sus valores exactos que se memorizan en bachillerato LATAM: 0°: sen=0, cos=1, tan=0. 30°: sen=1/2=0,5, cos=raíz(3)/2≈0,866, tan=1/raíz(3)≈0,577. 45°: sen=cos=raíz(2)/2≈0,707, tan=1. 60°: sen=raíz(3)/2≈0,866, cos=1/2=0,5, tan=raíz(3)≈1,732. 90°: sen=1, cos=0, tan=indefinida. 180°: sen=0, cos=-1, tan=0. 270°: sen=-1, cos=0, tan=indefinida. 360°: sen=0, cos=1, tan=0. Esta calculadora verifica estos valores con 6 decimales de precisión.'
+    },
+    {
+      q: '¿Cómo se usa la trigonometría en construcción y topografía latinoamericana?',
+      a: 'En construcción y topografía LATAM, la trigonometría es cotidiana: (1) Pendiente de techos: si el techo tiene 30° de inclinación y la base mide 5 m, la altura es 5 × tan(30°) ≈ 2,89 m. (2) Longitud de rampas: una rampa que sube 2 m con ángulo de 15° tiene longitud 2 / seno(15°) ≈ 7,73 m. (3) Topografía: el teodolito mide ángulos horizontales y verticales para calcular distancias y desniveles mediante trigonometría. (4) Señales e ingeniería de telecomunicaciones: las antenas de celular se inclinan calculando ángulos de cobertura con seno y coseno. (5) Navegación GPS: el algoritmo de trilateración usa funciones trigonométricas esféricas.'
+    },
+    {
+      q: '¿Cómo se aplica la trigonometría en física?',
+      a: 'En física, la trigonometría aparece en: (1) Descomposición de vectores: una fuerza F con ángulo A se descompone en componente horizontal Fx = F × cos(A) y vertical Fy = F × seno(A). Fundamental en mecánica clásica. (2) Movimiento armónico simple (resorte, péndulo): x(t) = A × cos(wt + phi), donde A es amplitud y w es frecuencia angular. (3) Ondas mecánicas y electromagnéticas: y(x,t) = A × seno(kx - wt). (4) Óptica: ley de Snell de la refracción usa seno del ángulo. (5) Circuitos AC (corriente alterna): tensión y corriente varían como funciones senoidales del tiempo. Todo esto se estudia en física de preparatoria y licenciatura en LATAM.'
+    },
+    {
+      q: '¿Qué son las identidades trigonométricas fundamentales?',
+      a: 'Las identidades trigonométricas son ecuaciones que se cumplen para cualquier ángulo. Las más importantes: (1) Identidad pitagórica: seno²(A) + coseno²(A) = 1. Derivadas: 1 + tangente²(A) = secante²(A); 1 + cotangente²(A) = cosecante²(A). (2) Seno del doble ángulo: seno(2A) = 2 × seno(A) × coseno(A). (3) Coseno del doble ángulo: coseno(2A) = coseno²(A) - seno²(A). (4) Suma de ángulos: seno(A+B) = seno(A)coseno(B) + coseno(A)seno(B). Estas identidades son esenciales en cálculo integral (sustituciones trigonométricas) y en simplificación de expresiones en cursos universitarios de toda Latinoamérica.'
+    },
+  ]}
+>
   <SinCosTanTool client:load />
 </CalcLayout>
-

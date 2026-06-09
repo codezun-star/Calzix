@@ -1,17 +1,45 @@
-﻿---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import PermutacionesTool from "@/components/tools/PermutacionesTool";
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import PermutacionesTool from '@/components/tools/PermutacionesTool';
 ---
 
 <CalcLayout slug="permutaciones-combinaciones"
-  whatIs="La calculadora de permutaciones-combinaciones es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precision?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="La combinatoria estudia cuántas formas distintas existen de seleccionar o arreglar elementos de un conjunto. Esta calculadora calcula dos valores para n elementos elegidos de r en r: permutaciones P(n,r) = n! / (n-r)!, donde el orden de selección importa; y combinaciones C(n,r) = n! / (r! × (n-r)!), donde el orden no importa. El límite máximo es n = 20 para garantizar precisión exacta. Se admiten r = 0 y r = n como casos especiales válidos."
+  whyUse="Las permutaciones y combinaciones son la base de la probabilidad discreta y se usan para contar posibilidades en sorteos, contraseñas, horarios, equipos deportivos, problemas de química (isómeros) y muchas más aplicaciones. Son materia fundamental en álgebra y probabilidad de bachillerato y universidad en México, Colombia, Argentina, Chile, Perú y toda Latinoamérica. Aparecen en el COMIPEMS, ICFES, PSU/PAES, ENEM de Brasil y en todos los exámenes de admisión universitaria de la región."
+  faqs={[
+    {
+      q: '¿Cuál es la diferencia entre permutaciones y combinaciones?',
+      a: 'La diferencia fundamental es si el orden de selección importa o no. Permutaciones: el orden importa. Seleccionar A luego B es DISTINTO de seleccionar B luego A. Se usa cuando el orden modifica el resultado: contraseñas, medallas (oro-plata-bronce), cargos directivos (presidente-secretario-tesorero), arreglos de elementos en fila. Combinaciones: el orden NO importa. Seleccionar A y B es LO MISMO que seleccionar B y A. Se usa cuando solo importa quiénes o qué se selecciona: equipos, comités, manos de cartas, números de lotería. Regla para distinguir: ¿cambiar el orden da un resultado diferente? Si sí → permutación. Si no → combinación.'
+    },
+    {
+      q: '¿Cuáles son las fórmulas de P(n,r) y C(n,r)?',
+      a: 'Permutaciones: P(n,r) = n! / (n-r)!, donde n! = n × (n-1) × (n-2) × ... × 2 × 1 (factorial de n). Ejemplo: P(5,3) = 5!/(5-3)! = 120/2 = 60. Hay 60 formas de ordenar 3 personas elegidas de un grupo de 5. Combinaciones: C(n,r) = n! / (r! × (n-r)!). Ejemplo: C(5,3) = 120 / (6×2) = 120/12 = 10. Hay 10 formas de elegir 3 personas de un grupo de 5 sin importar el orden. Relación entre ambas: P(n,r) = C(n,r) × r!, es decir, cada combinación genera r! permutaciones. Por eso siempre P(n,r) >= C(n,r).'
+    },
+    {
+      q: '¿Por qué el factorial crece tan rápido y cuál es el límite de la calculadora?',
+      a: 'El factorial crece extraordinariamente rápido: 1!=1, 2!=2, 5!=120, 10!=3.628.800, 15!=1.307.674.368.000, 20!=2.432.902.008.176.640.000. Para n=21 el factorial supera 2^64, el límite de precisión de los números de punto flotante de 64 bits usados por JavaScript. A partir de n=21 los resultados podrían ser inexactos por redondeo. Por eso esta calculadora limita n a 20. Si necesitas valores mayores, deberías usar aritmética de precisión arbitraria (Python con la librería math.factorial, por ejemplo). Los valores de n de 1 a 20 son exactos.'
+    },
+    {
+      q: '¿Para qué sirven las combinaciones en loterías latinoamericanas?',
+      a: 'Las loterías usan combinaciones para calcular la probabilidad de ganar. El número de posibles combinaciones es C(N, k) donde N es la cantidad total de números disponibles y k es cuántos debes acertar. Ejemplos: Melate (México): C(56,6) = 12.913.352 combinaciones — probabilidad de acertar 6/56 es 1 en 12,9 millones. Loto (Chile): C(41,6) = 4.496.388 combinaciones. Baloto (Colombia): C(43,6) = 6.096.454. Quini 6 (Argentina): C(46,6) = 10.737.573. Mega-Sena (Brasil): C(60,6) = 50.063.860. Cuantos más números hay o más se deben acertar, mayor el total de combinaciones y menor la probabilidad de ganar.'
+    },
+    {
+      q: '¿Cuáles son los casos especiales C(n,0), C(n,n) y P(n,n)?',
+      a: 'C(n,0) = 1: hay exactamente 1 forma de no elegir ningún elemento (elegir el conjunto vacío). C(n,n) = 1: hay exactamente 1 forma de elegir todos los elementos (elegir el conjunto completo). C(n,1) = n: hay n formas de elegir exactamente un elemento. P(n,n) = n!: hay n! formas de ordenar todos los n elementos, lo que se llama permutación total o arreglo completo. Ejemplo: P(4,4) = 4! = 24 formas de ordenar 4 personas en una fila. Estas identidades son el fundamento del triángulo de Pascal (triángulo de Tartaglia), donde cada elemento es C(n,k) = C(n-1,k-1) + C(n-1,k).'
+    },
+    {
+      q: '¿Cómo se usan las permutaciones para contraseñas y códigos?',
+      a: 'El número de contraseñas posibles depende del tamaño del alfabeto y la longitud: PIN de 4 dígitos (del 0 al 9, con repetición): 10⁴ = 10.000 combinaciones. PIN de 4 dígitos sin repetición: P(10,4) = 10!/6! = 5.040. Contraseña de 8 letras minúsculas sin repetición: P(26,8) = 26!/18! = 62.990.928.000 ≈ 63 mil millones. Con repetición: 26⁸ ≈ 208 mil millones. Con mayúsculas + minúsculas + 10 dígitos (62 caracteres), 8 posiciones con repetición: 62⁸ ≈ 218 billones. Este análisis muestra por qué las contraseñas más largas y con más tipos de caracteres son exponencialmente más seguras.'
+    },
+    {
+      q: '¿Cómo se aplican las combinaciones en la formación de equipos y comités?',
+      a: 'Ejemplos prácticos en LATAM: (1) Un torneo de fútbol tiene 12 equipos. ¿Cuántos partidos hay si cada equipo juega contra todos los demás una vez? C(12,2) = 66 partidos. (2) Una empresa tiene 8 candidatos para 3 puestos en un comité (donde los puestos son equivalentes). ¿Cuántos comités distintos hay? C(8,3) = 56 comités. (3) Si los 3 puestos son distintos (presidente, vicepresidente, secretario): P(8,3) = 336 formas. (4) Un maestro debe elegir 5 alumnos de 20 para representar a la escuela: C(20,5) = 15.504 posibles grupos. La distinción entre permutación y combinación cambia drásticamente el resultado.'
+    },
+    {
+      q: '¿Qué es el triángulo de Pascal y cómo se relaciona con las combinaciones?',
+      a: 'El triángulo de Pascal (llamado también triángulo de Tartaglia en Italia y de Yang Hui en China) organiza los coeficientes binomiales C(n,k) en filas triangulares. La fila n (empezando desde 0) contiene los valores C(n,0), C(n,1), ..., C(n,n). Las primeras filas: fila 0: 1; fila 1: 1 1; fila 2: 1 2 1; fila 3: 1 3 3 1; fila 4: 1 4 6 4 1. Regla de construcción: cada número es la suma de los dos que están encima de él. El triángulo de Pascal tiene propiedades extraordinarias: suma de la fila n = 2^n; los coeficientes del binomio (a+b)^n son los de la fila n del triángulo. Se estudia en álgebra de bachillerato en toda Latinoamérica.'
+    },
+  ]}
+>
   <PermutacionesTool client:load />
 </CalcLayout>
-

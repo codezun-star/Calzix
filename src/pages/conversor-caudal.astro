@@ -1,17 +1,45 @@
-﻿---
+---
 import CalcLayout from "@/components/layout/CalcLayout.astro";
 import ConvCaudalTool from "@/components/tools/ConvCaudalTool";
 ---
 
 <CalcLayout slug="conversor-caudal"
-  whatIs="La calculadora de conversor-caudal es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precisión?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="El conversor de caudal transforma entre 6 unidades de flujo volumétrico: metros cúbicos por segundo (m³/s), litros por segundo (L/s), metros cúbicos por hora (m³/h), litros por minuto (L/min), galones americanos por minuto (gal/min US) y pies cúbicos por segundo (ft³/s). El caudal describe qué volumen de fluido pasa por una sección transversal por unidad de tiempo."
+  whyUse="En Latinoamérica, el caudal es la magnitud central en hidrología (ríos, cuencas), hidráulica (diseño de tuberías, canales), riego agrícola, saneamiento básico (plantas de tratamiento), industria petroquímica y energía hidroeléctrica. Los ingenieros del CONAGUA, el IDEAM, el ANA (Brasil) y la DGA (Chile) trabajan diariamente con caudales. Las unidades varían según el sector: L/s para redes de agua, m³/s para ríos y m³/h para procesos industriales."
+  faqs={[
+    {
+      q: '¿Qué es el caudal y cómo se mide en los ríos de LATAM?',
+      a: 'El caudal (Q) es el volumen de fluido que pasa por una sección transversal por unidad de tiempo: Q = A × v, donde A es el área de la sección (m²) y v es la velocidad media del fluido (m/s). La unidad del SI es el m³/s. El caudal de los principales ríos de Latinoamérica: Amazonas (Brasil/Perú/Colombia): caudal medio ≈ 209 000 m³/s — el mayor del mundo, representa ≈ 20% del agua dulce que desemboca en los océanos globalmente. Paraná (Argentina/Brasil/Paraguay): ≈ 17 000 m³/s en Corrientes. Orinoco (Venezuela/Colombia): ≈ 30 000 m³/s en su desembocadura. Magdalena (Colombia): ≈ 7 000 m³/s en Barranquilla. São Francisco (Brasil): ≈ 2 900 m³/s. Bío-Bío (Chile): ≈ 350 m³/s. El IDEAM (Colombia), ANA (Brasil) e INDRHI (Rep. Dominicana) miden el caudal con estaciones hidrométricas (vertederos, aforos por flotador, correntómetros acústicos ADCP).',
+    },
+    {
+      q: '¿Cómo se convierte L/s a m³/h y cuándo se usa cada unidad?',
+      a: 'La conversión es exacta: 1 L/s = 3,6 m³/h. Demostración: 1 L/s × (1 m³ / 1000 L) × (3600 s / 1 h) = 3600/1000 = 3,6 m³/h. Para convertir m³/h a L/s: dividir entre 3,6. Cuándo usar cada unidad: L/s: redes de distribución de agua potable, sistemas de bombeo domiciliario, diseño de redes de alcantarillado. Una bomba doméstica típica en LATAM tiene caudal de 0,5-2 L/s. m³/h: procesos industriales continuos (plantas de tratamiento de agua, intercambiadores de calor, reactores químicos). m³/s: hidrología de ríos y canales principales. El río Bogotá en la sabana tiene un caudal natural ≈ 20 m³/s. gal/min: maquinaria importada de EE.UU. (bombas centrífugas de marca Goulds, Grundfos USA, Berkeley). ft³/s: hidráulica fluvial en textos americanos ("cfs" en inglés — cubic feet per second). El USGS y muchos organismos latinoamericanos con financiamiento americano reportan caudales en cfs.',
+    },
+    {
+      q: '¿Cómo se aplica el caudal en el diseño de acueductos y redes de agua en LATAM?',
+      a: 'El diseño de redes de agua potable en Latinoamérica parte del caudal de diseño, calculado a partir de la población servida y la dotación per cápita. Metodología estándar (NTC Colombia, NOM México, DS 70 Chile): Consumo per cápita: 100-250 L/persona/día según nivel de servicio. Caudal medio diario (Qmd) = habitantes × dotación / 86 400 s/día. Caudal máximo diario (QMD) = Qmd × factor de día máximo (1,2-1,5). Caudal máximo horario (QMH) = Qmd × factor de hora máxima (2,0-3,0). El QMH determina el diámetro de tuberías (ecuación de Hazen-Williams) y la capacidad de la planta potabilizadora. Ejemplo: ciudad de 100 000 hab, dotación 150 L/hab/día → Qmd = 100 000 × 0,15 m³/d / 86 400 = 0,174 m³/s = 174 L/s = 626 m³/h. Las empresas como Empresas Públicas de Medellín (EPM, Colombia), SACMEX (México) y ASSE (Uruguay) diseñan sus expansiones con estos criterios.',
+    },
+    {
+      q: '¿Qué es el caudal de diseño en riego agrícola y cómo se calcula en LATAM?',
+      a: 'En agricultura irrigada, el caudal de diseño determina el tamaño de la red de riego y el número de horas de operación. Las unidades más usadas en LATAM son L/s para riego por superficie y aspersión, y m³/h para sistemas de goteo modernos. Parámetros típicos: Riego por gravedad (arroz, caña): 1-2 L/s por hectárea. Riego por aspersión (maíz, trigo): 0,3-0,8 L/s por hectárea. Riego por goteo (aguacate, uva, tomate de exportación): 0,15-0,4 L/s por hectárea. Ejemplo: finca de aguacate Hass en Michoacán (México) con 50 ha y demanda de riego 0,25 L/s/ha: Q_total = 50 × 0,25 = 12,5 L/s = 45 m³/h = 3,3 gal/s US. Para turnar el riego por bloques y usar la tubería principal de menor diámetro: 6 turnos × 8 horas c/u = 48 h/día/turno. Michoacán, Jalisco (México), Valle del Cauca (Colombia) y las regiones viñateras de Chile y Argentina son los mayores usuarios de riego tecnificado de la región.',
+    },
+    {
+      q: '¿Cuál es el caudal de las principales plantas hidroeléctricas de LATAM?',
+      a: 'Las plantas hidroeléctricas latinoamericanas están entre las mayores del mundo. El caudal turbinado es la variable principal que, combinada con el salto hidráulico (H), determina la potencia: P = η × ρ × g × Q × H, donde η ≈ 0,90 (eficiencia de la turbina). Plantas y sus caudales de diseño: Itaipú (Brasil/Paraguay, 14 000 MW): caudal de diseño ≈ 12 600 m³/s turbinado, con 20 unidades × 630 m³/s cada una. Es la 2a planta más potente del mundo. Belo Monte (Brasil, 11 233 MW): Q_turbinado ≈ 8 000 m³/s, con desvío del río Xingú. Ituango (Colombia, EPM, 2400 MW en construcción): Q_turbinado = 2268 m³/s, con salto neto de ≈ 120 m. Guri (Venezuela, CORPOELEC, 10 200 MW): Q ≈ 6 000 m³/s en el río Caroní. Chicoasén (México, CFE, 2430 MW): Q ≈ 1 250 m³/s en el río Grijalva. La energía hidráulica genera ≈ 45% de la electricidad de Latinoamérica.',
+    },
+    {
+      q: '¿Cómo se usa el caudal en el tratamiento de aguas residuales en LATAM?',
+      a: 'Las plantas de tratamiento de aguas residuales (PTAR) en Latinoamérica se dimensionan por el caudal medio y el caudal punta de las aguas servidas generadas por la población. El caudal de aguas residuales ≈ 80% del caudal de agua potable suministrado. Plantas de tratamiento destacadas y sus caudales: PTAR Atotonilco (México, CONAGUA): caudal de diseño = 23 m³/s = 23 000 L/s = 82 800 m³/h. Es la mayor planta de tratamiento de aguas residuales del mundo en términos de caudal. PTAR Salitre (Bogotá, Colombia): Q_diseño = 7 m³/s = 7 000 L/s, tratando las aguas del río Bogotá. PTAR La Farfana (Santiago, Chile): Q ≈ 7,5 m³/s. La unidad preferida para PTAR es el m³/s o L/s para caudal instantáneo, y m³/día para volumen diario tratado. Una PTAR que trata 1 m³/s trata 86 400 m³/día = 86,4 millones de litros por día, lo que corresponde a una ciudad de ≈ 575 000 habitantes (a 150 L/hab/día).',
+    },
+    {
+      q: '¿Cómo se calcula el caudal en la industria petrolera de LATAM?',
+      a: 'En la industria del petróleo y gas latinoamericana (Pemex, Ecopetrol, PDVSA, YPF, Petrobras), los caudales de producción se miden en unidades propias: (1) Petróleo crudo: barriles por día (bbl/día) o m³/día. 1 barril = 158,987 L ≈ 0,159 m³. Pemex produce ≈ 1,8 millones bbl/día en 2024. Ecopetrol ≈ 750 000 bbl/día. (2) Gas natural: millones de pies cúbicos por día (MMSCFD = million standard cubic feet per day) o millones de m³ por día. Bolivia exporta ≈ 6-8 MMSCFD a Argentina y Brasil. (3) Gas en sistemas de transporte: m³/h normales (Nm³/h, corregidos a condiciones estándar de P y T). (4) Refinerías: el caudal de carga de petróleo crudo se mide en m³/h. La refinería de Dos Bocas (Tabasco, México) tiene capacidad de 340 000 bbl/día ≈ 2 250 m³/h de petróleo procesado. Las unidades "barril" y "MMSCFD" son propias del sector; el conversor de caudal ayuda a transformarlas a m³/s o L/s para comparar con aplicaciones de ingeniería química.',
+    },
+    {
+      q: '¿Cómo se aplica el caudal en la gestión de inundaciones en LATAM?',
+      a: 'La gestión de inundaciones es uno de los mayores retos de la ingeniería hidráulica latinoamericana. Los eventos de inundación se caracterizan por el caudal pico (m³/s) del hidrograma. Eventos históricos: Inundaciones del río Magdalena (Colombia, 2010-2011): caudal pico ≈ 15 000 m³/s en Mompox, más de 2 millones de damnificados. Inundaciones de Tabasco (México, 2007): caudal del Grijalva ≈ 5 000 m³/s, 1 millón de afectados. Inundaciones del río Paraguay (Paraguay/Bolivia, 2019): caudal pico ≈ 3 500 m³/s en Asunción, 180 000 desplazados. El caudal de diseño para protección contra inundaciones se estima mediante el período de retorno (Tr): Tr = 100 años para infraestructura urbana, Tr = 500-1000 años para obras de mayor importancia. El método racional Q = CIA/360 (donde C = coeficiente de escorrentía, I = intensidad de lluvia en mm/h, A = área en ha) es el más usado en ingeniería municipal latinoamericana para calcular caudales de tormenta en redes de alcantarillado.',
+    },
+  ]}
+>
   <ConvCaudalTool client:load />
 </CalcLayout>
-

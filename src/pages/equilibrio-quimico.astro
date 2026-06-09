@@ -1,17 +1,45 @@
-﻿---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import EquilibrioQuimicoTool from "@/components/tools/EquilibrioQuimicoTool";
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import EquilibrioQuimicoTool from '@/components/tools/EquilibrioQuimicoTool';
 ---
 
 <CalcLayout slug="equilibrio-quimico"
-  whatIs="La calculadora de equilibrio-quimico es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precisión?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="El equilibrio químico es el estado dinámico en que las velocidades de la reacción directa e inversa son iguales, por lo que las concentraciones de reactivos y productos permanecen constantes. Para la reacción aA + bB ⇌ cC + dD, la constante de equilibrio se define como Kc = [C]^c × [D]^d / ([A]^a × [B]^b). Esta calculadora calcula Kc a partir de los coeficientes estequiométricos (a, b, c, d) y las concentraciones de equilibrio de las cuatro especies ([A], [B], [C], [D] en mol/L), e indica si el equilibrio favorece los reactivos, los productos o ambos."
+  whyUse="La constante de equilibrio Kc es fundamental para comprender y diseñar procesos industriales donde las reacciones no van a completarse: síntesis de amoniaco (Haber-Bosch), producción de metanol, síntesis de ácido sulfúrico, craqueo del petróleo. En medicina, el equilibrio del pH sanguíneo y el transporte de oxígeno por la hemoglobina son equilibrios químicos. En LATAM, los laboratorios de bioquímica y análisis clínico y los procesos de la industria petroquímica usan constantemente este concepto."
+  faqs={[
+    {
+      q: '¿Qué es el equilibrio químico y por qué las concentraciones se vuelven constantes?',
+      a: 'En una reacción reversible, la reacción ocurre en ambas direcciones simultáneamente: A + B → C + D (directa) y C + D → A + B (inversa). Al inicio, solo existen reactivos y la reacción directa domina. A medida que se forman productos, la inversa comienza a ocurrir. El equilibrio se alcanza cuando la velocidad de la reacción directa es igual a la de la inversa: v_directa = v_inversa. En ese punto, las concentraciones no cambian (son constantes), aunque la reacción sigue ocurriendo en ambas direcciones — por eso es "dinámico". La constante Kc es una característica de la reacción y solo depende de la temperatura: cambia con T pero no con la concentración inicial de los reactivos ni con la presión (para reacciones en fase líquida).'
+    },
+    {
+      q: '¿Cómo se interpreta el valor de Kc?',
+      a: 'La magnitud de Kc indica hacia qué lado se desplaza el equilibrio: Kc >> 1 (Kc > 10³): el equilibrio está muy desplazado hacia los PRODUCTOS. La reacción "va casi a completitud". Ejemplo: combustión de CH₄ → Kc ≈ 10¹⁴⁵ (prácticamente irreversible). Kc ≈ 1 (0,01 < Kc < 100): concentraciones significativas de reactivos Y productos coexisten. El sistema está en equilibrio "balanceado". Ejemplo: síntesis de HI: H₂ + I₂ ⇌ 2HI, Kc ≈ 50 a 450°C. Kc << 1 (Kc < 10⁻³): el equilibrio favorece los REACTIVOS. Los productos apenas se forman. Ejemplo: disociación del agua H₂O ⇌ H⁺ + OH⁻, Kc = Kw = 10⁻¹⁴.'
+    },
+    {
+      q: '¿Qué es el principio de Le Chatelier y cómo predice el desplazamiento del equilibrio?',
+      a: 'El principio de Le Chatelier (1884) establece: si un sistema en equilibrio es perturbado, el sistema reacciona para contrarrestar la perturbación. Perturbaciones y respuestas: (1) Aumentar concentración de reactivos → equilibrio se desplaza hacia PRODUCTOS (aumenta Kc no, pero el sistema reacciona para reducir el exceso). (2) Aumentar presión → en reacciones con gases, favorece el lado con menos moles de gas. (3) Aumentar temperatura → favorece la reacción ENDOTÉRMICA. (4) Disminuir temperatura → favorece la reacción EXOTÉRMICA. Ejemplo industrial: síntesis de amoniaco N₂ + 3H₂ ⇌ 2NH₃. La reacción es exotérmica: mayor T → menor Kc (menos NH₃). Mayor P → desplaza hacia NH₃ (4 mol gas → 2 mol gas). Por eso el proceso Haber opera a 200 atm y 400-500°C (compromiso cinético-termodinámico). La producción de amoniaco es vital para los fertilizantes que alimentan la agricultura de Brasil, Argentina, México y Colombia.'
+    },
+    {
+      q: '¿Qué diferencia hay entre Kc y Kp?',
+      a: 'Kc usa concentraciones molares (mol/L). Kp usa presiones parciales (en atm o Pa). Para la reacción aA(g) + bB(g) ⇌ cC(g) + dD(g): Kp = Kc × (RT)^Δn, donde Δn = (c+d) − (a+b) es el cambio en el número de moles de gas y R = 0,08206 L·atm/mol·K. Si Δn = 0: Kp = Kc (reacciones sin cambio en el número de moles gaseosos). Ejemplo: N₂ + 3H₂ ⇌ 2NH₃ → Δn = 2−4 = −2. A 500 K: Kp = Kc × (0,08206×500)^⁻² = Kc/1688,7. Para reacciones en fase líquida o acuosa (que es el caso de esta calculadora), Kc es la constante adecuada y Kp no aplica directamente.'
+    },
+    {
+      q: '¿Qué es el cociente de reacción Qc y cómo saber si la reacción avanzará?',
+      a: 'El cociente de reacción Qc tiene la misma expresión matemática que Kc pero se calcula con las concentraciones ACTUALES (no necesariamente las de equilibrio). La comparación Qc vs. Kc predice el sentido de avance: Qc < Kc: la reacción directa es favorecida (el sistema avanza hacia los productos para alcanzar Kc). Qc = Kc: el sistema está en equilibrio. Qc > Kc: la reacción inversa es favorecida (el sistema retrocede hacia los reactivos). Ejemplo: para N₂ + 3H₂ ⇌ 2NH₃ con Kc = 977 a 25°C. Si [N₂] = [H₂] = 1 M y [NH₃] = 0,5 M: Qc = 0,5²/(1×1³) = 0,25 < 977 → el sistema avanzará hacia NH₃. Esta calculadora calcula Kc a partir de las concentraciones de equilibrio; si introduces concentraciones actuales (no de equilibrio), obtendrás Qc en su lugar.'
+    },
+    {
+      q: '¿Cómo aplica el equilibrio químico en la fisiología humana y medicina en LATAM?',
+      a: 'El equilibrio del CO₂/H₂CO₃/HCO₃⁻ es el sistema tampón más importante del organismo: CO₂ + H₂O ⇌ H₂CO₃ ⇌ H⁺ + HCO₃⁻. Kc de la segunda ecuación = Ka₁(H₂CO₃) ≈ 4,3×10⁻⁷ → pKa ≈ 6,35. Este equilibrio mantiene el pH sanguíneo en 7,35-7,45: a pH 7,4, [HCO₃⁻]/[CO₂_disuelto] ≈ 20/1 (sistema muy desplazado hacia el anión bicarbonato). La hemoglobina también sigue un equilibrio de saturación de O₂: Hb + 4O₂ ⇌ Hb(O₂)₄, con Kc dependiente del pH (efecto Bohr). En altitud (Bogotá, Quito, La Paz), la menor pO₂ desplaza el equilibrio hacia la desoxigenación de hemoglobina, razón por la que los habitantes andinos desarrollan mayor número de eritrocitos (policitemia).'
+    },
+    {
+      q: '¿Cómo aplica el equilibrio en la industria química de LATAM?',
+      a: 'Varios equilibrios industriales importantes en el contexto latinoamericano: (1) Síntesis de metanol (CH₃OH): CO + 2H₂ ⇌ CH₃OH. Exotérmica, requerida a alta presión (50-100 bar) y temperatura moderada (250°C) con catalizador Cu/Zn/Al. El metanol se usa para producir MTBE (aditivo de gasolina) y biocombustibles de segunda generación. (2) Equilibrio ácido-base en producción de ácido fosfórico (fertilizantes): H₃PO₄ ⇌ H⁺ + H₂PO₄⁻ (Ka₁=7,5×10⁻³). Importantes para los fertilizantes MAP y DAP que usa la agricultura del Cono Sur. (3) Proceso Contact (H₂SO₄): 2SO₂ + O₂ ⇌ 2SO₃. Exotérmica; se opera a 400-600°C con catalizador V₂O₅. El ácido sulfúrico es el químico más producido en la industria latinoamericana (minería de cobre en Chile, Perú; industria agroquímica).'
+    },
+    {
+      q: '¿Cómo se resuelve un problema de equilibrio paso a paso (tabla ICE)?',
+      a: 'La tabla ICE (Inicial-Cambio-Equilibrio) es el método estándar para resolver problemas de equilibrio. Ejemplo: N₂ + H₂ ⇌ 2NH₃. Se parte de [N₂]₀ = 1,0 M y [H₂]₀ = 3,0 M (sin NH₃). Sea x el avance. Cambio: N₂ pierde x, H₂ pierde 3x, NH₃ gana 2x. En equilibrio: [N₂] = 1-x; [H₂] = 3-3x; [NH₃] = 2x. Sustituir en Kc: Kc = (2x)²/((1-x)(3-3x)³). Con Kc = 0,5 (a 400°C, alta T), resolver numéricamente o con cuadrática. Este método aparece en COMIPEMS tipo C, ICFES, PSU, PAES y en el curso de Química General de todas las universidades latinoamericanas. Esta calculadora calcula Kc directamente si ya conoces las concentraciones de equilibrio; no resuelve la tabla ICE (cálculo inverso).'
+    },
+  ]}
+>
   <EquilibrioQuimicoTool client:load />
 </CalcLayout>
-

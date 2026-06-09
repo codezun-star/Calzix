@@ -1,32 +1,45 @@
-﻿---
+---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import VelocidadFisicaTool from '@/components/tools/VelocidadFisicaTool';
 ---
 
 <CalcLayout slug="velocidad-distancia-tiempo"
-  whatIs="La calculadora de velocidad-distancia-tiempo es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  {
-    q: '¿Cuál es la fórmula entre velocidad, distancia y tiempo?',
-    a: 'La relación fundamental es: velocidad = distancia / tiempo. De ahí se derivan las otras dos: distancia = velocidad Í— tiempo, y tiempo = distancia / velocidad. Las tres son equivalentes.'
-  },
-  {
-    q: '¿En qué unidades trabaja esta calculadora?',
-    a: 'La calculadora usa kilómetros para la distancia, horas para el tiempo y km/h para la velocidad. Si tienes datos en otras unidades (metros, minutos, m/s), conviértelos primero antes de introducirlos.'
-  },
-  {
-    q: '¿Cómo convierto m/s a km/h?',
-    a: 'Multiplica los m/s por 3,6. Por ejemplo, 10 m/s Í— 3,6 = 36 km/h. A la inversa, divide los km/h entre 3,6 para obtener m/s.'
-  },
-  {
-    q: '¿Por qué el tiempo aparece también en minutos?',
-    a: 'Cuando calculas el tiempo, la calculadora muestra el resultado en horas y también en minutos para mayor comodidad. Por ejemplo, 1,5 horas equivale a 90 minutos.'
-  },
-  {
-    q: '¿Puedo calcular la velocidad media de un trayecto con paradas?',
-    a: 'Sí. Introduce la distancia total recorrida y el tiempo total (incluyendo las paradas) para obtener la velocidad media del trayecto completo.'
-  },
-]}>
+  whatIs="La relación entre velocidad, distancia y tiempo es la fórmula cinemática más fundamental de la física: v = d / t, donde v es la velocidad (km/h), d es la distancia (km) y t es el tiempo (h). Esta calculadora tiene tres modos para despejar cualquiera de las tres magnitudes: calcular velocidad dados distancia y tiempo, calcular distancia dados velocidad y tiempo, o calcular tiempo dados velocidad y distancia. El tiempo se muestra también en minutos para mayor comodidad."
+  whyUse="La fórmula v = d/t es esencial en física de secundaria y bachillerato, en transporte (calcular tiempos de viaje por carretera, tren o bus), en atletismo y ciclismo (ritmo de carrera), y en logística y distribución comercial. En Latinoamérica se aplica a diario para planear viajes en carretera entre ciudades, calcular tiempos de entrega, resolver problemas de física en el COMIPEMS, ICFES, PAES y PSU, y en materias de ingeniería en universidades de México, Colombia, Argentina, Chile, Perú y toda la región."
+  faqs={[
+    {
+      q: '¿Cuál es la fórmula que relaciona velocidad, distancia y tiempo?',
+      a: 'La fórmula fundamental de la cinemática uniforme es v = d / t, donde v es la velocidad, d es la distancia recorrida y t es el tiempo transcurrido. De esta ecuación se deducen las otras dos: d = v × t (si quieres la distancia) y t = d / v (si quieres el tiempo). Esta relación asume velocidad constante (movimiento rectilíneo uniforme, MRU). En la realidad, los vehículos aceleran y frenan, por lo que el resultado es siempre la velocidad media del trayecto, no la velocidad en cada instante.'
+    },
+    {
+      q: '¿Cómo convierto m/s a km/h y viceversa?',
+      a: 'La conversión es: km/h = m/s × 3,6 y m/s = km/h / 3,6. La razón: 1 km = 1.000 m y 1 h = 3.600 s, entonces 1 km/h = 1.000/3.600 m/s = 1/3,6 m/s. Ejemplos: 10 m/s × 3,6 = 36 km/h (velocidad de un corredor rápido). 100 km/h / 3,6 ≈ 27,78 m/s (velocidad de autopista). Esta calculadora usa km y h como unidades. Si tus datos están en m/s o metros, conviértelos primero antes de introducirlos.'
+    },
+    {
+      q: '¿Cómo se usa la calculadora para un viaje por carretera en LATAM?',
+      a: 'Ejemplos prácticos: (1) México DF a Guadalajara son ≈ 540 km. Si viajas a 90 km/h promedio, t = 540 / 90 = 6 h. (2) Bogotá a Medellín son ≈ 415 km. Si tardas 8 h (con tráfico), v = 415 / 8 ≈ 52 km/h. (3) Santiago a Valparaíso son ≈ 115 km. A 80 km/h, t = 115 / 80 ≈ 1,44 h = 1 h 26 min. La calculadora muestra el tiempo en horas y minutos simultáneamente, lo que facilita la planificación de viajes en toda Latinoamérica.'
+    },
+    {
+      q: '¿Qué es la velocidad media y cómo se diferencia de la velocidad instantánea?',
+      a: 'La velocidad media es la distancia total dividida entre el tiempo total del trayecto: v_media = d_total / t_total. Incluye paradas, atascos y cambios de velocidad. La velocidad instantánea es la velocidad en un momento preciso, la que muestra el velocímetro. Ejemplo: un autobús que recorre 200 km en 4 horas tiene velocidad media 50 km/h, aunque en tramos de autopista haya ido a 90 km/h y en ciudad a 30 km/h. Esta calculadora siempre calcula velocidad media, no instantánea.'
+    },
+    {
+      q: '¿Cómo aplica la fórmula en física escolar latinoamericana?',
+      a: 'En física de secundaria y bachillerato de México (SEP), Colombia (ICFES), Argentina (CBS), Chile (MINEDUC) y Perú (MINEDU), el movimiento rectilíneo uniforme (MRU) con la fórmula v = d/t es el primer tema de cinemática. Problemas típicos: "Un tren recorre 360 km en 4 h, ¿cuál es su velocidad?", "Un ciclista va a 25 km/h durante 3 h, ¿qué distancia recorre?", "Un auto viaja 240 km a 80 km/h, ¿cuánto tarda?". La calculadora resuelve estos tres tipos al instante.'
+    },
+    {
+      q: '¿Cuáles son los límites de velocidad en carretera en Latinoamérica?',
+      a: 'Los límites de velocidad varían por país y tipo de vía: México — autopista de cuota: 110 km/h; carretera libre: 90 km/h; zona urbana: 50 km/h. Colombia — autopista: 120 km/h; carretera: 80 km/h; ciudad: 50 km/h. Argentina — autopista: 130 km/h; ruta: 110 km/h; ciudad: 40-60 km/h. Chile — autopista: 120 km/h; ruta: 100 km/h. Perú — carretera nacional: 100 km/h. Brasil — rodovia federal: 120 km/h. Usar la calculadora con velocidades realistas (no el máximo teórico) da tiempos de viaje más precisos.'
+    },
+    {
+      q: '¿Cómo se relaciona la fórmula con el movimiento uniformemente acelerado (MRUA)?',
+      a: 'El MRU (v constante) usa v = d/t. El MRUA (aceleración constante) es más complejo: d = v0×t + ½at², v = v0 + at, v² = v0² + 2ad. Si la aceleración inicial es cero (parte del reposo), se simplifica: d = ½at², v = at. La caída libre es un caso especial de MRUA con a = g = 9,81 m/s². Esta calculadora cubre solo el MRU (velocidad constante). Para MRUA y caída libre, usa la calculadora de Caída Libre de Calzix.'
+    },
+    {
+      q: '¿Cómo se aplica la fórmula en atletismo y ciclismo latinoamericano?',
+      a: 'En atletismo, la velocidad media de los mejores atletas: 100 m planos en 10 s — v = 0,1 km / (10/3600 h) = 36 km/h. Maratón (42,195 km) en 2 h 10 min (el récord latinoamericano masculino es aprox. 2:08): v ≈ 19,7 km/h. En ciclismo, el Tour de Francia se gana a ≈ 40-42 km/h de media. En Vuelta a Colombia, etapas de montaña se recorren a 30-35 km/h de media. Para calcular: si un ciclista recorre 120 km en 3,5 h, v = 120/3,5 ≈ 34,3 km/h. La calculadora da este resultado en segundos.'
+    },
+  ]}
+>
   <VelocidadFisicaTool client:load />
 </CalcLayout>
-

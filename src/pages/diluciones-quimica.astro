@@ -1,17 +1,45 @@
-﻿---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import DilucionesTool from "@/components/tools/DilucionesTool";
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import DilucionesTool from '@/components/tools/DilucionesTool';
 ---
 
 <CalcLayout slug="diluciones-quimica"
-  whatIs="La calculadora de diluciones-quimica es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precisión?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="Una dilución es el proceso de añadir solvente a una disolución concentrada para reducir su concentración. La fórmula C₁V₁ = C₂V₂ garantiza que los moles de soluto se conservan: concentración inicial por volumen inicial = concentración final por volumen final. Esta calculadora despeja cualquiera de los cuatro valores: volumen final V₂, concentración final C₂, volumen inicial V₁ o concentración inicial C₁, con validación para que la dilución sea físicamente correcta (C₂ ≤ C₁ y V₂ ≥ V₁)."
+  whyUse="La dilución es la operación más frecuente en laboratorios de química, biología, farmacia, medicina e industria alimentaria. En Latinoamérica, desde el control de cloro en agua potable hasta la preparación de reactivos analíticos para laboratorios del IMSS o el INVIMA, pasando por la dilución de antisueros o cultivos bacterianos, la ecuación C₁V₁ = C₂V₂ se aplica constantemente. Es contenido de bachillerato y aparece en todos los exámenes de admisión universitaria de la región."
+  faqs={[
+    {
+      q: '¿Cómo funciona la ecuación de dilución C₁V₁ = C₂V₂?',
+      a: 'La ecuación se basa en que los moles de soluto son constantes durante una dilución: n = C × V (en mol y litros). Si no se agrega ni se quita soluto, solo solvente: n₁ = n₂ → C₁V₁ = C₂V₂. Variables: C₁ = concentración inicial (M); V₁ = volumen tomado de la disolución concentrada (mL o L); C₂ = concentración final deseada (M); V₂ = volumen final (mL o L). Procedimiento práctico: tomar V₁ mL de la disolución C₁, colocar en un matraz aforado de V₂ mL y enrasar con solvente (agua, generalmente) hasta la marca. Importante: el solvente añadido = V₂ − V₁ (no V₂). La calculadora trabaja en mL pero la fórmula es válida con cualquier unidad de volumen consistente.'
+    },
+    {
+      q: '¿Cómo preparo una disolución de HCl 0,1 M a partir de HCl concentrado (12 M)?',
+      a: 'Este es el ejemplo más clásico en laboratorios de bachillerato y universidad de LATAM. Queremos 500 mL de HCl 0,1 M partiendo de HCl concentrado 12 M. C₁ = 12 M; C₂ = 0,1 M; V₂ = 500 mL. V₁ = C₂ × V₂ / C₁ = 0,1 × 500 / 12 = 4,17 mL. Procedimiento: colocar ~400 mL de agua destilada en el matraz aforado de 500 mL. Con pipeta, añadir con cuidado 4,17 mL de HCl concentrado. Enrasar a 500 mL con agua. Homogeneizar invirtiendo el matraz. ¡PRECAUCIÓN! Siempre añadir el ácido AL AGUA (nunca al revés). El ácido clorhídrico concentrado (35-38%) produce vapores corrosivos: trabajar en campana de extracción, usar guantes y lentes de protección. Protocolo estándar en todas las universidades de LATAM.'
+    },
+    {
+      q: '¿Cómo se usa C₁V₁ = C₂V₂ en análisis de agua potable en LATAM?',
+      a: 'El control de cloro residual en agua potable es obligatorio en toda Latinoamérica. Las normas NOM-127 (México), Resolución 2115 (Colombia), NCh 409 (Chile) y sus equivalentes fijan el cloro residual libre en 0,2-1,5 mg/L. En laboratorio, el patrón de cloro se prepara diluyendo hipoclorito de sodio (NaClO) de alta concentración (lejía comercial ≈ 5-6% = 0,7-0,85 M). Para preparar un patrón de 5 mg/L de Cl₂ en 1 L: convertir mg/L a M (M_Cl₂ = 70,906 g/mol → 5 mg/L = 7,05×10⁻⁵ M). V₁ = 7,05×10⁻⁵ × 1000 / 700 ≈ 0,1 mL de la lejía original. Este tipo de diluciones extremas (factor 1:7.000) requieren diluciones en serie: primero 1:100, luego 1:70.'
+    },
+    {
+      q: '¿Qué son las diluciones en serie y cuándo se usan?',
+      a: 'Una dilución en serie es una secuencia de diluciones iguales que permiten alcanzar factores de dilución muy grandes con precisión. La dilución seriada más común en microbiología es 1:10: tomar 1 mL de muestra, añadir 9 mL de solvente → dilución 10⁻¹. Repetir: 10⁻², 10⁻³… Las diluciones en serie se usan en: (1) Microbiología clínica (hospitales IMSS, EPS Colombia, FONASA Chile): recuento de colonias bacterianas en muestras de agua, alimentos o sangre. (2) Inmunología: titulación de anticuerpos (ELISA en diluciones 1:100, 1:1000…). (3) Análisis de residuos de plaguicidas en frutas y verduras de exportación latinoamericana (aguacate de México, uvas de Chile, flores de Colombia): diluciones seriadas antes del análisis cromatográfico GC-MS.'
+    },
+    {
+      q: '¿Cómo se usa la dilución en la preparación de sueros y medicamentos inyectables?',
+      a: 'En farmacia hospitalaria latinoamericana, los medicamentos de alta concentración se diluyen antes de administrar al paciente. Ejemplo: insulina para infusión intravenosa. La presentación comercial es 100 UI/mL. Para preparar una infusión de 1 UI/mL en 100 mL (10 UI totales): V₁ = C₂ × V₂ / C₁ = 1 × 100 / 100 = 1 mL de insulina concentrada + 99 mL de solución salina 0,9%. Este cálculo aparece en protocolos de UCI de hospitales como el Hospital General de México, la Fundación Cardioinfantil (Colombia), el Hospital Rebagliati (Perú) y el Hospital del Salvador (Chile). Los errores de dilución en medicamentos inyectables son una causa importante de eventos adversos hospitalarios en LATAM, por lo que la doble verificación del cálculo es protocolo estándar.'
+    },
+    {
+      q: '¿Cuál es la diferencia entre dilución y disolución?',
+      a: 'Disolución: mezcla homogénea de soluto (sólido, líquido o gas) en solvente. Se PREPARA disolviendo el soluto directamente. Dilución: proceso de AÑADIR SOLVENTE a una disolución ya preparada para bajar su concentración. Se parte de una disolución ya existente. En laboratorio: disolver 5,84 g de NaCl en agua hasta 1 L → preparar una disolución 0,1 M. Tomar 100 mL de esa disolución 0,1 M y añadir agua hasta 1 L → diluir a 0,01 M. En inglés: "solution preparation" vs. "dilution". En los manuales de laboratorio de las universidades latinoamericanas (UNAM, Universidad de los Andes, UBA, PUC Chile) se distingue cuidadosamente entre ambos procedimientos para evitar errores de concentración.'
+    },
+    {
+      q: '¿Cómo se aplica la dilución en la industria alimentaria latinoamericana?',
+      a: 'En la industria de bebidas de Latinoamérica, la dilución es un proceso central: (1) Jugos concentrados (citrícolas como Jumex, Del Valle en México; Postobón en Colombia; Andina Beverages en Chile): el jugo se concentra por evaporación a 65 °Brix (molaridad ≈ 2,0 M sacarosa eq.) y luego se reconstituye diluyendo a 11-12 °Brix (≈ 0,35 M). C₁V₁ = C₂V₂. (2) Cerveza (AmBev/Skol, Modelo, Bavaria, CCU): ajuste del amargor con extracto de lúpulo concentrado. (3) Vinagres: dilución de ácido acético glacial (17 M) al 5% → 0,83 M. V₁ = 0,83 × 100 / 17 = 4,9 mL de acético glacial por 95,1 mL de agua. (4) Salsas picantes (Valentina, Tabasco, Cholula): dilución de capsaicina concentrada para ajustar el nivel de picante a los distintos mercados de LATAM.'
+    },
+    {
+      q: '¿Cómo funciona la titulación ácido-base y por qué usa diluciones previas?',
+      a: 'Una titulación es una técnica analítica donde se agrega una solución de concentración conocida (titulante) a otra de concentración desconocida (analito) hasta el punto de equivalencia. Para que sea precisa, la concentración del analito debe estar en el rango 0,01-0,5 M: ni tan concentrada que gaste mucho titulante, ni tan diluida que sea difícil detectar el punto final. Si la muestra es un vinagre con ≈ 0,8 M de ácido acético y queremos titular con NaOH 0,1 M, primero se diluye 1:10 el vinagre: C₂ = 0,8/10 = 0,08 M, quedando en rango adecuado. Los laboratorios de control de calidad de alimentos del SENASAG (Bolivia), SENASA (Perú, Argentina), SENASA (México) usan estas diluciones previas continuamente en el análisis de acidez de vinos, vinagres y productos lácticos.'
+    },
+  ]}
+>
   <DilucionesTool client:load />
 </CalcLayout>
-

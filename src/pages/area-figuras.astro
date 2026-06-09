@@ -1,32 +1,45 @@
-﻿---
+---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import AreaFigurasTool from '@/components/tools/AreaFigurasTool';
 ---
 
 <CalcLayout slug="area-figuras"
-  whatIs="La calculadora de area-figuras es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  {
-    q: '¿Cómo se calcula el área de un círculo?',
-    a: 'El área de un círculo es Ï€ Í— r², donde r es el radio. Por ejemplo, un círculo de radio 5 tiene un área de Ï€ Í— 25 â‰ˆ 78,54 unidades cuadradas.'
-  },
-  {
-    q: '¿Cuál es la diferencia entre área y perímetro?',
-    a: 'El área mide la superficie interior de una figura (en unidades cuadradas), mientras que el perímetro mide la longitud total del contorno exterior (en unidades lineales).'
-  },
-  {
-    q: '¿Por qué el triángulo solo muestra área y no perímetro?',
-    a: 'Con solo la base y la altura no es posible calcular el perímetro exacto, ya que los otros dos lados son desconocidos. Para el perímetro del triángulo necesitarías conocer los tres lados.'
-  },
-  {
-    q: '¿En qué unidades están los resultados?',
-    a: 'Los resultados se expresan en las mismas unidades que introduzcas. Si introduces medidas en metros, el área estará en m² y el perímetro en m. Asegúrate de usar unidades consistentes.'
-  },
-  {
-    q: '¿Cómo calculo el área de un trapecio?',
-    a: 'El área del trapecio es (base mayor + base menor) Í— altura / 2. Necesitas conocer las dos bases paralelas y la altura perpendicular entre ellas.'
-  },
-]}>
+  whatIs="El área es la medida de la superficie interior de una figura geométrica, expresada en unidades cuadradas (cm², m², km²). Esta calculadora calcula el área y el perímetro de las cinco figuras más comunes: cuadrado (lado²), rectángulo (ancho × alto), círculo (pi × radio²), triángulo (base × altura ÷ 2) y trapecio ((base mayor + base menor) × altura ÷ 2). Los resultados son precisos a 4 decimales usando las fórmulas geométricas estándar."
+  whyUse="Calcular áreas es fundamental en construcción (tiles, pintura, cemento, pisos), diseño de interiores, agricultura y ganadería (medir terrenos y parcelas), arquitectura, y en la resolución de problemas geométricos escolares. El cálculo de áreas se estudia desde primaria en toda Latinoamérica y es indispensable en exámenes de ingreso universitario y en carreras de ingeniería civil, arquitectura, diseño y ciencias en México, Colombia, Argentina, Chile, Perú y toda la región."
+  faqs={[
+    {
+      q: '¿Cómo se calcula el área de un cuadrado y un rectángulo?',
+      a: 'Cuadrado: si el lado mide L, el área es L². Ejemplo: un cuadrado de 7 cm tiene área 7²=49 cm². Perímetro: 4×L=28 cm. Rectángulo: si tiene ancho A y alto H, el área es A×H. Ejemplo: un salón de 6 m de ancho y 4,5 m de alto tiene área 6×4,5=27 m². Perímetro: 2×(A+H)=2×10,5=21 m. Aplicación práctica: para calcular cuántas baldosas de 30×30 cm se necesitan en un piso de 27 m²: 27÷(0,30×0,30)=27÷0,09=300 baldosas (más margen de desperdicio).'
+    },
+    {
+      q: '¿Cómo se calcula el área de un círculo?',
+      a: 'El área de un círculo es pi × r², donde r es el radio y pi ≈ 3,14159. Si conoces el diámetro d, el radio es r=d÷2. Ejemplos: círculo de radio 5 cm → área = pi×25 ≈ 78,54 cm²; círculo de diámetro 10 m → r=5 m → área ≈ 78,54 m². La circunferencia (perímetro del círculo) es 2×pi×r. Para r=5: circunferencia ≈ 31,42 cm. Aplicaciones: calcular el área de una piscina circular, una fuente, una rueda, un terreno redondo, o la sección de una tubería en proyectos de ingeniería y construcción en Latinoamérica.'
+    },
+    {
+      q: '¿Cómo se calcula el área de un triángulo?',
+      a: 'El área de un triángulo es base × altura ÷ 2. La altura debe ser perpendicular a la base elegida. Ejemplo: triángulo de base 12 m y altura 8 m → área = 12×8÷2 = 48 m². Si conoces los tres lados (a, b, c), usa la fórmula de Herón: s=(a+b+c)÷2; área=√(s×(s−a)×(s−b)×(s−c)). Para triángulo rectángulo: los dos catetos son base y altura, por tanto área = cateto₁ × cateto₂ ÷ 2. La calculadora usa base y altura; si tienes los tres lados, calcula la altura primero usando el Teorema de Pitágoras.'
+    },
+    {
+      q: '¿Cómo se calcula el área de un trapecio?',
+      a: 'El área del trapecio es (base mayor + base menor) × altura ÷ 2. Las bases son los dos lados paralelos y la altura es la distancia perpendicular entre ellos. Ejemplo: trapecio con base mayor 10 m, base menor 6 m y altura 4 m → área = (10+6)×4÷2 = 16×4÷2 = 32 m². Aplicación: terrenos en forma de trapecio son comunes en zonas urbanas latinoamericanas. También se usa en ingeniería civil para calcular secciones transversales de canales de riego, carreteras y presas hidráulicas.'
+    },
+    {
+      q: '¿Cuál es la diferencia entre área y perímetro?',
+      a: 'El área mide la superficie interior de una figura, expresada en unidades cuadradas (cm², m², hectáreas). El perímetro mide la longitud total del contorno exterior, expresado en unidades lineales (cm, m, km). Ejemplo con un rectángulo de 5 m × 3 m: área = 15 m² (la superficie del piso que hay que cubrir), perímetro = 16 m (la longitud del zócalo o cerco que habría que instalar alrededor). Ambas medidas se usan en construcción, jardinería y diseño pero para propósitos distintos: materiales de cobertura vs. materiales de borde.'
+    },
+    {
+      q: '¿Cómo convierto entre unidades de área?',
+      a: 'Las conversiones de área más comunes en Latinoamérica: 1 m² = 10.000 cm²; 1 km² = 1.000.000 m²; 1 hectárea (ha) = 10.000 m²; 1 km² = 100 ha; 1 acre = 4.047 m² ≈ 0,4047 ha; 1 pie² = 0,0929 m²; 1 vara² (uso común en Centroamérica) ≈ 0,698 m². Para convertir: multiplica si vas a unidades más pequeñas; divide si vas a unidades más grandes. Ejemplo: 2,5 ha = 2,5 × 10.000 = 25.000 m². En agricultura latinoamericana se miden parcelas en hectáreas y en construcción en metros cuadrados.'
+    },
+    {
+      q: '¿Cómo se calcula el área de figuras irregulares?',
+      a: 'Para figuras irregulares existen varios métodos: (1) Divide la figura en figuras simples (rectángulos, triángulos, trapecios) cuyas áreas sabes calcular y súmalas. (2) Método del cuadrado: dibuja la figura sobre papel cuadriculado y cuenta los cuadrados completos y los parciales. (3) Fórmula de Gauss (shoelace): si conoces las coordenadas de los vértices (x₁,y₁), (x₂,y₂)... Area = ½|Σ(xᵢ×yᵢ₊₁ − xᵢ₊₁×yᵢ)|. (4) Integración calcular el área bajo una curva. La calculadora cubre las 5 figuras básicas que son la base de todos estos métodos compuestos.'
+    },
+    {
+      q: '¿Qué unidades debo usar y cómo interpreto los resultados?',
+      a: 'La calculadora trabaja en las unidades que tú uses: si introduces medidas en metros, el área estará en m² y el perímetro en m. Si usas centímetros, el área será en cm². Es fundamental usar unidades consistentes en todos los campos. No mezcles metros con centímetros sin convertir primero. Ejemplo de error a evitar: una habitación de 3 m de ancho y 400 cm de largo. Convierte primero: 400 cm = 4 m. Luego área = 3×4 = 12 m². Si mezclaras las unidades obtendrías 3×400 = 1.200, que es incorrecto. Siempre homogeneiza las unidades antes de calcular.'
+    },
+  ]}
+>
   <AreaFigurasTool client:load />
 </CalcLayout>
-

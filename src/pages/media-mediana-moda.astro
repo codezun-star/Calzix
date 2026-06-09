@@ -1,32 +1,45 @@
-﻿---
+---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import MediaMedianaTool from '@/components/tools/MediaMedianaTool';
 ---
 
 <CalcLayout slug="media-mediana-moda"
-  whatIs="La calculadora de media-mediana-moda es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  {
-    q: '¿Cuál es la diferencia entre media, mediana y moda?',
-    a: 'La media es el promedio aritmético (suma dividida entre la cantidad). La mediana es el valor central cuando los datos están ordenados. La moda es el valor que más se repite. Cada una describe el conjunto de datos desde un ángulo diferente.'
-  },
-  {
-    q: '¿Cuándo es más útil usar la mediana en lugar de la media?',
-    a: 'La mediana es preferible cuando hay valores extremos (outliers) que distorsionan la media. Por ejemplo, en salarios, unos pocos ingresos muy altos elevan la media, pero la mediana refleja mejor el ingreso típico.'
-  },
-  {
-    q: '¿Qué pasa si hay más de una moda?',
-    a: 'Un conjunto de datos puede ser bimodal (dos modas) o multimodal (varias). La calculadora muestra todas las modas cuando más de un valor tiene la misma frecuencia máxima.'
-  },
-  {
-    q: '¿Cómo se interpreta la desviación estándar?',
-    a: 'La desviación estándar mide cuánto se dispersan los datos respecto a la media. Un valor bajo indica que los datos están concentrados cerca de la media; un valor alto indica mayor variabilidad.'
-  },
-  {
-    q: '¿Cuántos números necesito para calcular la estadística?',
-    a: 'Necesitas al menos 2 números. Sepáralos con comas, espacios o punto y coma. Puedes introducir hasta cientos de valores sin problema.'
-  },
-]}>
+  whatIs="Las medidas de tendencia central describen con un solo valor el centro o valor típico de un conjunto de datos. Esta calculadora obtiene al instante todas las estadísticas descriptivas básicas de tus datos: media aritmética (promedio), mediana (valor central), moda (valor más frecuente), mínimo, máximo, rango y desviación estándar. Introduce los valores separados por coma, punto y coma o espacio y obtendrás los ocho indicadores de inmediato."
+  whyUse="La estadística descriptiva es la base del análisis de datos en economía, ciencias de la salud, ciencias sociales, educación e ingeniería. En Latinoamérica, interpretar correctamente la media y la mediana es fundamental para entender desigualdad de ingresos, rendimiento académico, precios de mercado y resultados de encuestas. Es contenido obligatorio en bachillerato y universidad en México, Colombia, Argentina, Chile, Perú y toda la región, y se evalúa en el COMIPEMS, ICFES, PSU/PAES, CBS y todas las pruebas de admisión universitaria."
+  faqs={[
+    {
+      q: '¿Qué es la media aritmética y cuándo usarla?',
+      a: 'La media aritmética (o promedio) es la suma de todos los valores dividida entre la cantidad de datos: media = (x1 + x2 + ... + xn) ÷ n. Ejemplo: las notas de un estudiante son 7, 8, 6, 9, 7 — suma = 37 — media = 37÷5 = 7,4. La media es la medida más usada pero es sensible a valores extremos (outliers). Si un empleado gana 10.000 pesos y el jefe gana 100.000, la media de ambos es 55.000, lo cual no representa bien a ninguno. En esos casos, la mediana es más representativa del valor típico de la distribución.'
+    },
+    {
+      q: '¿Qué es la mediana y cuándo es preferible a la media?',
+      a: 'La mediana es el valor que divide el conjunto ordenado en dos mitades iguales. Si hay n datos ordenados: si n es impar, la mediana es el dato central (posición (n+1)/2); si n es par, es la media de los dos centrales. Ejemplo: datos 3, 7, 7, 9, 12 — mediana = 7 (posición 3). Datos 3, 7, 9, 12 — mediana = (7+9)/2 = 8. La mediana es preferible cuando hay valores extremos: los salarios en países LATAM suelen reportarse por mediana porque la media se dispara por los ingresos altísimos de una minoría. El INEGI en México, el DANE en Colombia y el INDEC en Argentina publican salario mediano como indicador estándar.'
+    },
+    {
+      q: '¿Qué es la moda y qué significa que un conjunto sea bimodal o multimodal?',
+      a: 'La moda es el valor que aparece con mayor frecuencia en un conjunto de datos. Ejemplo: en [3, 5, 5, 7, 8, 8, 8, 9] la moda es 8 (aparece 3 veces). Un conjunto es bimodal si tiene dos modas con la misma frecuencia máxima: [1, 2, 2, 3, 4, 4, 5] tiene modas 2 y 4. Es multimodal si hay más de dos. Un conjunto sin repeticiones no tiene moda. En educación latinoamericana, la moda de calificaciones indica la nota más frecuente; en comercio, la talla o número de calzado más vendido (la moda de ventas) determina el pedido de reposición. Esta calculadora muestra todas las modas cuando el conjunto es bimodal o multimodal.'
+    },
+    {
+      q: '¿Qué miden el rango, el mínimo y el máximo?',
+      a: 'El mínimo es el valor más pequeño del conjunto y el máximo es el valor más grande. El rango (o recorrido) es la diferencia entre ambos: rango = máximo - mínimo. Ejemplo: temperaturas anuales en una ciudad: mín = 4°C, máx = 38°C — rango = 34°C. El rango mide la amplitud total de los datos, pero es muy sensible a valores extremos. Si la mayoría de ingresos de un barrio está entre 5.000 y 8.000 pesos pero hay una persona con 200.000 pesos, el rango salta a 195.000 aunque la mayoría esté concentrada en un intervalo mucho menor.'
+    },
+    {
+      q: '¿Qué es la desviación estándar y cómo se interpreta?',
+      a: 'La desviación estándar mide cuánto se alejan los datos de la media en promedio. Fórmula: s = raíz(suma(xi - media)² ÷ n). Cuanto mayor es la desviación estándar, más dispersos están los datos. Ejemplo: dos grupos de alumnos con media 70 puntos: Grupo A: [70, 70, 70, 70] — s = 0 (todos iguales). Grupo B: [50, 60, 80, 90] — s ≈ 15,8 (muy disperso). En finanzas latinoamericanas, la desviación estándar del rendimiento de un activo mide su riesgo: mayor s = mayor volatilidad. En control de calidad industrial, s bajo indica proceso estable y producto uniforme.'
+    },
+    {
+      q: '¿Cuándo debo usar la media y cuándo la mediana para describir datos?',
+      a: 'Regla general: usa la media cuando los datos tienen distribución simétrica (sin valores extremos muy dispares). Usa la mediana cuando los datos son asimétricos o tienen outliers que distorsionan la media. Ejemplos LATAM: (1) Calificaciones de un grupo [6, 7, 7, 8, 8, 9, 10] — distribución simétrica — la media (7,86) es apropiada. (2) Ingresos en un barrio [5.000, 6.000, 5.500, 6.200, 150.000 pesos] — outlier extremo — la mediana (6.000) refleja mejor el ingreso típico que la media (34.540). (3) Temperatura diaria sin valores extremos — la media es representativa. La distribución de los datos guía siempre la elección.'
+    },
+    {
+      q: '¿Cómo se aplica la estadística descriptiva en la educación latinoamericana?',
+      a: 'Los sistemas educativos de México (SEP), Colombia (MEN), Argentina (MINEC), Chile (MINEDUC) y Perú (MINEDU) publican promedios de resultados de pruebas estandarizadas: PISA, PLANEA, SABER, SIMCE, ECE. Para un docente, calcular la media y la desviación estándar de las calificaciones de su grupo permite identificar si el rendimiento es homogéneo (s bajo) o disperso (s alto), y si hay alumnos en riesgo de reprobación. La mediana de calificaciones indica el rendimiento del alumno típico y es menos distorsionada que la media cuando hay alumnos con notas muy bajas o muy altas.'
+    },
+    {
+      q: '¿Cómo introduzco correctamente los datos en la calculadora?',
+      a: 'La calculadora acepta números separados por coma, punto y coma o espacio. Puedes usar punto decimal (2.5) o coma decimal (2,5). Se admiten números negativos. Se necesitan al menos 2 datos. Ejemplos válidos: "3, 7, 7, 9, 12" o "3;7;7;9;12" o "3 7 7 9 12". Para datos de tablas de Excel, copia la columna, pégala en el campo y la calculadora los separará automáticamente por saltos de línea o espacios. No uses texto mezclado: si tus datos son "A, B, 3", la calculadora ignorará los valores no numéricos y calculará solo con los que sí lo sean.'
+    },
+  ]}
+>
   <MediaMedianaTool client:load />
 </CalcLayout>
-

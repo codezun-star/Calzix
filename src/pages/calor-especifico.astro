@@ -1,17 +1,45 @@
-﻿---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import CalorEspecificoTool from "@/components/tools/CalorEspecificoTool";
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import CalorEspecificoTool from '@/components/tools/CalorEspecificoTool';
 ---
 
 <CalcLayout slug="calor-especifico"
-  whatIs="La calculadora de calor-especifico es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precisión?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="El calor específico (c) es la cantidad de energía térmica necesaria para elevar 1°C la temperatura de 1 kg de una sustancia. La fórmula es Q = m × c × Delta_T, donde Q es el calor absorbido o cedido (Joules), m es la masa (kg), c es el calor específico (J/kg·°C) y Delta_T es la variación de temperatura (°C). Esta calculadora tiene cuatro modos: calcular Q, masa, calor específico o variación de temperatura, resolviendo cualquiera de los cuatro parámetros de la ecuación al instante."
+  whyUse="El calor específico es fundamental en termodinámica, ingeniería química, industria alimentaria, climatología y en la planificación energética. En Latinoamérica, las cocinas industriales, los sistemas de calefacción y refrigeración, la pasteurización de leche y jugo, la destilación de alcohol y los procesos metalúrgicos requieren cálculos precisos de transferencia de calor. Es contenido obligatorio en física de bachillerato y en las materias de Termodinámica de ingenierías química, mecánica, ambiental y de alimentos en México, Colombia, Argentina, Chile, Perú y toda la región."
+  faqs={[
+    {
+      q: '¿Qué es el calor específico y de qué depende?',
+      a: 'El calor específico c de una sustancia indica cuánta energía (J) necesitas para calentar 1 kg de esa sustancia 1°C. La fórmula Q = mcΔT muestra que para una misma masa y variación de temperatura, las sustancias con mayor c requieren más energía para calentarse (y también almacenan más calor). El agua tiene un calor específico extraordinariamente alto: c = 4.186 J/kg·°C, unas 5 veces mayor que el hierro (450 J/kg·°C). Esto significa que los océanos y mares se calientan y enfrían mucho más lentamente que la tierra, regulando el clima costero de países como México, Colombia, Chile y Brasil y haciendo que las ciudades costeras tengan temperaturas más moderadas que las ciudades del interior.'
+    },
+    {
+      q: '¿Cuáles son los calores específicos de las sustancias más comunes?',
+      a: 'Calores específicos a 25°C (J/kg·°C): Agua líquida — 4.186 (el más alto de los líquidos comunes). Hielo — 2.090. Vapor de agua — 2.010. Etanol (alcohol) — 2.440. Aceite de oliva — ≈2.000. Leche — ≈3.930. Arena — 840. Aluminio — 900. Hierro/Acero — 450-500. Cobre — 385. Plomo — 128. Hormigón — 880. Madera — 1.700. Aire (presión cte.) — 1.005. El alto calor específico del agua explica su uso como fluido refrigerante en radiadores de autos y en centrales de generación de energía en LATAM. El bajo calor específico del plomo explica por qué se calienta rápidamente al sol.'
+    },
+    {
+      q: '¿Cómo se usa la fórmula Q = mcΔT en la cocina latinoamericana?',
+      a: 'Calentar agua para cocinar: ¿cuánta energía necesitas para calentar 3 litros de agua (3 kg) desde 20°C hasta 100°C para hacer tamales o empanadas? ΔT = 80°C. Q = 3 × 4.186 × 80 = 1.004.640 J ≈ 1.005 kJ ≈ 0,279 kWh. Con electricidad a 1 peso/kWh (México), eso cuesta ≈ 0,28 pesos. Un calentador de 1.500 W lo consigue en: t = Q/P = 1.004.640/1.500 ≈ 670 s ≈ 11 minutos. Para pasteurización de leche (calentar 100 kg desde 4°C a 72°C, c_leche ≈ 3.930): Q = 100 × 3.930 × 68 ≈ 26.724.000 J ≈ 26,7 MJ. Estos cálculos son básicos en la industria láctea de México, Colombia, Argentina y Chile.'
+    },
+    {
+      q: '¿Qué es la calorimetría y cómo se usa para medir c?',
+      a: 'La calorimetría es la ciencia que mide los intercambios de calor. El principio: en un sistema aislado, el calor perdido por el objeto caliente es igual al calor ganado por el objeto frío: Q_cedido = Q_absorbido, es decir, m1 × c1 × (T1 - T_eq) = m2 × c2 × (T_eq - T2). Ejemplo experimental típico en laboratorios latinoamericanos: un bloque de hierro de 100 g calentado a 100°C se sumerge en 200 g de agua a 20°C. T_eq ≈ ? Resolviendo: 0,1 × 450 × (100 - T_eq) = 0,2 × 4186 × (T_eq - 20) → 45(100-T_eq) = 837,2(T_eq-20) → T_eq ≈ 22,3°C. El calor específico del hierro (c1) puede calcularse midiendo T_eq si ya conocemos c2 (del agua).'
+    },
+    {
+      q: '¿Por qué el agua tiene un calor específico tan alto?',
+      a: 'El agua (H2O) tiene un calor específico excepcionalmente alto (4.186 J/kg·°C) por sus puentes de hidrógeno entre moléculas. Para calentar el agua, hay que primero romper parcialmente estos puentes, lo que requiere energía extra. Este alto c tiene consecuencias enormes en Latinoamérica: (1) Moderación climática costera: el Océano Pacífico y el Atlántico actúan como "amortiguadores térmicos" para Colombia, Ecuador, Perú, Chile y Brasil. (2) Tormentas tropicales: el Golfo de México y el Caribe almacenan calor en verano que alimenta a los huracanes. (3) Refrigeración industrial: el agua es el fluido refrigerante más barato y eficiente disponible. (4) Calentamiento global: los océanos absorben el 90% del exceso de calor generado por el efecto invernadero.'
+    },
+    {
+      q: '¿Cómo se aplica el calor específico en sistemas de climatización en LATAM?',
+      a: 'En sistemas de calefacción y aire acondicionado, la potencia necesaria para cambiar la temperatura de un espacio depende de la masa de aire a acondicionar y su calor específico (c_aire = 1.005 J/kg·°C). El aire tiene densidad ≈ 1,2 kg/m³. Para una habitación de 60 m³ (5×4×3 m): masa_aire = 60 × 1,2 = 72 kg. Para elevar la temperatura de 10°C a 22°C (ΔT = 12°C): Q = 72 × 1.005 × 12 = 868.320 J ≈ 868 kJ. Un calentador de 2.000 W lo consigue en ≈ 7,2 minutos (ignorando pérdidas por muros). En ciudades frías como Bogotá (14°C promedio), La Paz (Bolivia) o Quito (14°C), este cálculo ayuda a dimensionar sistemas de calefacción eficientes.'
+    },
+    {
+      q: '¿Cómo se usa la fórmula en metalurgia e industria latinoamericana?',
+      a: 'En fundición de metales, hay que calentar el metal desde temperatura ambiente hasta su punto de fusión: Q = m × c × (T_fusión - T_ambiente). Para 1 tonelada de acero (c = 500 J/kg·°C) desde 20°C hasta 1.538°C: Q = 1000 × 500 × 1518 = 759.000.000 J ≈ 759 MJ ≈ 211 kWh. Adicionalmente hay que añadir el calor latente de fusión (≈270 kJ/kg): Q_latente = 1000 × 270.000 = 270 MJ. Total ≈ 1.029 MJ. Las acerías de LATAM (Ternium en México y Argentina, Gerdau en Brasil, Paz del Río en Colombia) realizan estos cálculos constantemente para optimizar el consumo energético de sus hornos eléctricos o de arco.'
+    },
+    {
+      q: '¿Qué es el calor latente y en qué se diferencia del calor sensible?',
+      a: 'El calor sensible es el calor que produce cambio de temperatura (Q = mcΔT): es lo que calcula esta herramienta. El calor latente es el calor absorbido o cedido durante un cambio de fase (sólido ↔ líquido ↔ gas) sin cambio de temperatura. Calores latentes del agua: fusión (hielo ↔ agua) = 334 kJ/kg a 0°C. Vaporización (agua ↔ vapor) = 2.260 kJ/kg a 100°C. El calor de vaporización del agua es altísimo: hervir agua requiere mucha más energía que solo calentarla. En la industria azucarera (caña de azúcar, cultura agrícola fundamental en Cuba, México, Colombia, Brasil, Perú), la evaporación de agua del jugo de caña consume la mayor parte de la energía del proceso. El bagazo (bagazo) de la caña se quema para generar el vapor necesario.'
+    },
+  ]}
+>
   <CalorEspecificoTool client:load />
 </CalcLayout>
-

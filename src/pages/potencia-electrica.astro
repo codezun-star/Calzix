@@ -1,17 +1,45 @@
-﻿---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import PotenciaElectricaTool from "@/components/tools/PotenciaElectricaTool";
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import PotenciaElectricaTool from '@/components/tools/PotenciaElectricaTool';
 ---
 
 <CalcLayout slug="potencia-electrica"
-  whatIs="La calculadora de potencia-electrica es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precisión?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="La potencia eléctrica mide la velocidad a la que un dispositivo convierte energía eléctrica en otra forma de energía (calor, luz, movimiento). Se calcula con P = V × I, donde P es la potencia en Watts (W), V es la tensión en Voltios (V) e I es la intensidad en Amperios (A). Esta calculadora tiene tres modos: calcular potencia dados V e I, calcular tensión dados P e I, o calcular intensidad dados P y V. El resultado en modo potencia se muestra también en kiloWatts (kW)."
+  whyUse="Conocer la potencia eléctrica es indispensable para calcular el consumo de electrodomésticos, dimensionar instalaciones eléctricas, comparar tarifas de luz y elegir el calibre de cable correcto. En Latinoamérica, las tarifas eléctricas de la CFE (México), EPM (Colombia), Enel (Chile, Perú, Brasil) y otras distribuidoras facturan en kWh (kiloWatt-hora). Calcular el consumo en Watts de cada aparato y multiplicar por las horas de uso permite estimar la factura mensual. Es materia obligatoria en bachillerato técnico e ingeniería eléctrica en toda la región."
+  faqs={[
+    {
+      q: '¿Qué es la potencia eléctrica y cómo se mide?',
+      a: 'La potencia eléctrica P = V × I mide cuánta energía por unidad de tiempo consume un dispositivo. La unidad es el Watt (W = J/s). 1 kW = 1.000 W. Una bombilla de 60 W consume 60 J de energía eléctrica cada segundo. Combinando con la Ley de Ohm (V = IR), obtenemos formas alternativas: P = I² × R y P = V²/R. Diferencia entre potencia y energía: la potencia es la velocidad de consumo (kW) y la energía es la cantidad acumulada (kWh). La factura eléctrica cobra en kWh: si un aparato de 2 kW funciona 5 horas, consume 2 × 5 = 10 kWh.'
+    },
+    {
+      q: '¿Cómo calculo el consumo mensual de un electrodoméstico en LATAM?',
+      a: 'Fórmula: consumo_mensual (kWh) = potencia (kW) × horas_uso_diario × 30 días. Ejemplos: refrigerador de 150 W que funciona 24 h: 0,15 × 24 × 30 = 108 kWh/mes. Aire acondicionado de 2.000 W que se usa 8 h/día: 2 × 8 × 30 = 480 kWh/mes. Televisión de 100 W que se usa 5 h/día: 0,1 × 5 × 30 = 15 kWh/mes. En México (CFE, tarifa doméstica): el precio por kWh varía de ≈ 0,80 a ≈ 3,50 pesos según el consumo. En Colombia (EPM): ≈ 600-700 pesos/kWh. El refrigerador y el A/C son generalmente los mayores consumidores en hogares latinoamericanos.'
+    },
+    {
+      q: '¿Qué es la potencia aparente, activa y reactiva?',
+      a: 'En corriente alterna (CA), que es la que usan los hogares en LATAM, hay tres tipos de potencia: Potencia activa P (W): la que realiza trabajo útil. Potencia reactiva Q (VAr): la asociada a campos magnéticos y eléctricos en bobinas y condensadores. No realiza trabajo pero sí carga las líneas. Potencia aparente S (VA): S = raíz(P² + Q²). La relación P/S se llama factor de potencia (cos phi). Un factor de potencia bajo (motor, neon) significa que la corriente es mayor de lo necesario para el mismo trabajo. Las distribuidoras eléctricas de LATAM penalizan a industrias con factor de potencia menor a 0,9 porque aumentan las pérdidas en la red.'
+    },
+    {
+      q: '¿Qué potencia consumen los principales electrodomésticos?',
+      a: 'Consumos típicos (varían según modelo y eficiencia): Refrigerador — 100-250 W. Aire acondicionado 12.000 BTU — 1.000-1.400 W. Lavadora — 500-1.000 W. Secadora eléctrica — 3.000-5.000 W. Horno microondas — 700-1.200 W. Plancha de ropa — 1.000-2.500 W. Ducha eléctrica (Brasil, Colombia) — 3.000-7.500 W. Computadora de escritorio — 100-300 W. Laptop — 30-65 W. Televisión LED 50" — 50-150 W. Foco LED 10 W reemplaza a un incandescente de 60 W, consumiendo 83% menos energía. Con esta calculadora puedes verificar la potencia de cualquier aparato conociendo su voltaje de operación y su corriente (indicados en la placa de datos).'
+    },
+    {
+      q: '¿Cómo dimensiono el calibre del cable para una instalación eléctrica?',
+      a: 'El calibre del cable debe soportar la corriente sin sobrecalentarse (efecto Joule P = I²R). La corriente se calcula de la potencia: I = P / V. Ejemplo: instalar un aire acondicionado de 3.000 W en 220 V: I = 3.000/220 ≈ 13,6 A. Se elige el siguiente calibre estándar superior: cable calibre 12 AWG (capacidad 20 A) o calibre 10 AWG (30 A) para mayor margen. En México, la NOM-001-SEDE regula el calibre mínimo. En Colombia, el RETIE. En Argentina, el RAE. Siempre añadir un 25% de margen sobre la corriente calculada para no operar el cable al límite de su capacidad.'
+    },
+    {
+      q: '¿Cómo se relaciona la potencia con el rendimiento energético de los electrodomésticos en LATAM?',
+      a: 'Los electrodomésticos en Latinoamérica tienen etiquetas de eficiencia energética que indican su consumo en kWh/año o su categoría (A+++, A++, A+, B, C, D). En México, el FIDE y la CONUEE certifican el sello FIDE de eficiencia. En Colombia, la UPME y CIDET otorgan el Sello de Eficiencia Energética. En Chile, el SEC gestiona el etiquetado. Un refrigerador categoría A+++ puede consumir 150 kWh/año frente a los 600 kWh/año de uno de categoría E, ahorrando ≈ 450 kWh × precio_kWh por año. Calcular la potencia real de un aparato a partir de su voltaje y corriente de placa permite verificar si el consumo declarado es correcto.'
+    },
+    {
+      q: '¿Cómo se aplica P = V × I en paneles solares y sistemas fotovoltaicos?',
+      a: 'En sistemas fotovoltaicos, P = V × I determina la potencia generada por un panel. Un panel solar de 24 V y corriente de cortocircuito 8,5 A tiene potencia máxima Pmax ≈ 24 × 8,5 × FF, donde FF (fill factor) ≈ 0,75-0,80 es el factor de forma. Pmax ≈ 24 × 8,5 × 0,78 ≈ 159 W. La potencia real varía con la irradiación solar (medida en W/m²) y la temperatura del panel. En Latinoamérica, con alta irradiación solar (especialmente en el desierto de Atacama, el altiplano andino y el noreste de Brasil), un panel de 400 W puede generar ≈ 1,6 kWh por día (4 horas de sol pico).'
+    },
+    {
+      q: '¿Qué es el efecto Joule y por qué calienta los cables eléctricos?',
+      a: 'El efecto Joule es el calentamiento producido cuando la corriente eléctrica fluye por un conductor resistivo. La energía disipada en calor es Q = I² × R × t (donde t es el tiempo en segundos). Ejemplo: un cable de 1 Ohm por donde circulan 10 A durante 1 hora disipa P = 100 W de calor y Q = 100 × 3600 = 360.000 J = 360 kJ. Este calor puede fundir el aislante y provocar incendios. El 70% de los incendios eléctricos en hogares latinoamericanos tienen origen en instalaciones con calibre de cable insuficiente para la corriente que circula (calentamiento por efecto Joule). Dimensionar correctamente con P = V × I previene estos accidentes.'
+    },
+  ]}
+>
   <PotenciaElectricaTool client:load />
 </CalcLayout>
-

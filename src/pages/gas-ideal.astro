@@ -1,17 +1,45 @@
-﻿---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import GasIdealTool from "@/components/tools/GasIdealTool";
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import GasIdealTool from '@/components/tools/GasIdealTool';
 ---
 
 <CalcLayout slug="gas-ideal"
-  whatIs="La calculadora de gas-ideal es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precisión?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="La ley del gas ideal PV = nRT relaciona cuatro variables de estado de un gas: P = presión (Pascales, Pa), V = volumen (m³), n = cantidad de sustancia (moles, mol), T = temperatura absoluta (Kelvin, K). La constante universal de los gases es R = 8,314 J/(mol·K). Esta calculadora tiene cuatro modos: calcula cualquiera de los cuatro valores conociendo los otros tres."
+  whyUse="La ley del gas ideal es la ecuación de estado más utilizada en física y química. Aunque es una aproximación (válida para gases a baja presión y alta temperatura), describe con excelente precisión el comportamiento del aire, el gas natural, el nitrógeno y otros gases en condiciones cotidianas. Es contenido obligatorio en bachillerato de física y química en toda Latinoamérica, y clave en ingeniería química, meteorología, termodinámica y la industria del gas y del petróleo."
+  faqs={[
+    {
+      q: '¿De dónde viene PV = nRT y cuáles son sus hipótesis?',
+      a: 'La ley del gas ideal se derivó históricamente combinando tres leyes experimentales del siglo XVII-XIX: Ley de Boyle (1662): a T constante, PV = constante (P₁V₁ = P₂V₂). Ley de Charles (1787): a P constante, V/T = constante. Ley de Gay-Lussac (1802): a V constante, P/T = constante. Combinadas: PV/T = constante → PV = nRT. Sus hipótesis: (1) Las moléculas del gas no tienen volumen propio (son puntos). (2) No hay fuerzas de atracción o repulsión entre moléculas (solo choques elásticos). (3) Las colisiones con las paredes del recipiente producen la presión. El "gas ideal" no existe físicamente, pero el aire a temperatura ambiente y 1 atm se aproxima muy bien. A alta presión o baja temperatura, se usa la ecuación de van der Waals.'
+    },
+    {
+      q: '¿Qué valores de R se usan y cuándo cambiar de unidades?',
+      a: 'R = 8,314 J/(mol·K) = 8,314 Pa·m³/(mol·K). Pero en la práctica se usan otras formas: R = 0,08206 L·atm/(mol·K) — cuando P está en atmósferas y V en litros. R = 62,36 L·mmHg/(mol·K) — raro. Conversiones de unidades importantes: 1 atm = 101.325 Pa. 1 bar = 100.000 Pa. 1 L = 0,001 m³. 1 m³ = 1000 L. T(K) = T(°C) + 273,15. Esta calculadora usa la forma SI: P en Pa, V en m³, T en K, R = 8,314. Para usar litros y atmósferas, convierte antes: V(m³) = V(L) × 0,001 y P(Pa) = P(atm) × 101.325. La temperatura SIEMPRE debe estar en Kelvin: 25°C = 298,15 K; 0°C = 273,15 K; −273,15°C = 0 K (cero absoluto).'
+    },
+    {
+      q: '¿Cómo se aplica PV = nRT al cálculo de volumen molar?',
+      a: 'El volumen molar de un gas ideal a Condiciones Normales (0°C = 273,15 K y 1 atm = 101.325 Pa) es: V = nRT/P = 1 × 8,314 × 273,15 / 101.325 ≈ 0,02241 m³ = 22,41 litros/mol. Este es el famoso "volumen molar normal": 22,4 L/mol. Significa que 1 mol de cualquier gas ideal ocupa 22,4 litros a 0°C y 1 atm, independientemente del tipo de gas. A Condiciones Estándar (IUPAC, 25°C = 298,15 K y 1 bar = 100.000 Pa): V = 1 × 8,314 × 298,15 / 100.000 ≈ 0,02479 m³ = 24,79 L/mol. En países latinoamericanos, la referencia "CNPT" (Condiciones Normales de Presión y Temperatura) se usa en la industria del gas natural (Pemex Gas, Ecopetrol, TGN Argentina).'
+    },
+    {
+      q: '¿Cómo aplica la ley del gas ideal en meteorología y climatología en LATAM?',
+      a: 'En meteorología, la ley del gas ideal describe el comportamiento del aire atmosférico. La presión atmosférica disminuye con la altitud porque hay menos masa de aire por encima: a nivel del mar P ≈ 101.325 Pa; en Bogotá (2.640 m) P ≈ 74.700 Pa; en la Ciudad de México (2.240 m) P ≈ 78.000 Pa; en La Paz, Bolivia (3.640 m) P ≈ 64.000 Pa. Esta menor presión afecta a: (1) Los puntos de ebullición (el agua hierve a menor temperatura en el altiplano, afectando la cocción de alimentos). (2) El funcionamiento de motores de combustión interna (menos O₂ disponible: los autos en altura requieren ajuste de la mezcla aire-combustible). (3) La fisiología humana (mal de altitud, menor captación de O₂).'
+    },
+    {
+      q: '¿Cómo se usa la ley del gas ideal en la industria del gas natural en LATAM?',
+      a: 'El gas natural (principalmente metano CH₄) es uno de los principales recursos energéticos de Latinoamérica: Bolivia tiene las segundas mayores reservas de América del Sur; México, Argentina, Colombia y Venezuela son grandes productores. En la industria gasífera, PV = nRT permite: (1) Calcular el volumen de gas a distintas condiciones de presión y temperatura (medición comercial vs. condiciones de uso). (2) Dimensionar compresores y tuberías. Un gasoducto que transporta gas a 70 bar y 30°C: P₁V₁/T₁ = P₂V₂/T₂ permite calcular el volumen equivalente a condiciones normales. (3) Calcular el contenido energético: 1 m³ de metano a CNPT contiene 1/22,4 mol × 890 kJ/mol ≈ 39,7 MJ de energía (≈ 11 kWh).'
+    },
+    {
+      q: '¿Cuáles son las leyes derivadas de PV = nRT que se usan en problemas de bachillerato?',
+      a: 'Las leyes "simples" son casos particulares de PV = nRT cuando se mantiene constante una variable: Ley de Boyle (T y n constantes): P₁V₁ = P₂V₂. Ejemplo: un buzo comprime el aire de sus pulmones al descender. Ley de Charles (P y n constantes): V₁/T₁ = V₂/T₂. Ejemplo: un globo de helio se contrae en invierno. Ley de Gay-Lussac (V y n constantes): P₁/T₁ = P₂/T₂. Ejemplo: la presión de los neumáticos aumenta al calentar el auto. Ley de Avogadro (P y T constantes): V₁/n₁ = V₂/n₂ — a iguales condiciones, gases con igual número de moles tienen igual volumen. Esta última fue la base experimental del número de Avogadro. El COMIPEMS, ICFES y PSU incluyen problemas de todos estos tipos en la sección de química y física.'
+    },
+    {
+      q: '¿Por qué se usa temperatura en Kelvin y no en Celsius?',
+      a: 'La temperatura en la ley del gas ideal debe ser en Kelvin porque la escala Celsius tiene un cero arbitrario (punto de congelación del agua), mientras que el Kelvin tiene cero absoluto (el punto donde el movimiento térmico cesa, T = 0 K = −273,15°C). Si usáramos Celsius, la ley fallaría: a 0°C un gas tendría V = nR × 0 / P = 0, lo cual es absurdo (no desaparece el gas al congelarse el agua). Con Kelvin, el cero es físico y la ley es siempre válida para T > 0 K. En la práctica: nunca en un cálculo de gas ideal el denominador puede ser cero. Siempre T(K) = T(°C) + 273,15. Error común en exámenes latinoamericanos: usar los grados Celsius directamente y obtener respuestas absurdas.'
+    },
+    {
+      q: '¿Cuándo falla la ley del gas ideal y qué ecuación se usa en su lugar?',
+      a: 'El gas ideal falla a: (1) Alta presión (> 10 bar): las moléculas están tan cerca que el volumen propio del gas y las fuerzas intermoleculares son importantes. (2) Baja temperatura (cerca del punto de licuefacción): el gas real se condensa (pasa a líquido), comportamiento que la ley ideal no predice. Para estas condiciones se usa la ecuación de van der Waals: (P + a/V²)(V − b) = nRT, donde a corrige las atracciones intermoleculares y b corrige el volumen propio. En la industria latinoamericana, los tanques de GLP (gas licuado de petróleo, gas doméstico usado en millones de hogares desde México hasta Argentina) almacenan propano y butano a alta presión en fase líquida, donde la ley del gas ideal NO aplica; se usan tablas termodinámicas.'
+    },
+  ]}
+>
   <GasIdealTool client:load />
 </CalcLayout>
-

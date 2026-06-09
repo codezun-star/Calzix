@@ -1,17 +1,45 @@
-﻿---
+---
 import CalcLayout from "@/components/layout/CalcLayout.astro";
 import ConvDensidadTool from "@/components/tools/ConvDensidadTool";
 ---
 
 <CalcLayout slug="conversor-densidad"
-  whatIs="La calculadora de conversor-densidad es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precisión?", a: "Precisión estándar del navegador." },
-]}>
+  whatIs="El conversor de densidad transforma entre 6 unidades de densidad (masa por volumen): kg/m³, g/cm³, g/L, kg/L, libras por pie cúbico (lb/ft³) y libras por pulgada cúbica (lb/in³). La densidad describe cuánta masa contiene un volumen determinado de una sustancia, fundamental para seleccionar materiales, diseñar mezclas y controlar calidad en industria y ciencia."
+  whyUse="En Latinoamérica, la densidad es clave en la industria minera (flotación de minerales, separación gravimétrica), la construcción (mezclas de concreto, morteros), la industria alimentaria (control de Brix en jugos y bebidas), la industria petrolera (gravedad API del crudo) y la ingeniería química. Ingenieros de Pemex, Codelco, YPF, Petrobras y laboratorios de control de calidad de toda la región trabajan con densidades a diario."
+  faqs={[
+    {
+      q: '¿Cuál es la diferencia entre densidad y peso específico?',
+      a: 'La densidad (ρ) es la masa por unidad de volumen: ρ = m/V, con unidades kg/m³ o g/cm³. El peso específico (γ) es el peso (fuerza gravitacional) por unidad de volumen: γ = ρ × g, con unidades N/m³ o kgf/m³. En el Sistema Internacional (SI), la densidad es la magnitud correcta; el peso específico es un término de la ingeniería clásica. En la mecánica de suelos latinoamericana (normas INVIAS de Colombia, NOM-021 de México), cuando un geotecnista dice "gravedad específica del sólido (Gs) = 2,68" se refiere a la densidad relativa: razón entre la densidad del sólido y la densidad del agua a 4°C (1000 kg/m³). El agua a 4°C tiene densidad = 1000 kg/m³ = 1 g/cm³ = 1 kg/L — estas tres expresiones son equivalentes y exactas, lo que hace la gravedad específica numéricamente igual a la densidad en g/cm³.',
+    },
+    {
+      q: '¿Cuáles son las densidades de los materiales de construcción más usados en LATAM?',
+      a: 'Los materiales de construcción más comunes en Latinoamérica tienen estas densidades: Concreto armado: 2300-2500 kg/m³ (diseño según ACI 318 adoptado en México, NSR-10 en Colombia, NCh 430 en Chile). Concreto ligero (con perlita o escoria volcánica, muy común en México y Ecuador): 1400-1800 kg/m³. Ladrillo cerámico macizo: 1700-2000 kg/m³. Block de concreto (el material más usado en vivienda popular de LATAM): 1200-1500 kg/m³. Mortero de cemento-arena: 2000 kg/m³. Acero estructural ASTM A36 (importado de EE.UU. o producido por Ternium/Gerdau): 7850 kg/m³. Madera de pino (seca): 450-600 kg/m³. Madera tropical (cedro, caoba, teca de bosques de México, Brasil, Perú): 400-650 kg/m³. Arena seca de río: 1400-1600 kg/m³. Estos valores son esenciales para calcular cargas muertas en estructuras y estimar costos de transporte en obra.',
+    },
+    {
+      q: '¿Qué es la gravedad API del petróleo y cómo se relaciona con la densidad?',
+      a: 'La gravedad API (American Petroleum Institute) es una escala invertida de densidad del crudo relativa al agua: API = (141,5 / SG) − 131,5, donde SG es la gravedad específica a 60°F. Un crudo más ligero (menos denso) tiene mayor grado API y suele ser más valioso porque contiene más fracciones ligeras (gasolina, queroseno). Crudos latinoamericanos y sus grados API: Castilla (Colombia, Ecopetrol): 13° API → ρ ≈ 975 kg/m³. Vasconia (Colombia): 24° API → ρ ≈ 910 kg/m³. Maya (México, Pemex): 22° API → ρ ≈ 921 kg/m³. Isthmus (México): 33° API → ρ ≈ 860 kg/m³. Marlim (Brasil, Petrobras): 19-26° API. Bachaquero (Venezuela, PDVSA): 17° API → ρ ≈ 953 kg/m³. Los crudos del cinturón del Orinoco (Venezuela) son extrapesados: 8-16° API (ρ > 1000 kg/m³), requiriendo diluyentes o plantas mejoradoras (upgraders) para reducir su viscosidad.',
+    },
+    {
+      q: '¿Cómo se usa la densidad en la industria minera de LATAM?',
+      a: 'La industria minera latinoamericana (mayor del mundo por cobre, plata, litio y zinc) usa la densidad para: (1) Flotación de minerales: el proceso separa sulfuros valiosos como calcopirita CuFeS₂ (ρ = 4200 kg/m³) de la ganga (cuarzo SiO₂, ρ = 2650 kg/m³) aprovechando diferencias de densidad y mojabilidad. (2) Separación gravimétrica: mesas vibradoras y espirales en plantas de oro aluvial (Colombia, Brasil, Perú) usan la densidad del oro (19 300 kg/m³) vs. arena (2650 kg/m³) — una diferencia de 7,3× que permite separación muy eficiente. (3) Diseño de relaves: la densidad de pulpa (mezcla mineral-agua expresada en porcentaje de sólidos, kg sólido/m³ pulpa) es el parámetro operativo clave en sistemas de transporte de relaves de minas de cobre como Escondida (BHP) en Chile o Toquepala (SPCC) en Perú. (4) Estimación de reservas: densidad de testigos de roca sondaje × volumen del bloque = toneladas de reserva reportadas a la Bolsa.',
+    },
+    {
+      q: '¿Qué es el grado Brix y cómo se relaciona con la densidad en la industria alimentaria?',
+      a: 'El grado Brix (°Bx) mide los sólidos solubles totales (principalmente sacarosa) en una solución acuosa: 1°Bx = 1 g sacarosa por 100 g solución. La densidad de una solución azucarada aumenta con el Brix: agua pura ρ = 1000 kg/m³ (0°Bx); jugo de naranja ≈ 1047 kg/m³ (12°Bx); jugo concentrado de exportación ≈ 1300 kg/m³ (65°Bx); miel de caña ≈ 1415 kg/m³ (85°Bx). En la industria de jugos de LATAM (Del Valle/Coca-Cola México, Jumex, Postobón Colombia, Gloria Perú), el Brix se mide con refractómetros o densímetros digitales (Anton Paar, ATAGO). La fórmula de concentración: V₁ × Bx₁ = V₂ × Bx₂. En el ingenio azucarero brasileño (Copersucar, Raízen — la mayor empresa de azúcar y etanol del mundo), el pol (polarización ≈ Brix) determina el rendimiento de sacarosa: si la caña tiene 14°Bx y la planta extrae 95%, el pago al proveedor se calcula sobre esa base.',
+    },
+    {
+      q: '¿Cuáles son las densidades de los metales preciosos producidos en LATAM?',
+      a: 'Los metales preciosos tienen densidades muy superiores a los materiales comunes, lo que facilita su separación gravimétrica: Oro (Au): 19 300 kg/m³ = 19,3 g/cm³. México es el 1er productor de plata del mundo; Perú es el 2° en oro de LATAM. El oro nativo (con impurezas de Ag y Cu) mide entre 16 000-19 000 kg/m³. Plata (Ag): 10 490 kg/m³. México produce ≈ 6000 t/año principalmente en Zacatecas (Fresnillo plc) y Guanajuato. Platino (Pt): 21 450 kg/m³ — el más denso. Cobre (Cu): 8960 kg/m³. La diferencia de densidad entre oro (19 300) y arena cuarcítica (2650) — una relación de 7,3× — es la base física del "bateo" manual para oro aluvial en el Chocó colombiano, Madre de Dios peruano y Pará brasileño (garimpeiros). Un gramo de oro ocupa solo 0,052 cm³ frente a los 0,377 cm³ de un gramo de arena.',
+    },
+    {
+      q: '¿Cómo se convierte entre kg/m³ y g/cm³ y por qué son las unidades más usadas en ciencia?',
+      a: 'La relación entre kg/m³ y g/cm³ es exacta: 1 g/cm³ = 1000 kg/m³. Esto se deduce de: 1 g/cm³ = (10⁻³ kg) / (10⁻⁶ m³) = 10³ kg/m³. El agua a 4°C tiene densidad = 1 g/cm³ = 1000 kg/m³ = 1 kg/L — estas tres expresiones son equivalentes. En ciencia, g/cm³ es conveniente para sólidos y líquidos porque los valores son manejables (el hierro es 7,87 g/cm³ vs. 7870 kg/m³). En ingeniería civil y estructural, kg/m³ es el estándar del SI. Nota sobre g/L y kg/m³: son numéricamente iguales — ambas unidades tienen la misma magnitud (1 g/L = 1 kg/m³), solo difieren en los prefijos del numerador y denominador. Las unidades lb/ft³ y lb/in³ son del sistema anglosajón: el agua a 4°C pesa 62,43 lb/ft³ o 0,0361 lb/in³; el acero 490 lb/ft³.',
+    },
+    {
+      q: '¿Cómo se aplica la densidad en el diseño de mezclas de concreto en la construcción latinoamericana?',
+      a: 'El diseño de mezclas de concreto usa las densidades de cada componente para calcular las proporciones por metro cúbico de concreto producido. El método ACI 211.1 (adoptado en México, Colombia, Perú) requiere: Densidad de áridos: grava ρ ≈ 2650 kg/m³, arena ρ ≈ 2600 kg/m³ (varía con el origen geológico del río). Densidad del cemento Portland: ≈ 3150 kg/m³ (tipo I, CPO 30 en México, PC-30 en Colombia, CP-30 en Chile). Agua: 1000 kg/m³. La receta típica de concreto f\'c = 210 kgf/cm² (= 21 MPa, resistencia estándar para vivienda en LATAM): 350 kg cemento + 180 L agua + 840 kg arena + 960 kg grava = 2330 kg/m³ de concreto fresco. Las grandes constructoras de LATAM (ICA en México, Constructora Norberto Odebrecht antes de su disolución, Constructora Bolívar en Colombia) tienen laboratorios que ajustan estas densidades según la cantera local. Un error de 10% en la densidad del árido puede resultar en una relación agua/cemento fuera de especificación, comprometiendo la resistencia estructural.',
+    },
+  ]}
+>
   <ConvDensidadTool client:load />
 </CalcLayout>
-
