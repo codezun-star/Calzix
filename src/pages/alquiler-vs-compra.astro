@@ -1,17 +1,44 @@
-﻿---
+---
 import CalcLayout from "@/components/layout/CalcLayout.astro";
 import AlquilerVsCompraTool from "@/components/tools/AlquilerVsCompraTool";
 ---
 
 <CalcLayout slug="alquiler-vs-compra"
-  whatIs="La calculadora de alquiler-vs-compra es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precisión?", a: "Precisión estándar del navegador." },
+  whatIs="La calculadora de alquiler vs compra compara el costo financiero total de rentar una vivienda frente a comprarla a crédito durante el mismo período. A partir del precio del inmueble, el porcentaje de enganche, la tasa hipotecaria, el plazo y la renta mensual equivalente, calcula el total desembolsado en cada escenario."
+  whyUse="Familias y parejas jóvenes en México, Colombia, Chile, Perú y Argentina que se preguntan si es mejor momento de comprar o seguir rentando usan esta herramienta para objetivar la decisión más allá de la intuición, comparando los montos totales desembolsados y evaluando factores como el enganche disponible y la estabilidad laboral."
+  faqs={[
+  {
+    q: '¿Qué factores no incluye esta calculadora en la comparativa?',
+    a: 'La calculadora calcula únicamente el costo financiero directo de ambas opciones: cuota hipotecaria + enganche versus renta total. No incluye varios factores importantes que pueden inclinar la balanza en cada dirección. A favor de la compra (costos adicionales no incluidos): impuesto predial/contribución de bienes raíces (200–800 MXN/mes en México; 200.000–600.000 COP/año en Colombia; 0,1–0,4 % del avalúo anual en Chile); seguros de vida y de daños incluidos en la hipoteca (0,05–0,1 % del capital por mes); mantenimiento y reparaciones del inmueble (1–2 % del valor anual según antigüedad); costos de escrituración (2–5 % del valor al inicio). A favor del alquiler (lo que se puede hacer con el enganche): si inviertes el enganche (20 % de 200.000 USD = 40.000 USD) en CETES al 11 %, fondos de deuda o acciones, en 20 años esos 40.000 USD generarían 40.000 × (1,08)^20 ≈ 186.000 USD (rendimiento del 8 % anual), que la calculadora no computa.'
+  },
+  {
+    q: '¿Cuándo conviene más alquilar que comprar en LATAM?',
+    a: 'Conviene más alquilar cuando: (1) planeas mudarte de ciudad en menos de 5 años (los costos de compra-venta hacen que la compra sea ineficiente a corto plazo); (2) las tasas hipotecarias son muy altas (en Argentina con tasas >20 % o en períodos de alza de tasas en México o Colombia, la cuota puede triplicar la renta equivalente); (3) no tienes el enganche ahorrado (sin un 20 % es difícil acceder a un crédito sin pagar seguros privados de hipoteca muy caros); (4) tu situación laboral es inestable (la deuda hipotecaria a 20–30 años es un compromiso muy largo); (5) el precio de compra en la zona es muy alto en relación a la renta (precio/renta mensual > 250× indica mercado sobrevalorado). El ratio precio/renta en ciudades LATAM 2024: Ciudad de México: 220–280×; Bogotá: 150–200×; Santiago: 200–260×; Lima: 180–250×; Buenos Aires: 100–150× (por la crisis del peso). Ratios superiores a 200× generalmente favorecen el alquiler desde el punto de vista puramente financiero.'
+  },
+  {
+    q: '¿Cuándo conviene más comprar que alquilar en LATAM?',
+    a: 'Conviene más comprar cuando: (1) planeas quedarte en la ciudad y en esa zona al menos 7–10 años, tiempo suficiente para amortizar los costos de entrada y salida de la propiedad; (2) las tasas hipotecarias son bajas o tienes acceso a crédito subsidiado (Infonavit en México, Mi Casa Ya en Colombia, SERVIU en Chile) con tasas por debajo de la inflación; (3) la renta en tu zona es alta en relación al valor de la propiedad (precio/renta < 150×); (4) esperas que la propiedad se revalorice (ciudades con fuerte demanda y bajo suministro); (5) buscas certeza: la cuota hipotecaria fija no sube aunque el mercado de alquiler sí. Históricamente en LATAM, la propiedad inmobiliaria en zonas urbanas en crecimiento (Monterrey, Medellín, Lima, Querétaro) ha sido una inversión sólida con revalorizaciones del 5–10 % anual en términos reales.'
+  },
+  {
+    q: '¿Qué porcentaje de enganche necesito para comprar una vivienda?',
+    a: 'El enganche o pago inicial es fundamental para acceder a una hipoteca en buenas condiciones. La regla estándar en toda LATAM es el 20 % del valor, que permite obtener la mejor tasa y evitar seguros adicionales de hipoteca (PMI). Sin embargo, existen opciones con menos enganche: Infonavit (México) puede cubrir hasta el 100 % del crédito en algunos casos, pero limita el monto máximo. Fovissste (México) también tiene esquemas de bajo enganche. En Colombia, el Banco de Bogotá y Davivienda ofrecen hipotecas VIS con 10 % de enganche y el subsidio Mi Casa Ya puede cubrir parte de él. En Chile, BancoEstado ofrece el 90 + 10 (crédito del 90 % con seguro de hipoteca del 10 %). En Perú, el Fondo MiVivienda tiene el Bono del Buen Pagador que puede reducir el enganche efectivo. Si no tienes el 20 %, considera: (1) ahorrar más tiempo; (2) buscar un inmueble de menor valor; (3) explorar programas de subsidio; (4) evaluar si el precio del inmueble justifica el crédito total incluyendo los seguros adicionales.'
+  },
+  {
+    q: '¿Es cierto que al terminar de pagar la hipoteca la casa vale el doble?',
+    a: 'En muchas zonas de LATAM, históricamente sí. La revalorización de la propiedad en zonas urbanas en expansión en México (Monterrey, Guadalajara, Querétaro, CDMX), Colombia (Medellín, Bogotá, Bucaramanga), Chile (Santiago, Antofagasta) y Perú (Lima, Arequipa) ha promediado el 5–8 % anual en términos nominales en los últimos 20 años, lo que implica que en 15 años el valor se duplica. Pero no siempre ocurre: propiedades en zonas de declive demográfico, ciudades mineras en colapso, o áreas con problemas de seguridad han perdido valor. La calculadora no incluye la revalorización del inmueble porque es especulativa. Para tomar una decisión informada, considera: (1) el historial de precios en la zona (portales como Propiedades.com en Colombia, Lamudi México, Inmuebles24); (2) proyectos de infraestructura cercanos (metro, universidades, parques industriales que típicamente revalorizan); (3) demografía y crecimiento económico local. Un inmueble que se revaloriza a 7 % anual durante 20 años convierte 2.000.000 MXN en 7.739.000 MXN de valor bruto; después de la hipoteca, el patrimonio neto generado puede ser considerable.'
+  },
+  {
+    q: '¿Cómo calcular si una renta es justa o cara en mi ciudad?',
+    a: 'El indicador más usado es el ratio precio de compra / renta anual, o su inverso, el yield de alquiler. Yield = (renta anual / precio de compra) × 100. Un yield del 4–6 % es considerado normal en ciudades latinoamericanas. Ejemplo: apartamento que vale 1.500.000 MXN y se renta en 9.000 MXN/mes → renta anual = 108.000 MXN → yield = 108.000 / 1.500.000 = 7,2 %. Este yield está por encima del costo de la deuda hipotecaria (si la tasa es 9 %), lo que indica que es una zona con renta alta relativa al precio (favorable para comprar). Si en cambio el mismo apartamento se renta en 6.000 MXN/mes → yield = 4,8 %, por debajo del costo de la deuda → desde el punto de vista de inversión pura, no compensa comprar ese apartamento para rentar. Ciudades con yields típicos en 2024: Monterrey 6–8 %; Medellín 5–7 %; Lima 5–7 %; Santiago 4–6 %; Buenos Aires 2–4 % (por el tipo de cambio informal). Plataformas como AirBnB pueden mejorar el yield en zonas turísticas hasta el 10–15 % en renta corta.'
+  },
+  {
+    q: '¿Existen programas especiales para primeras viviendas en LATAM?',
+    a: 'Sí, todos los países de LATAM tienen programas para facilitar el acceso a la primera vivienda. México: Infonavit (para trabajadores formales del sector privado), Fovissste (trabajadores del gobierno), FONHAPO (sectores de bajos ingresos), CONAVI con subsidios a la vivienda social. Colombia: Mi Casa Ya (subsidio hasta 30 SMMLV para vivienda VIS), Casa Ahorro (para grupos vulnerables), créditos CCF (cajas de compensación familiar). Chile: Programa DS49 (subsidio hasta 550 UF para vivienda social, con cuota de ahorro), DS19 (clases medias, subsidio de hasta 500 UF), Fondo Solidario de Vivienda. Perú: Fondo MiVivienda con el Bono del Buen Pagador (hasta 14.000 USD de subsidio para familias de ingresos medios-bajos), Techo Propio para los más vulnerables. Ecuador: MIDUVI tiene el Bono de Titularización. Uruguay: el BHU (Banco Hipotecario del Uruguay) tiene planes de vivienda cooperativa. Honduras: el BANHPROVI tiene líneas de crédito a tasas preferenciales para primeras viviendas de hasta 1,5 millones de lempiras.'
+  },
+  {
+    q: '¿Qué tan difícil es calificar para una hipoteca siendo trabajador independiente en LATAM?',
+    a: 'Calificar para una hipoteca como trabajador independiente (freelancer, profesional independiente, dueño de negocio) es más difícil que como empleado formal, pero es perfectamente posible. Los bancos exigen típicamente: (1) demostrar ingresos estables durante 2–3 años mediante declaraciones fiscales (declaración de ISR en México, declaración de renta en Colombia, declaración del SII en Chile, declaración de la SUNAT en Perú); (2) extractos bancarios de 12–24 meses que acrediten flujo de ingresos; (3) historial crediticio limpio (Buró de Crédito en México, DataCrédito en Colombia, DICOM en Chile); (4) carta de clientes principales o contratos vigentes que demuestren ingresos proyectados. Algunos bancos tienen programas específicos para independientes: BBVA México tiene el "Crédito Hipotecario para Independientes"; Bancolombia tiene el "Crédito de Vivienda para Trabajadores Independientes". La clave es tener todo formalizado fiscalmente: quien declara renta consistente tiene prácticamente el mismo acceso que un empleado formal. Los ingresos de plataformas digitales (Uber, Rappi, Amazon, freelance en dólares) son reconocidos cada vez más por los bancos si se pueden documentar con estados de cuenta.'
+  },
 ]}>
   <AlquilerVsCompraTool client:load />
 </CalcLayout>
-

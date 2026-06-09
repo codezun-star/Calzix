@@ -1,17 +1,44 @@
-﻿---
+---
 import CalcLayout from "@/components/layout/CalcLayout.astro";
 import AmortizacionHipotecaTool from "@/components/tools/AmortizacionHipotecaTool";
 ---
 
 <CalcLayout slug="amortizacion-hipoteca"
-  whatIs="La calculadora de amortizacion-hipoteca es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precisión?", a: "Precisión estándar del navegador." },
+  whatIs="La calculadora de amortización hipotecaria calcula la cuota mensual fija, el total pagado en todo el plazo y los intereses totales de un crédito hipotecario con sistema de amortización francés. Introduce el capital prestado, la tasa de interés anual y el plazo en años."
+  whyUse="Personas que están contratando o revisando su crédito hipotecario en México, Colombia, Chile, Perú y Argentina usan esta calculadora para conocer exactamente cuánto pagarán cada mes, cuánto en total y cuánto de eso son solo intereses, antes de firmar el contrato con el banco o institución de vivienda."
+  faqs={[
+  {
+    q: '¿Cómo funciona la amortización francesa en un crédito hipotecario?',
+    a: 'La amortización francesa (o sistema de cuota constante) garantiza que pagas la misma cantidad mensual durante toda la vida del préstamo. Sin embargo, lo que varía internamente es la composición de cada pago: al inicio, la mayor parte de tu cuota va a pagar intereses sobre el capital pendiente; hacia el final, la mayor parte amortiza capital. Ejemplo: un crédito de 1.500.000 MXN a 20 años al 10 % anual tiene una cuota mensual de 14.475 MXN. En el primer mes: 12.500 MXN son intereses (1.500.000 × 10 % / 12) y solo 1.975 MXN reducen el capital. En el mes 180 (año 15): 3.234 MXN son intereses y 11.241 MXN son capital. Esta estructura explica por qué amortizar anticipadamente es muy rentable al inicio: cada peso extra pagado en los primeros años evita pagar intereses sobre ese capital durante muchos años más.'
+  },
+  {
+    q: '¿Cuál es la diferencia entre TIN, TEA, TCEA y CAT en una hipoteca?',
+    a: 'Estos indicadores miden el costo del crédito de formas distintas y es fundamental no confundirlos al usar la calculadora. TIN (Tasa de Interés Nominal): es la tasa pura de interés anual sin capitalización, la que se divide entre 12 para calcular la tasa mensual. Es el valor que debes introducir en la calculadora. TEA / EA (Tasa Efectiva Anual): incluye la capitalización de intereses. En hipotecas mensuales, TEA = (1 + TIN/12)^12 - 1; siempre es mayor que el TIN. TCEA (Tasa de Costo Efectivo Anual, usada en Colombia y Perú): incluye el TIN más todas las comisiones, seguros obligatorios y otros gastos del crédito; es el costo real total. CAT (Costo Anual Total, México): es el equivalente al TCEA; representa el costo total del crédito incluyendo comisiones y seguros. Para calcular la cuota mensual real, usa siempre el TIN. Para comparar hipotecas de distintos bancos, usa el CAT (México) o la TCEA (Colombia, Perú) porque refleja el costo real total del crédito.'
+  },
+  {
+    q: '¿Cuánto me costaría amortizar anticipadamente y cuánto ahorraría?',
+    a: 'Un pago extraordinario de capital en cualquier momento del crédito reduce el capital pendiente y, por tanto, los intereses futuros. Ejemplo con crédito de 2.000.000 MXN a 25 años al 9 %, cuota mensual 16.787 MXN: si al terminar el año 2 (capital pendiente ≈ 1.961.000 MXN) pagas 200.000 MXN extra, el nuevo capital es 1.761.000 MXN. Puedes elegir: (a) mantener la misma cuota y acortar el plazo de 25 a 22 años, ahorrando 3 años de cuotas = 605.000 MXN. (b) Reducir la cuota manteniendo el plazo de 23 años restantes. La opción (a) suele ser más rentable porque elimina intereses futuros. En México, la CONDUSEF ofrece simuladores en línea para calcular el beneficio exacto de la amortización anticipada según tu banco. En Colombia, el Banco de la República publica tasas y condiciones de los créditos hipotecarios actualizadas mensualmente. Verifica con tu banco si hay comisiones por prepago (en México son ilegales para tasa fija; en Colombia, pueden ser hasta el 1 % del capital prepagado).'
+  },
+  {
+    q: '¿Cómo acceder a un crédito hipotecario en México con Infonavit o Fovissste?',
+    a: 'En México, el acceso al crédito hipotecario residencial tiene dos grandes vías institucionales: Infonavit: para trabajadores del sector privado afiliados al IMSS. El monto máximo en 2024 es de hasta 1.264.000 pesos (para salarios de 4+ UMA), con plazo de hasta 30 años. La tasa varía del 2,53 % al 10,45 % anual según el salario mensual integrado (SMS): a mayor salario, mayor tasa. Fovissste: para trabajadores del gobierno afiliados al ISSSTE. Tasas del 4 % al 6 % en UDI o tasa fija en pesos. Ambos institutos también ofrecen esquemas de cofinanciamiento con bancos privados (Cofinavit, Crédito Bancario-Infonavit) para acceder a montos mayores. Para empleados informales o autónomos, los bancos comerciales (BBVA, Santander, Banorte, HSBC, Scotiabank) requieren 2 años de historial fiscal (declaraciones de ISR) y un buró de crédito limpio. La CNBV publica periódicamente el reporte de tasas hipotecarias de todos los bancos.'
+  },
+  {
+    q: '¿Cómo funciona el crédito hipotecario VIS y no VIS en Colombia?',
+    a: 'En Colombia, los créditos hipotecarios se clasifican por el valor de la vivienda. VIS (Vivienda de Interés Social): viviendas con precio hasta 135 SMMLV (en 2024, aprox. 162.000.000 COP). Los créditos VIS tienen regulaciones especiales: tasa máxima legal del 11 % + UVR, y el gobierno otorga subsidios a través del programa Mi Casa Ya (hasta 30 SMMLV de subsidio). No VIS: cualquier precio superior. Las tasas son de mercado libre: 10–17 % en pesos o 5–9 % en UVR (Unidad de Valor Real, indexada a inflación). Los bancos líderes en hipotecas en Colombia son Banco Davivienda, Banco de Bogotá, Bancolombia, Banco Caja Social y BBVA Colombia. La Superintendencia Financiera (SuperFinanciera) publica mensualmente las tasas de interés de los créditos hipotecarios por entidad. Los gastos de escrituración, registro e impuesto de timbre representan aproximadamente el 1,5–3 % del valor de la propiedad.'
+  },
+  {
+    q: '¿Cómo se calcula el dividendo hipotecario en Chile con UF?',
+    a: 'En Chile, la mayoría de créditos hipotecarios se expresan en UF (Unidad de Fomento), una unidad de cuenta ajustada diariamente por la inflación del IPC. Calcular el dividendo en UF: si el crédito es de 2.000 UF a 25 años al 4 % anual UF, la cuota mensual es 2.000 × (0,04/12 × (1+0,04/12)^300) / ((1+0,04/12)^300 - 1) = 10,54 UF/mes. En pesos chilenos, si la UF del día = 37.000 CLP: el dividendo es 10,54 × 37.000 = 389.980 CLP/mes. Pero si la inflación sube y la UF aumenta a 40.000 CLP, el dividendo en pesos será 421.600 CLP (+8 %). Esta es la gran diferencia con los sistemas en pesos nominales: el dividendo UF sube con la inflación, pero la deuda real no crece (se mantiene en UF). Los bancos líderes en hipotecas en Chile son BancoEstado, Banco de Chile, Santander Chile, Scotiabank Chile y BICE. El Ministerio de Vivienda (MINVU) tiene el Subsidio Habitacional DS19 y DS49 para viviendas nuevas de bajo precio.'
+  },
+  {
+    q: '¿Cuántos años puede durar una hipoteca en LATAM?',
+    a: 'Los plazos hipotecarios máximos varían por país y entidad. México: hasta 30 años con Infonavit o bancos comerciales; algunos bancos ofrecen hasta 20 años para adultos mayores de 45 años, considerando que el crédito debe liquidarse antes de los 75 años del titular. Colombia: hasta 30 años para créditos VIS; no VIS, hasta 20 años en la mayoría de bancos; algunos hasta 25 años. Chile: hasta 30 o 35 años en BancoEstado para primeras viviendas; la mayoría de bancos, hasta 25–30 años. Perú: hasta 25 años en bancos comerciales; MiVivienda hasta 20 años. Argentina: hasta 30 años en UVA; históricamente cortos (5–10 años) por inestabilidad. El plazo máximo generalmente se limita por la edad: el crédito debe estar pagado cuando el titular tenga 65–70 años (edad de jubilación). Esto significa que alguien de 45 años difícilmente accede a un crédito a 30 años.'
+  },
+  {
+    q: '¿Qué pasa si no puedo pagar una cuota de la hipoteca en LATAM?',
+    a: 'El impago de la hipoteca es un proceso con consecuencias graves pero que tiene etapas. En México: tras 90 días de mora, el banco puede iniciar el procedimiento de ejecución hipotecaria (juicio hipotecario); el proceso judicial dura 1–3 años. Infonavit tiene programas de reestructura ante dificultades del trabajador (programa Solución Infonavit). En Colombia: tras 60 días de mora, el banco puede iniciar el cobro coactivo; la Ley 546 protege al deudor VIS con programas de refinanciación obligatoria. En Chile: tras 90 días de mora, el banco puede demandar ejecutivamente; el proceso puede concluir en embargo y remate de la propiedad en 6–18 meses. En Perú: el banco puede iniciar proceso de ejecución de garantías según la Ley 26702. En todos los países, lo más importante es contactar al banco antes de caer en mora: la mayoría ofrece períodos de gracia, quitas de intereses moratorios o reestructuras cuando el problema es temporal (pérdida de empleo, enfermedad). La Condusef (México), la SFC (Colombia) y la SBIF (Chile) son los organismos reguladores que protegen al deudor hipotecario.'
+  },
 ]}>
   <AmortizacionHipotecaTool client:load />
 </CalcLayout>
-

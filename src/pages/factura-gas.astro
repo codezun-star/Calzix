@@ -1,17 +1,44 @@
-﻿---
+---
 import CalcLayout from "@/components/layout/CalcLayout.astro";
 import FacturaGasTool from "@/components/tools/FacturaGasTool";
 ---
 
 <CalcLayout slug="factura-gas"
-  whatIs="La calculadora de factura-gas es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precisión?", a: "Precisión estándar del navegador." },
+  whatIs="La calculadora de factura de gas estima el costo mensual del gas natural a partir del consumo en metros cúbicos (m³), el precio por m³ de tu tarifa, la potencia contratada en kW y los días de facturación. Calcula por separado el término de consumo, el término fijo de potencia y aplica el impuesto correspondiente."
+  whyUse="Usuarios de gas natural residencial y propietarios de pequeños negocios en México, Colombia, Argentina y Chile usan esta calculadora para entender y verificar su factura, detectar consumos inusuales, comparar distribuidoras y planificar el presupuesto mensual de su hogar o local comercial."
+  faqs={[
+  {
+    q: '¿Cómo funciona la tarifa del gas natural en México?',
+    a: 'En México, el gas natural residencial está regulado por la Comisión Reguladora de Energía (CRE) y distribuido por empresas privadas con concesión regional. Las principales distribuidoras son: Gas Natural México (GNM, filial de ENGIE, opera en el Bajío y norte); Naturgy México (DF y área metropolitana); Gasnor (Tamaulipas, Nuevo León); Bajanorte Gas (Baja California); Gas del Pacifico (Jalisco); IEnova Gas (Baja California y noroeste). La tarifa tiene tres componentes: (1) consumo en Mcal o m³ según distribuidora (1 m³ de gas natural aprox. 9.400 kcal = 0,0094 Gcal = 39,4 MJ); (2) cargo fijo mensual; (3) IEPS (Impuesto Especial sobre Producción y Servicios) al gas natural. El precio por m³ en México varía de 6 a 14 MXN/m³ según la distribuidora, la región y el período del año. Las facturas de GNM se emiten mensualmente y expresan el consumo en m³. Revisar la factura mensual y comparar con la calculadora ayuda a detectar errores de lectura o consumos irregulares de fugas.'
+  },
+  {
+    q: '¿Cómo funciona la tarifa del gas natural en Colombia?',
+    a: 'En Colombia, el gas natural residencial está regulado por la CREG (Comisión de Regulación de Energía y Gas) y distribuido por operadores regionales. Los principales distribuidores son: Vanti (Bogotá y Cundinamarca, antes Gas Natural Fenosa); Surtigas (Atlántico, Bolívar, Magdalena, Costa Caribe); Gasoriente (Santanderes); EPM (Medellín y Antioquia); Llanogas (Llanos Orientales). La tarifa en Colombia se expresa en m³ y tiene: (1) cargo por consumo en pesos COP/m³; (2) cargo fijo mensual (CD) que cubre costos de conexión y medición; (3) IVA del 19 % aplicado al consumo por encima de 20 m³/mes (el primer bloque de consumo básico puede estar parcialmente exento). El precio por m³ en 2024 es aproximadamente 1.500–2.800 COP/m³ según la ciudad y el operador. Una cocina con 3 quemadores y un calentador de agua consume aproximadamente 15–25 m³/mes. La CREG publica las tarifas vigentes por operador en su web oficial.'
+  },
+  {
+    q: '¿Cuánto gas consume en m³ una familia típica al mes?',
+    a: 'El consumo doméstico de gas natural varía según los electrodomésticos que usa el hogar y el clima. Consumos orientativos por aparato: Cocina/estufa (4 quemadores): 8–15 m³/mes (uso normal, 2 h/día). Calentador de agua instantáneo (paso): 5–12 m³/mes para 4 personas con ducha diaria de 7 minutos. Calentador de acumulación (60 L): 10–20 m³/mes. Calefacción a gas (estufa, caldera, piso radiante): 20–100 m³/mes según el clima y el tamaño de la vivienda (en Ciudad de México el frío es moderado; en Monterrey en invierno puede dispararse). Horno: 2–5 m³/mes (uso eventual). Una familia colombiana típica (Bogotá) con estufa y calentador: 20–35 m³/mes. Una familia en Ciudad de México con cocina y boiler de paso: 12–25 m³/mes. En Chile, con calefacción a gas en invierno (Santiago, zona centro-sur): 50–120 m³/mes. Nota: estas referencias son orientativas; el consumo real depende de los hábitos del hogar, el tamaño de la vivienda y el estado del equipo (un calentador antiguo puede consumir 40 % más que uno eficiente).'
+  },
+  {
+    q: '¿Por qué mi factura de gas subió tanto este mes?',
+    a: 'Las subidas repentinas de la factura de gas pueden tener varias causas: (1) Estacionalidad: en invierno, el uso de calefacción y calentadores de agua aumenta el consumo un 30–200 % dependiendo del clima (ciudades andinas como Bogotá, Quito, La Paz; zonas norte de México en diciembre-febrero; zona central de Chile en junio-agosto). (2) Fuga de gas: una fuga pequeña puede aumentar el consumo sin que notes diferencia en el uso. Verifica el medidor cuando todos los aparatos estén cerrados: si el medidor sigue girando, hay fuga. (3) Error de lectura del medidor: los lectores de medidores a veces cometen errores; siempre toma nota de tu medidor el día de la facturación. (4) Cambio de tarifa: las tarifas se actualizan periódicamente (en México, mensualmente según precio del gas Henry Hub de EE.UU.). (5) Electrodoméstico nuevo o defectuoso: un calentador con resistencia calcificada o mal regulado consume mucho más. En México, puedes reportar errores de facturación a la distribuidora y pedir revisión de medidor sin costo.'
+  },
+  {
+    q: '¿Cuánto cuesta el gas natural frente al gas LP (propano/butano) en LATAM?',
+    a: 'El gas LP (Gas Licuado de Petróleo, mezcla de propano y butano) es la alternativa principal al gas natural en zonas sin red de gasoductos. En México, el gas LP se distribuye en cilindros (20 kg) o tanques estacionarios. El poder calorífico del LP es mayor: 1 kg de LP aprox. 11,9 kWh vs 1 m³ de gas natural aprox. 10,3 kWh. Comparación de costo energético en México 2024 aproximado: Gas natural (ciudad): 6–14 MXN/m³ dividido por 10,3 kWh/m³ = 0,58–1,36 MXN/kWh. Gas LP cilindro 20 kg: precio aprox. 320–380 MXN/cilindro; duración media familia 4 personas: 25–35 días = 0,32 kWh/día x 30 días = 9,6 kWh. Costo: 350 MXN / (20 kg x 11,9 kWh/kg) = 1,47 MXN/kWh. Conclusión: donde hay red de gas natural, el costo energético es 40–60 % menor que el LP. En Colombia, el gas natural cuesta aprox. 0,6–0,8 USD/m³ vs LP doméstico 1,0–1,4 USD/kg; también el gas natural gana en precio. La inversión en instalar la conexión de gas natural (200–800 USD dependiendo del país y la distancia) se recupera en 1–3 años.'
+  },
+  {
+    q: '¿Cómo puedo reducir el consumo de gas en mi hogar?',
+    a: 'Medidas de ahorro de gas con mejor relación costo-beneficio: (1) Calentador de agua solar: un sistema solar térmico residencial (2 colectores) cubre el 70–80 % de la demanda de agua caliente en climas soleados. Costo: 15.000–30.000 MXN; payback 3–5 años vs boiler de gas. En Colombia, los sistemas solares térmicos son especialmente efectivos en ciudades con alta irradiación (Cali, Barranquilla, Montería). (2) Calentador instantáneo eficiente: cambiar un boiler de acumulación de los años 90 por un calentador instantáneo de bajo consumo reduce el consumo de gas un 20–40 %. (3) Cocinar con tapa: cocinar con tapa en las ollas reduce el tiempo de cocción un 30 % y, por tanto, el consumo de gas proporcional. (4) Olla a presión (olla exprés): reduce el tiempo de cocción un 50–70 %; especialmente útil para legumbres y cereales. (5) Mantenimiento de la llama: una llama azul uniforme es eficiente; una llama amarilla o anaranjada indica combustión incompleta y mayor consumo. (6) Aislamiento del calentador de acumulación: forrar el depósito con mantas térmicas reduce las pérdidas por radiación un 30–45 %.'
+  },
+  {
+    q: '¿Qué diferencias hay entre gas de red y gas envasado en términos de facturación?',
+    a: 'El gas de red (gas natural) llega por tubería y se factura por consumo medido en m³. La factura tiene: término de consumo (m³ x precio/m³) + cargo fijo (potencia contratada x días x tarifa) + impuesto (IVA, IEPS según el país). El gas envasado (LP en cilindros o garrafas) se paga al contado en el momento de la compra, sin cargo fijo ni impuesto sobre el consumo en la mayoría de los países. Esto hace que la comparación directa no sea inmediata. Ventajas del gas de red: precio más bajo, suministro continuo sin necesidad de pedir recarga, menos manipulación y riesgo de accidente. Ventajas del gas envasado: disponible en cualquier zona sin inversión en infraestructura, control exacto del gasto, no hay cortes por obras de la red. En México, el Infonavit ha integrado en algunos desarrollos de vivienda social el gas natural de red como requisito de construcción, lo que reduce el gasto energético familiar a largo plazo. En Colombia, el Plan Nacional de Masificación del Gas ha llevado el gas natural a más de 10 millones de hogares que antes usaban LP o leña.'
+  },
+  {
+    q: '¿Cómo verificar si mi medidor de gas funciona correctamente?',
+    a: 'La verificación del medidor de gas es un derecho del usuario en todos los países de LATAM. Procedimiento de verificación básica en casa: (1) Cierra completamente todos los aparatos de gas (cocina, calentador, calefacción). (2) Toma nota de la lectura actual del medidor (anota los cinco o seis dígitos enteros del contador). (3) Espera 15–30 minutos sin usar gas. Si el medidor gira o la lectura avanza, hay fuga en tu instalación interior. (4) Si el medidor no gira con todo cerrado, enciende un quemador de la cocina durante exactamente 10 minutos. Luego anota el consumo: para un quemador estándar de 2,5 kW debería consumir aprox. 0,015–0,025 m³. Si el consumo es muy superior, el medidor puede estar marcando de más o el quemador tiene una fuga. En México, puedes solicitar verificación del medidor a tu distribuidora (Gas Natural México, Naturgy, etc.) sin costo; si el error supera el 2 %, tienen obligación de recalibrar y acreditar el exceso cobrado. En Colombia, la revisión se pide a la distribuidora o a la Superintendencia de Industria y Comercio (SIC) si hay disputa.'
+  },
 ]}>
   <FacturaGasTool client:load />
 </CalcLayout>
-
