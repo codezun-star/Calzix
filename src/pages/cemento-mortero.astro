@@ -1,17 +1,44 @@
-﻿---
+---
 import CalcLayout from "@/components/layout/CalcLayout.astro";
 import CementoMorteroTool from "@/components/tools/CementoMorteroTool";
 ---
 
 <CalcLayout slug="cemento-mortero"
-  whatIs="La calculadora de cemento-mortero es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precisión?", a: "Precisión estándar del navegador." },
+  whatIs="La calculadora de cemento y mortero estima las cantidades de cemento (kg), arena (kg), agua (L) y grava (kg) necesarias para preparar un volumen de mezcla en m³. Soporta dos dosificaciones: mortero 1:3 para revocos y enfoscados, y hormigón/concreto 1:2:4 para estructuras ligeras."
+  whyUse="Albañiles, maestros de obra y propietarios que autoconstruyen en México, Colombia, Argentina, Chile y Perú usan esta calculadora para estimar los materiales exactos antes de comprar, evitar sobrantes costosos y garantizar la resistencia adecuada de revocos, contrapisos, losas de patio y muros de concreto ciclópeo."
+  faqs={[
+  {
+    q: '¿Qué es el mortero y en qué se diferencia del hormigón (concreto)?',
+    a: 'El mortero es una mezcla de cemento, arena y agua (sin grava/piedra). Se usa para pegar ladrillos, revocar paredes, hacer enchapes, colocar azulejos y rellenar juntas. Su resistencia a compresión es menor que la del concreto, pero su trabajabilidad y adherencia son superiores. El hormigón o concreto agrega grava (piedra triturada o canto rodado) a la mezcla, lo que le confiere mayor resistencia estructural a compresión (f\'c = 15–35 MPa según diseño). El concreto se usa en columnas, vigas, losas, zapatas, cimentaciones, pisos industriales y contratipos de losa. En la práctica de construcción en LATAM, se habla de "mezcla" o "revoque" para el mortero, y "concreto" o "colado" para el hormigón estructural. La dosificación de la herramienta (1:3 para mortero y 1:2:4 para concreto ligero) es la convención artesanal más usada en obra informal en toda la región.'
+  },
+  {
+    q: '¿Qué significa la dosificación 1:3 para mortero?',
+    a: 'La dosificación 1:3 indica que por cada parte de cemento se usan 3 partes de arena, ambas medidas en volumen (por ejemplo, 1 bote de cemento y 3 botes de arena del mismo tamaño). Esta calculadora usa valores en peso por m³: 350 kg de cemento y 1.050 kg de arena para 1 m³ de mortero 1:3, con 175 L de agua (relación agua/cemento ≈ 0,5). Un mortero 1:3 tiene buena resistencia y adhesión; se usa para revocos de paredes interiores y exteriores, pegue de ladrillos en muros estructurales y enfoscados de fachada. En zonas de alta humedad (costas caribeñas, selvas de México o Colombia) se puede reducir a 1:2,5 o agregar aditivos impermeabilizantes como Sika-1, Chova Impermeabilizante o Toxement. Para pegar azulejos y pisos cerámicos se prefiere el pegamento pre-mezclado (adhesivo cementoso o pegacor) que el mortero artesanal, por su mayor adherencia y menor espesor.'
+  },
+  {
+    q: '¿Qué significa la dosificación 1:2:4 para hormigón (concreto)?',
+    a: 'La dosificación 1:2:4 (cemento:arena:grava en volumen) es la mezcla artesanal más usada en construcción informal en LATAM. Corresponde aproximadamente a un concreto de resistencia f\'c = 140–175 kg/cm² (14–17 MPa). Esta calculadora usa 300 kg de cemento, 600 kg de arena y 1.200 kg de grava por m³, con 150 L de agua. Es adecuada para: contrapisos o sobrecimientos, losas de patio o terraza ligeras (sin carga estructural pesada), bordillos, pedestales y muros de concreto ciclópeo. Para elementos estructurales (columnas, vigas, losas habitables), la norma ACI 318 (adoptada como NTC-EC en México y NSR-10 en Colombia) exige un diseño de mezcla laboratorial con f\'c mínimo de 210 kg/cm² (21 MPa) y relación a/c controlada. En ese caso, lo correcto es usar concreto premezclado de una planta certificada (CEMEX, Concretos Argos, Melón Hormigones) o diseñar la mezcla con control de laboratorio.'
+  },
+  {
+    q: '¿Cuántos sacos de cemento necesito por m³ de mortero o concreto?',
+    a: 'Usando los valores de esta calculadora: mortero 1:3 → 350 kg de cemento por m³; si el saco estándar es de 50 kg, necesitas 7 sacos por m³. Hormigón 1:2:4 → 300 kg de cemento por m³, es decir 6 sacos de 50 kg. En LATAM, el cemento se vende habitualmente en sacos de 50 kg (México, Colombia, Perú) o 42,5 kg (Chile). La presentación de 25 kg existe para obras pequeñas y reformas. Las marcas líderes en la región son Cemex (México, regionally), Cementos Argos (Colombia, Venezuela, Caribe), Holcim (Chile, Ecuador, Bolivia), Cementos Pacasmayo (Perú) e YPF Cementos (Argentina). Los tipos de cemento más comunes son el Portland Compuesto (CPC) con adición de puzolana, que ofrece buena resistencia al sulfato y menor costo que el Portland Ordinario (CPO), usado principalmente en obras estructurales exigentes.'
+  },
+  {
+    q: '¿Cómo afecta la relación agua/cemento a la resistencia del mortero o concreto?',
+    a: 'La relación agua/cemento (a/c) es el factor más importante en la resistencia final de la mezcla. A menor a/c, mayor resistencia y durabilidad. El mortero 1:3 de esta calculadora usa a/c ≈ 0,5; el concreto 1:2:4 usa a/c ≈ 0,5. Si se agrega más agua (para facilitar el trabajo), la resistencia baja drásticamente: incrementar la a/c de 0,5 a 0,7 puede reducir la resistencia hasta en un 40 %. El problema es que en obra informal es tentador agregar agua para que la mezcla sea más "chistosa" (fluida y fácil de colocar), pero esto fragiliza la estructura. Una mezcla bien dosificada debe ser trabajable pero no segregar agua. En obras formales, los laboratoristas controlan el revenimiento (slump) con el cono de Abrams: un slump de 10–15 cm es típico para losas y columnas. En las normas mexicanas NMX-C-159 y colombianas NTC 1017, el ensayo de resistencia a compresión de cilindros a los 28 días es el control de calidad fundamental.'
+  },
+  {
+    q: '¿Qué tipo de arena se usa para hacer mortero en LATAM?',
+    a: 'Para morteros y concretos se usa arena de río o arena de pedrería (triturada), con granulometría que pase el tamiz No. 4 (4,75 mm) según ASTM C33/NMX-C-111. La arena sucia (con limo, arcilla u orgánicos) reduce la resistencia y la adherencia: el contenido de materia orgánica no debe exceder el 3 % (ensayo colorimétrico). Las arenas de mar con sales no son aptas salvo tratamiento especial. En México, la arena de río del Balsas, el Pánuco o el Grijalva es común; en Colombia, la arena del Magdalena y del Cauca; en Perú, la arena del río Chillón y Lurín; en Chile, la arena de las quebradas andinas. El volumen de arena puede comprarse en "volquetas" (camión de volteo) cuya capacidad varía por región: en México el "volteo" son aproximadamente 7 m³; en Colombia, 6–8 m³. Para obras pequeñas se compra en sacos de 50 kg en ferreterías. Un m³ de arena pesa aproximadamente 1.500–1.700 kg según densidad aparente.'
+  },
+  {
+    q: '¿Cuánto tiempo tarda en fraguar el mortero y el concreto?',
+    a: 'El fraguado es el proceso de endurecimiento inicial de la mezcla cementosa. El cemento Portland inicia su fraguado entre 1 y 2 horas después de mezclado (tiempo durante el cual debe colocarse), y el fraguado final ocurre entre 6 y 10 horas. Sin embargo, la resistencia sigue aumentando con el tiempo: a las 24 horas el concreto tiene apenas el 20–30 % de su resistencia final; a los 7 días, el 70 %; a los 28 días, el 100 %. Por eso la norma indica curar el concreto los primeros 7–14 días manteniéndolo húmedo (con curado con agua o compuesto de curado). En climas calientes de LATAM (Monterrey en verano, costa caribeña de Colombia, el litoral peruano) el fraguado se acelera, lo que puede generar grietas por retracción térmica: añadir sombra, riego y evitar mezclar en las horas de mayor calor (12–16 h). En climas fríos de altura (Bogotá 2.600 msnm, La Paz 3.600 msnm, Quito 2.850 msnm), el fraguado es más lento y puede requerir aditivos acelerantes.'
+  },
+  {
+    q: '¿Cuándo es necesario usar concreto premezclado en lugar de mezcla artesanal?',
+    a: 'El concreto premezclado (planta de concreto + camión mezclador/revolvedora) es obligatorio o recomendable cuando: (1) la obra requiere una resistencia f\'c mayor de 210 kg/cm² (normas sísmicas en México DF, Bogotá, Lima, Managua); (2) el volumen de colado es mayor de 2–3 m³ en pocas horas (losas, columnas de varios pisos) para garantizar homogeneidad; (3) la ubicación es de difícil acceso para mezclar en sitio; (4) hay un control de calidad formal exigido por el desarrollador inmobiliario o financiero (Infonavit, FHA, BancoEstado). Las plantas más importantes en LATAM son CEMEX (México, Colombia, Panamá), Concretos Argos (Colombia, Caribe), Ready Mix (Chile, Melón), SUPERMIX y Unicon (Perú). El costo del concreto premezclado f\'c = 210 kg/cm² es aproximadamente: 1.800–2.500 MXN/m³ en México; 350.000–500.000 COP/m³ en Colombia; 95.000–130.000 CLP/m³ en Chile. A partir de 5 m³, el costo por m³ se reduce porque se optimiza el viaje del camión.'
+  },
 ]}>
   <CementoMorteroTool client:load />
 </CalcLayout>
-

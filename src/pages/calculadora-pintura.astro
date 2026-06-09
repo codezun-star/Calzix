@@ -1,35 +1,44 @@
-﻿---
-import CalcLayout from '@/components/layout/CalcLayout.astro';
-import PinturaTool from '@/components/tools/PinturaTool';
 ---
+import CalcLayout from "@/components/layout/CalcLayout.astro";
+import PinturaTool from "@/components/tools/PinturaTool";
+---
+
 <CalcLayout slug="calculadora-pintura"
-  whatIs="La calculadora de calculadora-pintura es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
+  whatIs="La calculadora de pintura de paredes estima los litros necesarios para pintar las cuatro paredes de una habitación rectangular a partir de sus dimensiones (largo, ancho y alto), el número de manos y el rendimiento de la pintura en m² por litro. Aplica un 10 % adicional de margen sobre el resultado."
+  whyUse="Propietarios, pintores y decoradores en México, Colombia, Chile, Argentina y Perú usan esta herramienta para calcular exactamente cuántos litros o botes de pintura comprar antes de ir a la ferretería, evitar viajes de última hora por faltante y reducir el gasto en sobrantes innecesarios."
+  faqs={[
   {
-    q: '¿Por qué el calculador solo cuenta las paredes y no el techo?',
-    a: 'La fórmula calcula el perímetro de la habitación multiplicado por la altura (2 Í— (largo + ancho) Í— alto), que corresponde únicamente a las cuatro paredes. El techo queda excluido porque muchas veces se pinta con un producto diferente (pintura de techo) y suele requerir menos manos. Si quieres incluir el techo, suma el área largo Í— ancho a tu cálculo manualmente.'
+    q: '¿Por qué se suma un 10 % adicional al calcular la pintura?',
+    a: 'El margen del 10 % cubre tres factores inevitables: (1) las irregularidades de la pared (textura áspera, grietas pequeñas y rugosidad del revoque absorben más pintura que una superficie lisa, lo que puede incrementar el consumo un 5–15 % respecto al rendimiento nominal del fabricante); (2) el desperdicio durante la aplicación (salpicaduras, pintura que queda en el rodillo o brocha, derrames); (3) las variaciones de rendimiento entre marcas y calidades de pintura. El rendimiento nominal indicado en el bote (por ejemplo, 12 m²/L) siempre corresponde a condiciones ideales de superficie y aplicación. En paredes con emplaste y lija previos el rendimiento se alcanza; en paredes porosas o de textura rugosa puede bajar a 8–9 m²/L. Para pinturas de textura o efecto (perlado, metálico, estuco veneciano), el rendimiento es menor aún, generalmente 4–6 m²/L. El 10 % de margen es el estándar recomendado por las principales marcas de LATAM (Comex, Pintuco, Sherwin-Williams, Alba, Sipa).'
   },
   {
-    q: '¿Qué rendimiento de pintura debo introducir?',
-    a: 'El rendimiento en m²/L depende del tipo de pintura. Una pintura plástica estándar rinde entre 10 y 14 m²/L por mano. Las pinturas con mayor cubrición pueden llegar a 16 m²/L. Revisa siempre la ficha técnica del producto que vayas a usar; suele indicar el rendimiento teórico en la etiqueta.'
+    q: '¿Cuál es el rendimiento típico de las pinturas de pared en LATAM?',
+    a: 'El rendimiento varía por tipo de pintura y número de manos. Pinturas vinil acrílicas económicas (una sola mano): 10–12 m²/L. Pinturas vinil acrílicas de calidad media (dos manos): 10–14 m²/L por mano. Pinturas lavables premium (vinilo acrílico alta resistencia, tipo Comex Viniltex Premium o Pintuco Lavable): 12–15 m²/L. Pinturas de aceite y esmalte para madera y metal: 8–12 m²/L. Pinturas de techo (base agua, alta cobertura): 8–10 m²/L. El rendimiento nominal impreso en el bote siempre asume superficie preparada (emplastada, lijada, con imprimante previo). En superficies nuevas de concreto o yeso sin preparar, el rendimiento puede reducirse a la mitad porque el material es poroso. Esta calculadora usa 12 m²/L como valor por defecto, que corresponde a pintura vinil acrílica de calidad media en dos manos.'
   },
   {
-    q: '¿Cuántas manos de pintura necesito?',
-    a: 'Para pintar sobre fondo blanco o el mismo color, normalmente 2 manos son suficientes. Si vas a cambiar de un color oscuro a uno claro, o si la pared tiene manchas o irregularidades, se recomiendan 3 manos. La primera mano siempre cubre menos que las siguientes.'
+    q: '¿Cuántas manos de pintura son necesarias en paredes interiores?',
+    a: 'Para paredes interiores ya pintadas en buen estado, dos manos son suficientes para obtener un acabado uniforme. Para paredes nuevas (revoque fresco o placa de yeso recién instalada), se recomienda al menos una mano de imprimante o sellador previo más dos manos de pintura acabado. Para cambios de color drásticos (pasar de rojo oscuro a blanco, o de verde oscuro a amarillo claro), pueden ser necesarias tres o incluso cuatro manos. Para paredes con manchas de humedad, eflorescencias (salitre) o humo, es obligatorio un tratamiento previo con sellador o fijador antes de pintar; sin ese paso, las manchas seguirán traspasando incluso con muchas manos de pintura. En pinturas de primera calidad (Comex Casatodo, Sipa Plastex, Sherwin-Williams SuperPaint), dos manos bien aplicadas con rodillo de nylon de 9 mm son generalmente suficientes para un acabado profesional.'
   },
   {
-    q: '¿Para qué sirve el 10% adicional que añade el calculador?',
-    a: 'El margen del 10% cubre irregularidades de las paredes (textura, rugosidad), el desperdicio al limpiar rodillos y pinceles, zonas de repaso y los bordes junto a ventanas y zócalos que se cubren con mayor detalle. Evita quedarte sin pintura a mitad del trabajo comprando siempre ese margen de seguridad.'
+    q: '¿Cuánto cuesta pintar una habitación de 15 m² en LATAM?',
+    a: 'El costo depende de si contratas a un pintor profesional o lo haces tú mismo, y de la calidad de la pintura. Para una habitación de 15 m² (por ejemplo, 4 m x 3,75 m x 2,4 m de alto), el área de paredes es aproximadamente 37 m². Con pintura vinil acrílica de calidad media y dos manos, necesitas unos 3 litros (más el 10 % = 3,3 L). Costo de materiales orientativos 2024: México: galón de pintura (3,78 L) de calidad media Comex o Sherwin-Williams = 400–800 MXN; total material 600–1.200 MXN. Colombia: galón pintura Pintuco o Sherwin-Williams = 80.000–150.000 COP. Chile: galón pintura Sipa o Elbex = 20.000–40.000 CLP. La mano de obra de un pintor profesional en México cuesta 80–180 MXN/m² de pared; en Colombia, 15.000–35.000 COP/m²; en Chile, 3.000–8.000 CLP/m². Para la habitación de ejemplo, el costo total (materiales + mano de obra) en México sería aproximadamente 5.000–9.000 MXN.'
   },
   {
-    q: '¿Debo restar las puertas y ventanas del cálculo?',
-    a: 'Para habitaciones estándar con una o dos ventanas y una puerta, el margen del 10% extra compensa. Si la habitación tiene muchos huecos grandes (ventanales, puertas dobles), puedes restar manualmente el área de los huecos. Suma el área de cada hueco (ancho Í— alto) y réstasela al resultado de litros exactos.'
+    q: '¿La calculadora incluye el techo en el área calculada?',
+    a: 'No: la calculadora estima únicamente el área de las cuatro paredes laterales con la fórmula 2 x (largo + ancho) x alto. El techo no se incluye. Para pintar el techo, usa la calculadora de pintura de techos disponible en este sitio, que calcula el área de la superficie horizontal (largo x ancho). En habitaciones donde se pinta todo (paredes + techo), suma los resultados de ambas calculadoras. Para techos, el rendimiento de la pintura suele ser menor que en paredes (8–10 m²/L) porque la pintura de techo debe tener mayor cobertura blanca y se aplica sobre superficies que a menudo están en peor estado. Tampoco se incluyen en el cálculo: puertas, ventanas, zocalos y marcos; en promedio, descuentan 2–4 m² del área total de pared en una habitación estándar, así que el margen del 10 % ya los compensa parcialmente.'
   },
   {
-    q: '¿Qué formato de envase de pintura me conviene comprar?',
-    a: 'Las pinturas plásticas suelen venderse en botes de 1 L, 4 L, 5 L, 10 L y 15 L. Una habitación estándar de 12 m² con 2 manos necesita unos 10-12 L. Para optimizar el gasto, combina formatos grandes para la mayor parte y un bote pequeño para los repasos. Compra siempre del mismo lote para garantizar uniformidad de color.'
+    q: '¿Cuál es la diferencia entre pintura vinílica, látex y acrílica para paredes?',
+    a: 'En el mercado de pintura latinoamericano se usan varios términos que a veces se solapan. Pintura de látex: denominación genérica para pinturas base agua con ligante de látex sintético o SBR. Es la más económica; buena cobertura pero menor lavabilidad. Vinil acrílica (o vinyl-acrílica): base agua con ligante de copolímero vinilo-acrílico; buena lavabilidad, resistente a frote suave, es el estándar en interiores. Pinturas acrílicas 100 %: ligante de puro polímero acrílico; excelente durabilidad, lavabilidad y resistencia a la intemperie; se usa en fachadas y exteriores. La terminología no está completamente normalizada en LATAM: lo que Comex llama "Viniltex" equivale a lo que Pintuco llama "Vinilo Acrílico" o lo que Sherwin-Williams llama "Loxon Interior". Para interiores de alto tráfico (cocinas, baños, pasillos), elige siempre pintura con clasificación "lavable" o "semi-satinada" que aguante el frote con agua y jabón. Para exteriores, la norma mínima es acrílica 100 % con protección UV y antimicóticos.'
+  },
+  {
+    q: '¿Cómo preparar bien una pared antes de pintar para mayor durabilidad?',
+    a: 'La preparación de la superficie es el factor más importante para que la pintura dure y tenga buen acabado. Pasos básicos: (1) Limpieza: elimina polvo, grasa, hongos y eflorescencias con agua y detergente; para hongos y moho usa hipoclorito de sodio al 10 % o fungicida específico. (2) Reparación: sella grietas con masilla o estuco, aplica bandas de malla de refuerzo en grietas activas. (3) Lijado: lija toda la superficie para eliminar protuberancias y mejorar la adherencia; limpia el polvo de lija. (4) Imprimación: aplica una mano de sellador o imprimante (fijador al agua o alkídico, según la porosidad de la pared) y deja secar completamente (2–4 horas). (5) Emplaste o masillado: para paredes muy irregulares, aplica masilla o estuco y lija de nuevo para obtener una superficie lisa. Solo tras estos pasos el rendimiento nominal de la pintura será real. En paredes exteriores nuevas de concreto, es obligatorio esperar al menos 28–30 días de curado antes de pintar.'
+  },
+  {
+    q: '¿Cuánto rinde un litro de pintura y cómo se mide el rendimiento en el bote?',
+    a: 'El rendimiento indicado en el bote (en m²/L) es el dato más importante para calcular la cantidad a comprar, pero siempre corresponde a condiciones ideales. Por ley en varios países de LATAM (norma NMX-C-423 en México, NTC 1335 en Colombia), los fabricantes deben indicar el rendimiento en la etiqueta. El rendimiento estándar para pinturas acrílicas de calidad media es 10–14 m²/L a una mano. Si la etiqueta indica 12 m²/L y tu área es 50 m² en dos manos (área total = 100 m²), necesitas 100/12 ≈ 8,3 L. Con el 10 % de margen: 9,2 L. Si la pintura viene en botes de 4 L, compra 3 botes (12 L). En ferreterías LATAM, las pinturas vienen en botes de 1 L, galón (3,78 L), cubeta de 4 L y cubeta de 19 L (5 galones). El galón es la presentación más común para proyectos residenciales. Siempre es más económico comprar en cubeta grande que en varios botes pequeños; la diferencia puede ser del 20–30 % en precio por litro.'
   },
 ]}>
   <PinturaTool client:load />
 </CalcLayout>
-

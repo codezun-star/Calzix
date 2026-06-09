@@ -1,17 +1,44 @@
-﻿---
+---
 import CalcLayout from "@/components/layout/CalcLayout.astro";
 import BaldosasSueloTool from "@/components/tools/BaldosasSueloTool";
 ---
 
 <CalcLayout slug="baldosas-suelo"
-  whatIs="La calculadora de baldosas-suelo es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precisión?", a: "Precisión estándar del navegador." },
+  whatIs="La calculadora de baldosas estima el número de piezas necesarias para cubrir un suelo rectangular, a partir de las dimensiones del cuarto (largo y ancho en metros), las dimensiones de la baldosa y el porcentaje de merma por cortes y roturas. Muestra el resultado con y sin merma."
+  whyUse="Propietarios, diseñadores de interiores y albañiles en México, Colombia, Chile, Perú y Argentina usan esta calculadora para presupuestar la compra exacta de porcelanato, cerámico o azulejo antes de ir a la ferretería, evitar cortos que detengan la obra o sobrantes costosos que no podrán devolverse."
+  faqs={[
+  {
+    q: '¿Qué porcentaje de merma debo usar en el cálculo?',
+    a: 'La merma recomendada depende del tipo de colocación y la complejidad del espacio. Para una colocación en línea recta (piezas paralelas a las paredes) en un cuarto rectangular sin obstáculos, el 5–8 % cubre los cortes de los bordes. Para una colocación en diagonal (45° respecto a las paredes), la merma sube al 12–15 % porque cada borde requiere cortes en ángulo. Para espacios con muchas esquinas, columnas, islas de cocina, escalones o curvas, la merma puede llegar al 15–20 %. La calculadora usa el 10 % como valor por defecto, que es el estándar conservador recomendado por fabricantes como Portobello (Brasil), Vitromex y Porcelain Plus (México), Corona Pisos (Colombia) y Fanaloza (Chile). Si compras de un lote único y hay sobrante, guarda algunas piezas para reparaciones futuras.'
+  },
+  {
+    q: '¿Cuáles son los formatos de baldosas más comunes en LATAM?',
+    a: 'Los formatos de cerámica y porcelanato más vendidos en ferreterías latinoamericanas han evolucionado hacia piezas de mayor tamaño. Los más comunes en 2024 son: 60 x 60 cm (el estándar más popular para pisos de sala, comedor y habitaciones en México y Colombia); 30 x 60 cm (habitual en baños y cocinas en toda la región); 60 x 120 cm y 120 x 60 cm (formato gran formato, cada vez más popular en casas y departamentos de gama media); 30 x 30 cm (azulejos para muros y baños pequeños). Los formatos pequeños 20 x 20 cm o 10 x 10 cm se usan para baños y cocinas de estilo mediterráneo o vintage. Los formatos cuadrados facilitan el cálculo porque la merma es idéntica en ambos ejes; los formatos rectangulares (20 x 60, 23 x 46) son más complejos porque hay que considerar el sentido de la colocación.'
+  },
+  {
+    q: '¿Cómo colocar baldosas en diagonal para minimizar el desperdicio?',
+    a: 'La colocación en diagonal (45°) crea un efecto visual de mayor amplitud pero genera más desperdicio porque los bordes de la habitación deben cortarse en triángulos. Para minimizar el corte: (1) centra siempre el patrón en el punto focal del cuarto (centro geométrico o la puerta principal); (2) planifica que los bordes tengan al menos la mitad de la pieza para evitar filetas muy delgadas que se rompen con facilidad; (3) usa una sierra de corte de baldosa (cortadora manual para cortes rectos, amoladora con disco de diamante para cortes curvos e irregulares). En una habitación de 4 x 4 m colocada en diagonal con pieza de 60 x 60 cm, la merma real suele ser del 13–16 %. El estilo de colocación preferido en cocinas de LATAM para los muros es el "metro bond" o brick (piezas rectangulares desplazadas medio paso), que requiere solo 5–8 % de merma.'
+  },
+  {
+    q: '¿Cuánto vale por m² el porcelanato y cerámico en LATAM en 2024?',
+    a: 'Los precios varían por país, marca y formato. Rangos orientativos por m² en 2024: cerámico nacional básico (México): 80–180 MXN/m²; porcelanato importado (México): 250–800 MXN/m²; porcelanato gran formato premium: 900–2.000 MXN/m². En Colombia: cerámica básica 25.000–50.000 COP/m²; porcelanato medio 60.000–150.000 COP/m²; porcelanato importado premium 180.000–400.000 COP/m². En Chile: cerámica básica 4.000–8.000 CLP/m²; porcelanato medio 12.000–30.000 CLP/m²; gran formato 35.000–80.000 CLP/m². En Argentina los precios varían con la inflación; en Perú, el porcelanato peruano de San Lorenzo o Cerámica Lima es competitivo versus el importado brasileño. Las cadenas Homecenter (Sodimac), Construrama, Home Depot, Easy, Fácil y sus equivalentes locales son referencia de precio en toda LATAM. A los materiales hay que sumar pegamento/pegazulejo (adhesivo cementoso, 1 saco de 25 kg ≈ 5–7 m²) y fragüe/junta (1 kg ≈ 5–8 m² según junta).'
+  },
+  {
+    q: '¿Se puede usar la misma calculadora para azulejos de pared?',
+    a: 'Sí, el cálculo es exactamente el mismo: área de la superficie a cubrir dividida entre el área de una pieza, más la merma. Para azulejos de pared en baños y cocinas, introduce el largo y alto de cada paño de pared como "largo" y "ancho" del cuarto. Por ejemplo, para un baño con 4 paredes de 2,5 m de alto x perímetro total de 12 m, el área a cubrir es 30 m². Con azulejo de 30 x 60 cm (área = 0,18 m²), sin merma necesitas 167 piezas; con 10 % de merma, 184 piezas. En la práctica de baños, además hay que descontar el área de la ventana, el espejo y los nichos. Una consideración adicional para muros: las piezas de 30 x 60 cm se colocan frecuentemente en vertical (60 cm de altura), lo que cambia la percepción del espacio pero no el cálculo de cantidad. Verifica siempre la dirección de los lotes (rectificado vs no rectificado) antes de mezclar cajas.'
+  },
+  {
+    q: '¿Cuánto tarda en fraguar el pegamento de las baldosas?',
+    a: 'El pegamento cementoso (pegazulejo o adhesivo C2 según norma ISO 13007) necesita 24–48 horas para fraguar lo suficiente para transitar sobre él, y 7 días para alcanzar su resistencia completa. Durante las primeras 24 horas no debe pisarse ni cargarse la superficie. El fragüe o rejunte (lechada) se aplica generalmente a las 24–48 horas de colocadas las piezas, cuando el adhesivo ya no está fresco. En climas húmedos tropicales (Bogotá, Medellín, Ciudad de México en época de lluvias), el fraguado del adhesivo puede tardar 48–72 h. En climas secos y cálidos (Monterrey, Lima, Arequipa, norte de Chile), el fraguado es más rápido pero hay riesgo de que el adhesivo pierda humedad antes de que la baldosa quede bien fijada; en ese caso, humedece previamente el contrapiso y la parte posterior de la pieza. Las marcas de adhesivo más distribuidas en LATAM son: Pegazulejo Superflex (México, Construrama), Weber (Saint-Gobain, regional), Sika CeraPro (regional) y Toxement Adhecement (Colombia).'
+  },
+  {
+    q: '¿Es mejor colocar las baldosas con un profesional o hacerlo uno mismo?',
+    a: 'Depende del proyecto. Para habitaciones rectangulares con colocación en línea recta y superficies de menos de 20 m², un bricoleur con herramientas básicas (nivel, cortadora, espátula dentada) puede obtener buenos resultados siguiendo los pasos: nivelar el contrapiso, aplicar adhesivo con llana dentada, colocar crucetas de junta (2–3 mm), cortar en bordes y aplicar fragüe. Para proyectos más complejos (baños con curvas, colocación diagonal, porcelanato gran formato 120 x 60 o más, rectificado con junta mínima de 1,5 mm), se recomienda un colocador profesional porque cualquier irregularidad es muy visible en formatos grandes. En México, el costo de mano de obra de colocación de porcelanato es 80–200 MXN/m² según la región y la dificultad. En Colombia, 20.000–50.000 COP/m². En Chile, 4.000–12.000 CLP/m². El colocador normalmente cobra el material a parte. Solicita siempre referencias y verifica una obra anterior antes de contratar.'
+  },
+  {
+    q: '¿Qué pasa si me faltan baldosas después de haber comprado?',
+    a: 'El principal riesgo de quedarse corto en baldosas es no encontrar el mismo lote (batch) de fabricación. Aunque la referencia del modelo sea la misma, dos lotes distintos pueden tener diferencias mínimas de tono o textura perceptibles si se colocan juntas. Las cajas de baldosas incluyen en su etiqueta el número de calibre y de tono (shade/tonalidad); al comprar, verifica que todas las cajas sean del mismo tono. Si necesitas comprar más de otro lote, coloca las piezas nuevas en zonas menos visibles (dormitorios, lavandería) o mezcla las cajas de distintos lotes intercalando piezas para distribuir la diferencia visualmente. Para evitar este problema, compra siempre entre un 10 y 15 % más de lo calculado. En grandes superficies (más de 100 m²), el sobrante siempre será útil para reparaciones futuras. Si la línea se discontinúa (algo común con modelos importados), el sobrante tiene un valor incalculable.'
+  },
 ]}>
   <BaldosasSueloTool client:load />
 </CalcLayout>
-

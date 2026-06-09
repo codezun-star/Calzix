@@ -1,17 +1,44 @@
-﻿---
+---
 import CalcLayout from "@/components/layout/CalcLayout.astro";
 import CableElectricoTool from "@/components/tools/CableElectricoTool";
 ---
 
 <CalcLayout slug="cable-electrico"
-  whatIs="La calculadora de cable-electrico es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precisión?", a: "Precisión estándar del navegador." },
+  whatIs="La calculadora de sección de cable eléctrico determina el calibre mínimo de cable de cobre (entre 1,5 y 70 mm²) para una instalación monofásica, a partir de la potencia del equipo (W), la tensión (V) y la longitud del tramo. Verifica también la caída de tensión resultante con el cable seleccionado."
+  whyUse="Electricistas, instaladores y propietarios en México, Colombia, Chile, Perú y Argentina usan esta calculadora para seleccionar el calibre de cable correcto antes de comprar, cumplir las normas NOM-001-SEDE (México), RETIE (Colombia) y las tablas AWG o mm² de cada país, y evitar sobrecalentamientos por subdimensionado."
+  faqs={[
+  {
+    q: '¿Por qué es importante calcular bien la sección del cable eléctrico?',
+    a: 'Elegir un cable con sección insuficiente es una de las principales causas de incendios eléctricos en viviendas de LATAM. Cuando la corriente que circula por un cable supera su capacidad nominal, el conductor se calienta (efecto Joule): a mayor exceso de corriente, mayor temperatura. Si el aislamiento del cable se degrada por calor sostenido, puede provocar un cortocircuito o un incendio eléctrico en la pared, especialmente cuando el cable está empotrado y sin ventilación. Según la CONDUSEF (México) y el Cuerpo de Bomberos de Colombia, los incendios por causas eléctricas representan el 25–35 % de los siniestros urbanos, y la mayoría tienen como origen instalaciones subdimensionadas o improvisadas. La norma NOM-001-SEDE-2012 en México y el RETIE en Colombia establecen tablas de capacidad de corriente (ampacidad) para cada sección de cable, según el tipo de aislamiento y la forma de instalación (empotrado en tubo, a la vista, enterrado).'
+  },
+  {
+    q: '¿Cómo funciona la selección de sección de cable en esta calculadora?',
+    a: 'La calculadora calcula primero la intensidad de corriente del circuito: I = P / V (para circuitos monofásicos resistivos puros). Luego aplica un factor de seguridad del 25 % (I_diseño = I x 1,25), que es el margen mínimo exigido por la normativa para seleccionar el conductor. A continuación, recorre la tabla de secciones estándar (1,5 mm², 2,5 mm², 4 mm², 6 mm², 10 mm², 16 mm², 25 mm², 35 mm², 50 mm², 70 mm²) y selecciona la primera sección cuya capacidad de corriente máxima (I_max) supere I_diseño. Finalmente calcula la caída de tensión: ΔV = (2 x ρ x L x I) / S, donde ρ = 0,0172 Ω·mm²/m es la resistividad del cobre a 20 °C, L es la longitud del tramo en metros, I la corriente en amperios, y S la sección en mm². La caída de tensión máxima permitida es del 3 % para circuitos de iluminación y del 5 % para circuitos de fuerza, según las normas de instalación de toda LATAM.'
+  },
+  {
+    q: '¿Cuál es la diferencia entre mm² y AWG para medir el calibre del cable?',
+    a: 'En América Latina coexisten dos sistemas de medición de conductores eléctricos. El sistema métrico (mm²) es el oficial en la norma IEC (adoptada en Colombia, Chile, Argentina, Perú, Ecuador y países europeos): los cables se denominan por su sección transversal en milímetros cuadrados: 1,5 mm², 2,5 mm², 4 mm², 6 mm², 10 mm², etc. El sistema AWG (American Wire Gauge) es el oficial en México y Centroamérica (que adoptan normas ANSI/NEC): los calibres se denominan con números inversamente proporcionales al diámetro (mayor número = menor sección): AWG 14 (2,08 mm²), AWG 12 (3,31 mm²), AWG 10 (5,26 mm²), AWG 8 (8,37 mm²), AWG 6 (13,3 mm²). Equivalencias aproximadas más usadas: AWG 14 ≈ 2,5 mm²; AWG 12 ≈ 4 mm²; AWG 10 ≈ 6 mm²; AWG 8 ≈ 10 mm²; AWG 6 ≈ 16 mm². Esta calculadora trabaja en mm², el sistema más extendido internacionalmente. Para México, convierte usando la tabla anterior o selecciona el calibre AWG inmediatamente superior al mm² calculado.'
+  },
+  {
+    q: '¿Qué es la caída de tensión y cuánta es aceptable?',
+    a: 'La caída de tensión (ΔV) es la diferencia de voltaje entre el inicio y el final de un tramo de cable, causada por la resistencia del conductor. A mayor longitud o mayor corriente, mayor caída de tensión. Una caída de tensión excesiva provoca: motores que arrancan lentamente y se sobrecalientan; LEDs y fluorescentes compactos que parpadean; electrodomésticos sensibles (computadoras, televisores, neveras con inverter) que funcionan de forma errática. Las normas de instalación eléctrica en LATAM establecen los límites máximos: circuitos de iluminación: máximo 3 % de caída de tensión; circuitos de fuerza (tomacorrientes, electrodomésticos): máximo 5 %; circuitos motores: máximo 3 % en arranque. Ejemplo: en un circuito de 120 V (México), una caída del 3 % es 3,6 V; el equipo al final del circuito recibirá 116,4 V en lugar de 120 V. Si la caída supera el límite, la solución es aumentar la sección del cable, aunque la intensidad de corriente ya esté cubierta.'
+  },
+  {
+    q: '¿Cuándo se necesita cable de 6, 10 o 16 mm² en una vivienda?',
+    a: 'Los calibres más gruesos se necesitan para circuitos de alta potencia: 6 mm² (AWG 10): para circuitos de lavadora, lavavajillas, calentador de agua eléctrico de 2.000–3.500 W, aire acondicionado split de 1,5–2 toneladas; tramos largos de más de 15 m para circuitos de 20 A. 10 mm² (AWG 8): para acometidas o circuitos derivados que alimentan varios circuitos de una habitación o piso; aires acondicionados de 2,5–5 toneladas; hornos eléctricos de 4.000–6.000 W. 16 mm² (AWG 6): para el alimentador principal desde el medidor hasta el tablero de distribución en apartamentos de hasta 80 m²; duchas eléctricas de alta potencia (4.000–5.500 W). 25 mm² y 35 mm²: para acometidas de casas completas y espacios comerciales. En México, la NOM-001-SEDE-2012 es la referencia; en Colombia, el RETIE (Reglamento Técnico de Instalaciones Eléctricas) Resolución 90708 de 2013 y sus actualizaciones; en Chile, la norma SEC NCh Elec 4/2003; en Perú, el Código Nacional de Electricidad CNE-U.'
+  },
+  {
+    q: '¿Cuánto cuesta el cable eléctrico por metro en LATAM?',
+    a: 'Los precios varían por país, marca, tipo de aislamiento y calibre. Precios orientativos en 2024 por metro de cable THW (uso general en tubo), conductor de cobre: México: 2,5 mm² (AWG 12): 18–28 MXN/m; 4 mm² (AWG 10): 25–40 MXN/m; 6 mm² (AWG 8): 40–65 MXN/m. Colombia: 2,5 mm²: 4.000–7.000 COP/m; 4 mm²: 6.000–11.000 COP/m; 6 mm²: 10.000–18.000 COP/m. Chile: 2,5 mm²: 900–1.500 CLP/m; 4 mm²: 1.400–2.400 CLP/m; 6 mm²: 2.200–3.800 CLP/m. Las marcas de cable más distribuidas en LATAM son: Condumex y Phelps Dodge (México), Procables y CENTELSA (Colombia), General Cable y Nexans (regional), Cobrecon y VIAKON. Para calcular el costo total de un circuito, suma la longitud de ida más la de regreso (la fórmula de caída de tensión usa 2 x L por eso). En instalaciones trifásicas, multiplica por 3 conductores de fase más el neutro.'
+  },
+  {
+    q: '¿Cuál es la diferencia entre cable THHN, THW y NYY para instalaciones?',
+    a: 'Los tipos de cable difieren principalmente en el aislamiento y los entornos en que pueden usarse. THHN (Thermoplastic High Heat Nylon): el más común para instalaciones en tubo conduit en interiores y exteriores protegidos; aislamiento de PVC + cubierta de nylon; temperatura máxima 90 °C en seco / 75 °C en húmedo; es el estándar en México (NOM-001-SEDE), Centroamérica y el Caribe. THW (Thermoplastic Heat and Water): similar al THHN pero sin cubierta de nylon; 75 °C en seco y húmedo; se usa en tableros, conexiones cortas y donde la flexibilidad importa más que la protección mecánica. NYY (o NAYY con aluminio): cable de distribución subterránea con aislamiento de PVC doble y cubierta exterior; 70 °C; se usa para acometidas desde la red a medidores, instalaciones enterradas y conexiones de transformadores en proyectos industriales y residenciales en Colombia, Chile y Argentina. Para instalaciones residenciales estándar en toda LATAM, el THHN/THW en conduit es el sistema más usado y regulado; el NYY se reserva para acometidas y distribución.'
+  },
+  {
+    q: '¿Cuándo es obligatorio contratar a un electricista certificado en LATAM?',
+    a: 'La normativa de instalaciones eléctricas en LATAM exige en distintos grados que los trabajos sean realizados por profesionales certificados. En México, la NOM-001-SEDE-2012 y la Ley del Servicio Público de Energía Eléctrica requieren que las instalaciones nuevas y modificaciones sean supervisadas o ejecutadas por un DRO (Director Responsable de Obra) o técnico certificado con firma de responsiva; sin esto, CFE puede negar la conexión. En Colombia, el RETIE exige que toda instalación sea ejecutada por un electricista con certificación CONTE (Consejo Técnico de Electricidad) y avalada por un Organismo de Inspección Acreditado; sin certificación, la distribuidora puede suspender el suministro. En Chile, la Superintendencia de Electricidad y Combustibles (SEC) exige que toda instalación interior sea ejecutada por un instalador eléctrico autorizado (IA/IE1/IE2) con certificación vigente. En Perú, el CNE-U establece que las instalaciones deben ser ejecutadas por contratistas con número de registro en OSINERGMIN. Para trabajos menores de mantenimiento (cambiar un tomacorriente, enchufar un breaker), un propietario puede actuar con cuidado en muchos países; para instalaciones nuevas, extensiones de tablero y conexiones de alta potencia, siempre usa un profesional certificado.'
+  },
 ]}>
   <CableElectricoTool client:load />
 </CalcLayout>
-

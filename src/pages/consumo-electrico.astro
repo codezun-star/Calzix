@@ -1,35 +1,44 @@
-﻿---
-import CalcLayout from '@/components/layout/CalcLayout.astro';
-import ConsumoElectricoTool from '@/components/tools/ConsumoElectricoTool';
 ---
+import CalcLayout from "@/components/layout/CalcLayout.astro";
+import ConsumoElectricoTool from "@/components/tools/ConsumoElectricoTool";
+---
+
 <CalcLayout slug="consumo-electrico"
-  whatIs="La calculadora de consumo-electrico es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
+  whatIs="La calculadora de consumo eléctrico estima los kWh diarios, mensuales y anuales de cualquier electrodoméstico a partir de su potencia en vatios, las horas de uso por día y los días al mes. Con el precio por kWh de tu tarifa, calcula también el costo mensual y anual en tu moneda local."
+  whyUse="Familias, gestores de edificios y empresas en México, Colombia, Chile, Perú y Argentina usan esta calculadora para identificar qué electrodomésticos consumen más, comparar el impacto de hábitos de uso en la factura eléctrica (CFE, EPM, Enel, ENEE, CPFL) y justificar cambios a equipos más eficientes."
+  faqs={[
   {
-    q: '¿Cómo se calcula el consumo eléctrico de un aparato?',
-    a: 'El consumo se calcula multiplicando la potencia del aparato en kilovatios (kW) por las horas de uso. Por ejemplo, un calefactor de 1.500 W (1,5 kW) encendido 8 horas al día consume 12 kWh ese día. Al multiplicarlo por los días del mes y el precio del kWh obtienes el coste en euros.'
+    q: '¿Cómo se calcula el consumo eléctrico de un electrodoméstico?',
+    a: 'La fórmula básica es: kWh/día = (Potencia en W ÷ 1.000) x horas de uso al día. Para el costo: costo/mes = kWh/día x días del mes x precio por kWh. Ejemplo práctico: un aire acondicionado de 1.800 W encendido 6 horas al día, 30 días, con tarifa de 1,50 MXN/kWh (tarifa CFE residencial media en México 2024) consume: (1.800 ÷ 1.000) x 6 = 10,8 kWh/día; x 30 días = 324 kWh/mes; x 1,50 MXN = 486 MXN de electricidad solo por ese equipo. En Colombia, con tarifa EPM de aprox. 800 COP/kWh, el mismo equipo costaría 259.200 COP/mes. En Chile con tarifa Enel de aprox. 130 CLP/kWh, costaría 42.120 CLP/mes. Introduce el precio de tu tarifa real para obtener el resultado ajustado a tu país y comercializadora.'
   },
   {
-    q: '¿Cuánto cuesta tener el televisor encendido todo el día?',
-    a: 'Un televisor moderno de 55 pulgadas LED consume entre 80 y 150 W. Si asumimos 100 W y 8 horas de uso diario a 0,15 €/kWh: 0,1 kW Í— 8 h Í— 30 días Í— 0,15 €/kWh = 3,60 € al mes. Introduce estos valores en el calculador para personalizar el resultado.'
+    q: '¿Cuál es el precio del kWh en México, Colombia, Chile y Perú?',
+    a: 'Los precios del kWh para uso residencial varían significativamente por país, región y nivel de consumo. Valores orientativos 2024 (tarifas residenciales estándar): México (CFE): tarifa DAC (alto consumo) 4,50–6,50 MXN/kWh; tarifas básica y subsidiada: 0,80–2,50 MXN/kWh según rango de consumo; el subsidio es mayor para consumidores de bajo consumo mensual. Colombia (EPM, Codensa, Celsia): 700–1.100 COP/kWh según estrato y región. Chile (Enel, CGE, Chilectra): 120–160 CLP/kWh para residencial. Perú (Enel, Luz del Sur, Electro Sur): 0,55–0,75 PEN/kWh. Honduras (ENEE): 3,50–5,50 HNL/kWh. Costa Rica (ICE): 50–80 CRC/kWh. Para obtener tu precio exacto, revisa tu última factura eléctrica: el precio unitario o costo por kWh está indicado en la sección de "cargos por energía" o "consumo de energía". Las tarifas con tiempo de uso (discriminación horaria) tienen precios distintos en horas punta y horas valle.'
   },
   {
-    q: '¿Qué precio del kWh debo usar?',
-    a: 'En España, el precio medio del kWh para uso doméstico oscilaba entre 0,13 y 0,22 €/kWh en 2024, dependiendo de la tarifa, la hora del día (PVPC) y el comercializador. Consulta tu última factura eléctrica para obtener tu precio real y obtener un resultado más preciso.'
+    q: '¿Qué electrodomésticos consumen más electricidad en un hogar de LATAM?',
+    a: 'Los principales consumidores en orden de mayor impacto en la factura son: (1) Aire acondicionado o climatización: 900–3.500 W según capacidad; el más costoso cuando se usa muchas horas al día en climas cálidos de México, Colombia, Centroamérica y costas de Perú/Chile. (2) Calentador de agua eléctrico o boiler: 1.200–3.000 W; en regiones sin gas natural (muchas zonas de Ecuador, Perú, Chile sur), el calentador eléctrico es el segundo mayor gasto. (3) Lavadora y secadora: 500–2.500 W; la secadora es especialmente consumidora (2.000–3.000 W). (4) Frigorífico o refrigerador: 100–400 W continuo; aunque su potencia es moderada, funciona las 24 horas los 365 días del año. (5) Iluminación: con tecnología incandescente puede ser el 15–25 % del consumo; con LED, cae al 5–10 %. (6) Televisión, computadora y entretenimiento: 80–400 W según tipo y tamaño. Conocer el consumo individual de cada equipo permite priorizar los cambios de mayor ahorro.'
   },
   {
-    q: '¿Qué electrodomésticos consumen más electricidad en el hogar?',
-    a: 'Los mayores consumidores son la calefacción eléctrica o bomba de calor (1.000-3.000 W), el termo eléctrico o calentador de agua (1.200-2.000 W), la secadora (2.000-3.000 W), la vitrocerámica o inducción (1.500-3.500 W) y el frigorífico (150-400 W continuo). Los más visibles en la factura son los que se usan muchas horas o tienen alta potencia.'
+    q: '¿Cuánto ahorra cambiar un refrigerador viejo por uno clase A en LATAM?',
+    a: 'El ahorro al cambiar un refrigerador antiguo (más de 10 años) por uno de alta eficiencia energética puede ser considerable. Un refrigerador de los años 2000–2010 consume típicamente 45–70 kWh/mes; un modelo actual de clase A o A++ (etiqueta Energuía en México, sello PROCEL en Brasil, o etiqueta energética colombiana) consume 20–35 kWh/mes. El ahorro anual: diferencia de consumo de 25–40 kWh/mes x 12 meses = 300–480 kWh/año. Con tarifa de 1,50 MXN/kWh (México): 450–720 MXN/año de ahorro. Con tarifa de 800 COP/kWh (Colombia): 240.000–384.000 COP/año. Con tarifa de 130 CLP/kWh (Chile): 39.000–62.400 CLP/año. A estos ahorros se suma la reducción de emisiones de CO² y el menor desgaste del equipo eléctrico de la casa. En México, Fide (Fideicomiso para el Ahorro de Energía Eléctrica) ofrece subsidios para cambiar refrigeradores y aires acondicionados a modelos eficientes en hogares de bajo consumo.'
   },
   {
-    q: '¿Para qué sirve saber el consumo anual de un aparato?',
-    a: 'Conocer el coste anual te permite comparar el gasto real de diferentes aparatos, justificar el cambio a modelos más eficientes y estimar el ahorro al adoptar hábitos de consumo más responsables. Por ejemplo, comparar un frigorífico antiguo con uno de clase A+++ puede revelar un ahorro de 50-100 € al año.'
+    q: '¿Cómo afecta el modo standby al consumo eléctrico mensual?',
+    a: 'El consumo en standby (modo de espera) es una fuente silenciosa de gasto eléctrico. Un aparato en standby que consume 5 W (típico en televisores, microondas, decodificadores) gasta 0,005 kW x 24 h x 30 días = 3,6 kWh/mes. Con 10 aparatos en standby, son 36 kWh/mes de consumo fantasma, equivalente al 5–15 % de la factura de un hogar promedio. Los equipos con mayor consumo en standby: microondas con reloj digital (3–5 W), decodificador de cable (5–15 W), televisores modernos (0,5–3 W), cargadores de celular conectados sin dispositivo (0,1–0,5 W). Para eliminar el consumo standby: usa regletas con interruptor para desconectar grupos de aparatos de una vez; apaga completamente el televisor y consola de videojuegos desde el botón físico; desenchufa el microondas cuando no lo uses. El ahorro anual puede superar los 50–100 kWh, es decir, 75–150 MXN, 40.000–80.000 COP o 6.500–13.000 CLP de ahorro real al año.'
   },
   {
-    q: '¿Cómo puedo reducir el consumo eléctrico de mis aparatos?',
-    a: 'Las principales medidas son: desconectar aparatos del standby (pueden suponer hasta el 10% del consumo), usar electrodomésticos en horas valle si tienes tarifa discriminación horaria, sustituir bombillas por LED, ajustar el termostato del frigorífico entre 3 y 5 °C, y usar lavadora y lavavajillas solo a carga completa.'
+    q: '¿Cómo interpretar la factura eléctrica de CFE, EPM, Enel u otras distribuidoras?',
+    a: 'La factura eléctrica en LATAM tiene varios componentes que confunden a los usuarios. En México (CFE): el cargo por energía se divide en tres rangos (básico, intermedio, excedente) con precios progresivos; hay un cargo fijo por distribución y un cargo por potencia. El subsidio de CFE hace que los primeros kWh sean muy baratos, pero los excedentes por encima del límite de tarifa DAC son mucho más caros. En Colombia (EPM, Codensa, Electrificadora): el recibo incluye energía activa (kWh), cargo fijo, alumbrado público, contribución de solidaridad y cargo por pérdidas técnicas. En Chile (Enel, CGE): incluye cargo de energía (kWh), cargo de potencia, cargo por transmisión y cargo fijo. En Perú (Enel, Luz del Sur): incluye cargo de energía activa, cargo por potencia activa de distribución y cargo fijo. Para calcular tu precio real por kWh, divide el total de la factura entre los kWh consumidos del mes. En la mayoría de los países, la factura incluye también impuestos (IVA en México 16 %, IVA en Colombia 19 %, IVA en Chile 19 %).'
+  },
+  {
+    q: '¿Cuánto consume un aire acondicionado split de 1 tonelada al mes en LATAM?',
+    a: 'Un aire acondicionado split de 1 tonelada de refrigeración (12.000 BTU/h) tiene una potencia típica de 900–1.200 W en compresores con tecnología inverter, y 1.400–1.800 W en modelos no inverter. Asumiendo 8 horas de uso diario, 30 días y potencia media de 1.200 W: (1.200 ÷ 1.000) x 8 x 30 = 288 kWh/mes. Costo mensual estimado: México (1,50 MXN/kWh): 432 MXN. Colombia (800 COP/kWh): 230.400 COP. Chile (130 CLP/kWh): 37.440 CLP. Honduras (4,50 HNL/kWh): 1.296 HNL. En ciudades calurosas de LATAM donde el AC funciona 12–16 horas al día (Veracruz, Barranquilla, Guayaquil, San Pedro Sula), el costo mensual puede triplicarse. Los modelos inverter ahorran un 30–50 % respecto a los convencionales porque ajustan continuamente la velocidad del compresor en lugar de apagar y encender. Marcas como LG, Daikin, Carrier, Mirage y Midea son las más vendidas en el mercado residencial de LATAM.'
+  },
+  {
+    q: '¿Es rentable instalar paneles solares para reducir la factura eléctrica?',
+    a: 'La rentabilidad de los paneles solares en LATAM varía según el país, la tarifa eléctrica, la radiación solar y los incentivos disponibles. México tiene una de las mejores condiciones de LATAM: alta radiación solar (especialmente en Sonora, Chihuahua, Baja California), y el esquema de medición neta de la CFE permite inyectar excedentes a la red y compensar en la factura. Una instalación de 2 kWp (6 paneles de 350 W) genera aproximadamente 250–350 kWh/mes en el norte de México, cubriendo el 60–80 % del consumo de un hogar promedio. El costo de instalación en México es de 35.000–60.000 MXN; el período de recuperación es 4–7 años. En Colombia, la Ley 1715 de Energías Renovables permite descuentos tributarios del 50 % en renta y el 100 % en IVA para instalaciones de autogeneración. En Chile, la Ley 20.571 de generación distribuida permite inyectar excedentes. En Perú, la Resolución OSINERGMIN 306 regula la generación distribuida. La calculadora de consumo eléctrico de Calzix te ayuda a cuantificar cuántos kWh al mes quieres compensar con solar antes de solicitar cotizaciones.'
   },
 ]}>
   <ConsumoElectricoTool client:load />
 </CalcLayout>
-

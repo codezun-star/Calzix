@@ -1,17 +1,44 @@
-﻿---
+---
 import CalcLayout from "@/components/layout/CalcLayout.astro";
 import CircuitoElectricoTool from "@/components/tools/CircuitoElectricoTool";
 ---
 
 <CalcLayout slug="circuito-electrico"
-  whatIs="La calculadora de circuito-electrico es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precisión?", a: "Precisión estándar del navegador." },
+  whatIs="La calculadora de circuito eléctrico resuelve circuitos resistivos en serie y en paralelo aplicando la Ley de Ohm. Ingresa la tensión de la fuente (V) y las resistencias separadas por comas (Ω) para obtener la resistencia total, la corriente total y la tensión e intensidad en cada resistor."
+  whyUse="Estudiantes de física y electrónica en México, Colombia, Chile, Argentina y Perú usan esta calculadora para verificar ejercicios de circuitos de corriente continua, técnicos en instalaciones eléctricas residenciales, y aficionados a la electrónica para dimensionar redes de resistencias antes de soldar."
+  faqs={[
+  {
+    q: '¿Qué es la Ley de Ohm y cómo se aplica en un circuito?',
+    a: 'La Ley de Ohm establece que la tensión (V) en un conductor es igual al producto de la corriente (I) que circula por él y su resistencia (R): V = I × R. Es la ley fundamental de los circuitos eléctricos de corriente continua (DC) y también aplica en corriente alterna (AC) para componentes puramente resistivos. Con esta calculadora: si introduces la tensión de la fuente (V) y las resistencias en serie o paralelo, se calcula la resistencia total (Rt), la corriente total (It = V / Rt) y la distribución de tensión y corriente en cada resistor. Ejemplo: fuente de 12 V con resistencias de 10, 20 y 30 Ω en serie. Rt = 10 + 20 + 30 = 60 Ω. It = 12 / 60 = 0,2 A. V10 = 0,2 × 10 = 2 V; V20 = 0,2 × 20 = 4 V; V30 = 0,2 × 30 = 6 V. Suma de tensiones = 12 V (ley de Kirchhoff de tensiones). Este tipo de ejercicio es el más común en los cursos de Física II y Electrónica Básica de preparatorias y universidades de toda LATAM.'
+  },
+  {
+    q: '¿Cuál es la diferencia entre circuito en serie y circuito en paralelo?',
+    a: 'En un circuito en serie, los componentes se conectan uno tras otro en una sola trayectoria: la misma corriente circula por todos los resistores, y la tensión total se reparte entre ellos de forma proporcional a su resistencia (mayor resistencia = mayor caída de tensión). Si uno de los componentes falla (se abre el circuito), todo deja de funcionar, como las luces de Navidad antiguas. En un circuito en paralelo, cada componente se conecta entre los mismos dos nodos (misma tensión en todos), y la corriente total se divide entre las ramas en proporción inversa a su resistencia (menor resistencia = mayor corriente). Si una rama falla, las demás siguen funcionando. La instalación eléctrica domiciliaria de una casa en LATAM usa el paralelo: todos los tomacorrientes y luminarias tienen la misma tensión de 120 V (México, Colombia, Venezuela, Centroamérica) o 220 V (Chile, Argentina, Perú, Brasil) independientemente de cuántos estén conectados.'
+  },
+  {
+    q: '¿Cómo calcular la resistencia total de resistores en serie?',
+    a: 'Para resistores en serie, la resistencia total es simplemente la suma de todas las resistencias individuales: Rt = R1 + R2 + R3 + ... + Rn. Ejemplo: si tienes 3 resistores de 100 Ω, 220 Ω y 470 Ω en serie, la resistencia total es 100 + 220 + 470 = 790 Ω. La corriente total con una fuente de 9 V sería I = 9 / 790 = 0,0114 A = 11,4 mA. Cada resistor tiene la misma corriente (11,4 mA) pero distinta tensión: V100 = 1,14 V; V220 = 2,51 V; V470 = 5,35 V. La suma 1,14 + 2,51 + 5,35 ≈ 9 V (Kirchhoff de tensiones). Este cálculo es fundamental en el diseño de divisores de tensión, limitadores de corriente para LEDs y en la selección de resistencias de base para transistores bipolares en circuitos de amplificación. Las resistencias comerciales se fabrican en valores estándar de la serie E12 (10, 12, 15, 18, 22, 27, 33, 39, 47, 56, 68, 82 y sus múltiplos) que es la más común en kits de electrónica de tiendas como Electrocomponentes (México), Steren (LATAM) y Farnell.'
+  },
+  {
+    q: '¿Cómo calcular la resistencia total de resistores en paralelo?',
+    a: 'Para resistores en paralelo, la resistencia total se calcula con la fórmula de la inversa: 1/Rt = 1/R1 + 1/R2 + 1/R3 + ... + 1/Rn. Para dos resistores en paralelo existe una fórmula simplificada: Rt = (R1 x R2) / (R1 + R2). Ejemplo: 3 resistores de 10 Ω, 20 Ω y 30 Ω en paralelo. 1/Rt = 1/10 + 1/20 + 1/30 = 6/60 + 3/60 + 2/60 = 11/60. Rt = 60/11 ≈ 5,45 Ω. Nótese que la resistencia total en paralelo es siempre menor que la resistencia más pequeña del grupo. Con fuente de 12 V: It = 12 / 5,45 ≈ 2,2 A. I10 = 12/10 = 1,2 A; I20 = 12/20 = 0,6 A; I30 = 12/30 = 0,4 A; suma = 2,2 A (Kirchhoff de corrientes). Esta calculadora realiza el cálculo de la inversa automáticamente para cualquier número de resistores en paralelo.'
+  },
+  {
+    q: '¿Qué son los circuitos mixtos (serie-paralelo) y cómo se resuelven?',
+    a: 'Un circuito mixto combina ramas en serie y ramas en paralelo. Para resolverlos, se simplifica paso a paso: (1) identifica los grupos de resistores en paralelo y calcula su resistencia equivalente; (2) reemplaza cada grupo paralelo por su equivalente; (3) ahora el circuito simplificado es en serie: suma las resistencias equivalentes. Ejemplo: R1 = 10 Ω en serie con el paralelo de R2 = 20 Ω y R3 = 20 Ω. Paralelo de R2 y R3: Req = (20 x 20)/(20 + 20) = 10 Ω. Circuito equivalente: R1 + Req = 10 + 10 = 20 Ω total. Con fuente de 10 V: It = 0,5 A; V1 = 0,5 x 10 = 5 V; Vparalelo = 0,5 x 10 = 5 V; I en R2 y R3 = 5/20 = 0,25 A cada uno. En los cursos universitarios de Circuitos Eléctricos I de las universidades UNAM, UANL, Universidad Nacional de Colombia, PUC Chile y UNI Perú, este tipo de ejercicio es el más repetido en exámenes parciales.'
+  },
+  {
+    q: '¿Qué potencia disipa cada resistor en un circuito?',
+    a: 'La potencia disipada por un resistor (en forma de calor) se calcula como: P = V x I = I² x R = V² / R. En los circuitos calculados por esta herramienta, una vez que conoces V e I de cada resistor, puedes calcular su potencia. Ejemplo: en el circuito en serie de 12 V con R1 = 10 Ω, R2 = 20 Ω, R3 = 30 Ω (It = 0,2 A): P1 = (0,2)² x 10 = 0,4 W; P2 = (0,2)² x 20 = 0,8 W; P3 = (0,2)² x 30 = 1,2 W; total = 2,4 W. La suma coincide con la potencia total de la fuente: V x It = 12 x 0,2 = 2,4 W. Este dato es fundamental para elegir la disipación correcta del resistor: si el resistor calculado requiere 0,8 W, debes usar uno de 1 W (serie estándar: 1/8 W, 1/4 W, 1/2 W, 1 W, 2 W, 5 W). Elegir un resistor de menor potencia que la disipada puede provocar su destrucción por sobrecalentamiento. En electrónica de potencia (inversores solares, cargadores de baterías), este cálculo de potencia es crítico para el diseño térmico del circuito.'
+  },
+  {
+    q: '¿Cómo se relacionan los circuitos en serie y paralelo con la instalación eléctrica de una casa?',
+    a: 'La instalación eléctrica domiciliaria utiliza el paralelo como arquitectura principal porque garantiza tensión constante en cada toma independientemente de cuántos aparatos estén conectados. Todos los tomacorrientes de una habitación están en paralelo entre los conductores de fase y neutro. Los circuitos de protección (interruptores termomagnéticos o breakers) sí están en serie con cada circuito: si el breaker "salta" (actúa), todo el circuito que protege se desconecta. Las normas de instalación eléctrica en LATAM (NOM-001-SEDE-2012 en México, RETIE en Colombia, RPTD en Perú, Reglamento SEC en Chile) exigen circuitos separados para iluminación, tomacorrientes generales, cocina, aire acondicionado y equipos de alta potencia. La comprensión básica de circuitos en paralelo permite entender por qué no se deben sobrecargar los circuitos de una casa: al agregar más aparatos en paralelo, la corriente total aumenta y puede superar la capacidad del conductor y del breaker, generando riesgo de incendio.'
+  },
+  {
+    q: '¿Cómo se usa esta calculadora para preparar un examen de circuitos en la universidad?',
+    a: 'La calculadora permite verificar ejercicios de circuitos resistivos en serie y paralelo al instante. Pasos para usarla como herramienta de estudio: (1) toma el ejercicio del libro de texto o examen pasado; (2) identifica si el circuito es en serie, paralelo o mixto; para los mixtos, simplifica las ramas paralelas primero y obtén un equivalente serie. (3) introduce la tensión de la fuente y las resistencias separadas por comas; (4) compara la resistencia total, la corriente y las caídas de tensión que calculaste a mano con los valores de la herramienta. Si hay diferencia, revisa el orden de operaciones: en paralelo recuerda sumar inversos (no sumar directamente). La mayoría de los libros de texto usados en LATAM para cursos de Física II y Circuitos Eléctricos son Serway, Hayt, Nilsson/Riedel y Boylestad; todos presentan problemas con los mismos patrones que resuelve esta calculadora. Para los exámenes del Tecnológico de Monterrey, UNAM, UPTC, PUC Chile o UNI Perú, practicar con 10–20 ejercicios variados es suficiente para dominar la Ley de Ohm y los teoremas de Kirchhoff.'
+  },
 ]}>
   <CircuitoElectricoTool client:load />
 </CalcLayout>
-

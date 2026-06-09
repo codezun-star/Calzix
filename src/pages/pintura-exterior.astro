@@ -1,17 +1,44 @@
-﻿---
+---
 import CalcLayout from "@/components/layout/CalcLayout.astro";
 import PinturaExteriorTool from "@/components/tools/PinturaExteriorTool";
 ---
 
 <CalcLayout slug="pintura-exterior"
-  whatIs="La calculadora de pintura-exterior es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precisión?", a: "Precisión estándar del navegador." },
+  whatIs="La calculadora de pintura exterior estima los litros necesarios para pintar fachadas y muros exteriores a partir del perímetro del edificio, la altura de la fachada, el número de ventanas y puertas, las manos y el rendimiento. Descuenta automáticamente 1,5 m² por ventana y 2 m² por puerta."
+  whyUse="Propietarios de casas, administradores de condominios y pintores en México, Colombia, Chile, Argentina y Perú usan esta calculadora para presupuestar exactamente la pintura de fachadas antes de comprar, considerando los huecos de ventanas y puertas que reducen el área pintable real."
+  faqs={[
+  {
+    q: '¿Por qué se descuentan 1,5 m² por ventana y 2 m² por puerta?',
+    a: 'Los valores de descuento corresponden a las dimensiones promedio más comunes. Una ventana residencial estándar en LATAM mide aproximadamente 1,2 m x 1,2 m (1,44 m²) o 1,0 m x 1,5 m (1,5 m²); la calculadora usa 1,5 m² como promedio conservador. Una puerta de entrada estándar mide 0,9 m x 2,1 m (1,89 m²) o 1,0 m x 2,1 m (2,1 m²); la calculadora usa 2 m² como promedio. Si tus ventanas o puertas tienen dimensiones significativamente distintas (ventanas panorámicas de 2 m x 1,5 m = 3 m², puertas de 2 hojas de 1,8 m x 2,4 m = 4,32 m²), calcula el área bruta total y resta manualmente el área exacta de los huecos antes de usar la calculadora. Para fachadas con locales comerciales con vidrieras de piso a techo, el descuento puede ser del 30–50 % del área total, lo que cambia significativamente la cantidad de pintura necesaria.'
+  },
+  {
+    q: '¿Cuál es el rendimiento de las pinturas para fachadas y exteriores en LATAM?',
+    a: 'Las pinturas acrílicas para exterior tienen un rendimiento menor que las de interior por su mayor espesor de película y formulación más resistente. Esta calculadora usa 8 m²/L como valor por defecto, correspondiente a pinturas acrílicas 100 % de calidad media para fachada. Los rendimientos por tipo: pintura acrílica 100 % para fachada (tipo Comex Fachada Acrílica, Pintuco Fachada, Sipa Exterior): 7–10 m²/L. Pintura elastomérica o elasticizada (para sellar grietas finas): 3–5 m²/L. Pintura texturizada para fachada: 2–4 m²/L. Impermeabilizante acrílico (tipo Comex Impermeabilizante o Sika Impermeabilizante): 2–4 m²/L. Los rendimientos más bajos de las pinturas texturizadas e impermeabilizantes se compensan con su mayor durabilidad y protección. En fachadas de concreto poroso sin revestir, el consumo puede duplicarse en la primera mano porque el material es muy absorbente.'
+  },
+  {
+    q: '¿Cuántas manos de pintura se aplican en una fachada exterior?',
+    a: 'El número de manos depende del estado de la fachada y del tipo de pintura. Para una fachada ya pintada en buen estado con mismo color o similar: 2 manos de pintura acrílica de acabado son suficientes. Para una fachada nueva de concreto o bloque sin revestir: 1 mano de fijador o imprimante acrílico más 2 manos de acabado = 3 aplicaciones en total. Para cambio radical de color (del oscuro al claro): 3–4 manos de acabado o 1 mano de pintura cubriente de alta opacidad más 2 manos de acabado. Para fachadas con grietas superficiales (menos de 0,5 mm): 1 mano de pintura elastomérica de puente más 2 manos de acabado. En zonas costeras de LATAM con alta salinidad (Cartagena, Veracruz, Valparaíso, Callao), se recomienda usar pintura con aditivos resistentes a la sal y aplicar 3 manos de acabado para mayor protección.'
+  },
+  {
+    q: '¿Cuánto cuesta pintar la fachada de una casa en LATAM?',
+    a: 'El costo de pintar una fachada depende del área, la altura (si se necesitan andamios), el estado de la superficie y la calidad de pintura. Para una casa de dos plantas con fachada de 8 m de ancho x 5 m de alto = 40 m² brutos, descontando 4 ventanas (6 m²) y 1 puerta (2 m²) = 32 m² netos, con 2 manos de pintura acrílica a 8 m²/L se necesitan 8 litros. Costo de materiales (pintura acrílica de fachada calidad media) 2024: México: 8 L de Comex Fachada ≈ 1.200–2.000 MXN. Colombia: 8 L de Pintuco Fachada ≈ 200.000–350.000 COP. Chile: 8 L de Sipa Exterior ≈ 45.000–80.000 CLP. La mano de obra de pintura exterior es más cara que la interior porque incluye el montaje y desmontaje de andamios. En México, 150–300 MXN/m² de fachada; en Colombia, 25.000–60.000 COP/m²; en Chile, 8.000–20.000 CLP/m². El total para los 32 m² en México sería 6.000–11.600 MXN entre materiales y mano de obra, sin andamios de altura.'
+  },
+  {
+    q: '¿Cómo preparar una fachada antes de pintar para que dure más años?',
+    a: 'La preparación correcta de la fachada es el factor más importante para la durabilidad. Proceso profesional: (1) limpieza a presión con hidrolavadora para eliminar polvo, suciedad, eflorescencias (manchas blancas de sales) y restos de pintura suelta; si no tienes hidrolavadora, usa escobilla de cerdas duras y agua con detergente. (2) eliminación de hongos y moho con solución de hipoclorito al 10–15 %; deja actuar 20–30 minutos y enjuaga. (3) reparación de grietas y fisuras: grietas de movimiento activo requieren junta de dilatación o sello elástico de poliuretano; grietas pasivas se rellenan con mortero fino o sellador acrílico. (4) aplicación de fijador o imprimante acrílico en fachadas muy porosas o nuevas; esto regula la absorción y mejora la adhesión. (5) dos manos de pintura acabado esperando el tiempo de secado entre manos (mínimo 4–6 horas en condiciones normales). Una fachada bien preparada y pintada con acrílica 100 % de calidad media dura 7–12 años; sin preparación, puede empezar a desprenderse en 2–3 años.'
+  },
+  {
+    q: '¿Qué diferencia hay entre pintura acrílica, elastomérica e impermeabilizante para fachadas?',
+    a: 'Son tres tipos de productos con características complementarias. Pintura acrílica 100 % para fachada: la opción más usada, buena resistencia UV, repele el agua por efecto hidrofugante pero no sella grietas. Resistente a la intemperie 7–12 años. Ideal para fachadas en buen estado sin grietas ni filtraciones. Pintura elastomérica (o elasticizada): tiene alta elongación (200–400 %) que le permite sellar grietas superficiales de hasta 0,5 mm que se abren y cierran por temperatura; es impermeabilizante y flexible. Se usa en edificios con fisuras superficiales activas, losas de techo y terrazas. Las marcas Sika Elastocolor, Comex Impermeabilizante Elastomérico y Pintuco Elastomérico son referencias en LATAM. Impermeabilizante acrílico: producto específico para losas de techo y terrazas expuestas al agua de lluvia; no es una "pintura" sino un recubrimiento funcional diseñado para evitar filtraciones. Se aplica en capas gruesas sobre losas de concreto. En LATAM, las marcas Comex Impermeabilizante, Sika Membrana y Chova Lámina son las más usadas.'
+  },
+  {
+    q: '¿Se puede pintar la fachada cuando llueve o con temperaturas bajas?',
+    a: 'La temperatura y la humedad son críticas para la correcta aplicación y curado de pinturas exteriores. Condiciones mínimas para pintar: temperatura ambiente entre 10 °C y 35 °C; humedad relativa inferior al 85 %; superficie seca (sin lluvia ni rocío en las últimas 4–6 horas); pronóstico de al menos 24 horas sin lluvia después de aplicar. Nunca pintar con lluvia, con superficie húmeda (el agua impide la adhesión del film de pintura), con temperaturas bajo 5 °C (el film no se forma correctamente y la pintura se cuartea al curar) o con más de 35 °C de calor directo en la fachada (el secado es demasiado rápido y se generan cráteres y marcas de rodillo). En LATAM, las zonas de mayor dificultad son: la sierra y altiplano de México, Colombia y Perú durante temporada de frío (octubre–febrero) donde las madrugadas bajan de 5 °C; y las costas del Caribe durante temporada de lluvias (mayo–octubre) con chubascos diarios. En esas zonas, programa la pintura de fachadas para los meses secos y empieza temprano en la mañana para aprovechar las horas sin lluvia.'
+  },
+  {
+    q: '¿Cada cuántos años hay que repintar la fachada de una casa en LATAM?',
+    a: 'La vida útil de la pintura de fachada depende de la calidad del producto, la preparación de la superficie y la exposición climática. Guía orientativa: pintura acrílica de calidad económica bien aplicada: 4–6 años. Pintura acrílica 100 % de calidad media (Comex Fachada, Pintuco Fachada): 7–10 años. Pintura acrílica premium (Sherwin-Williams Duration, Comex Acrílica Plus): 10–15 años. Pintura elastomérica con acabado de calidad (sistema completo): 10–15 años. Los factores que aceleran el deterioro en LATAM: radiación UV intensa del trópico (altiplanos de Bolivia, Perú y Ecuador a 3.000+ msnm tienen radiación extrema); sales del mar en zonas costeras (Cartagena, Acapulco, Viña del Mar); lluvia ácida en zonas industriales (Monterrey, Ciudad de México); ciclos térmicos diarios extremos (desierto de Atacama, norte de México). Para extender la vida de la pintura: lava la fachada con agua a presión cada 1–2 años para eliminar biopelícula, polvo y eflorescencias. Una fachada limpia regular puede extender la vida de la pintura hasta en un 30–40 %.'
+  },
 ]}>
   <PinturaExteriorTool client:load />
 </CalcLayout>
-

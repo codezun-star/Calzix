@@ -1,17 +1,44 @@
-﻿---
+---
 import CalcLayout from "@/components/layout/CalcLayout.astro";
 import PinturaTechosTool from "@/components/tools/PinturaTechosTool";
 ---
 
 <CalcLayout slug="pintura-techos"
-  whatIs="La calculadora de pintura-techos es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precisión?", a: "Precisión estándar del navegador." },
+  whatIs="La calculadora de pintura para techos estima los litros necesarios para pintar el cielo raso o plafón de una habitación a partir de sus dimensiones (largo y ancho en metros), el número de manos y el rendimiento de la pintura en m²/L. Calcula el área neta del techo sin margen adicional."
+  whyUse="Propietarios, pintores y reformistas en México, Colombia, Chile, Perú y Argentina usan esta calculadora para saber exactamente cuántos litros de pintura blanca o de color para techo necesitan antes de ir a la ferretería, separando el cálculo del techo del de las paredes para presupuestos más precisos."
+  faqs={[
+  {
+    q: '¿Por qué la calculadora de techos no añade un 10 % de margen como la de paredes?',
+    a: 'La calculadora de techos calcula la cantidad exacta según el área neta (largo x ancho). La decisión de añadir o no un margen de seguridad queda a criterio del usuario porque el consumo en techos depende mucho del estado de la superficie. Un techo recién emplastado y lijado rinde exactamente lo que indica el fabricante; un techo viejo con varias capas acumuladas, manchas de humedad y fisuras puede consumir un 20–30 % más. Recomendación práctica: si el techo está en buen estado y es de color claro, añade un 5 % de margen. Si el techo tiene manchas de humedad o cambias de color oscuro a blanco, añade un 15–20 %. En pinturas de techo blancas de alta cobertura (tipo Comex Techo Blanco Plus o Pintuco Techo), el fabricante ya formula una mayor opacidad para cubrir en menos manos, lo que compensa parcialmente las imperfecciones.'
+  },
+  {
+    q: '¿Cuál es el rendimiento de las pinturas especiales para techo en LATAM?',
+    a: 'Las pinturas específicas para techo ("pintura de cielo raso" o "pintura de plafón") tienen un rendimiento típico de 8–12 m²/L a una mano. Esta calculadora usa 10 m²/L como valor por defecto. La diferencia respecto a las pinturas de pared radica en su formulación: las pinturas de techo tienen mayor contenido de dióxido de titanio (TiO²) para conseguir blancura y cobertura máxima en una o dos manos; su viscosidad es mayor para evitar goteos al aplicar por encima de la cabeza; y algunas incorporan aditivos anti-moho especialmente útiles en baños y cocinas. Las marcas más usadas en LATAM para techos son Comex Techo Blanco (México), Pintuco Techo (Colombia), Elbex o Sipa Plafón (Chile), Alba Techo (Argentina) y Tekno Techo (Perú). Si usas una pintura de pared normal en el techo, ajusta el rendimiento a 10–12 m²/L y espera que gotee más durante la aplicación.'
+  },
+  {
+    q: '¿Cómo se aplica la pintura en el techo para evitar goteos y rayas?',
+    a: 'La técnica correcta reduce el riesgo de goteos y marcas de rodillo. Pasos recomendados: (1) protege el suelo y las paredes con plástico o periódico; (2) usa un rodillo de vellón de alta densidad de 9–12 mm de espesor, que carga más pintura y distribuye mejor sin salpicar; (3) no satures el rodillo en exceso, escúrrelo bien en la bandeja; (4) aplica en secciones de 1 m² en movimiento de W o M, y luego suaviza con pasadas en la misma dirección (horizontal o perpendicular a la luz principal); (5) pinta siempre hacia la fuente de luz para ver si quedan huecos sin cubrir; (6) para el perímetro del techo, usa primero un pincel de corte de 7–10 cm antes de pasar el rodillo. El rodillo telescópico (extensión de mango) permite trabajar de pie, reduce la fatiga y mejora el ángulo de aplicación. En habitaciones con techos muy altos (más de 3,5 m), es obligatorio usar andamio o caballete certificado, no escalera de mano; en México aplica la NOM-009-STPS-2011 para trabajos en altura.'
+  },
+  {
+    q: '¿Cuánto cuesta pintar el techo de una casa de 80 m² en LATAM?',
+    a: 'Para una casa de 80 m² de planta con distribución normal (sala, 2 habitaciones, cocina, 2 baños), el área total de techo es aproximadamente 75–80 m². Con pintura de techo de calidad media a rendimiento 10 m²/L y dos manos, se necesitan 75/10 x 2 = 15 L. Costo de materiales 2024: México: cubeta de 4 L de Comex Techo Blanco = 500–900 MXN (necesitas 4 cubetas = 2.000–3.600 MXN); Colombia: cubeta de 4 L de Pintuco Techo = 90.000–160.000 COP (4 cubetas = 360.000–640.000 COP); Chile: galón de Sipa Plafón = 15.000–25.000 CLP (necesitas 4 galones = 60.000–100.000 CLP). La mano de obra de un pintor de techos es ligeramente más cara que la de paredes por la complejidad de la posición de trabajo: en México, 100–200 MXN/m²; en Colombia, 18.000–40.000 COP/m². El costo total (materiales + mano de obra) para los 75 m² de techo en México sería aproximadamente 9.500–18.600 MXN.'
+  },
+  {
+    q: '¿Cómo tratar la humedad y el moho en el techo antes de pintar?',
+    a: 'Las manchas de humedad y moho en techos son el problema más frecuente que arruina la pintura. Proceso correcto antes de pintar: (1) identifica y elimina la fuente de humedad (fuga de tuberías, impermeabilización deficiente de la losa, falta de ventilación en baños); pintar encima sin corregir la causa es perder tiempo y dinero. (2) limpia el área afectada con hipoclorito de sodio (lejía al 10 %) y un cepillo de cerdas duras; deja actuar 15 minutos y enjuaga. (3) aplica un tratamiento antihongos específico como Sika Fungicida, Comex Antimucor o Pintuco Fungi Killer; deja secar completamente (24–48 h). (4) usa un sellador para manchas de agua (shellac-based como Zinsser BIN, o base solvente) sobre las manchas antes del color final; las manchas de agua traspasan la pintura acrílica normal si no se sellan previamente. (5) pinta con dos manos de pintura lavable con fungicida incorporado. En climas muy húmedos de LATAM (Bogotá, Ciudad de Panamá, Guayaquil, costas del Caribe), considera pinturas con mayor concentración de biocidas.'
+  },
+  {
+    q: '¿Cuál es la diferencia entre pintar techo con rodillo versus con pistola airless?',
+    a: 'El rodillo es el método más común y práctico para obras residenciales porque no requiere protección exhaustiva de todo el ambiente. Con un buen rodillo y técnica correcta, se consigue un acabado uniforme en 2–3 horas para una habitación de 15 m² de techo. La pistola airless (pulverizadora sin aire) es mucho más rápida (10 veces la velocidad de aplicación) y da un acabado liso más uniforme, ideal para techos lisos, estuco veneciano o pinturas de textura. Sin embargo, requiere proteger todo el mobiliario, puertas y ventanas con plástico porque produce una nube de aerosol que impregna todo. También requiere diluir la pintura al 10–15 % para que fluya correctamente. En obras de reformas en residencias habitadas, el rodillo es casi siempre la opción más práctica. En obra nueva vacía o rehabilitación integral de vivienda, el airless es más eficiente para grandes superficies. En LATAM, las pistolas Graco, Wagner y Telwin son las más distribuidas en tiendas de herramientas profesionales.'
+  },
+  {
+    q: '¿Cuándo es necesario colocar plafón o cielorraso en lugar de pintar?',
+    a: 'El plafón suspendido (cielorraso de cartón-yeso, PVC o aluminio) es la solución cuando el techo en bruto está muy deteriorado o tiene problemas que no se pueden resolver solo con pintura: fisuras estructurales activas, óxido de varillas, deformación, falta de nivel (diferencias de más de 2 cm), instalaciones eléctricas a la vista que se quieren ocultar, o cuando se desea instalar iluminación empotrada. El plafón de cartón-yeso (drywall) con estructura de perfil de aluminio es la opción más popular en México (Tablero Plystone, Lafarge Durock), Colombia (USG, Saint-Gobain) y Chile (Planchas Volcán). Su costo de instalación varía: en México, 350–700 MXN/m²; en Colombia, 70.000–130.000 COP/m²; en Chile, 20.000–45.000 CLP/m². El plafón de PVC es popular en zonas húmedas (baños, cocinas, bodegas) porque no absorbe humedad. Si solo buscas ocultar pequeñas irregularidades, la pintura con rodillo de textura puede ser suficiente y mucho más económica.'
+  },
+  {
+    q: '¿Cuánto dura la pintura de techo y cada cuánto tiempo hay que repintar?',
+    a: 'La durabilidad de la pintura de techo depende de la calidad del producto, la correcta preparación de la superficie y las condiciones ambientales. En condiciones normales (habitaciones con ventilación adecuada, sin problemas de humedad), una pintura vinil acrílica de calidad media bien aplicada dura 5–8 años antes de amarillear visiblemente o descascararse. Las pinturas premium (Comex Casatodo, Sherwin-Williams SuperPaint) pueden durar 8–12 años. En baños y cocinas sin buena ventilación, la pintura puede deteriorarse en 2–4 años por la humedad constante; en ese caso, usa pinturas con fungicidas incorporados y asegura la ventilación mecánica. En LATAM, las zonas con alta pluviosidad y temperatura (costa del Pacífico colombiano, Tabasco y Veracruz en México, litoral ecuatoriano) son las más exigentes para la durabilidad de pinturas interiores. Cambiar la pintura de techos es una de las renovaciones más económicas y de mayor impacto visual en una vivienda: la inversión total en materiales para pintar el techo de un apartamento de 60 m² puede ser de solo 2.000–4.000 MXN o 400.000–800.000 COP.'
+  },
 ]}>
   <PinturaTechosTool client:load />
 </CalcLayout>
-
