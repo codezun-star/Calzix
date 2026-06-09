@@ -1,17 +1,44 @@
-﻿---
+---
 import CalcLayout from "@/components/layout/CalcLayout.astro";
 import ConvFuerzaTool from "@/components/tools/ConvFuerzaTool";
 ---
 
 <CalcLayout slug="conversor-fuerza"
-  whatIs="La calculadora de conversor-fuerza es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precisión?", a: "Precisión estándar del navegador." },
+  whatIs="El conversor de fuerza transforma al instante entre newtons (N), kilonewtons (kN), meganewtons (MN), kilogramos-fuerza (kgf), libras-fuerza (lbf) y dinas (dyn). Cubre las 6 unidades esenciales en física, ingeniería estructural, mecánica y aeronáutica."
+  whyUse="Estudiantes de física en bachillerato y universidad, ingenieros civiles, mecánicos aeronáuticos y técnicos de mantenimiento en México, Colombia, Argentina, Chile y Perú usan este conversor para pasar entre sistemas SI y anglosajón, verificar cargas estructurales, interpretar especificaciones de materiales o resolver problemas de la segunda ley de Newton en exámenes COMIPEMS, ICFES y ENEM."
+  faqs={[
+  {
+    q: '¿Qué es el newton (N) y cómo se define?',
+    a: 'El newton (N) es la unidad de fuerza del Sistema Internacional (SI), definida como la fuerza que produce una aceleración de 1 m/s² sobre una masa de 1 kg: 1 N = 1 kg·m/s². Fue nombrado en honor a Isaac Newton, quien formuló las tres leyes del movimiento en sus "Principia Mathematica" (1687). En la vida cotidiana, 1 N es aproximadamente el peso de una manzana pequeña (100 g de masa en gravedad estándar de 9,81 m/s²). En física escolar en LATAM, los problemas de dinámica siempre trabajan en newtons cuando usan el SI. Un auto de 1.500 kg pesa unos 14.715 N al nivel del mar. La tensión en un cable de puente colgante puede alcanzar millones de N (meganewtons, MN). Para resolver problemas de la segunda ley de Newton (ΣF = ma), identificar todas las fuerzas en newtons es el primer paso: peso (P = mg), normal, fricción (f = μN) y tensión. Los laboratorios de mecánica de universidades como la UNAM, el IPN, la Universidad Nacional de Colombia y la USACH miden fuerzas en newtons con sensores de carga (celdas de carga).'
+  },
+  {
+    q: '¿Qué es el kilogramo-fuerza (kgf) y en qué se diferencia del kilogramo?',
+    a: 'El kilogramo-fuerza (kgf), también llamado kilopondio (kp), es la fuerza ejercida por una masa de 1 kg bajo la aceleración gravitacional estándar de 9,80665 m/s²: 1 kgf = 9,80665 N. No es una unidad SI pero sigue usándose ampliamente en LATAM en mecánica práctica, especialmente en manuales de taller automotriz de origen japonés y europeo (par de apriete de tornillos en kgf·cm o kgf·m), básculas industriales y en tablas de resistencia de materiales. Es fundamental no confundir kilogramo (unidad de masa, kg) con kilogramo-fuerza (unidad de fuerza, kgf): en la conversación cotidiana se dice "pesa 70 kg" queriendo decir que la fuerza gravitatoria es 70 kgf (686,5 N), pero esta confusión es un error de concepto frecuente en exámenes. La presión también se expresaba en kgf/cm² (técnicamente "atmósfera técnica"), donde 1 kgf/cm² = 98.066 Pa. En la industria de la construcción en México y Colombia, las cargas de estructuras a veces se expresan en toneladas-fuerza (tf), donde 1 tf = 1.000 kgf = 9.806,65 N.'
+  },
+  {
+    q: '¿Qué es la libra-fuerza (lbf) y por qué se usa en LATAM?',
+    a: 'La libra-fuerza (lbf, pound-force) es la fuerza ejercida por una masa de 1 libra bajo la aceleración gravitacional estándar, equivalente a 4,44822 N. No debe confundirse con la libra-masa (lbm), una distinción que genera errores frecuentes. La lbf persiste en LATAM en varios contextos: (1) especificaciones de cables y cuerdas en kg o lb de resistencia a la ruptura (un cable de acero de 6 mm puede resistir 8.000 lbf); (2) fichas técnicas de resortes en lb/in; (3) manuales de taller de marcas norteamericanas (Ford, GM, Chrysler) que fabrican vehículos en México y se distribuyen en toda la región con especificaciones en lbf·ft para el par de apriete; (4) pruebas de calzado y cuero donde la resistencia se mide en libras. En ingeniería aeronáutica, el empuje de motores de avión se expresa en lbf: el motor CFM56 del Boeing 737 produce 27.000 lbf de empuje (unos 120 kN), dato relevante para ingenierías aeronáuticas en México (IPN), Colombia (Universidad Pontificia Bolivariana) y Argentina (UTN). Para convertir: 1 lbf = 4,44822 N; 1 kN = 224,81 lbf.'
+  },
+  {
+    q: '¿Qué es la dina (dyn) y en qué sistema se usa?',
+    a: 'La dina (dyn) es la unidad de fuerza del sistema CGS (centímetro-gramo-segundo), equivalente a 1 g·cm/s² o, en términos SI, a 1×10⁻⁵ N (0,00001 N). Es una unidad extremadamente pequeña: la fuerza de una mosca al caminar es del orden de unas pocas dinas. En física moderna, el CGS cayó en desuso frente al SI, pero la dina aún aparece en física clásica de fluidos, tensión superficial y electromagnetismo en textos de referencia más antiguos. La tensión superficial del agua, por ejemplo, es 72,75 dyn/cm a 20 °C (equivalente a 72,75 mN/m en SI), valor importante en física de coloides y biología celular. En LATAM, los cursos universitarios de física avanzada de la UNAM, la Universidad de Chile y la UBA todavía mencionan la dina en contextos históricos o al revisar fenómenos capilares. En magnetismo, el sistema Gaussiano (variante del CGS) usa la dina como unidad de fuerza en la ley de Coulomb magnética. Para la mayoría de las aplicaciones de ingeniería, la dina ha sido completamente sustituida por el newton o sus múltiplos y submúltiplos.'
+  },
+  {
+    q: '¿Cuántos newtons equivalen exactamente a 1 kgf?',
+    a: '1 kgf = 9,80665 N, exactamente, por definición. Este valor surge de la aceleración de la gravedad estándar (g = 9,80665 m/s²) adoptada por la Conferencia General de Pesas y Medidas en 1901. En la práctica de cálculo rápido se aproxima como 1 kgf ≈ 9,81 N, lo que introduce un error de apenas 0,003 %. Por lo tanto: 10 kgf = 98,0665 N, 100 kgf = 980,665 N, 1 tonelada-fuerza = 9.806,65 N ≈ 9,807 kN. Esta conversión es esencial en mecánica de materiales: la resistencia a la tracción del acero estructural A36 es 250 MPa (N/mm²), que en unidades antiguas se expresaba como 25,5 kgf/mm². Los manuales de taller de motos populares en LATAM (Honda CB, Yamaha FZ, Suzuki Gixxer) a veces dan el par de apriete de tornillos en kgf·m: 3 kgf·m = 29,4 N·m. Conocer que 1 kgf ≈ 9,81 N permite mentalmente convertir cargas de básculas industriales a unidades SI al diseñar estructuras de soporte.'
+  },
+  {
+    q: '¿Cómo se usa la fuerza en ingeniería estructural en LATAM?',
+    a: 'En ingeniería estructural, las fuerzas —cargas muertas, cargas vivas, viento y sismo— se calculan en kilonewtons (kN) o toneladas-fuerza (tf) según el sistema normativo. Las normas técnicas de construcción de LATAM establecen unidades específicas: el Reglamento de Construcciones del DF (RCDF) de México usa kN/m² (kPa) para presiones de suelo y kN para cargas concentradas; la NSR-10 de Colombia trabaja en kN y kgf; la NTE del Ecuador y el INVÍAS de Colombia expresan cargas en kN o tf. Un piso de oficinas soporta una carga viva de 2,5–3 kN/m²; un vehículo de 2.000 kg aplica 19,6 kN sobre la calzada. En análisis sísmico, la fuerza sísmica horizontal se calcula como una fracción del peso total del edificio: F = 0,10–0,25 × W (en kN), dependiendo de la zona sísmica. México y Chile tienen normas de diseño antisísmico muy desarrolladas dado que se ubican en el Cinturón de Fuego; el CENAPRED (México) y el CSN (Chile) monitorean la actividad. Los programas de cálculo estructural SAP2000, ETABS y MIDAS trabajan nativamente en kN y metros.'
+  },
+  {
+    q: '¿Qué es el kilonewton (kN) y dónde se aplica en la práctica?',
+    a: '1 kilonewton (kN) = 1.000 N ≈ 101,97 kgf. El kilonewton es la unidad de fuerza de uso más frecuente en ingeniería civil y mecánica estructural porque da números convenientes para la escala humana. Algunos ejemplos prácticos en LATAM: la carga de ruptura de un cable de acero para puentes colgantes peatonales es típicamente 50–200 kN; la capacidad de carga de un pilote de concreto en suelos blandos de la CDMX puede ser 100–500 kN; el peso de un automóvil sedan de 1.500 kg es 14,7 kN; la fuerza de un gato hidráulico de taller para levantar camiones puede ser 50–100 kN; el empuje de un cohete sounding (suborbital) académico puede ser de 2–5 kN. En materiales de construcción, el módulo de rigidez de vigas y columnas se calcula con cargas en kN y deflexiones en mm. El ensayo de compresión de cilindros de concreto (norma ASTM C39, usada en México, Colombia, Chile) aplica carga en kN hasta romper el cilindro; una resistencia f\'c = 21 MPa equivale a soportar 21 kN por cada centímetro cuadrado de sección transversal.'
+  },
+  {
+    q: '¿Cómo se relacionan fuerza, masa y aceleración según la segunda ley de Newton?',
+    a: 'La segunda ley de Newton establece que la fuerza neta sobre un objeto es igual a su masa por su aceleración: ΣF = m × a. En el SI, si la masa está en kg y la aceleración en m/s², la fuerza resultante es en N. Esta relación es la base de todo el análisis dinámico. Ejemplos con contexto LATAM: (1) un auto de 1.200 kg que acelera de 0 a 100 km/h en 10 s experimenta una aceleración de 2,78 m/s²; la fuerza neta necesaria es F = 1.200 × 2,78 = 3.333 N; (2) durante un sismo con aceleración del suelo de 0,2 g (≈ 1,96 m/s²), una edificación de 100 toneladas recibe una fuerza horizontal equivalente a 196 kN; (3) en una presa, el empuje hidrostático del agua sobre cada metro cuadrado de compuerta a 10 m de profundidad es P = ρgh = 1.000 × 9,81 × 10 = 98.100 Pa, y la fuerza sobre 5 m² de compuerta es 490.500 N = 490,5 kN. En exámenes de física COMIPEMS, ICFES y ENEM, los problemas de dinámica siempre requieren identificar todas las fuerzas (incluyendo fricción f = μN y componentes en planos inclinados) antes de aplicar ΣF = ma.'
+  },
 ]}>
   <ConvFuerzaTool client:load />
 </CalcLayout>
-

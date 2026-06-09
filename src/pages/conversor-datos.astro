@@ -1,35 +1,44 @@
-﻿---
+---
 import CalcLayout from '@/components/layout/CalcLayout.astro';
 import ConvDatosTool from '@/components/tools/ConvDatosTool';
 ---
+
 <CalcLayout slug="conversor-datos"
-  whatIs="La calculadora de conversor-datos es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
+  whatIs="El conversor de datos digitales transforma al instante entre bytes (B), kilobytes (KB), megabytes (MB), gigabytes (GB), terabytes (TB) y sus equivalentes binarios kibibytes (KiB), mebibytes (MiB) y gibibytes (GiB). Distingue el sistema decimal (potencias de 1.000, norma SI) del binario (potencias de 1.024, norma IEC)."
+  whyUse="Técnicos en TI, estudiantes de sistemas, usuarios de nube e ingenieros de telecomunicaciones en México, Colombia, Argentina, Chile y Perú usan este conversor para entender por qué un disco de 1 TB muestra 931 GB en su computadora, comparar planes de almacenamiento en la nube, dimensionar redes y servidores, o resolver problemas de sistemas digitales en exámenes universitarios."
+  faqs={[
   {
-    q: '¿Cuál es la diferencia entre GB y GiB?',
-    a: 'Un Gigabyte (GB) equivale a 1.000.000.000 bytes (potencia de 10), mientras que un Gibibyte (GiB) equivale a 1.073.741.824 bytes (potencia de 2). Los fabricantes de discos duros usan GB, pero los sistemas operativos suelen mostrar GiB, lo que genera confusión en la capacidad real.'
+    q: '¿Cuál es la diferencia entre gigabyte (GB) y gibibyte (GiB)?',
+    a: 'El gigabyte (GB) y el gibibyte (GiB) son dos unidades distintas que miden aproximadamente lo mismo pero con precisiones diferentes. 1 GB = 1.000.000.000 bytes (10⁹, potencia de 10 del sistema decimal), mientras que 1 GiB = 1.073.741.824 bytes (2³⁰, potencia de 2 del sistema binario). La diferencia es de aproximadamente 7,4 %. Esta distinción fue formalizada por la IEC (Comisión Electrotécnica Internacional) en 1998 para eliminar la ambigüedad histórica. Los fabricantes de discos duros, pendrives y tarjetas SD usan GB (sistema decimal) porque hace que sus productos se vean más grandes en papel: un disco de "1 TB" contiene 1.000.000.000.000 bytes, que equivalen a solo 909,5 GiB. Los sistemas operativos como Windows reportan el espacio en GiB pero lo llaman "GB", generando confusión. Linux y macOS (desde 10.6) muestran capacidades en GB decimales. Entender esta distinción es esencial para comparar correctamente planes de almacenamiento en la nube (AWS S3, Google Cloud Storage, Dropbox) con la capacidad de los dispositivos físicos en toda América Latina.'
   },
   {
-    q: '¿Cuántos MB tiene 1 GB?',
-    a: 'Un Gigabyte (GB) tiene exactamente 1.000 Megabytes (MB) en el sistema decimal. Sin embargo, si hablamos de Gibibytes (GiB) y Mebibytes (MiB), la equivalencia es 1 GiB = 1.024 MiB.'
+    q: '¿Cuántos MB tiene 1 GB y cuántos MiB tiene 1 GiB?',
+    a: '1 GB (gigabyte decimal) contiene exactamente 1.000 MB (megabytes decimales): 1 GB = 1.000 MB = 1.000.000 KB = 1.000.000.000 B. En el sistema binario (IEC), 1 GiB (gibibyte) = 1.024 MiB (mebibytes) = 1.048.576 KiB = 1.073.741.824 B. Esta distinción es prácticamente relevante al dimensionar almacenamiento: si un plan de internet de Claro, Movistar o Telmex ofrece "10 GB de datos móviles" al mes, se refieren a 10.000 MB decimales de tráfico. Pero si tu teléfono Android muestra que usaste "9.42 GB" de almacenamiento para la app de WhatsApp y sus archivos, probablemente está mostrando GiB en mala nomenclatura. Las velocidades de transferencia de internet se expresan en Mbps (megabits por segundo, no megabytes): para descargar 1 GB de archivos a 100 Mbps necesitas 80 segundos (1 GB = 8.000 Mb, ÷ 100 Mbps = 80 s). Aprender a distinguir b (bit) de B (byte) evita muchas confusiones en contratos de internet y planes de almacenamiento.'
   },
   {
-    q: '¿Por qué mi disco duro de 1 TB aparece con menos capacidad en el ordenador?',
-    a: 'Los fabricantes de discos miden en Terabytes decimales (1 TB = 1.000.000.000.000 bytes), pero Windows y otros sistemas operativos muestran la capacidad en Tebibytes (TiB). 1 TB â‰ˆ 0,909 TiB, por eso un disco de 1 TB aparece como unos 931 GiB en el sistema.'
+    q: '¿Por qué un disco duro de 1 TB aparece como ~931 GB en mi computadora?',
+    a: 'La confusión se debe a que el fabricante del disco usa gigabytes decimales (1 GB = 10⁹ bytes) pero Windows y versiones antiguas de macOS muestran la capacidad en gibibytes binarios (1 GiB = 2³⁰ bytes), aunque los llaman incorrectamente "GB". Un disco de "1 TB" del fabricante contiene 1.000.000.000.000 bytes. Al dividirlo entre 2³⁰ (para expresarlo en GiB), obtenemos 1.000.000.000.000 / 1.073.741.824 ≈ 931 GiB. Windows muestra esta cifra como "931 GB" (usando la etiqueta incorrecta), por eso parece que el disco "perdió" espacio. No hay fraude: solo una inconsistencia histórica en la nomenclatura. El mismo fenómeno aplica a pendrives, tarjetas microSD y SSD. En la práctica, para un técnico en cómputo en Bogotá, CDMX, Lima o Buenos Aires, esto significa que al cotizar almacenamiento para servidores o NAS (Network Attached Storage), debe clarificar si la capacidad está en GB decimales o GiB binarios. Los modernos RAID y sistemas de archivos btrfs/ZFS en Linux reportan correctamente en GiB.'
   },
   {
-    q: '¿Cuántos Megabytes tiene una canción típica?',
-    a: 'Una canción en formato MP3 de calidad estándar (128 kbps) ocupa aproximadamente 1 MB por minuto, por lo que una canción de 4 minutos pesa unos 4 MB. En calidad alta (320 kbps) puede llegar a 10 MB.'
+    q: '¿Qué es el kibibyte (KiB) y cómo difiere del kilobyte (KB)?',
+    a: 'El kibibyte (KiB, del inglés "kilo binary byte") es exactamente 1.024 bytes (2¹⁰), mientras que el kilobyte (KB) en el sistema decimal es 1.000 bytes (10³). La norma IEC 80000-13 de 1998 introdujo los prefijos binarios (kibi-, mebi-, gibi-, tebi-) precisamente para eliminar esta ambigüedad de décadas. Históricamente, los sistemas operativos y programadores usaban "KB" para referirse a 1.024 bytes porque las memorias RAM y ROM se fabricaban en potencias de 2. La RAM de los primeros PCs tenía 64 KB (= 65.536 bytes), no 64.000. Hoy, el término "kibibyte" es el correcto para referirse a 1.024 bytes, pero en la práctica cotidiana y en mercadotecnia el "KB" sigue usándose ambiguamente. Los archivos de texto pequeños, cookies web y configuraciones se miden en KiB. En programación en C y C++, sizeof() retorna bytes; los arrays típicos de 1.024 bytes que los programadores llaman "1 KB" son técnicamente 1 KiB. En cursos de arquitectura de computadoras en universidades LATAM (UNAM, UTEC, UNAB), el binario explícito es crucial para el diseño de memorias caché, buses de datos y sistemas de archivos.'
   },
   {
-    q: '¿Qué significa kibibyte (KiB)?',
-    a: 'El Kibibyte (KiB) es una unidad binaria establecida por el IEC en 1998 para eliminar la ambigÍ¼edad del kilobyte. 1 KiB = 1.024 bytes exactos, mientras que 1 KB = 1.000 bytes en el sistema decimal. Su nombre viene de "kilo binary byte".'
+    q: '¿Cuántos GB tiene un terabyte (TB) y un tebibyte (TiB)?',
+    a: '1 terabyte (TB) en el sistema decimal = 1.000 GB = 1.000.000 MB = 10¹² bytes. 1 tebibyte (TiB) en el sistema binario = 1.024 GiB = 1.048.576 MiB = 2⁴⁰ bytes ≈ 1.099.511.627.776 bytes. La diferencia entre 1 TB y 1 TiB es de aproximadamente 9,95 %. Los discos duros de 1 TB actuales contienen 10¹² bytes; al mostrarlos en TiB (como hace Windows), resultan en ~0,909 TiB, que Windows reporta como "909 GB". Los servicios de almacenamiento en la nube como Dropbox, Google One y iCloud venden sus planes en GB y TB decimales. El plan de 1 TB de Google One cuesta en México alrededor de 179 MXN/mes y el de 2 TB unos 279 MXN/mes (2024). La transición al almacenamiento en petabytes (PB = 1.000 TB) ya es realidad en centros de datos de grandes empresas latinoamericanas como Mercado Libre (con infraestructura distribuida en Brasil, Argentina y México) y Rappi.'
   },
   {
-    q: '¿Cuántos Gigabytes tiene un Terabyte?',
-    a: 'En el sistema decimal, 1 Terabyte (TB) = 1.000 Gigabytes (GB). En el sistema binario, 1 Tebibyte (TiB) = 1.024 Gibibytes (GiB). Selecciona las unidades correctas en el conversor para obtener el resultado exacto.'
+    q: '¿Cuántos MB pesa una foto, una canción y una película?',
+    a: 'Entender el peso de archivos digitales comunes ayuda a dimensionar almacenamiento y estimar tiempos de descarga. Fotos: una foto de smartphone (12–50 MP, JPEG estándar) pesa entre 3 y 8 MB; en formato RAW de cámara DSLR puede ser 20–50 MB; el formato HEIC de iPhone reduce el tamaño a 2–4 MB con calidad similar. Una colección de 1.000 fotos ocupa entre 3 y 8 GB. Audio: una canción en MP3 a 128 kbps pesa ~1 MB por minuto (4 min ≈ 4 MB); en calidad alta 320 kbps equivale a ~2,4 MB/min; en FLAC sin pérdida puede ser 25–40 MB por canción. Video: un video Full HD (1080p) grabado con smartphone pesa ~130–200 MB por minuto; en 4K puede ser 300–500 MB/min. Una película de 2 horas en HD (comprimida con H.264) ocupa 1,5–4 GB; en 4K HDR con H.265 son 8–15 GB. Una temporada de serie (10 episodios de 45 min) en HD puede ser 5–15 GB. Estos valores orientan al elegir un plan de almacenamiento en la nube en servicios como Dropbox, OneDrive o pCloud, disponibles en toda LATAM con pagos en moneda local.'
+  },
+  {
+    q: '¿Cuántos GB consume el streaming de video por internet en LATAM?',
+    a: 'El consumo de datos por streaming varía según la calidad y la plataforma, dato muy relevante en LATAM donde los planes de internet móvil suelen tener límites de datos. Netflix (disponible en toda LATAM con pagos en moneda local) consume aproximadamente: calidad automática/SD ≈ 1 GB/h, calidad media ≈ 0,7 GB/h, Full HD (1080p) ≈ 3 GB/h, 4K HDR ≈ 7 GB/h. YouTube: 360p ≈ 0,2 GB/h, 720p ≈ 0,7 GB/h, 1080p ≈ 1,5 GB/h, 4K ≈ 2,7–5 GB/h. Disney+: similar a Netflix. Streaming de música: Spotify calidad normal ≈ 43 MB/h, calidad alta ≈ 72 MB/h, calidad premium ≈ 144 MB/h. Con estos datos, un estudiante que usa internet móvil de Telcel, Claro o Movistar en LATAM con un plan de 10 GB/mes podría ver unas 3 horas de Netflix en Full HD por semana (3 h × 3 GB × 4 semanas = 36 GB, por encima del límite) o unas 6–7 horas en calidad media. Muchos operadores LATAM aplican "zero-rating" a ciertas apps (WhatsApp, YouTube), es decir, su consumo no descuenta del plan de datos.'
+  },
+  {
+    q: '¿Qué capacidad de almacenamiento necesito para mis archivos en una PC o laptop?',
+    a: 'Dimensionar el almacenamiento de una computadora nueva es una decisión frecuente en toda LATAM, donde el mercado de laptops y PCs de ensamble es muy activo. Para un uso básico (navegación web, documentos de Office/Google Docs, correo): 256 GB SSD es suficiente. Para un estudiante universitario que también almacena fotos, series y programas: 512 GB SSD es un buen punto de partida. Para trabajo creativo con fotos RAW, video en 4K y diseño gráfico: 1 TB SSD o más, o complementar con disco externo de 2–4 TB. Para programadores y administradores de sistemas con máquinas virtuales, contenedores Docker y repositorios de código grandes: 1 TB SSD + almacenamiento en nube es lo recomendado. Los discos SSD NVMe (formato M.2) son la opción actual más eficiente: en México, un SSD de 1 TB Samsung 870 EVO cuesta alrededor de 1.400–1.800 MXN; en Colombia, 250.000–300.000 COP; en Chile, 60.000–80.000 CLP. Los precios del almacenamiento han bajado dramáticamente: a principios de los 2000, 1 GB de RAM costaba lo que hoy cuesta un SSD de 1 TB. Complementar el almacenamiento local con Backblaze, Google Drive o Mega (disponible en LATAM con planes pagados en dólares o con cuentas locales) da redundancia ante fallas de hardware.'
   },
 ]}>
   <ConvDatosTool client:load />
 </CalcLayout>
-

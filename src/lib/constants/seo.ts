@@ -169,28 +169,28 @@ export const PAGE_SEO: Record<string, PageSEO> = {
     canonical: 'https://calzix.com/conversor-energia',
   },
   'conversor-presion': {
-    title: 'Conversor de Presión — Calzix',
-    description: 'Convierte pascales, bar, atm, psi y otras unidades de presión.',
+    title: 'Conversor de Presión: pascal, bar, atm, PSI, mmHg — Calzix',
+    description: 'Convierte pascales, bares, atmósferas, PSI, mmHg y kPa al instante. Para ingeniería industrial, medicina, neumáticos e hidrocarburos en México, Colombia y LATAM.',
     canonical: 'https://calzix.com/conversor-presion',
   },
   'conversor-tiempo': {
-    title: 'Conversor de Tiempo — Calzix',
-    description: 'Convierte segundos, minutos, horas, días, semanas, meses y años.',
+    title: 'Conversor de Tiempo: segundos, minutos, horas, días, años — Calzix',
+    description: 'Convierte milisegundos, segundos, minutos, horas, días, semanas, meses y años al instante. Para programación, física, gestión de proyectos y exámenes en toda LATAM.',
     canonical: 'https://calzix.com/conversor-tiempo',
   },
   'conversor-datos': {
-    title: 'Conversor de Datos Digitales — Calzix',
-    description: 'Convierte bits, bytes, KB, MB, GB, TB y otras unidades de almacenamiento.',
+    title: 'Conversor de Datos: GB a MB, TB a GB, KB a bytes — Calzix',
+    description: 'Convierte bytes, KB, MB, GB, TB y sus equivalentes binarios (KiB, MiB, GiB) al instante. Para almacenamiento, redes y telecomunicaciones en México, Colombia y LATAM.',
     canonical: 'https://calzix.com/conversor-datos',
   },
   'conversor-angulos': {
-    title: 'Conversor de Ángulos — Calzix',
-    description: 'Convierte grados, radianes, gradianes y vueltas al instante.',
+    title: 'Conversor de Ángulos: grados a radianes, gradianes — Calzix',
+    description: 'Convierte grados, radianes, gradianes y vueltas completas al instante. Para trigonometría, física, topografía, programación y exámenes COMIPEMS, ICFES, PAES en LATAM.',
     canonical: 'https://calzix.com/conversor-angulos',
   },
   'conversor-monedas': {
-    title: 'Conversor de Monedas — Calzix',
-    description: 'Convierte entre EUR, USD, GBP, JPY y las principales monedas del mundo.',
+    title: 'Conversor de Monedas: dólar, peso, real, euro — Calzix',
+    description: 'Convierte USD, MXN, COP, CLP, BRL, EUR, GBP, JPY y más con tasas orientativas 2024. Para viajes, comercio y finanzas personales en México, Colombia, Chile y LATAM.',
     canonical: 'https://calzix.com/conversor-monedas',
   },
   // ── Hogar ────────────────────────────────────────────────────────────────
@@ -503,13 +503,13 @@ export const PAGE_SEO: Record<string, PageSEO> = {
   },
   // ── Conversión (nuevas) ──────────────────────────────────────────
   'conversor-potencia': {
-    title: 'Conversor de Potencia — Calzix',
-    description: 'Convierte W, kW, MW, HP, CV. Transforma entre unidades de potencia al instante. Gratis, sin registro.',
+    title: 'Conversor de Potencia: vatios a hp, kW, CV, BTU/h — Calzix',
+    description: 'Convierte vatios, kilovatios, megavatios, caballos de fuerza (hp y CV), kcal/h y BTU/h al instante. Para ingeniería, automotriz y aire acondicionado en LATAM.',
     canonical: 'https://calzix.com/conversor-potencia',
   },
   'conversor-fuerza': {
-    title: 'Conversor de Fuerza — Calzix',
-    description: 'Convierte Newton, dina, kgf, lbf. Transforma unidades de fuerza al instante. Gratis, sin registro.',
+    title: 'Conversor de Fuerza: newton a kgf, lbf, kN, dinas — Calzix',
+    description: 'Convierte newtons, kilonewtons, lbf, kgf, dinas y meganewtons al instante. Para física, ingeniería estructural, aeronáutica y mecánica en México y toda LATAM.',
     canonical: 'https://calzix.com/conversor-fuerza',
   },
   'conversor-densidad': {
@@ -523,8 +523,8 @@ export const PAGE_SEO: Record<string, PageSEO> = {
     canonical: 'https://calzix.com/conversor-caudal',
   },
   'conversor-par-motor': {
-    title: 'Conversor de Par Motor — Calzix',
-    description: 'Convierte N·m, kgf·m, lbf·ft. Transforma unidades de torque al instante. Gratis, sin registro.',
+    title: 'Conversor de Par Motor: N·m a lbf·ft, kgf·m, kgf·cm — Calzix',
+    description: 'Convierte newton·metro, lbf·pie, kgf·metro y kgf·cm al instante. Para mecánica automotriz, manuales de taller y ajuste de tornillos en México, Argentina y LATAM.',
     canonical: 'https://calzix.com/conversor-par-motor',
   },
   'conversor-eficiencia': {
@@ -533,13 +533,13 @@ export const PAGE_SEO: Record<string, PageSEO> = {
     canonical: 'https://calzix.com/conversor-eficiencia',
   },
   'conversor-frecuencia': {
-    title: 'Conversor de Frecuencia — Calzix',
-    description: 'Convierte Hz, kHz, MHz, GHz. Transforma unidades de frecuencia al instante. Gratis, sin registro.',
+    title: 'Conversor de Frecuencia: Hz a kHz, MHz, GHz, RPM — Calzix',
+    description: 'Convierte hercios, kilohercios, megahercios, gigahercios, RPM y rad/s al instante. Para electrónica, telecomunicaciones, motores y física en México, Colombia y LATAM.',
     canonical: 'https://calzix.com/conversor-frecuencia',
   },
   'conversor-iluminacion': {
-    title: 'Conversor de Iluminación — Calzix',
-    description: 'Convierte lux, foot-candle, lm/m². Transforma unidades de luminancia al instante. Gratis, sin registro.',
+    title: 'Conversor de Iluminancia: lux a pie-candela, klux, fot — Calzix',
+    description: 'Convierte lux, kilolux, pie-candela, fot y nox al instante. Para diseño de iluminación, arquitectura, fotografía y cumplimiento de normas NOM/NTC en LATAM.',
     canonical: 'https://calzix.com/conversor-iluminacion',
   },
   // ── Hogar (nuevas) ──────────────────────────────────────────────

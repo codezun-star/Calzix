@@ -1,17 +1,44 @@
-﻿---
+---
 import CalcLayout from "@/components/layout/CalcLayout.astro";
 import ConvPotenciaTool from "@/components/tools/ConvPotenciaTool";
 ---
 
 <CalcLayout slug="conversor-potencia"
-  whatIs="La calculadora de conversor-potencia es una herramienta que te permite realizar calculos precisos relacionados con calculo. Simplemente ingresa los valores requeridos y obtendras resultados al instante sin necesidad de realizar operaciones manuales complicadas."
-  whyUse="Necesitas esta calculadora para ahorrar tiempo en calculos de calculo, evitar errores manuales, y obtener respuestas precisas cuando las necesitas. Es especialmente util en situaciones cotidianas donde necesitas resultados rapidos y confiables." faqs={[
-  { q: "¿Qué es?", a: "Una herramienta de cálculo rápido." },
-  { q: "¿Cómo usar?", a: "Introduce datos y haz clic en calcular." },
-  { q: "¿Es seguro?", a: "Sí, cálculos locales sin datos guardados." },
-  { q: "¿Límites?", a: "No hay límites de uso." },
-  { q: "¿Precisión?", a: "Precisión estándar del navegador." },
+  whatIs="El conversor de potencia transforma al instante entre vatios (W), kilovatios (kW), megavatios (MW), caballos de fuerza americanos (hp), caballos de vapor europeos (CV), kilocalorías por hora (kcal/h) y BTU por hora (BTU/h). Cubre las 7 unidades más usadas en ingeniería, mecánica automotriz y climatización."
+  whyUse="Ingenieros, mecánicos y técnicos en LATAM necesitan este conversor para interpretar fichas técnicas de motores que mezclan hp, kW y CV, dimensionar equipos de aire acondicionado en BTU/h, comparar rendimiento de plantas solares y térmicas, o resolver problemas de física en exámenes COMIPEMS, ICFES y PAES."
+  faqs={[
+  {
+    q: '¿Qué es el vatio (W) y cómo se define?',
+    a: 'El vatio (W) es la unidad de potencia del Sistema Internacional (SI), definida como la tasa de transferencia de energía de 1 joule por segundo: 1 W = 1 J/s. Fue nombrado en honor a James Watt, el ingeniero escocés que perfeccionó la máquina de vapor en el siglo XVIII. En la práctica cotidiana, una bombilla de bajo consumo típica usa 9–15 W, un microondas doméstico entre 800 y 1.200 W, y un aire acondicionado mini-split de 1 tonelada consume alrededor de 1.200 W eléctricos (aunque su potencia de enfriamiento se expresa en BTU/h). En física, la potencia mecánica se calcula como P = F × v (fuerza por velocidad) o P = τ × ω (par motor por velocidad angular), siempre resultando en vatios cuando las demás unidades son del SI. Entender el vatio es fundamental para calcular consumo eléctrico, eficiencia de motores y dimensionado de instalaciones en toda América Latina.'
+  },
+  {
+    q: '¿Cuántos vatios equivalen a 1 caballo de fuerza (hp)?',
+    a: '1 caballo de fuerza mecánico (hp, del inglés horsepower) equivale exactamente a 745,69987 vatios, valor que proviene de la definición histórica de James Watt: la potencia necesaria para elevar 33.000 libras-pie por minuto. En América Latina, el hp es la unidad dominante en motores eléctricos industriales (bombas, compresores, bandas transportadoras), motores de autos importados de EE.UU. y Canadá, y en equipos agrícolas. Por ejemplo, un tractor de 120 hp equivale a unos 89,5 kW. La etiqueta de motores eléctricos en México, Colombia y Argentina sigue la norma IEC pero frecuentemente muestra también el valor en hp para facilitar la comparación con el mercado estadounidense. Un motor de 5 hp (típico en compresores de taller) tiene 3.728 W. Cuando dimensiones una instalación trifásica, multiplica siempre los hp × 0,746 para obtener los kW nominales y luego divide entre el rendimiento (η) para obtener la potencia eléctrica real consumida.'
+  },
+  {
+    q: '¿Qué diferencia hay entre el hp (horsepower) y el CV (caballo de vapor)?',
+    a: 'Aunque ambas unidades representan potencia mecánica y sus valores son muy similares, no son iguales. El hp (horsepower anglosajón) equivale a 745,70 W, mientras que el CV (cheval-vapeur en francés, Pferdestärke en alemán, abreviado PS) equivale a 735,499 W. La diferencia es de aproximadamente 1,4 %, pero importa en documentación técnica. El CV se usa predominantemente en Europa, especialmente en fichas técnicas de automóviles fabricados en Alemania, Francia, Italia y también en marcas europeas vendidas en LATAM como Volkswagen, Fiat, Renault y Peugeot. El hp domina en documentación de origen norteamericano. Por ejemplo, un motor de 100 hp = 94,57 CV, y uno de 100 CV = 98,6 hp. En Argentina y Chile es común ver fichas técnicas en CV para modelos europeos y en hp para modelos de origen asiático o americano. Este conversor incluye ambas unidades para evitar errores en comparaciones de rendimiento entre marcas y mercados.'
+  },
+  {
+    q: '¿Para qué sirve la unidad BTU/h en México y LATAM?',
+    a: 'El BTU/h (British Thermal Unit por hora) es la unidad estándar de potencia térmica en el sector de climatización, refrigeración y calefacción en todo el continente americano, incluyendo México, Colombia, Venezuela, Perú y Chile. 1 BTU/h equivale a 0,29307 W. En la práctica, los aires acondicionados mini-split más comunes en viviendas latinoamericanas tienen capacidades de 9.000, 12.000, 18.000 o 24.000 BTU/h (llamadas coloquialmente "1 tonelada", "1,5 toneladas", "2 toneladas"). La "tonelada de refrigeración" equivale a 12.000 BTU/h o 3.517 W. Para una habitación de 15–20 m² se recomienda un equipo de 9.000 BTU/h. Las normas mexicanas NOM-023-ENER y colombianas de la UPME hacen referencia a BTU/h en eficiencia energética de climatizadores. También se usa BTU/h en calderas de calefacción (menos comunes en LATAM que en EE.UU.) y en cálculos de transferencia de calor en procesos industriales petroquímicos de Pemex y Ecopetrol.'
+  },
+  {
+    q: '¿Cuántos kW tiene un motor de 100 hp?',
+    a: 'Un motor de 100 hp equivale a 74,570 kW (resultado de multiplicar 100 × 0,74570). Esta conversión es una de las más frecuentes en ingeniería industrial latinoamericana. Los motores eléctricos de 100 hp son comunes en bombas de agua para irrigación en el Valle del Cauca (Colombia), sistemas de compresión en plantas procesadoras de la industria cárnica argentina, equipos de la minería a tajo abierto en Chile y Perú, y en compresores de refrigeración industrial. Al dimensionar un motor de esa potencia en una instalación trifásica de 460 V, la corriente nominal será aproximadamente 104 A (asumiendo factor de potencia 0,85 y rendimiento 0,93). Si usas la red de 220 V monofásica (poco recomendada para estas potencias), la corriente sería prohibitivamente alta. Recuerda siempre aplicar un factor de servicio (SF = 1,15 en motores estándar NEMA) para evitar sobrecargas en arranque. La norma mexicana NOM-030-ENER establece eficiencias mínimas para motores de inducción, incluida la clase de 100 hp.'
+  },
+  {
+    q: '¿Cómo se usa el kilovatio (kW) en tarifas eléctricas y energía solar en LATAM?',
+    a: 'El kilovatio (1 kW = 1.000 W) es la unidad de potencia más usada en instalaciones eléctricas residenciales e industriales. En tarifas eléctricas, la CFE (México), ENEL (Chile, Colombia), EPM (Medellín), Edesur/Edenor (Argentina) y Enel Distribución (Perú) facturan la energía en kilowatt-hora (kWh = kW × hora), donde la potencia media en kW determina el cargo de demanda. En energía solar fotovoltaica, la potencia pico de un panel se expresa en kW (o Wp, watt pico). Un sistema residencial típico en LATAM tiene entre 2 y 8 kWp y puede generar 3–5 kWh por kWp instalado en zonas con buena irradiación (Atacama en Chile, altiplano peruano, Sonora en México). La tarifa DAC de la CFE aplica sobrecargos si el consumo mensual supera cierto umbral en kWh. Conocer la potencia en kW de cada aparato y el tiempo de uso permite estimar el consumo en kWh y optimizar la factura. Los sistemas de almacenamiento con baterías (ej. BYD Battery-Box o Tesla Powerwall) también se dimensionan en kWh de capacidad y kW de potencia de descarga.'
+  },
+  {
+    q: '¿Cuántos kW tiene 1 megavatio (MW)?',
+    a: '1 megavatio equivale exactamente a 1.000 kilovatios (1 MW = 1.000 kW = 1.000.000 W). El megavatio es la unidad de referencia para plantas de generación eléctrica. En América Latina, la capacidad instalada de centrales se mide en MW y GW: la hidroeléctrica de Itaipú (Brasil-Paraguay) tiene 14.000 MW de potencia instalada; Corani (Bolivia) tiene 174 MW; el parque eólico de La Venta en Oaxaca, México, tiene 85 MW; la planta solar del Atacama en Chile llega a 360 MW en algunos proyectos. Para sistemas industriales grandes, como una planta cementera o un alto horno de TERNIUM en México o Gerdau en Brasil, la demanda puede ser de decenas de MW. La gestión de redes eléctricas por parte de organismos como el CENACE (México), CAMMESA (Argentina) o XM (Colombia) se hace en MW de demanda total del sistema nacional.'
+  },
+  {
+    q: '¿Qué es la potencia en kcal/h y cuándo se utiliza?',
+    a: 'La kilocaloría por hora (kcal/h) es una unidad de potencia térmica donde 1 kcal/h = 1,163 W. Se usa principalmente en calefacción, climatización y procesos industriales que trabajan con intercambiadores de calor, calderas y sistemas de refrigeración. En México, los sistemas de calefacción central por agua caliente (menos comunes que en el norte del continente, pero presentes en Monterrey y ciudades con inviernos fríos) se especifican a veces en kcal/h. En la industria alimentaria, los equipos de pasteurización y esterilización que usan vapor expresan su capacidad en kcal/h para relacionarse con el consumo de combustible (gas natural, GLP). También aparece en tablas de transferencia de calor de intercambiadores industriales de Pemex, PDVSA o Petrobras. La conversión clave es: 1 kW = 860 kcal/h, por lo que un mini-split de 3.500 W (3,5 kW) libera 3.010 kcal/h de calor al ambiente. En nutrición, la caloría es otra magnitud distinta (energía, no potencia), aunque comparten el nombre.'
+  },
 ]}>
   <ConvPotenciaTool client:load />
 </CalcLayout>
-
