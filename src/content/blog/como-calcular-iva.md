@@ -1,122 +1,146 @@
 ---
-titulo: "Cómo calcular el IVA en España: tipos, fórmulas y ejemplos reales"
-descripcion: "Aprende a calcular el IVA en España: tipos vigentes (4%, 10%, 21%), fórmulas para añadir y extraer IVA, y la diferencia entre IVA repercutido y soportado."
+titulo: "Como calcular el IVA en LATAM: tipos en Mexico, Colombia, Chile, Peru y Argentina"
+descripcion: "Calcula el IVA o IGV en cualquier pais de LATAM: Mexico 16%, Colombia 19%, Chile 19%, Peru 18%, Argentina 21%. Formulas, ejemplos y diferencia entre IVA repercutido y soportado."
 categoria: "finanzas"
 fecha: "2026-06-07"
+modificado: "2026-06-12"
 keywords:
-  - "calcular IVA"
-  - "tipos de IVA España"
+  - "calcular IVA Mexico"
+  - "IVA Colombia IGV Peru"
+  - "tipos IVA LATAM"
+  - "formula calcular IVA"
   - "IVA repercutido soportado"
-  - "fórmula calcular IVA"
-  - "IVA superreducido reducido general"
   - "calcular base imponible"
-  - "IVA autónomos"
+  - "IVA autónomos LATAM"
 autor: "Equipo Calzix"
 publicado: true
 ---
 
-# Cómo calcular el IVA en España: tipos, fórmulas y ejemplos reales
+El IVA (o IGV en Peru) es el impuesto que mas afecta las transacciones cotidianas en toda America Latina: compras en el supermercado, facturas de servicios, ventas de tu negocio. Las tasas y categorias de exencion varian segun el pais, pero la logica matematica es identica en todos. Esta guia te explica los tipos vigentes en cada pais, las formulas para calcular el impuesto y como funciona para negocios y autonomos.
 
-El IVA es uno de esos impuestos que todo el mundo paga pero que muy poca gente entiende bien. Da igual si eres consumidor que quiere saber cuánto paga realmente en una compra, o si eres autónomo que tiene que presentar su trimestral: entender cómo calcular el IVA, qué tipos existen y cuándo aplica cada uno es información práctica que usarás de forma constante. Esta guía te lo explica con fórmulas claras y ejemplos reales.
+## Que es el IVA y como funciona
 
-## Qué es el IVA y cómo funciona
+El **Impuesto al Valor Agregado** (IVA en la mayoria de paises, IGV en Peru) es un impuesto indirecto que grava el consumo. Cada vez que compras un bien o contratas un servicio, pagas el IVA incluido en el precio — aunque el vendedor lo recauda y lo transfiere al fisco.
 
-El **Impuesto sobre el Valor Añadido** (IVA) es un impuesto indirecto que grava el consumo. Cada vez que compras un bien o contratas un servicio, pagas el IVA incluido en el precio. Sin embargo, el IVA no lo paga realmente la empresa que te vende: ella actúa como recaudadora. Lo cobra de ti, lo guarda y lo ingresa a Hacienda periódicamente.
+En cada eslabon de la cadena productiva, el empresario paga IVA a sus proveedores (IVA soportado o credito fiscal) y cobra IVA a sus clientes (IVA repercutido o debito fiscal). Solo paga al fisco la diferencia entre lo que cobro y lo que pago. El consumidor final es quien absorbe el impuesto completo.
 
-La particularidad del IVA es que se aplica en cada fase de la cadena de producción y distribución, pero cada eslabón solo ingresa el impuesto correspondiente al valor que él añade. De ahí su nombre.
+---
 
-Para el consumidor final, esto es transparente. Para los autónomos y empresas, el IVA tiene dos caras que hay que distinguir bien: el que cobran a sus clientes (repercutido) y el que pagan a sus proveedores (soportado).
+## Tasas de IVA por pais en LATAM
 
-## Los tres tipos de IVA vigentes en España
-
-España aplica tres tipos de IVA, cada uno diseñado para categorías de bienes y servicios específicas:
-
-**IVA superreducido: 4%**
-Se aplica a los productos considerados de primera necesidad. Algunos ejemplos: pan, leche, huevos, frutas y verduras, libros en papel, medicamentos para uso humano y prótesis para personas con discapacidad. El objetivo es reducir la carga fiscal sobre el consumo básico.
-
-**IVA reducido: 10%**
-Aplica a una categoría más amplia de bienes y servicios que se consideran necesarios pero no de primera necesidad. Entre ellos: transporte de viajeros, hostelería y restauración, cine y espectáculos culturales, viviendas de nueva construcción (primera entrega), flores y plantas ornamentales, y la mayoría de alimentos que no están en el tipo superreducido.
-
-**IVA general: 21%**
-Es el tipo que aplica a todo lo que no tiene una excepción específica. Ropa, electrónica, vehículos, servicios profesionales, suscripciones digitales, bebidas alcohólicas, tabaco, muebles, servicios de telecomunicaciones... Si tienes duda sobre qué tipo aplica, la respuesta probablemente sea el 21%.
-
-| Tipo | Porcentaje | Ejemplos de aplicación |
-|---|---|---|
-| Superreducido | 4% | Pan, leche, libros, medicamentos |
-| Reducido | 10% | Restaurantes, transporte, viviendas nuevas |
-| General | 21% | Electrónica, ropa, servicios profesionales |
-
-## Fórmula para añadir IVA a un precio base
-
-Cuando tienes un precio sin IVA (base imponible) y necesitas saber cuánto cobrará el cliente con el impuesto incluido, la fórmula es directa:
-
-**Precio final = Base imponible × (1 + tipo / 100)**
-
-Ejemplos con base de 100€:
-
-- Con IVA del 4%: 100 × 1,04 = **104,00€**
-- Con IVA del 10%: 100 × 1,10 = **110,00€**
-- Con IVA del 21%: 100 × 1,21 = **121,00€**
-
-O si quieres calcular solo la cuota de IVA (lo que le corresponde a Hacienda):
-
-**Cuota IVA = Base imponible × (tipo / 100)**
-
-Con base 100€ y tipo 21%: 100 × 0,21 = 21€ de IVA.
-
-## Fórmula para extraer el IVA de un precio ya incluido
-
-Esta operación es la más habitual cuando ves un precio en el supermercado o en una factura y necesitas saber cuál es la base imponible antes de impuestos. Mucha gente comete el error de restar directamente el porcentaje, lo que da un resultado incorrecto.
-
-**Base imponible = Precio final / (1 + tipo / 100)**
-
-Ejemplo: tienes un producto que cuesta 121€ con IVA al 21%.
-
-Base imponible = 121 / 1,21 = **100€**
-
-El error frecuente sería calcular 121 − (121 × 0,21) = 121 − 25,41 = 95,59€. Ese resultado es incorrecto porque aplicas el 21% sobre el precio con IVA ya incluido, no sobre la base.
-
-Para extraer la cuota de IVA una vez que conoces la base:
-
-**Cuota IVA = Precio final − Base imponible** = 121 − 100 = **21€**
-
-## Tabla resumen: base 100€ con los tres tipos
-
-| Base imponible | Tipo IVA | Cuota IVA | Precio final |
+| Pais | Tasa general | Tasa reducida | Tasa 0 % / exento |
 |---|---|---|---|
-| 100,00€ | 4% | 4,00€ | 104,00€ |
-| 100,00€ | 10% | 10,00€ | 110,00€ |
-| 100,00€ | 21% | 21,00€ | 121,00€ |
+| Mexico | 16 % | — | Alimentos, medicamentos, libros |
+| Colombia | 19 % | 5 % | Canasta basica, educacion, salud |
+| Chile | 19 % | — | Exportaciones (0 %) |
+| Peru (IGV) | 18 % | — | Alimentos, medicamentos, exportaciones |
+| Argentina | 21 % | 10.5 % | Canasta basica, medicamentos |
+| Ecuador | 15 % | — | Alimentos, medicamentos |
+| Bolivia | 13 % | — | Servicios financieros |
+| Uruguay | 22 % | 10 % | Canasta basica |
 
-## IVA repercutido vs. IVA soportado: clave para autónomos
+### Mexico: IVA del 16 %
 
-Si eres autónomo o tienes una empresa, el IVA funciona de una forma diferente a cuando eres consumidor final. Tienes que manejar dos conceptos:
+En Mexico el IVA tiene **dos tasas**: 16 % general y 0 % para alimentos procesados y sin procesar, medicamentos, agua potable y libros. Las exportaciones tambien tributan a 0 %.
 
-**IVA repercutido:** es el IVA que tú cobras a tus clientes en tus facturas. No es tuyo: lo estás recaudando en nombre de Hacienda. Cuando emites una factura por 1.000€ + 21% de IVA, cobras 1.210€ en total, pero 210€ le pertenecen a la Agencia Tributaria.
+La tasa del 0 % no es exencion: el vendedor sigue presentando declaraciones y puede acreditar el IVA soportado en sus compras.
 
-**IVA soportado:** es el IVA que tú pagas a tus proveedores cuando compras materiales, contratas servicios o adquieres equipos para tu actividad. Este IVA sí puedes deducírtelo.
+### Colombia: IVA del 19 % con tasa reducida del 5 %
 
-Cada trimestre (en los modelos 303), presentas la diferencia:
+Colombia tiene tasa general del 19 %, una tasa reducida del 5 % para bienes como computadores, tabletas, algunos alimentos procesados, vehiculos de trabajo agricola y medicamentos no esenciales, y un regimen de exencion que incluye carnes, huevos, frutas y verduras frescas, servicios de salud y educacion.
 
-- Si el **IVA repercutido es mayor que el soportado**, pagas esa diferencia a Hacienda.
-- Si el **IVA soportado es mayor** (porque has tenido muchos gastos), la diferencia se compensa en trimestres siguientes o, al final del año, puedes solicitar la devolución.
+El sistema de devoluciones de IVA (DIAN) para personas naturales de bajos ingresos permite que ciertos hogares reciban una compensacion monetaria.
 
-Ejemplo práctico: en el primer trimestre facturas 5.000€ + 1.050€ de IVA (al 21%), y tus gastos deducibles tienen 420€ de IVA soportado. Ingresarás a Hacienda: 1.050 − 420 = **630€**.
+### Peru: IGV del 18 %
+
+Peru llama al impuesto **IGV** (Impuesto General a las Ventas) y su tasa es del 18 % (compuesta por 16 % IGV + 2 % IPM — Impuesto de Promocion Municipal). Alimentos de la canasta basica, medicamentos y exportaciones estan exentos o en tasa 0 %.
+
+### Argentina: IVA con multiples tasas
+
+Argentina tiene tres tasas: 21 % (general), 10.5 % (reducida para construccion, medicina prepaga, algunos alimentos industrializados) y 0 % (canasta basica, medicamentos). La complejidad del sistema argentino es notable: la AFIP mantiene listados detallados de que aplica a cada categoria.
+
+---
+
+## Las dos formulas fundamentales
+
+Estas formulas son identicas en todos los paises — solo cambia el porcentaje de la tasa.
+
+### Añadir IVA a un precio base (base imponible conocida)
+
+**Precio final = Base imponible × (1 + tasa / 100)**
+
+Ejemplos con base de $1,000:
+
+| Pais | Tasa | Precio final |
+|---|---|---|
+| Mexico | 16 % | $1,000 × 1.16 = **$1,160** |
+| Colombia | 19 % | $1,000 × 1.19 = **$1,190** |
+| Chile | 19 % | $1,000 × 1.19 = **$1,190** |
+| Peru (IGV) | 18 % | $1,000 × 1.18 = **$1,180** |
+| Argentina | 21 % | $1,000 × 1.21 = **$1,210** |
+
+La cuota del impuesto es simplemente:
+**Cuota IVA = Base imponible × (tasa / 100)**
+
+### Extraer el IVA de un precio ya incluido (precio final conocido)
+
+Este calculo es el que mas errores genera. **No** se puede restar directamente el porcentaje: eso da un resultado incorrecto.
+
+**Base imponible = Precio final / (1 + tasa / 100)**
+
+Ejemplo en Colombia con un articulo que cuesta $238,000 COP con IVA incluido al 19 %:
+
+- Base imponible = $238,000 / 1.19 = **$200,000 COP**
+- Cuota IVA = $238,000 - $200,000 = **$38,000 COP**
+
+**El error frecuente:** $238,000 - ($238,000 × 0.19) = $238,000 - $45,220 = $192,780 → incorrecto, porque aplicas el 19 % sobre el precio con IVA incluido.
+
+---
+
+## IVA para autonomos y pequenas empresas
+
+Si tienes un negocio en LATAM, el IVA tiene dos caras:
+
+**IVA repercutido (debito fiscal):** el que cobras a tus clientes en tus facturas. No es tuyo — lo recaudas en nombre del fisco.
+
+**IVA soportado (credito fiscal):** el que pagas a tus proveedores en sus facturas. Este lo puedes acreditar contra el IVA que debes pagar.
+
+**Diferencia a pagar:** IVA repercutido − IVA soportado = lo que transfiers al fisco en cada periodo.
+
+### Periodos de declaracion por pais
+
+| Pais | Periodo | Formulario |
+|---|---|---|
+| Mexico | Mensual | Declaracion mensual SAT (portal SAT) |
+| Colombia | Bimestral o cuatrimestral | Formulario 300 (DIAN) |
+| Chile | Mensual | Formulario 29 (SII) |
+| Peru | Mensual | PDT 621 (SUNAT) |
+| Argentina | Mensual | Declaracion AFIP (aplicativo IVA) |
+
+### Ejemplo practico para autonomos en Mexico
+
+Un disenador freelance en Mexico factura $50,000 MXN + IVA a sus clientes en el mes. Sus gastos deducibles (software, internet, materiales) suman $10,000 MXN + IVA.
+
+- IVA repercutido (cobrado a clientes): $50,000 × 16 % = **$8,000 MXN**
+- IVA soportado (pagado a proveedores): $10,000 × 16 % = **$1,600 MXN**
+- **IVA a pagar al SAT ese mes: $8,000 − $1,600 = $6,400 MXN**
+
+---
 
 ## Errores frecuentes al calcular el IVA
 
-**Aplicar el tipo incorrecto.** El tipo del IVA en restauración es el 10%, no el 21%. Muchos autónomos que empiezan a facturar servicios de catering o restauración facturan mal el tipo. Cuando tengas dudas, consulta la normativa o la web de la Agencia Tributaria porque los errores en el tipo facturado pueden generar sanciones.
+**Aplicar la tasa equivocada.** En Mexico, los alimentos tributan al 0 % pero la ropa y servicios profesionales al 16 %. En Colombia, los libros estan exentos pero los libros digitales pueden tener tratamiento distinto. Consulta siempre la normativa especifica del producto o servicio.
 
-**Incluir el IVA en gastos no deducibles.** Si compras algo para uso personal y lo intentas deducir como gasto de actividad, el IVA soportado de esa compra tampoco es deducible. Hacienda cruza estos datos.
+**Incluir IVA en gastos no deducibles.** Si una compra no esta directamente vinculada a tu actividad economica, su IVA no es acreditable/deducible. Las reglas varian por pais pero el principio es universal.
 
-**No separar bien la base del IVA en el ticket.** Para que una factura sea válida a efectos de deducción, debe indicar la base imponible y el tipo de IVA por separado. Un ticket de supermercado con el total sin desglose no es suficiente para deducir el IVA.
+**No desglosar base e impuesto en la factura.** Para que una factura sea valida a efectos fiscales en cualquier pais de LATAM, debe mostrar por separado: base imponible, tasa aplicada y cuota del impuesto. Un recibo sin desglose no sirve para acreditar IVA.
 
-**Cobrar IVA cuando no corresponde.** Algunas actividades están exentas de IVA: servicios médicos y sanitarios, educación reglada, operaciones financieras y de seguros, entre otras. Si eres médico o profesor y facturas IVA, estás cobrando un impuesto que no deberías.
+**Cobrar IVA cuando la actividad esta exenta.** Educacion, salud, exportaciones — cobrar IVA sobre actividades exentas genera un pasivo fiscal indebido.
 
-**Olvidar el recargo de equivalencia.** Los autónomos que son comerciantes minoristas (venden directamente al consumidor final sin transformar el producto) tienen un régimen especial: el recargo de equivalencia. En ese caso no presentan el modelo 303, pero sus proveedores les cobran un recargo adicional sobre el IVA.
+---
 
-## Calcula el IVA al instante
+## Calcula el IVA en segundos
 
-Si necesitas calcular el IVA de forma rápida para una factura, una compra o tu liquidación trimestral, usa la [calculadora de IVA](/calculadora-iva) de Calzix. Puedes introducir la base imponible o el precio final con IVA, seleccionar el tipo (4%, 10% o 21%) y obtener en un clic el desglose completo: base, cuota de IVA y precio total.
+Usa la **[calculadora de IVA](/calculadora-iva)** de Calzix para convertir instantaneamente entre precio con y sin impuesto para cualquier tasa de LATAM. Introduce la base imponible o el precio final, selecciona el porcentaje de tu pais y obtendras el desglose completo.
 
-Entender el IVA no es solo cuestión de cumplir con Hacienda: es parte fundamental de fijar precios correctamente, comparar presupuestos y gestionar la tesorería de tu negocio sin sorpresas al final del trimestre.
+Entender el IVA no es solo cumplimiento fiscal: es la base para fijar precios correctamente, preparar presupuestos para clientes y gestionar la tesoreria de tu negocio sin sorpresas al cerrar el periodo.

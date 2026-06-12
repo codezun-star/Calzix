@@ -1,103 +1,173 @@
 ---
-titulo: "Cuánto cobro realmente: cómo pasar de sueldo bruto a neto en España"
-descripcion: "Aprende a convertir tu sueldo bruto a neto en España: Seguridad Social, IRPF por tramos y ejemplos reales con 4 niveles salariales."
+titulo: "De salario bruto a neto en LATAM: cuanto descuentan en Mexico, Colombia y Chile"
+descripcion: "Aprende cuanto descuentan de tu sueldo en Mexico (IMSS, ISR), Colombia (EPS, ARL, AFP, retencion) y Chile (AFP, Fonasa). Ejemplos con salarios reales en MXN, COP y CLP."
 categoria: "finanzas"
 fecha: "2026-06-07"
+modificado: "2026-06-12"
 keywords:
-  - "sueldo bruto a neto"
-  - "nómina neta España"
-  - "calcular salario neto"
-  - "retención IRPF nómina"
-  - "Seguridad Social trabajador"
-  - "cuánto me descuentan del sueldo"
-  - "bruto neto 2025"
+  - "salario bruto a neto Mexico"
+  - "descuentos nomina Colombia"
+  - "sueldo neto Chile AFP Fonasa"
+  - "cuanto descuentan del sueldo LATAM"
+  - "IMSS descuento nomina"
+  - "EPS ARL AFP Colombia"
+  - "calcular sueldo neto"
 autor: "Equipo Calzix"
 publicado: true
 ---
 
-# Cuánto cobro realmente: cómo pasar de sueldo bruto a neto en España
+Cuando firmas un contrato ves el salario bruto. Lo que llega a tu cuenta es otra historia. En LATAM, las deducciones de nomina incluyen aportes a salud, pension, seguro de desempleo e impuesto sobre la renta, y los porcentajes varian significativamente de un pais a otro. Esta guia explica exactamente cuanto descuentan en Mexico, Colombia y Chile, con ejemplos numericos reales.
 
-Cuando firmas un contrato y ves una cifra anual, eso es tu sueldo bruto. Lo que entra en tu cuenta corriente cada mes es otra historia. La diferencia entre ambas cifras puede ser enorme, y entenderla te ahorra muchas sorpresas y te ayuda a negociar mejor tu próximo salario. Este artículo te explica exactamente cómo pasar de sueldo bruto a neto en España, qué te retiene la empresa y por qué.
+## Que es el salario bruto y que es el neto
 
-## Qué es el sueldo bruto y qué es el neto
+El **salario bruto** es el monto que acuerdas con la empresa antes de cualquier deduccion. Es el que aparece en la oferta de trabajo y en tu contrato.
 
-El **sueldo bruto** es el coste total que pactas con tu empresa antes de que nadie descuente nada. Incluye tu salario base, los complementos, las pagas extras y cualquier otro concepto retributivo. Es el número que aparece en el contrato y el que utilizan los portales de empleo para anunciar ofertas.
+El **salario neto** es lo que recibes realmente. Para llegar a el, tu empleador actua como intermediario: deduce los aportes que te corresponden como trabajador y los transfiere directamente a las instituciones correspondientes (IMSS, AFP, EPS, fisco).
 
-El **sueldo neto** es lo que recibes realmente en tu cuenta. Para llegar a él, la empresa actúa como intermediaria y deduce dos grandes bloques antes de pagarte: las cotizaciones a la Seguridad Social que te corresponden a ti como trabajador, y la retención a cuenta del IRPF. Ambas van directamente a la Agencia Tributaria y a la Seguridad Social en tu nombre.
+Entender esta diferencia es clave para negociar sueldos, comparar ofertas entre paises y planificar tus finanzas personales.
 
-Entender esta distinción es clave porque el error más común al comparar ofertas de trabajo es mezclar cifras brutas con netas, o comparar salarios sin tener en cuenta las diferencias en la retención del IRPF.
+---
 
-## Cuánto descuenta la Seguridad Social
+## Mexico: descuentos del trabajador
 
-La cotización a la Seguridad Social tiene dos partes: la que paga la empresa (mucho mayor) y la que pagas tú como trabajador. En tu nómina solo aparece la tuya, que en 2025 se divide en tres conceptos:
+En Mexico, las deducciones obligatorias del trabajador son dos grandes bloques: los aportes al IMSS/INFONAVIT y el ISR.
 
-| Concepto | Porcentaje trabajador |
+### Cuotas obrero-patronales del IMSS (a cargo del trabajador)
+
+| Concepto | Porcentaje del salario |
 |---|---|
-| Contingencias comunes | 4,70% |
-| Desempleo (contrato indefinido) | 1,55% |
-| Formación profesional | 0,10% |
-| **Total cotización trabajador** | **6,35%** |
+| Enfermedad y maternidad (cuota obrero) | 0.40 % del excedente sobre 3 SMGDF |
+| Invalidez y vida | 0.625 % |
+| Cesantia y vejez (AFORE) | 1.125 % |
+| Retiro | 0 % (lo paga el patron) |
+| Guarderias y prestaciones sociales | 0 % (lo paga el patron) |
+| **Total aproximado trabajador** | **~2–3 %** del salario bruto |
 
-Ese 6,35% se aplica sobre la base de cotización, que en la mayoría de los casos coincide con el salario bruto mensual (salario base + complementos, sin contar las pagas extraordinarias si van prorrateadas de forma separada). Si ganas 2.000€ brutos al mes, la Seguridad Social te descuenta 127€. Sencillo.
+El INFONAVIT (3 % del salario) lo paga el empleador, no el trabajador, asi que no aparece en tus descuentos de nomina.
 
-Lo que la empresa paga adicionalmente por ti (contingencias comunes al 23,6%, desempleo al 5,5%, FOGASA, formación…) no aparece en tu nómina pero sí forma parte del coste real que tienes para la empresa. Por eso el coste empresa siempre es bastante superior al bruto que tú percibes.
+### ISR (Impuesto Sobre la Renta)
 
-## Cómo funciona la retención del IRPF en la nómina
+El ISR es el descuento mas variable. Depende del salario anual acumulado. Para referencia:
 
-El IRPF (Impuesto sobre la Renta de las Personas Físicas) es un impuesto anual. Sin embargo, Hacienda no quiere esperar a que hagas la declaración en mayo del año siguiente para cobrar: por eso obliga a tu empresa a retenerte cada mes un porcentaje de tu nómina y a ingresarlo en la Agencia Tributaria como anticipo.
+| Salario bruto mensual | ISR mensual aproximado | % efectivo |
+|---|---|---|
+| $10,000 MXN | $0 - $300 | 0–3 % (subsidio al empleo) |
+| $20,000 MXN | $1,500 - $2,000 | ~8–10 % |
+| $30,000 MXN | $3,500 - $4,200 | ~12–14 % |
+| $50,000 MXN | $8,000 - $9,500 | ~16–19 % |
+| $80,000 MXN | $17,000 - $19,000 | ~21–24 % |
 
-Ese porcentaje de retención no es fijo para todo el mundo. Depende de varios factores: tu salario anual estimado, tu situación personal (soltero, casado, hijos, discapacidad…), el tipo de contrato y la comunidad autónoma. La empresa lo calcula al inicio del año mediante un modelo llamado regularización de retenciones.
+### Ejemplo real: $25,000 MXN brutos al mes
 
-Los **tramos del IRPF estatal para 2025** son los siguientes:
+- IMSS obrero: ~$600
+- ISR estimado: ~$3,300
+- **Neto estimado: ~$21,100 MXN (~84 % del bruto)**
 
-| Base liquidable anual | Tipo marginal estatal |
+El patron ademas paga por ti: IMSS patron ~$3,500, INFONAVIT $750, SAR $300 — costos que no ves en tu nomina pero que forman parte de tu costo total para la empresa.
+
+---
+
+## Colombia: descuentos del trabajador
+
+En Colombia las deducciones del empleado son mas simples en porcentajes pero importantes en monto:
+
+| Concepto | Porcentaje del salario |
 |---|---|
-| Hasta 12.450€ | 9,50% |
-| De 12.450€ a 20.200€ | 12,00% |
-| De 20.200€ a 35.200€ | 15,00% |
-| De 35.200€ a 60.000€ | 18,50% |
-| De 60.000€ a 300.000€ | 22,50% |
-| Más de 300.000€ | 24,50% |
+| Salud (EPS) | 4 % |
+| Pension (AFP o Colpensiones) | 4 % |
+| Fondo de Solidaridad Pensional | 1 % (salarios > 4 SMMLV) |
+| **Total aportes del empleado** | **8 % (o 9 % sobre 4 SMMLV)** |
 
-A estos tipos estatales hay que sumar el complemento autonómico (varía por comunidad, pero en la media ronda porcentajes similares), lo que da un tipo total que oscila entre el 19% y el 47% dependiendo del tramo.
+El ARL (Administradora de Riesgos Laborales) lo paga el empleador, no el trabajador.
 
-Un matiz importante: los tramos funcionan de forma escalonada. Si ganas 35.000€, no pagas el 30% sobre todo tu salario. Pagas el 19% sobre los primeros 12.450€, el 24% sobre los siguientes 7.750€, y el 30% solo sobre la parte que supera los 20.200€ hasta 35.200€. Esto es lo que muchos trabajadores no entienden.
+### Retencion en la fuente
 
-Además, existe el **mínimo personal**: los primeros 5.550€ de tu base imponible están exentos de tributación (más si tienes hijos o mayores a cargo). Esto reduce de forma efectiva el porcentaje real que pagas.
+La retencion en la fuente laboral se aplica a salarios superiores a **95 UVT mensuales** (~$4,730,905 COP en 2025). Para quienes superan ese umbral, la empresa estima el impuesto anual y lo retiene mensualmente.
 
-## Cuánto cobras realmente: ejemplos con 4 salarios
+| Salario bruto mensual | Descuentos EPS + AFP | Retencion aprox. | Neto estimado |
+|---|---|---|---|
+| $2,000,000 COP | $160,000 | $0 | ~$1,840,000 |
+| $4,000,000 COP | $320,000 | $0 | ~$3,680,000 |
+| $6,000,000 COP | $480,000 | ~$180,000 | ~$5,340,000 |
+| $10,000,000 COP | $800,000 | ~$750,000 | ~$8,450,000 |
+| $15,000,000 COP | $1,200,000 | ~$1,750,000 | ~$12,050,000 |
 
-Para que lo veas de forma clara, aquí tienes una estimación orientativa del neto anual y mensual para cuatro niveles salariales habituales en España. Los cálculos asumen un trabajador soltero sin hijos, con contrato indefinido, en una comunidad de tipo autonómico medio.
+**Nota importante:** los aportes a pension y salud son **deducibles** del impuesto de renta anual, lo que reduce la carga tributaria final en la declaracion de renta.
 
-| Bruto anual | Cotiz. SS (6,35%) | IRPF estimado | Neto anual estimado | Neto mensual (12 pagas) |
-|---|---|---|---|---|
-| 20.000€ | 1.270€ | ~1.850€ | ~16.880€ | ~1.407€ |
-| 30.000€ | 1.905€ | ~4.500€ | ~23.595€ | ~1.966€ |
-| 40.000€ | 2.540€ | ~7.800€ | ~29.660€ | ~2.472€ |
-| 60.000€ | 3.810€ | ~15.200€ | ~40.990€ | ~3.416€ |
+### Ejemplo real: $8,000,000 COP brutos al mes
 
-Estas cifras son orientativas porque la retención del IRPF es una estimación que puede variar según la comunidad autónoma, las deducciones personales y otras circunstancias. La declaración de la renta anual es donde se liquida el impuesto definitivo.
+- Salud EPS (4 %): $320,000
+- Pension AFP (4 %): $320,000
+- Retencion en la fuente estimada: ~$500,000
+- **Neto estimado: ~$6,860,000 COP (~86 % del bruto)**
 
-## El error más frecuente: confundir la retención con el impuesto final
+---
 
-Muchas personas creen que lo que les descuentan en la nómina es el IRPF que pagarán. No es exactamente así. La retención mensual es solo un adelanto. El IRPF real se calcula una vez al año, en la declaración de la renta (modelo 100), donde Hacienda cruza todos tus ingresos del año con todas tus deducciones.
+## Chile: descuentos del trabajador
 
-Si la empresa te ha retenido de más (porque estimó mal tu situación), la declaración te saldrá a devolver. Si te ha retenido de menos (por ejemplo, si cambiaste de trabajo y tuviste dos pagadores en el mismo año, lo que cambia el cálculo), te saldrá a pagar. Por eso no puedes asumir que tu retención mensual es exactamente lo que le debes a Hacienda al final del año.
+Chile tiene el sistema de descuentos mas alto de los tres paises analizados, porque los aportes previsionales son significativos. A cambio, esos fondos van a tu cuenta individual de AFP.
 
-Otro error frecuente: calcular el neto multiplicando el bruto por (1 - tipo de retención). Eso ignora la Seguridad Social y da un número incorrecto. El cálculo correcto siempre descuenta primero la cotización a la SS y luego aplica la retención de IRPF sobre la base resultante.
+| Concepto | Porcentaje |
+|---|---|
+| AFP (pension) | ~11.44 % (varía por AFP) |
+| Salud (Fonasa 7 % o Isapre variable) | 7 % (Fonasa) |
+| Seguro de Cesantia (contrato indefinido) | 0.6 % |
+| **Total aportes obligatorios trabajador** | **~19 %** |
 
-## Consejos prácticos para gestionar tu nómina
+### Impuesto Unico de Segunda Categoria (IUSC)
 
-Si vas a cambiar de trabajo o estás negociando una subida, ten siempre claro el bruto anual y pídele a la empresa que te explique el porcentaje de retención que aplicarán. Un salario de 35.000€ en Madrid no equivale al mismo neto que uno de 35.000€ en Cataluña, porque los tipos autonómicos difieren.
+La base imponible del IUSC es el salario bruto menos los aportes previsionales y de salud. Para salarios hasta $820,658 CLP mensuales la tasa es 0 % (exento).
 
-Si tienes más de un pagador en el año (por ejemplo, cambiaste de empresa a mitad de año), el segundo pagador solo puede retenerte a partir de 1.500€ al año a un tipo mínimo del 15%, lo que probablemente signifique que tu declaración saldrá a pagar. Vale la pena hacer una simulación antes de que llegue mayo.
+| Sueldo bruto mensual | AFP + Salud | IUSC estimado | Neto estimado |
+|---|---|---|---|
+| $600,000 CLP | $114,000 | $0 | ~$486,000 |
+| $900,000 CLP | $171,000 | ~$3,000 | ~$726,000 |
+| $1,500,000 CLP | $285,000 | ~$53,000 | ~$1,162,000 |
+| $2,500,000 CLP | $475,000 | ~$175,000 | ~$1,850,000 |
+| $4,000,000 CLP | $760,000 | ~$440,000 | ~$2,800,000 |
 
-Si eres nuevo en el mercado laboral y acabas de ver tu primera nómina, la diferencia entre bruto y neto puede ser un shock. Es normal. Con 20.000€ brutos anuales te quedas con algo menos de 1.400€ al mes. A partir de ahí, cada euro de subida bruta tiene un rendimiento decreciente porque los tramos del IRPF van subiendo.
+**Particularidad del sistema chileno:** a diferencia de Mexico y Colombia, los aportes AFP van a una cuenta individual de cada trabajador gestionada por la AFP elegida. Al jubilarte, ese capital acumulado (mas la rentabilidad) es tuyo. Esto hace que el descuento se sienta mas como ahorro forzoso que como gasto.
 
-## Calcula tu nómina neta en segundos
+### Ejemplo real: $2,000,000 CLP brutos al mes
 
-En lugar de hacer todos estos cálculos a mano con margen de error, puedes usar la [calculadora de nómina](/calculadora-nomina) de Calzix. Solo tienes que introducir tu salario bruto anual, tu situación personal y tu comunidad autónoma, y obtendrás el desglose completo: Seguridad Social, retención de IRPF y neto mensual estimado.
+- AFP (~11.44 %): $228,800
+- Fonasa (7 %): $140,000
+- Seguro Cesantia (0.6 %): $12,000
+- IUSC sobre base imponible de $1,619,200: ~$100,000
+- **Neto estimado: ~$1,519,200 CLP (~76 % del bruto)**
 
-Si lo que quieres es entender exactamente cuánto pagarás de IRPF o si te conviene cambiar tu porcentaje de retención, la [calculadora de retención de IRPF](/irpf-retencion) te da el detalle por tramos para que lo entiendas sin necesidad de ser contable.
+---
 
-Conocer la diferencia entre tu bruto y tu neto no es un lujo: es información básica para tomar decisiones financieras acertadas. Desde negociar un aumento hasta planificar cuánto puedes permitirte pagar de hipoteca o alquiler.
+## Peru y Argentina: referencia rapida
+
+**Peru:**
+- AFP: ~10 % del salario (de los cuales ~1.7 % es comision de la AFP)
+- Essalud (9 % del salario): lo paga el empleador, no el trabajador
+- IR quinta categoria: 8 % sobre excedente de 7 UIT anuales (S/ 37,450 en 2025)
+- Rango total descuentos trabajador: 10–18 % segun salario
+
+**Argentina:**
+- SUSS/ANSES (jubilacion): 11 %
+- Obra Social: 3 %
+- INSSJP (PAMI, mayores de 45): 3 %
+- Total: ~17 % + Ganancias para salarios altos
+
+---
+
+## El error mas frecuente: confundir bruto con neto al comparar ofertas
+
+Al comparar una oferta en Mexico con una en Colombia, no puedes sumar los porcentajes directamente. El patron de cada pais tiene distintos costos empleador que afectan el total del paquete:
+
+- En Mexico el costo patron es ~30–35 % sobre el salario bruto del trabajador
+- En Colombia el costo patron (EPS, pension, ARL, SENA, ICBF, caja de compensacion) es ~29–33 % sobre el salario
+- En Chile el costo patron es ~5–9 % adicional (seguro cesantia patron, Essalud)
+
+Cuando una empresa te hace una oferta, pregunta siempre si la cifra es **costo total empresa** o **salario bruto del trabajador**. La diferencia puede ser de 25–35 %.
+
+---
+
+## Calcula tu neto al instante
+
+Usa la **[calculadora de nomina](/calculadora-nomina)** de Calzix para Mexico: introduce tu salario bruto mensual y obtendras el desglose de IMSS, ISR y neto mensual estimado.
+
+Saber exactamente cuanto cobras despues de descuentos no es un detalle administrativo — es la base para presupuestar tus gastos, negociar sueldos y entender el valor real de tu trabajo.

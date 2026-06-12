@@ -11,6 +11,8 @@ const blog = defineCollection({
     keywords:    z.array(z.string()),
     autor:       z.string().default('Equipo Calzix'),
     publicado:   z.boolean().default(true),
+    imagen:      z.string().optional(),
+    modificado:  z.string().optional(),
   }),
 });
 

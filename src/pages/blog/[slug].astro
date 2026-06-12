@@ -25,11 +25,52 @@ const CATEGORIA_LABEL: Record<string, string> = {
   general:    'General',
 };
 
-const canonical  = `${SITE.url}/blog/${post.id}`;
-const pageTitle  = `${post.data.titulo} | ${SITE.name}`;
-const pageDesc   = post.data.descripcion ?? '';
-const fechaISO   = post.data.fecha + 'T00:00:00Z';
-const fechaLabel = new Date(fechaISO).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
+const canonical      = `${SITE.url}/blog/${post.id}`;
+const pageTitle      = `${post.data.titulo} | ${SITE.name}`;
+const pageDesc       = post.data.descripcion ?? '';
+const fechaISO       = post.data.fecha + 'T00:00:00Z';
+const modificadoISO  = post.data.modificado ? post.data.modificado + 'T00:00:00Z' : fechaISO;
+const fechaLabel     = new Date(fechaISO).toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' });
+const ogImage        = post.data.imagen ?? null;
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio',    item: SITE.url },
+    { '@type': 'ListItem', position: 2, name: 'Blog',      item: `${SITE.url}/blog` },
+    { '@type': 'ListItem', position: 3, name: post.data.titulo, item: canonical },
+  ],
+};
+
+const articleSchema = {
+  '@context':    'https://schema.org',
+  '@type':       'Article',
+  '@id':         canonical,
+  headline:       post.data.titulo,
+  description:    pageDesc,
+  url:            canonical,
+  inLanguage:     'es',
+  datePublished:  fechaISO,
+  dateModified:   modificadoISO,
+  author: {
+    '@type': 'Organization',
+    name:    post.data.autor,
+    url:     SITE.url,
+  },
+  publisher: {
+    '@type': 'Organization',
+    '@id':   SITE.url,
+    name:    SITE.name,
+    url:     SITE.url,
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id':   canonical,
+  },
+  keywords: post.data.keywords.join(', '),
+  ...(ogImage ? { image: { '@type': 'ImageObject', url: ogImage } } : {}),
+};
 ---
 
 <!doctype html>
@@ -46,28 +87,35 @@ const fechaLabel = new Date(fechaISO).toLocaleDateString('es-ES', { day: 'numeri
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
+    <!-- Open Graph -->
     <meta property="og:type"              content="article" />
     <meta property="og:url"               content={canonical} />
     <meta property="og:title"             content={pageTitle} />
     <meta property="og:description"       content={pageDesc} />
     <meta property="og:site_name"         content={SITE.name} />
-    <meta property="article:published_time" content={fechaISO} />
+    <meta property="og:locale"            content="es_LATAM" />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta property="article:published_time"  content={fechaISO} />
+    <meta property="article:modified_time"   content={modificadoISO} />
+    <meta property="article:author"          content={post.data.autor} />
+    {post.data.categoria && (
+      <meta property="article:section" content={CATEGORIA_LABEL[post.data.categoria] ?? post.data.categoria} />
+    )}
+    {post.data.keywords.map((kw) => (
+      <meta property="article:tag" content={kw} />
+    ))}
 
-    <meta name="twitter:card"        content="summary" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card"        content={ogImage ? 'summary_large_image' : 'summary'} />
     <meta name="twitter:title"       content={pageTitle} />
     <meta name="twitter:description" content={pageDesc} />
+    {ogImage && <meta name="twitter:image" content={ogImage} />}
 
-    <script is:inline type="application/ld+json" set:html={JSON.stringify({
-      '@context':       'https://schema.org',
-      '@type':          'Article',
-      headline:          post.data.titulo,
-      description:       pageDesc,
-      author: { '@type': 'Organization', name: post.data.autor },
-      publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
-      datePublished:     fechaISO,
-      url:               canonical,
-      keywords:          post.data.keywords.join(', '),
-    })} />
+    <!-- JSON-LD: BreadcrumbList -->
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+    <!-- JSON-LD: Article -->
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   </head>
 
   <body>
@@ -76,7 +124,7 @@ const fechaLabel = new Date(fechaISO).toLocaleDateString('es-ES', { day: 'numeri
     <!-- Cabecera del artículo -->
     <div class="bg-[var(--color-text)]">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
-        <nav class="flex items-center gap-2 text-xs text-[var(--color-text-muted)] mb-6 flex-wrap">
+        <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs text-[var(--color-text-muted)] mb-6 flex-wrap">
           <a href="/" class="hover:text-white transition-colors">Inicio</a>
           <span>/</span>
           <a href="/blog" class="hover:text-white transition-colors">Blog</a>
@@ -104,6 +152,12 @@ const fechaLabel = new Date(fechaISO).toLocaleDateString('es-ES', { day: 'numeri
           <span>{post.data.autor}</span>
           <span>·</span>
           <time datetime={fechaISO}>{fechaLabel}</time>
+          {post.data.modificado && post.data.modificado !== post.data.fecha && (
+            <>
+              <span>·</span>
+              <span>Actualizado: <time datetime={modificadoISO}>{new Date(modificadoISO).toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' })}</time></span>
+            </>
+          )}
         </div>
       </div>
     </div>

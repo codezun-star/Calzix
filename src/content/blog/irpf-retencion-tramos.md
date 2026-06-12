@@ -1,145 +1,159 @@
 ---
-titulo: "Tramos IRPF 2025 en España: cuánto retienes y cómo calcularlo"
-descripcion: "Guía completa de los tramos IRPF 2025 en España: tipos estatales, mínimo personal, cómo funciona el cálculo por tramos y cuándo sale a devolver."
+titulo: "Impuesto sobre la Renta en LATAM: tramos, retenciones y ejemplos por pais"
+descripcion: "Guia completa del Impuesto sobre la Renta en Mexico (ISR), Colombia, Chile, Peru y Argentina: tramos vigentes, como funciona la retencion en nomina y ejemplos reales."
 categoria: "finanzas"
 fecha: "2026-06-07"
+modificado: "2026-06-12"
 keywords:
-  - "tramos IRPF 2025"
-  - "IRPF España 2025"
-  - "retención IRPF nómina"
-  - "calcular IRPF"
-  - "tipos marginales IRPF"
-  - "mínimo personal IRPF"
-  - "declaración renta"
+  - "ISR Mexico 2025"
+  - "impuesto renta Colombia"
+  - "impuesto segunda categoria Chile"
+  - "tramos impuesto renta LATAM"
+  - "retencion nomina Mexico"
+  - "calcular ISR"
+  - "impuesto renta Peru Argentina"
 autor: "Equipo Calzix"
 publicado: true
 ---
 
-# Tramos IRPF 2025 en España: cuánto retienes y cómo calcularlo
+El Impuesto sobre la Renta es el tributo que mas afecta el bolsillo de los trabajadores en toda America Latina, pero sus reglas varian bastante entre paises. Esta guia explica como funciona en Mexico, Colombia, Chile, Peru y Argentina: los tramos vigentes, como se aplica la retencion en nomina y como calcular tu carga real.
 
-El IRPF es el impuesto que más afecta al bolsillo de los trabajadores y autónomos en España, pero también uno de los menos comprendidos. La confusión entre retención mensual e impuesto definitivo, entre tipo marginal y tipo efectivo, o entre base imponible y base liquidable genera errores que cuestan dinero. Esta guía te explica los tramos del IRPF 2025, cómo funciona el cálculo real por tramos y cuándo puedes esperar que la declaración te salga a devolver o a pagar.
+## Que es el Impuesto sobre la Renta y como funciona la retencion
 
-## Qué es el IRPF y para qué sirve la retención
+En todos los paises de LATAM el Impuesto sobre la Renta de personas fisicas sigue el mismo principio: es progresivo (quien mas gana, mayor porcentaje paga) y funciona por tramos escalonados. El tramo mas alto al que llega tu ingreso se llama tipo marginal, pero el porcentaje que pagas sobre el total de tus ingresos — el tipo efectivo — siempre es menor.
 
-El **Impuesto sobre la Renta de las Personas Físicas** grava la renta obtenida a lo largo del año: salarios, rendimientos del capital mobiliario (intereses, dividendos), ganancias patrimoniales, rendimientos de actividades económicas (autónomos), entre otros. Es un impuesto progresivo: cuanto más ganas, mayor es el tipo que se aplica sobre los tramos superiores.
+Para las rentas del trabajo, el patron es identico en toda la region: la empresa retiene el impuesto estimado cada quincena o mes y lo paga directamente al fisco. Al final del ano fiscal, el trabajador declara todos sus ingresos y el fisco compara lo retenido con lo que realmente correspondía pagar.
 
-Sin embargo, Hacienda no espera al año siguiente para cobrarlo. Para las rentas del trabajo, obliga a la empresa a realizar **retenciones mensuales**: cada mes te descuenta un porcentaje de tu nómina y lo ingresa a la Agencia Tributaria como pago a cuenta del IRPF anual. Ese porcentaje se calcula al inicio del año en función de tu salario estimado, tu situación personal y tu comunidad autónoma.
+---
 
-La declaración de la renta (modelo 100) que se presenta entre abril y junio es simplemente la liquidación definitiva. Hacienda compara el impuesto que debías pagar con lo que ya se te retuvo:
+## Mexico: ISR 2025
 
-- Si se te retuvo de más: te devuelven la diferencia.
-- Si se te retuvo de menos: tienes que pagar la diferencia.
+El **Impuesto Sobre la Renta (ISR)** en Mexico se calcula sobre el ingreso gravable anual acumulado. La tabla de tarifas 2025 tiene 11 tramos con tipos que van del 1.92 % al 35 %:
 
-En ningún caso significa que hayas "pagado de más" o "pagado de menos" el impuesto durante el año. Solo es una cuestión de cuándo pagaste.
-
-## Los tramos del IRPF 2025 en España
-
-El IRPF en España tiene dos partes: la cuota estatal (igual para todos) y la cuota autonómica (que varía según la comunidad). Aquí tienes los **tipos consolidados (estatal + autonómico medio)** para 2025:
-
-| Base liquidable anual | Tipo marginal aplicable |
-|---|---|
-| Hasta 12.450€ | 19% |
-| De 12.450€ a 20.200€ | 24% |
-| De 20.200€ a 35.200€ | 30% |
-| De 35.200€ a 60.000€ | 37% |
-| De 60.000€ a 300.000€ | 45% |
-| Más de 300.000€ | 47% |
-
-Nota: los tipos autonómicos varían. Madrid tiene tipos algo más bajos en los tramos medios, mientras que Cataluña y Valencia presentan tipos superiores en los tramos altos. Para el cálculo exacto de tu retención, tu comunidad autónoma importa.
-
-## Cómo funciona el cálculo por tramos: ejemplo real
-
-Esta es la parte que más confusión genera. Mucha gente cree que si su salario cae en el tramo del 30%, ese porcentaje se aplica sobre todo su salario. Es un error. **Los tramos son escalonados**: cada tramo se aplica solo sobre la parte de la renta que cae dentro de ese rango.
-
-Veamos un ejemplo con un salario bruto anual de **35.000€** y aplicando el mínimo personal de 5.550€ (exento):
-
-**Paso 1: calcular la base liquidable**
-Base liquidable = 35.000€ − 5.550€ (mínimo personal) = **29.450€**
-
-**Paso 2: aplicar los tramos**
-
-| Tramo | Base que cae en el tramo | Tipo | Cuota |
-|---|---|---|---|
-| Hasta 12.450€ | 12.450€ | 19% | 2.365,50€ |
-| De 12.450€ a 20.200€ | 7.750€ | 24% | 1.860,00€ |
-| De 20.200€ a 29.450€ | 9.250€ | 30% | 2.775,00€ |
-| **Total IRPF** | | | **7.000,50€** |
-
-**Paso 3: calcular el tipo efectivo**
-Tipo efectivo = 7.000,50€ / 35.000€ = **20,0%**
-
-Aunque el tipo marginal de este salario es el 30% (el tramo más alto al que llega su renta), el tipo efectivo real es solo el 20%. Es la proporción que realmente paga sobre el total de sus ingresos.
-
-Este es el dato que importa para comparar. El tipo marginal solo indica el porcentaje que se paga por cada euro adicional que ganas en ese tramo.
-
-## El mínimo personal y familiar: la parte exenta
-
-Antes de aplicar los tramos, Hacienda permite descontar una serie de mínimos que reducen la base liquidable:
-
-**Mínimo personal:** 5.550€ anuales para todos los contribuyentes. Este importe está exento de tributación.
-
-**Mínimos por descendientes:**
-- Primer hijo: 2.400€
-- Segundo hijo: 2.700€
-- Tercer hijo: 4.000€
-- Cuarto y sucesivos: 4.500€
-- Menores de 3 años: 2.800€ adicionales por cada uno
-
-**Mínimo por ascendientes (mayores de 65 años que convivan y no superen 8.000€ de ingresos):** 1.150€ (mayores de 75 años: 1.400€ adicionales)
-
-**Mínimo por discapacidad:** desde 3.000€ hasta 12.000€ según el grado.
-
-Estos mínimos no son una deducción directa en la cuota: técnicamente se calculan de forma separada (se les aplica el primer tramo), pero el efecto práctico es que reducen tu impuesto a pagar de forma significativa.
-
-## Por qué unas personas pagan más y otras reciben devolución
-
-La declaración de la renta puede salir a pagar o a devolver por varias razones:
-
-**Sale a devolver (lo más frecuente) cuando:**
-- Solo tienes un pagador y la empresa calculó bien la retención o la calculó ligeramente por exceso.
-- Tienes deducciones que no se pudieron aplicar en la retención mensual (por inversión en vivienda habitual, aportaciones a planes de pensiones, donaciones, etc.).
-- Tu situación personal cambió a lo largo del año y aumentaron tus cargas familiares (nacimiento de un hijo, discapacidad sobrevenida).
-
-**Sale a pagar (más infrecuente pero posible) cuando:**
-- Tuviste más de un pagador en el año. Si el segundo pagador te abonó más de 1.500€, Hacienda calcula la retención de forma diferente, y la suma de ambas retenciones suele quedarse corta respecto al impuesto real.
-- Obtuviste ingresos adicionales no sujetos a retención o con retención insuficiente (alquileres, venta de acciones, premios…).
-- Pediste a tu empresa una retención más baja de la que correspondía.
-
-Si sabes que vas a tener dos pagadores en el mismo año (por ejemplo, porque cambias de empresa), puedes pedir a tu nuevo empleador que aplique una retención adicional voluntaria para evitar la sorpresa al hacer la declaración.
-
-## Cómo calcular tu retención mensual estimada
-
-La retención de IRPF que te aplica la empresa se calcula con una fórmula que Hacienda publica cada año y que tiene en cuenta el salario bruto anual estimado, las reducciones aplicables (como la reducción por rendimientos del trabajo), el mínimo personal y familiar, y la comunidad autónoma.
-
-Para una estimación rápida, el proceso es:
-
-1. Toma tu salario bruto anual.
-2. Resta las cotizaciones a la Seguridad Social (6,35%).
-3. Aplica la reducción por rendimientos del trabajo (entre 5.565€ para rentas bajas y 0€ para rentas superiores a 19.747,5€ en 2025).
-4. Resta el mínimo personal (5.550€).
-5. Aplica los tramos sobre la base liquidable resultante.
-6. El resultado anual dividido entre 12 es tu retención mensual bruta.
-
-Este cálculo puede variar si tienes otras circunstancias personales. La empresa utiliza el modelo oficial y el dato que tú le declaras en el modelo 145 (comunicación de datos al pagador).
-
-## Diferencias entre comunidades autónomas
-
-El tipo autonómico del IRPF varía, y puede tener un impacto real en tu neto anual para salarios altos. Como referencia aproximada para 2025:
-
-| Comunidad | Tipo autonómico en el tramo hasta 12.450€ | Observaciones |
+| Limite inferior (MXN/ano) | Cuota fija | Tasa sobre excedente |
 |---|---|---|
-| Madrid | 8,5% | Tipos reducidos en todos los tramos |
-| Cataluña | 10,5% | Tipos superiores a la media en tramos altos |
-| Andalucía | 9,5% | Tipos similares a la media nacional |
-| Valencia | 10% | Con tipos agravados en tramos altos |
-| País Vasco y Navarra | Régimen foral propio | Escala diferente |
+| $0 | $0 | 1.92 % |
+| $8,952.50 | $171.88 | 6.40 % |
+| $75,984.56 | $4,461.94 | 10.88 % |
+| $133,536.08 | $10,723.55 | 16.00 % |
+| $155,229.81 | $14,194.54 | 17.92 % |
+| $185,852.58 | $19,682.13 | 21.36 % |
+| $374,837.89 | $60,049.40 | 23.52 % |
+| $590,796.00 | $110,842.74 | 30.00 % |
+| $1,127,926.85 | $271,981.99 | 32.00 % |
+| $1,503,902.47 | $392,294.17 | 34.00 % |
+| $4,511,707.38 | $1,414,947.85 | 35.00 % |
 
-Para salarios a partir de 60.000€ anuales, la diferencia entre residir en Madrid o en Cataluña puede suponer más de 2.000€ anuales de diferencia en la factura fiscal.
+**Como se retiene en nomina:**
+La empresa calcula el ISR mensual estimado aplicando el subsidio al empleo (un credito fiscal para salarios bajos que reduce o elimina el ISR) y retiene la diferencia en cada pago. Al hacer la declaracion anual en abril, si retuvieron de mas te devuelven; si retuvieron de menos, pagas la diferencia.
 
-## Revisa tu retención en segundos
+**Ejemplo con salario de $25,000 MXN brutos al mes ($300,000 MXN/ano):**
+- El ingreso cae en el tramo del 23.52 % (entre $185,852 y $374,837)
+- ISR sobre $300,000: cuota fija $19,682.13 + (($300,000 - $185,852.58) × 21.36 %) = $19,682.13 + $24,387 = ~$44,069/ano
+- Retencion mensual estimada: ~$3,672/mes
+- Tipo efectivo: ~14.7 % sobre el bruto
 
-Si quieres calcular con exactitud cuánto deberías retener o cuánto te va a salir la declaración, usa la [calculadora de retención de IRPF](/irpf-retencion) de Calzix. Introduce tu salario bruto, tu situación personal y tu comunidad autónoma, y obtendrás el porcentaje de retención estimado, el impuesto anual total y el desglose por tramos.
+Importante: a diferencia de Espana, Mexico no tiene un minimo personal exento como tal, pero el subsidio al empleo compensa el ISR para salarios mensuales de hasta ~$10,000-$15,000 MXN aproximadamente.
 
-Para ver el impacto en tu nómina mensual completa, incluyendo también la Seguridad Social, la [calculadora de nómina](/calculadora-nomina) te da el neto exacto que recibirás en tu cuenta.
+---
 
-Entender los tramos del IRPF 2025 no es solo conocimiento fiscal: es saber cuánto valen realmente los incrementos de sueldo, cuándo te compensa aportar a un plan de pensiones o qué comunidad autónoma es más favorable si tienes movilidad geográfica.
+## Colombia: Impuesto de Renta para empleados 2025
+
+En Colombia el impuesto de renta de personas naturales se declara anualmente (abril-mayo). Para empleados, la empresa practica **retencion en la fuente** mensual.
+
+El umbral de retencion en 2025 aplica a partir de ingresos laborales superiores a **95 UVT mensuales** (~$4,408,025 COP). Empleados con salario menor a ese umbral generalmente no tienen retencion en la fuente laboral (aunque pueden tener impuesto al declarar si tienen otros ingresos).
+
+**Tramos aproximados de impuesto de renta 2025** (base en UVT anuales; 1 UVT 2025 = $49,799 COP):
+
+| Renta gravable (UVT/ano) | Rango en COP aprox. | Tarifa marginal |
+|---|---|---|
+| 0 a 1,090 | Hasta $54,280,910 | 0 % |
+| 1,090 a 1,700 | $54M a $84.7M | 19 % |
+| 1,700 a 4,100 | $84.7M a $204.2M | 28 % |
+| 4,100 a 8,670 | $204.2M a $432M | 33 % |
+| 8,670 a 18,970 | $432M a $945M | 35 % |
+| 18,970 a 31,000 | $945M a $1,544M | 37 % |
+| Mas de 31,000 | Mas de $1,544M | 39 % |
+
+**Deducciones importantes para empleados colombianos:**
+- Rentas exentas laborales: el 25 % del ingreso laboral neto (hasta 2,880 UVT/ano) esta exento
+- Aportes a pension AFP (4 % del salario): deducibles
+- Aportes salud EPS (4 % del salario): deducibles si el trabajador los asume
+
+---
+
+## Chile: Impuesto Unico de Segunda Categoria (IUSC) 2025
+
+En Chile los trabajadores dependientes pagan el **Impuesto Unico de Segunda Categoria** que se retiene mensualmente por el empleador. La escala es mensual:
+
+| Renta imponible mensual (CLP) | Tasa marginal |
+|---|---|
+| Hasta $820,658 | 0 % (exento) |
+| $820,659 - $1,822,574 | 4 % |
+| $1,822,575 - $3,037,624 | 8 % |
+| $3,037,625 - $4,252,673 | 13.5 % |
+| $4,252,674 - $5,467,722 | 23 % |
+| $5,467,723 - $7,275,624 | 30.4 % |
+| $7,275,625 - $18,188,424 | 35 % |
+| Mas de $18,188,425 | 40 % |
+
+*Valores referencia 2025 en CLP; la tabla se actualiza anualmente en UTA (Unidad Tributaria Anual).*
+
+La base imponible del IUSC es el salario bruto menos los aportes a AFP (~11.5 % del salario) y salud (7 % al Fonasa o Isapre). Esto significa que los descuentos previsionales reducen significativamente la base tributable.
+
+---
+
+## Peru: Impuesto a la Renta de Quinta Categoria 2025
+
+Para los trabajadores dependientes peruanos, el impuesto se denomina **Impuesto a la Renta de Quinta Categoria** y se calcula anualmente sobre los ingresos del ano en curso, con retenciones mensuales por el empleador.
+
+La escala usa la **UIT 2025 (S/ 5,350)**:
+
+| Renta neta anual | Tasa |
+|---|---|
+| Hasta 5 UIT (S/ 26,750) | 8 % |
+| De 5 a 20 UIT (S/ 26,750 - S/ 107,000) | 14 % |
+| De 20 a 35 UIT (S/ 107,000 - S/ 187,250) | 17 % |
+| De 35 a 45 UIT (S/ 187,250 - S/ 240,750) | 20 % |
+| Mas de 45 UIT (mas de S/ 240,750) | 30 % |
+
+Se descuenta como minimo exento **7 UIT (S/ 37,450)** antes de aplicar los tramos.
+
+**Ejemplo con sueldo de S/ 5,000 mensuales (S/ 60,000/ano):**
+- Renta bruta anual: S/ 60,000
+- Menos 7 UIT exentas: S/ 60,000 - S/ 37,450 = S/ 22,550 de renta neta gravable
+- Renta neta gravable cae entre 0 y 5 UIT: impuesto = 8 % × S/ 22,550 = S/ 1,804 anuales
+- Retencion mensual estimada: S/ 150/mes
+
+---
+
+## Argentina: Impuesto a las Ganancias 2024-2025
+
+Argentina tiene un esquema de Impuesto a las Ganancias para personas fisicas con cambios frecuentes. A partir de 2024 se incorporo el **Impuesto PAIS** y se modificaron los minimos no imponibles.
+
+Para empleados en relacion de dependencia, la AFIP aplica retencion en la fuente. El Minimo No Imponible (MNI) 2025 se actualiza trimestralmente; para la mayoria de los trabajadores, los salarios inferiores a aproximadamente **$3,500,000 ARS brutos mensuales** (actualizacion Jun 2025) quedaron fuera del impuesto con las reformas de 2024. Para los que superan ese umbral, las alicuotas van del 5 % al 35 % sobre el excedente.
+
+Dado que las cifras cambian con alta frecuencia por la inflacion y las reformas, se recomienda consultar el sitio de la **AFIP (afip.gob.ar)** para los valores vigentes actualizados.
+
+---
+
+## Como calcular tu tipo efectivo
+
+Independientemente del pais, el calculo del tipo efectivo sigue estos pasos:
+
+1. **Ingreso bruto anual** (sueldo bruto × 12 o × 13 si hay aguinaldo)
+2. **Menos deducciones autorizadas** (aportes previsionales, de salud, etc.)
+3. **Menos minimo exento** (tramo 0 % o deduccion base)
+4. **Base gravable** = resultado del paso anterior
+5. **Aplicar tramos escalonados** para calcular el impuesto total anual
+6. **Tipo efectivo** = impuesto total anual / ingreso bruto anual × 100
+
+El tipo marginal (el tramo mas alto al que llega tu ingreso) siempre es mayor que el tipo efectivo porque los tramos inferiores pagan porcentajes menores.
+
+---
+
+## Calculadoras por pais en Calzix
+
+Usa la **[calculadora de nomina](/calculadora-nomina)** para Mexico para obtener el desglose completo de ISR y deducciones IMSS. Para calcular tu numero en otros paises de LATAM, la **[calculadora de descuentos](/calcular-descuento)** te permite estimar rapidamente el impacto de los porcentajes sobre tu salario.
+
+Conocer los tramos del impuesto de tu pais no es solo informacion fiscal: es saber cuanto vale realmente un aumento de sueldo, cuando te conviene hacer deducciones voluntarias (como aportaciones a pension complementaria) y como comparar ofertas laborales en distintos paises de la region.

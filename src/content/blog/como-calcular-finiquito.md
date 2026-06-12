@@ -1,136 +1,189 @@
 ---
-titulo: "Cómo calcular el finiquito en España: fórmula, conceptos y ejemplo real"
-descripcion: "Guía completa para calcular el finiquito en España: vacaciones pendientes, pagas extra, salario pendiente y cuándo corresponde indemnización adicional."
+titulo: "Como calcular la liquidacion laboral en LATAM: Mexico, Colombia y Chile"
+descripcion: "Formula completa para calcular la liquidacion o finiquito en Mexico (90 dias + 20 dias/ano), Colombia (cesantias, prima, vacaciones) y Chile (mes por ano). Con ejemplos reales."
 categoria: "finanzas"
 fecha: "2026-06-07"
+modificado: "2026-06-12"
 keywords:
-  - "calcular finiquito"
-  - "finiquito España"
-  - "vacaciones pendientes finiquito"
-  - "pagas extra finiquito"
-  - "indemnización despido"
-  - "liquidación laboral"
-  - "cómo calcular finiquito"
+  - "calcular liquidacion Mexico"
+  - "finiquito Colombia cesantias"
+  - "liquidacion laboral Chile"
+  - "indemnizacion despido LATAM"
+  - "calculo finiquito"
+  - "vacaciones pendientes liquidacion"
+  - "como calcular finiquito"
 autor: "Equipo Calzix"
 publicado: true
 ---
 
-# Cómo calcular el finiquito en España: fórmula, conceptos y ejemplo real
+Cuando una relacion laboral termina — por despido, renuncia, vencimiento de contrato o mutuo acuerdo — el trabajador tiene derecho a una liquidacion que recoge todas las prestaciones pendientes. En LATAM las reglas varian significativamente entre paises. Esta guia te explica como calcular la liquidacion en Mexico, Colombia y Chile con formulas y ejemplos numericos reales.
 
-Cuando una relación laboral llega a su fin, ya sea por despido, dimisión, fin de contrato o mutuo acuerdo, la empresa tiene la obligación de entregarte el finiquito. Muchos trabajadores firman el documento sin revisarlo porque no saben qué tienen que recibir. Este artículo te explica exactamente cómo calcular el finiquito en España, qué conceptos lo componen, cómo aplicar la fórmula y qué diferencia hay respecto a la indemnización.
+## Que incluye una liquidacion laboral (componentes comunes)
 
-## Qué es el finiquito y qué no es
+Independientemente del pais, una liquidacion laboral tiene dos grandes bloques:
 
-El finiquito es la **liquidación económica que cierra la relación laboral**. Recoge todo lo que la empresa te debe a 31 de diciembre de tu último día de trabajo: el salario de los días trabajados y no cobrados, la parte proporcional de las pagas extraordinarias, y las vacaciones que tienes pendientes de disfrutar.
+1. **Partes proporcionales**: lo que te deben del periodo trabajado y no cobrado (dias de salario, vacaciones no disfrutadas, aguinaldo/prima proporcional, etc.)
+2. **Indemnizacion**: cantidad adicional que la ley exige pagar en ciertos tipos de terminacion (despido sin causa justificada). No aplica cuando el trabajador renuncia voluntariamente.
 
-Lo que el finiquito **no es** es la indemnización por despido. Este error es muy frecuente y genera conflictos. La indemnización es una cantidad adicional que la ley obliga a pagar en ciertos tipos de extinción del contrato (despido improcedente, despido objetivo…), pero no forma parte del finiquito en sí. Son dos documentos y dos conceptos separados, aunque a veces la empresa los presenta juntos por comodidad.
+---
 
-Si te vas tú por voluntad propia (dimisión), recibirás el finiquito pero no tendrás derecho a indemnización. Si te despiden sin causa justificada, recibirás el finiquito más la indemnización que corresponda.
+## Mexico: liquidacion por despido injustificado
 
-## Los componentes del finiquito
+En Mexico, la **Ley Federal del Trabajo (LFT)** establece que el despido sin causa justificada genera derecho a dos tipos de pago: la liquidacion propiamente dicha y las partes proporcionales de fin de relacion.
 
-Un finiquito bien calculado tiene estos bloques:
+### Componentes de la liquidacion mexicana
 
-**1. Salario pendiente de cobro**
-Son los días del mes en curso que has trabajado y que aún no se han cobrado. Si cobras el día 5 del mes siguiente y te vas el día 20 del mes en curso, la empresa te debe 20 días de salario.
+**1. Indemnizacion constitucional (3 meses):**
+Tres meses de salario integrado. El **salario integrado** incluye el salario diario ordinario mas las partes proporcionales de prestaciones: aguinaldo, vacaciones y prima vacacional.
 
-La fórmula es sencilla:
-**Salario pendiente = (Salario mensual bruto / 30) × días trabajados no cobrados**
+Formula del salario diario integrado (SDI):
+```
+SDI = Salario diario + (Aguinaldo/365) + (Vacaciones × Prima vacacional / 365)
+```
 
-**2. Parte proporcional de pagas extraordinarias**
-En España, el Estatuto de los Trabajadores establece dos pagas extras mínimas al año (aunque el convenio puede ampliarlas). Si tienes pagas extra no prorrateadas, tienes derecho a la parte proporcional del periodo trabajado desde la última paga extra hasta el día de tu baja.
+Ejemplo con salario de $15,000 MXN mensuales, 15 dias de aguinaldo, 12 dias de vacaciones y 25 % de prima vacacional:
+- Salario diario = $15,000 / 30 = $500
+- Parte proporcional aguinaldo = (15 × $500) / 365 = $20.55/dia
+- Parte proporcional vacaciones = (12 × $500 × 0.25) / 365 = $4.11/dia
+- SDI = $500 + $20.55 + $4.11 = **$524.66/dia**
+- 3 meses = 90 dias × $524.66 = **$47,219**
 
-La fórmula:
-**PP pagas extra = (Paga extra / 12) × meses transcurridos desde la última paga extra**
+**2. Veinte dias por ano trabajado:**
+Adicionalmente, 20 dias de salario integrado por cada ano completo trabajado.
 
-O, si tu convenio indica los días exactos de devengo, el cálculo se ajusta a esos días.
+Ejemplo con 3 anos de antiguedad:
+20 dias × $524.66 × 3 anos = **$31,480**
 
-**3. Vacaciones no disfrutadas**
-Es el componente que más confusión genera. Cada trabajador tiene derecho a 30 días naturales de vacaciones al año (o los que marque el convenio, si son más). Si al final de la relación laboral tienes vacaciones del año en curso que no has disfrutado, la empresa te las tiene que pagar.
+**3. Prima de antiguedad (12 dias por ano, topada a 2 SMG):**
+12 dias de salario por ano trabajado, con un tope de 2 salarios minimos generales diarios. Esta prestacion aplica tanto a despido como a renuncia voluntaria despues de 15 anos.
 
-**Fórmula de días de vacaciones pendientes:**
+**4. Partes proporcionales (aplican en cualquier terminacion, incluida renuncia):**
+- Aguinaldo proporcional: (15 dias / 365) × dias trabajados en el ano × salario diario
+- Prima vacacional proporcional: (dias_vacaciones × 0.25 / 365) × dias trabajados
+- Vacaciones no disfrutadas: dias_vacaciones_devengadas - dias_tomados × salario diario
 
-**Días pendientes = (Días_vacaciones_anuales × meses_trabajados_en_el_año / 12) − días_ya_disfrutados**
+### Resumen: que corresponde segun el motivo de la terminacion
 
-Si el convenio te da 30 días de vacaciones anuales, has trabajado 4 meses completos en el año en curso y ya has disfrutado 2 días:
+| Componente | Renuncia voluntaria | Despido justificado | Despido injustificado |
+|---|---|---|---|
+| Partes proporcionales | Si | Si | Si |
+| 3 meses de salario integrado | No | No | Si |
+| 20 dias × ano | No | No | Si |
+| Prima de antiguedad | Solo si > 15 anos | Si | Si |
 
-Días pendientes = (30 × 4 / 12) − 2 = 10 − 2 = **8 días pendientes**
+---
 
-Para convertirlos a dinero:
-**Importe vacaciones = (Salario mensual bruto × 12 / 365) × días pendientes**
+## Colombia: liquidacion de prestaciones sociales
 
-O, más habitual en la práctica:
-**Importe vacaciones = (Salario diario bruto) × días pendientes**
+En Colombia la terminacion del contrato genera la obligacion de pagar las **prestaciones sociales pendientes** mas la **indemnizacion** si el despido es sin justa causa.
 
-Donde el salario diario bruto = salario anual bruto / 365.
+### Prestaciones sociales a liquidar
 
-**4. Horas extraordinarias pendientes**
-Si tienes horas extra realizadas y no compensadas ni en tiempo libre ni en dinero, también forman parte del finiquito. El importe depende de lo que marque el convenio colectivo.
+**1. Cesantias**
+Un mes de salario por cada ano trabajado (o proporcional):
+```
+Cesantias = Salario mensual × dias_trabajados / 360
+```
 
-## Ejemplo completo paso a paso
+Si el trabajador gano $3,200,000 COP y trabajo 8 meses (240 dias):
+Cesantias = $3,200,000 × 240 / 360 = **$2,133,333 COP**
 
-Supongamos este caso:
+**2. Intereses sobre cesantias**
+12 % anual sobre el saldo de cesantias acumulado al 31 de diciembre o al corte:
+Intereses = Cesantias × 0.12 × dias_del_periodo / 360
 
-- Salario bruto mensual: 1.800€
-- Días de vacaciones anuales según convenio: 24 días naturales
-- Fecha de baja: 30 de abril (ha trabajado 4 meses completos en el año)
-- Días de vacaciones ya disfrutados en el año: 2
-- Último cobro de nómina: el 5 de abril (cubre el mes de marzo completo)
-- Pagas extra: dos al año, en junio y diciembre (no prorrateadas)
+**3. Prima de servicios**
+15 dias de salario por semestre (30 dias al ano), proporcional:
+Prima = Salario mensual × dias_trabajados / 360
 
-**Paso 1: Salario pendiente**
-Ha trabajado todo abril y aún no lo ha cobrado.
-Salario pendiente = 1.800€ (mes completo de abril)
+Con el mismo ejemplo de 8 meses: Prima = $3,200,000 × 240 / 360 = **$2,133,333 COP**
 
-**Paso 2: Parte proporcional de pagas extra**
-Desde la última paga extra (diciembre del año anterior) hasta su baja en abril han pasado 4 meses.
-PP paga extra de junio = (1.800€ / 6) × 4 = **1.200€**
-La paga de diciembre aún no ha devengado (quedan 8 meses para recibirla), así que no se incluye.
+**4. Vacaciones pendientes**
+15 dias habiles por ano, proporcional al tiempo trabajado:
+Vacaciones = (Salario mensual / 30) × 15 × anos_trabajados
 
-Nota: si el convenio establece que cada paga extra equivale a una mensualidad, la parte proporcional de la paga de junio (que se devenga de enero a junio) después de 4 meses es 4/6 de esa paga.
+**5. Indemnizacion por despido sin justa causa (contratos a termino indefinido)**
+- Salarios hasta 10 SMLMV: 30 dias de salario por el primer ano + 20 dias por cada ano adicional
+- Salarios superiores a 10 SMLMV: 20 dias de salario por el primer ano + 15 dias por cada ano adicional
 
-**Paso 3: Vacaciones pendientes**
-Días pendientes = (24 × 4 / 12) − 2 = 8 − 2 = **6 días**
-Salario diario bruto = (1.800€ × 12) / 365 = 21.600 / 365 = **59,18€/día**
-Importe vacaciones = 59,18€ × 6 = **355,07€**
+### Ejemplo completo Colombia
 
-**Paso 4: Total finiquito bruto**
+Empleado con 2 anos y 4 meses de servicio, salario de $3,500,000 COP, despedido sin justa causa:
 
-| Concepto | Importe |
-|---|---|
-| Salario pendiente (abril) | 1.800,00€ |
-| PP paga extra junio (4/6) | 1.200,00€ |
-| Vacaciones no disfrutadas (6 días) | 355,07€ |
-| **Total bruto** | **3.355,07€** |
+| Concepto | Calculo | Valor |
+|---|---|---|
+| Cesantias (28 meses) | $3.5M × 840/360 | $8,166,667 |
+| Intereses cesantias | $8.16M × 12 % × 120/360 | $326,667 |
+| Prima servicios | $3.5M × 840/360 | $8,166,667 |
+| Vacaciones pendientes | ~14 dias habiles | $1,633,333 |
+| Indemnizacion (30 d + 20 d × 1 ano adicional) | 50 dias × $116,667 | $5,833,333 |
+| **Total bruto** | | **$24,126,667 COP** |
 
-De este total se descontará la Seguridad Social (6,35%) y el IRPF correspondiente. El neto que recibirás dependerá de tu porcentaje de retención habitual.
+---
 
-## La indemnización: cuándo corresponde y cuánto es
+## Chile: finiquito laboral
 
-Como ya señalamos, la indemnización no forma parte del finiquito. Es una cantidad adicional que depende del motivo de la extinción del contrato:
+En Chile el **finiquito** es el documento legal que formaliza la terminacion del contrato. Debe firmarse ante notario o inspector del trabajo para ser valido.
 
-**Despido improcedente:** 33 días de salario por año trabajado (con un máximo de 24 mensualidades). Si el despido fue anterior a la reforma laboral de 2012, los años anteriores a febrero de ese año se calculan a 45 días.
+### Componentes del finiquito chileno
 
-**Despido objetivo** (causas económicas, organizativas, técnicas o productivas): 20 días de salario por año trabajado, con máximo de 12 mensualidades.
+**1. Remuneraciones pendientes**
+Dias del mes en curso trabajados y no cobrados:
+Salario pendiente = (Sueldo mensual / dias del mes) × dias trabajados no pagados
 
-**Fin de contrato temporal:** 12 días de salario por año trabajado (para contratos formalizados a partir de enero de 2022).
+**2. Vacaciones proporcionales no disfrutadas**
+La ley chilena otorga 15 dias habiles de vacaciones por ano trabajado, proporcionales al tiempo en la empresa actual:
+Dias vacaciones = 15 × meses_trabajados / 12
+Valor = (Sueldo mensual / 30) × dias_vacaciones
 
-**Dimisión o mutuo acuerdo:** no hay indemnización legal, aunque en el mutuo acuerdo las partes pueden pactar una cantidad.
+**3. Gratificacion proporcional**
+Si la empresa paga gratificacion mensual garantizada (el 25 % del sueldo mensual topado a 4.75 IMM), ya esta incluida. Si paga la gratificacion anual del 30 % de las utilidades al final del ejercicio, corresponde la parte proporcional del periodo.
 
-Si te despiden y la empresa no te informa del motivo o el motivo no es suficiente, tienes 20 días hábiles para impugnar el despido ante el Servicio de Mediación (SMAC u organismo equivalente de tu comunidad) antes de acudir al juzgado de lo social.
+**4. Indemnizacion por anos de servicio (si aplica)**
+Solo se paga cuando la causal de despido es "necesidades de la empresa" (articulo 161 del Codigo del Trabajo):
+- 1 mes de ultimo sueldo por cada ano de servicio y fraccion superior a 6 meses
+- Maximo: 11 meses
+- La indemnizacion sustitutiva del aviso previo es 1 mes adicional si no se dio el mes de aviso
 
-## Errores frecuentes al revisar el finiquito
+**Causales que NO dan derecho a indemnizacion por anos de servicio:**
+- Renuncia voluntaria
+- Mutuo acuerdo con finiquito que especifica la causal
+- Termino del contrato a plazo fijo o por obra o faena
 
-**No revisar el cálculo de vacaciones.** Las empresas a veces calculan las vacaciones en días hábiles cuando el convenio establece días naturales, o viceversa. La diferencia puede ser significativa.
+### Ejemplo finiquito Chile
 
-**Aceptar un finiquito por debajo de lo que corresponde.** Puedes firmar el finiquito con la indicación "no conforme" en el documento. Eso no te impide cobrarlo y te protege para reclamar la diferencia posteriormente.
+Trabajadora con 3 anos y 4 meses de servicio, sueldo $1,200,000 CLP, despedida por necesidades de la empresa (Art. 161), sin aviso previo:
 
-**Confundir el finiquito con la renuncia a cualquier reclamación.** Firmar el finiquito no implica renunciar a reclamar la indemnización si esta no está incluida o si crees que el despido es improcedente. Son conceptos independientes.
+| Concepto | Calculo | Valor |
+|---|---|---|
+| Remuneracion pendiente (15 dias) | $1.2M / 30 × 15 | $600,000 |
+| Vacaciones pendientes (8.3 dias) | $1.2M / 30 × 8.3 | $332,000 |
+| Indemnizacion anos servicio (3 meses) | $1.2M × 3 | $3,600,000 |
+| Indemnizacion sustitutiva aviso previo | $1,200,000 | $1,200,000 |
+| **Total bruto finiquito** | | **$5,732,000 CLP** |
 
-**Olvidar la parte proporcional de conceptos variables.** Si tu salario incluye comisiones, bonus o complementos variables, el salario de referencia para el cálculo del finiquito y de la indemnización debe incluir el promedio de esos conceptos en el último año.
+---
 
-## Calcula tu finiquito sin errores
+## Peru y Argentina: referencia rapida
 
-Para evitar sorpresas y revisar rápidamente si lo que te ofrece la empresa es correcto, usa la [calculadora de finiquito](/finiquito) de Calzix. Introduce tu salario, las fechas de inicio y fin del contrato, los días de vacaciones disfrutados y el número de pagas extra, y obtendrás el desglose completo de lo que te corresponde.
+**Peru:** la liquidacion incluye CTS (Compensacion por Tiempo de Servicios, depositada semestral en una cuenta bancaria del trabajador), vacaciones no tomadas (30 dias naturales por ano), gratificaciones proporcionales (julio y diciembre, cada una equivale a un mes de sueldo), y utilidades si la empresa tiene mas de 20 trabajadores. La indemnizacion por despido arbitrario es 1.5 remuneraciones ordinarias por mes calendario dejado de laborar hasta 12 remuneraciones.
 
-Firmar un finiquito mal calculado puede suponer perder cientos o miles de euros. Tomarte diez minutos para revisar las cifras antes de firmar es siempre una buena inversión de tiempo.
+**Argentina:** la indemnizacion por despido sin causa (Art. 245 LCT) equivale a 1 mes de salario por ano o fraccion mayor a 3 meses trabajados, con un minimo de 2 meses de salario, tope en 3 veces el promedio del convenio colectivo aplicable. Ademas corresponde: integracion del mes de despido, preaviso (1 mes si tiene mas de 5 anos, 2 meses si tiene mas), SAC (aguinaldo) proporcional y vacaciones proporcionales.
+
+---
+
+## Errores frecuentes al revisar la liquidacion
+
+**No revisar el salario integrado usado.** En Mexico, si el empleador usa el salario base en lugar del salario integrado, la liquidacion queda subcalculada. Verifica que incluya la parte proporcional de todas las prestaciones.
+
+**Aceptar sin revisar.** En todos los paises de LATAM puedes firmar el finiquito o liquidacion con la leyenda "no conforme" o "bajo protesta", lo que te permite cobrar el monto y reclamar la diferencia ante la autoridad laboral. No firmar significa no cobrar, firmar sin reserva generalmente cierra la posibilidad de reclamar.
+
+**Confundir renuncia con despido.** Si renuncias, en Mexico y Colombia no tienes derecho a la indemnizacion. Si la empresa te presiona a renunciar, eso se llama despido encubierto y puede impugnarse.
+
+---
+
+## Calcula tu liquidacion sin errores
+
+Usa la **[calculadora de finiquito](/finiquito)** de Calzix para Mexico: introduce tu salario, antiguedad, dias de aguinaldo y vacaciones, y obtendras el desglose completo de lo que te corresponde segun la LFT.
+
+Tomarte 10 minutos para revisar la liquidacion antes de firmar puede significar la diferencia de varios meses de salario. Las autoridades laborales — PROFEDET en Mexico, Ministerio del Trabajo en Colombia, Inspeccion del Trabajo en Chile — atienden gratuitamente consultas y reclamaciones laborales.
