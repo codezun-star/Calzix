@@ -3,6 +3,7 @@ titulo: "Metros a pies y pulgadas: tabla de conversión y fórmula exacta"
 descripcion: "Convierte metros a pies y pulgadas con la fórmula exacta, tabla completa de alturas corporales y un truco mental para hacerlo sin calculadora."
 categoria: "guias"
 fecha: "2026-06-07"
+modificado: "2026-06-12"
 keywords:
   - "metros a pies"
   - "convertir metros a pies"
@@ -29,7 +30,7 @@ Sin embargo, tres países utilizan el sistema imperial como medida oficial en la
 
 Pero el sistema imperial tampoco ha desaparecido del todo en sectores técnicos y especializados, incluso en países plenamente métricos:
 
-- **Aviación internacional:** Las altitudes de vuelo se expresan en pies en todo el mundo, sin excepción. Un vuelo de Madrid a Tokio vuela a "Flight Level 380", es decir, 38.000 pies (aproximadamente 11.600 metros).
+- **Aviación internacional:** Las altitudes de vuelo se expresan en pies en todo el mundo, sin excepción. Un vuelo de Ciudad de México a Tokio vuela a "Flight Level 380", es decir, 38.000 pies (aproximadamente 11.600 metros).
 - **Náutica:** La profundidad marina se mide en brazas (fathoms) y la velocidad en nudos. La altura de las olas en los partes meteorológicos náuticos suele darse en pies.
 - **Tecnología:** Las pantallas de televisores, monitores y smartphones se miden en pulgadas de diagonal. Una pantalla de "55 pulgadas" tiene 139,7 cm de diagonal.
 - **Construcción en EEUU:** Tuberías, madera de obra y perfilería metálica se comercializan en medidas imperiales en el mercado norteamericano.
@@ -90,9 +91,9 @@ Metros = pulgadas × 0,0254
 |---|---|---|---|
 | 1,00 m | 3,281 pies | 3' 4" | Altura de puerta interior estándar (sin contar el marco) |
 | 1,50 m | 4,921 pies | 4' 11" | Estatura baja adulta |
-| 1,60 m | 5,249 pies | 5' 3" | Estatura media femenina en España |
-| 1,70 m | 5,577 pies | 5' 7" | Estatura media masculina baja |
-| 1,75 m | 5,741 pies | 5' 9" | Estatura media masculina en España |
+| 1,60 m | 5,249 pies | 5' 3" | Estatura media femenina en Mexico y Colombia |
+| 1,70 m | 5,577 pies | 5' 7" | Estatura media masculina en Mexico y Colombia |
+| 1,75 m | 5,741 pies | 5' 9" | Estatura media masculina en Chile y Argentina |
 | 1,80 m | 5,906 pies | 5' 11" | Considerado alto en muchos países |
 | 1,90 m | 6,234 pies | 6' 3" | Estatura muy alta |
 | 2,00 m | 6,562 pies | 6' 7" | Raro — nivel de jugador de baloncesto profesional |

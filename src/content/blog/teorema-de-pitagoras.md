@@ -3,6 +3,7 @@ titulo: "Teorema de Pitágoras: fórmula, ejemplos reales y cómo usarlo en el d
 descripcion: "Aprende el teorema de Pitágoras con su fórmula, las tres variantes para calcular cualquier lado y 5 aplicaciones reales sorprendentes. Con ejemplos paso a paso."
 categoria: "tutoriales"
 fecha: "2026-06-07"
+modificado: "2026-06-12"
 keywords:
   - "teorema de Pitágoras"
   - "fórmula Pitágoras"
