@@ -44,11 +44,36 @@
       "Bash(cd \"C:\\\\Users\\\\Jose\\\\calzix\" && ls ~/AppData/Local/ms-playwright/ 2>/dev/null | head -5 || echo \"NO_BROWSERS\")",
       "Read(//c/Users/Jose/AppData/Local/ms-playwright/**)",
       "Bash(node tests/audit.mjs)",
-      "Bash(timeout 60 node -e ' *)"
+      "Bash(timeout 60 node -e ' *)",
+      "Bash(grep -o \"slug: '[^']*'\" src/lib/constants/calcs.ts | sed \"s/slug: '//;s/'$//\" | sort > /tmp/slugs_in_calcs.txt && wc -l /tmp/slugs_in_calcs.txt)",
+      "Bash(ls -1 src/pages/*.astro | sed 's|src/pages/||;s|\\\\.astro||' | grep -v '\\\\[' | sort > /tmp/pages_existing.txt && wc -l /tmp/pages_existing.txt)",
+      "Bash(grep -o \"'[a-z0-9-]*':\" src/lib/constants/seo.ts | sed \"s/'://;s/'//g\" | sort | uniq > /tmp/seo_keys.txt && wc -l /tmp/seo_keys.txt)",
+      "Bash(grep -h \"import.*from '@/components/tools\" src/pages/*.astro | sed \"s/.*from '@\\\\/components\\\\/tools\\\\///;s/'//;s/;//\" | sort | uniq > /tmp/imported_tools.txt && wc -l /tmp/imported_tools.txt)",
+      "Bash(ls -1 src/components/tools/*.tsx | sed 's|.*/||;s|\\\\.tsx||' | sort > /tmp/existing_tools.txt && wc -l /tmp/existing_tools.txt)",
+      "Bash(comm -13 /tmp/imported_tools.txt /tmp/existing_tools.txt)",
+      "Bash(wc -l /tmp/orphaned_tools.txt)",
+      "Bash(grep \"alojamiento\\\\|autonomia\\\\|cara-o-cruz\\\\|conversor-caudal\\\\|conversor-densidad\\\\|conversor-eficiencia\\\\|conversor-frecuencia\\\\|conversor-fuerza\\\\|conversor-iluminacion\\\\|conversor-par\\\\|conversor-potencia\\\\|diluciones\\\\|distancia-a-pie\\\\|calculadora-factorial\\\\|libros-al\\\\|mol-masa\\\\|segunda-ley\\\\|numero-placas\\\\|permutaciones\\\\|calculadora-ph\\\\|tiempo-terminar\\\\|umbral-renta\\\\|vacaciones\" /tmp/pages_existing.txt)",
+      "Bash(grep -h \"import.*from '@/components/tools\" src/pages/*.astro 2>/dev/null | sed \"s/.*from '@\\\\/components\\\\/tools\\\\///;s/'//;s/;//\" | sort | uniq > /tmp/imported_tools_corrected.txt && wc -l /tmp/imported_tools_corrected.txt)",
+      "Bash(comm -13 /tmp/imported_tools_corrected.txt /tmp/existing_tools.txt)",
+      "Bash(cat /tmp/imported_tools_corrected.txt)",
+      "Read(//c/Users/Jose/calzix/src/pages/**)",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\Jose\\\\calzix\" -File | Where-Object { $_.Name -notmatch \"^\\(CLAUDE|CALCULADORAS|package|package-lock|tsconfig|astro\\\\.config|\\\\.gitignore\\)\" } | Select-Object Name)",
+      "Bash(ls -la \"C:\\\\Users\\\\Jose\")",
+      "Read(//c/Users/Jose/**)",
+      "Bash(Get-ChildItem \"c:\\\\Users\\\\Jose\\\\calzix\\\\src\\\\components\\\\tools\" -Filter \"*.tsx\")",
+      "Bash(Select-Object -ExpandProperty Count)",
+      "Bash(Remove-Item \"C:\\\\Users\\\\Jose\\\\.claude\\\\projects\\\\c--Users-Jose-calzix\\\\memory\\\\seo_metadata_audit.md\" -Force)",
+      "Bash(Remove-Item \"C:\\\\Users\\\\Jose\\\\.claude\\\\projects\\\\c--Users-Jose-calzix\\\\memory\\\\seo_faq_expansion.md\" -Force)",
+      "Bash(Write-Host \"Deleted\")",
+      "Bash(find /mnt/c/Users/Jose/calzix/src/components/tools -name \"*.tsx\" | grep -iE \"Palabras|TiempoTerminar|Comprension|Autonomia|Costo|Litros|DistanciaA|DistanciaC|Ruta|JetLag\")",
+      "Read(//mnt/c/Users/Jose/calzix/src/components/**)",
+      "Bash(dir \"C:\\\\Users\\\\Jose\\\\calzix\\\\src\\\\components\\\\tools\" /b)",
+      "Bash(findstr /i \"Palabras TiempoTerminar Comprension Autonomia Costo Litros DistanciaA DistanciaC Ruta JetLag\")"
     ],
     "additionalDirectories": [
       "C:\\Users\\Jose\\calzix",
-      "C:\\Users\\Jose\\calzix\\src\\pages"
+      "C:\\Users\\Jose\\calzix\\src\\pages",
+      "C:\\Users\\Jose\\calzix\\src\\pages\\[grupo]"
     ]
   }
 }
