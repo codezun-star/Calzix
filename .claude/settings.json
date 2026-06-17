@@ -68,7 +68,8 @@
       "Bash(find /mnt/c/Users/Jose/calzix/src/components/tools -name \"*.tsx\" | grep -iE \"Palabras|TiempoTerminar|Comprension|Autonomia|Costo|Litros|DistanciaA|DistanciaC|Ruta|JetLag\")",
       "Read(//mnt/c/Users/Jose/calzix/src/components/**)",
       "Bash(dir \"C:\\\\Users\\\\Jose\\\\calzix\\\\src\\\\components\\\\tools\" /b)",
-      "Bash(findstr /i \"Palabras TiempoTerminar Comprension Autonomia Costo Litros DistanciaA DistanciaC Ruta JetLag\")"
+      "Bash(findstr /i \"Palabras TiempoTerminar Comprension Autonomia Costo Litros DistanciaA DistanciaC Ruta JetLag\")",
+      "Bash(grep -v \"is:inline\\\\|//\\\\|JSON-LD\\\\|schema\\\\|application/ld\")"
     ],
     "additionalDirectories": [
       "C:\\Users\\Jose\\calzix",
