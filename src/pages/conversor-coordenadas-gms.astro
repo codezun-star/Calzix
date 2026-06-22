@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ConversorCoordenadasGmsTool from '@/components/tools/ConversorCoordenadasGmsTool';
+---
+
+<CalcLayout slug="conversor-coordenadas-gms"
+  whatIs="Este conversor transforma coordenadas geográficas entre el formato de grados decimales (como 40,4168°) y el formato de grados, minutos y segundos o GMS (como 40° 25' 0,5''), en ambos sentidos. Un grado se divide en 60 minutos y cada minuto en 60 segundos, igual que las horas. Sirve tanto para latitud como para longitud, y respeta el signo para indicar el hemisferio."
+  whyUse="Las coordenadas geográficas se expresan de dos maneras según el contexto: los GPS y mapas digitales (Google Maps) suelen usar grados decimales, mientras que la cartografía clásica, la náutica y la aviación usan grados, minutos y segundos. Este conversor permite pasar de un formato a otro para introducir una ubicación en cualquier sistema, leer mapas antiguos o trabajar con instrumentos de navegación."
+  faqs={[
+    { q: '¿Qué diferencia hay entre grados decimales y GMS?', a: 'Son dos formas de escribir la misma coordenada. En grados decimales, los minutos y segundos se expresan como la parte decimal del grado: 40,4168°. En GMS se separan: 40 grados, 25 minutos y 0,5 segundos. Los decimales son más cómodos para cálculos y bases de datos; los GMS son tradicionales en navegación y cartografía.' },
+    { q: '¿Cómo se convierte de decimal a GMS?', a: 'La parte entera son los grados. La parte decimal se multiplica por 60 para obtener los minutos (su parte entera), y el decimal restante se multiplica de nuevo por 60 para los segundos. Por ejemplo, 40,4168°: 40 grados; 0,4168 × 60 = 25,008 → 25 minutos; 0,008 × 60 ≈ 0,5 segundos. Resultado: 40° 25′ 0,5″.' },
+    { q: '¿Cómo se convierte de GMS a decimal?', a: 'Se suman los grados más los minutos divididos entre 60 más los segundos divididos entre 3600. Por ejemplo, 40° 25′ 30″ = 40 + 25/60 + 30/3600 = 40 + 0,4167 + 0,0083 = 40,425°. La calculadora hace esta suma automáticamente y conserva el signo para indicar si es norte/sur o este/oeste.' },
+    { q: '¿Cómo se indica el hemisferio?', a: 'El signo de la coordenada indica el hemisferio: latitud positiva es norte y negativa es sur; longitud positiva es este y negativa es oeste. Por ejemplo, −34,60° de latitud corresponde al hemisferio sur (como Buenos Aires). En esta calculadora, introduce un valor negativo para los hemisferios sur y oeste.' },
+    { q: '¿Qué precisión tienen los segundos?', a: 'Un segundo de arco equivale aproximadamente a 31 metros sobre la superficie terrestre (en la latitud), por lo que los decimales de segundo aportan precisión de pocos metros. Para usos cotidianos basta con uno o dos decimales en los segundos. La calculadora muestra los segundos con decimales para no perder precisión en la conversión.' },
+  ]}
+>
+  <ConversorCoordenadasGmsTool client:load />
+</CalcLayout>

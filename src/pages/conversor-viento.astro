@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ConversorVientoTool from '@/components/tools/ConversorVientoTool';
+---
+
+<CalcLayout slug="conversor-viento"
+  whatIs="Este conversor traduce la velocidad del viento expresada en kilómetros por hora a su grado correspondiente en la escala de Beaufort, una escala del 0 al 12 que describe la fuerza del viento por sus efectos observables. Además muestra la equivalencia en nudos y en metros por segundo. Así, sabrás si un viento de 45 km/h es una 'brisa fuerte' (grado 6) o algo más serio, junto con sus valores en otras unidades náuticas."
+  whyUse="La escala de Beaufort es el lenguaje estándar de la meteorología marina, la navegación y los partes del tiempo para describir la intensidad del viento sin instrumentos. Este conversor es útil para navegantes, pescadores, aficionados a deportes al aire libre y cualquiera que quiera interpretar un parte meteorológico. Convertir a nudos y m/s permite además trabajar con las unidades de la náutica y la física."
+  faqs={[
+    { q: '¿Qué es la escala de Beaufort?', a: 'Es una escala empírica que clasifica la fuerza del viento del 0 (calma) al 12 (huracán) según sus efectos visibles en el mar y en tierra: el movimiento del humo, las ramas, las olas o los daños. La creó el almirante Francis Beaufort en 1805 para estandarizar los partes náuticos sin necesidad de instrumentos de medida.' },
+    { q: '¿A cuántos km/h equivale cada grado?', a: 'Algunos tramos de referencia: grado 0 (calma) menos de 1 km/h; grado 3 (brisa débil) 12-19 km/h; grado 6 (brisa fuerte) 39-49 km/h; grado 8 (temporal) 62-74 km/h; grado 10 (temporal duro) 89-102 km/h; y grado 12 (huracán) más de 117 km/h. La calculadora sitúa cualquier velocidad en su grado correspondiente.' },
+    { q: '¿Qué es un nudo y por qué se usa para el viento?', a: 'Un nudo es una milla náutica por hora, equivalente a 1,852 km/h. Se usa en navegación marítima y aérea porque la milla náutica está ligada a la geometría de la Tierra (un minuto de latitud). Los partes meteorológicos marinos suelen dar la velocidad del viento en nudos, de ahí la utilidad de convertir desde km/h.' },
+    { q: '¿A partir de qué viento es peligroso?', a: 'A partir del grado 6 (brisa fuerte, 39-49 km/h) ya es difícil usar paraguas y se complica la navegación de embarcaciones pequeñas. El grado 8 (temporal, 62-74 km/h) rompe ramas y dificulta caminar. A partir del grado 10 hay daños estructurales, y el grado 12 (huracán) es devastador. Conviene extremar la precaución desde el grado 7-8.' },
+    { q: '¿Cómo se pasa de km/h a m/s?', a: 'Se divide la velocidad en km/h entre 3,6. Por ejemplo, 45 km/h son 45 / 3,6 = 12,5 m/s. Los metros por segundo son la unidad del Sistema Internacional y se usan en física y en algunos servicios meteorológicos. La calculadora muestra los tres valores —km/h, nudos y m/s— junto con el grado de Beaufort.' },
+  ]}
+>
+  <ConversorVientoTool client:load />
+</CalcLayout>

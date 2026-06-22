@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ConversorTiempoDecimalTool from '@/components/tools/ConversorTiempoDecimalTool';
+---
+
+<CalcLayout slug="conversor-tiempo-decimal"
+  whatIs="Este conversor transforma el tiempo entre el formato de horas y minutos (como 2:30) y el formato decimal (como 2,5 horas), en ambos sentidos. La conversión se basa en que una hora tiene 60 minutos, así que 30 minutos son 0,5 horas y 15 minutos son 0,25 horas. Es una operación sencilla pero propensa a errores cuando se hace de cabeza, sobre todo al sumar tiempos para una nómina o una factura."
+  whyUse="El tiempo decimal es imprescindible para calcular pagos por horas, facturar trabajo, registrar jornadas laborales y rellenar partes de horas. Los sistemas de nómina y facturación trabajan en decimal: si has trabajado 7 horas y 45 minutos, necesitas saber que son 7,75 horas para multiplicarlas por tu tarifa. Esta herramienta evita el error típico de tratar los minutos como céntimos (poner 7,45 en vez de 7,75)."
+  faqs={[
+    { q: '¿Cómo se pasan los minutos a decimal?', a: 'Se dividen los minutos entre 60. Por ejemplo, 30 minutos son 30/60 = 0,5 horas; 15 minutos son 0,25; y 45 minutos son 0,75. Así, 2 horas y 30 minutos equivalen a 2,5 horas en decimal. El error más común es escribir directamente los minutos tras la coma (2,30 en vez de 2,5), lo que da un valor incorrecto.' },
+    { q: '¿Cómo se pasa de decimal a horas y minutos?', a: 'La parte entera son las horas y la parte decimal se multiplica por 60 para obtener los minutos. Por ejemplo, 3,75 horas: la parte entera es 3 horas, y 0,75 × 60 = 45 minutos, así que son 3 horas y 45 minutos. La calculadora hace este cálculo automáticamente y redondea los minutos al entero más cercano.' },
+    { q: '¿Por qué es importante para la nómina?', a: 'Porque el salario por horas se calcula multiplicando las horas trabajadas (en decimal) por la tarifa horaria. Si cobras 10 por hora y trabajas 7 horas y 30 minutos, debes multiplicar 7,5 × 10 = 75, no 7,30 × 10. Convertir correctamente a decimal evita pagar o cobrar de menos o de más, un error frecuente en partes de horas y facturas.' },
+    { q: '¿Cuánto es 20 minutos en decimal?', a: '20 minutos son 20/60 = 0,333… horas, aproximadamente 0,33. Otras equivalencias útiles: 10 minutos = 0,17; 12 minutos = 0,20; 40 minutos = 0,67; 50 minutos = 0,83. Como muchos valores no son exactos, la calculadora muestra varios decimales para que el cálculo de horas trabajadas sea lo más preciso posible.' },
+    { q: '¿Sirve para sumar varias jornadas?', a: 'Sí. La forma más fiable de sumar tiempos es convertir cada jornada a decimal, sumar los decimales y, si lo necesitas, volver a convertir el total a horas y minutos. Por ejemplo, 7:30 + 6:45 = 7,5 + 6,75 = 14,25 horas, que son 14 horas y 15 minutos. Sumar directamente en formato horas:minutos suele provocar errores con el acarreo de los 60 minutos.' },
+  ]}
+>
+  <ConversorTiempoDecimalTool client:load />
+</CalcLayout>

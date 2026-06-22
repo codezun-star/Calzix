@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ConversorRitmoVelocidadTool from '@/components/tools/ConversorRitmoVelocidadTool';
+---
+
+<CalcLayout slug="conversor-ritmo-velocidad"
+  whatIs="Este conversor transforma entre el ritmo (minutos y segundos por kilómetro) y la velocidad (kilómetros por hora), en ambos sentidos. El ritmo es la forma en que corredores y ciclistas miden su paso —por ejemplo, 5:00 min/km—, mientras que la velocidad es lo que marcan las cintas de correr y los velocímetros. La relación es inversa: cuanto menor es el ritmo (menos minutos por km), mayor es la velocidad."
+  whyUse="Quienes practican running, trail o ciclismo planifican sus entrenamientos en ritmo (min/km), pero muchas máquinas y aplicaciones muestran la velocidad en km/h. Este conversor permite traducir entre ambos para programar una cinta de correr según tu ritmo objetivo, comparar marcas o calcular a qué velocidad necesitas ir para lograr un tiempo en una carrera. Es una herramienta básica para deportistas de resistencia."
+  faqs={[
+    { q: '¿Cómo se pasa de ritmo a velocidad?', a: 'Se dividen 60 minutos entre el ritmo expresado en minutos por kilómetro. Por ejemplo, un ritmo de 5:00 min/km (5 minutos) equivale a 60 / 5 = 12 km/h. Si el ritmo es 6:00 min/km, la velocidad es 60 / 6 = 10 km/h. La calculadora convierte los segundos del ritmo a fracción de minuto para que el cálculo sea exacto.' },
+    { q: '¿Cómo se pasa de velocidad a ritmo?', a: 'Se dividen 60 minutos entre la velocidad en km/h, y el resultado se expresa en minutos y segundos. Por ejemplo, a 12 km/h el ritmo es 60 / 12 = 5 minutos por km, o sea 5:00 min/km. A 10,5 km/h sería 60 / 10,5 = 5,71 min, es decir, 5:43 min/km. La calculadora hace la conversión de la parte decimal a segundos automáticamente.' },
+    { q: '¿Qué ritmo necesito para correr 10 km en una hora?', a: 'Correr 10 km en 60 minutos equivale a un ritmo de 6:00 min/km y una velocidad de 10 km/h. Para bajar de una hora necesitas un ritmo algo más rápido, por debajo de 6:00 min/km. Este tipo de cálculo de objetivos es justo para lo que sirve el conversor: traducir una meta de tiempo en un ritmo y una velocidad concretos.' },
+    { q: '¿Qué ritmo es bueno para un corredor aficionado?', a: 'Depende mucho del nivel, pero como referencia: un ritmo de 6:00-7:00 min/km (8,5-10 km/h) es habitual en corredores principiantes; 5:00-6:00 min/km en aficionados con cierta forma; y por debajo de 4:30 min/km ya es propio de corredores entrenados. Lo importante es la progresión personal, no compararse con otros.' },
+    { q: '¿Sirve también para la cinta de correr?', a: 'Sí, es uno de sus usos principales. Las cintas de correr se ajustan en km/h, pero muchos planes de entrenamiento se dan en ritmo (min/km). Con este conversor traduces tu ritmo objetivo a la velocidad que debes poner en la cinta. Por ejemplo, para entrenar a 5:30 min/km debes ajustar la cinta a unos 10,9 km/h.' },
+  ]}
+>
+  <ConversorRitmoVelocidadTool client:load />
+</CalcLayout>

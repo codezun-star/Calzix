@@ -1108,4 +1108,54 @@ export const PAGE_SEO: Record<string, PageSEO> = {
     description: 'Calcula las partes por millón (ppm) de una disolución y su equivalente en porcentaje en masa. Gratis, sin registro.',
     canonical: 'https://calzix.com/concentracion-ppm',
   },
+  'conversor-cocina': {
+    title: 'Conversor de Medidas de Cocina — tazas, ml, cucharadas — Calzix',
+    description: 'Convierte tazas, cucharadas, cucharaditas, mililitros, onzas y litros para adaptar cualquier receta. Gratis y al instante.',
+    canonical: 'https://calzix.com/conversor-cocina',
+  },
+  'conversor-numeracion': {
+    title: 'Conversor de Bases: Binario, Decimal, Octal, Hexadecimal — Calzix',
+    description: 'Convierte números entre binario, decimal, octal y hexadecimal. Ideal para programación e informática. Gratis, sin registro.',
+    canonical: 'https://calzix.com/conversor-numeracion',
+  },
+  'conversor-tiempo-decimal': {
+    title: 'Conversor de Horas:Minutos a Decimal — Calzix',
+    description: 'Convierte horas y minutos a horas decimales y al revés, ideal para nóminas y facturación por horas. Gratis y al instante.',
+    canonical: 'https://calzix.com/conversor-tiempo-decimal',
+  },
+  'conversor-coordenadas-gms': {
+    title: 'Conversor de Coordenadas: Grados Decimales ↔ GMS — Calzix',
+    description: 'Convierte coordenadas geográficas entre grados decimales y grados, minutos y segundos (GMS). Gratis, sin registro.',
+    canonical: 'https://calzix.com/conversor-coordenadas-gms',
+  },
+  'conversor-pendiente': {
+    title: 'Conversor de Pendiente: % a Grados y Proporción — Calzix',
+    description: 'Convierte la pendiente entre porcentaje, grados y proporción 1:n. Útil para carreteras, rampas y tejados. Gratis.',
+    canonical: 'https://calzix.com/conversor-pendiente',
+  },
+  'conversor-tallas-calzado': {
+    title: 'Conversor de Tallas de Calzado EU, US, UK — Calzix',
+    description: 'Convierte tallas de zapatos entre los sistemas europeo, estadounidense y británico, con la longitud del pie en cm. Gratis.',
+    canonical: 'https://calzix.com/conversor-tallas-calzado',
+  },
+  'conversor-mah-wh': {
+    title: 'Conversor de mAh a Wh (y Wh a mAh) — Calzix',
+    description: 'Convierte la capacidad de baterías entre mAh y Wh según el voltaje. Comprueba el límite de power banks en avión. Gratis.',
+    canonical: 'https://calzix.com/conversor-mah-wh',
+  },
+  'conversor-escala-mapa': {
+    title: 'Conversor de Escala de Mapa — distancia real — Calzix',
+    description: 'Calcula la distancia real a partir de la escala del mapa (1:50000) y al revés. Ideal para senderismo y topografía. Gratis.',
+    canonical: 'https://calzix.com/conversor-escala-mapa',
+  },
+  'conversor-viento': {
+    title: 'Escala de Viento Beaufort — km/h, nudos y m/s — Calzix',
+    description: 'Convierte la velocidad del viento en km/h a su grado en la escala de Beaufort, nudos y metros por segundo. Gratis.',
+    canonical: 'https://calzix.com/conversor-viento',
+  },
+  'conversor-ritmo-velocidad': {
+    title: 'Conversor de Ritmo (min/km) a Velocidad (km/h) — Calzix',
+    description: 'Convierte entre ritmo de carrera (min/km) y velocidad (km/h) para running y ciclismo. Ajusta tu cinta de correr. Gratis.',
+    canonical: 'https://calzix.com/conversor-ritmo-velocidad',
+  },
 };

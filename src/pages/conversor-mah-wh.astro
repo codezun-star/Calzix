@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ConversorMahWhTool from '@/components/tools/ConversorMahWhTool';
+---
+
+<CalcLayout slug="conversor-mah-wh"
+  whatIs="Este conversor transforma la capacidad de una batería entre miliamperios-hora (mAh) y vatios-hora (Wh), en ambos sentidos. La relación entre ambas unidades depende del voltaje de la batería: Wh = (mAh × voltaje) / 1000. Los mAh miden la carga eléctrica y los Wh la energía total almacenada. Por eso, para comparar baterías de distinto voltaje, los vatios-hora son la medida más justa."
+  whyUse="Saber convertir mAh a Wh es necesario para varias cosas: comprobar si una batería externa (power bank) cumple el límite que permiten las aerolíneas en el equipaje de mano (normalmente 100 Wh), comparar la capacidad real de baterías con distinto voltaje y entender la autonomía de móviles, portátiles y vehículos eléctricos. Esta herramienta hace la conversión teniendo en cuenta el voltaje, que es la clave del cálculo."
+  faqs={[
+    { q: '¿Cómo se convierten los mAh a Wh?', a: 'Se multiplican los miliamperios-hora por el voltaje y se dividen entre 1000: Wh = (mAh × V) / 1000. Por ejemplo, una power bank de 10 000 mAh con celdas de 3,7 V almacena (10 000 × 3,7) / 1000 = 37 Wh. Sin conocer el voltaje no se puede hacer la conversión, porque los mAh por sí solos no indican la energía total.' },
+    { q: '¿Qué voltaje debo usar?', a: 'El voltaje nominal de las celdas de la batería. La mayoría de baterías de litio (móviles, power banks) usan 3,7 V por celda. Las pilas recargables NiMH usan 1,2 V y las alcalinas 1,5 V. Importante: muchas power banks indican su capacidad en mAh a 3,7 V aunque su salida USB sea de 5 V; para el cálculo de energía se usa el voltaje interno de las celdas, 3,7 V.' },
+    { q: '¿Cuántos Wh puedo llevar en un avión?', a: 'La mayoría de aerolíneas permiten baterías de hasta 100 Wh en el equipaje de mano sin restricciones, y entre 100 y 160 Wh con autorización previa. Por encima de 160 Wh no se permiten. Una power bank de 20 000 mAh a 3,7 V equivale a 74 Wh, así que está dentro del límite. Convertir a Wh te permite comprobar si tu batería externa puede viajar contigo.' },
+    { q: '¿Por qué los Wh comparan mejor que los mAh?', a: 'Porque los mAh solo miden carga, no energía, y dependen del voltaje. Una batería de 5000 mAh a 3,7 V (18,5 Wh) almacena menos energía que una de 5000 mAh a 7,4 V (37 Wh), aunque tengan los mismos mAh. Los vatios-hora incluyen el voltaje y reflejan la energía real, por lo que son la unidad correcta para comparar baterías distintas.' },
+    { q: '¿Cómo estimo cuántas veces cargará mi móvil?', a: 'Divide los Wh (o mAh, al mismo voltaje) de la power bank entre los de la batería del móvil, y aplica un factor de pérdida del 30-40 % por la conversión de voltaje y el calor. Por ejemplo, una power bank de 37 Wh cargando un móvil de 12 Wh dará en la práctica unas 2 cargas completas, no 3, por esas pérdidas inevitables.' },
+  ]}
+>
+  <ConversorMahWhTool client:load />
+</CalcLayout>

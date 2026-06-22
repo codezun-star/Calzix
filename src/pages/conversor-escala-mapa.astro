@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ConversorEscalaMapaTool from '@/components/tools/ConversorEscalaMapaTool';
+---
+
+<CalcLayout slug="conversor-escala-mapa"
+  whatIs="Este conversor de escala de mapa calcula la distancia real a partir de una medida sobre el plano, y viceversa, usando la escala del mapa. La escala (por ejemplo 1:50000) indica que una unidad en el mapa equivale a 50000 unidades en la realidad. Introduce la escala y una distancia medida en el mapa para obtener la distancia real, o al revés, para saber cuánto medirá en el plano una distancia real."
+  whyUse="Interpretar la escala de un mapa es esencial en senderismo, topografía, urbanismo y educación. Permite saber la distancia real entre dos puntos midiendo con una regla sobre el plano, planificar rutas y entender planos arquitectónicos o catastrales. Esta herramienta evita las multiplicaciones y conversiones de unidades manuales, dando el resultado directamente en metros o kilómetros."
+  faqs={[
+    { q: '¿Qué significa una escala 1:50000?', a: 'Significa que una unidad de longitud en el mapa representa 50000 de esas mismas unidades en la realidad. Así, 1 cm en el mapa equivale a 50000 cm reales, es decir, 500 metros o 0,5 km. Cuanto mayor es el número de la derecha, más pequeña es la escala y más territorio (con menos detalle) abarca el mapa.' },
+    { q: '¿Cómo calculo la distancia real desde el mapa?', a: 'Se multiplica la distancia medida en el mapa por el denominador de la escala. Por ejemplo, si mides 4 cm en un mapa 1:50000, la distancia real es 4 × 50000 = 200000 cm = 2000 m = 2 km. La calculadora hace esta multiplicación y convierte automáticamente el resultado a metros o kilómetros según convenga.' },
+    { q: '¿Qué es una escala grande y una escala pequeña?', a: 'Una escala grande (como 1:1000) muestra poco territorio con mucho detalle, ideal para planos urbanos. Una escala pequeña (como 1:1000000) abarca grandes regiones con poco detalle, como un mapa de un país. Parece contradictorio, pero se llama "grande" o "pequeña" por el valor de la fracción: 1/1000 es mayor que 1/1000000.' },
+    { q: '¿Cómo sé qué medirá en el mapa una distancia real?', a: 'Se divide la distancia real (en las mismas unidades) entre el denominador de la escala. Por ejemplo, 2 km reales (200000 cm) en un mapa 1:50000 ocuparán 200000 / 50000 = 4 cm. La calculadora, en su modo "Real → Mapa", hace esta división para que sepas cuánto dibujar o medir sobre el plano.' },
+    { q: '¿La escala afecta también a las áreas?', a: 'Sí, pero al cuadrado. Si las distancias se reducen según la escala (1:50000), las áreas se reducen según el cuadrado de esa escala (1:2 500 000 000). Por eso una superficie pequeña en el mapa representa un terreno enorme. Esta calculadora trabaja con distancias lineales; para áreas habría que elevar al cuadrado el factor de escala.' },
+  ]}
+>
+  <ConversorEscalaMapaTool client:load />
+</CalcLayout>

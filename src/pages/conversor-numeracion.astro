@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ConversorNumeracionTool from '@/components/tools/ConversorNumeracionTool';
+---
+
+<CalcLayout slug="conversor-numeracion"
+  whatIs="Este conversor de sistemas de numeración transforma un número entre las cuatro bases más usadas en informática: binario (base 2), octal (base 8), decimal (base 10) y hexadecimal (base 16). Cada sistema representa el mismo valor con distintos símbolos: el binario solo usa 0 y 1, el hexadecimal añade las letras A-F. La herramienta valida que el número introducido sea correcto en su base de origen y muestra siempre su equivalente en decimal."
+  whyUse="Convertir entre bases es fundamental en programación, electrónica digital e informática: las computadoras trabajan en binario, las direcciones de memoria y los colores se expresan en hexadecimal, y los permisos de archivos en sistemas Unix usan octal. Esta herramienta es imprescindible para estudiantes de informática y programadores que necesitan pasar rápidamente de un sistema a otro sin hacer las divisiones sucesivas a mano."
+  faqs={[
+    { q: '¿Qué es el sistema binario?', a: 'Es el sistema de numeración en base 2, que solo usa dos dígitos: 0 y 1. Es el lenguaje natural de las computadoras porque los circuitos electrónicos tienen dos estados (encendido/apagado). Cada dígito binario se llama bit. Por ejemplo, el número decimal 10 se escribe 1010 en binario: 1×8 + 0×4 + 1×2 + 0×1 = 10.' },
+    { q: '¿Qué es el sistema hexadecimal y por qué se usa?', a: 'Es el sistema en base 16, que usa los dígitos 0-9 y las letras A-F (donde A=10, B=11… F=15). Se usa mucho en informática porque cada dígito hexadecimal representa exactamente 4 bits, lo que hace muy compacto expresar valores binarios largos. Los colores web (#FF5733) y las direcciones de memoria se escriben en hexadecimal.' },
+    { q: '¿Cómo se convierte de decimal a binario?', a: 'Se divide el número entre 2 sucesivamente y se anotan los restos, que leídos de abajo arriba dan el número binario. Por ejemplo, 13: 13/2=6 resto 1, 6/2=3 resto 0, 3/2=1 resto 1, 1/2=0 resto 1 → leído al revés es 1101. Esta calculadora hace todas estas divisiones automáticamente para cualquier par de bases.' },
+    { q: '¿Para qué sirve el sistema octal?', a: 'El sistema octal (base 8) usa los dígitos del 0 al 7. Históricamente se usó en informática porque agrupa los bits de tres en tres. Hoy su uso más común es en los permisos de archivos de sistemas Unix y Linux: por ejemplo, el permiso 755 está en octal y define quién puede leer, escribir y ejecutar un archivo.' },
+    { q: '¿Por qué la herramienta avisa de que un número no es válido?', a: 'Porque cada base solo admite ciertos dígitos: el binario solo 0 y 1, el octal del 0 al 7, el decimal del 0 al 9 y el hexadecimal del 0 al 9 más A-F. Si escribes un 2 en binario o una G en hexadecimal, el número no existe en esa base y la herramienta lo detecta para evitar conversiones erróneas.' },
+  ]}
+>
+  <ConversorNumeracionTool client:load />
+</CalcLayout>
