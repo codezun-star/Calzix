@@ -1,0 +1,19 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import LogaritmoTool from '@/components/tools/LogaritmoTool';
+---
+
+<CalcLayout slug="logaritmo"
+  whatIs="El logaritmo de un número en una base dada es el exponente al que hay que elevar esa base para obtener el número. Por ejemplo, el logaritmo en base 10 de 1000 es 3, porque 10³ = 1000. Esta calculadora obtiene el logaritmo en la base que elijas y, además, muestra los dos logaritmos más usados: el natural (ln, base e ≈ 2,718) y el decimal (log₁₀, base 10). Es la operación inversa de la potenciación."
+  whyUse="Los logaritmos aparecen en escalas que comprimen rangos enormes: la escala Richter de terremotos, los decibelios del sonido, el pH en química y la magnitud de las estrellas. También son clave en finanzas para el interés compuesto, en informática para medir complejidad y en estadística. Esta herramienta evita depender de tablas o de una calculadora científica y entrega de una vez el logaritmo en tu base, el natural y el decimal."
+  faqs={[
+    { q: '¿Qué significa exactamente un logaritmo?', a: 'Responde a la pregunta "¿a qué exponente debo elevar la base para obtener este número?". El log en base 2 de 8 es 3 porque 2³ = 8. El log en base 10 de 100 es 2 porque 10² = 100. Por eso el logaritmo es la operación inversa de la potencia: si la potencia parte del exponente para hallar el resultado, el logaritmo parte del resultado para hallar el exponente.' },
+    { q: '¿Qué diferencia hay entre logaritmo natural y decimal?', a: 'El logaritmo decimal (log o log₁₀) usa base 10 y es cómodo para órdenes de magnitud. El logaritmo natural (ln) usa como base el número e ≈ 2,71828, una constante matemática que surge de forma natural en crecimiento continuo, interés compuesto y muchas fórmulas de física y cálculo. La calculadora muestra ambos junto al logaritmo en la base que elijas.' },
+    { q: '¿Por qué no existe el logaritmo de números negativos o de cero?', a: 'Porque no hay ningún exponente real que, aplicado a una base positiva, dé un resultado negativo o cero. Las potencias de una base positiva siempre dan resultados positivos. Por eso el logaritmo solo está definido para números mayores que cero, y la calculadora avisa si introduces cero o un número negativo.' },
+    { q: '¿Qué bases puedo usar?', a: 'Cualquier base positiva distinta de 1. Las más comunes son 10 (logaritmo decimal), e (logaritmo natural) y 2 (muy usada en informática y teoría de la información). La base no puede ser 1 porque 1 elevado a cualquier exponente siempre da 1, así que no permitiría representar otros números. La calculadora rechaza la base 1 y las bases negativas o cero.' },
+    { q: '¿Para qué se usan los logaritmos en la vida real?', a: 'La escala Richter mide la energía de los terremotos en logaritmos: un grado más significa diez veces más amplitud. Los decibelios del sonido, el pH de las disoluciones, la sensibilidad ISO de las cámaras y las escalas de magnitud estelar son todas logarítmicas. En finanzas, los logaritmos ayudan a calcular el tiempo necesario para que una inversión se duplique.' },
+    { q: '¿Cómo se relacionan logaritmos de distintas bases?', a: 'Mediante el cambio de base: el logaritmo en base b de x es igual al logaritmo natural de x dividido entre el logaritmo natural de b (o con cualquier otra base de referencia). Esta fórmula es la que usa la calculadora internamente para poder darte el logaritmo en cualquier base que elijas a partir del logaritmo natural.' },
+  ]}
+>
+  <LogaritmoTool client:load />
+</CalcLayout>
