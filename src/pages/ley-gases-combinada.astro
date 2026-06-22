@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import LeyGasesCombinadaTool from '@/components/tools/LeyGasesCombinadaTool';
+---
+
+<CalcLayout slug="ley-gases-combinada"
+  whatIs="La ley combinada de los gases relaciona la presión, el volumen y la temperatura de una cantidad fija de gas en dos estados distintos, mediante la igualdad P₁·V₁/T₁ = P₂·V₂/T₂. Reúne en una sola expresión las leyes de Boyle, Charles y Gay-Lussac. Esta calculadora resuelve la incógnita que dejes vacía a partir de los otros cinco datos, siempre trabajando con la temperatura en kelvin, que es como debe usarse en estas leyes."
+  whyUse="La ley combinada permite predecir cómo cambia un gas cuando varían a la vez su presión, volumen y temperatura: lo que ocurre al comprimir y calentar el aire de un motor, al inflar un neumático que se calienta, o al ascender un globo aerostático. Es un contenido esencial de química y física de bachillerato. Esta herramienta resuelve cualquiera de las seis variables y evita el error más típico: olvidarse de pasar la temperatura a kelvin."
+  faqs={[
+    { q: '¿Qué dice la ley combinada de los gases?', a: 'Establece que, para una masa fija de gas, el producto de la presión por el volumen dividido entre la temperatura se mantiene constante: P₁·V₁/T₁ = P₂·V₂/T₂. Esto permite calcular el estado final de un gas cuando cambian dos o tres de sus variables a la vez, conociendo el estado inicial y los nuevos valores de las otras magnitudes.' },
+    { q: '¿Por qué hay que usar la temperatura en kelvin?', a: 'Porque las leyes de los gases relacionan magnitudes proporcionales y necesitan una escala absoluta que empiece en el cero real (sin temperaturas negativas). El cero kelvin (−273,15 °C) es el cero absoluto. Si usaras grados Celsius, los cálculos darían resultados erróneos. Para convertir, suma 273,15 a la temperatura en °C antes de introducirla.' },
+    { q: '¿Qué leyes engloba?', a: 'Reúne tres leyes particulares: la de Boyle (a temperatura constante, presión y volumen son inversamente proporcionales), la de Charles (a presión constante, el volumen es proporcional a la temperatura) y la de Gay-Lussac (a volumen constante, la presión es proporcional a la temperatura). La ley combinada las generaliza para cuando varían las tres magnitudes a la vez.' },
+    { q: '¿Cómo se usa la calculadora?', a: 'Introduce cinco de los seis valores (presión, volumen y temperatura de los estados inicial y final) y deja vacío el que quieras averiguar. La herramienta detecta el campo vacío, comprueba que las temperaturas sean positivas en kelvin y despeja la incógnita. Las unidades de presión y volumen pueden ser cualesquiera, siempre que uses la misma en ambos estados.' },
+    { q: '¿En qué se diferencia de la ley de los gases ideales?', a: 'La ley combinada compara dos estados de la misma cantidad de gas y no necesita conocer el número de moles. La ley de los gases ideales (P·V = n·R·T) relaciona presión, volumen, temperatura y cantidad de sustancia en un único estado mediante la constante R. Para problemas con moles conviene usar la calculadora de gas ideal; para comparar dos estados, esta.' },
+  ]}
+>
+  <LeyGasesCombinadaTool client:load />
+</CalcLayout>

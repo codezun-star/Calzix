@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import TrabajoFisicaTool from '@/components/tools/TrabajoFisicaTool';
+---
+
+<CalcLayout slug="trabajo-fisica"
+  whatIs="En física, el trabajo es la energía que se transfiere cuando una fuerza desplaza un objeto. Se calcula multiplicando la fuerza por la distancia recorrida y por el coseno del ángulo entre ambas: W = F · d · cos(θ). Se mide en julios (J). Esta calculadora obtiene el trabajo a partir de la fuerza, la distancia y el ángulo, teniendo en cuenta que solo la componente de la fuerza en la dirección del movimiento realiza trabajo."
+  whyUse="El concepto de trabajo conecta fuerza y energía y es la base para entender la potencia, la energía cinética y el principio de conservación de la energía. Es un tema central de física de secundaria y bachillerato. Esta herramienta resuelve los ejercicios típicos —empujar una caja, levantar un peso, arrastrar con una cuerda en ángulo— y ayuda a visualizar por qué una fuerza perpendicular al movimiento no realiza trabajo."
+  faqs={[
+    { q: '¿Cuál es la fórmula del trabajo?', a: 'El trabajo es W = F · d · cos(θ), donde F es la fuerza en newtons, d la distancia en metros y θ el ángulo entre la dirección de la fuerza y la del movimiento. Si la fuerza actúa en la misma dirección que el desplazamiento (θ = 0°), cos(0°) = 1 y el trabajo es simplemente fuerza por distancia. El resultado se expresa en julios (J).' },
+    { q: '¿Por qué aparece el coseno del ángulo?', a: 'Porque solo la parte de la fuerza que va en la dirección del movimiento realiza trabajo. El coseno extrae esa componente: si empujas una maleta con el asa inclinada, parte de tu fuerza la levanta y no contribuye a moverla hacia delante. Cuanto mayor es el ángulo, menor es el trabajo útil, hasta que a 90° el trabajo es cero.' },
+    { q: '¿Cuándo el trabajo es cero?', a: 'El trabajo es cero en tres casos: si no hay fuerza, si no hay desplazamiento, o si la fuerza es perpendicular al movimiento (θ = 90°, cos 90° = 0). Por eso sostener un peso quieto no realiza trabajo físico aunque canse, y la fuerza centrípeta que mantiene a un satélite en órbita circular no realiza trabajo sobre él.' },
+    { q: '¿Qué es el trabajo negativo?', a: 'El trabajo es negativo cuando la fuerza se opone al movimiento, es decir, cuando el ángulo está entre 90° y 180° (el coseno es negativo). La fricción es el ejemplo típico: siempre actúa en contra del desplazamiento y por eso realiza trabajo negativo, retirando energía del sistema y transformándola en calor.' },
+    { q: '¿Qué relación hay entre trabajo, energía y potencia?', a: 'El trabajo es energía transferida, por eso ambos se miden en julios. El trabajo realizado sobre un cuerpo se convierte en energía (cinética si lo acelera, potencial si lo eleva). La potencia, por su parte, es el trabajo realizado por unidad de tiempo (vatios = julios por segundo): mide la rapidez con la que se hace ese trabajo.' },
+  ]}
+>
+  <TrabajoFisicaTool client:load />
+</CalcLayout>

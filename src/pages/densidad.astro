@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import DensidadTool from '@/components/tools/DensidadTool';
+---
+
+<CalcLayout slug="densidad"
+  whatIs="La densidad es la cantidad de masa que hay en un volumen determinado de una sustancia, y se calcula dividiendo la masa entre el volumen: ρ = m / V. Se mide habitualmente en kilogramos por metro cúbico (kg/m³) o en gramos por centímetro cúbico (g/cm³). Esta calculadora despeja cualquiera de las tres variables —densidad, masa o volumen— a partir de las otras dos, así que sirve tanto para hallar la densidad como para calcular la masa o el volumen de un cuerpo."
+  whyUse="La densidad explica por qué unos objetos flotan y otros se hunden, permite identificar materiales y es clave en física, química, ingeniería y construcción. Saber calcularla ayuda a resolver problemas escolares, a comprobar la pureza de un material, a dosificar mezclas y a entender el principio de Arquímedes. Al permitir despejar también la masa o el volumen, esta herramienta cubre los tres tipos de ejercicio más habituales sobre el tema."
+  faqs={[
+    { q: '¿Cuál es la fórmula de la densidad?', a: 'La densidad es masa dividida entre volumen: ρ = m / V. Si una pieza tiene 2 kg y ocupa 0,5 m³, su densidad es 2 / 0,5 = 4 kg/m³. A partir de esta misma fórmula se despeja la masa (m = ρ · V) o el volumen (V = m / ρ), que es lo que hace la calculadora según el campo que dejes vacío.' },
+    { q: '¿En qué unidades se mide la densidad?', a: 'En el Sistema Internacional se mide en kilogramos por metro cúbico (kg/m³), pero en química es muy común usar gramos por centímetro cúbico (g/cm³). La equivalencia es 1 g/cm³ = 1000 kg/m³. El agua tiene una densidad de 1 g/cm³ o 1000 kg/m³, valor que se usa como referencia para comparar otras sustancias.' },
+    { q: '¿Por qué flotan unos cuerpos y se hunden otros?', a: 'Un cuerpo flota en un líquido si su densidad es menor que la del líquido, y se hunde si es mayor. La madera (≈0,6 g/cm³) flota en agua (1 g/cm³), mientras que el hierro (7,8 g/cm³) se hunde. Por eso un barco de acero flota: su forma encierra mucho aire y su densidad media es menor que la del agua.' },
+    { q: '¿Qué densidad tienen los materiales comunes?', a: 'Algunos valores de referencia en g/cm³: agua 1, hielo 0,92, aluminio 2,7, hierro 7,8, plomo 11,3, oro 19,3, madera 0,4–0,8 y aire 0,0012. Comparar la densidad calculada con estos valores permite identificar o verificar un material, una técnica usada para detectar falsificaciones de metales preciosos.' },
+    { q: '¿La densidad cambia con la temperatura?', a: 'Sí. Al calentarse, la mayoría de sustancias se dilatan: aumenta su volumen y, como la masa no cambia, su densidad disminuye. Por eso el aire caliente sube y el agua caliente es menos densa que la fría. El agua tiene una anomalía: alcanza su máxima densidad a 4 °C, lo que explica que el hielo flote y que los lagos se congelen por la superficie.' },
+  ]}
+>
+  <DensidadTool client:load />
+</CalcLayout>

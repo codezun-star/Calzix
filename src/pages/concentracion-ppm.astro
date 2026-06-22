@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ConcentracionPpmTool from '@/components/tools/ConcentracionPpmTool';
+---
+
+<CalcLayout slug="concentracion-ppm"
+  whatIs="Las partes por millón (ppm) son una unidad para expresar concentraciones muy bajas: indican cuántas partes de soluto hay por cada millón de partes de disolución. Se calcula como ppm = (masa de soluto / masa de disolución) × 1 000 000. Esta calculadora obtiene la concentración en ppm y su equivalente en porcentaje en masa, y recuerda que en disoluciones acuosas diluidas 1 ppm equivale aproximadamente a 1 miligramo por litro."
+  whyUse="Las ppm son la unidad estándar para medir contaminantes en el agua y el aire, la dureza del agua, la dosis de cloro en una piscina, los nitratos en alimentos o los gases en la atmósfera (como el CO₂). Saber calcularlas es útil en química, control de calidad, medio ambiente y tratamiento de aguas. Esta herramienta convierte masas en ppm al instante y muestra la relación con el porcentaje, evitando errores con los ceros."
+  faqs={[
+    { q: '¿Qué significa una concentración en ppm?', a: 'Una parte por millón significa una unidad de soluto por cada millón de unidades de disolución. Por ejemplo, 5 ppm de un contaminante en agua quiere decir 5 gramos de ese contaminante por cada millón de gramos (mil kilos) de agua. Es una forma cómoda de expresar concentraciones tan pequeñas que en porcentaje saldrían números con muchos ceros tras la coma.' },
+    { q: '¿Cómo se calculan las ppm?', a: 'Se divide la masa de soluto entre la masa total de la disolución y se multiplica por un millón: ppm = (m_soluto / m_disolución) × 10⁶. Ambas masas deben ir en la misma unidad. Por ejemplo, 5 mg de soluto en 1 000 000 mg (1 kg) de disolución dan exactamente 5 ppm. La calculadora hace esta operación y evita confusiones con las potencias de diez.' },
+    { q: '¿Es lo mismo 1 ppm que 1 mg/L?', a: 'En disoluciones acuosas diluidas, sí, de forma aproximada: como la densidad del agua es 1 kg/L, un litro de disolución pesa alrededor de 1 kg (un millón de miligramos), así que 1 mg de soluto por litro equivale a 1 ppm. Esta equivalencia es muy usada en análisis de aguas, pero deja de ser exacta en disoluciones concentradas o con densidad muy distinta a la del agua.' },
+    { q: '¿Qué relación tienen las ppm con el porcentaje?', a: 'El porcentaje en masa es partes por cien y las ppm son partes por millón, así que 1 % equivale a 10 000 ppm. Para pasar de ppm a porcentaje se divide entre 10 000: 250 ppm son 0,025 %. La calculadora muestra ambos valores a la vez, lo que ayuda a dimensionar lo pequeña que es realmente una concentración expresada en ppm.' },
+    { q: '¿Dónde se usan las ppm en la vida real?', a: 'En el control del agua potable (cloro, nitratos, metales pesados), en la dureza del agua, en las piscinas, en la calidad del aire (CO₂, ozono, partículas), en la seguridad alimentaria y en la agricultura (fertilizantes y pesticidas). Los límites legales de muchos contaminantes se expresan en ppm, por lo que es una unidad clave en medio ambiente y sanidad.' },
+  ]}
+>
+  <ConcentracionPpmTool client:load />
+</CalcLayout>

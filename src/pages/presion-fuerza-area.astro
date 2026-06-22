@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import PresionFuerzaAreaTool from '@/components/tools/PresionFuerzaAreaTool';
+---
+
+<CalcLayout slug="presion-fuerza-area"
+  whatIs="La presión es la fuerza que se reparte sobre una superficie, y se calcula dividiendo la fuerza entre el área sobre la que actúa: P = F / A. Se mide en pascales (Pa), donde 1 Pa equivale a 1 newton por metro cuadrado. Esta calculadora despeja cualquiera de las tres variables —presión, fuerza o área— a partir de las otras dos, resolviendo los distintos tipos de problema sobre presión mecánica."
+  whyUse="Entender la presión explica por qué un cuchillo afilado corta mejor, por qué las raquetas de nieve evitan que te hundas o por qué un clavo penetra con poca fuerza: todo depende de cómo se reparte la fuerza sobre el área. Es un concepto clave en física, ingeniería y diseño. Esta herramienta resuelve los cálculos de presión, fuerza o superficie al instante, útil tanto para estudiantes como para aplicaciones técnicas."
+  faqs={[
+    { q: '¿Cuál es la fórmula de la presión?', a: 'La presión es fuerza dividida entre área: P = F / A. Si aplicas 500 N sobre 0,25 m², la presión es 500 / 0,25 = 2000 Pa. A partir de la misma fórmula se despeja la fuerza (F = P · A) o el área (A = F / P), que es lo que calcula la herramienta según el campo que dejes vacío.' },
+    { q: '¿En qué unidades se mide la presión?', a: 'La unidad del Sistema Internacional es el pascal (Pa), igual a un newton por metro cuadrado. Como es una unidad pequeña, suelen usarse múltiplos: el kilopascal (kPa), el bar (100 000 Pa) y la atmósfera (101 325 Pa). En neumáticos y otros usos cotidianos también se ve el PSI. Para convertir entre todas ellas puedes usar el conversor de presión.' },
+    { q: '¿Por qué un objeto afilado ejerce más presión?', a: 'Porque concentra la misma fuerza en un área muy pequeña. Un cuchillo afilado o la punta de un clavo tienen una superficie de contacto mínima, así que aunque la fuerza sea moderada, la presión (fuerza entre área) es enorme y penetra con facilidad. Por el contrario, repartir la fuerza en un área grande reduce la presión.' },
+    { q: '¿Por qué las raquetas de nieve o los esquís no se hunden?', a: 'Porque aumentan el área de contacto con la nieve. Tu peso (la fuerza) es el mismo, pero al repartirlo sobre una superficie mucho mayor, la presión sobre la nieve disminuye y no te hundes. Es el mismo principio por el que los tractores y excavadoras usan orugas anchas para no clavarse en terreno blando.' },
+    { q: '¿Es lo mismo esta presión que la de los fluidos?', a: 'El concepto es el mismo (fuerza por unidad de área), pero la presión hidrostática de un líquido se calcula de otra forma, en función de la densidad, la gravedad y la profundidad (P = ρ · g · h). Esta calculadora trata la presión mecánica F/A; para la presión dentro de un líquido a cierta profundidad conviene usar la calculadora de presión hidrostática.' },
+  ]}
+>
+  <PresionFuerzaAreaTool client:load />
+</CalcLayout>

@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import AceleracionTool from '@/components/tools/AceleracionTool';
+---
+
+<CalcLayout slug="aceleracion"
+  whatIs="La aceleración mide cómo cambia la velocidad de un objeto con el tiempo, y se calcula restando la velocidad inicial a la final y dividiendo entre el tiempo transcurrido: a = (v_final − v_inicial) / t. Se mide en metros por segundo al cuadrado (m/s²). Esta calculadora obtiene la aceleración a partir de esas tres magnitudes e indica si el cuerpo está acelerando, frenando o moviéndose a velocidad constante."
+  whyUse="La aceleración es uno de los pilares de la cinemática y la base de la segunda ley de Newton (F = m · a). Saber calcularla es esencial para resolver problemas de movimiento en física de secundaria y bachillerato, y para entender fenómenos cotidianos como la frenada de un coche, la caída de los cuerpos o las prestaciones de un vehículo (el famoso 0 a 100 km/h). Esta herramienta resuelve el cálculo y lo interpreta automáticamente."
+  faqs={[
+    { q: '¿Cuál es la fórmula de la aceleración?', a: 'La aceleración media es a = (v_final − v_inicial) / t, es decir, el cambio de velocidad dividido entre el tiempo que tarda en producirse. Si un coche pasa de 0 a 27,8 m/s (100 km/h) en 10 segundos, su aceleración es (27,8 − 0) / 10 = 2,78 m/s². Significa que cada segundo gana 2,78 m/s de velocidad.' },
+    { q: '¿Qué significan las unidades m/s²?', a: 'Metros por segundo al cuadrado indica cuántos metros por segundo de velocidad gana (o pierde) el cuerpo en cada segundo. Una aceleración de 3 m/s² quiere decir que la velocidad aumenta 3 m/s cada segundo: tras un segundo va a 3 m/s, tras dos a 6 m/s, y así sucesivamente. Es una variación de velocidad por unidad de tiempo.' },
+    { q: '¿Qué es la aceleración negativa o desaceleración?', a: 'Cuando la velocidad final es menor que la inicial, la aceleración sale negativa: el cuerpo está frenando. Por ejemplo, un coche que pasa de 20 m/s a 0 en 4 segundos tiene una aceleración de (0 − 20) / 4 = −5 m/s². El signo negativo indica que la velocidad disminuye; la calculadora lo detecta y avisa de que se trata de una frenada.' },
+    { q: '¿Cuánto vale la aceleración de la gravedad?', a: 'En la superficie de la Tierra, la aceleración de la gravedad es de aproximadamente 9,81 m/s². Significa que un objeto en caída libre gana 9,81 m/s de velocidad cada segundo que cae, sin contar la resistencia del aire. Es la aceleración que experimenta cualquier cuerpo que dejamos caer, independientemente de su masa.' },
+    { q: '¿Cómo se relaciona la aceleración con la fuerza?', a: 'A través de la segunda ley de Newton: F = m · a. La aceleración que adquiere un cuerpo es proporcional a la fuerza aplicada e inversamente proporcional a su masa. Por eso, con la misma fuerza, un objeto ligero acelera más que uno pesado, y para acelerar más un mismo objeto hay que aplicarle más fuerza.' },
+  ]}
+>
+  <AceleracionTool client:load />
+</CalcLayout>

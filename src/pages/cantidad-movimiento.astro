@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import CantidadMovimientoTool from '@/components/tools/CantidadMovimientoTool';
+---
+
+<CalcLayout slug="cantidad-movimiento"
+  whatIs="La cantidad de movimiento, también llamada momento lineal o ímpetu, mide la 'inercia en movimiento' de un objeto y se calcula multiplicando su masa por su velocidad: p = m · v. Se mide en kilogramos por metro por segundo (kg·m/s). Esta calculadora despeja cualquiera de las tres variables —cantidad de movimiento, masa o velocidad— a partir de las otras dos, cubriendo los distintos tipos de problema sobre el tema."
+  whyUse="La cantidad de movimiento es fundamental para analizar choques y colisiones, ya que se conserva en sistemas aislados: lo que tienen entre todos los cuerpos antes del choque es igual a lo que tienen después. Se aplica en seguridad vial, deportes, balística y astronáutica (propulsión a reacción). Es un tema clave de física de bachillerato, y esta herramienta resuelve al instante los cálculos para entender por qué un camión es más difícil de frenar que una bicicleta a igual velocidad."
+  faqs={[
+    { q: '¿Qué es la cantidad de movimiento?', a: 'Es el producto de la masa de un cuerpo por su velocidad: p = m · v. Representa cuánto cuesta detener o desviar un objeto en movimiento. Un camión y una bicicleta a la misma velocidad tienen cantidades de movimiento muy distintas porque sus masas lo son: el camión es mucho más difícil de frenar. Es una magnitud vectorial, con la misma dirección que la velocidad.' },
+    { q: '¿En qué unidades se mide?', a: 'En el Sistema Internacional se mide en kilogramos por metro por segundo (kg·m/s), que resulta de multiplicar la masa en kilogramos por la velocidad en metros por segundo. No tiene un nombre propio como otras unidades. Para usar la calculadora correctamente, convierte antes la velocidad a m/s si la tienes en km/h (divide entre 3,6).' },
+    { q: '¿Qué es la conservación de la cantidad de movimiento?', a: 'En un sistema aislado (sin fuerzas externas), la cantidad de movimiento total se mantiene constante. En un choque entre dos coches, la suma de sus cantidades de movimiento antes del impacto es igual a la suma después. Este principio permite calcular velocidades tras una colisión y es la base del funcionamiento de los cohetes, que se impulsan expulsando gases.' },
+    { q: '¿Qué diferencia hay con la energía cinética?', a: 'Ambas dependen de masa y velocidad, pero la cantidad de movimiento es p = m · v (proporcional a la velocidad) y la energía cinética es ½ · m · v² (proporcional al cuadrado de la velocidad). La cantidad de movimiento se conserva en todos los choques; la energía cinética solo se conserva en los choques elásticos. Son magnitudes complementarias para analizar un mismo fenómeno.' },
+    { q: '¿Qué es el impulso y cómo se relaciona?', a: 'El impulso es el producto de una fuerza por el tiempo que actúa, y es igual a la variación de la cantidad de movimiento que produce: impulso = Δp. Por eso un airbag o un guante de boxeo alargan el tiempo del impacto para reducir la fuerza: a igual cambio de cantidad de movimiento, más tiempo significa menos fuerza sobre el cuerpo.' },
+  ]}
+>
+  <CantidadMovimientoTool client:load />
+</CalcLayout>

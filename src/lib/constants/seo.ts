@@ -1058,4 +1058,54 @@ export const PAGE_SEO: Record<string, PageSEO> = {
     description: 'Calcula cuartiles, rango intercuartílico y cualquier percentil de un conjunto de datos. Gratis y al instante.',
     canonical: 'https://calzix.com/percentiles-cuartiles',
   },
+  'densidad': {
+    title: 'Calculadora de Densidad (ρ = m/V) — masa y volumen — Calzix',
+    description: 'Calcula la densidad, la masa o el volumen de un cuerpo con la fórmula ρ = m/V. Despeja cualquier variable. Gratis.',
+    canonical: 'https://calzix.com/densidad',
+  },
+  'trabajo-fisica': {
+    title: 'Calculadora de Trabajo Físico (W = F·d·cosθ) — Calzix',
+    description: 'Calcula el trabajo de una fuerza en julios a partir de la fuerza, la distancia y el ángulo. Gratis, sin registro.',
+    canonical: 'https://calzix.com/trabajo-fisica',
+  },
+  'cantidad-movimiento': {
+    title: 'Calculadora de Cantidad de Movimiento (p = m·v) — Calzix',
+    description: 'Calcula el momento lineal, la masa o la velocidad con p = m·v. Despeja cualquier variable. Gratis y al instante.',
+    canonical: 'https://calzix.com/cantidad-movimiento',
+  },
+  'peso-masa': {
+    title: 'Calculadora de Peso y Masa (P = m·g) en planetas — Calzix',
+    description: 'Calcula el peso de un objeto en la Tierra, la Luna, Marte y otros planetas con P = m·g. Entiende peso vs masa. Gratis.',
+    canonical: 'https://calzix.com/peso-masa',
+  },
+  'aceleracion': {
+    title: 'Calculadora de Aceleración (a = Δv/t) — Calzix',
+    description: 'Calcula la aceleración a partir de la velocidad inicial, la final y el tiempo. Indica si acelera o frena. Gratis.',
+    canonical: 'https://calzix.com/aceleracion',
+  },
+  'presion-fuerza-area': {
+    title: 'Calculadora de Presión (P = F/A) — fuerza y área — Calzix',
+    description: 'Calcula la presión, la fuerza o el área con P = F/A. Despeja cualquier variable de la presión mecánica. Gratis.',
+    canonical: 'https://calzix.com/presion-fuerza-area',
+  },
+  'ley-gases-combinada': {
+    title: 'Calculadora Ley Combinada de los Gases (P₁V₁/T₁=P₂V₂/T₂) — Calzix',
+    description: 'Resuelve la ley combinada de los gases despejando presión, volumen o temperatura. Temperatura en kelvin. Gratis.',
+    canonical: 'https://calzix.com/ley-gases-combinada',
+  },
+  'numero-avogadro': {
+    title: 'Calculadora del Número de Avogadro — moles y partículas — Calzix',
+    description: 'Convierte moles a partículas y partículas a moles con el número de Avogadro (6,022×10²³). Gratis, sin registro.',
+    canonical: 'https://calzix.com/numero-avogadro',
+  },
+  'rendimiento-reaccion': {
+    title: 'Calculadora de Rendimiento de una Reacción Química — Calzix',
+    description: 'Calcula el rendimiento porcentual de una reacción a partir del rendimiento real y el teórico. Gratis y al instante.',
+    canonical: 'https://calzix.com/rendimiento-reaccion',
+  },
+  'concentracion-ppm': {
+    title: 'Calculadora de Concentración en ppm (partes por millón) — Calzix',
+    description: 'Calcula las partes por millón (ppm) de una disolución y su equivalente en porcentaje en masa. Gratis, sin registro.',
+    canonical: 'https://calzix.com/concentracion-ppm',
+  },
 };
