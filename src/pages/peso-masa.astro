@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import PesoMasaTool from '@/components/tools/PesoMasaTool';
+---
+
+<CalcLayout slug="peso-masa"
+  whatIs="El peso es la fuerza con la que la gravedad atrae a un cuerpo, y se calcula multiplicando su masa por la aceleración de la gravedad: P = m · g. Se mide en newtons (N), mientras que la masa se mide en kilogramos (kg). Esta calculadora obtiene el peso de un objeto a partir de su masa y te permite elegir el cuerpo celeste (Tierra, Luna, Marte, Júpiter…), mostrando cómo cambia el peso según la gravedad de cada lugar aunque la masa sea siempre la misma."
+  whyUse="Distinguir peso y masa es uno de los conceptos que más se confunden en física, y entenderlo bien es esencial en secundaria y bachillerato. Esta herramienta lo deja claro de forma visual: la masa no cambia, pero el peso sí depende de dónde estés. Sirve para resolver ejercicios, para entender por qué los astronautas 'pesan' menos en la Luna y para comprender el funcionamiento de básculas y dinamómetros."
+  faqs={[
+    { q: '¿Cuál es la diferencia entre peso y masa?', a: 'La masa es la cantidad de materia de un cuerpo y no cambia: tienes los mismos kilogramos en la Tierra, en la Luna o en el espacio. El peso es la fuerza con que la gravedad tira de esa masa, y sí cambia según el lugar. Por eso la masa se mide en kilogramos y el peso en newtons. Una persona de 70 kg de masa pesa unos 686 N en la Tierra.' },
+    { q: '¿Cuál es la fórmula del peso?', a: 'El peso es P = m · g, donde m es la masa en kilogramos y g la aceleración de la gravedad en m/s². En la Tierra, g vale aproximadamente 9,81 m/s². Así, una masa de 10 kg pesa 10 × 9,81 = 98,1 N. La calculadora aplica el valor de g correspondiente al cuerpo celeste que elijas.' },
+    { q: '¿Cuánto pesaría en la Luna o en Marte?', a: 'En la Luna la gravedad es 1,62 m/s² (un sexto de la terrestre), así que pesarías unas seis veces menos: una persona de 70 kg pesaría allí unos 113 N en vez de 686 N. En Marte, con g = 3,71 m/s², pesaría alrededor de 260 N. Tu masa seguiría siendo 70 kg en todos los casos; lo que cambia es la fuerza con que el suelo te atrae.' },
+    { q: '¿Por qué decimos que pesamos en kilos si el peso es una fuerza?', a: 'En el lenguaje cotidiano usamos los kilogramos para el peso porque las básculas están calibradas para la gravedad terrestre y convierten la fuerza en una lectura de masa equivalente. Es una simplificación práctica, pero en física el peso es una fuerza y se expresa en newtons. La calculadora muestra ambas cosas para que la equivalencia quede clara.' },
+    { q: '¿El peso es lo mismo que pesa una báscula?', a: 'Una báscula mide en realidad la fuerza que ejerces sobre ella (tu peso) y la traduce a kilogramos suponiendo la gravedad terrestre. En un ascensor que acelera hacia arriba marcaría más, y en uno que baja, menos, porque cambia la fuerza aunque tu masa siga igual. Por eso en caída libre la báscula marcaría cero: es la sensación de ingravidez.' },
+  ]}
+>
+  <PesoMasaTool client:load />
+</CalcLayout>

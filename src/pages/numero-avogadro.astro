@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import NumeroAvogadroTool from '@/components/tools/NumeroAvogadroTool';
+---
+
+<CalcLayout slug="numero-avogadro"
+  whatIs="El número de Avogadro es la cantidad de partículas (átomos, moléculas o iones) que hay en un mol de cualquier sustancia: 6,022 × 10²³. Es el puente entre el mundo microscópico de las partículas y las cantidades que podemos medir en el laboratorio. Esta calculadora convierte en ambos sentidos: de moles a número de partículas y de número de partículas a moles, manejando cómodamente la notación científica."
+  whyUse="Pasar de moles a partículas y viceversa es una de las operaciones más frecuentes en química, presente en casi todos los problemas de estequiometría y disoluciones. Manejar números tan grandes a mano es propenso a errores con los ceros y los exponentes. Esta herramienta automatiza la conversión usando la notación científica, ideal para estudiantes de secundaria, bachillerato y primeros cursos universitarios."
+  faqs={[
+    { q: '¿Qué es exactamente el número de Avogadro?', a: 'Es el número de unidades elementales que contiene un mol: 6,02214076 × 10²³. Da igual la sustancia: un mol de agua, un mol de hierro o un mol de electrones tienen todos ese mismo número de partículas. Es una constante fundamental que permite contar partículas mediante la masa, ya que contarlas una a una sería imposible.' },
+    { q: '¿Qué es un mol?', a: 'Un mol es la unidad de cantidad de sustancia del Sistema Internacional, y se define como la cantidad que contiene exactamente 6,022 × 10²³ partículas. Es análogo a una "docena", pero en lugar de 12 son 6,022 × 10²³ unidades. El mol permite trabajar en el laboratorio con cantidades manejables de materia que representan un número conocido de átomos o moléculas.' },
+    { q: '¿Cómo se pasa de moles a partículas?', a: 'Se multiplica el número de moles por el número de Avogadro: partículas = moles × 6,022 × 10²³. Por ejemplo, 2,5 moles contienen 2,5 × 6,022 × 10²³ = 1,506 × 10²⁴ partículas. La calculadora hace esta multiplicación automáticamente y muestra el resultado en notación científica para que sea legible.' },
+    { q: '¿Cómo se pasa de partículas a moles?', a: 'Se divide el número de partículas entre el número de Avogadro: moles = partículas / 6,022 × 10²³. Por ejemplo, 1,2 × 10²⁴ moléculas equivalen a 1,2 × 10²⁴ / 6,022 × 10²³ ≈ 1,99 moles. Puedes introducir el número de partículas en notación científica (como 1.2e24) y la calculadora lo interpreta correctamente.' },
+    { q: '¿Para qué sirve en los problemas de química?', a: 'Es esencial en estequiometría para relacionar la cantidad de reactivos y productos a nivel de partículas, y para conectar moles con masa (a través de la masa molar) y con volumen de gases. Casi cualquier cálculo que parta de gramos y necesite llegar a número de moléculas, o al revés, pasa por el número de Avogadro en algún paso.' },
+  ]}
+>
+  <NumeroAvogadroTool client:load />
+</CalcLayout>

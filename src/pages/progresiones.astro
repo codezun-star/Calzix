@@ -1,0 +1,19 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ProgresionesTool from '@/components/tools/ProgresionesTool';
+---
+
+<CalcLayout slug="progresiones"
+  whatIs="Una progresión es una sucesión de números que sigue un patrón. En la progresión aritmética cada término se obtiene sumando una cantidad fija (la diferencia d) al anterior: 2, 5, 8, 11… En la progresión geométrica cada término se obtiene multiplicando por un factor fijo (la razón r): 3, 6, 12, 24… Esta calculadora obtiene el término que ocupa la posición n y la suma de los primeros n términos para ambos tipos, a partir del primer término, la diferencia o razón y el número de términos."
+  whyUse="Las progresiones modelan multitud de situaciones reales: el ahorro mensual constante (aritmética), el interés compuesto y el crecimiento de poblaciones (geométrica), la depreciación de un bien o la planificación de entrenamientos progresivos. Son un tema central del currículo de secundaria y bachillerato. Esta herramienta ahorra los cálculos repetitivos de hallar términos lejanos o sumar muchos valores, y permite comprobar ejercicios al instante."
+  faqs={[
+    { q: '¿Qué es una progresión aritmética?', a: 'Es una sucesión donde la diferencia entre cada término y el anterior es constante. Esa diferencia se llama d. Ejemplo: 4, 7, 10, 13, 16… tiene d = 3. El término n se calcula con aₙ = a₁ + (n−1)·d. Para el ejemplo, el término 10 sería 4 + 9×3 = 31. Modela todo lo que crece o decrece en cantidades fijas, como un ahorro mensual constante.' },
+    { q: '¿Qué es una progresión geométrica?', a: 'Es una sucesión donde cada término se obtiene multiplicando el anterior por un factor constante llamado razón r. Ejemplo: 2, 6, 18, 54… tiene r = 3. El término n se calcula con aₙ = a₁·r^(n−1). Modela crecimientos multiplicativos como el interés compuesto, la reproducción de bacterias o la propagación de una noticia.' },
+    { q: '¿Cómo se suma una progresión aritmética?', a: 'La suma de los primeros n términos es Sₙ = n·(a₁ + aₙ)/2, es decir, el número de términos por la media entre el primero y el último. Ejemplo: sumar 1+2+3+…+100 = 100·(1+100)/2 = 5050, el famoso cálculo de Gauss. La calculadora aplica esta fórmula automáticamente y te da la suma sin tener que ir sumando uno a uno.' },
+    { q: '¿Cómo se suma una progresión geométrica?', a: 'La suma de los primeros n términos es Sₙ = a₁·(rⁿ − 1)/(r − 1) cuando la razón es distinta de 1. Ejemplo con a₁=1, r=2, n=10: la suma es (2¹⁰−1)/(2−1) = 1023. Esta fórmula explica por qué los crecimientos geométricos acumulan cantidades enormes muy rápido, algo clave para entender el interés compuesto.' },
+    { q: '¿Para qué sirven las progresiones en finanzas?', a: 'El ahorro de una cantidad fija cada mes forma una progresión aritmética; un capital que crece a un porcentaje fijo cada periodo forma una progresión geométrica (interés compuesto). Entender ambas ayuda a proyectar cuánto tendrás ahorrado, cuánto pagarás en cuotas o cómo se multiplica una inversión a largo plazo.' },
+    { q: '¿Qué datos necesito para usar la calculadora?', a: 'Necesitas tres datos: el primer término (a₁), la diferencia d (si es aritmética) o la razón r (si es geométrica), y el número de términos n que quieres alcanzar. Con eso la calculadora te devuelve el término que ocupa la posición n y la suma de todos los términos desde el primero hasta el n. Elige primero el tipo de progresión con los botones superiores.' },
+  ]}
+>
+  <ProgresionesTool client:load />
+</CalcLayout>

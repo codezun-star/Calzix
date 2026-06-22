@@ -1008,4 +1008,104 @@ export const PAGE_SEO: Record<string, PageSEO> = {
     description: 'Calcula la duracion ideal de siesta segun ciencia del sueno. Power nap 20 min o ciclo completo 90 min. Gratis, sin registro.',
     canonical: 'https://calzix.com/siesta-optima',
   },
+  'calculadora-fracciones': {
+    title: 'Calculadora de Fracciones — Suma, Resta y Simplifica — Calzix',
+    description: 'Suma, resta, multiplica y divide fracciones online y obtén el resultado simplificado y en decimal. Gratis, sin registro.',
+    canonical: 'https://calzix.com/calculadora-fracciones',
+  },
+  'numeros-romanos': {
+    title: 'Conversor de Números Romanos ↔ Arábigos — Calzix',
+    description: 'Convierte números romanos a arábigos y viceversa, del 1 al 3999. Comprueba si están bien escritos. Gratis y al instante.',
+    canonical: 'https://calzix.com/numeros-romanos',
+  },
+  'raiz-cuadrada': {
+    title: 'Calculadora de Raíz Cuadrada y Enésima — Calzix',
+    description: 'Calcula la raíz cuadrada, cúbica o de cualquier índice de un número e identifica si es exacta. Gratis, sin registro.',
+    canonical: 'https://calzix.com/raiz-cuadrada',
+  },
+  'redondeo': {
+    title: 'Calculadora de Redondeo de Números — Calzix',
+    description: 'Redondea números a los decimales que quieras: redondeo normal, por exceso y por defecto. Gratis y al instante.',
+    canonical: 'https://calzix.com/redondeo',
+  },
+  'notacion-cientifica': {
+    title: 'Calculadora de Notación Científica — Calzix',
+    description: 'Convierte cualquier número a notación científica (mantisa × 10ⁿ) y descompón mantisa y exponente. Gratis, sin registro.',
+    canonical: 'https://calzix.com/notacion-cientifica',
+  },
+  'division-resto': {
+    title: 'Calculadora de División con Resto — Cociente y Resto — Calzix',
+    description: 'Calcula el cociente y el resto de una división entera y su valor decimal, con la prueba de la división. Gratis.',
+    canonical: 'https://calzix.com/division-resto',
+  },
+  'logaritmo': {
+    title: 'Calculadora de Logaritmos — base, ln y log₁₀ — Calzix',
+    description: 'Calcula el logaritmo de un número en cualquier base, el logaritmo natural (ln) y el decimal (log₁₀). Gratis, sin registro.',
+    canonical: 'https://calzix.com/logaritmo',
+  },
+  'progresiones': {
+    title: 'Calculadora de Progresiones Aritmética y Geométrica — Calzix',
+    description: 'Calcula el término n y la suma de los n primeros términos de una progresión aritmética o geométrica. Gratis.',
+    canonical: 'https://calzix.com/progresiones',
+  },
+  'distancia-dos-puntos': {
+    title: 'Distancia entre Dos Puntos y Punto Medio — Calzix',
+    description: 'Calcula la distancia entre dos puntos del plano y su punto medio con la fórmula de Pitágoras. Gratis, sin registro.',
+    canonical: 'https://calzix.com/distancia-dos-puntos',
+  },
+  'percentiles-cuartiles': {
+    title: 'Calculadora de Percentiles y Cuartiles (Q1, Q2, Q3, IQR) — Calzix',
+    description: 'Calcula cuartiles, rango intercuartílico y cualquier percentil de un conjunto de datos. Gratis y al instante.',
+    canonical: 'https://calzix.com/percentiles-cuartiles',
+  },
+  'densidad': {
+    title: 'Calculadora de Densidad (ρ = m/V) — masa y volumen — Calzix',
+    description: 'Calcula la densidad, la masa o el volumen de un cuerpo con la fórmula ρ = m/V. Despeja cualquier variable. Gratis.',
+    canonical: 'https://calzix.com/densidad',
+  },
+  'trabajo-fisica': {
+    title: 'Calculadora de Trabajo Físico (W = F·d·cosθ) — Calzix',
+    description: 'Calcula el trabajo de una fuerza en julios a partir de la fuerza, la distancia y el ángulo. Gratis, sin registro.',
+    canonical: 'https://calzix.com/trabajo-fisica',
+  },
+  'cantidad-movimiento': {
+    title: 'Calculadora de Cantidad de Movimiento (p = m·v) — Calzix',
+    description: 'Calcula el momento lineal, la masa o la velocidad con p = m·v. Despeja cualquier variable. Gratis y al instante.',
+    canonical: 'https://calzix.com/cantidad-movimiento',
+  },
+  'peso-masa': {
+    title: 'Calculadora de Peso y Masa (P = m·g) en planetas — Calzix',
+    description: 'Calcula el peso de un objeto en la Tierra, la Luna, Marte y otros planetas con P = m·g. Entiende peso vs masa. Gratis.',
+    canonical: 'https://calzix.com/peso-masa',
+  },
+  'aceleracion': {
+    title: 'Calculadora de Aceleración (a = Δv/t) — Calzix',
+    description: 'Calcula la aceleración a partir de la velocidad inicial, la final y el tiempo. Indica si acelera o frena. Gratis.',
+    canonical: 'https://calzix.com/aceleracion',
+  },
+  'presion-fuerza-area': {
+    title: 'Calculadora de Presión (P = F/A) — fuerza y área — Calzix',
+    description: 'Calcula la presión, la fuerza o el área con P = F/A. Despeja cualquier variable de la presión mecánica. Gratis.',
+    canonical: 'https://calzix.com/presion-fuerza-area',
+  },
+  'ley-gases-combinada': {
+    title: 'Calculadora Ley Combinada de los Gases (P₁V₁/T₁=P₂V₂/T₂) — Calzix',
+    description: 'Resuelve la ley combinada de los gases despejando presión, volumen o temperatura. Temperatura en kelvin. Gratis.',
+    canonical: 'https://calzix.com/ley-gases-combinada',
+  },
+  'numero-avogadro': {
+    title: 'Calculadora del Número de Avogadro — moles y partículas — Calzix',
+    description: 'Convierte moles a partículas y partículas a moles con el número de Avogadro (6,022×10²³). Gratis, sin registro.',
+    canonical: 'https://calzix.com/numero-avogadro',
+  },
+  'rendimiento-reaccion': {
+    title: 'Calculadora de Rendimiento de una Reacción Química — Calzix',
+    description: 'Calcula el rendimiento porcentual de una reacción a partir del rendimiento real y el teórico. Gratis y al instante.',
+    canonical: 'https://calzix.com/rendimiento-reaccion',
+  },
+  'concentracion-ppm': {
+    title: 'Calculadora de Concentración en ppm (partes por millón) — Calzix',
+    description: 'Calcula las partes por millón (ppm) de una disolución y su equivalente en porcentaje en masa. Gratis, sin registro.',
+    canonical: 'https://calzix.com/concentracion-ppm',
+  },
 };

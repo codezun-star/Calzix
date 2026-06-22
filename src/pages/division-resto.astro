@@ -1,0 +1,19 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import DivisionRestoTool from '@/components/tools/DivisionRestoTool';
+---
+
+<CalcLayout slug="division-resto"
+  whatIs="La división con resto (o división entera) reparte un número, el dividendo, entre otro, el divisor, obteniendo dos resultados: el cociente, que es cuántas veces cabe el divisor entero, y el resto, que es lo que sobra y siempre es menor que el divisor. Cumple la relación fundamental: dividendo = cociente × divisor + resto. Esta calculadora muestra el cociente entero, el resto y también el valor decimal exacto de la división."
+  whyUse="La división con resto es la base de muchísimos problemas cotidianos: repartir objetos en grupos iguales y saber cuántos sobran, calcular cuántas cajas hacen falta, determinar si un número es par o múltiplo de otro, o trabajar con horas y minutos. Es uno de los primeros conceptos de aritmética que se enseñan y sigue siendo útil en programación (operación módulo), en logística y en cualquier reparto. La herramienta evita errores y muestra el resto exacto al instante."
+  faqs={[
+    { q: '¿Qué es el cociente y qué es el resto?', a: 'El cociente es el número de veces enteras que el divisor cabe en el dividendo, y el resto es lo que queda sin repartir. Ejemplo: 47 ÷ 5 da cociente 9 y resto 2, porque 5 cabe 9 veces en 47 (5×9=45) y sobran 2. El resto siempre es menor que el divisor; si fuera igual o mayor, el cociente podría aumentar.' },
+    { q: '¿Cómo se comprueba que una división con resto está bien?', a: 'Se aplica la prueba de la división: dividendo = cociente × divisor + resto. Con el ejemplo anterior: 9 × 5 + 2 = 45 + 2 = 47, que es el dividendo original. Si la igualdad se cumple, la división es correcta. La calculadora siempre entrega resultados que cumplen esta relación.' },
+    { q: '¿Para qué sirve el resto de una división?', a: 'El resto responde a preguntas como "¿cuántos sobran al repartir?" o "¿es divisible?". Si el resto es 0, el dividendo es múltiplo exacto del divisor (división exacta). El resto también permite saber si un número es par (resto 0 al dividir entre 2) y se usa muchísimo en programación con la operación módulo para ciclos, calendarios y validaciones.' },
+    { q: '¿Qué diferencia hay entre el resto y el resultado decimal?', a: 'El resto es lo que sobra en la división entera (un número entero menor que el divisor), mientras que el resultado decimal expresa la división completa con cifras tras la coma. Ejemplo: 47 ÷ 5 tiene resto 2 pero su valor decimal es 9,4. La calculadora muestra los dos: usa el resto para repartos exactos y el decimal cuando necesitas el valor preciso.' },
+    { q: '¿Se puede dividir entre cero?', a: 'No. La división entre cero no está definida en matemáticas: no existe ningún número que multiplicado por cero dé un dividendo distinto de cero. Por eso la calculadora muestra un aviso si introduces 0 como divisor. Cualquier otro número, positivo o negativo, es válido como divisor.' },
+    { q: '¿Funciona con números negativos?', a: 'Sí. La calculadora admite dividendos y divisores negativos y aplica división truncada, de modo que se sigue cumpliendo la relación dividendo = cociente × divisor + resto. Para repartos cotidianos lo habitual es usar números positivos, pero la herramienta resuelve también casos con signos.' },
+  ]}
+>
+  <DivisionRestoTool client:load />
+</CalcLayout>

@@ -1,0 +1,19 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import NotacionCientificaTool from '@/components/tools/NotacionCientificaTool';
+---
+
+<CalcLayout slug="notacion-cientifica"
+  whatIs="La notación científica expresa cualquier número como el producto de una mantisa (un número entre 1 y 10) por una potencia de diez. Así, 6.500.000 se escribe 6,5 × 10⁶ y 0,00000452 se escribe 4,52 × 10⁻⁶. Esta calculadora convierte cualquier número decimal a notación científica, mostrando por separado la mantisa y el exponente. El exponente positivo indica cuántas posiciones se desplaza la coma a la derecha y el negativo a la izquierda."
+  whyUse="La notación científica es imprescindible para trabajar con números muy grandes o muy pequeños sin perderse contando ceros: distancias astronómicas, tamaños de átomos, poblaciones, concentraciones químicas o capacidades de almacenamiento. La usan estudiantes de física, química y matemáticas, y profesionales de ingeniería y ciencia. Esta herramienta te ahorra el riesgo de equivocarte al contar ceros y te muestra la descomposición exacta en mantisa y exponente."
+  faqs={[
+    { q: '¿Qué es la mantisa y qué es el exponente?', a: 'En notación científica, la mantisa (o coeficiente) es el número que va entre 1 y 10, y el exponente es la potencia de diez que lo acompaña. En 3,2 × 10⁵, la mantisa es 3,2 y el exponente es 5. El exponente indica el orden de magnitud: cuántas veces hay que multiplicar (o dividir, si es negativo) por diez para recuperar el número original.' },
+    { q: '¿Cómo se pasa un número grande a notación científica?', a: 'Se desplaza la coma decimal hasta que quede un solo dígito a su izquierda, y se cuenta cuántas posiciones se movió: ese es el exponente positivo. Ejemplo: 8.450.000 → mueves la coma 6 posiciones a la izquierda → 8,45 × 10⁶. La calculadora lo hace automáticamente: escribe el número y obtienes la mantisa y el exponente correctos.' },
+    { q: '¿Y un número muy pequeño con muchos decimales?', a: 'Se desplaza la coma a la derecha hasta tener un dígito distinto de cero a su izquierda, y el exponente es negativo. Ejemplo: 0,00037 → mueves la coma 4 posiciones a la derecha → 3,7 × 10⁻⁴. Los exponentes negativos representan números entre 0 y 1, muy frecuentes en química (concentraciones) y física (tamaños subatómicos).' },
+    { q: '¿Puedo introducir un número que ya esté en notación exponencial?', a: 'Sí. El campo acepta formatos como 1.5e6 o 4.52e-6 (la "e" significa "por diez elevado a"). La calculadora lo interpreta y lo normaliza a la forma estándar con mantisa entre 1 y 10. Esto es útil para limpiar resultados que vienen de una hoja de cálculo o de otra calculadora con formato exponencial distinto.' },
+    { q: '¿Para qué se usa la notación científica en la práctica?', a: 'Se usa para expresar la velocidad de la luz (3 × 10⁸ m/s), la masa de un electrón (9,1 × 10⁻³¹ kg), la distancia a una estrella, el número de Avogadro (6,022 × 10²³) o la capacidad de un disco. Permite comparar magnitudes muy distintas de un vistazo mirando solo el exponente, y simplifica enormemente las multiplicaciones y divisiones de números extremos.' },
+    { q: '¿En qué se diferencia de la notación de ingeniería?', a: 'La notación científica usa un exponente cualquiera con mantisa entre 1 y 10. La notación de ingeniería restringe el exponente a múltiplos de 3 (10³, 10⁶, 10⁹…) para que coincida con los prefijos kilo, mega, giga. Por ejemplo, 47.000 es 4,7 × 10⁴ en científica y 47 × 10³ en ingeniería. Esta calculadora usa la notación científica estándar.' },
+  ]}
+>
+  <NotacionCientificaTool client:load />
+</CalcLayout>

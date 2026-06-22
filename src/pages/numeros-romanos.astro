@@ -1,0 +1,19 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import NumerosRomanosTool from '@/components/tools/NumerosRomanosTool';
+---
+
+<CalcLayout slug="numeros-romanos"
+  whatIs="Un conversor de números romanos transforma un número arábigo (1, 2, 3…) en su representación romana (I, II, III…) y viceversa. El sistema romano usa siete letras —I=1, V=5, X=10, L=50, C=100, D=500, M=1000— combinadas mediante reglas de suma y resta. Cuando una letra menor precede a una mayor, se resta (IV = 4, IX = 9); cuando va después, se suma (VI = 6, XI = 11). El sistema estándar representa números del 1 al 3999."
+  whyUse="Los números romanos siguen presentes en la vida cotidiana: nombres de reyes y papas, siglos en textos de historia, capítulos de libros, relojes, créditos de películas, ediciones de eventos deportivos y fechas grabadas en monumentos. Esta herramienta es ideal para estudiantes que repasan el tema, para escribir correctamente un siglo o una fecha, y para descifrar cualquier inscripción romana sin tener que memorizar todas las reglas de combinación."
+  faqs={[
+    { q: '¿Cómo funcionan las reglas de los números romanos?', a: 'Se usan siete símbolos: I=1, V=5, X=10, L=50, C=100, D=500, M=1000. Se escriben de mayor a menor y se suman: por ejemplo MMXXIII = 1000+1000+10+10+1+1+1 = 2023. La excepción es la resta: cuando un símbolo menor va antes de uno mayor, se resta. Así IV=4, IX=9, XL=40, XC=90, CD=400 y CM=900. Un mismo símbolo no se repite más de tres veces seguidas.' },
+    { q: '¿Cuál es el número romano máximo que puedo convertir?', a: 'El sistema romano clásico llega hasta 3999 (MMMCMXCIX). Para números mayores se usaban líneas sobre las letras que multiplicaban su valor por mil, pero ese sistema no es estándar ni se usa hoy. Por eso esta calculadora acepta números del 1 al 3999, que cubren prácticamente todos los usos reales: siglos, años, ediciones y numeración de capítulos.' },
+    { q: '¿Por qué no existe el cero en números romanos?', a: 'El sistema romano se desarrolló para contar y registrar cantidades, y no incluía un símbolo para el cero ni para los números negativos, conceptos que llegaron después con el sistema indo-arábigo. Por eso la conversión empieza en el 1. El cero como número con valor posicional es un aporte posterior fundamental para las matemáticas modernas.' },
+    { q: '¿Cómo se escribe el año actual en números romanos?', a: '2024 se escribe MMXXIV (1000+1000+10+10+(5−1)) y 2025 es MMXXV. Para escribir cualquier año, descompónlo en miles, cientos, decenas y unidades y convierte cada parte. La calculadora lo hace al instante: escribe el año en el modo "Número → Romano" y obtienes la forma correcta sin riesgo de equivocarte con las restas.' },
+    { q: '¿La calculadora valida si un número romano está bien escrito?', a: 'Sí. En el modo "Romano → Número", además de convertir, comprueba que la combinación esté bien formada: si introduces algo como IIII o VX (formas incorrectas), te avisa de que no es válido. Esto te ayuda a aprender las reglas y a detectar errores en inscripciones o textos.' },
+    { q: '¿Para qué se siguen usando los números romanos?', a: 'Se usan en la numeración de siglos (siglo XXI), nombres de monarcas y papas (Felipe VI, Juan Pablo II), capítulos y tomos de libros, esferas de relojes, ediciones de eventos (Super Bowl LVIII), secuelas de películas y fechas en monumentos y edificios. Saber leerlos y escribirlos sigue siendo una competencia básica de cultura general.' },
+  ]}
+>
+  <NumerosRomanosTool client:load />
+</CalcLayout>

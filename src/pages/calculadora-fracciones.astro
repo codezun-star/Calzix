@@ -1,0 +1,19 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import FraccionesTool from '@/components/tools/FraccionesTool';
+---
+
+<CalcLayout slug="calculadora-fracciones"
+  whatIs="Una calculadora de fracciones resuelve operaciones entre dos fracciones —suma, resta, multiplicación y división— y entrega el resultado ya simplificado a su mínima expresión, además de su equivalente decimal. Funciona aplicando las reglas clásicas: para sumar o restar busca común denominador, para multiplicar opera numeradores y denominadores en línea, y para dividir multiplica por la fracción inversa. Después reduce el resultado dividiendo numerador y denominador entre su máximo común divisor."
+  whyUse="Operar con fracciones a mano es una de las tareas donde más errores se cometen, sobre todo al buscar el común denominador o al simplificar. Esta herramienta es útil para estudiantes de primaria y secundaria que revisan su tarea, para recetas de cocina que hay que escalar, para repartos proporcionales y para cualquier cálculo donde necesites precisión exacta en lugar de un decimal redondeado. El resultado simplificado te ahorra el paso final que muchas veces se olvida."
+  faqs={[
+    { q: '¿Cómo se suman dos fracciones con distinto denominador?', a: 'Se busca un denominador común (el mínimo común múltiplo de los denominadores), se convierten ambas fracciones a ese denominador y se suman los numeradores. Ejemplo: 1/4 + 1/6. El MCM de 4 y 6 es 12, así que 1/4 = 3/12 y 1/6 = 2/12; la suma es 5/12. La calculadora hace este proceso automáticamente y entrega el resultado ya simplificado.' },
+    { q: '¿Cómo se multiplican y dividen fracciones?', a: 'Multiplicar es directo: numerador por numerador y denominador por denominador. Ejemplo: 2/3 × 4/5 = 8/15. Para dividir, se multiplica la primera fracción por la inversa de la segunda (se da vuelta la segunda). Ejemplo: 2/3 ÷ 4/5 = 2/3 × 5/4 = 10/12 = 5/6 simplificado.' },
+    { q: '¿Qué significa simplificar una fracción?', a: 'Simplificar es reducir la fracción a su mínima expresión dividiendo numerador y denominador entre su máximo común divisor (MCD). Ejemplo: 8/12 tiene MCD 4, así que 8/12 = 2/3. Una fracción simplificada representa el mismo valor pero con los números más pequeños posibles. Si el MCD es 1, la fracción ya está simplificada.' },
+    { q: '¿Puedo usar números negativos en las fracciones?', a: 'Sí. Puedes introducir un numerador o denominador negativo y la calculadora respeta el signo en todas las operaciones, mostrando el resultado con el signo correcto. Lo único que no se permite es un denominador igual a cero, porque una fracción con denominador cero no está definida matemáticamente.' },
+    { q: '¿La calculadora convierte la fracción a decimal?', a: 'Sí. Junto al resultado en forma de fracción simplificada se muestra su valor decimal, redondeado a cuatro cifras. Por ejemplo, 5/8 se muestra también como 0,625. Esto es útil cuando necesitas el valor para una medida, un porcentaje o para comparar dos fracciones rápidamente.' },
+    { q: '¿Qué pasa si el resultado es un número entero?', a: 'Cuando el denominador simplificado es 1, el resultado es un número entero y se muestra solo ese número, sin la barra de fracción. Por ejemplo, 3/4 + 1/4 = 4/4 = 1. La calculadora detecta automáticamente estos casos para no mostrar fracciones como 5/1.' },
+  ]}
+>
+  <FraccionesTool client:load />
+</CalcLayout>

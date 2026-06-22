@@ -1,0 +1,19 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import PercentilesCuartilesTool from '@/components/tools/PercentilesCuartilesTool';
+---
+
+<CalcLayout slug="percentiles-cuartiles"
+  whatIs="Los percentiles y cuartiles dividen un conjunto de datos ordenados en partes para describir su distribución. Un percentil p indica el valor por debajo del cual queda el p% de los datos: el percentil 90 es el valor que supera al 90% de las observaciones. Los cuartiles son percentiles concretos: Q1 (percentil 25), Q2 (la mediana, percentil 50) y Q3 (percentil 75). Esta calculadora ordena tus datos y obtiene los tres cuartiles, el rango intercuartílico (IQR) y cualquier percentil que indiques."
+  whyUse="Los percentiles son la forma estándar de interpretar datos en salud (tablas de crecimiento infantil), educación (notas de exámenes estandarizados y oposiciones), salarios y rendimiento. El rango intercuartílico es clave para detectar valores atípicos y para los diagramas de caja. Esta herramienta evita ordenar a mano y aplicar fórmulas de interpolación, entregando una descripción completa de la distribución de tus datos al instante."
+  faqs={[
+    { q: '¿Qué es un percentil?', a: 'Un percentil es un valor que deja por debajo un cierto porcentaje de los datos. Si tu nota está en el percentil 80 de un examen, significa que superas al 80% de quienes lo hicieron. No es lo mismo que el porcentaje de aciertos: mide tu posición relativa dentro del grupo. Los percentiles van del 0 al 100 y permiten comparar un dato con el resto del conjunto.' },
+    { q: '¿Qué son los cuartiles Q1, Q2 y Q3?', a: 'Son los valores que dividen los datos ordenados en cuatro partes iguales. Q1 (primer cuartil o percentil 25) deja por debajo el 25% de los datos; Q2 es la mediana (percentil 50), el valor central; y Q3 (tercer cuartil o percentil 75) deja por debajo el 75%. Entre Q1 y Q3 se concentra el 50% central de los datos, la parte más representativa.' },
+    { q: '¿Qué es el rango intercuartílico (IQR)?', a: 'Es la diferencia entre el tercer y el primer cuartil: IQR = Q3 − Q1. Mide la dispersión del 50% central de los datos, ignorando los extremos. Es más robusto que el rango total porque no se ve afectado por valores atípicos. Se usa para detectar outliers: suelen considerarse atípicos los datos que están a más de 1,5 veces el IQR por debajo de Q1 o por encima de Q3.' },
+    { q: '¿Cómo se calcula un percentil cuando cae entre dos datos?', a: 'Cuando la posición del percentil no coincide con un dato exacto, se interpola linealmente entre los dos valores más cercanos. Por ejemplo, si el percentil queda entre el tercer y cuarto valor, se toma una fracción proporcional entre ambos. Esta calculadora usa el método de interpolación lineal, uno de los más habituales en estadística y hojas de cálculo.' },
+    { q: '¿Para qué se usan los percentiles en salud?', a: 'En pediatría, las tablas de crecimiento expresan el peso y la talla de un niño en percentiles respecto a la población de su edad: estar en el percentil 50 de talla significa una estatura media. No indican si algo está bien o mal por sí solos, sino la posición relativa, y ayudan al pediatra a seguir la evolución a lo largo del tiempo.' },
+    { q: '¿Cómo introduzco los datos en la calculadora?', a: 'Escribe los números separados por comas o espacios, en cualquier orden: la calculadora los ordena automáticamente. Necesitas al menos dos valores. Indica además el percentil concreto que quieras conocer (por ejemplo 90) y obtendrás los tres cuartiles, el rango intercuartílico y ese percentil personalizado, todo a la vez.' },
+  ]}
+>
+  <PercentilesCuartilesTool client:load />
+</CalcLayout>

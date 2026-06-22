@@ -1,0 +1,19 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import RedondeoTool from '@/components/tools/RedondeoTool';
+---
+
+<CalcLayout slug="redondeo"
+  whatIs="Redondear un número es expresarlo con menos cifras decimales conservando el valor más cercano. Esta calculadora aplica los tres tipos principales: redondeo normal (al valor más próximo, la regla habitual), redondeo por defecto o hacia abajo (truncar hacia el menor) y redondeo por exceso o hacia arriba (al mayor). Eliges cuántos decimales quieres conservar y obtienes los tres resultados a la vez, lo que te permite comparar y elegir el que necesita tu caso."
+  whyUse="El redondeo es esencial para presentar resultados de forma clara: precios, medidas, estadísticas o resultados de cálculos suelen necesitar un número fijo de decimales. Saber qué tipo de redondeo aplicar importa: en facturación a veces se redondea hacia arriba, en mediciones científicas se usa el redondeo normal, y en presupuestos conservadores se redondea por exceso. Esta herramienta te muestra las tres opciones para que tomes la decisión correcta sin equivocarte."
+  faqs={[
+    { q: '¿Cómo funciona el redondeo normal o al más cercano?', a: 'Se mira la primera cifra que se descarta: si es 5 o mayor, se suma una unidad a la última cifra que se conserva (redondeo hacia arriba); si es menor que 5, se deja igual (hacia abajo). Ejemplo a dos decimales: 3,146 se redondea a 3,15 (porque la tercera cifra es 6), y 3,142 se redondea a 3,14. Es el método más usado en la vida diaria y en ciencia.' },
+    { q: '¿Qué diferencia hay entre redondear y truncar?', a: 'Truncar (redondeo por defecto o hacia abajo) significa simplemente cortar las cifras sobrantes sin mirar su valor: 3,148 truncado a dos decimales es 3,14. Redondear normal sí mira la cifra siguiente: 3,148 redondeado a dos decimales es 3,15. La calculadora muestra ambos: el "por defecto" trunca y el "normal" aplica la regla del 5.' },
+    { q: '¿Cuándo conviene redondear por exceso?', a: 'El redondeo por exceso (siempre hacia arriba) se usa cuando quedarse corto sería un problema: calcular cuántas latas de pintura, baldosas o materiales comprar (mejor que sobre a que falte), estimar tiempos de entrega o presupuestar con margen. Por ejemplo, si necesitas 4,2 botes de pintura, el redondeo por exceso te dice 5 para no quedarte sin material.' },
+    { q: '¿Cuántos decimales puedo conservar?', a: 'Puedes elegir de 0 a 10 decimales. Con 0 decimales redondeas al número entero más cercano; con 2 decimales, al céntimo; y así sucesivamente. Por ejemplo, redondear 7,8 a 0 decimales da 8 (normal), 7 (por defecto) y 8 (por exceso). Ajusta el campo de decimales según la precisión que necesites para tu resultado.' },
+    { q: '¿El redondeo introduce errores en los cálculos?', a: 'Sí, redondear pierde algo de precisión, y si encadenas muchos cálculos redondeando en cada paso, los pequeños errores se acumulan. La buena práctica es calcular con todos los decimales y redondear solo al final, al presentar el resultado. Para informes científicos o financieros, conviene definir desde el inicio cuántos decimales son significativos.' },
+    { q: '¿Qué son las cifras significativas y en qué se diferencian?', a: 'Las cifras significativas cuentan los dígitos con valor real de una medida (incluyendo ceros intermedios), mientras que redondear a decimales fija la posición tras la coma. Por ejemplo, 0,00452 tiene 3 cifras significativas pero 5 decimales. Esta calculadora trabaja con número de decimales, que es lo más habitual en cálculos cotidianos y escolares.' },
+  ]}
+>
+  <RedondeoTool client:load />
+</CalcLayout>

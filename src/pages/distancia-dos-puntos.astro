@@ -1,0 +1,19 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import DistanciaDosPuntosTool from '@/components/tools/DistanciaDosPuntosTool';
+---
+
+<CalcLayout slug="distancia-dos-puntos"
+  whatIs="La distancia entre dos puntos en el plano se calcula con la fórmula derivada del teorema de Pitágoras: es la raíz cuadrada de la suma de los cuadrados de las diferencias de coordenadas. Para los puntos A(x₁, y₁) y B(x₂, y₂), la distancia es √((x₂−x₁)² + (y₂−y₁)²). Esta calculadora obtiene esa distancia y además el punto medio del segmento, que es el promedio de las coordenadas de ambos extremos."
+  whyUse="Calcular distancias entre puntos es básico en geometría analítica, un tema central de bachillerato y de cualquier carrera técnica. Se aplica en diseño y CAD, en videojuegos para detectar colisiones, en cartografía con coordenadas, en física para desplazamientos y en navegación. Esta herramienta evita los errores típicos al restar coordenadas o al elevar al cuadrado, y entrega también el punto medio, útil para encontrar el centro de un segmento."
+  faqs={[
+    { q: '¿Cuál es la fórmula de la distancia entre dos puntos?', a: 'Es d = √((x₂−x₁)² + (y₂−y₁)²). Se restan las coordenadas x entre sí y las y entre sí, se elevan al cuadrado ambas diferencias, se suman y se saca la raíz cuadrada. Ejemplo: entre A(1,2) y B(4,6), las diferencias son 3 y 4, sus cuadrados 9 y 16, la suma 25 y la raíz 5. La distancia es 5 unidades.' },
+    { q: '¿Por qué la fórmula viene del teorema de Pitágoras?', a: 'Porque el segmento entre dos puntos es la hipotenusa de un triángulo rectángulo cuyos catetos son las diferencias horizontal (x₂−x₁) y vertical (y₂−y₁). El teorema de Pitágoras dice que la hipotenusa al cuadrado es la suma de los cuadrados de los catetos, así que la distancia es la raíz de esa suma. Es Pitágoras aplicado a coordenadas.' },
+    { q: '¿Cómo se calcula el punto medio de un segmento?', a: 'El punto medio tiene como coordenadas el promedio de las coordenadas de los extremos: M = ((x₁+x₂)/2, (y₁+y₂)/2). Ejemplo: el punto medio entre A(1,2) y B(4,6) es ((1+4)/2, (2+6)/2) = (2,5; 4). La calculadora lo muestra junto a la distancia, lo que es útil para hallar el centro de un segmento o de una figura.' },
+    { q: '¿Funciona con coordenadas negativas?', a: 'Sí. Las coordenadas pueden ser positivas, negativas o cero, ya que representan posiciones en los cuatro cuadrantes del plano. La fórmula funciona igual porque las diferencias se elevan al cuadrado, eliminando el signo. Por ejemplo, la distancia entre (−3,−2) y (1,1) se calcula sin problema introduciendo los valores con su signo.' },
+    { q: '¿Para qué se usa en la vida real?', a: 'Se usa en diseño gráfico y CAD para medir entre puntos, en videojuegos para saber si dos objetos están cerca (colisiones), en mapas y GPS para distancias entre coordenadas, en robótica para planificar trayectorias y en física para calcular el módulo de un desplazamiento. Es una de las herramientas más prácticas de la geometría analítica.' },
+    { q: '¿Sirve para distancias en un mapa con latitud y longitud?', a: 'Para distancias cortas en un plano sí da una buena aproximación, pero para distancias largas sobre la superficie terrestre hay que usar la fórmula del semiverseno (haversine), que tiene en cuenta la curvatura de la Tierra. Esta calculadora trabaja en el plano cartesiano, ideal para geometría, diseño y física, no para coordenadas geográficas a gran escala.' },
+  ]}
+>
+  <DistanciaDosPuntosTool client:load />
+</CalcLayout>

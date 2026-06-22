@@ -1,0 +1,19 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import RaizCuadradaTool from '@/components/tools/RaizCuadradaTool';
+---
+
+<CalcLayout slug="raiz-cuadrada"
+  whatIs="La raíz cuadrada de un número es el valor que, multiplicado por sí mismo, da ese número: la raíz cuadrada de 144 es 12 porque 12×12 = 144. Esta calculadora obtiene la raíz cuadrada y también raíces de cualquier índice (cúbica, cuarta, quinta…): la raíz enésima de un número x es el valor que elevado a n da x. Indica además si el resultado es exacto o aproximado, y maneja correctamente las raíces de índice impar de números negativos."
+  whyUse="La raíz cuadrada aparece constantemente: en el teorema de Pitágoras para hallar lados de triángulos, en estadística para la desviación estándar, en física para velocidades y tiempos, y en geometría para áreas y volúmenes. Esta herramienta evita tener que estimar a mano o buscar tablas, y al distinguir entre raíces exactas y aproximadas te ayuda a entender si estás ante un cuadrado perfecto. Sirve tanto para tareas escolares como para cálculos técnicos."
+  faqs={[
+    { q: '¿Qué es exactamente la raíz cuadrada de un número?', a: 'Es el número que, elevado al cuadrado (multiplicado por sí mismo), da el número original. La raíz cuadrada de 25 es 5 porque 5² = 25. Se representa con el símbolo √. Todo número positivo tiene en realidad dos raíces cuadradas, una positiva y una negativa (5 y −5), pero por convención la calculadora muestra la raíz principal, que es la positiva.' },
+    { q: '¿Qué es un cuadrado perfecto?', a: 'Un cuadrado perfecto es un número cuya raíz cuadrada es un número entero exacto: 1, 4, 9, 16, 25, 36, 49, 64, 81, 100… Por ejemplo 49 es cuadrado perfecto porque √49 = 7 exacto. Cuando introduces uno, la calculadora te indica que la raíz es exacta; si no lo es, te avisa de que el resultado es una aproximación decimal.' },
+    { q: '¿Qué es la raíz cúbica y la raíz enésima?', a: 'La raíz cúbica de un número es el valor que elevado al cubo da ese número: la raíz cúbica de 27 es 3 porque 3³ = 27. La raíz enésima generaliza la idea: la raíz de índice n de x es el valor que elevado a n da x. En la calculadora cambia el campo "índice" a 3 para la cúbica, a 4 para la cuarta, etc. El índice mínimo es 2 (la cuadrada).' },
+    { q: '¿Se puede calcular la raíz de un número negativo?', a: 'Depende del índice. Las raíces de índice impar (cúbica, quinta…) sí existen para números negativos: la raíz cúbica de −8 es −2 porque (−2)³ = −8. En cambio, las raíces de índice par (cuadrada, cuarta…) no tienen solución real para números negativos, porque ningún número real elevado a una potencia par da negativo. En ese caso la calculadora muestra un aviso.' },
+    { q: '¿Por qué a veces el resultado tiene muchos decimales?', a: 'Porque la mayoría de los números no son cuadrados perfectos y su raíz es un número irracional, con infinitos decimales no periódicos. Por ejemplo √2 = 1,41421356… La calculadora redondea a seis cifras decimales, suficiente para casi cualquier uso práctico, e indica que se trata de un valor aproximado.' },
+    { q: '¿Para qué sirve la raíz cuadrada en la vida real?', a: 'Se usa para calcular la diagonal de una pantalla o una habitación (teorema de Pitágoras), la desviación estándar en estadística, el período de un péndulo en física, el radio a partir del área de un círculo, y en finanzas para volatilidades. Es una de las operaciones matemáticas más presentes en ingeniería, ciencia y diseño.' },
+  ]}
+>
+  <RaizCuadradaTool client:load />
+</CalcLayout>
