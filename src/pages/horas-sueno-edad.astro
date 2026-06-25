@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import HorasSuenoEdadTool from '@/components/tools/HorasSuenoEdadTool';
+---
+
+<CalcLayout slug="horas-sueno-edad"
+  whatIs="Esta calculadora indica cuántas horas de sueño se recomiendan según la edad, basándose en las directrices de la National Sleep Foundation. Introduces la edad en años y la herramienta te muestra la franja horaria de descanso aconsejada para ese grupo de edad, desde los bebés (que necesitan muchas más horas, incluidas siestas) hasta los adultos mayores, cuyas necesidades de sueño se reducen ligeramente."
+  whyUse="Dormir las horas adecuadas es fundamental para la salud física y mental, el rendimiento, la memoria y el estado de ánimo, pero las necesidades cambian mucho a lo largo de la vida. Esta herramienta ayuda a padres a saber cuánto deben dormir sus hijos y a adultos a comprobar si su descanso es suficiente. Conocer la recomendación para tu edad es el primer paso para cuidar tu sueño."
+  faqs={[
+    { q: '¿Cuántas horas debe dormir un adulto?', a: 'Los adultos (de 18 a 64 años) necesitan entre 7 y 9 horas de sueño por noche según las recomendaciones de la National Sleep Foundation. Dormir menos de 7 de forma habitual se asocia a peor salud, rendimiento y estado de ánimo. A partir de los 65 años, la necesidad baja ligeramente a unas 7-8 horas. Cada persona tiene su punto óptimo dentro de ese rango.' },
+    { q: '¿Cuántas horas necesitan los niños?', a: 'Las necesidades de sueño son mayores cuanto menor es la edad: los bebés necesitan de 12 a 16 horas (con siestas), los niños pequeños de 1 a 2 años entre 11 y 14, los preescolares de 3 a 5 años entre 10 y 13, los escolares de 6 a 13 años entre 9 y 11, y los adolescentes de 14 a 17 años entre 8 y 10 horas. El sueño es clave para su desarrollo.' },
+    { q: '¿Por qué cambian las necesidades de sueño con la edad?', a: 'Porque el sueño cumple funciones distintas en cada etapa. En la infancia y adolescencia es esencial para el crecimiento, el desarrollo cerebral y la consolidación del aprendizaje, por eso se necesita más. En la edad adulta se estabiliza, y en la vejez tiende a fragmentarse y reducirse algo, aunque la necesidad de un descanso reparador se mantiene a lo largo de toda la vida.' },
+    { q: '¿Es malo dormir más horas de las recomendadas?', a: 'Dormir ocasionalmente de más no es preocupante, pero hacerlo de forma habitual muy por encima del rango recomendado puede asociarse a ciertos problemas de salud o ser síntoma de otros (depresión, mala calidad del sueño, enfermedades). Tanto dormir muy poco como demasiado de manera crónica conviene revisarlo. Lo ideal es mantenerse dentro de la franja saludable para tu edad.' },
+    { q: '¿Qué importa más, las horas o la calidad del sueño?', a: 'Ambas cosas. Puedes dormir muchas horas pero con un sueño fragmentado y poco reparador, y levantarte cansado. La calidad (sueño profundo, sin interrupciones) es tan importante como la cantidad. Por eso, además de procurar las horas recomendadas para tu edad, conviene cuidar la higiene del sueño para que esas horas sean realmente reparadoras.' },
+  ]}
+>
+  <HorasSuenoEdadTool client:load />
+</CalcLayout>

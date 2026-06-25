@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import NumeroSuertePersonalTool from '@/components/tools/NumeroSuertePersonalTool';
+---
+
+<CalcLayout slug="numero-suerte-personal"
+  whatIs="Esta calculadora obtiene tu número de la suerte personal a partir de tu fecha de nacimiento, según la numerología. Suma todas las cifras de tu fecha (día, mes y año) y las reduce hasta obtener un número del 1 al 9, conservando los números maestros 11, 22 y 33. Ese número se considera tu número de la suerte, ligado a tu fecha de nacimiento de forma única."
+  whyUse="Mucha gente busca su número de la suerte para la lotería, los juegos de azar, elegir fechas señaladas o simplemente por curiosidad y diversión. A diferencia de un número aleatorio, este se calcula a partir de tu fecha de nacimiento, lo que le da un significado personal según la numerología. Es una herramienta lúdica para descubrir tu número y darle un toque personal a tus elecciones."
+  faqs={[
+    { q: '¿Cómo se calcula el número de la suerte por fecha de nacimiento?', a: 'Se suman todas las cifras de la fecha de nacimiento (día, mes y año) y, si el resultado tiene más de un dígito, se vuelven a sumar sus cifras hasta obtener un número del 1 al 9. Por ejemplo, para el 23/04/1990: 2+3+0+4+1+9+9+0 = 28, y 2+8 = 10, y 1+0 = 1. El número de la suerte sería el 1.' },
+    { q: '¿Qué son los números maestros 11, 22 y 33?', a: 'En numerología, el 11, el 22 y el 33 se consideran números maestros y no se reducen a una sola cifra, porque se les atribuye una vibración y un significado especiales. Si al sumar las cifras de tu fecha obtienes uno de ellos, se mantiene como tu número en lugar de reducirlo. La calculadora respeta esta regla automáticamente.' },
+    { q: '¿El número de la suerte sirve para la lotería?', a: 'Mucha gente lo usa para elegir números de lotería, primitiva o juegos de azar, por diversión o por la ilusión de un toque personal. Sin embargo, hay que recordar que los sorteos son completamente aleatorios: ningún número, por significativo que sea para ti, tiene más probabilidades de salir que otro. Úsalo como un juego, no como una estrategia ganadora.' },
+    { q: '¿Es lo mismo que el número del camino de la vida?', a: 'Están relacionados pero no son exactamente lo mismo. El número del camino de la vida en numerología se calcula también a partir de la fecha de nacimiento y describe tu propósito y carácter. El número de la suerte personal usa un cálculo similar de reducción de la fecha. Ambos parten de tu nacimiento, y a menudo coinciden o se interpretan de forma complementaria.' },
+    { q: '¿Tiene base científica la numerología?', a: 'No. La numerología es una creencia esotérica sin respaldo científico: no hay evidencia de que los números influyan en la suerte o la personalidad. Esta calculadora es una herramienta de entretenimiento para quienes disfrutan de la numerología y la simbología de los números. Tómala como un juego curioso y divertido, no como una predicción real.' },
+  ]}
+>
+  <NumeroSuertePersonalTool client:load />
+</CalcLayout>

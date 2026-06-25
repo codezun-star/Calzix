@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import SorteoNombresTool from '@/components/tools/SorteoNombresTool';
+---
+
+<CalcLayout slug="sorteo-nombres"
+  whatIs="Este sorteador elige al azar un ganador de entre una lista de nombres que introduces. Escribes los participantes separados por comas o saltos de línea, pulsas el botón y la herramienta selecciona uno de forma totalmente aleatoria e imparcial. Usa generación aleatoria criptográficamente segura, de modo que todos los participantes tienen exactamente la misma probabilidad de ser elegidos."
+  whyUse="Es la forma más rápida y transparente de hacer un sorteo justo: para rifas, concursos de redes sociales, repartir tareas, elegir quién paga, decidir el orden de turnos o cualquier situación en la que haya que elegir a alguien al azar sin favoritismos. Evita discusiones y la sospecha de trampa, ya que la selección es aleatoria y nadie puede influir en el resultado. Sencillo, instantáneo e imparcial."
+  faqs={[
+    { q: '¿Cómo funciona el sorteo de nombres?', a: 'Introduces todos los participantes separados por comas o en líneas distintas y la herramienta elige uno al azar. Cada nombre de la lista tiene la misma probabilidad de salir, sin importar el orden ni la posición. El resultado es completamente aleatorio, lo que garantiza un sorteo limpio y justo para todos los participantes.' },
+    { q: '¿El sorteo es realmente justo?', a: 'Sí. La calculadora usa el generador de números aleatorios criptográficamente seguro del navegador, que produce resultados impredecibles y equiprobables. No hay patrones ni sesgos: cada participante tiene exactamente la misma probabilidad de ganar. Es tan imparcial como sacar un papel de un sombrero, pero más rápido y sin posibilidad de manipulación.' },
+    { q: '¿Para qué puedo usar el sorteador?', a: 'Para rifas y concursos (incluidos los de redes sociales), elegir quién hace una tarea, decidir el orden de intervención, repartir regalos del amigo invisible, escoger equipos, seleccionar al afortunado de una promoción, o cualquier decisión que quieras dejar al azar. Es útil tanto en el ámbito personal y familiar como en eventos, clases o pequeños negocios.' },
+    { q: '¿Cuántos nombres puedo introducir?', a: 'Puedes introducir tantos como necesites, desde dos participantes hasta listas largas. La herramienta los procesa todos por igual. Solo asegúrate de separarlos correctamente con comas o saltos de línea para que cada nombre se cuente como un participante independiente. Cuantos más participantes, menor es la probabilidad individual de cada uno, como en cualquier sorteo.' },
+    { q: '¿Sirve para sorteos de Instagram o redes sociales?', a: 'Sí, es ideal para elegir al ganador de un sorteo en redes sociales: copia los nombres de los participantes y pégalos en la calculadora para obtener un ganador aleatorio. Para que el sorteo sea transparente, conviene grabar o mostrar el momento de la elección. Recuerda cumplir las normas de cada plataforma y la legislación aplicable a los sorteos.' },
+  ]}
+>
+  <SorteoNombresTool client:load />
+</CalcLayout>

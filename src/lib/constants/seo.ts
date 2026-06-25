@@ -1408,4 +1408,54 @@ export const PAGE_SEO: Record<string, PageSEO> = {
     description: 'Calcula el agua que evitas contaminar al reciclar pilas usadas en lugar de tirarlas a la basura. Gratis, sin registro.',
     canonical: 'https://calzix.com/pilas-recicladas',
   },
+  'lenguaje-amor': {
+    title: 'Test de los 5 Lenguajes del Amor — Calzix',
+    description: 'Descubre tu lenguaje del amor principal entre los cinco de Gary Chapman: palabras, tiempo, regalos, actos y contacto. Gratis.',
+    canonical: 'https://calzix.com/lenguaje-amor',
+  },
+  'distancia-relacion': {
+    title: 'Cuenta Atrás para Relación a Distancia — Calzix',
+    description: 'Cuenta los días que faltan para volver a ver a tu pareja en una relación a distancia. Gratis y al instante.',
+    canonical: 'https://calzix.com/distancia-relacion',
+  },
+  'tirada-dados': {
+    title: 'Tirada de Dados Virtual (NdM, d20, d6…) — Calzix',
+    description: 'Lanza varios dados virtuales del número de caras que quieras, con modificador. Ideal para rol y juegos de mesa. Gratis.',
+    canonical: 'https://calzix.com/tirada-dados',
+  },
+  'sorteo-nombres': {
+    title: 'Sorteo de Nombres al Azar — Elige un Ganador — Calzix',
+    description: 'Sortea un ganador aleatorio entre una lista de nombres. Justo e imparcial para rifas y concursos. Gratis, sin registro.',
+    canonical: 'https://calzix.com/sorteo-nombres',
+  },
+  'numero-aleatorio': {
+    title: 'Generador de Números Aleatorios — Calzix',
+    description: 'Genera números aleatorios en el rango que elijas, con o sin repetición. Aleatoriedad segura. Gratis y al instante.',
+    canonical: 'https://calzix.com/numero-aleatorio',
+  },
+  'numero-suerte-personal': {
+    title: 'Calculadora del Número de la Suerte por Fecha de Nacimiento — Calzix',
+    description: 'Descubre tu número de la suerte personal calculado a partir de tu fecha de nacimiento según la numerología. Gratis.',
+    canonical: 'https://calzix.com/numero-suerte-personal',
+  },
+  'numero-angel': {
+    title: 'Significado de los Números Ángel (111, 222, 1111…) — Calzix',
+    description: 'Descubre el significado de los números ángel que ves repetidos en relojes y matrículas. Gratis, sin registro.',
+    canonical: 'https://calzix.com/numero-angel',
+  },
+  'numero-dia-nacimiento': {
+    title: 'Calculadora del Número del Día de Nacimiento — Calzix',
+    description: 'Descubre tu número del día de nacimiento y el rasgo de personalidad que la numerología le asocia. Gratis y al instante.',
+    canonical: 'https://calzix.com/numero-dia-nacimiento',
+  },
+  'cafeina-sueno': {
+    title: 'Calculadora de Cafeína y Sueño — Último Café — Calzix',
+    description: 'Calcula a qué hora dejar la cafeína para que no afecte a tu sueño según tu hora de dormir. Gratis, sin registro.',
+    canonical: 'https://calzix.com/cafeina-sueno',
+  },
+  'horas-sueno-edad': {
+    title: 'Horas de Sueño Recomendadas por Edad — Calzix',
+    description: 'Descubre cuántas horas de sueño se recomiendan según la edad, de bebés a adultos mayores (National Sleep Foundation). Gratis.',
+    canonical: 'https://calzix.com/horas-sueno-edad',
+  },
 };

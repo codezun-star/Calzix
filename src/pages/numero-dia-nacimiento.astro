@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import NumeroDiaNacimientoTool from '@/components/tools/NumeroDiaNacimientoTool';
+---
+
+<CalcLayout slug="numero-dia-nacimiento"
+  whatIs="Esta calculadora obtiene tu número del día de nacimiento según la numerología: se toma el día del mes en que naciste y, si tiene dos cifras, se reducen sumándolas hasta obtener un número del 1 al 9 (conservando los maestros 11 y 22). A cada número se le asocia un rasgo central de personalidad, ofreciéndote una breve descripción de lo que la numerología dice sobre tu forma de ser."
+  whyUse="El número del día de nacimiento es uno de los más sencillos y populares de la numerología, porque solo depende del día en que naciste y se calcula al instante. Es una forma entretenida de explorar la simbología numérica de tu personalidad, comparar con la de familiares y amigos, o iniciarte en la numerología. Una curiosidad ligera y divertida para conocerte desde otra perspectiva."
+  faqs={[
+    { q: '¿Cómo se calcula el número del día de nacimiento?', a: 'Se toma únicamente el día del mes en que naciste. Si es un número de una cifra (del 1 al 9), ese es tu número. Si tiene dos cifras, se suman para reducirlo: por ejemplo, naciste el 23, entonces 2+3 = 5, y tu número del día sería el 5. Los números 11 y 22 se mantienen como maestros sin reducir.' },
+    { q: '¿Qué diferencia hay con el número del camino de la vida?', a: 'El número del día de nacimiento usa solo el día del mes y describe un rasgo concreto de tu personalidad. El número del camino de la vida se calcula con la fecha completa (día, mes y año) y se considera el más importante en numerología, ya que describe tu propósito y trayectoria vital. El del día es como un matiz dentro del retrato numerológico completo.' },
+    { q: '¿Qué significa cada número del 1 al 9?', a: 'A grandes rasgos: el 1 representa liderazgo e independencia; el 2, sensibilidad y cooperación; el 3, creatividad y comunicación; el 4, orden y esfuerzo; el 5, libertad y aventura; el 6, responsabilidad y amor; el 7, análisis y espiritualidad; el 8, ambición y abundancia; y el 9, compasión e idealismo. Cada uno aporta una energía y unas cualidades distintas.' },
+    { q: '¿Qué son los números maestros 11 y 22?', a: 'Son números a los que la numerología atribuye una vibración especial y por eso no se reducen. El 11 se asocia a la intuición elevada y la inspiración, y el 22, al "gran constructor", capaz de materializar grandes proyectos. Si naciste un día 11 o un día 22, tu número del día se mantiene como maestro en lugar de reducirse a 2 o 4.' },
+    { q: '¿Es fiable lo que dice sobre mi personalidad?', a: 'La numerología es una creencia esotérica sin validez científica: no hay evidencia de que el día en que naciste determine tu carácter. Las descripciones son generales y, como los horóscopos, tienden a parecer acertadas por su amplitud. Tómalo como un juego de autoconocimiento y entretenimiento, no como un análisis real de tu personalidad.' },
+  ]}
+>
+  <NumeroDiaNacimientoTool client:load />
+</CalcLayout>

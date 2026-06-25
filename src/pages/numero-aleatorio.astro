@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import NumeroAleatorioTool from '@/components/tools/NumeroAleatorioTool';
+---
+
+<CalcLayout slug="numero-aleatorio"
+  whatIs="Este generador crea números aleatorios dentro del rango que elijas. Indicas el valor mínimo, el máximo y cuántos números quieres generar, con la opción de que no se repitan. La herramienta usa generación aleatoria criptográficamente segura para que cada número del rango tenga la misma probabilidad de salir, ofreciendo resultados verdaderamente imprevisibles e imparciales."
+  whyUse="Generar un número al azar es útil para sorteos, juegos, tomar decisiones, elegir muestras aleatorias, asignar turnos o cualquier situación que requiera azar. La opción de generar varios números sin repetir es perfecta para rifas con números de participación o para seleccionar varios ganadores. Es una herramienta sencilla y versátil que sustituye a sacar papeles o tirar dados cuando necesitas un número aleatorio fiable."
+  faqs={[
+    { q: '¿Cómo se genera un número aleatorio?', a: 'Indicas un rango (un valor mínimo y uno máximo) y la herramienta elige al azar un número entero dentro de ese rango, ambos incluidos. Por ejemplo, entre 1 y 100 puede salir cualquier número del 1 al 100 con la misma probabilidad. También puedes generar varios números a la vez y elegir que no se repitan entre ellos.' },
+    { q: '¿Los números son realmente aleatorios?', a: 'Sí. La calculadora utiliza el generador criptográficamente seguro del navegador (crypto.getRandomValues), que produce números impredecibles y sin patrones, mucho más fiable que los generadores pseudoaleatorios básicos. Cada número del rango tiene exactamente la misma probabilidad de aparecer, garantizando resultados justos para sorteos y decisiones.' },
+    { q: '¿Para qué sirve la opción "sin repetir"?', a: 'La opción de no repetir hace que, al generar varios números, todos sean distintos entre sí. Es útil para sorteos donde cada número de participación es único, para seleccionar varios ganadores diferentes, o para barajar elementos. Si la desactivas, un mismo número puede salir más de una vez, como al tirar un dado varias veces.' },
+    { q: '¿Cuántos números puedo generar a la vez?', a: 'Puedes generar desde un solo número hasta una serie de ellos (hasta 100). Si activas la opción de no repetir, ten en cuenta que no puedes pedir más números distintos de los que caben en el rango: por ejemplo, no puedes sacar 10 números diferentes entre 1 y 5. La herramienta te avisa si el rango es insuficiente.' },
+    { q: '¿En qué se diferencia de un sorteo de nombres?', a: 'El generador de números aleatorios trabaja con un rango numérico (del X al Y), mientras que el sorteo de nombres elige entre una lista de participantes concretos. Usa el generador de números cuando los participantes estén numerados o cuando simplemente necesites una cifra al azar; usa el sorteo de nombres cuando quieras elegir directamente entre personas o elementos con nombre.' },
+  ]}
+>
+  <NumeroAleatorioTool client:load />
+</CalcLayout>

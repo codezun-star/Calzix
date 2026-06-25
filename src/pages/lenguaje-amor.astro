@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import LenguajeAmorTool from '@/components/tools/LenguajeAmorTool';
+---
+
+<CalcLayout slug="lenguaje-amor"
+  whatIs="Este test identifica tu lenguaje del amor principal entre los cinco propuestos por el autor Gary Chapman: palabras de afirmación, tiempo de calidad, regalos, actos de servicio y contacto físico. Puntúas del 0 al 10 cuánto te importa cada forma de recibir cariño, y la herramienta te muestra cuál es tu lenguaje predominante, el que más te hace sentir querido en tus relaciones."
+  whyUse="Conocer tu lenguaje del amor (y el de tu pareja) ayuda a entender por qué a veces no nos sentimos queridos aunque la otra persona nos quiera: simplemente expresa el cariño en un 'idioma' distinto al que necesitamos. Esta herramienta es una forma divertida y útil de mejorar la comunicación afectiva, descubrir qué te hace sentir valorado y aprender a demostrar amor de la manera que el otro mejor recibe."
+  faqs={[
+    { q: '¿Qué son los cinco lenguajes del amor?', a: 'Es un concepto popularizado por Gary Chapman que propone que las personas damos y recibimos amor principalmente de cinco formas: palabras de afirmación (elogios y aprecio verbal), tiempo de calidad (atención plena compartida), regalos (detalles materiales), actos de servicio (hacer cosas por el otro) y contacto físico (caricias y cercanía). Cada persona tiene uno o dos predominantes.' },
+    { q: '¿Para qué sirve conocer mi lenguaje del amor?', a: 'Sirve para comunicar mejor tus necesidades afectivas y entender las de tu pareja. Muchos conflictos surgen porque cada uno expresa amor en su propio lenguaje, que no siempre coincide con el que el otro necesita recibir. Saber cuál es tu lenguaje y el de tu pareja permite demostraros cariño de forma que ambos lo sintáis de verdad, fortaleciendo la relación.' },
+    { q: '¿Puedo tener más de un lenguaje del amor?', a: 'Sí. La mayoría de las personas tienen un lenguaje principal y uno secundario, y todos valoramos en alguna medida los cinco. El test identifica el que más puntúas, pero es normal que dos estén muy próximos. Lo importante no es encasillarse, sino tomar conciencia de qué formas de cariño te llegan más para comunicarlo en tus relaciones.' },
+    { q: '¿El lenguaje del amor cambia con el tiempo?', a: 'Puede evolucionar según el momento vital y las circunstancias. En épocas de estrés quizá necesites más actos de servicio; en una relación a distancia, más palabras de afirmación. No es algo fijo e inmutable, sino una guía para entenderte mejor. Repetir el test en distintos momentos puede revelar cómo cambian tus necesidades afectivas.' },
+    { q: '¿Este test es científico?', a: 'El modelo de los cinco lenguajes del amor es una herramienta popular de desarrollo personal y relaciones, no un instrumento de diagnóstico clínico validado científicamente. Es útil como punto de partida para la reflexión y la comunicación en pareja, y debe tomarse como una orientación divertida y práctica, no como una verdad absoluta sobre tu personalidad.' },
+  ]}
+>
+  <LenguajeAmorTool client:load />
+</CalcLayout>

@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import TiradaDadosTool from '@/components/tools/TiradaDadosTool';
+---
+
+<CalcLayout slug="tirada-dados"
+  whatIs="Este lanzador de dados virtual permite tirar varios dados a la vez, del número de caras que quieras, y aplicar un modificador a la suma. Es perfecto para juegos de mesa y de rol como Dungeons & Dragons, donde se usan dados de 4, 6, 8, 10, 12, 20 o 100 caras (notación NdM, como 2d6 o 1d20+3). Muestra cada resultado individual y la suma total con el modificador incluido."
+  whyUse="Cuando no tienes dados a mano o necesitas tirar muchos a la vez, un lanzador virtual es la solución más rápida y cómoda. Esta herramienta usa generación aleatoria criptográficamente segura, garantizando tiradas justas e imprevisibles. Es ideal para partidas de rol, juegos de mesa, sorteos rápidos o cualquier situación que requiera el azar de uno o varios dados, sin riesgo de perder ninguno."
+  faqs={[
+    { q: '¿Qué significa la notación de dados como 2d6 o 1d20?', a: 'Es la notación estándar de los juegos de rol: el primer número indica cuántos dados se tiran, la "d" significa "dado", y el segundo número son las caras de cada dado. Así, 2d6 son dos dados de seis caras, y 1d20 es un dado de veinte caras. A veces se añade un modificador, como 1d20+3, que suma 3 al resultado de la tirada.' },
+    { q: '¿Las tiradas son realmente aleatorias?', a: 'Sí. La calculadora utiliza el generador de números aleatorios criptográficamente seguro del navegador (crypto.getRandomValues), que produce resultados impredecibles y sin patrones, a diferencia de los generadores pseudoaleatorios simples. Esto garantiza que cada cara tenga la misma probabilidad de salir, igual que con un dado físico bien equilibrado.' },
+    { q: '¿Para qué se usa cada tipo de dado?', a: 'En los juegos de rol, cada dado tiene su uso: el d20 para acciones y ataques, el d6 para daño básico y juegos clásicos, el d4, d8, d10 y d12 para distintos tipos de daño y efectos, y el d100 (o percentil) para tablas de probabilidad. Esta herramienta permite cualquier número de caras, así que sirve para todos los sistemas de juego.' },
+    { q: '¿Qué es el modificador de la tirada?', a: 'El modificador es un número que se suma (o resta) al resultado total de los dados, y representa bonificaciones o penalizaciones del personaje o la situación. Por ejemplo, 1d20+5 tira un dado de veinte caras y le suma 5. La calculadora aplica el modificador a la suma final automáticamente, mostrando tanto las tiradas individuales como el total ajustado.' },
+    { q: '¿Puedo tirar muchos dados a la vez?', a: 'Sí, la calculadora permite lanzar varios dados de una sola vez (hasta 50) y te muestra el resultado de cada uno por separado además de la suma total. Es muy práctico para tiradas de daño masivo, sistemas que usan reservas de dados o cualquier situación que requiera lanzar muchos dados simultáneamente sin tener que ir sumándolos a mano.' },
+  ]}
+>
+  <TiradaDadosTool client:load />
+</CalcLayout>

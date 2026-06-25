@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import DistanciaRelacionTool from '@/components/tools/DistanciaRelacionTool';
+---
+
+<CalcLayout slug="distancia-relacion"
+  whatIs="Esta calculadora cuenta los días que faltan para reencontrarte con tu pareja en una relación a distancia. Eliges la fecha del próximo reencuentro y la herramienta te muestra cuántos días quedan, las semanas equivalentes y los fines de semana que tienes por delante hasta volver a veros. Una forma sencilla y motivadora de llevar la cuenta atrás de la espera."
+  whyUse="Las relaciones a distancia son emocionalmente exigentes, y tener una fecha concreta y una cuenta atrás ayuda a sobrellevar la espera con ilusión en lugar de angustia. Esta herramienta convierte un tiempo abstracto en algo tangible y manejable, ideal para parejas separadas por estudios, trabajo o circunstancias, que encuentran ánimo en ver cómo los días que faltan van disminuyendo poco a poco."
+  faqs={[
+    { q: '¿Cómo se cuentan los días hasta el reencuentro?', a: 'La calculadora resta la fecha de hoy a la fecha del próximo reencuentro que elijas, y te muestra el número exacto de días que faltan, además de las semanas y los fines de semana equivalentes. Es una cuenta atrás que se actualiza cada día, haciendo más llevadera la espera al ver cómo la cifra disminuye conforme se acerca el momento.' },
+    { q: '¿Funcionan las relaciones a distancia?', a: 'Muchas relaciones a distancia funcionan y se fortalecen si hay compromiso, comunicación y una meta común. Las claves suelen ser: comunicarse con regularidad y calidad, tener confianza, mantener proyectos compartidos, planear los reencuentros con ilusión y, sobre todo, tener un horizonte: saber que la distancia es temporal. Una cuenta atrás ayuda a mantener viva esa meta.' },
+    { q: '¿Cómo sobrellevar la distancia con la pareja?', a: 'Algunas estrategias que ayudan: establecer rutinas de comunicación (videollamadas a horas fijas), compartir el día a día con mensajes y fotos, hacer cosas juntos a distancia (ver una serie a la vez, jugar online), enviar detalles sorpresa, y planear los reencuentros. Tener una fecha concreta y contar los días le da a la espera un sentido y una ilusión renovada.' },
+    { q: '¿Cada cuánto deberían verse?', a: 'No hay una regla fija: depende de la distancia, el presupuesto y las circunstancias de cada pareja. Lo importante es que los reencuentros sean lo bastante frecuentes para mantener viva la ilusión y la conexión física, y que ambos tengan claro el calendario. Planificar con antelación las próximas visitas ayuda a organizar tiempos, viajes y gastos.' },
+    { q: '¿Puedo usarla para otras esperas?', a: 'Por supuesto. Aunque está pensada para relaciones a distancia, la cuenta atrás sirve para cualquier reencuentro o evento especial que esperes con ilusión: la vuelta de un familiar, unas vacaciones, un viaje soñado o cualquier fecha señalada. Solo tienes que introducir la fecha objetivo y la herramienta te dirá cuántos días faltan.' },
+  ]}
+>
+  <DistanciaRelacionTool client:load />
+</CalcLayout>
