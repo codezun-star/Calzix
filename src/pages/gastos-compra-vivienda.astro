@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import GastosCompraViviendaTool from '@/components/tools/GastosCompraViviendaTool';
+---
+
+<CalcLayout slug="gastos-compra-vivienda"
+  whatIs="Esta calculadora estima los gastos adicionales que conlleva comprar una vivienda, más allá del precio de venta: impuestos de compraventa, notaría, registro de la propiedad y gestoría. Como estos porcentajes varían mucho de un país a otro (e incluso entre regiones), la herramienta te deja ajustar cada porcentaje para adaptarlo a tu caso, y suma el total de gastos y el desembolso completo que necesitas."
+  whyUse="Uno de los errores más comunes al comprar una casa es presupuestar solo el precio y olvidar los gastos asociados, que pueden suponer entre un 8 % y un 15 % adicional. Saberlo de antemano evita sustos y te permite calcular cuánto dinero necesitas ahorrado realmente, ya que estos gastos no suele cubrirlos la hipoteca. Esta herramienta te da una visión completa del coste total de la operación."
+  faqs={[
+    { q: '¿Qué gastos hay al comprar una vivienda además del precio?', a: 'Los principales son: el impuesto de compraventa (que cambia según el país y si la vivienda es nueva o usada), los honorarios de la notaría por la escritura, la inscripción en el registro de la propiedad y, opcionalmente, la gestoría que tramita todo. Si hay hipoteca, se añaden la tasación y algunos gastos asociados al préstamo.' },
+    { q: '¿Cuánto suponen los gastos en total?', a: 'Como referencia general, los gastos de compra suelen rondar entre el 8 % y el 12 % del precio de la vivienda, pudiendo llegar al 15 % en algunos casos. El componente más grande casi siempre son los impuestos. Por eso esta calculadora te deja ajustar cada porcentaje: introduce los que apliquen en tu país o región para obtener una cifra realista.' },
+    { q: '¿La hipoteca cubre estos gastos?', a: 'Por lo general no. La mayoría de hipotecas financian un porcentaje del precio o tasación de la vivienda (habitualmente el 80 %), pero no los gastos e impuestos asociados a la compra. Esto significa que necesitas tener ahorrado, además de la entrada, el dinero suficiente para cubrir estos gastos. Es el principal motivo por el que conviene calcularlos antes.' },
+    { q: '¿Pagan los mismos gastos la vivienda nueva y la usada?', a: 'No. La fiscalidad suele ser distinta: la vivienda nueva acostumbra a tributar por un impuesto sobre el valor añadido más otro de actos jurídicos, mientras que la usada tributa por un impuesto de transmisiones patrimoniales con un porcentaje diferente. Ajusta el porcentaje de impuestos de la calculadora según el tipo de vivienda y la normativa de tu zona.' },
+    { q: '¿Cuánto dinero necesito ahorrado para comprar?', a: 'Como regla práctica, conviene tener ahorrado en torno al 30 % del precio de la vivienda: aproximadamente un 20 % de entrada (lo que no suele financiar la hipoteca) más un 10-12 % para los gastos e impuestos. Esta calculadora te ayuda a estimar esa segunda parte con precisión para que sepas el desembolso total real.' },
+  ]}
+>
+  <GastosCompraViviendaTool client:load />
+</CalcLayout>

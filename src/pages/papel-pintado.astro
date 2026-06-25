@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import PapelPintadoTool from '@/components/tools/PapelPintadoTool';
+---
+
+<CalcLayout slug="papel-pintado"
+  whatIs="Esta calculadora estima cuántos rollos de papel pintado necesitas para empapelar una habitación, a partir del perímetro de las paredes, su altura y las dimensiones del rollo. Funciona calculando cuántas tiras verticales salen de cada rollo y cuántas tiras hacen falta para cubrir todo el perímetro, dejando un margen de corte. El rollo estándar mide 10 metros de largo por 0,53 metros de ancho, pero puedes ajustar esos valores."
+  whyUse="Comprar la cantidad correcta de papel pintado evita quedarse corto (y arriesgarse a que la tienda ya no tenga el mismo lote, con ligeras diferencias de color) o gastar de más. Esta herramienta es útil para reformas y decoración, dándote el número de rollos de forma rápida. Tener en cuenta el margen de corte y un rollo extra para cuadrar dibujos es clave para un acabado profesional sin sorpresas."
+  faqs={[
+    { q: '¿Cómo se calcula cuántos rollos de papel pintado necesito?', a: 'Primero se calcula cuántas tiras verticales salen de un rollo: se divide el largo del rollo entre la altura de la pared más un margen de corte. Luego se calcula cuántas tiras hacen falta para cubrir el perímetro: se divide el perímetro entre el ancho del rollo. Dividiendo las tiras necesarias entre las que da cada rollo se obtiene el número de rollos.' },
+    { q: '¿Qué medidas tiene un rollo de papel pintado estándar?', a: 'El rollo europeo estándar mide 10 metros de largo por 0,53 metros de ancho, lo que cubre unos 5 m² brutos. También existen rollos anchos de 0,70 m o 1,06 m, habituales en papeles americanos. La calculadora viene con los valores estándar, pero puedes cambiarlos según las medidas que indique el fabricante de tu papel.' },
+    { q: '¿Por qué conviene comprar un rollo de más?', a: 'Por dos motivos: para cuadrar el dibujo (los papeles con motivos repetidos desperdician papel al alinear el patrón entre tiras) y para tener reserva ante manchas, roturas o futuros retoques. Además, comprar todo del mismo lote garantiza que el color coincida; los lotes distintos pueden variar ligeramente de tono.' },
+    { q: '¿Tengo que descontar puertas y ventanas?', a: 'Para una estimación segura, conviene NO descontarlas o descontar solo las muy grandes, porque el papel sobre y bajo una ventana suele desperdiciarse al no poder aprovechar las tiras completas. Esta calculadora trabaja con el perímetro total; si tienes huecos muy grandes, puedes restar su anchura al perímetro, pero siempre dejando margen.' },
+    { q: '¿Qué es el "rapport" o repetición del dibujo?', a: 'El rapport es la distancia cada cuánto se repite el motivo del papel. Cuanto mayor es, más papel se desperdicia al cuadrar el dibujo entre tiras, por lo que necesitarás más rollos. Los papeles lisos o de rayas verticales casi no tienen desperdicio; los de grandes motivos florales pueden requerir un 10-15 % más de material.' },
+  ]}
+>
+  <PapelPintadoTool client:load />
+</CalcLayout>

@@ -1158,4 +1158,54 @@ export const PAGE_SEO: Record<string, PageSEO> = {
     description: 'Convierte entre ritmo de carrera (min/km) y velocidad (km/h) para running y ciclismo. Ajusta tu cinta de correr. Gratis.',
     canonical: 'https://calzix.com/conversor-ritmo-velocidad',
   },
+  'hormigon-losa': {
+    title: 'Calculadora de Hormigón para Losa o Solera (m³) — Calzix',
+    description: 'Calcula los metros cúbicos de hormigón para una losa, solera o cimiento, con margen de desperdicio y sacos de cemento. Gratis.',
+    canonical: 'https://calzix.com/hormigon-losa',
+  },
+  'escalera-peldanos': {
+    title: 'Calculadora de Escalera: Peldaños, Huella y Contrahuella — Calzix',
+    description: 'Calcula el número de peldaños, la contrahuella y la huella de una escalera cómoda con la regla de Blondel. Gratis.',
+    canonical: 'https://calzix.com/escalera-peldanos',
+  },
+  'papel-pintado': {
+    title: 'Calculadora de Papel Pintado: Rollos Necesarios — Calzix',
+    description: 'Calcula cuántos rollos de papel pintado necesitas según el perímetro, la altura de la pared y las medidas del rollo. Gratis.',
+    canonical: 'https://calzix.com/papel-pintado',
+  },
+  'potencia-contratada': {
+    title: 'Calculadora de Potencia Eléctrica a Contratar (kW) — Calzix',
+    description: 'Estima qué potencia eléctrica contratar según tus electrodomésticos y el factor de simultaneidad. Ahorra en la factura. Gratis.',
+    canonical: 'https://calzix.com/potencia-contratada',
+  },
+  'ahorro-led': {
+    title: 'Calculadora de Ahorro al Cambiar a Bombillas LED — Calzix',
+    description: 'Calcula cuánto dinero y energía ahorras al sustituir tus bombillas por LED, según horas de uso y precio del kWh. Gratis.',
+    canonical: 'https://calzix.com/ahorro-led',
+  },
+  'capacidad-endeudamiento': {
+    title: 'Calculadora de Capacidad de Endeudamiento (regla 35%) — Calzix',
+    description: 'Calcula cuánto puedes pedir prestado según tus ingresos con la regla del 35%. Cuota máxima y préstamo asumible. Gratis.',
+    canonical: 'https://calzix.com/capacidad-endeudamiento',
+  },
+  'gastos-compra-vivienda': {
+    title: 'Calculadora de Gastos de Compra de Vivienda — Calzix',
+    description: 'Calcula los impuestos, notaría y gastos al comprar una casa, además del precio. Porcentajes ajustables a tu país. Gratis.',
+    canonical: 'https://calzix.com/gastos-compra-vivienda',
+  },
+  'consumo-climatizacion': {
+    title: 'Calculadora de Consumo de Aire Acondicionado y Calefacción — Calzix',
+    description: 'Calcula el coste eléctrico del aire acondicionado o la calefacción por temporada según potencia, horas y precio del kWh. Gratis.',
+    canonical: 'https://calzix.com/consumo-climatizacion',
+  },
+  'cesped-semillas': {
+    title: 'Calculadora de Semillas de Césped por m² — Calzix',
+    description: 'Calcula los kilos de semilla de césped que necesitas según la superficie y la dosis de siembra. Gratis y al instante.',
+    canonical: 'https://calzix.com/cesped-semillas',
+  },
+  'piscina-volumen': {
+    title: 'Calculadora de Volumen de Piscina (litros y m³) — Calzix',
+    description: 'Calcula los litros de agua de tu piscina rectangular o circular y la dosis de cloro inicial. Gratis, sin registro.',
+    canonical: 'https://calzix.com/piscina-volumen',
+  },
 };

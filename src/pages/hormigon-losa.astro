@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import HormigonLosaTool from '@/components/tools/HormigonLosaTool';
+---
+
+<CalcLayout slug="hormigon-losa"
+  whatIs="Esta calculadora estima el volumen de hormigón necesario para una losa, solera, contrapiso o cimiento rectangular, multiplicando el largo por el ancho y por el espesor. El resultado se da en metros cúbicos, que es como se pide el hormigón a una planta o como se calcula la mezcla. Además incluye un margen del 10 % por desperdicio y una estimación de sacos de cemento si decides amasarlo tú mismo."
+  whyUse="Calcular bien el hormigón evita dos problemas caros: pedir de menos (y tener que parar la obra para hacer otra amasada que no pega bien con la anterior) o pedir de más (y pagar material que sobra). Es útil para cualquier proyecto de albañilería: una solera de garaje, el contrapiso de una habitación, una base para una piscina o los cimientos de un muro. La herramienta da el volumen exacto y el margen recomendado."
+  faqs={[
+    { q: '¿Cómo se calcula el volumen de hormigón de una losa?', a: 'Se multiplican las tres dimensiones en metros: largo × ancho × espesor. Si el espesor está en centímetros, se divide entre 100 para pasarlo a metros. Por ejemplo, una losa de 4 × 3 m con 10 cm de espesor: 4 × 3 × 0,10 = 1,2 m³ de hormigón. La calculadora hace esta conversión automáticamente cuando introduces el espesor en centímetros.' },
+    { q: '¿Por qué hay que añadir un margen de desperdicio?', a: 'Porque siempre se pierde algo de hormigón: irregularidades del terreno, una excavación más profunda de lo previsto, lo que queda en la hormigonera o en las herramientas, y pequeños derrames. Un margen del 10 % es lo habitual; para terrenos muy irregulares conviene subir al 15 %. Es mejor que sobre un poco a quedarse corto a mitad del vertido.' },
+    { q: '¿Cuántos sacos de cemento necesito por metro cúbico?', a: 'Depende de la dosificación, pero para un hormigón estándar de uso general se necesitan en torno a 7 sacos de cemento de 50 kg por metro cúbico, además de la arena y la grava en la proporción adecuada (una mezcla típica es 1:2:3 de cemento, arena y grava). La calculadora da una estimación orientativa de sacos por si amasas el hormigón a mano.' },
+    { q: '¿Es mejor amasar el hormigón o pedirlo hecho?', a: 'Para volúmenes pequeños (menos de 1 m³) suele compensar amasarlo a mano o con una hormigonera de alquiler. A partir de 1-2 m³, pedir hormigón preparado a una planta sale más cómodo y garantiza una mezcla homogénea y de resistencia certificada. Por encima de 3-4 m³ casi siempre conviene el camión hormigonera por tiempo y calidad.' },
+    { q: '¿Qué espesor debe tener una losa o solera?', a: 'Depende del uso: una solera de jardín o para peatones suele llevar 8-10 cm; el suelo de un garaje para coches, 12-15 cm; y una losa que deba soportar mucha carga o vehículos pesados, 15-20 cm con armadura de acero. Consulta siempre las recomendaciones técnicas de tu proyecto, ya que el espesor influye directamente en la resistencia.' },
+  ]}
+>
+  <HormigonLosaTool client:load />
+</CalcLayout>

@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import CapacidadEndeudamientoTool from '@/components/tools/CapacidadEndeudamientoTool';
+---
+
+<CalcLayout slug="capacidad-endeudamiento"
+  whatIs="Esta calculadora estima cuánto puedes destinar al pago de cuotas de préstamos cada mes sin comprometer tu economía, aplicando la regla del 35 %: la suma de todas tus cuotas mensuales (incluida la hipoteca) no debería superar el 35 % de tus ingresos netos. A partir de tus ingresos y tus deudas actuales calcula la cuota máxima recomendada, y opcionalmente, con un interés y un plazo, estima el préstamo total que podrías asumir."
+  whyUse="Conocer tu capacidad de endeudamiento es el primer paso antes de pedir una hipoteca o un préstamo: los bancos la usan para decidir cuánto te prestan, y a ti te protege de comprometerte por encima de tus posibilidades. Esta herramienta te da una estimación realista de la cuota que puedes pagar y del importe máximo que podrías financiar, ayudándote a planificar la compra de una vivienda o un coche con los pies en la tierra."
+  faqs={[
+    { q: '¿Qué es la regla del 35 %?', a: 'Es una guía financiera muy extendida que recomienda que la suma de todas tus cuotas mensuales de deuda (hipoteca, préstamos, tarjetas) no supere el 35 % de tus ingresos netos. Por encima de ese umbral, el riesgo de no poder hacer frente a los pagos ante cualquier imprevisto aumenta mucho. Los bancos suelen aplicar este límite al estudiar una solicitud.' },
+    { q: '¿Cómo se calcula la capacidad de endeudamiento?', a: 'Se toma el 35 % de los ingresos netos mensuales del hogar y se le restan las cuotas de deudas que ya pagas. El resultado es la cuota máxima que podrías asumir con un nuevo préstamo. Por ejemplo, con 2.500 de ingresos y 200 de deudas actuales: 35 % de 2.500 = 875, menos 200 = 675 de cuota disponible.' },
+    { q: '¿Cómo se traduce la cuota en un importe de préstamo?', a: 'Con la cuota máxima, el tipo de interés y el plazo se puede calcular el capital máximo que financiar, usando la fórmula de la cuota de un préstamo francés. Cuanto menor es el interés y mayor el plazo, mayor es el importe que puedes pedir con la misma cuota. La calculadora lo estima si introduces el interés y el plazo en años.' },
+    { q: '¿Debo contar mis ingresos brutos o netos?', a: 'Siempre los netos, es decir, lo que realmente ingresas en tu cuenta después de impuestos y cotizaciones. Usar los brutos sobrestimaría tu capacidad real de pago. Si sois dos titulares, suma los ingresos netos de ambos, ya que el banco considerará los ingresos conjuntos del hogar para conceder el préstamo.' },
+    { q: '¿La regla del 35 % es obligatoria?', a: 'No es una ley, sino una recomendación de prudencia financiera, pero la mayoría de bancos la aplican como criterio para conceder hipotecas. Puedes endeudarte por encima si tus ingresos son altos y estables, o por debajo si quieres más margen de seguridad. Lo importante es dejar colchón para imprevistos, subidas de tipos y gastos inesperados.' },
+  ]}
+>
+  <CapacidadEndeudamientoTool client:load />
+</CalcLayout>

@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import PiscinaVolumenTool from '@/components/tools/PiscinaVolumenTool';
+---
+
+<CalcLayout slug="piscina-volumen"
+  whatIs="Esta calculadora obtiene el volumen de agua de una piscina en litros y metros cúbicos, tanto para piscinas rectangulares como circulares, a partir de sus dimensiones y la profundidad media. Además, estima la cantidad orientativa de cloro para una cloración de choque inicial. Conocer el volumen exacto es la base para dosificar correctamente todos los productos químicos del mantenimiento."
+  whyUse="Saber los litros de tu piscina es imprescindible para mantener el agua sana: la dosis de cloro, antialgas, regulador de pH y floculante se calcula siempre en función del volumen. Echar productos a ojo provoca aguas turbias, irritación de ojos y piel, o un gasto innecesario. Esta herramienta te da el volumen para que dosifiques con precisión y mantengas el agua cristalina con el mínimo de producto."
+  faqs={[
+    { q: '¿Cómo se calcula el volumen de una piscina?', a: 'En una piscina rectangular se multiplica largo × ancho × profundidad media (todo en metros) para obtener los metros cúbicos, y se multiplican por 1.000 para pasarlos a litros. En una circular se usa el área del círculo (π × radio²) por la profundidad. Por ejemplo, una piscina de 8 × 4 m y 1,5 m de profundidad tiene 48 m³, es decir, 48.000 litros.' },
+    { q: '¿Qué es la profundidad media?', a: 'Si la piscina tiene fondo plano, la profundidad media es simplemente su profundidad. Si el fondo es inclinado (con una zona poco profunda y otra honda), la profundidad media es el promedio entre la parte menos profunda y la más profunda. Usar la profundidad media da un volumen mucho más realista que tomar solo la zona honda.' },
+    { q: '¿Cuánto cloro necesita mi piscina?', a: 'Depende del volumen y del tipo de tratamiento. Para una cloración de choque inicial se usan dosis mayores (en torno a 5-7 gramos de cloro por m³), mientras que el mantenimiento diario requiere bastante menos. Esta calculadora da una estimación orientativa para el choque inicial; sigue siempre las instrucciones del producto concreto y mide el nivel de cloro con un test.' },
+    { q: '¿Por qué es tan importante conocer los litros exactos?', a: 'Porque todos los productos de tratamiento (cloro, pH, antialgas, floculante) se dosifican por metro cúbico o por cada cierto número de litros. Si subestimas el volumen, te quedarás corto y el agua se pondrá verde; si lo sobreestimas, gastarás producto de más y podrías irritar la piel y los ojos de los bañistas. La dosificación precisa parte del volumen.' },
+    { q: '¿Cada cuánto hay que renovar el agua de la piscina?', a: 'Con un buen mantenimiento (filtración diaria, cloración y control del pH), no hace falta vaciar la piscina cada temporada: basta con reponer el agua que se evapora y se pierde con el contralavado del filtro. Solo se vacía por completo cuando el agua está muy degradada o para tareas de mantenimiento del vaso. Conocer el volumen ayuda también a calcular el coste de llenado.' },
+  ]}
+>
+  <PiscinaVolumenTool client:load />
+</CalcLayout>

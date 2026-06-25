@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import EscaleraPeldanosTool from '@/components/tools/EscaleraPeldanosTool';
+---
+
+<CalcLayout slug="escalera-peldanos"
+  whatIs="Esta calculadora diseña una escalera a partir de la altura total que debe salvar, repartiéndola en peldaños cómodos. Calcula el número de peldaños, la contrahuella (la altura de cada escalón) y la huella (la profundidad donde se pisa), aplicando la regla de Blondel, la fórmula que usan arquitectos y constructores para que una escalera sea cómoda y segura: dos veces la contrahuella más la huella debe rondar los 64 centímetros."
+  whyUse="Diseñar bien una escalera es cuestión de seguridad y comodidad: peldaños demasiado altos cansan y son peligrosos, y demasiado bajos obligan a dar pasos antinaturales. Esta herramienta es útil para constructores, reformistas y propietarios que planifican una escalera interior, de jardín o de acceso, asegurando que todos los peldaños sean iguales y respeten las proporciones ergonómicas recomendadas."
+  faqs={[
+    { q: '¿Qué son la huella y la contrahuella?', a: 'La contrahuella es la parte vertical de un peldaño, es decir, su altura; y la huella es la parte horizontal, la superficie donde apoyas el pie, medida en profundidad. Una escalera cómoda combina ambas: contrahuellas de 17-18 cm y huellas de 28-30 cm son las medidas más habituales en escaleras interiores de vivienda.' },
+    { q: '¿Qué es la regla de Blondel?', a: 'Es una fórmula que relaciona la huella y la contrahuella para que el paso sea cómodo: 2 × contrahuella + huella debe estar entre 62 y 65 cm (la calculadora usa 64). Se basa en la longitud media del paso humano. Si una escalera no cumple esta proporción, resulta incómoda y aumenta el riesgo de tropiezos, sobre todo al bajar.' },
+    { q: '¿Cuántos peldaños necesito?', a: 'Se divide la altura total a salvar entre la contrahuella ideal (unos 18 cm) y se redondea al entero más cercano. Por ejemplo, para subir 280 cm: 280 / 18 ≈ 15,5, que se redondea a 16 peldaños. Luego se reparte la altura exacta entre esos peldaños para que todos sean idénticos, algo imprescindible por seguridad.' },
+    { q: '¿Por qué deben ser todos los peldaños iguales?', a: 'Porque al subir o bajar el cuerpo memoriza la altura del primer escalón y la repite automáticamente. Si un peldaño es distinto (aunque sea por pocos milímetros), el pie no encuentra el apoyo donde lo espera y se produce un tropiezo o caída. Por eso las normas de construcción exigen que la diferencia entre peldaños sea mínima.' },
+    { q: '¿Cuánto espacio horizontal ocupa la escalera?', a: 'El largo horizontal (la proyección en planta) es la suma de las huellas de todos los peldaños, que es aproximadamente la huella multiplicada por el número de peldaños menos uno. La calculadora lo estima para que sepas cuánto espacio en planta necesitas reservar, un dato clave cuando el hueco disponible es limitado.' },
+  ]}
+>
+  <EscaleraPeldanosTool client:load />
+</CalcLayout>

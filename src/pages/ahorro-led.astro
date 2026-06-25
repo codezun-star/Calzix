@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import AhorroLedTool from '@/components/tools/AhorroLedTool';
+---
+
+<CalcLayout slug="ahorro-led"
+  whatIs="Esta calculadora estima cuánto dinero ahorras al año si cambias tus bombillas tradicionales (incandescentes o halógenas) por bombillas LED. Compara el consumo de ambas a partir de su potencia en vatios, las horas que las tienes encendidas y el precio de la electricidad, y calcula tanto el ahorro económico anual como los kilovatios-hora que dejas de consumir. Una bombilla LED da la misma luz que una incandescente usando hasta un 85 % menos de energía."
+  whyUse="La iluminación supone una parte importante del consumo eléctrico de un hogar, y cambiar a LED es una de las mejoras con retorno más rápido: las bombillas se amortizan en pocos meses y duran muchos años. Esta herramienta cuantifica el ahorro real según tu caso concreto, lo que ayuda a decidir el cambio y a entender por qué merece la pena, especialmente en las bombillas que más horas están encendidas."
+  faqs={[
+    { q: '¿Cuánto consume una bombilla LED frente a una incandescente?', a: 'Para dar la misma luz, una bombilla LED consume mucho menos: una incandescente de 60 W se sustituye por un LED de unos 8-9 W, y una halógena de 50 W por un LED de 5-6 W. Eso supone un ahorro de en torno al 85 % en el consumo de esa bombilla, manteniendo la misma cantidad de luz (medida en lúmenes).' },
+    { q: '¿Cómo se calcula el ahorro anual?', a: 'Se multiplica la diferencia de potencia entre las dos bombillas (en kW) por las horas de uso al día, por los 365 días del año y por el número de bombillas, lo que da los kWh ahorrados. Multiplicando esos kWh por el precio de la electricidad se obtiene el ahorro en dinero. La calculadora hace todo el cálculo a partir de tus datos.' },
+    { q: '¿En cuánto tiempo se amortiza una bombilla LED?', a: 'Muy rápido. Una bombilla LED cuesta unos pocos euros y, en una lámpara que se usa varias horas al día, el ahorro en electricidad supera su precio en pocos meses. A partir de ahí, todo es ahorro, y como un LED dura unas 15.000-25.000 horas (años de uso), no hay que reponerlo casi nunca, a diferencia de las incandescentes.' },
+    { q: '¿En qué bombillas conviene más el cambio?', a: 'En las que más horas están encendidas: salón, cocina, pasillos muy transitados o luces de exterior. Una bombilla que solo se enciende unos minutos al día (como la de un trastero) ahorra poco aunque sea LED. Por eso conviene priorizar el cambio en los puntos de luz de uso intensivo, donde el ahorro acumulado es mayor.' },
+    { q: '¿El LED da una luz peor que la incandescente?', a: 'No, aunque hay que elegir bien la temperatura de color. Para una luz cálida y acogedora similar a la incandescente, busca LED de 2700-3000 K; para una luz neutra de trabajo, 4000 K; y para luz fría, 5000-6500 K. Lo importante es fijarse en los lúmenes (cantidad de luz) y en la temperatura de color, no solo en los vatios.' },
+  ]}
+>
+  <AhorroLedTool client:load />
+</CalcLayout>

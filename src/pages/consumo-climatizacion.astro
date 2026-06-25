@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ConsumoClimatizacionTool from '@/components/tools/ConsumoClimatizacionTool';
+---
+
+<CalcLayout slug="consumo-climatizacion"
+  whatIs="Esta calculadora estima cuánto gastas en electricidad al usar el aire acondicionado o la calefacción eléctrica durante una temporada. A partir de la potencia del equipo en vatios, las horas de uso al día, los meses que lo usas al año y el precio del kilovatio-hora, calcula el consumo total en kWh, el coste de toda la temporada y el gasto mensual aproximado mientras lo tienes en marcha."
+  whyUse="La climatización es uno de los mayores consumos eléctricos del hogar y la principal causa de los picos en la factura en verano e invierno. Conocer su coste real ayuda a usarla de forma más eficiente, a comparar equipos y a decidir si compensa invertir en un aparato más eficiente. Esta herramienta pone cifras concretas a un gasto que muchas veces se subestima hasta que llega la factura."
+  faqs={[
+    { q: '¿Cómo se calcula el consumo de un aire acondicionado?', a: 'Se multiplica la potencia eléctrica del equipo (en kW) por las horas de uso y por los días de la temporada, lo que da los kWh consumidos; multiplicados por el precio del kWh dan el coste. Por ejemplo, un equipo de 1.200 W usado 6 horas al día durante 3 meses (90 días) consume 1,2 × 6 × 90 = 648 kWh.' },
+    { q: '¿Qué potencia tiene un aire acondicionado típico?', a: 'La potencia eléctrica de un split de habitación ronda los 700-1.500 W, y los equipos para salones grandes o por conductos pueden superar los 2.000-3.000 W. Importante: no confundas la potencia frigorífica (frigorías o BTU, la capacidad de enfriar) con la potencia eléctrica (vatios, lo que consume). En la etiqueta del equipo aparecen ambas.' },
+    { q: '¿Gasta más enfriar o calentar?', a: 'Calentar con resistencias eléctricas (radiadores, convectores) es lo más caro, porque consumen casi tanto como la energía térmica que dan. Los equipos de aire acondicionado con bomba de calor son mucho más eficientes tanto en frío como en calor, ya que mueven calor en lugar de generarlo, dando varias veces más energía térmica que la eléctrica que consumen.' },
+    { q: '¿Cómo puedo reducir el consumo de climatización?', a: 'Con ajustes sencillos: mantener una temperatura moderada (en torno a 24-26 °C en verano y 19-21 °C en invierno), usar el modo automático, cerrar puertas y ventanas, aprovechar las horas más frescas, limpiar los filtros y mejorar el aislamiento de la vivienda. Cada grado de más en verano o de menos en invierno puede subir el consumo en torno a un 7 %.' },
+    { q: '¿Es más eficiente apagarlo al salir o dejarlo encendido?', a: 'Para ausencias largas, lo más eficiente es apagarlo. Para ausencias muy cortas, mantenerlo a una temperatura estable puede evitar el pico de consumo de volver a enfriar o calentar toda la estancia desde cero. Los equipos modernos con tecnología inverter regulan su potencia y son más eficientes manteniendo la temperatura que arrancando y parando continuamente.' },
+  ]}
+>
+  <ConsumoClimatizacionTool client:load />
+</CalcLayout>

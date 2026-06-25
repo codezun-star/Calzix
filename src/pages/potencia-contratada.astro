@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import PotenciaContratadaTool from '@/components/tools/PotenciaContratadaTool';
+---
+
+<CalcLayout slug="potencia-contratada"
+  whatIs="Esta calculadora te ayuda a estimar qué potencia eléctrica conviene contratar en tu vivienda, a partir de la suma de la potencia de los aparatos que podrías tener encendidos a la vez y un factor de simultaneidad. Como rara vez se usan todos los aparatos al mismo tiempo, el factor de simultaneidad ajusta esa suma a un valor realista. El resultado es la potencia recomendada en kilovatios (kW)."
+  whyUse="La potencia contratada determina una parte fija importante de la factura de la luz: contratar de más significa pagar todos los meses por una potencia que no usas, y contratar de menos provoca que salte el interruptor automático (ICP) cuando enciendes varios aparatos. Ajustar la potencia a tu consumo real es una de las formas más sencillas de ahorrar en la factura eléctrica sin renunciar a nada."
+  faqs={[
+    { q: '¿Qué es la potencia contratada?', a: 'Es la cantidad máxima de electricidad que puedes consumir de forma simultánea en tu vivienda, medida en kilovatios (kW). Si intentas usar más, salta el interruptor de control de potencia y se corta la luz. La pagas en la factura como un término fijo mensual, independientemente de cuánta energía consumas después.' },
+    { q: '¿Qué es el factor de simultaneidad?', a: 'Es el porcentaje de la potencia total instalada que realmente usas a la vez. Casi nunca tienes encendidos al mismo tiempo el horno, la lavadora, el aire acondicionado y la vitrocerámica. Un factor del 50-60 % es razonable para una vivienda media; si sueles concentrar el uso (cocinar mientras lavas y planchas), súbelo.' },
+    { q: '¿Qué potencia se contrata habitualmente en una vivienda?', a: 'Una vivienda pequeña o un piso con pocos electrodomésticos suele ir bien con 3,3-4,6 kW. Una vivienda media con cocina eléctrica ronda los 4,6-5,75 kW. Las casas grandes, con aire acondicionado potente o coche eléctrico, pueden necesitar 6,9 kW o más. La calculadora sugiere el escalón estándar más cercano a tu necesidad.' },
+    { q: '¿Cómo sé la potencia de mis electrodomésticos?', a: 'Viene indicada en una etiqueta del aparato o en su manual, en vatios (W). Como referencia: horno 2000-2500 W, vitrocerámica 2000-3000 W por zona, lavadora 2000-2500 W, microondas 800-1200 W, aire acondicionado 1000-2500 W, y la suma del resto (luces, TV, nevera, cargadores) unos 500-1000 W. Suma los que podrías usar a la vez.' },
+    { q: '¿Qué pasa si me quedo corto de potencia?', a: 'Si la suma de lo que enciendes supera la potencia contratada, salta el interruptor de control de potencia y se va la luz hasta que apagas algún aparato y lo rearmas. Si te ocurre a menudo, conviene subir la potencia; si no te ha saltado nunca y pagas bastante de término fijo, probablemente puedas bajarla y ahorrar.' },
+  ]}
+>
+  <PotenciaContratadaTool client:load />
+</CalcLayout>
