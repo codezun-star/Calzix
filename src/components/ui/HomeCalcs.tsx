@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { CALC_GROUPS, CALCS } from '@/lib/constants/calcs';
 import CalcCard from './CalcCard';
 import {
   Calculator, FlaskConical, ArrowRightLeft, Home,
   Briefcase, GraduationCap, MapPin, Leaf, Star, ArrowRight,
+  ChevronLeft, ChevronRight,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -52,6 +53,28 @@ function VerTodas({ href, count, label }: { href: string; count: number; label: 
 
 export default function HomeCalcs() {
   const [active, setActive] = useState<string>(getGroupFromHash);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [canLeft, setCanLeft] = useState(false);
+  const [canRight, setCanRight] = useState(false);
+
+  function updateArrows() {
+    const el = scrollRef.current;
+    if (!el) return;
+    setCanLeft(el.scrollLeft > 4);
+    setCanRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 4);
+  }
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    updateArrows();
+    if (!el) return;
+    el.addEventListener('scroll', updateArrows, { passive: true });
+    window.addEventListener('resize', updateArrows);
+    return () => {
+      el.removeEventListener('scroll', updateArrows);
+      window.removeEventListener('resize', updateArrows);
+    };
+  }, []);
 
   useEffect(() => {
     const onHash = () => setActive(getGroupFromHash());
@@ -59,47 +82,86 @@ export default function HomeCalcs() {
     return () => window.removeEventListener('hashchange', onHash);
   }, []);
 
+  // Centra la pestaña activa y recalcula las flechas al cambiar de grupo
+  useEffect(() => {
+    const el = scrollRef.current;
+    const activeBtn = el?.querySelector<HTMLElement>('[data-active="true"]');
+    activeBtn?.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+    updateArrows();
+  }, [active]);
+
+  function scrollByDir(dir: number) {
+    scrollRef.current?.scrollBy({ left: dir * 240, behavior: 'smooth' });
+  }
+
   function selectTab(id: string) {
     setActive(id);
     history.replaceState(null, '', `#${id}`);
   }
+
+  const arrowBtn = 'absolute top-1/2 -translate-y-1/2 z-20 flex h-8 w-8 items-center justify-center rounded-full border border-[var(--color-border)] bg-white text-[var(--color-text)] shadow-md hover:bg-[var(--color-calcs-bg)] hover:text-[var(--color-accent)] transition-colors';
 
   return (
     <div>
       {/* Tab bar */}
       <div className="sticky top-14 z-40 bg-white border-b border-[var(--color-border)] shadow-sm">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="flex gap-1 py-2 overflow-x-auto scrollbar-none">
-            {CALC_GROUPS.map((group) => {
-              const Icon = GROUP_ICONS[group.id] ?? Calculator;
-              const count = getGroupCalcs(group.id).length;
-              const isActive = active === group.id;
-              return (
-                <button
-                  key={group.id}
-                  onClick={() => selectTab(group.id)}
-                  className={[
-                    'flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-colors whitespace-nowrap shrink-0',
-                    isActive
-                      ? 'bg-[var(--color-accent)] text-white'
-                      : 'text-[var(--color-text-secondary)] hover:bg-[var(--color-calcs-bg)] hover:text-[var(--color-text)]',
-                  ].join(' ')}
-                >
-                  <Icon size={16} />
-                  <span className="hidden sm:inline">{group.label}</span>
-                  <span
+          <div className="relative">
+            {/* Flecha izquierda */}
+            {canLeft && (
+              <>
+                <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-14 z-10 bg-gradient-to-r from-white via-white/80 to-transparent" />
+                <button type="button" aria-label="Categorías anteriores" onClick={() => scrollByDir(-1)} className={`${arrowBtn} left-0`}>
+                  <ChevronLeft size={18} />
+                </button>
+              </>
+            )}
+            {/* Flecha derecha */}
+            {canRight && (
+              <>
+                <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-14 z-10 bg-gradient-to-l from-white via-white/80 to-transparent" />
+                <button type="button" aria-label="Más categorías" onClick={() => scrollByDir(1)} className={`${arrowBtn} right-0`}>
+                  <ChevronRight size={18} />
+                </button>
+              </>
+            )}
+
+            <div
+              ref={scrollRef}
+              className="flex gap-1 py-2 overflow-x-auto scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            >
+              {CALC_GROUPS.map((group) => {
+                const Icon = GROUP_ICONS[group.id] ?? Calculator;
+                const count = getGroupCalcs(group.id).length;
+                const isActive = active === group.id;
+                return (
+                  <button
+                    key={group.id}
+                    data-active={isActive}
+                    onClick={() => selectTab(group.id)}
                     className={[
-                      'text-xs px-1.5 py-0.5 rounded-full font-medium',
+                      'flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-colors whitespace-nowrap shrink-0',
                       isActive
-                        ? 'bg-white/20 text-white'
-                        : 'bg-[var(--color-calcs-bg)] text-[var(--color-text-muted)]',
+                        ? 'bg-[var(--color-accent)] text-white'
+                        : 'text-[var(--color-text-secondary)] hover:bg-[var(--color-calcs-bg)] hover:text-[var(--color-text)]',
                     ].join(' ')}
                   >
-                    {count}
-                  </span>
-                </button>
-              );
-            })}
+                    <Icon size={16} />
+                    <span className="hidden sm:inline">{group.label}</span>
+                    <span
+                      className={[
+                        'text-xs px-1.5 py-0.5 rounded-full font-medium',
+                        isActive
+                          ? 'bg-white/20 text-white'
+                          : 'bg-[var(--color-calcs-bg)] text-[var(--color-text-muted)]',
+                      ].join(' ')}
+                    >
+                      {count}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
