@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ParadasDescansoTool from '@/components/tools/ParadasDescansoTool';
+---
+
+<CalcLayout slug="paradas-descanso"
+  whatIs="Esta calculadora indica cuántas paradas de descanso deberías hacer en un viaje por carretera y cuánto se alargará el trayecto al incluirlas. Las autoridades de tráfico recomiendan descansar al menos 15-20 minutos cada 2 horas de conducción para combatir la fatiga. A partir de las horas que vas a conducir, la herramienta calcula las paradas recomendadas y el tiempo total con descansos."
+  whyUse="La fatiga al volante es una de las principales causas de accidentes en viajes largos, y planificar los descansos es clave para una conducción segura. Esta herramienta ayuda a organizar las paradas de un viaje, a calcular cuánto tiempo añadir al trayecto y a tomar conciencia de la importancia de descansar. Es útil para preparar viajes largos, vacaciones por carretera o trayectos profesionales."
+  faqs={[
+    { q: '¿Cada cuánto hay que parar a descansar conduciendo?', a: 'Las autoridades de tráfico recomiendan parar al menos 15-20 minutos cada 2 horas de conducción o cada 200 km, aproximadamente. La fatiga se acumula de forma gradual y a menudo no se percibe hasta que es peligrosa, por eso conviene descansar de forma preventiva, antes de notar cansancio, y no esperar a sentirse agotado al volante.' },
+    { q: '¿Cuántas paradas necesito en mi viaje?', a: 'Se calcula dividiendo las horas de conducción entre el intervalo de descanso. Por ejemplo, 7 horas de viaje descansando cada 2 horas suponen unas 3 paradas. La calculadora lo calcula automáticamente y te dice también cuánto se alarga el viaje al sumar el tiempo de los descansos, para que planifiques con realismo.' },
+    { q: '¿Por qué es tan importante descansar al volante?', a: 'Porque la fatiga reduce los reflejos, la atención y la capacidad de reacción, de forma similar al alcohol. Conducir muchas horas seguidas aumenta el riesgo de microsueños (segundos de sueño involuntario) y de accidentes. Parar a estirar las piernas, hidratarse y despejarse restablece la concentración y es una de las medidas de seguridad vial más eficaces.' },
+    { q: '¿Qué debo hacer en las paradas de descanso?', a: 'Lo ideal es bajar del coche, caminar y estirar las piernas para activar la circulación, hidratarse, tomar algo ligero y, si tienes sueño, una siesta corta de 15-20 minutos o un café (que tarda unos 20 minutos en hacer efecto). Evita las comidas copiosas, que dan somnolencia. El objetivo es llegar a la siguiente etapa despejado y atento.' },
+    { q: '¿Cómo reconocer que necesito parar antes de tiempo?', a: 'Señales de alerta son: bostezos frecuentes, parpadeo lento o pesadez de ojos, dificultad para mantener la velocidad o el carril, no recordar los últimos kilómetros, e irritabilidad. Ante cualquiera de ellas, hay que parar cuanto antes, aunque no toque según el plan. La planificación es una guía, pero tu estado real manda siempre.' },
+  ]}
+>
+  <ParadasDescansoTool client:load />
+</CalcLayout>

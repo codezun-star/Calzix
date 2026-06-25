@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import CosteKmTool from '@/components/tools/CosteKmTool';
+---
+
+<CalcLayout slug="coste-km"
+  whatIs="Esta calculadora obtiene el coste real por kilómetro de tu coche sumando el gasto de combustible y, opcionalmente, una estimación del mantenimiento por kilómetro (aceite, neumáticos, revisiones…). A partir del consumo en litros cada 100 km y el precio del combustible, calcula cuánto te cuesta cada kilómetro y cada 100 km, dándote una cifra mucho más realista que mirar solo el surtidor."
+  whyUse="Conocer el coste por kilómetro es muy útil para presupuestar viajes, decidir entre coche y transporte público, repercutir gastos de desplazamiento a un cliente, repartir el coste de un viaje compartido o valorar si compensa un coche más eficiente. Mucha gente solo cuenta la gasolina y olvida el mantenimiento, infravalorando el coste real. Esta herramienta te da una visión completa de lo que cuesta de verdad rodar."
+  faqs={[
+    { q: '¿Cómo se calcula el coste por kilómetro?', a: 'Se multiplica el consumo (litros cada 100 km) por el precio del litro y se divide entre 100 para obtener el coste de combustible por kilómetro; luego se suma el coste de mantenimiento por kilómetro. Por ejemplo, 6,5 L/100 km a 1,60 el litro: 6,5 × 1,60 / 100 = 0,104 de combustible, más 0,05 de mantenimiento = 0,154 por km.' },
+    { q: '¿Qué incluye el coste de mantenimiento por kilómetro?', a: 'Incluye los gastos que dependen del uso: cambios de aceite y filtros, neumáticos, pastillas de freno, revisiones y desgaste general. Una estimación habitual ronda los 0,03-0,06 por kilómetro en un turismo, aunque varía según el vehículo. No suele incluir costes fijos como seguro o impuestos, que no dependen de los kilómetros recorridos.' },
+    { q: '¿Por qué no basta con contar la gasolina?', a: 'Porque el combustible es solo una parte del coste de uso. Cada kilómetro también desgasta neumáticos, frenos y mecánica, y acerca las revisiones. Si solo cuentas la gasolina, infravaloras lo que realmente te cuesta el coche, algo importante al comparar con otras opciones de transporte o al cobrar desplazamientos. Por eso conviene incluir el mantenimiento.' },
+    { q: '¿Para qué sirve conocer el coste por kilómetro?', a: 'Para presupuestar un viaje por carretera, decidir si compensa el coche frente al tren o el avión, repartir gastos en un viaje compartido, justificar dietas de kilometraje a una empresa o cliente, y comparar la eficiencia de distintos vehículos. Es una cifra clave para tomar decisiones de movilidad con datos reales en lugar de impresiones.' },
+    { q: '¿Cuánto cuesta de media el kilómetro en coche?', a: 'Depende mucho del vehículo y del precio del combustible, pero para un turismo medio suele estar entre 0,12 y 0,25 por kilómetro contando combustible y mantenimiento. Si añadieras los costes fijos (seguro, impuestos, depreciación), la cifra subiría bastante más. Esta calculadora se centra en el coste variable, el que depende directamente de los kilómetros que recorres.' },
+  ]}
+>
+  <CosteKmTool client:load />
+</CalcLayout>

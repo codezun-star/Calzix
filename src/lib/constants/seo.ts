@@ -1308,4 +1308,54 @@ export const PAGE_SEO: Record<string, PageSEO> = {
     description: 'Calcula cuántas palabras tiene un libro a partir de sus páginas y estima el tiempo de lectura. Gratis, sin registro.',
     canonical: 'https://calzix.com/palabras-libro',
   },
+  'coste-km': {
+    title: 'Calculadora del Coste por Kilómetro del Coche — Calzix',
+    description: 'Calcula el coste real por km de tu coche sumando combustible y mantenimiento. Ideal para presupuestar viajes. Gratis.',
+    canonical: 'https://calzix.com/coste-km',
+  },
+  'paradas-repostaje': {
+    title: 'Calculadora de Paradas de Repostaje en un Viaje — Calzix',
+    description: 'Calcula cuántas veces tendrás que repostar en un viaje largo según la distancia y la autonomía de tu coche. Gratis.',
+    canonical: 'https://calzix.com/paradas-repostaje',
+  },
+  'tiempo-llegada': {
+    title: 'Calculadora de Hora de Llegada (ETA) — Calzix',
+    description: 'Estima tu hora de llegada según la hora de salida, la distancia, la velocidad media y las paradas. Gratis y al instante.',
+    canonical: 'https://calzix.com/tiempo-llegada',
+  },
+  'paradas-descanso': {
+    title: 'Calculadora de Paradas de Descanso en Carretera — Calzix',
+    description: 'Calcula cuántas paradas de descanso hacer en un viaje largo, una cada 2 horas de conducción. Conduce seguro. Gratis.',
+    canonical: 'https://calzix.com/paradas-descanso',
+  },
+  'hora-llegada-zona': {
+    title: 'Calculadora de Hora de Llegada de un Vuelo (husos) — Calzix',
+    description: 'Calcula la hora local de llegada de un vuelo según su duración y la diferencia horaria del destino. Gratis.',
+    canonical: 'https://calzix.com/hora-llegada-zona',
+  },
+  'mejor-hora-llamar': {
+    title: 'Calculadora de la Mejor Hora para Llamar a otro País — Calzix',
+    description: 'Comprueba qué hora es en otra zona horaria antes de llamar y evita molestar de madrugada. Gratis, sin registro.',
+    canonical: 'https://calzix.com/mejor-hora-llamar',
+  },
+  'liquidos-avion': {
+    title: 'Calculadora de Líquidos Permitidos en el Avión — Calzix',
+    description: 'Comprueba si tus líquidos cumplen la norma de cabina: envases de 100 ml en una bolsa de 1 litro. Gratis.',
+    canonical: 'https://calzix.com/liquidos-avion',
+  },
+  'reparto-equipaje': {
+    title: 'Calculadora de Reparto de Peso del Equipaje — Calzix',
+    description: 'Reparte el peso entre tus maletas y comprueba si quedan dentro del límite de la aerolínea. Evita recargos. Gratis.',
+    canonical: 'https://calzix.com/reparto-equipaje',
+  },
+  'split-gastos-viaje': {
+    title: 'Calculadora para Dividir Gastos de Viaje en Grupo — Calzix',
+    description: 'Divide los gastos de un viaje en grupo y descubre quién debe pagar y quién debe recibir. Gratis y al instante.',
+    canonical: 'https://calzix.com/split-gastos-viaje',
+  },
+  'coste-alquiler-coche': {
+    title: 'Calculadora del Coste de Alquiler de Coche — Calzix',
+    description: 'Calcula el coste total de alquilar un coche sumando tarifa, seguro y extras. Compara ofertas con todo incluido. Gratis.',
+    canonical: 'https://calzix.com/coste-alquiler-coche',
+  },
 };

@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import CosteAlquilerCocheTool from '@/components/tools/CosteAlquilerCocheTool';
+---
+
+<CalcLayout slug="coste-alquiler-coche"
+  whatIs="Esta calculadora obtiene el coste total de alquilar un coche sumando la tarifa diaria por los días de alquiler, el seguro opcional por día y los extras de pago único (como conductor adicional, silla infantil o GPS). Muestra el coste total del alquiler y el coste medio real por día con todo incluido, que casi siempre es mayor que la tarifa diaria anunciada."
+  whyUse="Las tarifas de alquiler de coche que se anuncian suelen ser solo la base: el seguro a todo riesgo, los extras y los suplementos pueden disparar el precio final. Calcular el coste real con todo incluido ayuda a comparar ofertas de forma justa, a presupuestar un viaje y a no llevarse sorpresas en el mostrador. Es útil para planificar vacaciones, viajes de trabajo o escapadas en las que necesites coche."
+  faqs={[
+    { q: '¿Cómo se calcula el coste total de un alquiler de coche?', a: 'Se suma la tarifa diaria más el seguro diario, se multiplica por el número de días y se añaden los extras de pago único. Por ejemplo, 35 al día de tarifa más 12 de seguro durante 7 días son (35+12)×7 = 329, más 30 de silla infantil = 359 en total. La calculadora también muestra el coste medio por día con todo incluido.' },
+    { q: '¿Por qué el precio final es mayor que la tarifa anunciada?', a: 'Porque la tarifa base no suele incluir el seguro a todo riesgo (que reduce o elimina la franquicia), ni los extras como conductor adicional, GPS, silla infantil o cargos por devolver el coche en otro lugar. Estos suplementos pueden incrementar bastante el precio. Por eso conviene calcular el coste total con todo incluido antes de comparar ofertas.' },
+    { q: '¿Merece la pena contratar el seguro a todo riesgo?', a: 'Depende de tu tolerancia al riesgo. El seguro básico incluido suele dejar una franquicia alta (lo que pagarías en caso de daño). El seguro a todo riesgo la reduce o elimina a cambio de un coste diario. Para viajes largos, conducción en lugares desconocidos o si quieres tranquilidad, suele compensar; valora el coste del seguro frente a la franquicia que asumirías.' },
+    { q: '¿Qué extras suelen cobrar las empresas de alquiler?', a: 'Los más comunes son el conductor adicional, la silla o elevador infantil, el GPS, el cargo por conductor joven o por devolver el vehículo en una oficina distinta a la de recogida, y la política de combustible (lleno-lleno o lleno-vacío). Cada uno tiene su coste; inclúyelos en la calculadora para conocer el precio real del alquiler.' },
+    { q: '¿Cómo puedo ahorrar al alquilar un coche?', a: 'Reservar con antelación, comparar varias empresas, elegir oficinas fuera del aeropuerto (suelen ser más baratas), revisar si tu tarjeta o seguro de viaje ya cubre el coche, optar por la política de combustible lleno-lleno y evitar extras innecesarios. Calcular el coste total con todo incluido de varias opciones es la mejor forma de identificar la oferta realmente más económica.' },
+  ]}
+>
+  <CosteAlquilerCocheTool client:load />
+</CalcLayout>

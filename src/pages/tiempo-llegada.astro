@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import TiempoLlegadaTool from '@/components/tools/TiempoLlegadaTool';
+---
+
+<CalcLayout slug="tiempo-llegada"
+  whatIs="Esta calculadora estima tu hora de llegada (ETA) a partir de la hora de salida, la distancia a recorrer, la velocidad media prevista y, opcionalmente, los minutos de paradas. Calcula la duración del viaje dividiendo la distancia entre la velocidad, le suma las paradas y te indica a qué hora llegarás, teniendo en cuenta el cambio de día si el trayecto se alarga más allá de la medianoche."
+  whyUse="Saber a qué hora llegarás es básico para planificar un viaje: avisar a quien te espera, reservar a una hora, encadenar conexiones o decidir cuándo salir. Esta herramienta es útil para viajes por carretera, rutas en bici o a pie, y cualquier desplazamiento del que conozcas la distancia y la velocidad media. Incluir las paradas da una estimación mucho más realista que el simple cálculo de distancia entre velocidad."
+  faqs={[
+    { q: '¿Cómo se calcula la hora de llegada?', a: 'Se divide la distancia entre la velocidad media para obtener las horas de viaje, se suman los minutos de paradas y ese tiempo total se añade a la hora de salida. Por ejemplo, salir a las 08:30, 400 km a 100 km/h (4 horas) más 30 minutos de paradas: la llegada sería a las 13:00. La calculadora gestiona también el cambio de día si procede.' },
+    { q: '¿Qué velocidad media debo usar?', a: 'No la velocidad máxima, sino la velocidad media real del trayecto, que es menor por los tramos urbanos, las retenciones, las curvas y las reducciones de velocidad. En autopista, una media de 100-110 km/h es realista; en carreteras secundarias, 70-80; y en ciudad, 25-40. Usar la velocidad media correcta es la clave para una estimación fiable.' },
+    { q: '¿Por qué incluir las paradas?', a: 'Porque en un viaje largo las paradas para repostar, descansar, comer o estirar las piernas pueden sumar fácilmente media hora o más, y olvidarlas hace que la estimación se quede corta. Incluir los minutos de parada da una hora de llegada mucho más realista, especialmente importante si tienes que cumplir un horario o una conexión.' },
+    { q: '¿Sirve para viajes en bicicleta o a pie?', a: 'Sí. Solo tienes que introducir la velocidad media correspondiente: caminando, unos 4-5 km/h; en bicicleta de paseo, 15-20 km/h; en bici de carretera, 25-30. La calculadora funciona igual para cualquier medio del que conozcas la distancia y la velocidad media, dándote la hora estimada de llegada de tu ruta.' },
+    { q: '¿Qué pasa si el viaje termina pasada la medianoche?', a: 'La calculadora ajusta automáticamente la hora al formato de 24 horas, de modo que si sales a las 22:00 y el viaje dura 5 horas, te indicará la llegada a las 03:00 del día siguiente. El cálculo tiene en cuenta el paso de medianoche para que la hora mostrada sea siempre correcta dentro del día.' },
+  ]}
+>
+  <TiempoLlegadaTool client:load />
+</CalcLayout>

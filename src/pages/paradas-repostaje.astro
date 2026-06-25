@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ParadasRepostajeTool from '@/components/tools/ParadasRepostajeTool';
+---
+
+<CalcLayout slug="paradas-repostaje"
+  whatIs="Esta calculadora indica cuántas veces tendrás que repostar en un viaje largo a partir de la distancia total, la autonomía de tu coche con el depósito lleno y un margen de reserva de seguridad. En lugar de apurar el depósito hasta el final, aplica un porcentaje de reserva para que nunca conduzcas con el aviso de gasolina encendido, calculando las paradas necesarias de forma realista."
+  whyUse="Planificar las paradas de repostaje de un viaje por carretera ayuda a organizar la ruta, calcular el tiempo total con las paradas incluidas y evitar el estrés de quedarse sin combustible en un tramo sin gasolineras. Es especialmente útil en viajes largos, por zonas despobladas o con coches eléctricos. Saber cuántas veces pararás te permite anticipar dónde hacerlo y cuánto tiempo añadir al trayecto."
+  faqs={[
+    { q: '¿Cómo se calcula el número de paradas de repostaje?', a: 'Se divide la distancia total entre la autonomía útil (la autonomía menos el margen de reserva) y se resta una, porque sales con el depósito lleno. Por ejemplo, 1.200 km con una autonomía útil de 600 km: 1.200 / 600 = 2 tramos, lo que supone 1 parada de repostaje a mitad de camino. La calculadora redondea al alza para ir sobre seguro.' },
+    { q: '¿Por qué dejar un margen de reserva?', a: 'Porque apurar el depósito hasta el final es arriesgado: la autonomía que marca el coche es una estimación optimista, el consumo sube con la velocidad y el aire acondicionado, y no siempre hay gasolinera cuando la necesitas. Dejar un 10-15 % de reserva garantiza que llegues a la siguiente parada sin sustos, conduciendo con tranquilidad.' },
+    { q: '¿Cómo sé la autonomía real de mi coche?', a: 'Multiplica la capacidad del depósito (en litros) por la distancia que recorres con cada litro (o divide entre el consumo en L/100 km y multiplica por 100). Por ejemplo, un depósito de 50 litros con un consumo de 7 L/100 km da unos 700 km de autonomía. Ten en cuenta que el consumo real en carretera puede diferir del homologado.' },
+    { q: '¿Sirve para coches eléctricos?', a: 'Sí, el cálculo es el mismo usando la autonomía eléctrica del vehículo en lugar de la del depósito. Eso sí, en eléctricos conviene un margen de reserva mayor, porque los puntos de carga son menos frecuentes y la autonomía baja más con la velocidad, el frío y la climatización. Planificar las paradas de carga es aún más importante que con un coche de combustión.' },
+    { q: '¿Cuánto tiempo debo añadir por cada parada?', a: 'Para repostar combustible, calcula unos 10-15 minutos por parada contando el desvío, el llenado y el pago. Si aprovechas para descansar, come algo o usa el baño, súbelo a 20-30 minutos. En coches eléctricos, una carga rápida puede llevar de 20 a 40 minutos. Suma ese tiempo al de conducción para estimar la duración real del viaje.' },
+  ]}
+>
+  <ParadasRepostajeTool client:load />
+</CalcLayout>

@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import LiquidosAvionTool from '@/components/tools/LiquidosAvionTool';
+---
+
+<CalcLayout slug="liquidos-avion"
+  whatIs="Esta calculadora comprueba si los líquidos que quieres llevar en el equipaje de mano cumplen la norma de seguridad aérea: cada envase no puede superar los 100 ml y todos deben caber en una bolsa transparente con cierre de un litro de capacidad. Introduces los tamaños de tus envases y la herramienta te dice cuántos están permitidos, cuáles superan el límite y si el conjunto cabe en la bolsa."
+  whyUse="La norma de los líquidos en cabina es una de las que más sorpresas da en el control de seguridad del aeropuerto, donde acaban requisándose botellas y cremas por no cumplirla. Comprobarlo antes de hacer la maleta evita perder productos, tiempo y disgustos. Esta herramienta es útil para preparar el neceser de mano, especialmente en viajes solo con equipaje de cabina, donde no puedes facturar los líquidos grandes."
+  faqs={[
+    { q: '¿Cuál es la norma de líquidos en el equipaje de mano?', a: 'Los líquidos en cabina deben ir en envases de un máximo de 100 ml cada uno, y todos juntos deben caber en una única bolsa de plástico transparente con cierre, de aproximadamente un litro de capacidad. Se permite una bolsa por pasajero. Los envases de más de 100 ml no se permiten aunque estén medio vacíos: cuenta la capacidad del envase, no el contenido.' },
+    { q: '¿Qué se considera líquido en el control?', a: 'Además de bebidas, se consideran líquidos los geles, cremas, lociones, perfumes, pastas (como el dentífrico), aerosoles, espumas, desodorantes roll-on y productos similares. Por eso la crema solar, el gel de ducha o la pasta de dientes deben respetar la norma de los 100 ml si van en cabina. La calculadora te ayuda a comprobar todos tus envases de una vez.' },
+    { q: '¿Por qué cuenta el tamaño del envase y no el contenido?', a: 'Porque en el control se fijan en la capacidad indicada en el envase, no en cuánto líquido queda dentro. Una botella de 200 ml medio vacía no se permite, aunque solo lleve 80 ml, porque el envase supera los 100 ml. Por eso conviene trasvasar los productos a envases pequeños de viaje de 100 ml o menos si quieres llevarlos en cabina.' },
+    { q: '¿Hay excepciones a la norma de los 100 ml?', a: 'Sí. Se permiten cantidades mayores de medicamentos líquidos necesarios durante el viaje (con justificación), y alimentos para bebés en la cantidad necesaria para el trayecto. Estos se declaran aparte en el control. La regla de los 100 ml y la bolsa de un litro se aplica al resto de líquidos de higiene y cosmética que llevas en el equipaje de mano.' },
+    { q: '¿Cómo evito problemas en el control de seguridad?', a: 'Lleva todos los líquidos en envases de 100 ml o menos dentro de una bolsa transparente de un litro, y sácala del equipaje para mostrarla por separado en el control. Para productos grandes, factúralos en la maleta de bodega, donde no aplica el límite. Comprobar tus envases antes de salir de casa, como con esta calculadora, te ahorra perder productos en el aeropuerto.' },
+  ]}
+>
+  <LiquidosAvionTool client:load />
+</CalcLayout>

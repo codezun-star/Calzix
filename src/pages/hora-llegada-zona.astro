@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import HoraLlegadaZonaTool from '@/components/tools/HoraLlegadaZonaTool';
+---
+
+<CalcLayout slug="hora-llegada-zona"
+  whatIs="Esta calculadora obtiene la hora local de llegada de un vuelo que cruza husos horarios. A partir de la hora de salida (en la zona de origen), la duración del vuelo y la diferencia horaria del destino, calcula a qué hora local aterrizarás y si llegas el mismo día, al día siguiente o incluso un día antes si cruzas la línea internacional de cambio de fecha."
+  whyUse="En los vuelos largos, la hora de llegada que figura en el billete ya está en hora local del destino, pero entender por qué un vuelo de 10 horas puede aterrizar 'a la misma hora' que salió ayuda a organizar conexiones, recogidas y la adaptación al jet lag. Esta herramienta es útil para planificar viajes internacionales y comprender el efecto combinado de la duración del vuelo y el cambio de huso horario."
+  faqs={[
+    { q: '¿Cómo se calcula la hora local de llegada?', a: 'Se suma a la hora de salida la duración del vuelo y la diferencia horaria del destino. Por ejemplo, saliendo a las 14:00 con un vuelo de 9,5 horas hacia un destino con 6 horas menos: 14:00 + 9,5 h = 23:30 en hora de origen, menos 6 horas de diferencia = 17:30 hora local del destino. La calculadora hace todo el ajuste automáticamente.' },
+    { q: '¿Por qué puedo llegar "antes" de la hora a la que salí?', a: 'Por la diferencia horaria. Si vuelas hacia el oeste cruzando varios husos, el reloj local del destino va por detrás del de origen. Un vuelo de pocas horas hacia el oeste puede aterrizar a una hora local que parece anterior a la de salida, aunque hayan pasado horas reales. Es un efecto del cambio de zona horaria, no del tiempo real transcurrido.' },
+    { q: '¿Qué es la línea internacional de cambio de fecha?', a: 'Es una línea imaginaria en el océano Pacífico donde cambia el día del calendario. Al cruzarla hacia el oeste se suma un día, y hacia el este se resta. Por eso, en algunas rutas transpacíficas puedes salir un día y llegar dos días después, o salir y "llegar el día anterior". La calculadora lo refleja indicando los días de diferencia.' },
+    { q: '¿La duración del vuelo incluye el cambio de hora?', a: 'No. La duración del vuelo es el tiempo real en el aire (más rodaje), independiente de los husos. El cambio de hora se aplica aparte, al pasar de la zona de origen a la de destino. Por eso para calcular la hora de llegada hay que sumar primero la duración y luego aplicar la diferencia horaria, que es justo lo que hace esta herramienta.' },
+    { q: '¿Cómo afecta esto al jet lag?', a: 'El jet lag aparece cuando tu reloj biológico se desajusta respecto a la hora local del destino, y es mayor cuantos más husos cruzas, sobre todo viajando hacia el este. Saber la hora local de llegada te ayuda a planificar cuándo dormir y exponerte a la luz para adaptarte antes. Para una estimación de la recuperación, puedes usar una calculadora de jet lag específica.' },
+  ]}
+>
+  <HoraLlegadaZonaTool client:load />
+</CalcLayout>

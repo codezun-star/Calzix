@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import SplitGastosViajeTool from '@/components/tools/SplitGastosViajeTool';
+---
+
+<CalcLayout slug="split-gastos-viaje"
+  whatIs="Esta calculadora divide los gastos de un viaje en grupo y calcula quién debe dinero y quién debe recibirlo para que todos paguen lo mismo. Introduces lo que ha pagado cada persona, y la herramienta calcula el total, lo que corresponde a cada uno y el balance individual: quién ha puesto de más (y debe recibir) y quién ha puesto de menos (y debe pagar)."
+  whyUse="En un viaje con amigos o familia, es habitual que cada uno pague cosas distintas (uno el hotel, otro la gasolina, otro las cenas), y al final cuesta saldar cuentas de forma justa. Esta herramienta evita discusiones y cálculos engorrosos, repartiendo los gastos a partes iguales y diciendo claramente quién paga a quién. Es ideal para viajes compartidos, cenas de grupo o cualquier gasto común entre varias personas."
+  faqs={[
+    { q: '¿Cómo se dividen los gastos de un viaje en grupo?', a: 'Se suman todos los pagos para obtener el total, se divide entre el número de personas para saber lo que le corresponde a cada una, y se compara con lo que ha pagado cada cual. Quien ha pagado más de su parte debe recibir la diferencia, y quien ha pagado menos debe abonarla. Así todos acaban habiendo gastado lo mismo.' },
+    { q: '¿Qué significa el balance de cada persona?', a: 'El balance es la diferencia entre lo que una persona ha pagado y lo que le correspondía. Un balance positivo significa que puso de más y debe recibir dinero; uno negativo, que puso de menos y debe pagar. La suma de todos los balances es cero: lo que unos reciben es exactamente lo que otros deben. La calculadora lo muestra para cada participante.' },
+    { q: '¿Y si alguien no ha pagado nada?', a: 'No hay problema: introduce 0 en su pago. Esa persona tendrá un balance negativo igual a su parte del total y deberá abonarla al resto. Es habitual que en un grupo unos adelanten los pagos grandes y otros no paguen nada durante el viaje; la calculadora se encarga de cuadrar las cuentas al final para que todos contribuyan por igual.' },
+    { q: '¿Reparte siempre a partes iguales?', a: 'Sí, esta calculadora reparte el total a partes iguales entre todos los participantes, que es lo más habitual en viajes de amigos. Si en tu grupo algunos gastos no son compartidos por todos (por ejemplo, una excursión que solo hacen algunos), conviene separarlos y calcular esos por su cuenta, o introducir solo los gastos verdaderamente comunes.' },
+    { q: '¿Cómo salda el grupo las cuentas con el resultado?', a: 'Con los balances, cada persona con saldo negativo paga a las que tienen saldo positivo hasta que todos queden a cero. En grupos pequeños suele bastar con uno o dos pagos. Para minimizar el número de transferencias, quien más debe paga a quien más tiene que recibir. El resultado de la calculadora te da toda la información para hacerlo de forma sencilla.' },
+  ]}
+>
+  <SplitGastosViajeTool client:load />
+</CalcLayout>
