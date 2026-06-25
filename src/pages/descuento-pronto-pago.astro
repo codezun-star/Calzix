@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import DescuentoProntoPagoTool from '@/components/tools/DescuentoProntoPagoTool';
+---
+
+<CalcLayout slug="descuento-pronto-pago"
+  whatIs="Esta calculadora obtiene el descuento por pronto pago de una factura: la rebaja que ofrece un proveedor a cambio de cobrar antes del plazo. Calcula el importe que ahorras y el neto a pagar, y opcionalmente, si indicas los días que adelantas el pago, estima la rentabilidad anualizada de aprovechar el descuento, una cifra útil para decidir si conviene pagar antes."
+  whyUse="El descuento por pronto pago es una herramienta financiera muy potente que muchas empresas desaprovechan. Un descuento del 2 % por pagar 30 días antes equivale a una rentabilidad anual altísima, muy superior a tener el dinero en el banco. Esta calculadora ayuda a empresas y autónomos a decidir si les compensa adelantar un pago para aprovechar el descuento, y a proveedores a diseñar ofertas atractivas."
+  faqs={[
+    { q: '¿Qué es el descuento por pronto pago?', a: 'Es una rebaja que un proveedor ofrece al cliente a cambio de que pague la factura antes del plazo acordado, normalmente al contado o en pocos días. Es habitual expresarlo como "2/10, neto 30": un 2 % de descuento si pagas en 10 días, o el importe íntegro a los 30. Beneficia al proveedor (cobra antes) y al cliente (paga menos).' },
+    { q: '¿Cómo se calcula el ahorro?', a: 'Se multiplica el importe de la factura por el porcentaje de descuento y se divide entre cien. Por ejemplo, un 2 % sobre una factura de 1.000 supone un ahorro de 20, quedando 980 a pagar. Es un cálculo sencillo, pero su verdadero valor se ve al anualizar esa rentabilidad respecto a los días que adelantas el pago.' },
+    { q: '¿Por qué un 2 % puede ser una rentabilidad enorme?', a: 'Porque ese 2 % lo ganas por adelantar el pago solo unos días (por ejemplo, 30). Si extrapolas ese ahorro a todo un año, la rentabilidad equivalente supera el 30 % anual, muy por encima de cualquier depósito bancario. Por eso, si tienes liquidez, aprovechar los descuentos por pronto pago suele ser una de las mejores inversiones financieras.' },
+    { q: '¿Siempre conviene acogerse al descuento?', a: 'Casi siempre, si dispones de liquidez, porque la rentabilidad implícita es muy alta. Solo no conviene si necesitas ese dinero para algo más rentable o si pagar antes te crea problemas de tesorería. La calculadora estima esa rentabilidad anualizada para que compares el descuento con el coste de oportunidad de tu dinero.' },
+    { q: '¿Cómo se contabiliza el descuento por pronto pago?', a: 'Para quien lo recibe, el descuento por pronto pago se considera un ingreso financiero, no un menor coste de la compra, ya que premia una decisión financiera (pagar antes). Para quien lo concede, es un gasto financiero. Conviene reflejarlo correctamente en la contabilidad y en la factura para una gestión fiscal adecuada.' },
+  ]}
+>
+  <DescuentoProntoPagoTool client:load />
+</CalcLayout>

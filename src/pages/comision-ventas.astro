@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ComisionVentasTool from '@/components/tools/ComisionVentasTool';
+---
+
+<CalcLayout slug="comision-ventas"
+  whatIs="Esta calculadora obtiene la comisión que corresponde a un vendedor a partir de las ventas del periodo y el porcentaje de comisión pactado, y suma además un salario base fijo si lo hay. La comisión se calcula multiplicando las ventas por el porcentaje y dividiendo entre cien, y el total a cobrar es la suma de esa comisión más la parte fija del sueldo."
+  whyUse="Las comisiones son la forma más habitual de retribuir al personal de ventas, y tanto el comercial como la empresa necesitan calcularlas con claridad. Esta herramienta es útil para vendedores que quieren saber cuánto van a cobrar, para autónomos que trabajan a comisión y para pequeños negocios que diseñan la retribución de su equipo comercial. Sumar la parte fija da la cifra real de la nómina del mes."
+  faqs={[
+    { q: '¿Cómo se calcula una comisión de ventas?', a: 'Se multiplica el importe de las ventas por el porcentaje de comisión y se divide entre cien. Por ejemplo, una comisión del 5 % sobre 15.000 de ventas es 15.000 × 5 / 100 = 750. Si además hay un salario base, se suma a esa cantidad para obtener el total a cobrar en el periodo.' },
+    { q: '¿Qué es un esquema de base más comisión?', a: 'Es un modelo retributivo muy común que combina un salario fijo garantizado (la base) con una parte variable que depende de las ventas (la comisión). Da seguridad al vendedor con la base y le incentiva a vender más con la parte variable. Esta calculadora suma ambas para mostrarte el total que percibirás en el periodo.' },
+    { q: '¿Qué porcentaje de comisión es habitual?', a: 'Varía mucho según el sector y el margen del producto: en productos de gran consumo o alto volumen las comisiones suelen ser bajas (1-5 %), mientras que en servicios, seguros o productos de alto margen pueden llegar al 10-20 % o más. Lo importante es que el porcentaje sea sostenible para la empresa y motivador para el vendedor.' },
+    { q: '¿La comisión se calcula sobre las ventas o sobre el beneficio?', a: 'Depende de lo pactado. Lo más sencillo y frecuente es calcularla sobre el importe de las ventas (facturación), que es lo que hace esta calculadora. Algunas empresas la calculan sobre el margen o el beneficio para alinear al vendedor con la rentabilidad, evitando que venda con descuentos excesivos solo por facturar más.' },
+    { q: '¿Las comisiones cotizan e tributan?', a: 'Sí. Las comisiones forman parte del salario a todos los efectos: cotizan a la seguridad social y tributan en el impuesto sobre la renta igual que el resto de la retribución. La cifra que da esta calculadora es la comisión bruta; el importe neto que se recibe será algo menor tras aplicar las retenciones correspondientes.' },
+  ]}
+>
+  <ComisionVentasTool client:load />
+</CalcLayout>

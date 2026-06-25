@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import RepartoPropinasTool from '@/components/tools/RepartoPropinasTool';
+---
+
+<CalcLayout slug="reparto-propinas"
+  whatIs="Esta calculadora reparte el total de las propinas de un turno o periodo entre los miembros del equipo de forma proporcional a las horas que ha trabajado cada persona. Calcula primero cuánto corresponde por hora trabajada y luego asigna a cada persona la cantidad según sus horas, de modo que quien más tiempo ha trabajado recibe una parte mayor, con un reparto justo y transparente."
+  whyUse="En hostelería y otros sectores, el reparto de propinas es una fuente habitual de conflictos cuando no se hace con un criterio claro. Repartir en función de las horas trabajadas es uno de los métodos más justos y aceptados, porque premia el tiempo dedicado. Esta herramienta automatiza el cálculo y lo hace transparente para todo el equipo, evitando discusiones y errores en el reparto manual."
+  faqs={[
+    { q: '¿Cómo se reparten las propinas por horas trabajadas?', a: 'Se suman todas las horas trabajadas por el equipo y se divide el total de propinas entre esa suma para obtener el valor por hora. Después, se multiplica ese valor por las horas de cada persona. Por ejemplo, 240 de propinas y un equipo que ha trabajado 26 horas en total: 240 / 26 ≈ 9,23 por hora; quien hizo 8 horas recibe 73,84.' },
+    { q: '¿Por qué repartir por horas y no a partes iguales?', a: 'Porque un reparto a partes iguales no tiene en cuenta que unos trabajan más tiempo que otros. Si una persona hace un turno completo y otra solo unas horas, dividir por igual sería injusto. El reparto proporcional a las horas premia el tiempo realmente dedicado, que suele ser el criterio más aceptado por los equipos por su sentido de equidad.' },
+    { q: '¿Se pueden repartir las propinas con otros criterios?', a: 'Sí. Además de por horas, algunos locales reparten por puntos según la responsabilidad del puesto (camareros, cocina, ayudantes), por ventas individuales, o con sistemas mixtos. Cada método tiene sus defensores. El reparto por horas destaca por ser sencillo, transparente y fácil de justificar, por eso es uno de los más utilizados en hostelería.' },
+    { q: '¿Debe incluirse la cocina en el reparto de propinas?', a: 'Es una decisión de cada local y, en algunos lugares, está regulada. Muchos restaurantes incluyen a la cocina y al personal de apoyo porque su trabajo también contribuye a la experiencia del cliente y, por tanto, a la propina. Lo importante es acordar las reglas de antemano con todo el equipo para que el reparto se perciba como justo.' },
+    { q: '¿Las propinas tributan?', a: 'El tratamiento fiscal de las propinas varía según el país y la forma en que se reciben (en efectivo directamente al empleado o gestionadas por la empresa). En algunos sistemas se consideran rendimiento del trabajo y deben declararse. Conviene informarse de la normativa local; esta calculadora se centra en el reparto justo del importe entre el equipo.' },
+  ]}
+>
+  <RepartoPropinasTool client:load />
+</CalcLayout>

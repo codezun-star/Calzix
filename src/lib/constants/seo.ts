@@ -1208,4 +1208,54 @@ export const PAGE_SEO: Record<string, PageSEO> = {
     description: 'Calcula los litros de agua de tu piscina rectangular o circular y la dosis de cloro inicial. Gratis, sin registro.',
     canonical: 'https://calzix.com/piscina-volumen',
   },
+  'comision-ventas': {
+    title: 'Calculadora de Comisión de Ventas — Calzix',
+    description: 'Calcula la comisión de un vendedor sobre las ventas y el total a cobrar con salario base. Gratis y al instante.',
+    canonical: 'https://calzix.com/comision-ventas',
+  },
+  'presupuesto-trabajo': {
+    title: 'Calculadora de Presupuesto de Trabajo (materiales, mano de obra, IVA) — Calzix',
+    description: 'Elabora un presupuesto con materiales, mano de obra, margen e IVA. Ideal para autónomos y oficios. Gratis.',
+    canonical: 'https://calzix.com/presupuesto-trabajo',
+  },
+  'recargo-mora': {
+    title: 'Calculadora de Intereses de Demora por Factura Impagada — Calzix',
+    description: 'Calcula el recargo por mora e intereses de demora de una factura pagada fuera de plazo. Gratis, sin registro.',
+    canonical: 'https://calzix.com/recargo-mora',
+  },
+  'descuento-sucesivo': {
+    title: 'Calculadora de Descuentos Sucesivos y Equivalente — Calzix',
+    description: 'Aplica varios descuentos encadenados y calcula el descuento único equivalente. Evita el error de sumar porcentajes. Gratis.',
+    canonical: 'https://calzix.com/descuento-sucesivo',
+  },
+  'descuento-pronto-pago': {
+    title: 'Calculadora de Descuento por Pronto Pago — Calzix',
+    description: 'Calcula el ahorro por pagar una factura antes de plazo y su rentabilidad anualizada. Gratis y al instante.',
+    canonical: 'https://calzix.com/descuento-pronto-pago',
+  },
+  'salario-por-hora': {
+    title: 'Calculadora de Salario por Hora (anual ↔ hora) — Calzix',
+    description: 'Convierte tu salario anual en salario por hora y viceversa según tu jornada. Compara ofertas de empleo. Gratis.',
+    canonical: 'https://calzix.com/salario-por-hora',
+  },
+  'coste-empresa-trabajador': {
+    title: 'Calculadora del Coste de un Trabajador para la Empresa — Calzix',
+    description: 'Calcula cuánto cuesta un empleado a la empresa: salario bruto más cotizaciones sociales. Gratis, sin registro.',
+    canonical: 'https://calzix.com/coste-empresa-trabajador',
+  },
+  'paga-extra': {
+    title: 'Calculadora de Pagas Extra y Prorrateo — Calzix',
+    description: 'Reparte tu salario anual entre 12, 14, 15 o 16 pagas y calcula el importe de cada una y el prorrateo. Gratis.',
+    canonical: 'https://calzix.com/paga-extra',
+  },
+  'objetivo-ventas': {
+    title: 'Calculadora de Objetivo de Ventas Diario — Calzix',
+    description: 'Reparte tu meta de ventas mensual en un objetivo diario y recalcula el ritmo según lo vendido. Gratis y al instante.',
+    canonical: 'https://calzix.com/objetivo-ventas',
+  },
+  'reparto-propinas': {
+    title: 'Calculadora de Reparto de Propinas por Horas — Calzix',
+    description: 'Reparte las propinas del equipo de forma proporcional a las horas trabajadas por cada persona. Gratis, sin registro.',
+    canonical: 'https://calzix.com/reparto-propinas',
+  },
 };

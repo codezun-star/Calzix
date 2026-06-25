@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import DescuentoSucesivoTool from '@/components/tools/DescuentoSucesivoTool';
+---
+
+<CalcLayout slug="descuento-sucesivo"
+  whatIs="Esta calculadora aplica varios descuentos encadenados sobre un precio, uno tras otro, donde cada descuento se calcula sobre el resultado del anterior y no sobre el precio original. Muestra el precio final, el ahorro total y, lo más importante, el descuento único equivalente, que casi nunca coincide con la suma de los porcentajes. Permite encadenar hasta tres descuentos sucesivos."
+  whyUse="Los descuentos sucesivos son habituales en rebajas, promociones acumulables y negociaciones comerciales (por ejemplo, 'un 20 % y un 10 % adicional en caja'). El error más común es sumar los porcentajes y creer que un 20 % más un 10 % es un 30 %, cuando en realidad es un 28 %. Esta herramienta calcula el descuento real equivalente, evitando confusiones tanto al comprar como al vender."
+  faqs={[
+    { q: '¿Cómo se aplican dos descuentos sucesivos?', a: 'Se aplica el primer descuento al precio original y, sobre el precio ya rebajado, se aplica el segundo. Por ejemplo, sobre 100 con un 20 %: queda en 80; aplicando un 10 % a esos 80: queda en 72. El precio final es 72 y el descuento total es del 28 %, no del 30 %.' },
+    { q: '¿Por qué dos descuentos no se suman?', a: 'Porque el segundo descuento se calcula sobre una cantidad ya rebajada, más pequeña, no sobre el precio original. Un 10 % de 80 (8) es menos que un 10 % de 100 (10). Por eso el descuento equivalente siempre es menor que la suma de los porcentajes. Esta diferencia es clave para no engañarse en promociones acumuladas.' },
+    { q: '¿Cómo se calcula el descuento único equivalente?', a: 'Se compara el precio final con el original: el ahorro dividido entre el precio original, multiplicado por cien, da el descuento equivalente. Para un 20 % y un 10 % sucesivos sobre 100, el precio final es 72, el ahorro 28 y el descuento equivalente el 28 %. La calculadora lo muestra automáticamente.' },
+    { q: '¿El orden de los descuentos cambia el resultado?', a: 'No. Aplicar primero el 20 % y luego el 10 %, o al revés, da exactamente el mismo precio final, porque la multiplicación es conmutativa: 100 × 0,8 × 0,9 = 100 × 0,9 × 0,8 = 72. El orden solo importaría si uno de los descuentos se aplicara sobre una base distinta (por ejemplo, antes o después de impuestos).' },
+    { q: '¿Para qué sirve conocer el descuento equivalente?', a: 'Para comparar ofertas de forma justa y para detectar promociones engañosas. Una tienda puede anunciar "30 % + 10 % adicional" que en realidad equivale a un 37 %, no a un 40 %. Conocer el descuento único equivalente te permite comparar con otra oferta de "37 % directo" y ver que son idénticas, tomando mejores decisiones de compra.' },
+  ]}
+>
+  <DescuentoSucesivoTool client:load />
+</CalcLayout>

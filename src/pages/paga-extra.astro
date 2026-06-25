@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import PagaExtraTool from '@/components/tools/PagaExtraTool';
+---
+
+<CalcLayout slug="paga-extra"
+  whatIs="Esta calculadora reparte un salario bruto anual entre el número de pagas que recibes al año (12, 14, 15 o 16) para mostrar el importe de cada paga. También indica cuántas son pagas extraordinarias y cuánto cobrarías al mes si decidieras prorratearlas en doce mensualidades en lugar de recibirlas en momentos concretos del año."
+  whyUse="Muchos convenios establecen pagas extraordinarias (habitualmente en verano y Navidad), y entender cómo se reparte el salario anual ayuda a planificar las finanzas personales. Esta herramienta es útil para comparar ofertas con distinto número de pagas, para saber cuánto ingresarás cada mes y cuánto en las extras, y para decidir si te conviene cobrar las pagas prorrateadas o concentradas."
+  faqs={[
+    { q: '¿Qué son las pagas extraordinarias?', a: 'Son retribuciones adicionales que se cobran en momentos concretos del año, normalmente en verano y en Navidad, además de las doce mensualidades ordinarias. Un salario con 14 pagas significa 12 mensualidades más 2 pagas extra. El salario anual total es el mismo se reparta como se reparta; lo que cambia es cómo se distribuye a lo largo del año.' },
+    { q: '¿Cómo se calcula el importe de cada paga?', a: 'Se divide el salario bruto anual entre el número total de pagas. Por ejemplo, 21.000 anuales en 14 pagas son 21.000 / 14 = 1.500 por paga (tanto las 12 ordinarias como las 2 extras). Si fueran 12 pagas, cada mensualidad sería 21.000 / 12 = 1.750. El total del año es idéntico en ambos casos.' },
+    { q: '¿Qué significa prorratear las pagas extra?', a: 'Prorratear es repartir el importe de las pagas extraordinarias entre las doce mensualidades, de modo que cobras algo más cada mes y no recibes pagas separadas en verano y Navidad. Con un sueldo de 21.000, prorrateado serían 1.750 al mes los doce meses, en lugar de 1.500 en 14 pagas. El total anual no cambia.' },
+    { q: '¿Es mejor cobrar las pagas prorrateadas o no?', a: 'Es una cuestión de preferencia y disciplina financiera. Prorratearlas da más ingreso mensual constante, cómodo para muchos presupuestos. Cobrarlas aparte funciona como un "ahorro forzoso" que llega en momentos de más gasto (vacaciones, Navidad). Económicamente el total es el mismo; depende de cómo prefieras organizar tu dinero a lo largo del año.' },
+    { q: '¿Las pagas extra tributan igual que las mensuales?', a: 'Sí, forman parte del salario y tributan y cotizan igual que el resto de la retribución anual. Lo que sí puede variar es la retención aplicada en el momento del cobro. El salario bruto anual es la referencia para calcular impuestos, con independencia de si se reparte en 12, 14 o más pagas a lo largo del año.' },
+  ]}
+>
+  <PagaExtraTool client:load />
+</CalcLayout>

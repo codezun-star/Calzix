@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import RecargoMoraTool from '@/components/tools/RecargoMoraTool';
+---
+
+<CalcLayout slug="recargo-mora"
+  whatIs="Esta calculadora obtiene los intereses de demora (recargo por mora) que se pueden reclamar por una factura o deuda pagada fuera de plazo. Calcula el interés aplicando la fórmula de interés simple: importe por la tasa anual, por los días de retraso, dividido entre 365. Muestra tanto el importe de los intereses como el total a pagar sumando la deuda original y el recargo."
+  whyUse="Cuando un cliente paga tarde, tienes derecho a reclamar intereses de demora como compensación. Esta herramienta es útil para autónomos y empresas que gestionan impagos, ayudándoles a calcular cuánto reclamar legalmente. También sirve a quien debe una cantidad para saber cuánto se le acumula por el retraso. Poner cifras claras facilita la reclamación y la negociación del pago."
+  faqs={[
+    { q: '¿Qué son los intereses de demora?', a: 'Son la compensación económica que el acreedor puede reclamar cuando una deuda se paga después del plazo acordado. Funcionan como un coste por el retraso: cuanto más tiempo pasa sin pagar, más intereses se acumulan. Se calculan sobre el importe pendiente, aplicando una tasa anual durante los días de retraso.' },
+    { q: '¿Cómo se calculan los intereses por mora?', a: 'Con la fórmula del interés simple: importe × (tasa anual / 100) × (días de retraso / 365). Por ejemplo, una deuda de 1.000 con una tasa del 12 % anual y 45 días de retraso genera 1.000 × 0,12 × 45 / 365 = 14,79 de intereses. La calculadora aplica esta fórmula automáticamente.' },
+    { q: '¿Qué tasa de interés de demora debo aplicar?', a: 'Depende de lo pactado en el contrato o factura y de la normativa de cada país. En operaciones comerciales suele existir un tipo de interés de demora legal de referencia que se actualiza periódicamente. Si no se pactó nada, se aplica el interés legal correspondiente. Consulta la normativa vigente en tu país para conocer la tasa aplicable.' },
+    { q: '¿Desde cuándo se cuentan los días de retraso?', a: 'Desde el día siguiente al vencimiento del plazo de pago acordado. Si una factura vencía el día 30 y se paga el día 75, hay 45 días de retraso. Es importante tener documentada la fecha de vencimiento (en la factura o el contrato) para poder justificar el cálculo en una eventual reclamación.' },
+    { q: '¿Puedo reclamar también gastos de gestión del impago?', a: 'En muchas legislaciones, además de los intereses de demora, el acreedor de una operación comercial puede reclamar una cantidad fija en concepto de costes de cobro, así como los gastos justificados de la reclamación. Esta calculadora cubre los intereses; infórmate sobre la compensación adicional por costes de cobro prevista en tu normativa.' },
+  ]}
+>
+  <RecargoMoraTool client:load />
+</CalcLayout>

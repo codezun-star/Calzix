@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import CosteEmpresaTrabajadorTool from '@/components/tools/CosteEmpresaTrabajadorTool';
+---
+
+<CalcLayout slug="coste-empresa-trabajador"
+  whatIs="Esta calculadora estima cuánto le cuesta realmente a una empresa un trabajador, sumando a su salario bruto anual las cotizaciones a la seguridad social que paga la empresa (no las que paga el empleado). Ese porcentaje suele rondar el 28-32 % del bruto. El resultado es el coste empresarial total anual y mensual, una cifra siempre superior al salario que figura en el contrato."
+  whyUse="Saber el coste real de un empleado es esencial para presupuestar contrataciones, calcular el precio de los servicios que vende la empresa y entender la diferencia entre lo que cuesta un trabajador y lo que este cobra. Es útil para emprendedores, responsables de recursos humanos y autónomos que valoran contratar a alguien. También ayuda al empleado a comprender el valor total que genera su puesto."
+  faqs={[
+    { q: '¿Qué incluye el coste de un trabajador para la empresa?', a: 'Incluye el salario bruto del empleado más las cotizaciones sociales a cargo de la empresa (contingencias comunes, desempleo, formación, accidentes…). A veces se añaden otros costes como seguros, dietas, formación o equipamiento. La cifra clave es que el coste empresarial es siempre bastante mayor que el salario bruto que aparece en la nómina del trabajador.' },
+    { q: '¿Cuánto cotiza la empresa por un trabajador?', a: 'El porcentaje varía según el país y el tipo de contrato, pero suele situarse en torno al 28-32 % del salario bruto en muchos sistemas. Por ejemplo, con un 30 %, un empleado que cobra 24.000 brutos al año le cuesta a la empresa 24.000 × 1,30 = 31.200. Ajusta el porcentaje en la calculadora según la normativa de tu país.' },
+    { q: '¿Por qué el coste es mayor que el salario bruto?', a: 'Porque, además del salario que recibe el trabajador, la empresa paga por su cuenta unas cotizaciones sociales que no salen de la nómina del empleado, sino que asume directamente. Por eso un sueldo bruto de 24.000 puede costar más de 31.000 a la empresa. Esta diferencia es clave para entender por qué contratar tiene un coste superior al salario pactado.' },
+    { q: '¿Qué diferencia hay entre salario bruto, neto y coste empresa?', a: 'Son tres cifras distintas de mayor a menor: el coste de empresa (lo que paga el empleador en total), el salario bruto (lo que se pacta en contrato, antes de descuentos del trabajador) y el salario neto (lo que el empleado recibe en su cuenta tras restar su parte de cotizaciones e impuestos). Esta calculadora obtiene la primera a partir de la segunda.' },
+    { q: '¿Para qué sirve conocer el coste total?', a: 'Para fijar correctamente el precio de venta de productos y servicios (que debe cubrir el coste real de la plantilla), para presupuestar una nueva contratación sabiendo el desembolso total, y para valorar inversiones en automatización o externalización. Sin conocer el coste empresa, es fácil infravalorar el gasto real de personal y poner precios que no cubren costes.' },
+  ]}
+>
+  <CosteEmpresaTrabajadorTool client:load />
+</CalcLayout>

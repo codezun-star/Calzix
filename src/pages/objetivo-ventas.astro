@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import ObjetivoVentasTool from '@/components/tools/ObjetivoVentasTool';
+---
+
+<CalcLayout slug="objetivo-ventas"
+  whatIs="Esta calculadora reparte una meta de ventas mensual entre los días laborables del mes para obtener el objetivo de ventas diario que necesitas alcanzar. Si indicas lo que ya has vendido y los días que quedan, calcula además el ritmo diario necesario para llegar a la meta con el tiempo restante. Convierte un objetivo grande y abstracto en una cifra diaria concreta y manejable."
+  whyUse="Trabajar con un objetivo diario es mucho más motivador y controlable que mirar solo la meta del mes: permite saber cada día si vas adelantado o atrasado y reaccionar a tiempo. Esta herramienta es útil para comerciales, responsables de tienda, equipos de ventas y autónomos, ayudándoles a planificar el esfuerzo, repartir la presión a lo largo del mes y ajustar el ritmo según los resultados que van logrando."
+  faqs={[
+    { q: '¿Cómo se calcula el objetivo de ventas diario?', a: 'Se divide la meta de ventas del mes entre los días laborables disponibles. Por ejemplo, una meta de 30.000 en 22 días laborables da un objetivo de 30.000 / 22 ≈ 1.364 al día. Esta cifra te indica el ritmo medio que debes mantener cada jornada para llegar a la meta a final de mes.' },
+    { q: '¿Qué pasa si voy atrasado a mitad de mes?', a: 'Si introduces lo que ya has vendido y los días que quedan, la calculadora recalcula el ritmo diario necesario para el tiempo restante. Si vas por debajo de lo previsto, el objetivo diario sube; si vas adelantado, baja. Esto te permite ajustar el esfuerzo a tiempo en lugar de descubrir el desfase el último día.' },
+    { q: '¿Cuántos días laborables tiene un mes?', a: 'Depende del mes y de los festivos, pero un mes suele tener entre 20 y 23 días laborables (de lunes a viernes, descontando festivos). Por defecto la calculadora usa 22, un valor medio razonable. Ajústalo al número real de días de venta de tu mes y sector (algunos negocios trabajan también fines de semana).' },
+    { q: '¿Por qué conviene fijar objetivos diarios?', a: 'Porque un objetivo mensual es difícil de controlar en el día a día, mientras que una meta diaria es concreta y accionable: cada jornada sabes si la has cumplido. Esto reparte la presión, facilita detectar problemas pronto y mantiene al equipo enfocado. Es un principio básico de la gestión comercial: dividir las metas grandes en hitos pequeños y medibles.' },
+    { q: '¿Debo repartir la meta por igual todos los días?', a: 'El reparto uniforme es un buen punto de partida, pero conviene ajustarlo a la realidad de tu negocio: si tienes días de más afluencia (fines de semana, días de pago, campañas), puedes asignarles objetivos mayores y aliviar los días flojos. La cifra diaria media que da la calculadora te sirve de referencia para luego distribuir el esfuerzo de forma inteligente.' },
+  ]}
+>
+  <ObjetivoVentasTool client:load />
+</CalcLayout>

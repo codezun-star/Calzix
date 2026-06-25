@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import PresupuestoTrabajoTool from '@/components/tools/PresupuestoTrabajoTool';
+---
+
+<CalcLayout slug="presupuesto-trabajo"
+  whatIs="Esta calculadora elabora un presupuesto de trabajo profesional sumando el coste de los materiales y la mano de obra (horas por precio hora), aplicando después un margen de beneficio y, por último, el IVA. Muestra el desglose completo —mano de obra, subtotal, importe con margen y total con impuestos— para que puedas presentar un presupuesto claro a tu cliente con todos los conceptos."
+  whyUse="Presupuestar bien es vital para cualquier autónomo, profesional o pequeño taller: olvidar el margen significa trabajar sin beneficio, y olvidar el IVA provoca cobrar de menos. Esta herramienta es ideal para fontaneros, electricistas, reformistas, diseñadores y cualquier oficio que presupueste por proyecto, garantizando que el precio final cubre costes, deja beneficio y repercute correctamente los impuestos."
+  faqs={[
+    { q: '¿Cómo se calcula un presupuesto de trabajo?', a: 'Se suman los materiales y la mano de obra (horas trabajadas por el precio por hora) para obtener el coste directo. A ese subtotal se le aplica un margen de beneficio y, finalmente, el IVA correspondiente. La calculadora muestra cada paso por separado para que entiendas de qué se compone el precio final que ofreces al cliente.' },
+    { q: '¿Qué diferencia hay entre margen y beneficio?', a: 'En esta calculadora, el margen es el porcentaje que añades sobre tus costes para obtener beneficio y cubrir gastos generales (local, herramientas, desplazamientos, tiempo de gestión). No es lo mismo que el beneficio neto final, ya que de él aún hay que descontar impuestos sobre la renta y otros gastos no imputados directamente al trabajo.' },
+    { q: '¿Por qué hay que añadir el IVA al final?', a: 'Porque el IVA se aplica sobre el precio de venta (coste más margen), no sobre el coste. El IVA no es un ingreso tuyo: lo cobras al cliente y lo ingresas a Hacienda. Por eso se calcula al final, sobre el importe ya con margen, y debe aparecer desglosado en la factura para que sea válida fiscalmente.' },
+    { q: '¿Cómo fijo mi precio por hora?', a: 'Tu precio por hora debe cubrir no solo tu sueldo deseado, sino también los costes que no facturas directamente: tiempo de desplazamiento, gestión, formación, herramientas, seguros y los periodos sin trabajo. Una forma de calcularlo es dividir tus ingresos anuales objetivo más los gastos entre las horas realmente facturables del año.' },
+    { q: '¿Debo incluir un margen para imprevistos?', a: 'Es muy recomendable, sobre todo en obras y reformas, donde casi siempre surgen imprevistos. Puedes reflejarlo subiendo ligeramente el margen o añadiendo una partida específica de contingencia. Presupuestar demasiado ajustado es uno de los errores más comunes y la causa de que muchos trabajos acaben dando pérdidas en lugar de beneficio.' },
+  ]}
+>
+  <PresupuestoTrabajoTool client:load />
+</CalcLayout>
