@@ -312,7 +312,7 @@ npm run build    # Build de producción → dist/
 npm run preview  # Preview del build local
 ```
 
-**El build genera actualmente 63 páginas HTML estáticas** (home + 5 legales + 9 categorías + 48 calculadoras).
+**El build genera actualmente 317 páginas HTML estáticas** (home + 5 legales + 9 categorías + 284 calculadoras + blog con 31 artículos).
 Actualizar este contador al añadir calculadoras.
 
 ---
@@ -322,3 +322,4 @@ Actualizar este contador al añadir calculadoras.
 | Fecha | Acción |
 |---|---|
 | 2026-05-29 | SEO/URLs: `trailingSlash: 'never'` en `astro.config.mjs`. Canonical del home corregida en `seo.ts` (`calzix.com/` → `calzix.com`). URLs del filtro de sitemap actualizadas sin slash final. Redirect 301 `/*/→/:splat` en `public/_redirects` (Cloudflare Pages) para normalizar URLs con slash final. |
+| 2026-06-25 | Ampliación masiva: +90 calculadoras (10 por cada uno de los 9 grupos: Matemáticas, Ciencias, Conversión, Hogar, Trabajo, Educación, Viaje, Naturaleza, Ocio) y +10 artículos de blog. Total: 284 calculadoras y 31 artículos (317 páginas). Sin duplicar slugs existentes; iconos Lucide reutilizados (sin cambios en `CalcCard.tsx`). |

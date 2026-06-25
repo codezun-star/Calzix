@@ -1,7 +1,7 @@
 # Calzix — Registro de Calculadoras
 
 > Índice general. El detalle de cada categoría está en su archivo propio.
-> **Total: 48 calculadoras**
+> **Total: 284 calculadoras** (la fuente autoritativa del inventario es `src/lib/constants/calcs.ts`; las tablas por categoría de `docs/` quedan pendientes de sincronización completa).
 
 ## Archivos de detalle
 
@@ -58,7 +58,7 @@
 
 ## Próximo número de serie
 
-Al agregar una nueva calculadora, el número siguiente es **#49**.
+Al agregar una nueva calculadora, el número siguiente es **#285**.
 
 ---
 
