@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import FlashcardsRepasoTool from '@/components/tools/FlashcardsRepasoTool';
+---
+
+<CalcLayout slug="flashcards-repaso"
+  whatIs="Esta calculadora reparte el total de tarjetas de estudio (flashcards) que necesitas memorizar entre los días disponibles hasta tu examen, indicándote cuántas tarjetas nuevas debes aprender cada día. Además, estima la carga total diaria incluyendo los repasos, ya que con la técnica de repetición espaciada cada día revisas las tarjetas nuevas más las de jornadas anteriores."
+  whyUse="Las flashcards y la repetición espaciada son de las técnicas de estudio más eficaces para memorizar vocabulario, fechas, fórmulas o conceptos. El reto es repartir bien el material para no acumularlo todo al final. Esta herramienta te ayuda a planificar un ritmo diario sostenible, evitando el atracón de última hora y aprovechando que el cerebro fija mejor lo que se repasa de forma distribuida en el tiempo."
+  faqs={[
+    { q: '¿Qué son las flashcards y la repetición espaciada?', a: 'Las flashcards son tarjetas con una pregunta por un lado y la respuesta por el otro, ideales para memorizar datos concretos. La repetición espaciada consiste en repasarlas en intervalos crecientes (al día siguiente, a los pocos días, a la semana…), justo antes de olvidarlas. Esta combinación es una de las formas más eficientes de fijar información en la memoria a largo plazo.' },
+    { q: '¿Cuántas tarjetas nuevas debo aprender al día?', a: 'Se calcula dividiendo el total de tarjetas entre los días disponibles, redondeando hacia arriba. Por ejemplo, 300 tarjetas en 20 días son 15 tarjetas nuevas al día. Lo importante es que el ritmo sea constante y sostenible: es mejor 15 al día durante 20 días que 100 el día antes del examen, porque la memoria necesita repasos distribuidos.' },
+    { q: '¿Por qué la carga diaria es mayor que las tarjetas nuevas?', a: 'Porque con la repetición espaciada no solo aprendes tarjetas nuevas, sino que repasas las de días anteriores. Por eso la carga total diaria es mayor: incluye las nuevas más los repasos pendientes. La calculadora estima esa carga combinada para que planifiques tu tiempo de estudio de forma realista y no te sorprenda el volumen de repaso.' },
+    { q: '¿Es mejor estudiar de golpe o repartido?', a: 'Repartido, sin ninguna duda. La ciencia del aprendizaje demuestra que estudiar el mismo material en varias sesiones espaciadas (efecto de espaciamiento) produce una retención mucho mayor que concentrarlo en una sola sesión intensiva (empollar). Repartir las flashcards en los días disponibles aprovecha este principio y mejora notablemente la memorización.' },
+    { q: '¿Qué aplicaciones usan este sistema?', a: 'Existen aplicaciones de flashcards con repetición espaciada que programan automáticamente cuándo repasar cada tarjeta según lo bien que la recuerdas. Funcionan con algoritmos que espacian más las tarjetas que dominas y repiten antes las que fallas. Esta calculadora te da una planificación manual sencilla, útil tanto si usas una app como si estudias con tarjetas de papel.' },
+  ]}
+>
+  <FlashcardsRepasoTool client:load />
+</CalcLayout>

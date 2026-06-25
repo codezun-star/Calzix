@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import NotaLetraTool from '@/components/tools/NotaLetraTool';
+---
+
+<CalcLayout slug="nota-letra"
+  whatIs="Esta calculadora convierte una nota numérica en su calificación por letras y su etiqueta cualitativa. Introduces tu nota y la escala en la que está (sobre 10, sobre 100 o sobre 5), y la herramienta la normaliza y devuelve la letra (A, B, C, D o F) junto con su significado: sobresaliente, notable, bien, suficiente o insuficiente. Es una forma rápida de traducir un número a la valoración que representa."
+  whyUse="Las notas se expresan de muchas formas según el país y la institución: números sobre 10, sobre 100, letras, o etiquetas como sobresaliente o notable. Esta herramienta unifica esos sistemas, útil para estudiantes que solicitan plazas o becas en el extranjero, para entender boletines con distintas escalas o simplemente para saber qué valoración cualitativa corresponde a una nota numérica concreta."
+  faqs={[
+    { q: '¿Cómo se traduce una nota numérica a letra?', a: 'Se normaliza la nota a una escala común (sobre 10) y se asigna la letra según unos tramos: 9-10 es A (sobresaliente), 7-8,9 es B (notable), 6-6,9 es C (bien), 5-5,9 es D (suficiente/aprobado) y menos de 5 es F (insuficiente/suspenso). La calculadora hace esta conversión automáticamente sea cual sea la escala de partida.' },
+    { q: '¿Qué significan las etiquetas sobresaliente, notable, bien y suficiente?', a: 'Son las valoraciones cualitativas tradicionales del sistema educativo en español: sobresaliente (9-10) es la máxima distinción, notable (7-8,9) un muy buen resultado, bien (6-6,9) un aprobado sólido, suficiente (5-5,9) el aprobado mínimo, e insuficiente (menos de 5) el suspenso. Equivalen aproximadamente a las letras A, B, C, D y F.' },
+    { q: '¿Por qué hay que indicar la escala?', a: 'Porque un 7 no significa lo mismo sobre 10 que sobre 100. Sobre 10, un 7 es un notable; sobre 100, un 7 es un suspenso muy bajo. Indicar la escala permite a la calculadora normalizar correctamente la nota antes de asignar la letra, evitando errores. Por eso puedes elegir entre escala sobre 10, sobre 100 o sobre 5.' },
+    { q: '¿Las equivalencias por letras son universales?', a: 'No exactamente. El sistema de letras A-F es típico de países anglosajones, y los tramos exactos varían entre instituciones (algunas usan A+, B-, etc.). Las etiquetas en español también pueden tener cortes ligeramente distintos según el centro. Esta calculadora usa los tramos más extendidos como referencia general; consulta la normativa de tu institución para el detalle exacto.' },
+    { q: '¿Para qué sirve convertir notas a letras?', a: 'Es muy útil al solicitar estudios o becas en el extranjero, donde a menudo piden las notas en el sistema de letras o GPA. También ayuda a interpretar boletines y expedientes que mezclan números y valoraciones, y a comunicar resultados de forma más intuitiva. Saber a qué letra equivale tu nota facilita comparar tu rendimiento entre sistemas distintos.' },
+  ]}
+>
+  <NotaLetraTool client:load />
+</CalcLayout>

@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import PalabrasLibroTool from '@/components/tools/PalabrasLibroTool';
+---
+
+<CalcLayout slug="palabras-libro"
+  whatIs="Esta calculadora estima cuántas palabras tiene un libro a partir de su número de páginas y las palabras por página, y calcula además cuánto tardarías en leerlo según tu velocidad de lectura. Multiplica las páginas por las palabras por página para obtener el total de palabras, una cifra útil tanto para lectores como para quienes escriben o maquetan textos."
+  whyUse="Conocer el número de palabras de un libro sirve para muchas cosas: estimar el tiempo de lectura, comparar la extensión real de distintos libros (más fiable que las páginas, que dependen del formato), planificar la escritura de un manuscrito según los estándares del género, o calcular presupuestos de traducción y corrección, que suelen cobrarse por palabra. Esta herramienta da esa cifra al instante."
+  faqs={[
+    { q: '¿Cuántas palabras tiene un libro medio?', a: 'Depende del género, pero una novela típica tiene entre 70.000 y 100.000 palabras. Un libro de no ficción ronda las 50.000-80.000, las novelas juveniles unas 50.000-70.000, y las sagas de fantasía pueden superar las 150.000. Como referencia, una página estándar contiene unas 250-300 palabras, así que un libro de 350 páginas tiene en torno a 90.000-100.000 palabras.' },
+    { q: '¿Por qué contar palabras y no páginas?', a: 'Porque las páginas dependen del formato: el tamaño de letra, los márgenes, el interlineado y el tamaño del libro cambian cuántas páginas ocupa el mismo texto. Las palabras, en cambio, son una medida objetiva de la extensión real. Por eso editoriales, traductores y correctores trabajan con el número de palabras y no con el de páginas.' },
+    { q: '¿Cuánto se tarda en leer un libro?', a: 'A una velocidad media de lectura de 250 palabras por minuto, un libro de 90.000 palabras se lee en unas 6 horas (90.000 / 250 = 360 minutos). La calculadora estima ese tiempo con tu velocidad real: si lees más rápido o más despacio, ajusta las palabras por minuto para obtener una previsión personalizada del tiempo total de lectura.' },
+    { q: '¿Cuántas palabras debe tener mi novela?', a: 'Los estándares editoriales varían por género: novela general 80.000-100.000 palabras, romántica 50.000-90.000, thriller 90.000-100.000, fantasía y ciencia ficción 90.000-120.000 (a veces más), y novela juvenil 50.000-80.000. Conocer el recuento de palabras te ayuda a ajustar tu manuscrito a las expectativas del mercado y de las editoriales del género.' },
+    { q: '¿Cómo se calcula un presupuesto de traducción o corrección?', a: 'Estos servicios suelen cobrarse por palabra o por cada mil palabras, por eso el recuento total es la base del presupuesto. Por ejemplo, traducir un libro de 90.000 palabras a una tarifa por palabra te permite estimar el coste total. Conocer las palabras del texto (lo que da esta calculadora a partir de las páginas) es el primer paso para pedir o dar un presupuesto.' },
+  ]}
+>
+  <PalabrasLibroTool client:load />
+</CalcLayout>

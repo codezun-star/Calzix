@@ -1258,4 +1258,54 @@ export const PAGE_SEO: Record<string, PageSEO> = {
     description: 'Reparte las propinas del equipo de forma proporcional a las horas trabajadas por cada persona. Gratis, sin registro.',
     canonical: 'https://calzix.com/reparto-propinas',
   },
+  'nota-curva': {
+    title: 'Calculadora de Nota con Curva de Calificación — Calzix',
+    description: 'Aplica una curva de calificación lineal a tu nota y descubre cuánto sube. Gratis y al instante.',
+    canonical: 'https://calzix.com/nota-curva',
+  },
+  'promedio-acumulado': {
+    title: 'Calculadora de Promedio Acumulado (GPA) — Calzix',
+    description: 'Calcula tu promedio acumulado combinando tu nota anterior con la del nuevo semestre, ponderada por créditos. Gratis.',
+    canonical: 'https://calzix.com/promedio-acumulado',
+  },
+  'nota-letra': {
+    title: 'Calculadora de Nota Numérica a Letra (A-F) — Calzix',
+    description: 'Convierte una nota numérica en su calificación por letras (A, B, C, D, F) y su etiqueta cualitativa. Gratis.',
+    canonical: 'https://calzix.com/nota-letra',
+  },
+  'prestamo-estudiantil': {
+    title: 'Calculadora de Préstamo Estudiantil — cuota y coste — Calzix',
+    description: 'Calcula la cuota mensual, el total y los intereses de un préstamo para financiar tus estudios. Gratis, sin registro.',
+    canonical: 'https://calzix.com/prestamo-estudiantil',
+  },
+  'beca-cobertura': {
+    title: 'Calculadora de Cobertura de Beca (%) — Calzix',
+    description: 'Calcula qué porcentaje de los costes de estudio cubre tu beca y cuánto tendrás que aportar tú. Gratis y al instante.',
+    canonical: 'https://calzix.com/beca-cobertura',
+  },
+  'presupuesto-estudiante': {
+    title: 'Calculadora de Presupuesto de Estudiante — Calzix',
+    description: 'Suma tus gastos mensuales de estudiante (alojamiento, comida, transporte…) y conoce el coste del curso. Gratis.',
+    canonical: 'https://calzix.com/presupuesto-estudiante',
+  },
+  'flashcards-repaso': {
+    title: 'Calculadora de Flashcards por Día para Estudiar — Calzix',
+    description: 'Reparte tus tarjetas de estudio entre los días hasta el examen con repetición espaciada. Gratis, sin registro.',
+    canonical: 'https://calzix.com/flashcards-repaso',
+  },
+  'horas-ects': {
+    title: 'Calculadora de Créditos ECTS a Horas de Estudio — Calzix',
+    description: 'Convierte los créditos ECTS en horas de trabajo del estudiante, totales y por semana. Gratis y al instante.',
+    canonical: 'https://calzix.com/horas-ects',
+  },
+  'tiempo-audiolibro': {
+    title: 'Calculadora de Duración de un Audiolibro — Calzix',
+    description: 'Estima cuántas horas dura un audiolibro según las páginas, la narración y la velocidad de reproducción. Gratis.',
+    canonical: 'https://calzix.com/tiempo-audiolibro',
+  },
+  'palabras-libro': {
+    title: 'Calculadora de Palabras de un Libro y Tiempo de Lectura — Calzix',
+    description: 'Calcula cuántas palabras tiene un libro a partir de sus páginas y estima el tiempo de lectura. Gratis, sin registro.',
+    canonical: 'https://calzix.com/palabras-libro',
+  },
 };

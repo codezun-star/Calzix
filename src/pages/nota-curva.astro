@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import NotaCurvaTool from '@/components/tools/NotaCurvaTool';
+---
+
+<CalcLayout slug="nota-curva"
+  whatIs="Esta calculadora aplica una curva de calificación a tu nota: un ajuste que el profesor hace cuando un examen ha resultado difícil para todos. El método más habitual es el lineal, en el que la nota más alta de la clase se escala hasta la máxima posible y el resto de notas suben en la misma proporción. Introduces tu nota, la nota más alta de la clase y la nota máxima posible, y obtienes tu calificación ajustada."
+  whyUse="Las curvas de calificación son frecuentes en exámenes universitarios y oposiciones cuando la prueba ha sido especialmente exigente. Entender cómo te afecta la curva te ayuda a estimar tu nota final real antes de que la publiquen y a comprender por qué un 6 puede convertirse en un 7,5. Esta herramienta te permite simular el ajuste y saber cuánto sube tu calificación con el método lineal."
+  faqs={[
+    { q: '¿Qué es una curva de calificación?', a: 'Es un ajuste al alza que el profesor aplica a las notas de un examen cuando este ha resultado difícil para la mayoría. En lugar de calificar sobre la nota máxima teórica, se toma como referencia la mejor nota obtenida en la clase y se reescalan todas las notas, de modo que el conjunto suba. Es una forma de compensar una prueba más dura de lo previsto.' },
+    { q: '¿Cómo funciona el método de curva lineal?', a: 'Se calcula un factor dividiendo la nota máxima posible entre la nota más alta de la clase, y se multiplica cada nota por ese factor. Por ejemplo, si la máxima posible es 10 y la mejor nota de la clase fue 8, el factor es 10/8 = 1,25; un alumno con 6 pasaría a 6 × 1,25 = 7,5. Así, el mejor examen obtiene el 10 y los demás suben proporcionalmente.' },
+    { q: '¿Por qué los profesores aplican curvas?', a: 'Para corregir exámenes mal calibrados (demasiado largos o difíciles), para mantener una distribución de notas razonable o para ajustar la dificultad entre distintos grupos o convocatorias. La curva busca que la calificación refleje el rendimiento relativo del alumno respecto a su grupo, no solo su puntuación bruta en una prueba quizá excesivamente exigente.' },
+    { q: '¿La curva siempre beneficia al alumno?', a: 'La curva lineal al alza siempre sube las notas o las deja igual, nunca las baja, porque el factor de ajuste es mayor o igual a 1. Existen otros métodos de curva (como ajustar a una distribución normal) que pueden subir unas notas y bajar otras, pero el método más común y el que usa esta calculadora solo puede beneficiar o dejar igual.' },
+    { q: '¿Existen otros tipos de curva además de la lineal?', a: 'Sí. Además de la lineal, hay curvas que suman una cantidad fija a todos (por ejemplo, +1 punto a todos), curvas basadas en la raíz cuadrada de la nota, y el ajuste a campana o distribución normal, donde se fija qué porcentaje de alumnos obtiene cada calificación. Esta calculadora usa el método lineal de "la mejor nota al máximo", el más sencillo y transparente.' },
+  ]}
+>
+  <NotaCurvaTool client:load />
+</CalcLayout>

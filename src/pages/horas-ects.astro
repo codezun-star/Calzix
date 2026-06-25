@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import HorasEctsTool from '@/components/tools/HorasEctsTool';
+---
+
+<CalcLayout slug="horas-ects"
+  whatIs="Esta calculadora convierte los créditos ECTS de una asignatura o curso en horas de trabajo del estudiante. Un crédito ECTS equivale a entre 25 y 30 horas de dedicación total, que incluyen las clases presenciales más el estudio personal, los trabajos y la preparación de exámenes. La herramienta calcula las horas totales y, repartidas entre las semanas del periodo, las horas de estudio que suponen a la semana."
+  whyUse="El sistema ECTS mide el trabajo real del estudiante, no solo las horas de clase, pero muchos estudiantes no son conscientes de cuántas horas implica realmente su carga de créditos. Esta herramienta ayuda a planificar el tiempo de estudio, a entender por qué un semestre de 30 créditos es prácticamente un trabajo a tiempo completo y a organizar la dedicación semanal de forma realista para no ir a remolque."
+  faqs={[
+    { q: '¿Qué es un crédito ECTS?', a: 'El ECTS (Sistema Europeo de Transferencia de Créditos) es la unidad que mide el volumen de trabajo del estudiante en el Espacio Europeo de Educación Superior. Un crédito ECTS representa entre 25 y 30 horas de trabajo total, contando tanto las clases como el estudio autónomo. Permite comparar y reconocer estudios entre universidades de distintos países.' },
+    { q: '¿Cuántas horas son un crédito ECTS?', a: 'Entre 25 y 30 horas, según el país y la universidad (en muchos sistemas se usa el valor de 25, en otros 27 o 30). Esas horas no son solo de clase: incluyen las clases teóricas y prácticas, el estudio personal, la realización de trabajos, las tutorías y la preparación de exámenes. La calculadora te deja ajustar el valor de horas por crédito.' },
+    { q: '¿Cuántas horas supone un semestre completo?', a: 'Un semestre típico son 30 créditos ECTS, que a 27 horas por crédito equivalen a unas 810 horas de trabajo. Repartidas en un semestre de unas 15-20 semanas, suponen entre 40 y 54 horas semanales. Por eso se dice que estudiar a tiempo completo equivale, en dedicación, a una jornada laboral completa o incluso mayor.' },
+    { q: '¿Por qué cuento más horas que las de clase?', a: 'Porque el ECTS mide el trabajo total del estudiante, no solo las horas presenciales. Por cada hora de clase, el sistema asume varias horas de estudio personal, lectura, ejercicios y trabajos. Una asignatura de 6 créditos puede tener solo 60 horas de clase pero exigir otras 100 de trabajo autónomo. Esta calculadora refleja ese trabajo total real.' },
+    { q: '¿Cómo me ayuda a planificar el estudio?', a: 'Al ver las horas semanales que implica tu carga de créditos, puedes organizar un horario realista que combine clases y estudio personal, repartido a lo largo del curso. Si los números te salen inasumibles, quizá convenga reducir la matrícula de créditos. Conocer la dedicación real evita la sensación de ir siempre con el tiempo justo y mejora el rendimiento.' },
+  ]}
+>
+  <HorasEctsTool client:load />
+</CalcLayout>

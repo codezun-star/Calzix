@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import PresupuestoEstudianteTool from '@/components/tools/PresupuestoEstudianteTool';
+---
+
+<CalcLayout slug="presupuesto-estudiante"
+  whatIs="Esta calculadora suma tus gastos mensuales como estudiante —alojamiento, alimentación, transporte, material y ocio— para darte el gasto total al mes y el coste anual estimado. Es una herramienta sencilla de presupuesto personal pensada para la vida de estudiante, que te permite ver de un vistazo cuánto necesitas cada mes y cuánto supone el curso completo."
+  whyUse="Estudiar, sobre todo fuera de casa, conlleva gastos que conviene tener controlados para no llevarse sustos. Hacer un presupuesto ayuda a saber cuánto dinero necesitas, a solicitar la beca o el préstamo adecuado, a buscar trabajo a tiempo parcial si hace falta y a no gastar de más. Esta calculadora es ideal para estudiantes que se independizan o se van de intercambio y necesitan planificar su economía."
+  faqs={[
+    { q: '¿Qué gastos debe incluir un presupuesto de estudiante?', a: 'Los principales son el alojamiento (alquiler o residencia), la alimentación, el transporte, el material y los libros, y el ocio. A estos pueden sumarse otros como teléfono e internet, ropa, gimnasio o seguros. Cuanto más completo sea el desglose, más realista será tu presupuesto y menos imprevistos tendrás a lo largo del curso.' },
+    { q: '¿Cuál suele ser el mayor gasto de un estudiante?', a: 'Para quien estudia fuera de casa, el alojamiento es casi siempre el gasto más grande, seguido de la alimentación. Por eso, compartir piso, vivir en residencia o quedarse en casa familiar marca una diferencia enorme en el presupuesto total. Ajustar el alojamiento es la palanca que más reduce el coste de estudiar fuera.' },
+    { q: '¿Cómo calculo el coste de todo el curso?', a: 'Multiplica tu gasto mensual por el número de meses que dura el curso. La calculadora usa 12 meses para el coste anual, pero si solo vives fuera durante el curso académico (unos 9-10 meses), multiplica tu gasto mensual por esos meses. Recuerda añadir aparte gastos puntuales como la matrícula, que no es mensual.' },
+    { q: '¿Cómo puedo reducir mis gastos como estudiante?', a: 'Las mayores partidas son las que más margen ofrecen: compartir alojamiento, cocinar en casa en vez de comer fuera, usar transporte público con abono de estudiante y aprovechar descuentos y bibliotecas para el material. Llevar un registro de gastos (empezando por este presupuesto) es el primer paso para detectar dónde se va el dinero y recortar.' },
+    { q: '¿Debo incluir un colchón para imprevistos?', a: 'Sí, es muy recomendable reservar un margen mensual (por ejemplo, un 10 %) para imprevistos: una reparación, un gasto médico, un viaje inesperado o material extra. Presupuestar al límite es arriesgado. Añadir ese colchón en la partida de "ocio y otros" o como una reserva aparte te dará tranquilidad y evitará que un imprevisto descuadre todo el mes.' },
+  ]}
+>
+  <PresupuestoEstudianteTool client:load />
+</CalcLayout>

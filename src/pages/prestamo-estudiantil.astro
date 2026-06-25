@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import PrestamoEstudiantilTool from '@/components/tools/PrestamoEstudiantilTool';
+---
+
+<CalcLayout slug="prestamo-estudiantil"
+  whatIs="Esta calculadora obtiene la cuota mensual de un préstamo estudiantil a partir del importe, el tipo de interés anual y el plazo de devolución en años. Usa la fórmula de amortización francesa (cuota constante) y muestra, además de la cuota, el total que devolverás y los intereses que pagarás a lo largo de la vida del préstamo. Así puedes ver el coste real de financiar tus estudios."
+  whyUse="Financiar una carrera, un máster o un curso con un préstamo es una decisión importante, y conviene conocer de antemano cuánto pagarás cada mes y cuánto te costará en total. Esta herramienta te ayuda a comparar ofertas de préstamo, valorar si la cuota encaja en tu presupuesto futuro y entender el peso de los intereses, para tomar una decisión informada sobre cómo financiar tu formación."
+  faqs={[
+    { q: '¿Cómo se calcula la cuota de un préstamo estudiantil?', a: 'Con la fórmula de amortización francesa, que reparte el préstamo en cuotas mensuales iguales. La cuota depende del importe, el tipo de interés mensual (el anual dividido entre 12) y el número de meses. Al principio, una parte mayor de cada cuota va a intereses y, con el tiempo, va aumentando la parte que amortiza capital. La calculadora aplica esta fórmula automáticamente.' },
+    { q: '¿Qué son los intereses totales del préstamo?', a: 'Son la diferencia entre todo lo que devuelves (la suma de todas las cuotas) y el importe que te prestaron. Representan el coste de pedir el dinero. Cuanto mayor es el tipo de interés y más largo el plazo, más intereses pagas en total. La calculadora los muestra para que veas cuánto te cuesta realmente el préstamo más allá del capital.' },
+    { q: '¿Conviene un plazo más largo o más corto?', a: 'Un plazo más largo reduce la cuota mensual (más cómoda), pero aumenta los intereses totales que pagas. Un plazo más corto sube la cuota pero abarata el préstamo en conjunto. La decisión depende de tu capacidad de pago: elige la cuota más alta que puedas asumir cómodamente para minimizar los intereses sin ahogar tu presupuesto.' },
+    { q: '¿Qué ventajas tienen los préstamos estudiantiles frente a otros?', a: 'Suelen ofrecer condiciones más favorables que un préstamo personal normal: tipos de interés más bajos, periodos de carencia (no empiezas a pagar hasta acabar los estudios o encontrar empleo) y plazos largos. Algunos son públicos o subvencionados. Conviene comparar la oferta específica, ya que las condiciones varían mucho entre entidades y programas.' },
+    { q: '¿Qué es un periodo de carencia?', a: 'Es un tiempo durante el cual no pagas cuotas (o pagas solo intereses), habitual en préstamos estudiantiles mientras estudias y poco después de terminar. Te da margen hasta tener ingresos. Ten en cuenta que, si durante la carencia se siguen acumulando intereses, el importe a devolver crecerá. Esta calculadora estima la cuota del periodo de amortización, una vez empiezas a pagar.' },
+  ]}
+>
+  <PrestamoEstudiantilTool client:load />
+</CalcLayout>
