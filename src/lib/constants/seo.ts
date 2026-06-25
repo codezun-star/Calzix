@@ -1358,4 +1358,54 @@ export const PAGE_SEO: Record<string, PageSEO> = {
     description: 'Calcula el coste total de alquilar un coche sumando tarifa, seguro y extras. Compara ofertas con todo incluido. Gratis.',
     canonical: 'https://calzix.com/coste-alquiler-coche',
   },
+  'huella-vuelo': {
+    title: 'Calculadora de Huella de Carbono de un Vuelo — Calzix',
+    description: 'Calcula las emisiones de CO₂ de un vuelo según distancia, trayecto y clase, y los árboles para compensarlo. Gratis.',
+    canonical: 'https://calzix.com/huella-vuelo',
+  },
+  'huella-digital-co2': {
+    title: 'Calculadora de Huella Digital de CO₂ — Calzix',
+    description: 'Estima la huella de carbono de tu actividad digital: streaming, emails y búsquedas web. Gratis y al instante.',
+    canonical: 'https://calzix.com/huella-digital-co2',
+  },
+  'huella-hidrica': {
+    title: 'Calculadora de Huella Hídrica de los Alimentos — Calzix',
+    description: 'Descubre el agua virtual que se necesita para producir los alimentos que comes. Litros por kilo. Gratis, sin registro.',
+    canonical: 'https://calzix.com/huella-hidrica',
+  },
+  'ahorro-agua-grifo': {
+    title: 'Calculadora de Ahorro de Agua con Aireadores de Grifo — Calzix',
+    description: 'Calcula el agua y el dinero que ahorras al instalar aireadores en los grifos de casa. Gratis y al instante.',
+    canonical: 'https://calzix.com/ahorro-agua-grifo',
+  },
+  'autoconsumo-solar': {
+    title: 'Calculadora de Autoconsumo y Autosuficiencia Solar — Calzix',
+    description: 'Calcula tu tasa de autoconsumo, autosuficiencia y el excedente vertido a la red en una instalación solar. Gratis.',
+    canonical: 'https://calzix.com/autoconsumo-solar',
+  },
+  'ahorro-co2-solar': {
+    title: 'Calculadora de CO₂ Evitado con Paneles Solares — Calzix',
+    description: 'Calcula las emisiones de CO₂ que evitas con tu instalación solar según el factor de emisión de la red. Gratis.',
+    canonical: 'https://calzix.com/ahorro-co2-solar',
+  },
+  'dimension-inversor': {
+    title: 'Calculadora para Dimensionar el Inversor Solar — Calzix',
+    description: 'Calcula la potencia de inversor adecuada a la potencia pico de tus paneles solares (kWp). Gratis, sin registro.',
+    canonical: 'https://calzix.com/dimension-inversor',
+  },
+  'latas-aluminio': {
+    title: 'Calculadora de Impacto de Reciclar Latas de Aluminio — Calzix',
+    description: 'Calcula la energía y el aluminio que recuperas al reciclar latas. Reciclar aluminio ahorra hasta un 95% de energía. Gratis.',
+    canonical: 'https://calzix.com/latas-aluminio',
+  },
+  'aceite-usado': {
+    title: 'Calculadora de Impacto de Reciclar Aceite de Cocina — Calzix',
+    description: 'Calcula el agua que evitas contaminar y el biodiésel posible al reciclar aceite de cocina usado. Gratis y al instante.',
+    canonical: 'https://calzix.com/aceite-usado',
+  },
+  'pilas-recicladas': {
+    title: 'Calculadora de Impacto de Reciclar Pilas y Baterías — Calzix',
+    description: 'Calcula el agua que evitas contaminar al reciclar pilas usadas en lugar de tirarlas a la basura. Gratis, sin registro.',
+    canonical: 'https://calzix.com/pilas-recicladas',
+  },
 };

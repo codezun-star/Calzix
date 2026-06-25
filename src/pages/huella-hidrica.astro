@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import HuellaHidricaTool from '@/components/tools/HuellaHidricaTool';
+---
+
+<CalcLayout slug="huella-hidrica"
+  whatIs="Esta calculadora muestra la huella hídrica de los alimentos: el agua total que se necesita para producirlos, desde el riego de los cultivos hasta el procesado final. Esta agua 'virtual' no se ve, pero es enorme: producir un kilo de carne de vacuno requiere miles de litros. Eliges un alimento y la cantidad en kilos, y la herramienta calcula los litros de agua que hay detrás y los compara con duchas equivalentes."
+  whyUse="El agua dulce es un recurso escaso, y la mayor parte del que consumimos no sale del grifo, sino que está 'oculto' en los alimentos que comemos. Conocer la huella hídrica ayuda a entender el impacto de la dieta y a tomar decisiones más sostenibles, como reducir el consumo de carne, el alimento con mayor huella. Esta herramienta hace tangible un consumo de agua que normalmente no percibimos."
+  faqs={[
+    { q: '¿Qué es la huella hídrica de un alimento?', a: 'Es el volumen total de agua dulce empleado para producirlo a lo largo de toda su cadena: el agua de lluvia y de riego de los cultivos, la que beben los animales, la usada en el procesado y la necesaria para diluir la contaminación generada. Se expresa en litros por kilo de producto y revela el coste hídrico real, a menudo sorprendentemente alto.' },
+    { q: '¿Por qué la carne tiene tanta huella hídrica?', a: 'Porque producir carne requiere primero cultivar el pienso con el que se alimenta el ganado durante meses o años, y ese cultivo consume mucha agua. A eso se suma el agua que bebe el animal y la del procesado. La carne de vacuno es la de mayor huella, con miles de litros por kilo, muy por encima de las legumbres, cereales o verduras.' },
+    { q: '¿Cómo puedo reducir mi huella hídrica alimentaria?', a: 'Las medidas más eficaces son: reducir el consumo de carne (especialmente de vacuno) y productos lácteos, comer más legumbres, cereales y verduras de temporada, evitar el desperdicio de comida (tirar comida es tirar el agua que costó producirla) y moderar productos de alta huella como el chocolate o el café. Pequeños cambios en la dieta tienen un gran efecto.' },
+    { q: '¿El agua de la huella hídrica es toda potable?', a: 'No toda. La huella hídrica distingue entre agua verde (de lluvia, almacenada en el suelo), agua azul (de ríos, lagos y acuíferos, la que más compite con otros usos) y agua gris (la necesaria para diluir contaminantes). Gran parte de la huella de muchos alimentos es agua verde, pero la presión sobre el agua azul es la más preocupante para la escasez.' },
+    { q: '¿Por qué importa el agua "virtual" si no la veo?', a: 'Porque al consumir un alimento producido lejos estás usando, indirectamente, el agua de ese lugar. Importar productos de zonas con estrés hídrico traslada presión sobre sus recursos. Entender el agua virtual ayuda a ver el consumo de agua de forma global y a valorar el verdadero coste ambiental de lo que comemos, más allá de lo que marca el contador de casa.' },
+  ]}
+>
+  <HuellaHidricaTool client:load />
+</CalcLayout>

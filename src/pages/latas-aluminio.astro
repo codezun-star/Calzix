@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import LatasAluminioTool from '@/components/tools/LatasAluminioTool';
+---
+
+<CalcLayout slug="latas-aluminio"
+  whatIs="Esta calculadora estima el impacto ambiental positivo de reciclar latas de aluminio. A partir de cuántas latas reciclas y cada cuántos días, proyecta el total anual, el peso de aluminio recuperado y la energía que se ahorra. Reciclar aluminio es uno de los gestos de reciclaje más rentables ecológicamente, porque producir aluminio nuevo a partir del mineral consume enormes cantidades de energía."
+  whyUse="El aluminio es reciclable de forma infinita sin perder calidad, y reciclarlo ahorra hasta un 95 % de la energía necesaria para fabricarlo nuevo. Esta herramienta hace visible ese beneficio, ayudando a tomar conciencia del valor de separar correctamente las latas. Es útil para hogares, oficinas y centros educativos que quieran cuantificar y comunicar el impacto de su reciclaje de aluminio."
+  faqs={[
+    { q: '¿Cuánta energía se ahorra al reciclar una lata?', a: 'Reciclar una lata de aluminio ahorra alrededor del 95 % de la energía que costaría fabricar una nueva a partir de la bauxita (el mineral del aluminio). En términos de energía, reciclar una sola lata ahorra lo suficiente para tener encendida una bombilla LED durante muchas horas. Multiplicado por las latas de un año, el ahorro energético es muy notable.' },
+    { q: '¿El aluminio se puede reciclar siempre?', a: 'Sí, el aluminio es uno de los pocos materiales que se puede reciclar infinitas veces sin perder propiedades. Una lata reciclada puede volver a ser una lata nueva en unas pocas semanas. Esto lo convierte en un material idóneo para la economía circular: cada lata que reciclas vuelve al ciclo en lugar de extraer mineral nuevo, con todo el ahorro energético que eso supone.' },
+    { q: '¿Dónde debo depositar las latas?', a: 'Las latas de bebidas y conservas van al contenedor de envases (normalmente el amarillo). Conviene vaciarlas y, si puedes, aplastarlas para que ocupen menos. No hace falta lavarlas a fondo, basta con que estén razonablemente limpias. Separarlas correctamente garantiza que entren en la cadena de reciclaje y se aproveche su valioso aluminio.' },
+    { q: '¿Cuánto pesa una lata de aluminio?', a: 'Una lata de bebida estándar vacía pesa alrededor de 13-15 gramos, mucho menos que hace décadas gracias a la mejora en su fabricación. Aunque cada lata pese poco, el volumen que se consume es enorme: por eso reciclarlas tiene un impacto agregado importante. La calculadora usa unos 15 gramos por lata para estimar el aluminio recuperado.' },
+    { q: '¿Los datos de la calculadora son exactos?', a: 'Son estimaciones orientativas basadas en valores medios de peso por lata y ahorro energético del reciclaje. Las cifras reales varían según el tipo de lata y los procesos industriales, pero el orden de magnitud es fiable y refleja bien el gran beneficio energético de reciclar aluminio frente a producirlo nuevo. El objetivo es concienciar y motivar el reciclaje.' },
+  ]}
+>
+  <LatasAluminioTool client:load />
+</CalcLayout>

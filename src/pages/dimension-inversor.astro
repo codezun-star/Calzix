@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import DimensionInversorTool from '@/components/tools/DimensionInversorTool';
+---
+
+<CalcLayout slug="dimension-inversor"
+  whatIs="Esta calculadora ayuda a dimensionar el inversor de una instalación solar fotovoltaica a partir de la potencia pico de los paneles (kWp). El inversor convierte la corriente continua de los paneles en corriente alterna utilizable, y no tiene por qué tener la misma potencia que los paneles: lo habitual es dimensionarlo entre el 80 % y el 100 % de la potencia pico, ya que los paneles rara vez producen su máximo teórico."
+  whyUse="Elegir bien la potencia del inversor es clave para que una instalación solar sea eficiente y rentable: un inversor sobredimensionado encarece la instalación sin aportar, y uno muy pequeño desperdicia producción en las horas punta. Esta herramienta da una orientación rápida para particulares e instaladores sobre el rango de potencia de inversor adecuado a unos paneles, un paso importante en el diseño del sistema."
+  faqs={[
+    { q: '¿Qué hace el inversor en una instalación solar?', a: 'El inversor transforma la corriente continua que generan los paneles en corriente alterna, que es la que usan los electrodomésticos y la red eléctrica. También gestiona la instalación: optimiza la producción, la sincroniza con la red y aporta protecciones. Es el "cerebro" del sistema fotovoltaico, y su dimensionado correcto es esencial para el buen rendimiento.' },
+    { q: '¿Por qué el inversor puede ser menor que los paneles?', a: 'Porque los paneles casi nunca producen su potencia pico (kWp), que solo se alcanza en condiciones ideales de sol perpendicular y temperatura óptima. La mayor parte del tiempo producen menos. Por eso se puede instalar un inversor algo menor (80-90 % de la potencia pico) sin perder apenas producción, ahorrando coste. A esto se le llama "sobredimensionar" los paneles respecto al inversor.' },
+    { q: '¿Qué ratio inversor/paneles conviene?', a: 'Lo habitual es una ratio de entre 0,8 y 1,0 (inversor del 80-100 % de la potencia pico de los paneles). En zonas muy soleadas o con orientación óptima puede convenir acercarse a 1,0; en zonas nubosas o con paneles orientados de forma no ideal, ratios más bajas (0,8-0,9) aprovechan mejor el inversor. La calculadora usa 0,9 como valor de referencia.' },
+    { q: '¿Qué pasa si el inversor es demasiado pequeño?', a: 'Si el inversor es muy pequeño respecto a los paneles, en las horas de máxima producción "recorta" la potencia que supera su capacidad (clipping), perdiendo algo de energía. Un recorte moderado es asumible y eficiente, pero si es excesivo se desperdicia producción valiosa de las horas centrales del día. Hay que encontrar el equilibrio adecuado.' },
+    { q: '¿Y si el inversor es demasiado grande?', a: 'Un inversor sobredimensionado encarece la instalación sin aportar beneficio, porque nunca trabajará a plena carga y operará a menudo en su zona de menor eficiencia. Además, los inversores rinden mejor cuando trabajan cerca de su potencia nominal. Por eso no conviene pasarse: el objetivo es ajustar el inversor a la producción real esperada de los paneles.' },
+  ]}
+>
+  <DimensionInversorTool client:load />
+</CalcLayout>

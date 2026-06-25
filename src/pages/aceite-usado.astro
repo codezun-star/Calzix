@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import AceiteUsadoTool from '@/components/tools/AceiteUsadoTool';
+---
+
+<CalcLayout slug="aceite-usado"
+  whatIs="Esta calculadora muestra el impacto ambiental de reciclar el aceite de cocina usado en lugar de tirarlo por el fregadero. A partir de los litros que reciclas y cada cuánto, estima el total anual, los litros de agua que evitas contaminar y el biodiésel que se podría producir con ese aceite. Un solo litro de aceite vertido al desagüe puede contaminar miles de litros de agua, así que reciclarlo importa mucho."
+  whyUse="El aceite de cocina usado es uno de los residuos domésticos más dañinos cuando se tira mal: forma una película que impermeabiliza y atasca las tuberías, dificulta la depuración del agua y daña los ecosistemas acuáticos. Reciclarlo evita esa contaminación y permite convertirlo en biodiésel u otros productos. Esta herramienta cuantifica el beneficio para animar a llevar el aceite a los puntos de recogida."
+  faqs={[
+    { q: '¿Por qué no se debe tirar el aceite por el fregadero?', a: 'Porque el aceite no se disuelve en agua: forma una capa que recubre las tuberías y provoca atascos, daña las redes de saneamiento y dificulta enormemente la depuración del agua en las plantas de tratamiento. Además, si llega a ríos o mares, forma una película que impide el paso de oxígeno y luz, dañando la vida acuática. Un solo litro contamina miles de litros de agua.' },
+    { q: '¿Cuánta agua contamina un litro de aceite?', a: 'Las estimaciones habituales indican que un litro de aceite usado puede llegar a contaminar alrededor de 1.000 litros de agua. Por eso, aunque las cantidades domésticas parezcan pequeñas, su impacto es desproporcionado. Reciclar el aceite de cocina de un hogar a lo largo de un año evita contaminar volúmenes de agua muy importantes.' },
+    { q: '¿Cómo se recicla el aceite de cocina usado?', a: 'Lo más sencillo es guardarlo, una vez frío, en una botella de plástico cerrada (puedes usar un embudo y reutilizar envases) y, cuando se llene, llevarla a un punto limpio o a los contenedores específicos de aceite usado que hay en muchas ciudades. Nunca lo tires por el desagüe ni a la basura orgánica. También se puede filtrar para retirar restos de comida.' },
+    { q: '¿En qué se transforma el aceite reciclado?', a: 'El aceite de cocina usado se reaprovecha principalmente para producir biodiésel, un combustible más limpio, y también para fabricar jabones, lubricantes, ceras o productos cosméticos. De cada litro de aceite usado se puede obtener cerca de un litro de biodiésel. Así, un residuo contaminante se convierte en un recurso útil, cerrando el ciclo de forma sostenible.' },
+    { q: '¿El aceite de oliva y el de girasol se reciclan igual?', a: 'Sí, todos los aceites vegetales de cocina usados (oliva, girasol, maíz…) se reciclan juntos en el mismo circuito y se transforman igualmente en biodiésel u otros productos. Lo importante es no mezclarlos con otras sustancias y depositarlos en los puntos de recogida. Las grasas animales de cocina también pueden reciclarse por la misma vía en muchos lugares.' },
+  ]}
+>
+  <AceiteUsadoTool client:load />
+</CalcLayout>

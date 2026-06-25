@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import HuellaDigitalCo2Tool from '@/components/tools/HuellaDigitalCo2Tool';
+---
+
+<CalcLayout slug="huella-digital-co2"
+  whatIs="Esta calculadora estima la huella de carbono de tu actividad digital diaria: las horas de streaming de vídeo, los correos que envías y las búsquedas web que haces. Cada acción consume energía en los centros de datos, las redes y tus dispositivos, lo que genera emisiones de CO₂. La herramienta suma esa actividad y la proyecta a un año, dándote una cifra de tu huella digital anual."
+  whyUse="Internet parece inmaterial, pero tiene un coste energético y ambiental real: el sector digital genera una parte creciente de las emisiones mundiales. Conocer tu huella digital ayuda a tomar conciencia y a adoptar hábitos más sostenibles, como reducir la calidad del streaming, limpiar la bandeja de correo o evitar reenvíos innecesarios. Esta herramienta hace visible un impacto que suele pasar desapercibido."
+  faqs={[
+    { q: '¿Cuánto CO₂ genera ver streaming?', a: 'Ver vídeo en streaming consume energía en los servidores, la red y tu pantalla. Como referencia orientativa, una hora de vídeo puede generar del orden de varias decenas de gramos de CO₂, más cuanto mayor es la calidad (4K consume mucho más que definición estándar) y el tamaño de la pantalla. A lo largo del año, las horas de streaming suman una huella apreciable.' },
+    { q: '¿Un email contamina?', a: 'Sí, aunque poco cada uno: enviar un correo consume energía en los servidores y la red. Un email sencillo genera unos pocos gramos de CO₂, y bastante más si lleva archivos adjuntos pesados. Lo relevante es el volumen: miles de millones de correos al día tienen un impacto agregado notable. Reducir reenvíos y adjuntos innecesarios ayuda a rebajarlo.' },
+    { q: '¿Cómo puedo reducir mi huella digital?', a: 'Algunas acciones eficaces: bajar la calidad del streaming cuando no necesitas alta resolución, descargar en lugar de reproducir contenido que ves varias veces, usar wifi en vez de datos móviles (más eficiente), limpiar suscripciones y correos antiguos, cerrar pestañas y apps que no usas, y alargar la vida de tus dispositivos, cuya fabricación tiene una gran huella.' },
+    { q: '¿Qué pesa más en la huella digital?', a: 'El streaming de vídeo es, con diferencia, la actividad digital cotidiana que más energía consume, sobre todo en alta resolución y en pantallas grandes. Los correos y las búsquedas individuales pesan mucho menos. Sin embargo, la mayor huella del sector digital está en la fabricación de los dispositivos y en la infraestructura, más que en el uso diario.' },
+    { q: '¿Los datos de la calculadora son precisos?', a: 'Son estimaciones orientativas con factores medios, porque la huella real depende del mix energético de los centros de datos, la eficiencia de la red, el dispositivo y la calidad del contenido. Sirven para hacerse una idea del orden de magnitud y comparar hábitos, pero no son una medición exacta. Su valor está en concienciar sobre un impacto invisible.' },
+  ]}
+>
+  <HuellaDigitalCo2Tool client:load />
+</CalcLayout>

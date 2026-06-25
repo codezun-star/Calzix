@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import HuellaVueloTool from '@/components/tools/HuellaVueloTool';
+---
+
+<CalcLayout slug="huella-vuelo"
+  whatIs="Esta calculadora estima las emisiones de CO₂ de un vuelo a partir de la distancia, si es solo ida o ida y vuelta, y la clase en la que viajas. Usa un factor medio de emisiones por kilómetro y pasajero, y te muestra los kilogramos de CO₂ generados y cuántos árboles harían falta para compensarlos. La clase importa porque en business o primera cada pasajero ocupa más espacio, repartiéndose menos las emisiones."
+  whyUse="El transporte aéreo es una de las actividades individuales que más CO₂ genera, y conocer la huella de un vuelo ayuda a tomar conciencia, comparar alternativas (tren, vídeoconferencia) y, si lo deseas, compensar las emisiones. Esta herramienta es útil para viajeros concienciados con el medio ambiente y para empresas que calculan la huella de los desplazamientos de su personal. Pone una cifra concreta al impacto de volar."
+  faqs={[
+    { q: '¿Cuánto CO₂ emite un vuelo?', a: 'Como referencia, volar emite del orden de 0,15 kg de CO₂ por kilómetro y pasajero en clase turista. Un vuelo de ida y vuelta de 1.000 km genera así unos 300 kg de CO₂ por persona. Los vuelos cortos emiten proporcionalmente más por el consumo extra del despegue, y la clase business o primera multiplica la cifra por ocupar más espacio.' },
+    { q: '¿Por qué la clase de vuelo afecta a la huella?', a: 'Porque las emisiones totales del avión se reparten entre los pasajeros según el espacio que ocupan. En business y primera, los asientos son más grandes y caben menos personas, por lo que a cada pasajero le corresponde una porción mayor de las emisiones del vuelo. Viajar en turista es bastante más eficiente en huella de carbono por persona.' },
+    { q: '¿Cómo se compensan las emisiones de un vuelo?', a: 'La compensación consiste en financiar proyectos que reducen o capturan una cantidad equivalente de CO₂, como reforestación, energías renovables o eficiencia energética. La calculadora estima cuántos árboles absorberían ese CO₂ en un año como referencia. Existen plataformas que permiten compensar pagando por proyectos certificados; es un complemento, no un sustituto de volar menos.' },
+    { q: '¿Es más ecológico el tren que el avión?', a: 'En general sí, y por mucho. El tren, sobre todo el de alta velocidad eléctrico, emite una fracción del CO₂ por pasajero y kilómetro respecto al avión. Para trayectos de media distancia donde el tren es viable, suele ser la opción más sostenible. La diferencia es tan grande que, cuando hay alternativa ferroviaria razonable, reduce drásticamente la huella del viaje.' },
+    { q: '¿Los valores de la calculadora son exactos?', a: 'Son una estimación orientativa basada en factores medios. Las emisiones reales dependen del modelo de avión, su ocupación, la ruta, los vientos y la altitud (que aumenta el efecto invernadero). Para un cálculo riguroso se usan metodologías específicas, pero esta herramienta da una idea fiable del orden de magnitud de la huella de un vuelo.' },
+  ]}
+>
+  <HuellaVueloTool client:load />
+</CalcLayout>

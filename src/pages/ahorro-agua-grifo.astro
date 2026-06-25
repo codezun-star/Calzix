@@ -1,0 +1,18 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import AhorroAguaGrifoTool from '@/components/tools/AhorroAguaGrifoTool';
+---
+
+<CalcLayout slug="ahorro-agua-grifo"
+  whatIs="Esta calculadora estima el agua y el dinero que ahorras al instalar aireadores (perlizadores) en los grifos, que reducen el caudal sin que se note la pérdida de presión. Comparas el caudal actual de tu grifo con el de un grifo con aireador, indicas los minutos de uso diario, las personas del hogar y el precio del agua, y obtienes el ahorro anual en litros y en la factura."
+  whyUse="Los aireadores son uno de los dispositivos de ahorro de agua más baratos y eficaces: cuestan poco, se instalan en segundos y reducen el consumo del grifo casi a la mitad sin afectar al confort. Esta herramienta cuantifica el ahorro real según tu uso, ayudándote a ver lo rápido que se amortizan y el impacto ambiental y económico de un gesto tan simple. Ideal para hogares concienciados con el ahorro."
+  faqs={[
+    { q: '¿Qué es un aireador o perlizador de grifo?', a: 'Es una pequeña pieza que se enrosca en la salida del grifo y mezcla aire con el agua, de modo que el chorro parece igual de abundante pero usa menos agua. Reduce el caudal de los 8-12 litros por minuto de un grifo normal a unos 5-6, sin que apenas se note la diferencia al lavarse las manos o fregar. Es muy barato y fácil de instalar.' },
+    { q: '¿Cuánta agua se ahorra con un aireador?', a: 'Puede reducir el consumo del grifo entre un 30 % y un 50 %. En un hogar con varios grifos y un uso diario habitual, eso supone miles de litros al año y un ahorro apreciable en la factura del agua (y también en la del agua caliente, al calentar menos litros). El ahorro exacto depende del caudal y de los minutos de uso, que esta calculadora tiene en cuenta.' },
+    { q: '¿El aireador reduce la presión del agua?', a: 'No reduce la presión de forma molesta: al incorporar aire, el chorro mantiene volumen y fuerza aparentes aunque salga menos agua. Para lavarse, fregar o enjuagar funciona perfectamente. Solo en tareas que requieran llenar recipientes rápido (como una olla grande) se nota que tarda un poco más, algo asumible frente al ahorro que supone.' },
+    { q: '¿En cuánto tiempo se amortiza un aireador?', a: 'Muy rápido. Como cuestan muy poco y el ahorro en agua (y agua caliente) es continuo, suelen amortizarse en pocas semanas o meses, dependiendo del uso. A partir de ahí, todo es ahorro. Es una de las inversiones en eficiencia con mejor relación coste-beneficio del hogar, junto con las bombillas LED.' },
+    { q: '¿Dónde conviene instalar aireadores?', a: 'En todos los grifos de uso frecuente: cocina y lavabos del baño son los prioritarios. En la ducha, el equivalente es un cabezal de bajo consumo. No conviene reducir el caudal donde necesites llenar rápido o en calentadores que requieran un caudal mínimo para encenderse. Revisa la compatibilidad, pero en la mayoría de grifos domésticos el aireador es directo.' },
+  ]}
+>
+  <AhorroAguaGrifoTool client:load />
+</CalcLayout>
