@@ -42,4 +42,36 @@ import LeyOhmTool from '@/components/tools/LeyOhmTool';
   ]}
 >
   <LeyOhmTool client:load />
+
+  <div slot="extra" class="mt-8 space-y-6">
+    <section class="p-5 bg-white rounded-xl border border-[var(--color-border)]">
+      <h2 class="text-lg font-bold text-[var(--color-text)] mb-3">Tabla de fórmulas de la Ley de Ohm</h2>
+      <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+        De la fórmula fundamental V = I × R se despejan las tres magnitudes, y combinándola con la potencia se obtiene la cuarta:
+      </p>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-[var(--color-calcs-bg)] text-[var(--color-text)]">
+              <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">Magnitud</th>
+              <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">Fórmula</th>
+              <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">Unidad</th>
+              <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">Se usa cuando conoces…</th>
+            </tr>
+          </thead>
+          <tbody class="text-[var(--color-text-secondary)]">
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">Voltaje (tensión)</td><td class="px-4 py-2 border border-[var(--color-border)] font-semibold">V = I × R</td><td class="px-4 py-2 border border-[var(--color-border)]">voltio (V)</td><td class="px-4 py-2 border border-[var(--color-border)]">intensidad y resistencia</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">Intensidad (corriente)</td><td class="px-4 py-2 border border-[var(--color-border)] font-semibold">I = V ÷ R</td><td class="px-4 py-2 border border-[var(--color-border)]">amperio (A)</td><td class="px-4 py-2 border border-[var(--color-border)]">voltaje y resistencia</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">Resistencia</td><td class="px-4 py-2 border border-[var(--color-border)] font-semibold">R = V ÷ I</td><td class="px-4 py-2 border border-[var(--color-border)]">ohmio (Ω)</td><td class="px-4 py-2 border border-[var(--color-border)]">voltaje e intensidad</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">Potencia</td><td class="px-4 py-2 border border-[var(--color-border)] font-semibold">P = V × I</td><td class="px-4 py-2 border border-[var(--color-border)]">vatio (W)</td><td class="px-4 py-2 border border-[var(--color-border)]">voltaje e intensidad</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mt-4">
+        <strong>Ejemplo resuelto:</strong> una bombilla conectada a 12 V por la que circulan 0,5 A tiene una resistencia
+        R = 12 ÷ 0,5 = <strong>24 Ω</strong> y consume una potencia P = 12 × 0,5 = <strong>6 W</strong>. Si la conectaras a 24 V,
+        la corriente subiría a I = 24 ÷ 24 = 1 A: al doble de tensión, el doble de corriente, porque la relación es proporcional.
+      </p>
+    </section>
+  </div>
 </CalcLayout>

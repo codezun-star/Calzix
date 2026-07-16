@@ -42,4 +42,31 @@ import VelocidadFisicaTool from '@/components/tools/VelocidadFisicaTool';
   ]}
 >
   <VelocidadFisicaTool client:load />
+
+  <div slot="extra" class="mt-8 space-y-6">
+    <section class="p-5 bg-white rounded-xl border border-[var(--color-border)]">
+      <h2 class="text-lg font-bold text-[var(--color-text)] mb-3">Las tres fórmulas de velocidad, distancia y tiempo</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-[var(--color-calcs-bg)] text-[var(--color-text)]">
+              <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">Quieres calcular</th>
+              <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">Fórmula</th>
+              <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">Ejemplo</th>
+            </tr>
+          </thead>
+          <tbody class="text-[var(--color-text-secondary)]">
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">Velocidad</td><td class="px-4 py-2 border border-[var(--color-border)] font-semibold">v = d ÷ t</td><td class="px-4 py-2 border border-[var(--color-border)]">300 km en 3 h → v = 100 km/h</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">Distancia</td><td class="px-4 py-2 border border-[var(--color-border)] font-semibold">d = v × t</td><td class="px-4 py-2 border border-[var(--color-border)]">80 km/h durante 2,5 h → d = 200 km</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">Tiempo</td><td class="px-4 py-2 border border-[var(--color-border)] font-semibold">t = d ÷ v</td><td class="px-4 py-2 border border-[var(--color-border)]">450 km a 90 km/h → t = 5 h</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mt-4">
+        <strong>Conversión de unidades:</strong> para pasar de m/s a km/h multiplica por 3,6 (10 m/s = 36 km/h); para pasar de km/h
+        a m/s divide entre 3,6 (108 km/h = 30 m/s). Recuerda usar unidades coherentes: si la distancia está en kilómetros y el tiempo
+        en horas, la velocidad resultante estará en km/h.
+      </p>
+    </section>
+  </div>
 </CalcLayout>

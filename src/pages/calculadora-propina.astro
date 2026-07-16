@@ -41,4 +41,38 @@ import PropinaTool from '@/components/tools/PropinaTool';
   },
 ]}>
   <PropinaTool client:load />
+
+  <div slot="extra" class="mt-8 space-y-6">
+    <section class="p-5 bg-white rounded-xl border border-[var(--color-border)]">
+      <h2 class="text-lg font-bold text-[var(--color-text)] mb-3">¿Cuánto es el 10 %, el 15 % o el 20 % de propina? Tabla rápida</h2>
+      <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+        Referencia rápida del importe de la propina según el total de la cuenta (misma cifra en euros, pesos, soles o cualquier moneda):
+      </p>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-[var(--color-calcs-bg)] text-[var(--color-text)]">
+              <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">Cuenta</th>
+              <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">10 % de propina</th>
+              <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">15 % de propina</th>
+              <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">20 % de propina</th>
+            </tr>
+          </thead>
+          <tbody class="text-[var(--color-text-secondary)]">
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">10</td><td class="px-4 py-2 border border-[var(--color-border)]">1,00</td><td class="px-4 py-2 border border-[var(--color-border)]">1,50</td><td class="px-4 py-2 border border-[var(--color-border)]">2,00</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">20</td><td class="px-4 py-2 border border-[var(--color-border)]">2,00</td><td class="px-4 py-2 border border-[var(--color-border)]">3,00</td><td class="px-4 py-2 border border-[var(--color-border)]">4,00</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">30</td><td class="px-4 py-2 border border-[var(--color-border)]">3,00</td><td class="px-4 py-2 border border-[var(--color-border)]">4,50</td><td class="px-4 py-2 border border-[var(--color-border)]">6,00</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">50</td><td class="px-4 py-2 border border-[var(--color-border)]">5,00</td><td class="px-4 py-2 border border-[var(--color-border)]">7,50</td><td class="px-4 py-2 border border-[var(--color-border)]">10,00</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">100</td><td class="px-4 py-2 border border-[var(--color-border)]">10,00</td><td class="px-4 py-2 border border-[var(--color-border)]">15,00</td><td class="px-4 py-2 border border-[var(--color-border)]">20,00</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">200</td><td class="px-4 py-2 border border-[var(--color-border)]">20,00</td><td class="px-4 py-2 border border-[var(--color-border)]">30,00</td><td class="px-4 py-2 border border-[var(--color-border)]">40,00</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mt-4">
+        <strong>Truco mental:</strong> el 10 % se obtiene moviendo la coma un lugar a la izquierda (de 47,00 → 4,70). El 15 % es el 10 %
+        más su mitad (4,70 + 2,35 = 7,05). Y el 20 % es el 10 % multiplicado por dos (4,70 × 2 = 9,40). Para importes con céntimos o
+        para dividir entre varios comensales, usa la calculadora de arriba.
+      </p>
+    </section>
+  </div>
 </CalcLayout>

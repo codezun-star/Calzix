@@ -205,8 +205,8 @@ export const PAGE_SEO: Record<string, PageSEO> = {
     canonical: 'https://calzix.com/calculadora-pintura',
   },
   'consumo-electrico': {
-    title: 'Calculadora de Consumo Eléctrico: kWh y costo mensual — Calzix',
-    description: 'Calcula los kWh y el costo en tu moneda local de cualquier electrodoméstico por día, mes y año. Para tarifas CFE, EPM, Enel, ENEE y más en toda LATAM.',
+    title: 'Calculadora de Consumo Eléctrico: kWh a euros al mes — Calzix',
+    description: 'Calcula cuántos kWh gasta cualquier electrodoméstico y su coste en euros (o tu moneda local) por día, mes y año. Con tabla de consumos típicos: nevera, calefactor, aire acondicionado y más.',
     canonical: 'https://calzix.com/consumo-electrico',
   },
   'calculadora-hipoteca': {
@@ -246,8 +246,8 @@ export const PAGE_SEO: Record<string, PageSEO> = {
     canonical: 'https://calzix.com/calculadora-productividad',
   },
   'calculadora-propina': {
-    title: 'Calculadora de Propina: total y división por comensales — Calzix',
-    description: 'Calcula la propina en porcentaje, el total a pagar y la parte de cada comensal. Para restaurantes en México, Colombia, Chile, Perú y toda LATAM.',
+    title: 'Calculadora de Propina: 10 %, 15 % y 20 % al instante — Calzix',
+    description: '¿Cuánto es el 10 % o el 15 % de propina? Calcula la propina, el total a pagar y cuánto pone cada comensal al dividir la cuenta. Con tabla de referencia rápida. Gratis.',
     canonical: 'https://calzix.com/calculadora-propina',
   },
   // ── Educación ────────────────────────────────────────────────────────────
@@ -283,8 +283,8 @@ export const PAGE_SEO: Record<string, PageSEO> = {
     canonical: 'https://calzix.com/calculadora-distancia',
   },
   'diferencia-horaria': {
-    title: 'Calculadora de Diferencia Horaria entre Paises — Calzix',
-    description: 'Calcula la hora actual en otro pais. Cubre todas las zonas de LATAM: Mexico UTC-6, Colombia UTC-5, Argentina UTC-3, Chile, Peru, Venezuela. Tiempo real. Gratis.',
+    title: 'Diferencia Horaria entre Países: calcula la hora actual — Calzix',
+    description: 'Calcula la diferencia horaria y la hora actual en cualquier país al instante. España, México, Argentina, Colombia, EE.UU. y todas las zonas del mundo. En tiempo real y gratis.',
     canonical: 'https://calzix.com/diferencia-horaria',
   },
   'peso-equipaje': {
@@ -351,8 +351,8 @@ export const PAGE_SEO: Record<string, PageSEO> = {
     canonical: 'https://calzix.com/potencias-raices',
   },
   'mcm-mcd': {
-    title: 'Calculadora de MCM y MCD Online — Algoritmo de Euclides — Calzix',
-    description: 'Calcula el mínimo común múltiplo (MCM) y el máximo común divisor (MCD) de dos números al instante. Imprescindible para fracciones y divisibilidad. Gratis.',
+    title: 'Calculadora de MCM y MCD Online — mínimo común múltiplo — Calzix',
+    description: 'Calcula online el mínimo común múltiplo (MCM) y el máximo común divisor (MCD) de dos números al instante, con ejemplos resueltos paso a paso. Ideal para fracciones. Gratis.',
     canonical: 'https://calzix.com/mcm-mcd',
   },
   'numero-primo': {
@@ -427,8 +427,8 @@ export const PAGE_SEO: Record<string, PageSEO> = {
     canonical: 'https://calzix.com/energia-potencial',
   },
   'ley-ohm': {
-    title: 'Calculadora de Ley de Ohm Online Gratis — Calzix',
-    description: 'Calcula voltaje (V), intensidad (A) o resistencia (Ohm) con V = I × R al instante. Ideal para electricistas, técnicos y estudiantes de física y electrónica en toda Latinoamérica.',
+    title: 'Calculadora Ley de Ohm: fórmulas y tabla (V = I × R) — Calzix',
+    description: 'Calcula voltaje, intensidad o resistencia con la Ley de Ohm al instante. Incluye la tabla de fórmulas V = I × R, I = V/R y R = V/I con ejemplos resueltos para electricidad y electrónica.',
     canonical: 'https://calzix.com/ley-ohm',
   },
   'potencia-electrica': {
@@ -650,8 +650,8 @@ export const PAGE_SEO: Record<string, PageSEO> = {
     canonical: 'https://calzix.com/precio-original-descuento',
   },
   'irpf-retencion': {
-    title: 'Calculadora de IRPF y Retención 2024: tipo efectivo por tramos — Calzix',
-    description: 'Calcula tu retención de IRPF, tipo efectivo y cuota anual por tramos. Basado en la escala 2024. Equivalente ISR/Renta para México, Colombia y Chile.',
+    title: 'Calculadora IRPF 2026: retención en nómina y tipo efectivo — Calzix',
+    description: 'Calcula tu retención de IRPF 2026 al instante: cuota anual por tramos, tipo efectivo y neto mensual en nómina. Escala estatal de España con tabla de tramos. Gratis y sin registro.',
     canonical: 'https://calzix.com/irpf-retencion',
   },
   'finiquito': {

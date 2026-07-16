@@ -41,4 +41,41 @@ import DiferenciaHorariaTool from "@/components/tools/DiferenciaHorariaTool";
   },
 ]}>
   <DiferenciaHorariaTool client:load />
+
+  <div slot="extra" class="mt-8 space-y-6">
+    <section class="p-5 bg-white rounded-xl border border-[var(--color-border)]">
+      <h2 class="text-lg font-bold text-[var(--color-text)] mb-3">Diferencia horaria entre España y los principales países</h2>
+      <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+        Horas que hay que sumar o restar a la hora peninsular española (Madrid) según la época del año.
+        La diferencia cambia con el horario de verano porque no todos los países lo aplican ni en las mismas fechas:
+      </p>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-[var(--color-calcs-bg)] text-[var(--color-text)]">
+              <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">País / ciudad</th>
+              <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">Invierno en España</th>
+              <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">Verano en España</th>
+            </tr>
+          </thead>
+          <tbody class="text-[var(--color-text-secondary)]">
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">Reino Unido (Londres) y Canarias</td><td class="px-4 py-2 border border-[var(--color-border)]">−1 h</td><td class="px-4 py-2 border border-[var(--color-border)]">−1 h</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">Estados Unidos (Nueva York, Miami)</td><td class="px-4 py-2 border border-[var(--color-border)]">−6 h</td><td class="px-4 py-2 border border-[var(--color-border)]">−6 h</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">México (CDMX)</td><td class="px-4 py-2 border border-[var(--color-border)]">−7 h</td><td class="px-4 py-2 border border-[var(--color-border)]">−8 h</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">Colombia, Perú y Ecuador</td><td class="px-4 py-2 border border-[var(--color-border)]">−6 h</td><td class="px-4 py-2 border border-[var(--color-border)]">−7 h</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">Venezuela</td><td class="px-4 py-2 border border-[var(--color-border)]">−5 h</td><td class="px-4 py-2 border border-[var(--color-border)]">−6 h</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">Argentina y Uruguay</td><td class="px-4 py-2 border border-[var(--color-border)]">−4 h</td><td class="px-4 py-2 border border-[var(--color-border)]">−5 h</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">Chile (Santiago)</td><td class="px-4 py-2 border border-[var(--color-border)]">−4 h</td><td class="px-4 py-2 border border-[var(--color-border)]">−6 h</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">China (Pekín, Shanghái)</td><td class="px-4 py-2 border border-[var(--color-border)]">+7 h</td><td class="px-4 py-2 border border-[var(--color-border)]">+6 h</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">Japón (Tokio)</td><td class="px-4 py-2 border border-[var(--color-border)]">+8 h</td><td class="px-4 py-2 border border-[var(--color-border)]">+7 h</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mt-4">
+        Ejemplo: cuando en Madrid son las 15:00 en invierno, en Ciudad de México son las 8:00, en Bogotá y Lima las 9:00 y en
+        Buenos Aires las 11:00. Para cualquier otra combinación de países u horas concretas, usa la calculadora de arriba: aplica
+        automáticamente el horario de verano vigente en cada zona.
+      </p>
+    </section>
+  </div>
 </CalcLayout>

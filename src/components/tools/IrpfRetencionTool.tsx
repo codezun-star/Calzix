@@ -42,7 +42,7 @@ export default function IrpfRetencionTool() {
 
   return (
     <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 space-y-4">
-      <p className="text-xs text-[var(--color-text-secondary)]">IRPF 2024 (España) — Cálculo orientativo sin deducciones personales.</p>
+      <p className="text-xs text-[var(--color-text-secondary)]">IRPF 2026 (España) — Cálculo orientativo sin deducciones personales.</p>
       <div className="space-y-1">
         <label className="text-xs font-medium text-[var(--color-text-secondary)]">Salario bruto anual (€)</label>
         <input type="number" value={salario} onChange={(e) => { setSalario(e.target.value); setResult(null); }} placeholder="Ej. 35000" className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-2 text-sm text-[var(--color-text)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]" />

@@ -4,8 +4,8 @@ import ConsumoElectricoTool from "@/components/tools/ConsumoElectricoTool";
 ---
 
 <CalcLayout slug="consumo-electrico"
-  whatIs="La calculadora de consumo eléctrico estima los kWh diarios, mensuales y anuales de cualquier electrodoméstico a partir de su potencia en vatios, las horas de uso por día y los días al mes. Con el precio por kWh de tu tarifa, calcula también el costo mensual y anual en tu moneda local."
-  whyUse="Familias, gestores de edificios y empresas en México, Colombia, Chile, Perú y Argentina usan esta calculadora para identificar qué electrodomésticos consumen más, comparar el impacto de hábitos de uso en la factura eléctrica (CFE, EPM, Enel, ENEE, CPFL) y justificar cambios a equipos más eficientes."
+  whatIs="La calculadora de consumo eléctrico estima los kWh diarios, mensuales y anuales de cualquier electrodoméstico a partir de su potencia en vatios, las horas de uso por día y los días al mes. Con el precio por kWh de tu tarifa, convierte los kWh a euros (o a tu moneda local) y obtiene el coste mensual y anual del aparato en tu factura de la luz."
+  whyUse="Hogares en España que quieren saber cuánto suben la factura el calefactor, el aire acondicionado o el termo eléctrico usan esta calculadora para pasar kWh a euros con el precio de su tarifa. También la usan familias, gestores de edificios y empresas en México, Colombia, Chile, Perú y Argentina para identificar qué electrodomésticos consumen más y justificar cambios a equipos más eficientes."
   faqs={[
   {
     q: '¿Cómo se calcula el consumo eléctrico de un electrodoméstico?',
@@ -41,4 +41,56 @@ import ConsumoElectricoTool from "@/components/tools/ConsumoElectricoTool";
   },
 ]}>
   <ConsumoElectricoTool client:load />
+
+  <div slot="extra" class="mt-8 space-y-6">
+    <section class="p-5 bg-white rounded-xl border border-[var(--color-border)]">
+      <h2 class="text-lg font-bold text-[var(--color-text)] mb-3">Cómo pasar kWh a euros</h2>
+      <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+        El cálculo tiene dos pasos: primero se obtienen los kWh consumidos y después se multiplican por el precio del kWh de tu tarifa.
+      </p>
+      <ul class="text-sm text-[var(--color-text-secondary)] leading-relaxed space-y-1 list-disc pl-5 mt-3">
+        <li><strong>kWh consumidos</strong> = (potencia en W ÷ 1.000) × horas de uso</li>
+        <li><strong>Coste en euros</strong> = kWh consumidos × precio del kWh (€)</li>
+      </ul>
+      <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mt-3">
+        Ejemplo: un calefactor de 2.000 W encendido 4 horas al día consume (2.000 ÷ 1.000) × 4 = <strong>8 kWh al día</strong>.
+        Con un precio de 0,15 €/kWh son 1,20 € al día, es decir, <strong>36 € al mes</strong>. El precio exacto de tu kWh figura en
+        el apartado de energía de tu factura; en tarifas con discriminación horaria varía entre horas punta, llano y valle.
+      </p>
+    </section>
+
+    <section class="p-5 bg-white rounded-xl border border-[var(--color-border)]">
+      <h2 class="text-lg font-bold text-[var(--color-text)] mb-3">Tabla de consumo típico de los electrodomésticos</h2>
+      <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+        Valores orientativos de potencia y consumo mensual con un uso habitual, y su coste con un precio de ejemplo de 0,15 €/kWh:
+      </p>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-[var(--color-calcs-bg)] text-[var(--color-text)]">
+              <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">Electrodoméstico</th>
+              <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">Potencia</th>
+              <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">Uso habitual</th>
+              <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">kWh/mes</th>
+              <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">Coste/mes</th>
+            </tr>
+          </thead>
+          <tbody class="text-[var(--color-text-secondary)]">
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">Calefactor eléctrico</td><td class="px-4 py-2 border border-[var(--color-border)]">2.000 W</td><td class="px-4 py-2 border border-[var(--color-border)]">4 h/día</td><td class="px-4 py-2 border border-[var(--color-border)]">240</td><td class="px-4 py-2 border border-[var(--color-border)]">36,00 €</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">Aire acondicionado split</td><td class="px-4 py-2 border border-[var(--color-border)]">1.200 W</td><td class="px-4 py-2 border border-[var(--color-border)]">6 h/día</td><td class="px-4 py-2 border border-[var(--color-border)]">216</td><td class="px-4 py-2 border border-[var(--color-border)]">32,40 €</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">Termo eléctrico</td><td class="px-4 py-2 border border-[var(--color-border)]">1.500 W</td><td class="px-4 py-2 border border-[var(--color-border)]">2 h/día</td><td class="px-4 py-2 border border-[var(--color-border)]">90</td><td class="px-4 py-2 border border-[var(--color-border)]">13,50 €</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">Vitrocerámica</td><td class="px-4 py-2 border border-[var(--color-border)]">1.800 W</td><td class="px-4 py-2 border border-[var(--color-border)]">1 h/día</td><td class="px-4 py-2 border border-[var(--color-border)]">54</td><td class="px-4 py-2 border border-[var(--color-border)]">8,10 €</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">Frigorífico eficiente</td><td class="px-4 py-2 border border-[var(--color-border)]">100–200 W</td><td class="px-4 py-2 border border-[var(--color-border)]">24 h/día</td><td class="px-4 py-2 border border-[var(--color-border)]">30</td><td class="px-4 py-2 border border-[var(--color-border)]">4,50 €</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">Lavadora</td><td class="px-4 py-2 border border-[var(--color-border)]">1.500–2.200 W</td><td class="px-4 py-2 border border-[var(--color-border)]">3 ciclos/semana</td><td class="px-4 py-2 border border-[var(--color-border)]">14</td><td class="px-4 py-2 border border-[var(--color-border)]">2,10 €</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">Televisor LED 50"</td><td class="px-4 py-2 border border-[var(--color-border)]">100 W</td><td class="px-4 py-2 border border-[var(--color-border)]">4 h/día</td><td class="px-4 py-2 border border-[var(--color-border)]">12</td><td class="px-4 py-2 border border-[var(--color-border)]">1,80 €</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">Router wifi</td><td class="px-4 py-2 border border-[var(--color-border)]">10 W</td><td class="px-4 py-2 border border-[var(--color-border)]">24 h/día</td><td class="px-4 py-2 border border-[var(--color-border)]">7</td><td class="px-4 py-2 border border-[var(--color-border)]">1,08 €</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-[var(--color-text-muted)] mt-3">
+        Los aparatos que generan calor o frío (calefactor, aire acondicionado, termo, vitrocerámica) concentran la mayor parte de la factura.
+        Introduce la potencia y las horas reales de tu aparato en la calculadora para obtener tu coste exacto.
+      </p>
+    </section>
+  </div>
 </CalcLayout>

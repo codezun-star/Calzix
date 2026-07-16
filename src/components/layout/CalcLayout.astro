@@ -109,6 +109,9 @@ const appSchema = JSON.stringify({
       <!-- Componente React -->
       <slot />
 
+      <!-- Contenido adicional de la página (tablas, ejemplos, guías) -->
+      <slot name="extra" />
+
       <!-- ¿Qué es? -->
       {whatIs && (
         <section class="mt-8 p-5 bg-white rounded-xl border border-[var(--color-border)]" style="border-left: 4px solid var(--color-accent)">

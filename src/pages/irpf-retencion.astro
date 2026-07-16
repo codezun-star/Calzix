@@ -4,12 +4,12 @@ import IrpfRetencionTool from "@/components/tools/IrpfRetencionTool";
 ---
 
 <CalcLayout slug="irpf-retencion"
-  whatIs="La calculadora de IRPF y retención calcula el impuesto sobre la renta anual, el tipo efectivo y la cuota mensual retenida a partir del ingreso bruto anual. Aplica la escala de tramos del IRPF 2024 de España (19 % al 47 %). Las FAQs incluyen equivalentes para México (ISR), Colombia (retención en la fuente), Chile (impuesto único de segunda categoría) y Perú (impuesto a la renta de quinta categoría)."
-  whyUse="Contribuyentes, asesores fiscales, trabajadores autónomos y empleados en España usan esta calculadora para estimar su cuota de IRPF anual y planificar su declaración de la renta. Usuarios de México, Colombia, Chile y toda LATAM encontrarán en las FAQs las referencias completas a sus equivalentes locales con tramos, tasas y organismos tributarios de cada país."
+  whatIs="La calculadora de IRPF calcula el impuesto sobre la renta anual, el tipo efectivo y la retención mensual orientativa de tu nómina a partir del salario bruto anual. Aplica la escala general estatal del IRPF 2026 de España (del 19 % al 47 %), la misma estructura de tramos vigente en los ejercicios 2021 a 2025. Las FAQs incluyen equivalentes para México (ISR), Colombia (retención en la fuente), Chile (impuesto único de segunda categoría) y Perú (impuesto a la renta de quinta categoría)."
+  whyUse="Contribuyentes, asesores fiscales, trabajadores autónomos y empleados en España usan esta calculadora para estimar su cuota de IRPF anual, comprobar si la retención de su nómina es correcta y planificar la declaración de la renta antes de que la Agencia Tributaria publique el borrador. Usuarios de México, Colombia, Chile y toda LATAM encontrarán en las FAQs las referencias completas a sus equivalentes locales con tramos, tasas y organismos tributarios de cada país."
   faqs={[
   {
-    q: "¿Que es el IRPF y como se estructura en Espana para 2024?",
-    a: "El IRPF (Impuesto sobre la Renta de las Personas Fisicas) es el impuesto que grava los ingresos de las personas fisicas en Espana. Es un impuesto progresivo, lo que significa que a mayores ingresos, mayor porcentaje se paga en el tramo adicional. Escala general de IRPF 2024: hasta 12.450 euros: 19 %; de 12.450 a 20.200 euros: 24 %; de 20.200 a 35.200 euros: 30 %; de 35.200 a 60.000 euros: 37 %; de 60.000 a 300.000 euros: 45 %; mas de 300.000 euros: 47 %. Tipos marginales autonómicos: las comunidades autónomas tienen competencia para fijar sus propios tipos adicionales, por lo que el tipo total (estatal + autonómico) varía según la region de residencia. Madrid tiene algunos de los tipos autonómicos más bajos de Espana, mientras que Cataluna y Valencia tienen tipos autonómicos más altos. Esta calculadora usa la escala general estatal. El tipo efectivo (porcentaje real pagado sobre el total de ingresos) es siempre menor que el tipo marginal (el del tramo más alto que alcanza el contribuyente) porque los tramos inferiores pagan tasas menores."
+    q: "¿Que es el IRPF y como se estructura en Espana para 2026?",
+    a: "El IRPF (Impuesto sobre la Renta de las Personas Fisicas) es el impuesto que grava los ingresos de las personas fisicas en Espana. Es un impuesto progresivo, lo que significa que a mayores ingresos, mayor porcentaje se paga en el tramo adicional. Escala general de IRPF 2026 (sin cambios desde 2021): hasta 12.450 euros: 19 %; de 12.450 a 20.200 euros: 24 %; de 20.200 a 35.200 euros: 30 %; de 35.200 a 60.000 euros: 37 %; de 60.000 a 300.000 euros: 45 %; mas de 300.000 euros: 47 %. Tipos marginales autonómicos: las comunidades autónomas tienen competencia para fijar sus propios tipos adicionales, por lo que el tipo total (estatal + autonómico) varía según la region de residencia. Madrid tiene algunos de los tipos autonómicos más bajos de Espana, mientras que Cataluna y Valencia tienen tipos autonómicos más altos. Esta calculadora usa la escala general estatal. El tipo efectivo (porcentaje real pagado sobre el total de ingresos) es siempre menor que el tipo marginal (el del tramo más alto que alcanza el contribuyente) porque los tramos inferiores pagan tasas menores."
   },
   {
     q: "¿Como funciona el ISR sobre ingresos en Mexico y que es el SAT?",
@@ -41,4 +41,63 @@ import IrpfRetencionTool from "@/components/tools/IrpfRetencionTool";
   },
 ]}>
   <IrpfRetencionTool client:load />
+
+  <div slot="extra" class="mt-8 space-y-6">
+    <section class="p-5 bg-white rounded-xl border border-[var(--color-border)]">
+      <h2 class="text-lg font-bold text-[var(--color-text)] mb-3">Tramos del IRPF 2026 — escala general estatal</h2>
+      <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
+        Esta es la escala general del IRPF vigente en España para 2026 (la misma estructura de tramos que en los ejercicios 2021 a 2025).
+        El IRPF es progresivo: cada tipo se aplica <strong>solo a la parte del salario que cae dentro de su tramo</strong>, nunca al total.
+      </p>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-[var(--color-calcs-bg)] text-[var(--color-text)]">
+              <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">Base imponible (desde)</th>
+              <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">Hasta</th>
+              <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">Tipo aplicable</th>
+            </tr>
+          </thead>
+          <tbody class="text-[var(--color-text-secondary)]">
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">0 €</td><td class="px-4 py-2 border border-[var(--color-border)]">12.450 €</td><td class="px-4 py-2 border border-[var(--color-border)] font-semibold">19 %</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">12.450 €</td><td class="px-4 py-2 border border-[var(--color-border)]">20.200 €</td><td class="px-4 py-2 border border-[var(--color-border)] font-semibold">24 %</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">20.200 €</td><td class="px-4 py-2 border border-[var(--color-border)]">35.200 €</td><td class="px-4 py-2 border border-[var(--color-border)] font-semibold">30 %</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">35.200 €</td><td class="px-4 py-2 border border-[var(--color-border)]">60.000 €</td><td class="px-4 py-2 border border-[var(--color-border)] font-semibold">37 %</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">60.000 €</td><td class="px-4 py-2 border border-[var(--color-border)]">300.000 €</td><td class="px-4 py-2 border border-[var(--color-border)] font-semibold">45 %</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">300.000 €</td><td class="px-4 py-2 border border-[var(--color-border)]">En adelante</td><td class="px-4 py-2 border border-[var(--color-border)] font-semibold">47 %</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-[var(--color-text-muted)] mt-3">
+        Cada comunidad autónoma aplica su propia mitad autonómica sobre esta escala, por lo que el tipo total puede variar ligeramente según tu residencia.
+      </p>
+    </section>
+
+    <section class="p-5 bg-white rounded-xl border border-[var(--color-border)]">
+      <h2 class="text-lg font-bold text-[var(--color-text)] mb-3">Ejemplo resuelto: IRPF de un salario de 30.000 € brutos</h2>
+      <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-3">
+        Así se calcula la cuota por tramos para una base imponible de 30.000 € anuales:
+      </p>
+      <ul class="text-sm text-[var(--color-text-secondary)] leading-relaxed space-y-1 list-disc pl-5">
+        <li>Primeros 12.450 € × 19 % = <strong>2.365,50 €</strong></li>
+        <li>De 12.450 € a 20.200 € (7.750 €) × 24 % = <strong>1.860,00 €</strong></li>
+        <li>De 20.200 € a 30.000 € (9.800 €) × 30 % = <strong>2.940,00 €</strong></li>
+      </ul>
+      <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mt-3">
+        Cuota total de IRPF: <strong>7.165,50 €</strong> al año. Tipo efectivo: <strong>23,9 %</strong> (aunque el tipo marginal sea el 30 %).
+        Neto anual aproximado: <strong>22.834,50 €</strong>, es decir, unos <strong>1.903 € netos al mes</strong> en 12 pagas, antes de aplicar
+        deducciones personales y familiares que reducen la cuota real.
+      </p>
+    </section>
+
+    <section class="p-5 bg-white rounded-xl border border-[var(--color-border)]">
+      <h2 class="text-lg font-bold text-[var(--color-text)] mb-3">¿Cómo se refleja el IRPF en la retención de tu nómina?</h2>
+      <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+        La empresa retiene cada mes un porcentaje de tu salario a cuenta del IRPF y lo ingresa en la Agencia Tributaria. Ese porcentaje se
+        calcula con tus datos del <strong>Modelo 145</strong> (hijos, cónyuge, discapacidad, pagas). Si la retención anual supera tu IRPF real,
+        la declaración de la renta te sale <em>a devolver</em>; si se queda corta, te sale <em>a pagar</em>. Usa el resultado de esta calculadora
+        para comparar la retención mensual orientativa con la que figura en tu nómina y detectar desviaciones a tiempo.
+      </p>
+    </section>
+  </div>
 </CalcLayout>
