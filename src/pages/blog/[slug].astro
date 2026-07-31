@@ -4,6 +4,7 @@ import Footer from '@/components/layout/Footer.astro';
 import { SITE } from '@/lib/constants/seo';
 import { getCollection, getEntry, render } from 'astro:content';
 import '@/styles/global.css';
+import { jsonLd } from '@/lib/utils/jsonld';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', (e) => e.data.publicado !== false);
@@ -111,10 +112,10 @@ const articleSchema = {
     {ogImage && <meta name="twitter:image" content={ogImage} />}
 
     <!-- JSON-LD: BreadcrumbList -->
-    <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script is:inline type="application/ld+json" set:html={jsonLd(breadcrumbSchema)} />
 
     <!-- JSON-LD: Article -->
-    <script is:inline type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script is:inline type="application/ld+json" set:html={jsonLd(articleSchema)} />
   </head>
 
   <body>

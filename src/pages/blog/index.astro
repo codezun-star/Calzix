@@ -5,6 +5,7 @@ import BlogList from '@/components/blog/BlogList';
 import { SITE } from '@/lib/constants/seo';
 import { getCollection } from 'astro:content';
 import '@/styles/global.css';
+import { jsonLd } from '@/lib/utils/jsonld';
 
 const todos = await getCollection('blog', (e) => e.data.publicado !== false);
 const articles = todos
@@ -42,7 +43,7 @@ const canonical   = `${SITE.url}/blog`;
     <meta name="twitter:title"       content={title} />
     <meta name="twitter:description" content={description} />
 
-    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+    <script is:inline type="application/ld+json" set:html={jsonLd({
       '@context': 'https://schema.org',
       '@type':    'Blog',
       name:        title,

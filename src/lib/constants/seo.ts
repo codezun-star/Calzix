@@ -4,6 +4,9 @@ export const SITE = {
   description: 'Calculadoras online gratuitas — finanzas, salud, matemáticas, conversiones y más. Resultados al instante.',
   email: 'codezun@gmail.com',
   twitterHandle: '@calzix',
+  // Imagen OG por defecto (home, categorías, blog y legales).
+  // Las calculadoras usan la suya: /og/[slug].jpg — ver scripts/generate-og.mjs
+  ogImage: 'https://calzix.com/og/default.jpg',
   // Señales de frescura para buscadores y motores de respuesta.
   // Actualizar `dateModified` cuando se revise el contenido del sitio.
   datePublished: '2026-05-01',

@@ -4,6 +4,7 @@ import Footer from './Footer.astro';
 import { PAGE_SEO, SITE } from '@/lib/constants/seo';
 import { getCalcBySlug, getRelatedCalcs, getDomainGroup } from '@/lib/constants/calcs';
 import '@/styles/global.css';
+import { jsonLd } from '@/lib/utils/jsonld';
 
 interface Props {
   slug: string;
@@ -36,6 +37,8 @@ const title       = seo?.title       ?? `${calc?.name ?? slug} — ${SITE.name}`
 const description = seo?.description ?? calc?.description ?? SITE.description;
 const canonical   = seo?.canonical   ?? `${SITE.url}/${slug}`;
 const calcName    = calc?.name ?? slug;
+// Imagen OG propia por calculadora (generada por scripts/generate-og.mjs)
+const ogImage     = calc ? `${SITE.url}/og/${slug}.jpg` : SITE.ogImage;
 
 const group = calc ? getDomainGroup(calc.domain) : undefined;
 const breadcrumb = [
@@ -153,7 +156,7 @@ const faqSchema = faqs.length > 0
     }
   : null;
 
-const graph = JSON.stringify({
+const graph = jsonLd({
   '@context': 'https://schema.org',
   '@graph': [
     orgSchema,
@@ -190,11 +193,17 @@ const graph = JSON.stringify({
     <meta property="og:description" content={description} />
     <meta property="og:site_name"   content={SITE.name} />
     <meta property="og:locale"      content="es_ES" />
+    <meta property="og:image"        content={ogImage} />
+    <meta property="og:image:width"  content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt"    content={`${calcName} — ${SITE.name}`} />
 
     <!-- Twitter -->
-    <meta name="twitter:card"        content="summary" />
+    <meta name="twitter:card"        content="summary_large_image" />
     <meta name="twitter:title"       content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image"       content={ogImage} />
+    <meta name="twitter:image:alt"   content={`${calcName} — ${SITE.name}`} />
 
     <!-- JSON-LD -->
     <script is:inline type="application/ld+json" set:html={graph} />

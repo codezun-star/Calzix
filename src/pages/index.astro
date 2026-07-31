@@ -5,10 +5,11 @@ import HomeCalcs from '@/components/ui/HomeCalcs';
 import { PAGE_SEO, SITE } from '@/lib/constants/seo';
 import { CALCS, CALC_GROUPS } from '@/lib/constants/calcs';
 import '@/styles/global.css';
+import { jsonLd } from '@/lib/utils/jsonld';
 
 const seo = PAGE_SEO.home;
 
-const homeGraph = JSON.stringify({
+const homeGraph = jsonLd({
   '@context': 'https://schema.org',
   '@graph': [
     {
@@ -100,11 +101,17 @@ const homeGraph = JSON.stringify({
     <meta property="og:description" content={seo.description} />
     <meta property="og:site_name"   content={SITE.name} />
     <meta property="og:locale"      content="es_ES" />
+    <meta property="og:image"        content={SITE.ogImage} />
+    <meta property="og:image:width"  content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt"    content={`${SITE.name} — calculadoras online gratuitas`} />
 
     <!-- Twitter -->
-    <meta name="twitter:card"        content="summary" />
+    <meta name="twitter:card"        content="summary_large_image" />
     <meta name="twitter:title"       content={seo.title} />
     <meta name="twitter:description" content={seo.description} />
+    <meta name="twitter:image"       content={SITE.ogImage} />
+    <meta name="twitter:image:alt"   content={`${SITE.name} — calculadoras online gratuitas`} />
 
     <!-- JSON-LD -->
     <script is:inline type="application/ld+json" set:html={homeGraph} />

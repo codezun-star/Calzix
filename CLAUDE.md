@@ -236,6 +236,31 @@ El sitio está preparado para ser citado por ChatGPT, Perplexity, Claude, Google
 | JSON-LD unificado | `CalcLayout.astro` | Un solo `@graph` con `Organization`, `WebSite`, `WebPage`, `WebApplication`, `BreadcrumbList`, `HowTo` y `FAQPage` |
 | Bloque de respuesta directa | `CalcLayout.astro` | El párrafo bajo el H1 lleva la clase `aeo-answer` y es el objetivo de `speakable` |
 | Frescura | `SITE.dateModified` en `seo.ts` | Alimenta `dateModified` del schema, `<meta name="last-modified">` y la línea "Actualizado el…" visible |
+| Serialización del JSON-LD | `src/lib/utils/jsonld.ts` | **Usar `jsonLd()` siempre, nunca `JSON.stringify()`** para JSON-LD (ver más abajo) |
+
+### `jsonLd()` — regla obligatoria
+
+Todo bloque `<script type="application/ld+json">` debe serializarse con `jsonLd()` de `@/lib/utils/jsonld`, que escapa `<`, `>` y `&` como secuencias unicode.
+
+```astro
+---
+import { jsonLd } from '@/lib/utils/jsonld';
+const graph = jsonLd({ '@context': 'https://schema.org', '@graph': [...] });
+---
+<script is:inline type="application/ld+json" set:html={graph} />
+```
+
+El JSON resultante parsea idéntico al original, pero evita dos problemas reales:
+1. Un `</script>` dentro de cualquier texto (FAQ, descripción) cerraría el bloque antes de tiempo.
+2. Los comparadores sueltos en las FAQs (`<86%`, `< 25 mmHg`) rompen los parsers de HTML.
+
+### Imágenes Open Graph
+
+`public/og/` contiene una imagen 1200×630 JPG por calculadora más `default.jpg`, generadas con `node scripts/generate-og.mjs`. El script importa `CALCS` directamente desde `calcs.ts` (Node elimina los tipos al vuelo), así que nunca se desincroniza del registro.
+
+- `CalcLayout.astro` usa `/og/[slug].jpg`; el home y el resto de páginas usan `SITE.ogImage` (`/og/default.jpg`).
+- **Regenerar tras añadir calculadoras nuevas** — si falta la imagen, la página queda sin previsualización.
+- Con imagen propia, el `twitter:card` es `summary_large_image` en todo el sitio.
 
 ### Props AEO de `CalcLayout`
 
@@ -356,5 +381,6 @@ Actualizar este contador al añadir calculadoras. El número real de calculadora
 |---|---|
 | 2026-05-29 | SEO/URLs: `trailingSlash: 'never'` en `astro.config.mjs`. Canonical del home corregida en `seo.ts` (`calzix.com/` → `calzix.com`). URLs del filtro de sitemap actualizadas sin slash final. Redirect 301 `/*/→/:splat` en `public/_redirects` (Cloudflare Pages) para normalizar URLs con slash final. |
 | 2026-06-25 | Ampliación masiva: +90 calculadoras (10 por cada uno de los 9 grupos: Matemáticas, Ciencias, Conversión, Hogar, Trabajo, Educación, Viaje, Naturaleza, Ocio) y +10 artículos de blog. Total: 284 calculadoras y 31 artículos (317 páginas). Sin duplicar slugs existentes; iconos Lucide reutilizados (sin cambios en `CalcCard.tsx`). |
+| 2026-07-31 | Correcciones tras la auditoría AEO. (1) **Serialización segura del JSON-LD**: nuevo `src/lib/utils/jsonld.ts` con `jsonLd()`, que escapa `<`, `>` y `&` como unicode. 21 páginas publicaban comparadores sueltos (`<86%`, `< 25 mmHg`) sin escapar dentro del bloque JSON-LD; además de romper parsers, un `</script>` en cualquier texto cerraría el bloque antes de tiempo. Aplicado en `CalcLayout`, `index`, `blog/[slug]` y `blog/index`. (2) **Imágenes Open Graph**: nuevo `scripts/generate-og.mjs` (sharp, importa `CALCS` directamente del TS) que genera 270 imágenes 1200×630 + `default.jpg` en `public/og/`. `CalcLayout` e `index` ganan `og:image`, `og:image:width/height/alt`, `twitter:image` y `twitter:card` pasa de `summary` a `summary_large_image`. |
 | 2026-07-31 | AEO (optimización para motores de respuesta). (1) Nuevo `src/pages/llms.txt.ts` — genera `/llms.txt` en cada build desde `CALCS` + blog, agrupado por los 9 grupos temáticos. (2) `public/robots.txt` con `Allow` explícito para GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-SearchBot, PerplexityBot, Google-Extended, Applebot-Extended, CCBot, meta-externalagent y otros. (3) `CalcLayout.astro`: los dos `<script>` sueltos de JSON-LD se unifican en un `@graph` que ahora incluye `Organization`, `WebSite`, `WebPage` (con `speakable`), `BreadcrumbList` (antes solo existía como HTML) y `HowTo`; el `WebApplication` gana `inLanguage`, `isAccessibleForFree`, `browserRequirements` y `dateModified`. Nuevos props opcionales `answer`, `howTo` y `dateModified`. (4) `<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large…">` y `og:locale` en las páginas de calculadora y en el home. (5) Bloque de respuesta directa con clase `aeo-answer` bajo el H1 + línea visible "Actualizado el…". (6) Home: `@graph` con `Organization`, `WebSite`, `CollectionPage` e `ItemList` de las 9 categorías. (7) Contador de calculadoras corregido en este archivo: 270 reales (`CALCS.length`), no 284. |
 | 2026-07-16 | SEO tras análisis de Search Console: refuerzo de las 7 páginas con más impresiones (`irpf-retencion`, `consumo-electrico`, `diferencia-horaria`, `calculadora-propina`, `mcm-mcd`, `velocidad-distancia-tiempo`, `ley-ohm`). Nuevo slot `extra` en `CalcLayout.astro` para contenido enriquecido (tablas y ejemplos resueltos). Títulos/descripciones reorientados a la audiencia real (España domina las impresiones) y año actualizado 2024 → 2026 en IRPF. H1 y `longDescription` reforzados en `calcs.ts`. |
