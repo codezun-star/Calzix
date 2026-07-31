@@ -225,6 +225,39 @@ const units = {
 
 ---
 
+## AEO — optimización para motores de respuesta
+
+El sitio está preparado para ser citado por ChatGPT, Perplexity, Claude, Google AI Overviews y asistentes similares.
+
+| Pieza | Dónde vive | Notas |
+|---|---|---|
+| `llms.txt` | `src/pages/llms.txt.ts` | Endpoint estático. Se **genera en cada build** desde `CALCS` y la colección `blog`: nunca hay que mantenerlo a mano. URL: `https://calzix.com/llms.txt` |
+| Reglas para bots de IA | `public/robots.txt` | `Allow: /` explícito para GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended, Applebot-Extended, CCBot y otros |
+| JSON-LD unificado | `CalcLayout.astro` | Un solo `@graph` con `Organization`, `WebSite`, `WebPage`, `WebApplication`, `BreadcrumbList`, `HowTo` y `FAQPage` |
+| Bloque de respuesta directa | `CalcLayout.astro` | El párrafo bajo el H1 lleva la clase `aeo-answer` y es el objetivo de `speakable` |
+| Frescura | `SITE.dateModified` en `seo.ts` | Alimenta `dateModified` del schema, `<meta name="last-modified">` y la línea "Actualizado el…" visible |
+
+### Props AEO de `CalcLayout`
+
+```astro
+<CalcLayout
+  slug="mi-calculadora"
+  answer="Respuesta directa de 1-2 frases."   <!-- opcional: por defecto usa longDescription -->
+  howTo={['Paso 1…', 'Paso 2…', 'Paso 3…']}   <!-- opcional: por defecto, los pasos del patrón estándar -->
+  dateModified="2026-07-31"                    <!-- opcional: por defecto SITE.dateModified -->
+  faqs={[…]}
+>
+```
+
+### Reglas al añadir contenido
+
+1. **No hace falta tocar `llms.txt`** — se regenera solo con cada `npm run build`.
+2. Al revisar el contenido del sitio, actualizar `SITE.dateModified` en `seo.ts`.
+3. Si una calculadora tiene una respuesta corta y concreta, pasarla en `answer`: es el texto que un motor de respuesta cita literalmente.
+4. Mantener el mínimo de 5 FAQs — sin ellas no hay `FAQPage` y se pierde la vía principal de citación.
+
+---
+
 ## Registro de calculadoras
 
 El inventario está dividido en **48 archivos por categoría** en la carpeta `docs/`, siguiendo el patrón `docs/CALCULADORAS-[CATEGORIA].md`.
@@ -312,8 +345,8 @@ npm run build    # Build de producción → dist/
 npm run preview  # Preview del build local
 ```
 
-**El build genera actualmente 317 páginas HTML estáticas** (home + 5 legales + 9 categorías + 284 calculadoras + blog con 31 artículos).
-Actualizar este contador al añadir calculadoras.
+**El build genera actualmente 317 páginas HTML estáticas** (home + 5 legales + 9 categorías + 270 calculadoras + índice de blog + 31 artículos) más el endpoint `/llms.txt`.
+Actualizar este contador al añadir calculadoras. El número real de calculadoras es siempre `CALCS.length` en `src/lib/constants/calcs.ts`.
 
 ---
 
@@ -323,4 +356,5 @@ Actualizar este contador al añadir calculadoras.
 |---|---|
 | 2026-05-29 | SEO/URLs: `trailingSlash: 'never'` en `astro.config.mjs`. Canonical del home corregida en `seo.ts` (`calzix.com/` → `calzix.com`). URLs del filtro de sitemap actualizadas sin slash final. Redirect 301 `/*/→/:splat` en `public/_redirects` (Cloudflare Pages) para normalizar URLs con slash final. |
 | 2026-06-25 | Ampliación masiva: +90 calculadoras (10 por cada uno de los 9 grupos: Matemáticas, Ciencias, Conversión, Hogar, Trabajo, Educación, Viaje, Naturaleza, Ocio) y +10 artículos de blog. Total: 284 calculadoras y 31 artículos (317 páginas). Sin duplicar slugs existentes; iconos Lucide reutilizados (sin cambios en `CalcCard.tsx`). |
+| 2026-07-31 | AEO (optimización para motores de respuesta). (1) Nuevo `src/pages/llms.txt.ts` — genera `/llms.txt` en cada build desde `CALCS` + blog, agrupado por los 9 grupos temáticos. (2) `public/robots.txt` con `Allow` explícito para GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-SearchBot, PerplexityBot, Google-Extended, Applebot-Extended, CCBot, meta-externalagent y otros. (3) `CalcLayout.astro`: los dos `<script>` sueltos de JSON-LD se unifican en un `@graph` que ahora incluye `Organization`, `WebSite`, `WebPage` (con `speakable`), `BreadcrumbList` (antes solo existía como HTML) y `HowTo`; el `WebApplication` gana `inLanguage`, `isAccessibleForFree`, `browserRequirements` y `dateModified`. Nuevos props opcionales `answer`, `howTo` y `dateModified`. (4) `<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large…">` y `og:locale` en las páginas de calculadora y en el home. (5) Bloque de respuesta directa con clase `aeo-answer` bajo el H1 + línea visible "Actualizado el…". (6) Home: `@graph` con `Organization`, `WebSite`, `CollectionPage` e `ItemList` de las 9 categorías. (7) Contador de calculadoras corregido en este archivo: 270 reales (`CALCS.length`), no 284. |
 | 2026-07-16 | SEO tras análisis de Search Console: refuerzo de las 7 páginas con más impresiones (`irpf-retencion`, `consumo-electrico`, `diferencia-horaria`, `calculadora-propina`, `mcm-mcd`, `velocidad-distancia-tiempo`, `ley-ohm`). Nuevo slot `extra` en `CalcLayout.astro` para contenido enriquecido (tablas y ejemplos resueltos). Títulos/descripciones reorientados a la audiencia real (España domina las impresiones) y año actualizado 2024 → 2026 en IRPF. H1 y `longDescription` reforzados en `calcs.ts`. |

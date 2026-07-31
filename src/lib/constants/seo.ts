@@ -4,6 +4,10 @@ export const SITE = {
   description: 'Calculadoras online gratuitas — finanzas, salud, matemáticas, conversiones y más. Resultados al instante.',
   email: 'codezun@gmail.com',
   twitterHandle: '@calzix',
+  // Señales de frescura para buscadores y motores de respuesta.
+  // Actualizar `dateModified` cuando se revise el contenido del sitio.
+  datePublished: '2026-05-01',
+  dateModified: '2026-07-31',
 } as const;
 
 export interface PageSEO {

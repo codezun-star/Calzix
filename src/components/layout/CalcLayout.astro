@@ -10,9 +10,23 @@ interface Props {
   faqs?: Array<{ q: string; a: string }>;
   whatIs?: string;
   whyUse?: string;
+  /** Respuesta directa de 1-2 frases. Es lo primero que lee un motor de respuesta. */
+  answer?: string;
+  /** Pasos propios para el schema HowTo. Si se omite se generan los del patrón estándar. */
+  howTo?: string[];
+  /** Fecha de última revisión del contenido (ISO YYYY-MM-DD). */
+  dateModified?: string;
 }
 
-const { slug, faqs = [], whatIs = '', whyUse = '' } = Astro.props;
+const {
+  slug,
+  faqs = [],
+  whatIs = '',
+  whyUse = '',
+  answer = '',
+  howTo,
+  dateModified = SITE.dateModified,
+} = Astro.props;
 
 const seo     = PAGE_SEO[slug];
 const calc    = getCalcBySlug(slug);
@@ -21,35 +35,135 @@ const related = getRelatedCalcs(slug);
 const title       = seo?.title       ?? `${calc?.name ?? slug} — ${SITE.name}`;
 const description = seo?.description ?? calc?.description ?? SITE.description;
 const canonical   = seo?.canonical   ?? `${SITE.url}/${slug}`;
+const calcName    = calc?.name ?? slug;
 
 const group = calc ? getDomainGroup(calc.domain) : undefined;
 const breadcrumb = [
   { name: SITE.name, href: '/' },
   ...(group ? [{ name: group.label, href: `/${group.slug}` }] : []),
-  { name: calc?.name ?? slug, href: canonical },
+  { name: calcName, href: canonical },
 ];
 
+// Respuesta directa mostrada arriba del todo — extractable por motores de respuesta
+const directAnswer = answer || calc?.longDescription || description;
+
+const howToSteps = howTo ?? [
+  'Introduce en el formulario los datos que pide la calculadora.',
+  'Pulsa el botón de calcular para obtener el resultado al instante.',
+  'Revisa el resultado y modifica los valores para comparar distintos supuestos.',
+];
+
+const orgSchema = {
+  '@type': 'Organization',
+  '@id': `${SITE.url}/#organization`,
+  name: SITE.name,
+  url: SITE.url,
+  description: SITE.description,
+  email: SITE.email,
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: SITE.email,
+    contactType: 'customer support',
+    availableLanguage: 'Spanish',
+  },
+};
+
+const siteSchema = {
+  '@type': 'WebSite',
+  '@id': `${SITE.url}/#website`,
+  name: SITE.name,
+  url: SITE.url,
+  description: SITE.description,
+  inLanguage: 'es',
+  publisher: { '@id': `${SITE.url}/#organization` },
+};
+
+const pageSchema = {
+  '@type': 'WebPage',
+  '@id': `${canonical}#webpage`,
+  url: canonical,
+  name: title,
+  description,
+  inLanguage: 'es',
+  isPartOf: { '@id': `${SITE.url}/#website` },
+  about: { '@type': 'Thing', name: calcName },
+  dateModified,
+  datePublished: SITE.datePublished,
+  breadcrumb: { '@id': `${canonical}#breadcrumb` },
+  speakable: {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['h1', '.aeo-answer'],
+  },
+};
+
+const appSchema = {
+  '@type': 'WebApplication',
+  '@id': `${canonical}#app`,
+  name: calcName,
+  description,
+  url: canonical,
+  applicationCategory: 'UtilitiesApplication',
+  operatingSystem: 'Any',
+  browserRequirements: 'Requiere JavaScript. Funciona en cualquier navegador moderno.',
+  inLanguage: 'es',
+  isAccessibleForFree: true,
+  dateModified,
+  publisher: { '@id': `${SITE.url}/#organization` },
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+};
+
+const breadcrumbSchema = {
+  '@type': 'BreadcrumbList',
+  '@id': `${canonical}#breadcrumb`,
+  itemListElement: breadcrumb.map(({ name, href }, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name,
+    item: href.startsWith('http') ? href : `${SITE.url}${href === '/' ? '' : href}`,
+  })),
+};
+
+const howToSchema = {
+  '@type': 'HowTo',
+  '@id': `${canonical}#howto`,
+  name: `Cómo usar la ${calcName}`,
+  description: `Pasos para calcular con la ${calcName} de ${SITE.name}.`,
+  inLanguage: 'es',
+  totalTime: 'PT1M',
+  estimatedCost: { '@type': 'MonetaryAmount', currency: 'EUR', value: '0' },
+  step: howToSteps.map((text, i) => ({
+    '@type': 'HowToStep',
+    position: i + 1,
+    name: `Paso ${i + 1}`,
+    text,
+    url: `${canonical}#paso-${i + 1}`,
+  })),
+};
+
 const faqSchema = faqs.length > 0
-  ? JSON.stringify({
-      '@context': 'https://schema.org',
+  ? {
       '@type': 'FAQPage',
+      '@id': `${canonical}#faq`,
+      inLanguage: 'es',
       mainEntity: faqs.map(({ q, a }) => ({
         '@type': 'Question',
         name: q,
         acceptedAnswer: { '@type': 'Answer', text: a },
       })),
-    })
+    }
   : null;
 
-const appSchema = JSON.stringify({
+const graph = JSON.stringify({
   '@context': 'https://schema.org',
-  '@type': 'WebApplication',
-  name: calc?.name ?? slug,
-  description,
-  url: canonical,
-  applicationCategory: 'UtilitiesApplication',
-  operatingSystem: 'Any',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+  '@graph': [
+    orgSchema,
+    siteSchema,
+    pageSchema,
+    appSchema,
+    breadcrumbSchema,
+    howToSchema,
+    ...(faqSchema ? [faqSchema] : []),
+  ],
 });
 ---
 
@@ -62,6 +176,12 @@ const appSchema = JSON.stringify({
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="text/plain" href={`${SITE.url}/llms.txt`} title="Índice para motores de respuesta (llms.txt)" />
+
+    <!-- Indexación: permite fragmentos completos en resultados y respuestas generadas -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="author" content={SITE.name} />
+    <meta name="last-modified" content={dateModified} />
 
     <!-- OpenGraph -->
     <meta property="og:type"        content="website" />
@@ -69,6 +189,7 @@ const appSchema = JSON.stringify({
     <meta property="og:title"       content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:site_name"   content={SITE.name} />
+    <meta property="og:locale"      content="es_ES" />
 
     <!-- Twitter -->
     <meta name="twitter:card"        content="summary" />
@@ -76,8 +197,7 @@ const appSchema = JSON.stringify({
     <meta name="twitter:description" content={description} />
 
     <!-- JSON-LD -->
-    <script is:inline type="application/ld+json" set:html={appSchema} />
-    {faqSchema && <script is:inline type="application/ld+json" set:html={faqSchema} />}
+    <script is:inline type="application/ld+json" set:html={graph} />
   </head>
 
   <body>
@@ -97,11 +217,15 @@ const appSchema = JSON.stringify({
         ))}
       </nav>
 
-      <!-- H1 + descripción -->
+      <!-- H1 + respuesta directa (bloque extractable por motores de respuesta) -->
       {calc && (
         <div class="mb-8">
           <h1 class="text-3xl sm:text-4xl font-extrabold text-[var(--color-text)] leading-tight">{calc.name}</h1>
-          <p class="text-[var(--color-text-secondary)] mt-2 text-lg max-w-2xl">{calc.longDescription}</p>
+          <p class="aeo-answer text-[var(--color-text-secondary)] mt-2 text-lg max-w-2xl">{directAnswer}</p>
+          <p class="mt-3 text-xs text-[var(--color-text-muted)]">
+            Cálculo gratuito, sin registro y realizado en tu navegador ·
+            <span> Actualizado el <time datetime={dateModified}>{new Date(`${dateModified}T00:00:00Z`).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })}</time></span>
+          </p>
         </div>
       )}
 

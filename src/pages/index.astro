@@ -3,9 +3,79 @@ import Header from '@/components/layout/Header.astro';
 import Footer from '@/components/layout/Footer.astro';
 import HomeCalcs from '@/components/ui/HomeCalcs';
 import { PAGE_SEO, SITE } from '@/lib/constants/seo';
+import { CALCS, CALC_GROUPS } from '@/lib/constants/calcs';
 import '@/styles/global.css';
 
 const seo = PAGE_SEO.home;
+
+const homeGraph = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${SITE.url}/#organization`,
+      name: SITE.name,
+      url: SITE.url,
+      description: SITE.description,
+      email: SITE.email,
+      contactPoint: {
+        '@type': 'ContactPoint',
+        email: SITE.email,
+        contactType: 'customer support',
+        availableLanguage: 'Spanish',
+      },
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE.url}/#website`,
+      name: SITE.name,
+      url: SITE.url,
+      description: SITE.description,
+      inLanguage: 'es',
+      publisher: { '@id': `${SITE.url}/#organization` },
+    },
+    {
+      '@type': 'CollectionPage',
+      '@id': `${SITE.url}/#webpage`,
+      url: SITE.url,
+      name: seo.title,
+      description: seo.description,
+      inLanguage: 'es',
+      isPartOf: { '@id': `${SITE.url}/#website` },
+      dateModified: SITE.dateModified,
+      datePublished: SITE.datePublished,
+      speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', '.aeo-answer'] },
+      mainEntity: { '@id': `${SITE.url}/#catalogo` },
+    },
+    {
+      '@type': 'WebApplication',
+      '@id': `${SITE.url}/#app`,
+      name: SITE.name,
+      description: SITE.description,
+      url: SITE.url,
+      applicationCategory: 'UtilitiesApplication',
+      operatingSystem: 'Any',
+      inLanguage: 'es',
+      isAccessibleForFree: true,
+      publisher: { '@id': `${SITE.url}/#organization` },
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${SITE.url}/#catalogo`,
+      name: `Categorías de calculadoras de ${SITE.name}`,
+      description: `${CALCS.length} calculadoras gratuitas agrupadas en ${CALC_GROUPS.length} categorías.`,
+      numberOfItems: CALC_GROUPS.length,
+      itemListElement: CALC_GROUPS.map((g, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: g.label,
+        description: g.description,
+        url: `${SITE.url}/${g.slug}`,
+      })),
+    },
+  ],
+});
 ---
 
 <!doctype html>
@@ -17,6 +87,11 @@ const seo = PAGE_SEO.home;
     <meta name="description" content={seo.description} />
     <link rel="canonical" href={seo.canonical} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="text/plain" href={`${SITE.url}/llms.txt`} title="Índice para motores de respuesta (llms.txt)" />
+
+    <!-- Indexación: permite fragmentos completos en resultados y respuestas generadas -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="author" content={SITE.name} />
 
     <!-- OpenGraph -->
     <meta property="og:type"        content="website" />
@@ -24,6 +99,7 @@ const seo = PAGE_SEO.home;
     <meta property="og:title"       content={seo.title} />
     <meta property="og:description" content={seo.description} />
     <meta property="og:site_name"   content={SITE.name} />
+    <meta property="og:locale"      content="es_ES" />
 
     <!-- Twitter -->
     <meta name="twitter:card"        content="summary" />
@@ -31,16 +107,7 @@ const seo = PAGE_SEO.home;
     <meta name="twitter:description" content={seo.description} />
 
     <!-- JSON-LD -->
-    <script is:inline type="application/ld+json" set:html={JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'WebApplication',
-      name: SITE.name,
-      description: SITE.description,
-      url: SITE.url,
-      applicationCategory: 'UtilitiesApplication',
-      operatingSystem: 'Any',
-      offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-    })} />
+    <script is:inline type="application/ld+json" set:html={homeGraph} />
   </head>
 
   <body>
@@ -61,8 +128,8 @@ const seo = PAGE_SEO.home;
                 Calculadoras<br />
                 <span style="color: #6EE09A;">online gratuitas</span>
               </h1>
-              <p class="mt-5 text-lg text-white/80 leading-relaxed max-w-lg">
-                Más de 100 calculadoras de matemáticas, ciencias, conversión, hogar, trabajo y más. Resultados al instante.
+              <p class="aeo-answer mt-5 text-lg text-white/80 leading-relaxed max-w-lg">
+                {CALCS.length} calculadoras gratuitas de matemáticas, ciencias, conversión de unidades, hogar, trabajo, educación, viaje, naturaleza y ocio. Resultados al instante, sin registro y con el cálculo hecho en tu propio navegador.
               </p>
               <div class="mt-8 flex flex-wrap gap-3">
                 <a href="#matematicas" class="px-6 py-3 rounded-xl font-semibold text-white transition-colors shadow-lg" style="background: var(--color-accent);">
