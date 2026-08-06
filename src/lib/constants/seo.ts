@@ -10,7 +10,7 @@ export const SITE = {
   // Señales de frescura para buscadores y motores de respuesta.
   // Actualizar `dateModified` cuando se revise el contenido del sitio.
   datePublished: '2026-05-01',
-  dateModified: '2026-07-31',
+  dateModified: '2026-08-06',
 } as const;
 
 export interface PageSEO {
@@ -1464,5 +1464,15 @@ export const PAGE_SEO: Record<string, PageSEO> = {
     title: 'Horas de Sueño Recomendadas por Edad — Calzix',
     description: 'Descubre cuántas horas de sueño se recomiendan según la edad, de bebés a adultos mayores (National Sleep Foundation). Gratis.',
     canonical: 'https://calzix.com/horas-sueno-edad',
+  },
+  'interes-compuesto': {
+    title: 'Calculadora de Interés Compuesto con Aportaciones — Calzix',
+    description: 'Calcula cuánto crece tu ahorro con interés compuesto: capital final, intereses generados y evolución año a año. Gratis y sin registro.',
+    canonical: 'https://calzix.com/interes-compuesto',
+  },
+  'calculadora-edad': {
+    title: 'Calculadora de Edad — Años, Meses y Días Exactos — Calzix',
+    description: 'Calcula tu edad exacta en años, meses y días desde tu fecha de nacimiento, y cuántos días faltan para tu cumpleaños. Gratis.',
+    canonical: 'https://calzix.com/calculadora-edad',
   },
 };

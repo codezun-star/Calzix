@@ -370,7 +370,7 @@ npm run build    # Build de producción → dist/
 npm run preview  # Preview del build local
 ```
 
-**El build genera actualmente 317 páginas HTML estáticas** (home + 5 legales + 9 categorías + 270 calculadoras + índice de blog + 31 artículos) más el endpoint `/llms.txt`.
+**El build genera actualmente 321 páginas HTML estáticas** (home + 5 legales + 9 categorías + 272 calculadoras + índice de blog + 33 artículos) más el endpoint `/llms.txt`.
 Actualizar este contador al añadir calculadoras. El número real de calculadoras es siempre `CALCS.length` en `src/lib/constants/calcs.ts`.
 
 ---
@@ -379,6 +379,7 @@ Actualizar este contador al añadir calculadoras. El número real de calculadora
 
 | Fecha | Acción |
 |---|---|
+| 2026-08-06 | Ampliación: +2 calculadoras y +2 artículos. **Hogar › Hipoteca y alquiler**: `interes-compuesto` (`InteresCompuestoTool.tsx`) — capital final, aportaciones, intereses y evolución año a año con capitalización anual, trimestral o mensual. **Conversión › Tiempo y duración**: `calculadora-edad` (`CalculadoraEdadTool.tsx`) — edad exacta en años, meses y días, totales en meses/semanas/días/horas, día de la semana del nacimiento y cuenta atrás al cumpleaños. Ambas con entrada en `calcs.ts` y `seo.ts`, página con `answer`/`howTo`/6 FAQs e imagen OG (`node scripts/generate-og.mjs`). Iconos Lucide reutilizados (`PiggyBank`, `CalendarDays`): sin cambios en `CalcCard.tsx`. Blog: `interes-compuesto-como-funciona` y `calcular-la-edad-exacta`. Total: 272 calculadoras y 33 artículos. Build: 321 páginas. |
 | 2026-05-29 | SEO/URLs: `trailingSlash: 'never'` en `astro.config.mjs`. Canonical del home corregida en `seo.ts` (`calzix.com/` → `calzix.com`). URLs del filtro de sitemap actualizadas sin slash final. Redirect 301 `/*/→/:splat` en `public/_redirects` (Cloudflare Pages) para normalizar URLs con slash final. |
 | 2026-06-25 | Ampliación masiva: +90 calculadoras (10 por cada uno de los 9 grupos: Matemáticas, Ciencias, Conversión, Hogar, Trabajo, Educación, Viaje, Naturaleza, Ocio) y +10 artículos de blog. Total: 284 calculadoras y 31 artículos (317 páginas). Sin duplicar slugs existentes; iconos Lucide reutilizados (sin cambios en `CalcCard.tsx`). |
 | 2026-07-31 | Correcciones tras la auditoría AEO. (1) **Serialización segura del JSON-LD**: nuevo `src/lib/utils/jsonld.ts` con `jsonLd()`, que escapa `<`, `>` y `&` como unicode. 21 páginas publicaban comparadores sueltos (`<86%`, `< 25 mmHg`) sin escapar dentro del bloque JSON-LD; además de romper parsers, un `</script>` en cualquier texto cerraría el bloque antes de tiempo. Aplicado en `CalcLayout`, `index`, `blog/[slug]` y `blog/index`. (2) **Imágenes Open Graph**: nuevo `scripts/generate-og.mjs` (sharp, importa `CALCS` directamente del TS) que genera 270 imágenes 1200×630 + `default.jpg` en `public/og/`. `CalcLayout` e `index` ganan `og:image`, `og:image:width/height/alt`, `twitter:image` y `twitter:card` pasa de `summary` a `summary_large_image`. |

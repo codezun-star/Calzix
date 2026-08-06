@@ -1281,6 +1281,9 @@ export const CALCS: CalcMeta[] = [
   { slug: 'numero-dia-nacimiento', name: 'Número del Día de Nacimiento', description: 'Calcula tu número del día según numerología.', longDescription: 'Tu rasgo de personalidad por el día en que naciste.', category: 'Numerología', domain: 'numerologia', icon: 'Hash', related: ['numero-numerologia', 'camino-vida', 'numero-suerte-personal'] },
   { slug: 'cafeina-sueno', name: 'Cafeína y Sueño', description: 'Calcula cuándo dejar la cafeína para dormir bien.', longDescription: 'Hora límite para tu último café antes de dormir.', category: 'Sueño y descanso', domain: 'sueno', icon: 'Moon', related: ['calculadora-sueno', 'hora-melatonina', 'ciclos-sueno'] },
   { slug: 'horas-sueno-edad', name: 'Horas de Sueño por Edad', description: 'Cuántas horas dormir según tu edad.', longDescription: 'Horas de sueño recomendadas por grupo de edad.', category: 'Sueño y descanso', domain: 'sueno', icon: 'Moon', related: ['calculadora-sueno', 'deuda-sueno', 'siesta-optima'] },
+  // ── Ampliación ────────────────────────────────────────────────────────────
+  { slug: 'interes-compuesto', name: 'Interés Compuesto', description: 'Calcula cuánto crece tu ahorro con interés compuesto.', longDescription: 'Proyecta capital, aportaciones e intereses año a año.', category: 'Hipoteca y alquiler', domain: 'hipoteca', icon: 'PiggyBank', related: ['calculadora-hipoteca', 'capacidad-endeudamiento', 'rentabilidad-roi'] },
+  { slug: 'calculadora-edad', name: 'Calculadora de Edad', description: 'Calcula tu edad exacta en años, meses y días.', longDescription: 'Tu edad exacta y los días hasta tu próximo cumpleaños.', category: 'Tiempo y duración', domain: 'tiempo', icon: 'CalendarDays', related: ['conversor-tiempo', 'dias-juntos', 'conversor-tiempo-decimal'] },
 ];
 
 export function getCalcsByDomain(domain: CalcDomain): CalcMeta[] {

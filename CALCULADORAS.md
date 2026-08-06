@@ -1,7 +1,7 @@
 # Calzix — Registro de Calculadoras
 
 > Índice general. El detalle de cada categoría está en su archivo propio.
-> **Total: 284 calculadoras** (la fuente autoritativa del inventario es `src/lib/constants/calcs.ts`; las tablas por categoría de `docs/` quedan pendientes de sincronización completa).
+> **Total: 286 calculadoras** (la fuente autoritativa del inventario es `src/lib/constants/calcs.ts`; las tablas por categoría de `docs/` quedan pendientes de sincronización completa).
 
 ## Archivos de detalle
 
@@ -23,14 +23,14 @@
 | Volumen y capacidad | [CALCULADORAS-VOLUMEN.md](docs/CALCULADORAS-VOLUMEN.md) | 1 |
 | Energía y potencia | [CALCULADORAS-ENERGIA.md](docs/CALCULADORAS-ENERGIA.md) | 1 |
 | Presión | [CALCULADORAS-PRESION.md](docs/CALCULADORAS-PRESION.md) | 1 |
-| Tiempo y duración | [CALCULADORAS-TIEMPO.md](docs/CALCULADORAS-TIEMPO.md) | 1 |
+| Tiempo y duración | [CALCULADORAS-TIEMPO.md](docs/CALCULADORAS-TIEMPO.md) | 2 |
 | Datos digitales | [CALCULADORAS-DATOS.md](docs/CALCULADORAS-DATOS.md) | 1 |
 | Ángulos | [CALCULADORAS-ANGULOS.md](docs/CALCULADORAS-ANGULOS.md) | 1 |
 | Monedas | [CALCULADORAS-MONEDAS.md](docs/CALCULADORAS-MONEDAS.md) | 1 |
 | Construcción | [CALCULADORAS-CONSTRUCCION.md](docs/CALCULADORAS-CONSTRUCCION.md) | 1 |
 | Pintura y superficies | [CALCULADORAS-PINTURA.md](docs/CALCULADORAS-PINTURA.md) | 1 |
 | Electricidad del hogar | [CALCULADORAS-ELECTRICIDAD.md](docs/CALCULADORAS-ELECTRICIDAD.md) | 1 |
-| Hipoteca y alquiler | [CALCULADORAS-HIPOTECA.md](docs/CALCULADORAS-HIPOTECA.md) | 1 |
+| Hipoteca y alquiler | [CALCULADORAS-HIPOTECA.md](docs/CALCULADORAS-HIPOTECA.md) | 2 |
 | Consumo energético | [CALCULADORAS-CONSUMO.md](docs/CALCULADORAS-CONSUMO.md) | 1 |
 | Jardín y terreno | [CALCULADORAS-JARDIN.md](docs/CALCULADORAS-JARDIN.md) | 1 |
 | Facturación e IVA | [CALCULADORAS-FACTURACION.md](docs/CALCULADORAS-FACTURACION.md) | 1 |
@@ -58,7 +58,7 @@
 
 ## Próximo número de serie
 
-Al agregar una nueva calculadora, el número siguiente es **#285**.
+Al agregar una nueva calculadora, el número siguiente es **#287**.
 
 ---
 
@@ -84,6 +84,7 @@ huella-carbono           consumo-agua             ahorro-solar
 calculadora-reciclaje
 test-compatibilidad      numeros-suerte           numero-numerologia
 calculadora-sueno
+interes-compuesto        calculadora-edad
 ```
 
 ---

@@ -1,0 +1,26 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import CalculadoraEdadTool from '@/components/tools/CalculadoraEdadTool';
+---
+
+<CalcLayout slug="calculadora-edad"
+  answer="Para calcular la edad exacta se restan los años, los meses y los días entre la fecha de nacimiento y la fecha actual, ajustando cuando el día o el mes de nacimiento aún no ha llegado este año. El resultado se expresa como años, meses y días cumplidos."
+  whatIs="Esta calculadora de edad indica cuántos años, meses y días tienes a partir de tu fecha de nacimiento. Además del dato principal, muestra tu edad total en meses, semanas, días y horas, el día de la semana en que naciste y cuántos días faltan para tu próximo cumpleaños. Puedes fijar también una fecha de referencia distinta de hoy para saber qué edad tendrás (o tenías) en un día concreto."
+  whyUse="La edad exacta se pide constantemente: en formularios médicos, matrículas escolares, contratos, seguros o trámites en los que hay que acreditar la mayoría de edad en una fecha determinada. Contar años, meses y días a mano es fácil de equivocar, sobre todo cuando el mes de nacimiento aún no ha llegado o hay años bisiestos de por medio. La calculadora lo resuelve al instante y sin ambigüedad."
+  howTo={[
+    'Selecciona tu fecha de nacimiento en el primer campo.',
+    'Si quieres saber la edad en un día distinto de hoy, indícalo en el segundo campo.',
+    'Pulsa calcular para ver la edad exacta en años, meses y días.',
+    'Consulta también el total en meses, semanas, días y horas, y los días que faltan para tu próximo cumpleaños.',
+  ]}
+  faqs={[
+    { q: '¿Cómo se calcula la edad exacta de una persona?', a: 'Se restan los años entre la fecha de nacimiento y la fecha actual y después se ajusta: si el mes actual es anterior al mes de nacimiento —o es el mismo mes pero aún no ha llegado el día—, se resta un año, porque todavía no se ha cumplido. Los meses y días restantes se calculan igual, tomando prestados los días del mes anterior cuando hacen falta.' },
+    { q: '¿Cuántos días tiene una persona de 30 años?', a: 'Aproximadamente 10.957 días, resultado de multiplicar 30 por 365,25 (los 365 días del año más el cuarto de día que corrigen los bisiestos). La cifra exacta depende de cuántos años bisiestos se hayan atravesado desde el nacimiento, y por eso esta calculadora cuenta los días reales entre las dos fechas en lugar de usar un promedio.' },
+    { q: '¿Qué pasa si nací un 29 de febrero?', a: 'Los años no bisiestos no tienen 29 de febrero, así que el cumpleaños se celebra habitualmente el 28 de febrero o el 1 de marzo según la costumbre de cada país. A efectos de cálculo, la calculadora ajusta la fecha al día equivalente del año en curso, de modo que la edad en años cumplidos es siempre correcta.' },
+    { q: '¿Cómo saber la edad que tendré en una fecha futura?', a: 'Introduce tu fecha de nacimiento en el primer campo y la fecha futura que te interese en el campo de fecha de referencia. La calculadora te dirá la edad exacta que tendrás ese día, algo útil para comprobar si cumplirás la edad mínima exigida en una oposición, una matrícula, una póliza o un viaje.' },
+    { q: '¿Cuenta igual la edad en años cumplidos que la edad decimal?', a: 'No. La edad en años cumplidos es la que se usa en documentos oficiales: solo suma un año cuando llega el cumpleaños. La edad decimal (por ejemplo, 30,6 años) se emplea en pediatría, estudios estadísticos y percentiles de crecimiento, donde la fracción de año importa. Esta calculadora muestra los años cumplidos y, en paralelo, el total exacto de días y meses.' },
+    { q: '¿Por qué a veces las calculadoras de edad dan resultados distintos?', a: 'Porque algunas cuentan los meses como bloques fijos de 30 días y otras respetan la duración real de cada mes. Un mes puede tener 28, 29, 30 o 31 días, así que ambos métodos difieren en unos pocos días. Esta calculadora usa los meses reales del calendario, que es el criterio empleado en trámites administrativos y sanitarios.' },
+  ]}
+>
+  <CalculadoraEdadTool client:load />
+</CalcLayout>

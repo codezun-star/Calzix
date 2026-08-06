@@ -1,0 +1,26 @@
+---
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import InteresCompuestoTool from '@/components/tools/InteresCompuestoTool';
+---
+
+<CalcLayout slug="interes-compuesto"
+  answer="El interés compuesto se calcula con la fórmula Cf = C0 × (1 + i)^n, donde C0 es el capital inicial, i el interés de cada periodo y n el número de periodos. A diferencia del interés simple, los intereses ganados se reinvierten y generan a su vez nuevos intereses."
+  whatIs="Esta calculadora de interés compuesto muestra en cuánto se convierte un ahorro o una inversión a lo largo del tiempo cuando los intereses se reinvierten. Introduces el capital inicial, la aportación mensual que piensas hacer, el interés anual y el plazo en años, y la herramienta devuelve el capital final, cuánto has aportado de tu bolsillo y cuánto han sumado los intereses, además de una tabla año a año."
+  whyUse="El interés compuesto es la razón por la que ahorrar pronto importa más que ahorrar mucho: cada año los intereses se calculan sobre un capital mayor, así que el crecimiento se acelera con el tiempo. Ver la cifra concreta ayuda a decidir cuánto aportar al mes, qué plazo necesitas para llegar a un objetivo o cuánto te cuesta retrasar la decisión un par de años."
+  howTo={[
+    'Introduce el capital inicial con el que empiezas (puede ser 0 si partes de cero).',
+    'Añade la aportación que harás cada mes y el interés anual que esperas obtener.',
+    'Indica el plazo en años y la frecuencia con la que se capitalizan los intereses.',
+    'Pulsa calcular para ver el capital final, los intereses generados y la evolución año a año.',
+  ]}
+  faqs={[
+    { q: '¿Cuál es la fórmula del interés compuesto?', a: 'La fórmula básica es Cf = C0 × (1 + i)^n, donde C0 es el capital inicial, i el tipo de interés de cada periodo (el interés anual dividido entre el número de capitalizaciones al año) y n el número total de periodos. Si además haces aportaciones periódicas, se suma el término A × [(1 + i)^n − 1] ÷ i, que corresponde al valor futuro de esas aportaciones.' },
+    { q: '¿Qué diferencia hay entre interés simple e interés compuesto?', a: 'En el interés simple los intereses se calculan siempre sobre el capital inicial, así que cada año ganas la misma cantidad. En el interés compuesto los intereses se reinvierten y pasan a formar parte del capital, de modo que el siguiente periodo generas intereses también sobre esos intereses. A un año la diferencia es pequeña, pero a veinte o treinta años es enorme.' },
+    { q: '¿Cada cuánto conviene que se capitalicen los intereses?', a: 'Cuanto mayor sea la frecuencia de capitalización, mayor será el resultado final con el mismo interés nominal. Un 6 % anual capitalizado mensualmente equivale a un 6,17 % efectivo anual, porque los intereses empiezan a generar rendimiento antes. Por eso conviene comparar productos financieros por su TAE (interés efectivo) y no solo por el interés nominal.' },
+    { q: '¿Cuánto tardaré en duplicar mi dinero?', a: 'Existe una aproximación muy práctica llamada regla del 72: divide 72 entre el interés anual y obtendrás los años aproximados que tarda un capital en duplicarse. Al 6 % anual son unos 12 años; al 8 %, unos 9 años. Es una estimación mental rápida, y esta calculadora te da la cifra exacta con tus datos concretos.' },
+    { q: '¿El resultado tiene en cuenta impuestos e inflación?', a: 'No. El cálculo es orientativo y asume un interés constante, sin comisiones, sin retenciones fiscales y sin descontar la inflación. En la práctica los rendimientos del ahorro tributan y la inflación reduce el poder adquisitivo del capital final, así que la cifra real será algo menor. Para estimar el resultado en términos reales, usa el interés esperado menos la inflación prevista.' },
+    { q: '¿Es mejor empezar antes o aportar más cada mes?', a: 'Empezar antes suele pesar más, porque el tiempo entra en la fórmula como exponente mientras que la aportación entra de forma lineal. Alguien que aporte 100 € al mes durante 30 años suele acabar con más capital que quien aporta 150 € al mes durante 20 años con el mismo interés. Puedes comprobarlo cambiando los valores en la calculadora.' },
+  ]}
+>
+  <InteresCompuestoTool client:load />
+</CalcLayout>
