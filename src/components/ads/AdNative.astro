@@ -1,0 +1,19 @@
+---
+// Banner nativo del proveedor. El script inyecta el contenido en un contenedor
+// con un id fijo, por lo que este componente solo puede usarse UNA VEZ por página.
+import { ADS_ENABLED, AD_NATIVE } from '@/lib/constants/ads';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+{ADS_ENABLED && (
+  <div class:list={['ad-zone', className]}>
+    <span class="ad-label">Publicidad</span>
+    <div class="ad-native" id={`container-${AD_NATIVE.id}`}></div>
+    <script is:inline async data-cfasync="false" src={AD_NATIVE.src}></script>
+  </div>
+)}

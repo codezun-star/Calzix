@@ -6,6 +6,8 @@ import { PAGE_SEO, SITE } from '@/lib/constants/seo';
 import { CALCS, CALC_GROUPS } from '@/lib/constants/calcs';
 import '@/styles/global.css';
 import { jsonLd } from '@/lib/utils/jsonld';
+import AdSlot from '@/components/ads/AdSlot.astro';
+import AdNative from '@/components/ads/AdNative.astro';
 
 const seo = PAGE_SEO.home;
 
@@ -194,9 +196,19 @@ const homeGraph = jsonLd({
         </div>
       </div>
 
+      <!-- Anuncio sobre el catálogo de calculadoras -->
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-8">
+        <AdSlot placement="horizontal" />
+      </div>
+
       <!-- Calculadoras con tabs -->
       <div id="calculadoras">
         <HomeCalcs client:load />
+      </div>
+
+      <!-- Anuncio nativo tras el catálogo -->
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-12">
+        <AdNative />
       </div>
 
       <!-- CTA bottom -->

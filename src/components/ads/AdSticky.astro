@@ -1,0 +1,19 @@
+---
+// Banner fijo inferior para móvil y tablet. Aparece tras el primer scroll y el
+// usuario puede cerrarlo: la preferencia se recuerda durante la sesión.
+// En pantallas >= 1280px no se muestra: ahí el hueco lo cubre la columna lateral.
+import { ADS_ENABLED, ADS_STICKY_MOBILE, variantsPayload } from '@/lib/constants/ads';
+
+const payload = JSON.stringify(variantsPayload('sticky'));
+---
+
+{ADS_ENABLED && ADS_STICKY_MOBILE && (
+  <div id="ad-sticky" class="ad-sticky xl:hidden">
+    <button type="button" class="ad-sticky-close" aria-label="Cerrar publicidad">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
+    </button>
+    <div class="ad-slot" data-ad={payload}></div>
+  </div>
+)}

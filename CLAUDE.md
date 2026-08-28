@@ -45,6 +45,12 @@ calzix/
 │   │   ├── privacidad.astro / terminos.astro / cookies.astro
 │   │   └── aviso-legal.astro / contacto.astro
 │   ├── components/
+│   │   ├── ads/                 # Sistema de publicidad (ver sección "Publicidad")
+│   │   │   ├── AdEngine.astro   # Motor: carga diferida, formato por dispositivo, sticky
+│   │   │   ├── AdSlot.astro     # Banner iframe responsive
+│   │   │   ├── AdNative.astro   # Banner nativo (uno por página)
+│   │   │   ├── AdRail.astro     # Columna lateral fija (>= 1280px)
+│   │   │   └── AdSticky.astro   # Barra inferior en móvil/tablet
 │   │   ├── layout/
 │   │   │   ├── Header.astro          # Nav: Inicio + 5 categorías
 │   │   │   ├── Footer.astro          # Links por categoría
@@ -59,6 +65,7 @@ calzix/
 │   │   │   ├── format.ts        # formatNumber(), formatCurrency(), formatPercent(), formatScientific()
 │   │   │   └── download.ts      # triggerDownload(), downloadText(), downloadCsv()
 │   │   └── constants/
+│   │       ├── ads.ts           # Claves, formatos y emplazamientos de publicidad
 │   │       ├── calcs.ts         # Metadata de las calculadoras — CalcMeta + CalcDomain
 │   │       └── seo.ts           # Títulos, descriptions, canonicals + SITE object
 │   └── styles/
@@ -283,6 +290,75 @@ El JSON resultante parsea idéntico al original, pero evita dos problemas reales
 
 ---
 
+## Publicidad
+
+Toda la publicidad del sitio se configura en **`src/lib/constants/ads.ts`**. Ninguna página
+lleva claves ni scripts de anuncios escritos a mano.
+
+### Interruptores
+
+| Constante | Efecto |
+|---|---|
+| `ADS_ENABLED` | `false` deja el sitio entero sin publicidad (banners, nativo, barra fija y social bar) |
+| `ADS_STICKY_MOBILE` | Barra fija inferior en móvil y tablet |
+| `ADS_RAIL` | Columna lateral en páginas de calculadora (>= 1280px) |
+| `ADS_SOCIAL_BAR` | Social bar / popunder del proveedor |
+| `AD_LAZY_OFFSET` | Píxeles de antelación con los que se pide un anuncio antes de entrar en pantalla |
+
+### Componentes
+
+| Componente | Uso |
+|---|---|
+| `<AdSlot placement="horizontal" />` | Banner responsive: 320x50 en móvil, 468x60 en tablet, 728x90 en escritorio |
+| `<AdSlot placement="rectangle" />` | 300x250 intercalado en el contenido |
+| `<AdRail />` | Rascacielos 160x600 + 160x300 fijos en la columna lateral |
+| `<AdNative />` | Banner nativo. **Solo uno por página** (el proveedor usa un id fijo) |
+| `<AdEngine />` | Motor + social bar + barra fija. Va en el `Footer`, se monta una vez por página |
+
+### Cómo funciona el motor
+
+1. **Un iframe por anuncio.** El script del proveedor lee la variable global `atOptions`,
+   así que dos banners insertados directamente en la página se pisarían y solo cargaría el
+   último. Cada `AdSlot` genera su propio documento aislado vía `srcdoc`, y por eso pueden
+   convivir siete unidades en la misma página.
+2. **Carga diferida.** Un anuncio se pide cuando le faltan `AD_LAZY_OFFSET` píxeles para
+   entrar en pantalla. Si el usuario salta al final de la página, los huecos que quedan por
+   encima también se cargan (nada se queda vacío).
+3. **Formato por dispositivo.** La variante se elige en el navegador según el ancho real,
+   nunca por CSS: un móvil no descarga un 728x90 y no hay scroll horizontal.
+4. **Sin CLS.** Cada hueco reserva su altura por breakpoint con las variables `--ad-h-sm`,
+   `--ad-h-md` y `--ad-h-lg` antes de que llegue el anuncio.
+5. **Sin huecos vacíos.** Si a los 5 segundos el proveedor no ha devuelto nada (bloqueador de
+   anuncios, falta de relleno), el hueco y su etiqueta "Publicidad" se retiran del DOM.
+6. **Los anuncios ocultos no se piden.** La columna lateral en móvil (`display:none`) no
+   genera ninguna petición.
+
+### Emplazamientos por tipo de página
+
+| Página | Unidades |
+|---|---|
+| Calculadora | Horizontal sobre la calculadora · nativo bajo el resultado · rectángulo antes de las relacionadas · horizontal antes de las FAQs · columna lateral (2) · cierre · barra fija |
+| Home | Horizontal sobre el catálogo · nativo tras el catálogo · cierre · barra fija |
+| Categoría (9) | Horizontal sobre la parrilla · nativo tras la parrilla · cierre · barra fija |
+| Blog (índice) | Horizontal sobre el listado · nativo tras el listado · cierre · barra fija |
+| Blog (artículo) | Horizontal sobre el texto · 1-2 rectángulos intercalados entre párrafos (los coloca el motor) · nativo tras el artículo · cierre · barra fija |
+| Legales | Solo cierre y barra fija |
+
+El anuncio de cierre y la barra fija salen del `Footer`, así que **cualquier página nueva los
+hereda sin tocar nada**. Para añadir más unidades a una página concreta basta con importar
+`AdSlot` y colocarlo donde corresponda.
+
+### Reglas
+
+1. Nunca pegar el snippet del proveedor directamente en una página: usar los componentes.
+2. Un solo `<AdNative />` por página.
+3. Al añadir un formato nuevo, darlo de alta en `AD_UNITS` y en `AD_PLACEMENTS`, no en el HTML.
+4. Si cambia el proveedor o las claves, se toca **solo** `ads.ts`.
+5. `/privacidad` y `/cookies` describen las cookies publicitarias de terceros: si cambian los
+   dominios que sirven los anuncios, hay que actualizar esas páginas.
+
+---
+
 ## Registro de calculadoras
 
 El inventario está dividido en **48 archivos por categoría** en la carpeta `docs/`, siguiendo el patrón `docs/CALCULADORAS-[CATEGORIA].md`.
@@ -379,6 +455,7 @@ Actualizar este contador al añadir calculadoras. El número real de calculadora
 
 | Fecha | Acción |
 |---|---|
+| 2026-08-28 | Publicidad en todo el sitio. Nuevo `src/lib/constants/ads.ts` (claves, formatos, emplazamientos e interruptores) y cinco componentes en `src/components/ads/`: `AdSlot` (banner responsive en iframe aislado), `AdNative`, `AdRail` (columna lateral >= 1280px), `AdSticky` (barra inferior descartable) y `AdEngine` (motor + social bar, montado desde el `Footer`). Cada anuncio vive en su propio iframe con su `atOptions`, de modo que conviven varias unidades por página; carga diferida por proximidad al viewport, formato elegido según el ancho real, altura reservada por breakpoint (sin CLS) y retirada automática del hueco si el proveedor no devuelve anuncio. Emplazamientos en calculadoras, home, las 9 categorías, blog (índice y artículo, con rectángulos intercalados entre párrafos) y cierre + barra fija en todo el sitio vía `Footer`. `/privacidad` y `/cookies` actualizadas: ya no afirman que no hay scripts de terceros y detallan las cookies publicitarias y cómo bloquearlas. Build: 321 páginas. |
 | 2026-08-06 | Ampliación: +2 calculadoras y +2 artículos. **Hogar › Hipoteca y alquiler**: `interes-compuesto` (`InteresCompuestoTool.tsx`) — capital final, aportaciones, intereses y evolución año a año con capitalización anual, trimestral o mensual. **Conversión › Tiempo y duración**: `calculadora-edad` (`CalculadoraEdadTool.tsx`) — edad exacta en años, meses y días, totales en meses/semanas/días/horas, día de la semana del nacimiento y cuenta atrás al cumpleaños. Ambas con entrada en `calcs.ts` y `seo.ts`, página con `answer`/`howTo`/6 FAQs e imagen OG (`node scripts/generate-og.mjs`). Iconos Lucide reutilizados (`PiggyBank`, `CalendarDays`): sin cambios en `CalcCard.tsx`. Blog: `interes-compuesto-como-funciona` y `calcular-la-edad-exacta`. Total: 272 calculadoras y 33 artículos. Build: 321 páginas. |
 | 2026-05-29 | SEO/URLs: `trailingSlash: 'never'` en `astro.config.mjs`. Canonical del home corregida en `seo.ts` (`calzix.com/` → `calzix.com`). URLs del filtro de sitemap actualizadas sin slash final. Redirect 301 `/*/→/:splat` en `public/_redirects` (Cloudflare Pages) para normalizar URLs con slash final. |
 | 2026-06-25 | Ampliación masiva: +90 calculadoras (10 por cada uno de los 9 grupos: Matemáticas, Ciencias, Conversión, Hogar, Trabajo, Educación, Viaje, Naturaleza, Ocio) y +10 artículos de blog. Total: 284 calculadoras y 31 artículos (317 páginas). Sin duplicar slugs existentes; iconos Lucide reutilizados (sin cambios en `CalcCard.tsx`). |

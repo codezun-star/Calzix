@@ -1,0 +1,195 @@
+---
+// Motor de publicidad del sitio. Se monta una sola vez por página (desde el Footer).
+//
+// Qué hace:
+//  1. Carga diferida: cada banner se pide solo cuando está a punto de entrar en
+//     pantalla, así no compite con el contenido ni penaliza las Core Web Vitals.
+//  2. Formato por dispositivo: elige la variante correcta según el ancho real
+//     (320x50 en móvil, 468x60 en tablet, 728x90 en escritorio).
+//  3. Aislamiento: cada banner vive en su propio iframe con su propio `atOptions`,
+//     de modo que varias unidades conviven en la misma página sin pisarse.
+//  4. Gestiona la barra fija inferior (aparición tras scroll y cierre por el usuario).
+//  5. Retira los huecos que el proveedor no llega a rellenar, para no dejar
+//     recuadros vacíos etiquetados como publicidad.
+import { ADS_SOCIAL_BAR, AD_BANNER_HOST, AD_LAZY_OFFSET, AD_SOCIAL_SRC } from '@/lib/constants/ads';
+import AdSticky from './AdSticky.astro';
+---
+
+<AdSticky />
+
+<script is:inline define:vars={{ host: AD_BANNER_HOST, offset: AD_LAZY_OFFSET }}>
+  (function () {
+    if (window.__calzixAds) return;
+
+    // Margen para que el proveedor responda antes de dar el hueco por vacío.
+    var EMPTY_TIMEOUT = 5000;
+
+    // Documento autocontenido del banner: el script del proveedor lee `atOptions`
+    // del propio iframe, nunca de la página, y por eso pueden coexistir varios.
+    function frameDoc(v) {
+      var opts = JSON.stringify({ key: v.k, format: 'iframe', height: v.h, width: v.w, params: {} });
+      return '<!doctype html><html><head><meta charset="utf-8">'
+        + '<style>html,body{margin:0;padding:0;overflow:hidden;background:transparent}</style>'
+        + '</head><body>'
+        + '<scr' + 'ipt>window.atOptions=' + opts + ';</scr' + 'ipt>'
+        + '<scr' + 'ipt src="' + host + '/' + v.k + '/invoke.js"></scr' + 'ipt>'
+        + '</body></html>';
+    }
+
+    function choose(list) {
+      var w = window.innerWidth || document.documentElement.clientWidth || 360;
+      for (var i = 0; i < list.length; i++) {
+        if (w <= list[i].m) return list[i];
+      }
+      return list[list.length - 1];
+    }
+
+    function render(slot) {
+      if (slot.getAttribute('data-ad-state')) return;
+      var list;
+      try { list = JSON.parse(slot.getAttribute('data-ad') || '[]'); } catch (e) { return; }
+      if (!list.length) return;
+
+      slot.setAttribute('data-ad-state', 'loaded');
+      var v = choose(list);
+      var frame = document.createElement('iframe');
+      frame.title = 'Publicidad';
+      frame.width = String(v.w);
+      frame.height = String(v.h);
+      frame.setAttribute('scrolling', 'no');
+      frame.setAttribute('frameborder', '0');
+      frame.setAttribute('marginwidth', '0');
+      frame.setAttribute('marginheight', '0');
+      frame.style.cssText = 'display:block;border:0;max-width:100%;width:' + v.w + 'px;height:' + v.h + 'px';
+      frame.srcdoc = frameDoc(v);
+      slot.appendChild(frame);
+
+      setTimeout(function () { collapseIfEmpty(slot, frame); }, EMPTY_TIMEOUT);
+    }
+
+    // Si el proveedor no devuelve nada (bloqueador de anuncios, sin relleno para
+    // ese país…) se retira el hueco: mejor sin espacio que con un recuadro vacío
+    // etiquetado como publicidad.
+    function collapse(el) {
+      var box = el.closest('.ad-zone') || el.closest('#ad-sticky') || el;
+      if (box.id === 'ad-sticky') {
+        box.remove();
+        document.body.classList.remove('has-ad-sticky');
+      } else {
+        box.style.display = 'none';
+      }
+    }
+
+    function collapseIfEmpty(slot, frame) {
+      try {
+        var doc = frame.contentDocument;
+        if (!doc || !doc.body) return;
+        if (!doc.body.querySelectorAll('*:not(script):not(style)').length) collapse(slot);
+      } catch (e) {
+        // Si el documento no se puede inspeccionar se deja el anuncio como está.
+      }
+    }
+
+    // El banner nativo lo rellena el script del proveedor; si sigue vacío, fuera.
+    function watchNative() {
+      var box = document.querySelector('.ad-native');
+      if (!box) return;
+      setTimeout(function () {
+        if (!box.children.length && !box.textContent.trim()) collapse(box);
+      }, EMPTY_TIMEOUT);
+    }
+
+    // Huecos pendientes de cargar. Se revisan al hacer scroll y al cambiar el tamaño.
+    var pending = [];
+    var queued = false;
+
+    function sweep() {
+      queued = false;
+      var vh = window.innerHeight || document.documentElement.clientHeight || 0;
+      var still = [];
+
+      for (var i = 0; i < pending.length; i++) {
+        var slot = pending[i];
+        // Sin cajas = oculto en este breakpoint (p. ej. la columna lateral en móvil):
+        // se deja pendiente por si el usuario gira el dispositivo o agranda la ventana.
+        if (!slot.getClientRects().length) { still.push(slot); continue; }
+        // Carga tanto lo que está a punto de entrar en pantalla como lo que ya ha
+        // quedado por encima: un salto al final de la página no debe dejar huecos vacíos.
+        if (slot.getBoundingClientRect().top < vh + offset) render(slot);
+        else still.push(slot);
+      }
+
+      pending = still;
+      if (!pending.length) {
+        window.removeEventListener('scroll', schedule);
+        window.removeEventListener('resize', schedule);
+      }
+    }
+
+    function schedule() {
+      if (queued) return;
+      queued = true;
+      if (window.requestAnimationFrame) window.requestAnimationFrame(sweep);
+      else setTimeout(sweep, 100);
+    }
+
+    // Registra los huecos todavía sin vigilar. Es idempotente: se puede llamar
+    // otra vez tras insertar anuncios en el DOM (por ejemplo dentro de un artículo).
+    function scan() {
+      var slots = document.querySelectorAll('.ad-slot:not([data-ad-state]):not([data-ad-watched])');
+      if (!slots.length) return;
+
+      for (var i = 0; i < slots.length; i++) {
+        slots[i].setAttribute('data-ad-watched', '1');
+        pending.push(slots[i]);
+      }
+
+      window.addEventListener('scroll', schedule, { passive: true });
+      window.addEventListener('resize', schedule);
+      sweep();
+    }
+
+    function stickyBar() {
+      var bar = document.getElementById('ad-sticky');
+      if (!bar) return;
+
+      var dismissed = false;
+      try { dismissed = sessionStorage.getItem('calzix:ad-sticky') === 'off'; } catch (e) {}
+      if (dismissed) { bar.remove(); return; }
+
+      var close = bar.querySelector('.ad-sticky-close');
+      if (close) {
+        close.addEventListener('click', function () {
+          bar.remove();
+          document.body.classList.remove('has-ad-sticky');
+          try { sessionStorage.setItem('calzix:ad-sticky', 'off'); } catch (e) {}
+        });
+      }
+
+      function reveal() {
+        if (window.scrollY <= 280) return;
+        bar.classList.add('is-visible');
+        document.body.classList.add('has-ad-sticky');
+        window.removeEventListener('scroll', reveal);
+      }
+      window.addEventListener('scroll', reveal, { passive: true });
+      reveal();
+    }
+
+    // Abre la conexión con el servidor de anuncios antes de necesitarla.
+    ['preconnect', 'dns-prefetch'].forEach(function (rel) {
+      var link = document.createElement('link');
+      link.rel = rel;
+      link.href = host;
+      document.head.appendChild(link);
+    });
+
+    window.__calzixAds = { scan: scan, render: render };
+
+    function start() { scan(); stickyBar(); watchNative(); }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
+    else start();
+  })();
+</script>
+
+{ADS_SOCIAL_BAR && <script is:inline async data-cfasync="false" src={AD_SOCIAL_SRC}></script>}

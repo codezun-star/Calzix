@@ -5,6 +5,8 @@ import CalcGrid from '@/components/ui/CalcGrid';
 import { CALC_GROUPS, CALCS } from '@/lib/constants/calcs';
 import { PAGE_SEO, SITE } from '@/lib/constants/seo';
 import '@/styles/global.css';
+import AdSlot from '@/components/ads/AdSlot.astro';
+import AdNative from '@/components/ads/AdNative.astro';
 
 const group = CALC_GROUPS.find(g => g.slug === 'hogar')!;
 const domainIds = new Set(group.domains.map(d => d.id));
@@ -60,7 +62,11 @@ const seo = PAGE_SEO['hogar'];
 
     <main class="bg-[var(--color-calcs-bg)] border-b border-[var(--color-calcs-border)] py-10 min-h-[60vh]">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <AdSlot placement="horizontal" class="mb-8" />
+
         <CalcGrid groupSlug="hogar" client:load />
+
+        <AdNative class="mt-12" />
       </div>
     </main>
 

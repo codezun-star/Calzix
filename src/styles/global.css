@@ -34,3 +34,93 @@ body {
   background-color: var(--color-accent-bg);
   color: var(--color-accent);
 }
+
+/* ── Publicidad ─────────────────────────────────────────────────────────── */
+/* El hueco reserva su altura antes de que llegue el anuncio (evita CLS).
+   Las variables --ad-h-* las escribe cada componente según su emplazamiento. */
+
+.ad-zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+}
+
+.ad-label {
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.ad-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  min-height: var(--ad-h-sm, 50px);
+}
+
+@media (min-width: 640px) {
+  .ad-slot { min-height: var(--ad-h-md, var(--ad-h-sm, 60px)); }
+}
+
+@media (min-width: 1024px) {
+  .ad-slot { min-height: var(--ad-h-lg, var(--ad-h-md, 90px)); }
+}
+
+.ad-native {
+  width: 100%;
+  min-height: 120px;
+}
+
+/* Barra fija inferior (móvil y tablet) */
+.ad-sticky {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 60;
+  display: flex;
+  justify-content: center;
+  padding: 6px 0 calc(6px + env(safe-area-inset-bottom, 0px));
+  background: rgba(255, 255, 255, 0.97);
+  border-top: 1px solid var(--color-border);
+  box-shadow: 0 -2px 12px rgba(13, 33, 24, 0.08);
+  transform: translateY(115%);
+  transition: transform 0.25s ease;
+}
+
+.ad-sticky.is-visible { transform: none; }
+
+.ad-sticky .ad-slot { min-height: 50px; }
+
+.ad-sticky-close {
+  position: absolute;
+  top: -13px;
+  right: 10px;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  border-radius: 9999px;
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+}
+
+.ad-sticky-close:hover { color: var(--color-text); }
+
+/* Deja sitio bajo el footer mientras la barra fija está visible */
+body.has-ad-sticky { padding-bottom: 68px; }
+
+@media (min-width: 1280px) {
+  body.has-ad-sticky { padding-bottom: 0; }
+}

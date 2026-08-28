@@ -5,6 +5,8 @@ import { SITE } from '@/lib/constants/seo';
 import { getCollection, getEntry, render } from 'astro:content';
 import '@/styles/global.css';
 import { jsonLd } from '@/lib/utils/jsonld';
+import AdSlot from '@/components/ads/AdSlot.astro';
+import AdNative from '@/components/ads/AdNative.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', (e) => e.data.publicado !== false);
@@ -164,9 +166,13 @@ const articleSchema = {
 
     <!-- Contenido del artículo -->
     <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 min-h-[50vh]">
+      <AdSlot placement="horizontal" class="mb-10" />
+
       <div class="prose">
         <Content />
       </div>
+
+      <AdNative class="mt-12" />
 
       <!-- Compartir -->
       <div class="mt-12 pt-8 border-t border-[var(--color-border)]">
@@ -203,6 +209,32 @@ const articleSchema = {
     </main>
 
     <Footer />
+
+    <!-- Anuncio intercalado en el artículo: el motor lo coloca entre párrafos -->
+    <template id="ad-inline-tpl"><AdSlot placement="rectangle" class="my-10" /></template>
+
+    <script is:inline>
+      (function () {
+        var tpl = document.getElementById('ad-inline-tpl');
+        var prose = document.querySelector('main .prose');
+        if (!tpl || !prose || !tpl.content.firstElementChild) return;
+
+        var blocks = Array.prototype.filter.call(prose.children, function (el) {
+          return /^(P|UL|OL|TABLE|BLOCKQUOTE|PRE)$/.test(el.tagName);
+        });
+        if (blocks.length < 6) return;
+
+        var positions = [3];
+        if (blocks.length >= 14) positions.push(10);
+
+        positions.forEach(function (i) {
+          var anchor = blocks[i];
+          if (anchor) anchor.insertAdjacentElement('afterend', tpl.content.firstElementChild.cloneNode(true));
+        });
+
+        if (window.__calzixAds) window.__calzixAds.scan();
+      })();
+    </script>
   </body>
 </html>
 

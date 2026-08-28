@@ -1,0 +1,31 @@
+---
+// Unidad de banner (iframe) responsive y con carga diferida.
+//
+// Cada anuncio se renderiza dentro de su propio iframe aislado: el script del
+// proveedor lee una variable global `atOptions`, así que dos banners insertados
+// directamente en la página se pisarían entre sí y solo cargaría el último.
+// Con un iframe por unidad se pueden poner tantos como haga falta en la misma
+// página sin colisiones.
+import { ADS_ENABLED, reservedSpace, variantsPayload, type AdPlacement } from '@/lib/constants/ads';
+
+interface Props {
+  /** Emplazamiento: decide qué formatos se sirven según el ancho de pantalla. */
+  placement?: AdPlacement;
+  /** Clases extra del contenedor (márgenes de la página que lo usa). */
+  class?: string;
+  /** Muestra la etiqueta "Publicidad" sobre el anuncio. */
+  label?: boolean;
+}
+
+const { placement = 'horizontal', class: className = '', label = true } = Astro.props;
+
+const payload = JSON.stringify(variantsPayload(placement));
+const style   = reservedSpace(placement);
+---
+
+{ADS_ENABLED && (
+  <div class:list={['ad-zone', className]}>
+    {label && <span class="ad-label">Publicidad</span>}
+    <div class="ad-slot" data-ad={payload} style={style}></div>
+  </div>
+)}

@@ -1,0 +1,15 @@
+---
+// Columna lateral de anuncios, solo en pantallas >= 1280px.
+// Se mantiene fija al hacer scroll (rascacielos + medio rascacielos).
+import { ADS_ENABLED, ADS_RAIL } from '@/lib/constants/ads';
+import AdSlot from './AdSlot.astro';
+---
+
+{ADS_ENABLED && ADS_RAIL && (
+  <aside class="hidden xl:block w-[160px] shrink-0" aria-label="Publicidad">
+    <div class="sticky top-20 space-y-8">
+      <AdSlot placement="tower" />
+      <AdSlot placement="halfTower" />
+    </div>
+  </aside>
+)}

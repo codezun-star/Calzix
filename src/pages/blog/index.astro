@@ -6,6 +6,8 @@ import { SITE } from '@/lib/constants/seo';
 import { getCollection } from 'astro:content';
 import '@/styles/global.css';
 import { jsonLd } from '@/lib/utils/jsonld';
+import AdSlot from '@/components/ads/AdSlot.astro';
+import AdNative from '@/components/ads/AdNative.astro';
 
 const todos = await getCollection('blog', (e) => e.data.publicado !== false);
 const articles = todos
@@ -73,7 +75,11 @@ const canonical   = `${SITE.url}/blog`;
     </div>
 
     <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 min-h-[60vh]">
+      <AdSlot placement="horizontal" class="mb-8" />
+
       <BlogList articles={articles} client:load />
+
+      <AdNative class="mt-12" />
     </main>
 
     <Footer />
