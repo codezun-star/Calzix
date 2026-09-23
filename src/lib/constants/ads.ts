@@ -81,6 +81,37 @@ export const AD_NATIVE = {
 export const AD_SOCIAL_SRC =
   'https://pl31073419.profitableratecpmnetwork.com/3e/9b/ea/3e9bea87ea6d7989350705d6635f7964.js';
 
+/**
+ * Script suelto del proveedor (formato popunder / direct link). No ocupa hueco
+ * en la página: se engancha a un clic del usuario para abrir una pestaña. Por eso
+ * el motor lo trata con guantes y no lo inserta como una etiqueta más:
+ * espera al `load`, lo pide en un hueco de inactividad, nunca en una pestaña en
+ * segundo plano, lo salta en las páginas legales y lo limita a una vez cada
+ * `AD_POPUNDER_EVERY_HOURS` horas por visitante.
+ */
+export const ADS_POPUNDER = true;
+
+export const AD_POPUNDER_SRC =
+  'https://pl29628921.profitableratecpmnetwork.com/0c/d5/92/0cd5925857a97ed12dca3ed7b1c4cf8a.js';
+
+/** Espera (ms) desde que la página termina de cargar hasta que se pide el script. */
+export const AD_POPUNDER_DELAY = 8000;
+
+/**
+ * Horas mínimas entre dos cargas para un mismo visitante. Sin este tope, recorrer
+ * cinco calculadoras significaría cinco popunders.
+ */
+export const AD_POPUNDER_EVERY_HOURS = 6;
+
+/** Rutas donde nunca se carga: legales y contacto son páginas de confianza. */
+export const AD_POPUNDER_EXCLUDED = [
+  '/privacidad',
+  '/terminos',
+  '/cookies',
+  '/aviso-legal',
+  '/contacto',
+] as const satisfies readonly string[];
+
 /** Formato que el motor recibe en `data-ad` (nombres cortos para no inflar el HTML). */
 export interface AdVariantPayload {
   readonly k: string;

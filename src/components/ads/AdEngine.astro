@@ -11,7 +11,19 @@
 //  4. Gestiona la barra fija inferior (aparición tras scroll y cierre por el usuario).
 //  5. Retira los huecos que el proveedor no llega a rellenar, para no dejar
 //     recuadros vacíos etiquetados como publicidad.
-import { ADS_SOCIAL_BAR, AD_BANNER_HOST, AD_LAZY_OFFSET, AD_SOCIAL_SRC } from '@/lib/constants/ads';
+//  6. Sirve el popunder en diferido y con tope de frecuencia (ver más abajo).
+import {
+  ADS_ENABLED,
+  ADS_POPUNDER,
+  ADS_SOCIAL_BAR,
+  AD_BANNER_HOST,
+  AD_LAZY_OFFSET,
+  AD_POPUNDER_DELAY,
+  AD_POPUNDER_EVERY_HOURS,
+  AD_POPUNDER_EXCLUDED,
+  AD_POPUNDER_SRC,
+  AD_SOCIAL_SRC,
+} from '@/lib/constants/ads';
 import AdSticky from './AdSticky.astro';
 ---
 
@@ -192,4 +204,69 @@ import AdSticky from './AdSticky.astro';
   })();
 </script>
 
-{ADS_SOCIAL_BAR && <script is:inline async data-cfasync="false" src={AD_SOCIAL_SRC}></script>}
+{ADS_ENABLED && ADS_SOCIAL_BAR && <script is:inline async data-cfasync="false" src={AD_SOCIAL_SRC}></script>}
+
+{ADS_ENABLED && ADS_POPUNDER && (
+  <script
+    is:inline
+    define:vars={{
+      src: AD_POPUNDER_SRC,
+      delay: AD_POPUNDER_DELAY,
+      hours: AD_POPUNDER_EVERY_HOURS,
+      excluded: AD_POPUNDER_EXCLUDED,
+    }}
+  >
+    (function () {
+      if (window.__calzixPop) return;
+      window.__calzixPop = 1;
+
+      var KEY = 'calzix:pop';
+
+      // Páginas legales y contacto: ahí nunca.
+      var path = location.pathname.replace(/\/+$/, '') || '/';
+      if (excluded.indexOf(path) !== -1) return;
+
+      // Un popunder por visitante cada `hours` horas: recorrer varias
+      // calculadoras seguidas no vuelve a abrirlo.
+      try {
+        var last = parseInt(window.localStorage.getItem(KEY) || '0', 10);
+        if (last && Date.now() - last < hours * 3600000) return;
+      } catch (e) {
+        // Sin localStorage (modo privado) no hay tope: se carga una vez por página.
+      }
+
+      function inject() {
+        // Pestaña en segundo plano (prefetch, enlace abierto en otra pestaña):
+        // se espera a que el usuario la esté mirando.
+        if (document.visibilityState === 'hidden') {
+          document.addEventListener('visibilitychange', function again() {
+            if (document.visibilityState === 'hidden') return;
+            document.removeEventListener('visibilitychange', again);
+            inject();
+          });
+          return;
+        }
+
+        try { window.localStorage.setItem(KEY, String(Date.now())); } catch (e) {}
+
+        var s = document.createElement('script');
+        s.src = src;
+        s.async = true;
+        s.setAttribute('data-cfasync', 'false');
+        document.body.appendChild(s);
+      }
+
+      // Nunca durante la carga: primero el contenido, y solo en un hueco libre
+      // del navegador. Así no toca las Core Web Vitals ni el primer clic del
+      // usuario, que casi siempre es el botón de calcular.
+      function arm() {
+        var wait = function () { setTimeout(inject, delay); };
+        if (window.requestIdleCallback) window.requestIdleCallback(wait, { timeout: 3000 });
+        else wait();
+      }
+
+      if (document.readyState === 'complete') arm();
+      else window.addEventListener('load', arm);
+    })();
+  </script>
+)}

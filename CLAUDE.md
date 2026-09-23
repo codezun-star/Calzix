@@ -303,6 +303,7 @@ lleva claves ni scripts de anuncios escritos a mano.
 | `ADS_STICKY_MOBILE` | Barra fija inferior en móvil y tablet |
 | `ADS_RAIL` | Columna lateral en páginas de calculadora (>= 1280px) |
 | `ADS_SOCIAL_BAR` | Social bar / popunder del proveedor |
+| `ADS_POPUNDER` | Script popunder suelto. Se pide tras el `load`, nunca en páginas legales y como mucho una vez cada `AD_POPUNDER_EVERY_HOURS` horas por visitante |
 | `AD_LAZY_OFFSET` | Píxeles de antelación con los que se pide un anuncio antes de entrar en pantalla |
 
 ### Componentes
@@ -332,6 +333,12 @@ lleva claves ni scripts de anuncios escritos a mano.
    anuncios, falta de relleno), el hueco y su etiqueta "Publicidad" se retiran del DOM.
 6. **Los anuncios ocultos no se piden.** La columna lateral en móvil (`display:none`) no
    genera ninguna petición.
+7. **El popunder, con freno.** El único formato que no ocupa hueco es también el más molesto,
+   así que no se inserta como una etiqueta más: se pide después del `load` y en un hueco de
+   inactividad del navegador (nunca compite con el contenido ni con el primer clic en
+   "Calcular"), se salta en `/privacidad`, `/terminos`, `/cookies`, `/aviso-legal` y
+   `/contacto`, espera si la pestaña está en segundo plano, y `localStorage` guarda la última
+   carga para no repetirla en cada calculadora que visite el usuario.
 
 ### Emplazamientos por tipo de página
 
@@ -455,6 +462,7 @@ Actualizar este contador al añadir calculadoras. El número real de calculadora
 
 | Fecha | Acción |
 |---|---|
+| 2026-09-23 | Popunder del proveedor añadido sin volverlo intrusivo. Nuevas constantes en `ads.ts` (`ADS_POPUNDER`, `AD_POPUNDER_SRC`, `AD_POPUNDER_DELAY`, `AD_POPUNDER_EVERY_HOURS`, `AD_POPUNDER_EXCLUDED`) y carga gestionada por `AdEngine`: espera al `load` + `requestIdleCallback` + 8 s, se salta las cinco páginas legales/contacto, aguarda si la pestaña está en segundo plano y se limita a una vez cada 6 h por visitante vía `localStorage`. De paso, la social bar pasa a respetar `ADS_ENABLED` (antes solo miraba `ADS_SOCIAL_BAR`, contra lo documentado). Build: 321 páginas. |
 | 2026-08-28 | Publicidad en todo el sitio. Nuevo `src/lib/constants/ads.ts` (claves, formatos, emplazamientos e interruptores) y cinco componentes en `src/components/ads/`: `AdSlot` (banner responsive en iframe aislado), `AdNative`, `AdRail` (columna lateral >= 1280px), `AdSticky` (barra inferior descartable) y `AdEngine` (motor + social bar, montado desde el `Footer`). Cada anuncio vive en su propio iframe con su `atOptions`, de modo que conviven varias unidades por página; carga diferida por proximidad al viewport, formato elegido según el ancho real, altura reservada por breakpoint (sin CLS) y retirada automática del hueco si el proveedor no devuelve anuncio. Emplazamientos en calculadoras, home, las 9 categorías, blog (índice y artículo, con rectángulos intercalados entre párrafos) y cierre + barra fija en todo el sitio vía `Footer`. `/privacidad` y `/cookies` actualizadas: ya no afirman que no hay scripts de terceros y detallan las cookies publicitarias y cómo bloquearlas. Build: 321 páginas. |
 | 2026-08-06 | Ampliación: +2 calculadoras y +2 artículos. **Hogar › Hipoteca y alquiler**: `interes-compuesto` (`InteresCompuestoTool.tsx`) — capital final, aportaciones, intereses y evolución año a año con capitalización anual, trimestral o mensual. **Conversión › Tiempo y duración**: `calculadora-edad` (`CalculadoraEdadTool.tsx`) — edad exacta en años, meses y días, totales en meses/semanas/días/horas, día de la semana del nacimiento y cuenta atrás al cumpleaños. Ambas con entrada en `calcs.ts` y `seo.ts`, página con `answer`/`howTo`/6 FAQs e imagen OG (`node scripts/generate-og.mjs`). Iconos Lucide reutilizados (`PiggyBank`, `CalendarDays`): sin cambios en `CalcCard.tsx`. Blog: `interes-compuesto-como-funciona` y `calcular-la-edad-exacta`. Total: 272 calculadoras y 33 artículos. Build: 321 páginas. |
 | 2026-05-29 | SEO/URLs: `trailingSlash: 'never'` en `astro.config.mjs`. Canonical del home corregida en `seo.ts` (`calzix.com/` → `calzix.com`). URLs del filtro de sitemap actualizadas sin slash final. Redirect 301 `/*/→/:splat` en `public/_redirects` (Cloudflare Pages) para normalizar URLs con slash final. |
