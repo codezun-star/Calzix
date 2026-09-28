@@ -5,6 +5,7 @@ import BlogList from '@/components/blog/BlogList';
 import { SITE } from '@/lib/constants/seo';
 import { getCollection } from 'astro:content';
 import '@/styles/global.css';
+import AppHead from '@/components/layout/AppHead.astro';
 import { jsonLd } from '@/lib/utils/jsonld';
 import AdSlot from '@/components/ads/AdSlot.astro';
 import AdNative from '@/components/ads/AdNative.astro';
@@ -29,7 +30,7 @@ const canonical   = `${SITE.url}/blog`;
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <AppHead />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
@@ -59,13 +60,13 @@ const canonical   = `${SITE.url}/blog`;
     <Header />
 
     <div class="bg-[var(--color-text)]">
-      <div class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
-        <nav class="flex items-center gap-2 text-xs text-[var(--color-text-muted)] mb-6">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 py-6 sm:py-12">
+        <nav class="hidden sm:flex items-center gap-2 text-xs text-[var(--color-text-muted)] mb-6">
           <a href="/" class="hover:text-white transition-colors">Inicio</a>
           <span>/</span>
           <span style="color: var(--color-accent);">Blog</span>
         </nav>
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-white leading-tight mb-3" style="letter-spacing: -0.5px;">
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight mb-2 sm:mb-3" style="letter-spacing: -0.5px;">
           Blog
         </h1>
         <p class="text-[var(--color-text-muted)] text-base max-w-xl leading-relaxed">
@@ -74,8 +75,8 @@ const canonical   = `${SITE.url}/blog`;
       </div>
     </div>
 
-    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 min-h-[60vh]">
-      <AdSlot placement="horizontal" class="mb-8" />
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-6 sm:py-10 min-h-[60vh]">
+      <AdSlot placement="horizontal" class="mb-6 sm:mb-8" />
 
       <BlogList articles={articles} client:load />
 

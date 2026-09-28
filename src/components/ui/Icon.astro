@@ -1,0 +1,26 @@
+---
+// Icono Lucide servido desde el sprite compartido /icons/sprite.svg
+// (src/pages/icons/sprite.svg.ts). Nombres disponibles: appIcons.ts y `g-<grupo>`.
+import type { AppIconName } from './appIcons';
+
+interface Props {
+  name: AppIconName;
+  size?: number;
+  strokeWidth?: number;
+  class?: string;
+  /** Texto accesible. Sin él, el icono es decorativo (aria-hidden). */
+  label?: string;
+}
+
+const { name, size = 20, strokeWidth = 2, class: className, label } = Astro.props;
+---
+
+<svg
+  class:list={['app-i', className]}
+  width={size}
+  height={size}
+  stroke-width={strokeWidth}
+  role={label ? 'img' : undefined}
+  aria-label={label}
+  aria-hidden={label ? undefined : 'true'}
+><use href={`/icons/sprite.svg#i-${name}`} /></svg>

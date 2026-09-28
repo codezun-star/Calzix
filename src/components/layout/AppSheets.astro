@@ -1,0 +1,179 @@
+---
+// Hojas deslizables de la app: buscador, categorías y menú "Más".
+//
+// Son <dialog> modales: bloquean el fondo, se cierran con Escape, con el gesto
+// "atrás" de Android, tocando fuera o arrastrando hacia abajo. En móvil suben
+// desde abajo (bottom sheet); a partir de 768px se abren como ventana centrada.
+// Toda la lógica vive en src/scripts/app-shell.ts.
+import { CALCS, CALC_GROUPS, getCalcBySlug, getDomainGroup } from '@/lib/constants/calcs';
+import type { CalcMeta } from '@/lib/constants/calcs';
+import { APP_MENU_LINKS, APP_POPULAR_SLUGS } from '@/lib/constants/app';
+import Icon from '@/components/ui/Icon.astro';
+
+const groups = CALC_GROUPS.map((g) => {
+  const ids = new Set(g.domains.map((d) => d.id));
+  return {
+    id: g.id,
+    slug: g.slug,
+    label: g.label,
+    count: CALCS.filter((c) => ids.has(c.domain)).length,
+  };
+});
+
+const popular = APP_POPULAR_SLUGS
+  .map((slug) => getCalcBySlug(slug))
+  .filter((c): c is CalcMeta => c !== undefined)
+  .map((c) => ({ ...c, groupId: getDomainGroup(c.domain)?.id ?? 'default' }));
+---
+
+<!-- Buscador -->
+<dialog id="app-sheet-search" class="app-sheet app-sheet--search" aria-label="Buscar calculadoras">
+  <div class="app-sheet-panel">
+    <div class="app-sheet-grip" data-sheet-drag aria-hidden="true"></div>
+    <form class="app-search" role="search" action="/" data-search-form>
+      <label class="app-search-field">
+        <Icon name="search" size={18} strokeWidth={2.25} />
+        <input
+          type="search"
+          name="q"
+          placeholder={`Buscar entre ${CALCS.length} calculadoras`}
+          aria-label="Buscar calculadoras"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+          enterkeyhint="search"
+          autofocus
+          data-search-input
+        />
+        <button type="button" class="app-search-clear" aria-label="Borrar búsqueda" data-search-clear hidden>
+          <Icon name="x" size={13} strokeWidth={3} />
+        </button>
+      </label>
+      <button type="button" class="app-search-cancel" data-sheet-close>Cancelar</button>
+    </form>
+
+    <div class="app-sheet-body" data-search-body>
+      <div data-search-idle>
+        <section data-recent-section="rows" hidden>
+          <h2 class="app-sheet-heading"><Icon name="history" size={14} strokeWidth={2.25} /> Recientes</h2>
+          <ul class="app-list" data-recent-list></ul>
+        </section>
+        <section>
+          <h2 class="app-sheet-heading"><Icon name="trending-up" size={14} strokeWidth={2.25} /> Populares</h2>
+          <ul class="app-list">
+            {popular.map((c) => (
+              <li>
+                <a href={`/${c.slug}`} class="app-row">
+                  <span class="app-row-icon"><Icon name={`g-${c.groupId}`} size={18} strokeWidth={1.9} /></span>
+                  <span class="app-row-text">
+                    <span class="app-row-title">{c.name}</span>
+                    <span class="app-row-sub">{c.description}</span>
+                  </span>
+                  <Icon name="chevron-right" size={18} class="app-row-chevron" />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </div>
+      <p class="app-search-status" role="status" aria-live="polite" data-search-status></p>
+      <ul class="app-list" data-search-results hidden></ul>
+    </div>
+  </div>
+</dialog>
+
+<!-- Categorías -->
+<dialog id="app-sheet-categorias" class="app-sheet" aria-labelledby="app-sheet-categorias-title">
+  <div class="app-sheet-panel" tabindex="-1" autofocus>
+    <div class="app-sheet-grip" data-sheet-drag aria-hidden="true"></div>
+    <div class="app-sheet-head" data-sheet-drag>
+      <h2 id="app-sheet-categorias-title">Categorías</h2>
+      <button type="button" class="app-sheet-x" data-sheet-close aria-label="Cerrar">
+        <Icon name="x" size={18} strokeWidth={2.25} />
+      </button>
+    </div>
+    <div class="app-sheet-body">
+      <ul class="app-tiles">
+        {groups.map((g) => (
+          <li>
+            <a href={`/${g.slug}`} class="app-tile app-press">
+              <span class="app-tile-icon"><Icon name={`g-${g.id}`} size={22} strokeWidth={1.8} /></span>
+              <span class="app-tile-label">{g.label}</span>
+              <span class="app-tile-count">{g.count} calculadoras</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</dialog>
+
+<!-- Más -->
+<dialog id="app-sheet-menu" class="app-sheet" aria-labelledby="app-sheet-menu-title">
+  <div class="app-sheet-panel" tabindex="-1" autofocus>
+    <div class="app-sheet-grip" data-sheet-drag aria-hidden="true"></div>
+    <div class="app-sheet-head" data-sheet-drag>
+      <h2 id="app-sheet-menu-title">Más</h2>
+      <button type="button" class="app-sheet-x" data-sheet-close aria-label="Cerrar">
+        <Icon name="x" size={18} strokeWidth={2.25} />
+      </button>
+    </div>
+    <div class="app-sheet-body">
+      <div class="app-group" data-install hidden>
+        <button type="button" class="app-row" data-install-btn>
+          <span class="app-row-icon app-row-icon--accent"><Icon name="download" size={18} strokeWidth={1.9} /></span>
+          <span class="app-row-text">
+            <span class="app-row-title">Instalar la app</span>
+            <span class="app-row-sub">En tu pantalla de inicio y sin conexión</span>
+          </span>
+          <Icon name="chevron-right" size={18} class="app-row-chevron" />
+        </button>
+        <p class="app-install-help" data-install-ios hidden>
+          Pulsa el botón <Icon name="share" size={15} strokeWidth={2.25} label="Compartir" /> <strong>Compartir</strong>
+          del navegador y elige <strong>Añadir a pantalla de inicio</strong>.
+        </p>
+      </div>
+
+      <ul class="app-group app-list">
+        <li>
+          <a href="/blog" class="app-row">
+            <span class="app-row-icon"><Icon name="book-open" size={18} strokeWidth={1.9} /></span>
+            <span class="app-row-text"><span class="app-row-title">Blog</span></span>
+            <Icon name="chevron-right" size={18} class="app-row-chevron" />
+          </a>
+        </li>
+        <li>
+          <button type="button" class="app-row" data-app-share-site>
+            <span class="app-row-icon"><Icon name="share-2" size={18} strokeWidth={1.9} /></span>
+            <span class="app-row-text"><span class="app-row-title">Compartir Calzix</span></span>
+            <Icon name="chevron-right" size={18} class="app-row-chevron" />
+          </button>
+        </li>
+      </ul>
+
+      <ul class="app-group app-list">
+        {APP_MENU_LINKS.map((link) => (
+          <li>
+            <a href={link.href} class="app-row">
+              <span class="app-row-icon"><Icon name={link.icon} size={18} strokeWidth={1.9} /></span>
+              <span class="app-row-text"><span class="app-row-title">{link.label}</span></span>
+              <Icon name="chevron-right" size={18} class="app-row-chevron" />
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <p class="app-sheet-note">
+        Todos los cálculos se hacen en tu dispositivo. Las calculadoras que ya has abierto funcionan también sin conexión.
+      </p>
+    </div>
+  </div>
+</dialog>
+
+<!-- Aviso breve (enlace copiado, sin conexión…) -->
+<div class="app-toast" role="status" aria-live="polite" data-app-toast></div>
+
+<script>
+  import '@/scripts/app-shell';
+</script>

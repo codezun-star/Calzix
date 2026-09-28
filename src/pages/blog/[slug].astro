@@ -4,6 +4,7 @@ import Footer from '@/components/layout/Footer.astro';
 import { SITE } from '@/lib/constants/seo';
 import { getCollection, getEntry, render } from 'astro:content';
 import '@/styles/global.css';
+import AppHead from '@/components/layout/AppHead.astro';
 import { jsonLd } from '@/lib/utils/jsonld';
 import AdSlot from '@/components/ads/AdSlot.astro';
 import AdNative from '@/components/ads/AdNative.astro';
@@ -80,7 +81,7 @@ const articleSchema = {
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <AppHead />
     <title>{pageTitle}</title>
     <meta name="description" content={pageDesc} />
     {post.data.keywords.length > 0 && (
@@ -121,12 +122,12 @@ const articleSchema = {
   </head>
 
   <body>
-    <Header />
+    <Header title={post.data.titulo} />
 
     <!-- Cabecera del artículo -->
     <div class="bg-[var(--color-text)]">
-      <div class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
-        <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs text-[var(--color-text-muted)] mb-6 flex-wrap">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 py-6 sm:py-12">
+        <nav aria-label="Breadcrumb" class="hidden sm:flex items-center gap-2 text-xs text-[var(--color-text-muted)] mb-6 flex-wrap">
           <a href="/" class="hover:text-white transition-colors">Inicio</a>
           <span>/</span>
           <a href="/blog" class="hover:text-white transition-colors">Blog</a>
@@ -140,7 +141,7 @@ const articleSchema = {
           </span>
         )}
 
-        <h1 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight mb-4" style="letter-spacing: -0.3px;">
+        <h1 class="text-[1.75rem] sm:text-4xl font-extrabold text-white leading-tight mb-3 sm:mb-4" style="letter-spacing: -0.3px;">
           {post.data.titulo}
         </h1>
 
@@ -165,8 +166,8 @@ const articleSchema = {
     </div>
 
     <!-- Contenido del artículo -->
-    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10 min-h-[50vh]">
-      <AdSlot placement="horizontal" class="mb-10" />
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-6 sm:py-10 min-h-[50vh]">
+      <AdSlot placement="horizontal" class="mb-8 sm:mb-10" />
 
       <div class="prose">
         <Content />

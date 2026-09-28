@@ -9,7 +9,7 @@ import { dirname, join } from 'node:path';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const BASE = process.env.BASE_URL || 'http://localhost:4321';
 
-const LEGAL = new Set(['privacidad', 'terminos', 'cookies', 'aviso-legal', 'contacto', 'index']);
+const LEGAL = new Set(['privacidad', 'terminos', 'cookies', 'aviso-legal', 'contacto', 'offline', 'index']);
 
 // Descubre los slugs a partir de los .astro de src/pages.
 const pagesDir = join(__dirname, '..', 'src', 'pages');
@@ -49,7 +49,8 @@ for (const slug of slugs) {
     for (let i = 0; i < nDate; i++) await dateInputs.nth(i).fill('2000-01-15').catch(() => {});
 
     // Pulsa el primer botón de acción si existe (Calcular / Lanzar / etc.).
-    const btn = page.locator('button').first();
+    // Solo dentro de <main>: la cabecera y la barra inferior también tienen botones.
+    const btn = page.locator('main button').first();
     if (await btn.count() > 0) {
       await btn.click().catch(() => {});
       await page.waitForTimeout(150);

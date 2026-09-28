@@ -1,24 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { CALC_GROUPS, CALCS } from '@/lib/constants/calcs';
 import CalcCard from './CalcCard';
-import {
-  Calculator, FlaskConical, ArrowRightLeft, Home,
-  Briefcase, GraduationCap, MapPin, Leaf, Star, ArrowRight,
-  ChevronLeft, ChevronRight,
-} from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
-
-const GROUP_ICONS: Record<string, LucideIcon> = {
-  matematicas: Calculator,
-  ciencias:    FlaskConical,
-  conversion:  ArrowRightLeft,
-  hogar:       Home,
-  trabajo:     Briefcase,
-  educacion:   GraduationCap,
-  viaje:       MapPin,
-  naturaleza:  Leaf,
-  ocio:        Star,
-};
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { DEFAULT_GROUP_ICON, GROUP_ICONS } from './groupIcons';
 
 const VALID_IDS = CALC_GROUPS.map(g => g.id);
 
@@ -35,7 +19,7 @@ function getGroupCalcs(groupId: string) {
   return CALCS.filter(c => domainIds.has(c.domain));
 }
 
-const GRID = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4';
+const GRID = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2.5 sm:gap-4';
 
 function VerTodas({ href, count, label }: { href: string; count: number; label: string }) {
   return (
@@ -82,11 +66,18 @@ export default function HomeCalcs() {
     return () => window.removeEventListener('hashchange', onHash);
   }, []);
 
-  // Centra la pestaña activa y recalcula las flechas al cambiar de grupo
+  // Centra la pestaña activa y recalcula las flechas al cambiar de grupo.
+  // Solo desplaza la barra en horizontal: scrollIntoView también movía la página
+  // en vertical y, en móvil, el inicio cargaba ya desplazado hasta las pestañas.
   useEffect(() => {
     const el = scrollRef.current;
     const activeBtn = el?.querySelector<HTMLElement>('[data-active="true"]');
-    activeBtn?.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+    if (el && activeBtn) {
+      const box = el.getBoundingClientRect();
+      const btn = activeBtn.getBoundingClientRect();
+      const left = el.scrollLeft + (btn.left - box.left) - (el.clientWidth - btn.width) / 2;
+      el.scrollTo({ left: Math.max(0, left), behavior: 'smooth' });
+    }
     updateArrows();
   }, [active]);
 
@@ -104,7 +95,7 @@ export default function HomeCalcs() {
   return (
     <div>
       {/* Tab bar */}
-      <div className="sticky top-14 z-40 bg-white border-b border-[var(--color-border)] shadow-sm">
+      <div className="sticky top-[var(--app-header-h)] z-40 bg-white border-b border-[var(--color-border)] shadow-sm">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="relative">
             {/* Flecha izquierda */}
@@ -131,7 +122,7 @@ export default function HomeCalcs() {
               className="flex gap-1 py-2 overflow-x-auto scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
             >
               {CALC_GROUPS.map((group) => {
-                const Icon = GROUP_ICONS[group.id] ?? Calculator;
+                const Icon = GROUP_ICONS[group.id] ?? DEFAULT_GROUP_ICON;
                 const count = getGroupCalcs(group.id).length;
                 const isActive = active === group.id;
                 return (
@@ -140,14 +131,14 @@ export default function HomeCalcs() {
                     data-active={isActive}
                     onClick={() => selectTab(group.id)}
                     className={[
-                      'flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-colors whitespace-nowrap shrink-0',
+                      'flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-full sm:rounded-lg text-sm font-semibold transition-colors whitespace-nowrap shrink-0',
                       isActive
                         ? 'bg-[var(--color-accent)] text-white'
                         : 'text-[var(--color-text-secondary)] hover:bg-[var(--color-calcs-bg)] hover:text-[var(--color-text)]',
                     ].join(' ')}
                   >
                     <Icon size={16} />
-                    <span className="hidden sm:inline">{group.label}</span>
+                    <span>{group.label}</span>
                     <span
                       className={[
                         'text-xs px-1.5 py-0.5 rounded-full font-medium',
@@ -167,7 +158,7 @@ export default function HomeCalcs() {
       </div>
 
       {/* Content */}
-      <div className="bg-[var(--color-calcs-bg)] border-b border-[var(--color-calcs-border)] py-12">
+      <div className="bg-[var(--color-calcs-bg)] border-b border-[var(--color-calcs-border)] py-6 sm:py-12">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           {CALC_GROUPS.map((group) => {
             if (active !== group.id) return null;

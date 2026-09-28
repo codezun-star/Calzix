@@ -1,0 +1,61 @@
+---
+// Barra de pestañas inferior al estilo de una app nativa (móvil y tablet).
+// "Categorías", "Buscar" y "Más" abren hojas deslizables (ver AppSheets.astro);
+// "Inicio" y "Blog" son enlaces normales. Se oculta a partir de 1280px, donde
+// manda el menú horizontal de la cabecera.
+import Icon from '@/components/ui/Icon.astro';
+import type { AppSection } from '@/lib/constants/app';
+
+interface Props {
+  section: AppSection | null;
+  /** Ruta normalizada de la página actual. */
+  path: string;
+}
+
+const { section, path } = Astro.props;
+---
+
+<nav class="app-tabbar xl:hidden" aria-label="Navegación principal">
+  <a
+    href="/"
+    class="app-tab"
+    data-active={section === 'inicio' ? 'true' : undefined}
+    aria-current={path === '/' ? 'page' : undefined}
+  >
+    <span class="app-tab-icon"><Icon name="home" size={22} /></span>
+    <span class="app-tab-label">Inicio</span>
+  </a>
+  <button
+    type="button"
+    class="app-tab"
+    data-app-open="categorias"
+    aria-haspopup="dialog"
+    data-active={section === 'categorias' ? 'true' : undefined}
+  >
+    <span class="app-tab-icon"><Icon name="layout-grid" size={22} /></span>
+    <span class="app-tab-label">Categorías</span>
+  </button>
+  <button type="button" class="app-tab" data-app-open="search" aria-haspopup="dialog">
+    <span class="app-tab-icon"><Icon name="search" size={22} /></span>
+    <span class="app-tab-label">Buscar</span>
+  </button>
+  <a
+    href="/blog"
+    class="app-tab"
+    data-active={section === 'blog' ? 'true' : undefined}
+    aria-current={path === '/blog' ? 'page' : undefined}
+  >
+    <span class="app-tab-icon"><Icon name="book-open" size={22} /></span>
+    <span class="app-tab-label">Blog</span>
+  </a>
+  <button
+    type="button"
+    class="app-tab"
+    data-app-open="menu"
+    aria-haspopup="dialog"
+    data-active={section === 'mas' ? 'true' : undefined}
+  >
+    <span class="app-tab-icon"><Icon name="menu" size={22} /></span>
+    <span class="app-tab-label">Más</span>
+  </button>
+</nav>

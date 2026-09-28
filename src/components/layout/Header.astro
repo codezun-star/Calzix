@@ -1,5 +1,26 @@
 ---
-const currentPath = Astro.url.pathname;
+// Cabecera del sitio.
+//
+// Por debajo de 1280px (móvil y tablet) se comporta como la barra superior de
+// una app nativa: botón "atrás" hacia la pantalla padre, título que aparece al
+// desplazar la página, buscador y botón de compartir. La navegación principal
+// pasa a la barra de pestañas inferior (AppTabBar) y a las hojas deslizables
+// (AppSheets). A partir de 1280px se muestra el menú horizontal de escritorio.
+//
+// El contexto (pantalla padre, título, pestaña activa) se deduce de la URL, así
+// que ninguna página necesita pasar props. `title` y `back` permiten forzarlo.
+import Icon from '@/components/ui/Icon.astro';
+import { getCalcBySlug, getDomainGroup, getGroupBySlug } from '@/lib/constants/calcs';
+import AppTabBar from './AppTabBar.astro';
+import AppSheets from './AppSheets.astro';
+import type { AppSection } from '@/lib/constants/app';
+
+interface Props {
+  /** Título compacto de la barra superior en móvil. */
+  title?: string;
+  /** Pantalla padre del botón "atrás" en móvil. */
+  back?: { href: string; label: string };
+}
 
 const NAV_LINKS = [
   { label: 'Matemáticas', href: '/matematicas' },
@@ -13,80 +34,176 @@ const NAV_LINKS = [
   { label: 'Ocio',        href: '/ocio' },
   { label: 'Blog',        href: '/blog' },
 ];
+
+const SECONDARY_PAGES: Record<string, string> = {
+  privacidad:    'Privacidad',
+  terminos:      'Términos',
+  cookies:       'Cookies',
+  'aviso-legal': 'Aviso legal',
+  contacto:      'Contacto',
+};
+
+// Normaliza la ruta: sin extensión .html, sin /index y sin barra final.
+const currentPath =
+  Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '').replace(/\/+$/, '') || '/';
+const segments = currentPath.split('/').filter(Boolean);
+const first = segments[0] ?? '';
+
+const HOME = { href: '/', label: 'Inicio' };
+
+// null = ninguna pestaña activa (p. ej. la pantalla "Sin conexión", que sustituye a cualquier página)
+let section: AppSection | null = 'inicio';
+let back: { href: string; label: string } | null = null;
+let title = '';
+let canShare = false;
+
+const calc  = segments.length === 1 ? getCalcBySlug(first) : undefined;
+const group = segments.length === 1 ? getGroupBySlug(first) : undefined;
+
+if (currentPath === '/') {
+  section = 'inicio';
+} else if (calc) {
+  const parent = getDomainGroup(calc.domain);
+  section  = 'categorias';
+  back     = parent ? { href: `/${parent.slug}`, label: parent.label } : HOME;
+  title    = calc.name;
+  canShare = true;
+} else if (group) {
+  section  = 'categorias';
+  back     = HOME;
+  title    = group.label;
+  canShare = true;
+} else if (first === 'blog') {
+  section  = 'blog';
+  back     = segments.length > 1 ? { href: '/blog', label: 'Blog' } : HOME;
+  title    = 'Blog';
+  canShare = segments.length > 1;
+} else if (SECONDARY_PAGES[first]) {
+  section = 'mas';
+  back    = HOME;
+  title   = SECONDARY_PAGES[first];
+} else if (first === 'offline') {
+  section = null;
+  back    = HOME;
+  title   = 'Sin conexión';
+} else {
+  section = null;
+  back    = HOME;
+}
+
+if (Astro.props.title) title = Astro.props.title;
+if (Astro.props.back) back = Astro.props.back;
 ---
 
-<header class="sticky top-0 z-50 bg-white border-b border-[var(--color-border)]">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-4">
-    <a href="/" class="shrink-0 leading-none hover:opacity-80 transition-opacity">
+<header class="app-header sticky top-0 z-50" data-app-header>
+  <div class="app-header-bar relative max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center gap-3">
+    {back && (
+      <a href={back.href} class="app-back xl:hidden" data-app-back aria-label={`Volver a ${back.label}`}>
+        <Icon name="chevron-left" size={26} strokeWidth={2.25} />
+        <span class="app-back-label">{back.label}</span>
+      </a>
+    )}
+
+    <a
+      href="/"
+      class={`shrink-0 leading-none hover:opacity-80 transition-opacity ${back ? 'hidden xl:block' : ''}`}
+      aria-label="Calzix, ir al inicio"
+    >
       <span class="text-[20px] font-extrabold tracking-tight" style="letter-spacing: -0.5px;">
         <span style="color: var(--color-text)">Cal</span><span style="color: var(--color-accent)">zix</span>
       </span>
     </a>
 
+    {title && <p class="app-header-title xl:hidden" aria-hidden="true">{title}</p>}
+
     <!-- Desktop nav -->
-    <nav class="hidden md:flex items-center gap-1 text-sm font-medium text-[var(--color-text-secondary)]">
-      <a href="/" class={`px-3 py-1.5 rounded-lg transition-colors ${currentPath === '/' ? 'text-[var(--color-accent)] bg-[var(--color-accent-bg)]' : 'hover:text-[var(--color-text)] hover:bg-[var(--color-bg)]'}`}>Inicio</a>
+    <nav class="hidden xl:flex items-center text-sm font-medium text-[var(--color-text-secondary)]" aria-label="Categorías">
+      <a href="/" class={`px-2.5 py-1.5 rounded-lg transition-colors ${currentPath === '/' ? 'text-[var(--color-accent)] bg-[var(--color-accent-bg)]' : 'hover:text-[var(--color-text)] hover:bg-[var(--color-bg)]'}`}>Inicio</a>
       {NAV_LINKS.map(({ label, href }) => (
         <a
           href={href}
-          class={`px-3 py-1.5 rounded-lg transition-colors ${currentPath === href ? 'text-[var(--color-accent)] bg-[var(--color-accent-bg)]' : 'hover:text-[var(--color-text)] hover:bg-[var(--color-bg)]'}`}
+          class={`px-2.5 py-1.5 rounded-lg transition-colors ${currentPath === href ? 'text-[var(--color-accent)] bg-[var(--color-accent-bg)]' : 'hover:text-[var(--color-text)] hover:bg-[var(--color-bg)]'}`}
         >
           {label}
         </a>
       ))}
     </nav>
 
-    <div class="flex items-center gap-2">
+    <div class="ml-auto flex items-center gap-1">
+      <button
+        type="button"
+        class="app-icon-btn"
+        data-app-open="search"
+        aria-haspopup="dialog"
+        aria-label="Buscar calculadoras"
+        title="Buscar (Ctrl + K)"
+      >
+        <Icon name="search" size={21} />
+      </button>
+      {canShare && (
+        <button type="button" class="app-icon-btn xl:hidden" data-app-share aria-label="Compartir esta página">
+          <Icon name="share-2" size={20} />
+        </button>
+      )}
       <a
         href="/calculadora-hipoteca"
-        class="px-4 py-2 rounded-lg bg-[var(--color-accent)] text-white text-sm font-semibold hover:bg-[var(--color-accent-hover)] transition-colors"
+        class="hidden xl:inline-flex ml-1 px-4 py-2 rounded-lg bg-[var(--color-accent)] text-white text-sm font-semibold hover:bg-[var(--color-accent-hover)] transition-colors whitespace-nowrap"
       >
         Calcular gratis
       </a>
-      <!-- Mobile menu button -->
-      <button
-        id="mobile-menu-btn"
-        class="md:hidden p-2 rounded-lg text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg)] transition-colors"
-        aria-label="Abrir menú"
-      >
-        <svg id="icon-menu" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
-        </svg>
-        <svg id="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden">
-          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-        </svg>
-      </button>
     </div>
-  </div>
-
-  <!-- Mobile menu -->
-  <div id="mobile-menu" class="hidden md:hidden border-t border-[var(--color-border)] bg-white">
-    <nav class="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-1 text-sm font-medium">
-      <a href="/" class="px-3 py-2.5 rounded-lg text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg)] transition-colors">Inicio</a>
-      {NAV_LINKS.map(({ label, href }) => (
-        <a href={href} class="px-3 py-2.5 rounded-lg text-[var(--color-text-secondary)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg)] transition-colors">{label}</a>
-      ))}
-    </nav>
   </div>
 </header>
 
+<AppTabBar section={section} path={currentPath} />
+<AppSheets />
+
 <script>
-  const btn = document.getElementById('mobile-menu-btn');
-  const menu = document.getElementById('mobile-menu');
-  const iconMenu = document.getElementById('icon-menu');
-  const iconClose = document.getElementById('icon-close');
+  const header = document.querySelector<HTMLElement>('[data-app-header]');
 
-  btn?.addEventListener('click', () => {
-    menu?.classList.toggle('hidden');
-    iconMenu?.classList.toggle('hidden');
-    iconClose?.classList.toggle('hidden');
-  });
+  if (header) {
+    // Borde inferior solo cuando hay contenido desplazado por debajo, como en iOS.
+    let queued = false;
+    const onScroll = () => {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(() => {
+        queued = false;
+        header.classList.toggle('is-scrolled', window.scrollY > 4);
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
 
-  menu?.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      menu.classList.add('hidden');
-      iconMenu?.classList.remove('hidden');
-      iconClose?.classList.add('hidden');
-    });
+    // Título grande que pasa a la barra superior cuando el H1 sale de pantalla.
+    const h1 = document.querySelector('main h1') ?? document.querySelector('h1');
+    if (h1 && header.querySelector('.app-header-title') && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          header.classList.toggle('is-condensed', !entry.isIntersecting && entry.boundingClientRect.top < 0);
+        },
+        { rootMargin: `-${header.offsetHeight}px 0px 0px 0px` },
+      );
+      observer.observe(h1);
+    }
+  }
+
+  // "Atrás": si el usuario viene justo de la pantalla padre se vuelve con el
+  // historial (conserva scroll y estado, como una app). Si llega desde fuera o
+  // desde otra página, el enlace lleva a la pantalla padre.
+  document.querySelector<HTMLAnchorElement>('[data-app-back]')?.addEventListener('click', (event) => {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const link = event.currentTarget as HTMLAnchorElement;
+    try {
+      const from = new URL(document.referrer);
+      const parent = new URL(link.href);
+      const clean = (p: string) => p.replace(/\.html$/, '').replace(/\/+$/, '') || '/';
+      if (from.origin === location.origin && clean(from.pathname) === clean(parent.pathname) && history.length > 1) {
+        event.preventDefault();
+        history.back();
+      }
+    } catch {
+      // Sin referrer válido: navegación normal al enlace.
+    }
   });
 </script>

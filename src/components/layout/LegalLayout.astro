@@ -3,6 +3,7 @@ import Header from './Header.astro';
 import Footer from './Footer.astro';
 import { PAGE_SEO, SITE } from '@/lib/constants/seo';
 import '@/styles/global.css';
+import AppHead from './AppHead.astro';
 
 interface Props {
   slug: string;
@@ -20,7 +21,7 @@ const canonical   = seo?.canonical   ?? `${SITE.url}/${slug}`;
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <AppHead />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
@@ -30,9 +31,9 @@ const canonical   = seo?.canonical   ?? `${SITE.url}/${slug}`;
   <body class="bg-[var(--color-bg)]">
     <Header />
 
-    <main class="mx-auto max-w-2xl px-4 py-12 sm:px-6">
+    <main class="mx-auto max-w-2xl px-4 py-6 sm:py-12 sm:px-6">
       <!-- Breadcrumb -->
-      <nav class="mb-6 flex items-center gap-1.5 text-sm text-[var(--color-text-muted)]" aria-label="Ruta">
+      <nav class="mb-6 hidden sm:flex items-center gap-1.5 text-sm text-[var(--color-text-muted)]" aria-label="Ruta">
         <a href="/" class="hover:text-[var(--color-text)] transition-colors">{SITE.name}</a>
         <span aria-hidden="true">/</span>
         <span class="text-[var(--color-text-secondary)]">{title.split('—')[0].trim()}</span>

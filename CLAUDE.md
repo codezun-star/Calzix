@@ -43,7 +43,11 @@ calzix/
 │   ├── pages/                   # Páginas Astro (una por calculadora + legales)
 │   │   ├── index.astro          # Homepage con tabs por dominio
 │   │   ├── privacidad.astro / terminos.astro / cookies.astro
-│   │   └── aviso-legal.astro / contacto.astro
+│   │   ├── aviso-legal.astro / contacto.astro
+│   │   ├── offline.astro        # Pantalla "Sin conexión" (la sirve el service worker)
+│   │   ├── search-index.json.ts # Índice del buscador de la app (generado desde CALCS)
+│   │   ├── manifest.webmanifest.ts # Manifiesto PWA
+│   │   └── icons/sprite.svg.ts  # Sprite con los iconos Lucide de la interfaz de la app
 │   ├── components/
 │   │   ├── ads/                 # Sistema de publicidad (ver sección "Publicidad")
 │   │   │   ├── AdEngine.astro   # Motor: carga diferida, formato por dispositivo, sticky
@@ -52,26 +56,38 @@ calzix/
 │   │   │   ├── AdRail.astro     # Columna lateral fija (>= 1280px)
 │   │   │   └── AdSticky.astro   # Barra inferior en móvil/tablet
 │   │   ├── layout/
-│   │   │   ├── Header.astro          # Nav: Inicio + 5 categorías
+│   │   │   ├── AppHead.astro         # <head> común: viewport, manifiesto PWA, iconos, theme-color
+│   │   │   ├── Header.astro          # Barra superior tipo app (< 1280px) + menú de escritorio
+│   │   │   ├── AppTabBar.astro       # Barra de pestañas inferior (< 1280px)
+│   │   │   ├── AppSheets.astro       # Hojas deslizables: buscador, categorías y "Más"
 │   │   │   ├── Footer.astro          # Links por categoría
 │   │   │   ├── CalcLayout.astro      # Wrapper: SEO + breadcrumb + relacionadas + FAQs
 │   │   │   └── LegalLayout.astro     # Wrapper páginas legales
 │   │   ├── tools/               # Un componente React por calculadora
 │   │   └── ui/
 │   │       ├── HomeCalcs.tsx    # Tabs del home (finanzas/salud/matematicas/conversion/fecha)
-│   │       └── CalcCard.tsx     # Card del home (registra iconos Lucide)
+│   │       ├── CalcCard.tsx     # Card del home (registra iconos Lucide)
+│   │       ├── groupIcons.ts    # Icono Lucide de cada uno de los 9 grupos
+│   │       ├── appIcons.ts      # Iconos Lucide de la interfaz de la app (sprite)
+│   │       └── Icon.astro       # <Icon name="…" />: icono del sprite /icons/sprite.svg
+│   ├── scripts/
+│   │   └── app-shell.ts         # Lógica de la app: hojas, buscador, recientes, PWA, service worker
 │   ├── lib/
 │   │   ├── utils/
 │   │   │   ├── format.ts        # formatNumber(), formatCurrency(), formatPercent(), formatScientific()
 │   │   │   └── download.ts      # triggerDownload(), downloadText(), downloadCsv()
 │   │   └── constants/
 │   │       ├── ads.ts           # Claves, formatos y emplazamientos de publicidad
+│   │       ├── app.ts           # Populares del buscador, enlaces de "Más", tipos de la app
 │   │       ├── calcs.ts         # Metadata de las calculadoras — CalcMeta + CalcDomain
 │   │       └── seo.ts           # Títulos, descriptions, canonicals + SITE object
 │   └── styles/
 │       └── global.css           # @import "tailwindcss" + @theme con tokens de diseño
 ├── public/
 │   ├── favicon.svg / robots.txt
+│   ├── sw.js                    # Service worker (uso sin conexión)
+│   ├── _headers                 # Cabeceras de Cloudflare Pages (sw.js y manifiesto sin caché)
+│   └── icons/                   # Iconos de la app (node scripts/generate-icons.mjs)
 ├── astro.config.mjs
 ├── tsconfig.json
 └── package.json
@@ -290,6 +306,37 @@ El JSON resultante parsea idéntico al original, pero evita dos problemas reales
 
 ---
 
+## App móvil (PWA)
+
+Por debajo de **1280px** (móvil y tablet) el sitio se comporta como una app nativa. A partir de
+1280px se mantiene el diseño de escritorio con el menú horizontal.
+
+| Pieza | Dónde vive | Qué hace |
+|---|---|---|
+| Barra superior | `Header.astro` | Botón "atrás" a la pantalla padre, título que aparece al desplazar (cuando el H1 sale de pantalla), buscar y compartir. El contexto se **deduce de la URL**: ninguna página pasa props (`title` y `back` permiten forzarlo) |
+| Barra de pestañas | `AppTabBar.astro` | Inicio · Categorías · Buscar · Blog · Más. Se retira sola mientras el teclado está abierto |
+| Hojas deslizables | `AppSheets.astro` | `<dialog>` modales: se cierran con Escape, gesto "atrás" de Android, toque fuera o arrastrando hacia abajo. En >= 768px se abren como ventana centrada |
+| Buscador | `AppSheets.astro` + `app-shell.ts` | Descarga `/search-index.json` al abrirse. Sin acentos, con plurales y palabras vacías ("calcular el iva" = "iva"). Atajos: `Ctrl/Cmd + K` y `/`. `/#buscar` lo abre |
+| Recientes | `app-shell.ts` | Cada calculadora visitada se guarda en `localStorage` (`calzix:recent`, máx. 8). Se muestran en el buscador, en el inicio ("Seguir calculando") y en `/offline` |
+| PWA instalable | `manifest.webmanifest.ts` + `AppHead.astro` | Pantalla completa (`standalone`), accesos directos (buscar, hipoteca, porcentaje, IVA). "Instalar la app" en la hoja "Más" (Android: diálogo nativo; iOS: instrucciones) |
+| Uso sin conexión | `public/sw.js` | Páginas: primero la red (copia guardada como respaldo, o si la red tarda > 4 s). `/_astro/*`: primero la caché. Terceros (anuncios): nunca se tocan. Sin red ni copia → `/offline` |
+| Transiciones | `global.css` | `@view-transition` entre páginas (Chrome/Safari recientes; en el resto no cambia nada). Respeta `prefers-reduced-motion` |
+| Precarga | `astro.config.mjs` | `prefetch` con estrategia `hover`: la página de destino se descarga al pasar el ratón por el enlace |
+
+### Reglas
+
+1. **Toda página con `<head>` propio incluye `<AppHead />`** (sustituye a la etiqueta `viewport`) y el `<Header />`. Sin ellos no hay barra inferior, hojas ni PWA.
+2. **Añadir una calculadora no requiere nada más**: el índice del buscador, las categorías y las recientes salen de `CALCS`.
+3. **Iconos de la interfaz de la app**: `<Icon name="…" />` (sprite compartido `/icons/sprite.svg`, generado desde `lucide-react`). Para uno nuevo, añadirlo en `src/components/ui/appIcons.ts`. Dentro de componentes React se sigue usando `lucide-react` directamente. Ojo: en `.astro`, un componente de `lucide-react` recibe las clases con `className`, no con `class`.
+4. **Estilos de componente en `@layer components`** (`global.css`): así las utilidades de Tailwind (`xl:hidden`…) siguen mandando. Una regla fuera de capa gana a cualquier utilidad.
+5. Los `:hover` de la app van dentro de `@media (hover: hover)`: en pantallas táctiles el hover se queda "pegado" tras el toque.
+6. En pantallas táctiles los campos `text-xs`/`text-sm` pasan a 16px para que iOS no amplíe la página al enfocarlos.
+7. **Al cambiar la lógica de `public/sw.js`, subir `VERSION`**: el navegador instala el nuevo service worker y borra las cachés antiguas. El service worker solo se registra en producción.
+8. Iconos de pantalla de inicio: `node scripts/generate-icons.mjs` (192, 512, maskable 512 y `apple-touch-icon` 180).
+9. Variables CSS útiles: `--app-header-h` (alto de la barra superior con zona segura) y `--app-tabbar-h` (alto de la barra inferior; `0px` desde 1280px). Cualquier elemento `sticky`/`fixed` nuevo debe apoyarse en ellas.
+
+---
+
 ## Publicidad
 
 Toda la publicidad del sitio se configura en **`src/lib/constants/ads.ts`**. Ninguna página
@@ -315,6 +362,9 @@ lleva claves ni scripts de anuncios escritos a mano.
 | `<AdRail />` | Rascacielos 160x600 + 160x300 fijos en la columna lateral |
 | `<AdNative />` | Banner nativo. **Solo uno por página** (el proveedor usa un id fijo) |
 | `<AdEngine />` | Motor + social bar + barra fija. Va en el `Footer`, se monta una vez por página |
+
+La barra fija de anuncios se apoya sobre la barra de pestañas de la app (`bottom: var(--app-tabbar-h)`)
+y se retira junto con ella mientras el teclado está abierto.
 
 ### Cómo funciona el motor
 
@@ -421,7 +471,7 @@ El sitemap es **completamente automático** — generado por `@astrojs/sitemap` 
 
 - Cada nueva calculadora (nuevo `.astro` en `src/pages/`) aparece automáticamente en el siguiente deploy.
 - Las páginas de paginación (`/matematicas/2`, `/matematicas/3`…) también se incluyen solas.
-- Las páginas legales están **excluidas** del sitemap (filtro en `astro.config.mjs`) porque tienen `noindex`.
+- Las páginas legales y `/offline` están **excluidas** del sitemap (filtro en `astro.config.mjs`) porque tienen `noindex`.
 - Límite: 50.000 URLs por archivo. Con 900+ calculadoras seguirá siendo un solo archivo.
 - URL del sitemap: `https://calzix.com/sitemap-index.xml`
 
@@ -453,7 +503,7 @@ npm run build    # Build de producción → dist/
 npm run preview  # Preview del build local
 ```
 
-**El build genera actualmente 321 páginas HTML estáticas** (home + 5 legales + 9 categorías + 272 calculadoras + índice de blog + 33 artículos) más el endpoint `/llms.txt`.
+**El build genera actualmente 322 páginas HTML estáticas** (home + 5 legales + `/offline` + 9 categorías + 272 calculadoras + índice de blog + 33 artículos) más los endpoints `/llms.txt`, `/search-index.json`, `/manifest.webmanifest` e `/icons/sprite.svg`.
 Actualizar este contador al añadir calculadoras. El número real de calculadoras es siempre `CALCS.length` en `src/lib/constants/calcs.ts`.
 
 ---
@@ -462,6 +512,7 @@ Actualizar este contador al añadir calculadoras. El número real de calculadora
 
 | Fecha | Acción |
 |---|---|
+| 2026-09-28 | **Experiencia de app nativa en móvil y PWA.** Por debajo de 1280px: barra superior con botón "atrás" a la pantalla padre, título que aparece al desplazar y botón de compartir; barra de pestañas inferior (Inicio · Categorías · Buscar · Blog · Más); hojas deslizables (`<dialog>`) con buscador instantáneo (`/search-index.json`, sin acentos, atajos `Ctrl+K` y `/`), rejilla de categorías y menú "Más" (instalar app, compartir, legales). Calculadoras recientes en `localStorage` (buscador, "Seguir calculando" en el inicio y `/offline`). PWA instalable (`manifest.webmanifest`, iconos en `public/icons/` con `scripts/generate-icons.mjs`) y `public/sw.js` para uso sin conexión, con pantalla `/offline` (+1 página, fuera del sitemap). Transiciones entre páginas (`@view-transition`), precarga al pasar el ratón (`prefetch`), respuesta táctil al pulsar, campos a 16px en pantallas táctiles (iOS ya no amplía al enfocar) y barra inferior oculta con el teclado abierto. Tarjetas de calculadora como filas de lista en móvil, cabeceras compactas y migas sustituidas por el botón "atrás". Nuevo `<AppHead />` en todas las páginas. Arreglos: el menú de escritorio desbordaba entre 768 y 1279px (scroll horizontal), ahora aparece desde 1280px; el inicio cargaba ya desplazado en móvil (`scrollIntoView` de las pestañas). Build: 322 páginas. |
 | 2026-09-23 | Popunder del proveedor añadido sin volverlo intrusivo. Nuevas constantes en `ads.ts` (`ADS_POPUNDER`, `AD_POPUNDER_SRC`, `AD_POPUNDER_DELAY`, `AD_POPUNDER_EVERY_HOURS`, `AD_POPUNDER_EXCLUDED`) y carga gestionada por `AdEngine`: espera al `load` + `requestIdleCallback` + 8 s, se salta las cinco páginas legales/contacto, aguarda si la pestaña está en segundo plano y se limita a una vez cada 6 h por visitante vía `localStorage`. De paso, la social bar pasa a respetar `ADS_ENABLED` (antes solo miraba `ADS_SOCIAL_BAR`, contra lo documentado). Build: 321 páginas. |
 | 2026-08-28 | Publicidad en todo el sitio. Nuevo `src/lib/constants/ads.ts` (claves, formatos, emplazamientos e interruptores) y cinco componentes en `src/components/ads/`: `AdSlot` (banner responsive en iframe aislado), `AdNative`, `AdRail` (columna lateral >= 1280px), `AdSticky` (barra inferior descartable) y `AdEngine` (motor + social bar, montado desde el `Footer`). Cada anuncio vive en su propio iframe con su `atOptions`, de modo que conviven varias unidades por página; carga diferida por proximidad al viewport, formato elegido según el ancho real, altura reservada por breakpoint (sin CLS) y retirada automática del hueco si el proveedor no devuelve anuncio. Emplazamientos en calculadoras, home, las 9 categorías, blog (índice y artículo, con rectángulos intercalados entre párrafos) y cierre + barra fija en todo el sitio vía `Footer`. `/privacidad` y `/cookies` actualizadas: ya no afirman que no hay scripts de terceros y detallan las cookies publicitarias y cómo bloquearlas. Build: 321 páginas. |
 | 2026-08-06 | Ampliación: +2 calculadoras y +2 artículos. **Hogar › Hipoteca y alquiler**: `interes-compuesto` (`InteresCompuestoTool.tsx`) — capital final, aportaciones, intereses y evolución año a año con capitalización anual, trimestral o mensual. **Conversión › Tiempo y duración**: `calculadora-edad` (`CalculadoraEdadTool.tsx`) — edad exacta en años, meses y días, totales en meses/semanas/días/horas, día de la semana del nacimiento y cuenta atrás al cumpleaños. Ambas con entrada en `calcs.ts` y `seo.ts`, página con `answer`/`howTo`/6 FAQs e imagen OG (`node scripts/generate-og.mjs`). Iconos Lucide reutilizados (`PiggyBank`, `CalendarDays`): sin cambios en `CalcCard.tsx`. Blog: `interes-compuesto-como-funciona` y `calcular-la-edad-exacta`. Total: 272 calculadoras y 33 artículos. Build: 321 páginas. |

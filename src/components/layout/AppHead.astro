@@ -1,0 +1,19 @@
+---
+// Etiquetas comunes del <head> para que el sitio se comporte como una app en
+// el móvil: viewport a pantalla completa (muescas y barra de inicio incluidas),
+// manifiesto PWA instalable, iconos de pantalla de inicio y color de la barra
+// del sistema. Se incluye en todos los layouts y páginas con <head> propio.
+import { SITE } from '@/lib/constants/seo';
+---
+
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#FFFFFF" />
+<meta name="color-scheme" content="only light" />
+<meta name="format-detection" content="telephone=no" />
+<link rel="manifest" href="/manifest.webmanifest" />
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+<meta name="application-name" content={SITE.name} />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content={SITE.name} />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />

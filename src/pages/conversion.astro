@@ -5,6 +5,7 @@ import CalcGrid from '@/components/ui/CalcGrid';
 import { CALC_GROUPS, CALCS } from '@/lib/constants/calcs';
 import { PAGE_SEO, SITE } from '@/lib/constants/seo';
 import '@/styles/global.css';
+import AppHead from '@/components/layout/AppHead.astro';
 import AdSlot from '@/components/ads/AdSlot.astro';
 import AdNative from '@/components/ads/AdNative.astro';
 
@@ -18,7 +19,7 @@ const seo = PAGE_SEO['conversion'];
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <AppHead />
     <title>{seo.title}</title>
     <meta name="description" content={seo.description} />
     <link rel="canonical" href={seo.canonical} />
@@ -36,18 +37,18 @@ const seo = PAGE_SEO['conversion'];
     <Header />
 
     <div class="bg-[var(--color-text)]">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10">
-        <nav class="flex items-center gap-2 text-xs text-[var(--color-text-muted)] mb-6">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
+        <nav class="hidden sm:flex items-center gap-2 text-xs text-[var(--color-text-muted)] mb-6">
           <a href="/" class="hover:text-white transition-colors">Inicio</a>
           <span>/</span>
           <span style="color: var(--color-accent);">{group.label}</span>
         </nav>
         <div class="flex items-start justify-between gap-6 flex-wrap">
           <div>
-            <h1 class="text-4xl sm:text-5xl font-extrabold text-white leading-tight mb-3">
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight mb-2 sm:mb-3">
               Conversores de Unidades
             </h1>
-            <p class="text-[var(--color-text-muted)] text-base max-w-xl leading-relaxed">
+            <p class="text-[var(--color-text-muted)] text-sm sm:text-base max-w-xl leading-relaxed">
               {group.description}
             </p>
           </div>
@@ -60,9 +61,9 @@ const seo = PAGE_SEO['conversion'];
       </div>
     </div>
 
-    <main class="bg-[var(--color-calcs-bg)] border-b border-[var(--color-calcs-border)] py-10 min-h-[60vh]">
+    <main class="bg-[var(--color-calcs-bg)] border-b border-[var(--color-calcs-border)] py-6 sm:py-10 min-h-[60vh]">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <AdSlot placement="horizontal" class="mb-8" />
+        <AdSlot placement="horizontal" class="mb-6 sm:mb-8" />
 
         <CalcGrid groupSlug="conversion" client:load />
 

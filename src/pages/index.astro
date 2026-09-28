@@ -5,11 +5,24 @@ import HomeCalcs from '@/components/ui/HomeCalcs';
 import { PAGE_SEO, SITE } from '@/lib/constants/seo';
 import { CALCS, CALC_GROUPS } from '@/lib/constants/calcs';
 import '@/styles/global.css';
+import AppHead from '@/components/layout/AppHead.astro';
 import { jsonLd } from '@/lib/utils/jsonld';
 import AdSlot from '@/components/ads/AdSlot.astro';
 import AdNative from '@/components/ads/AdNative.astro';
+import Icon from '@/components/ui/Icon.astro';
 
 const seo = PAGE_SEO.home;
+
+// Rejilla de categorías tipo "pantalla de inicio" (solo móvil)
+const groupTiles = CALC_GROUPS.map((g) => {
+  const ids = new Set(g.domains.map((d) => d.id));
+  return {
+    id: g.id,
+    slug: g.slug,
+    label: g.label,
+    count: CALCS.filter((c) => ids.has(c.domain)).length,
+  };
+});
 
 const homeGraph = jsonLd({
   '@context': 'https://schema.org',
@@ -85,7 +98,7 @@ const homeGraph = jsonLd({
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <AppHead />
     <title>{seo.title}</title>
     <meta name="description" content={seo.description} />
     <link rel="canonical" href={seo.canonical} />
@@ -127,20 +140,32 @@ const homeGraph = jsonLd({
       <section class="relative overflow-hidden" style="background: linear-gradient(135deg, #0A1E14 0%, #0D2B1A 60%, #0F3820 100%);">
         <div class="absolute bottom-0 left-0 right-0 h-24" style="background: linear-gradient(to bottom, transparent, var(--color-bg))"></div>
 
-        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-28">
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 pt-7 pb-10 sm:py-28">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/15 border border-white/25 text-white text-sm font-medium mb-6">
+              <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/15 border border-white/25 text-white text-xs sm:text-sm font-medium mb-4 sm:mb-6">
                 100% gratis · Sin registro · Sin límites
               </div>
-              <h1 class="text-4xl sm:text-5xl font-extrabold text-white leading-[1.1] tracking-tight">
+              <h1 class="text-[2rem] sm:text-5xl font-extrabold text-white leading-[1.1] tracking-tight">
                 Calculadoras<br />
                 <span style="color: #6EE09A;">online gratuitas</span>
               </h1>
-              <p class="aeo-answer mt-5 text-lg text-white/80 leading-relaxed max-w-lg">
+              <p class="aeo-answer mt-3 sm:mt-5 text-base sm:text-lg text-white/80 leading-relaxed max-w-lg">
                 {CALCS.length} calculadoras gratuitas de matemáticas, ciencias, conversión de unidades, hogar, trabajo, educación, viaje, naturaleza y ocio. Resultados al instante, sin registro y con el cálculo hecho en tu propio navegador.
               </p>
-              <div class="mt-8 flex flex-wrap gap-3">
+              <!-- Buscador (abre la hoja de búsqueda) -->
+              <button
+                type="button"
+                data-app-open="search"
+                aria-haspopup="dialog"
+                class="app-press mt-6 sm:mt-8 flex w-full max-w-lg items-center gap-3 rounded-2xl bg-white px-4 h-[3.25rem] text-left shadow-lg cursor-pointer"
+              >
+                <Icon name="search" size={20} strokeWidth={2.25} class="text-[var(--color-accent)]" />
+                <span class="flex-1 truncate text-[var(--color-text-muted)]">Buscar entre {CALCS.length} calculadoras</span>
+                <kbd class="hidden xl:inline-flex items-center rounded-md border border-[var(--color-border)] px-1.5 py-0.5 text-xs font-sans text-[var(--color-text-muted)]">Ctrl K</kbd>
+              </button>
+
+              <div class="mt-6 hidden sm:flex flex-wrap gap-3">
                 <a href="#matematicas" class="px-6 py-3 rounded-xl font-semibold text-white transition-colors shadow-lg" style="background: var(--color-accent);">
                   Ver calculadoras
                 </a>
@@ -186,7 +211,7 @@ const homeGraph = jsonLd({
       </section>
 
       <!-- Trust bar -->
-      <div class="border-y border-[var(--color-border)] bg-white">
+      <div class="hidden sm:block border-y border-[var(--color-border)] bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4">
           <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-sm font-medium text-[var(--color-text-secondary)]">
             <span>Sin registro</span>
@@ -195,6 +220,28 @@ const homeGraph = jsonLd({
           </div>
         </div>
       </div>
+
+      <!-- Recientes: las rellena src/scripts/app-shell.ts desde localStorage -->
+      <section class="max-w-6xl mx-auto px-4 sm:px-6 pt-5 sm:pt-8" data-recent-section="chips" hidden>
+        <h2 class="app-sheet-heading mx-0 mt-0"><Icon name="history" size={14} strokeWidth={2.25} /> Seguir calculando</h2>
+        <ul class="app-chips" data-recent-list></ul>
+      </section>
+
+      <!-- Categorías tipo pantalla de inicio (móvil) -->
+      <nav class="sm:hidden max-w-6xl mx-auto px-4 pt-5" aria-label="Categorías">
+        <h2 class="app-sheet-heading mx-0 mt-0">Categorías</h2>
+        <ul class="grid grid-cols-3 gap-2">
+          {groupTiles.map((g) => (
+            <li>
+              <a href={`/${g.slug}`} class="app-tile app-press bg-white border-[var(--color-calcs-border)]">
+                <span class="app-tile-icon bg-[var(--color-calcs-bg)] shadow-none"><Icon name={`g-${g.id}`} size={22} strokeWidth={1.8} /></span>
+                <span class="app-tile-label">{g.label}</span>
+                <span class="app-tile-count">{g.count} calculadoras</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
 
       <!-- Anuncio sobre el catálogo de calculadoras -->
       <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-8">
@@ -212,8 +259,8 @@ const homeGraph = jsonLd({
       </div>
 
       <!-- CTA bottom -->
-      <section class="max-w-6xl mx-auto px-4 sm:px-6 py-20 text-center">
-        <h2 class="text-3xl font-extrabold text-[var(--color-text)]">Todo gratis, para siempre</h2>
+      <section class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-20 text-center">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-[var(--color-text)]">Todo gratis, para siempre</h2>
         <p class="mt-3 text-[var(--color-text-secondary)] max-w-md mx-auto">
           Sin descargas, sin registro. Resultados al instante directamente en tu navegador.
         </p>

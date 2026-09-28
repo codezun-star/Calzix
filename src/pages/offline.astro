@@ -1,0 +1,58 @@
+---
+// Pantalla "Sin conexión". La sirve el service worker (public/sw.js) cuando no
+// hay red y la página pedida no está guardada. Sin publicidad (no hay red para
+// pedirla), sin indexar y fuera del sitemap.
+import Header from '@/components/layout/Header.astro';
+import { SITE } from '@/lib/constants/seo';
+import '@/styles/global.css';
+import AppHead from '@/components/layout/AppHead.astro';
+import { RotateCw, WifiOff } from 'lucide-react';
+
+const title = `Sin conexión — ${SITE.name}`;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <AppHead />
+    <title>{title}</title>
+    <meta name="description" content="No hay conexión a Internet. Las calculadoras que ya has abierto siguen funcionando sin red." />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <Header />
+
+    <main class="max-w-xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
+      <div class="text-center">
+        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-[var(--color-calcs-bg)] text-[var(--color-calcs-icon)]">
+          <WifiOff size={30} strokeWidth={1.8} aria-hidden="true" />
+        </div>
+        <h1 class="mt-5 text-2xl sm:text-3xl font-extrabold text-[var(--color-text)]">Sin conexión</h1>
+        <p class="mt-2 text-[var(--color-text-secondary)]">
+          Esta página todavía no está guardada en tu dispositivo. Las calculadoras que ya has abierto
+          funcionan sin red, porque todos los cálculos se hacen en tu navegador.
+        </p>
+        <button
+          type="button"
+          class="app-press mt-6 inline-flex items-center gap-2 rounded-xl bg-[var(--color-accent)] px-5 py-3 text-sm font-semibold text-white hover:bg-[var(--color-accent-hover)] transition-colors cursor-pointer"
+          data-offline-retry
+        >
+          <RotateCw size={16} strokeWidth={2.25} aria-hidden="true" />
+          Reintentar
+        </button>
+      </div>
+
+      <section class="mt-10" data-recent-section="rows" hidden>
+        <h2 class="app-sheet-heading">Disponibles sin conexión</h2>
+        <ul class="app-list rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-1.5" data-recent-list></ul>
+      </section>
+    </main>
+
+    <script>
+      document.querySelector('[data-offline-retry]')?.addEventListener('click', () => location.reload());
+      window.addEventListener('online', () => location.reload());
+    </script>
+  </body>
+</html>

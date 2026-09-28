@@ -22,6 +22,8 @@ import {
   Droplets, Sun, Recycle,
   // Ocio
   Star, Hash, Moon,
+  // Navegación (no es un icono de calculadora)
+  ChevronRight,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import type { CalcMeta } from '@/lib/constants/calcs';
@@ -51,11 +53,13 @@ export default function CalcCard({ calc }: Props) {
   const Icon = ICONS[calc.icon] ?? SquareFunction;
 
   return (
+    // En móvil es una fila de lista (icono, texto y flecha), como en una app;
+    // desde 640px vuelve a ser una tarjeta.
     <a
       href={`/${calc.slug}`}
-      className="group flex flex-col gap-3 rounded-2xl border border-[var(--color-calcs-border)] bg-[var(--color-surface)] p-5 transition-all hover:border-[var(--color-accent)] hover:shadow-sm"
+      className="app-press group flex items-center gap-3.5 rounded-2xl border border-[var(--color-calcs-border)] bg-[var(--color-surface)] p-3.5 transition-all hover:border-[var(--color-accent)] hover:shadow-sm sm:flex-col sm:items-start sm:gap-3 sm:p-5"
     >
-      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--color-calcs-bg)]">
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--color-calcs-bg)]">
         <Icon
           size={20}
           strokeWidth={1.75}
@@ -63,14 +67,16 @@ export default function CalcCard({ calc }: Props) {
         />
       </div>
 
-      <div>
+      <div className="min-w-0 flex-1">
         <h3 className="text-sm font-semibold text-[var(--color-text)] leading-snug">
           {calc.name}
         </h3>
-        <p className="mt-0.5 text-xs text-[var(--color-text-secondary)] leading-relaxed line-clamp-2">
+        <p className="mt-0.5 text-xs text-[var(--color-text-secondary)] leading-relaxed line-clamp-1 sm:line-clamp-2">
           {calc.description}
         </p>
       </div>
+
+      <ChevronRight size={18} aria-hidden="true" className="shrink-0 text-[var(--color-text-muted)] sm:hidden" />
     </a>
   );
 }
