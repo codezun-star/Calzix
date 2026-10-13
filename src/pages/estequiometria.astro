@@ -4,40 +4,34 @@ import EstequiometriaTool from '@/components/tools/EstequiometriaTool';
 ---
 
 <CalcLayout slug="estequiometria"
-  whatIs="La estequiometría estudia las proporciones cuantitativas de reactivos y productos en una reacción química. Esta calculadora permite calcular cuántos gramos o moles de producto se obtienen a partir de una cantidad conocida de reactivo, usando los coeficientes estequiométricos de la ecuación balanceada. Introduce los coeficientes del reactivo y del producto, la masa molar de cada uno y la cantidad de reactivo (en gramos o moles), y obtendrás los moles de reactivo, los moles de producto y la masa del producto en gramos."
-  whyUse="La estequiometría es el núcleo de la química cuantitativa: sin ella no es posible calcular rendimientos industriales, dosificar reactivos en síntesis farmacéutica, controlar emisiones de CO₂ en combustiones o dimensionar reactores químicos. Es contenido obligatorio en el segundo año de bachillerato y en los cursos de química general de todas las universidades latinoamericanas. Aparece en el COMIPEMS, ICFES, PSU/PAES, ENEM (Brasil) y admisiones de ingeniería química, farmacia y ciencias en toda la región."
+  answer={"En estequiometría, los coeficientes de la reacción ajustada indican la proporción en moles. En 2 H₂ + O₂ → 2 H₂O, 4 g de hidrógeno (2 mol) producen 2 mol de agua, es decir, 2 × 18 = 36 g. El cálculo sigue siempre el camino gramos → moles → moles → gramos."}
+  howTo={[
+    "Introduce los coeficientes del reactivo y del producto en la ecuación ajustada.",
+    "Introduce las masas molares de ambos.",
+    "Escribe la cantidad de reactivo, elige si está en gramos o en moles y pulsa calcular."
+  ]}
+  whatIs={"La calculadora de estequiometría calcula la cantidad de producto que se obtiene a partir de una cantidad de reactivo, usando los coeficientes de la ecuación química ajustada y las masas molares."}
+  whyUse={"Sirve para resolver los problemas de cálculos estequiométricos de Física y Química de 4.º de ESO, 1.º de Bachillerato y la PAU, y para preparar reacciones en el laboratorio."}
   faqs={[
     {
-      q: '¿Qué es la estequiometría y cómo se leen los coeficientes de una ecuación?',
-      a: 'La estequiometría (del griego: stoicheion=elemento, metron=medida) estudia las proporciones cuantitativas en reacciones químicas. En una ecuación balanceada como 2H₂ + O₂ → 2H₂O, los coeficientes (2, 1, 2) representan la proporción MOLAR: 2 mol de H₂ reaccionan con 1 mol de O₂ para producir 2 mol de H₂O. En ningún caso representan gramos directamente. Por eso el primer paso de cualquier cálculo estequiométrico es convertir gramos a moles (n = m/M) antes de aplicar la proporción molar. El segundo paso es aplicar el factor molar (coeficiente_producto / coeficiente_reactivo). El tercer paso es convertir moles de producto a gramos si se necesita.'
+      q: "¿Qué es la estequiometría?",
+      a: "Es el cálculo de las cantidades de reactivos y productos en una reacción química, basado en la ley de conservación de la masa de Lavoisier y en las proporciones fijas de la ecuación ajustada. Se estudia en Física y Química de la ESO y del Bachillerato, según los currículos de la LOMLOE, y es habitual en los exámenes de Física o de Química de la PAU.",
     },
     {
-      q: '¿Cómo calculo la masa de producto en una reacción química?',
-      a: 'Ejemplo completo: fabricación de amoniaco por el proceso Haber-Bosch (esencial para fertilizantes agrícolas en LATAM): N₂ + 3H₂ → 2NH₃. ¿Cuántos gramos de NH₃ se producen a partir de 28 g de N₂? Paso 1 — Moles de N₂: n = 28/28,014 ≈ 1,0 mol. Paso 2 — Proporción molar: 1 mol N₂ produce 2 mol NH₃. n_NH₃ = 1,0 × (2/1) = 2,0 mol. Paso 3 — Masa de NH₃: masa = 2,0 × 17,031 = 34,06 g. Verificación: 28 g N₂ + 6 g H₂ (3 mol × 2,016 g/mol) = 34 g → 34 g NH₃. ¡La masa se conserva! (ley de Lavoisier). Esta calculadora hace exactamente estos tres pasos automáticamente.'
+      q: "¿Por qué hay que ajustar la reacción?",
+      a: "Porque los átomos no se crean ni se destruyen: debe haber el mismo número de átomos de cada elemento a ambos lados. Sin ajustar, la proporción en moles sería incorrecta y todos los cálculos fallarían.",
     },
     {
-      q: '¿Qué es el reactivo limitante y el reactivo en exceso?',
-      a: 'En una reacción real, raramente los reactivos están en la proporción estequiométrica exacta. El reactivo limitante es el que se agota primero y determina la cantidad máxima de producto. El reactivo en exceso es el que sobra. Ejemplo: quemar 16 g de CH₄ (1 mol) con 64 g de O₂ (2 mol): CH₄ + 2O₂ → CO₂ + 2H₂O. Se necesitan 2 mol O₂ por 1 mol CH₄. Con 1 mol CH₄ y 2 mol O₂, los reactivos están exactamente en proporción (no hay exceso). Si hubiera 1 mol CH₄ y 3 mol O₂: el CH₄ (limitante) se agota produciendo 1 mol CO₂ y 2 mol H₂O, quedando 1 mol O₂ sin reaccionar. Para calcular con reactivo limitante: calcular el producto para cada reactivo por separado y quedarse con el menor resultado. Esta calculadora asume que el reactivo introducido es el limitante.'
+      q: "¿Qué es el reactivo limitante?",
+      a: "Es el reactivo que se agota primero y determina la cantidad máxima de producto. Para encontrarlo, calcula cuánto producto daría cada reactivo por separado: el que dé menos es el limitante.",
     },
     {
-      q: '¿Qué es el rendimiento de una reacción y cómo afecta los cálculos?',
-      a: 'El rendimiento (%) = (masa real obtenida / masa teórica calculada) × 100. La estequiometría calcula la masa TEÓRICA (rendimiento 100%). En la práctica, los rendimientos son menores por: pérdidas mecánicas (filtración, trasvase), reacciones secundarias, equilibrios incompletos, impurezas. Para obtener la masa real: masa_real = masa_teórica × (rendimiento/100). Ejemplos de rendimiento industrial: síntesis de amoniaco (Haber) ≈ 10-15% por paso (pero reciclado el N₂ y H₂ no reaccionados); fermentación de glucosa a etanol ≈ 90-95% (alta eficiencia — por eso Brasil produce etanol de caña tan eficientemente); síntesis de ácido sulfúrico (proceso Contact) ≈ 99%+. En química orgánica de síntesis de fármacos, rendimientos de 50-70% por etapa son frecuentes.'
+      q: "¿Qué es el rendimiento de una reacción?",
+      a: "Es el porcentaje de producto que se obtiene realmente frente al teórico: rendimiento = (real / teórico) × 100. En la práctica suele ser menor del 100 % por reacciones incompletas, pérdidas o reacciones secundarias.",
     },
     {
-      q: '¿Cómo se aplica la estequiometría en la agricultura latinoamericana?',
-      a: 'Los fertilizantes son el resultado directo de la estequiometría industrial. El proceso Haber-Bosch para amoniaco: N₂ + 3H₂ → 2NH₃. Brasil es el mayor consumidor de fertilizantes nitrogenados de LATAM (y uno de los mayores del mundo, por el Cerrado agrícola). De NH₃ se produce urea CO(NH₂)₂ mediante: 2NH₃ + CO₂ → CO(NH₂)₂ + H₂O. La urea contiene 46% N (la mayor concentración de N en fertilizantes sólidos). Para fertilizar una hectárea de maíz en México con 150 kg N/ha: se necesitan 150/0,46 ≈ 326 kg de urea. El fosfato diamónico (DAP, (NH₄)₂HPO₄) y el superfosfato triple también usan estequiometría para su producción y dosificación en la agricultura del maíz, soya, trigo y arroz de toda Latinoamérica.'
-    },
-    {
-      q: '¿Cómo aplica la estequiometría en la industria del petróleo en LATAM?',
-      a: 'La refinación de petróleo y la combustión de hidrocarburos usan estequiometría continuamente. Combustión completa del octano (componente principal de la gasolina): 2C₈H₁₈ + 25O₂ → 16CO₂ + 18H₂O. Masa molar del octano: 114,23 g/mol. Por cada mol de octano (114,23 g), se producen 8 mol CO₂ (352,08 g). Factor de emisión: 352,08/114,23 ≈ 3,08 kg CO₂ por kg de gasolina. Un auto que consume 10 L de gasolina (≈ 7,2 kg, densidad ≈ 720 g/L) emite: 7,2 × 3,08 ≈ 22 kg CO₂. Las refinerías de Pemex (México), Ecopetrol (Colombia), YPF (Argentina) y Petrobras (Brasil) usan estos cálculos para reportar emisiones de CO₂ bajo el Acuerdo de París.'
-    },
-    {
-      q: '¿Qué es la estequiometría en soluciones y cómo se calcula la titulación?',
-      a: 'En reacciones en solución, se trabaja con moles a partir de la concentración molar y el volumen: n = C × V (mol = mol/L × L). Una titulación ácido-base usa la estequiometría para calcular la concentración desconocida: HCl + NaOH → NaCl + H₂O (proporción 1:1). Si 25,0 mL de HCl desconocido se neutraliza con 30,5 mL de NaOH 0,1 M: n_NaOH = 0,0305 × 0,1 = 0,00305 mol. n_HCl = 0,00305 mol (proporción 1:1). C_HCl = 0,00305/0,025 = 0,122 M. Para reacciones con coeficientes distintos — H₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O: n_NaOH = 2 × n_H₂SO₄. Este tipo de cálculos aparece continuamente en los laboratorios de química analítica de las universidades de LATAM.'
-    },
-    {
-      q: '¿Cómo balanceo una ecuación química antes de hacer el cálculo estequiométrico?',
-      a: 'Una ecuación balanceada debe cumplir la ley de conservación de masa: el número de átomos de cada elemento es igual en reactivos y productos. Métodos de balanceo: (1) Inspección (tanteo): el más común en bachillerato. Ejemplo: Fe + O₂ → Fe₂O₃. Balancear O: 2Fe + 3/2 O₂ → Fe₂O₃ (o multiplicar por 2: 4Fe + 3O₂ → 2Fe₂O₃). (2) Algebraico: asignar coeficientes a, b, c... y resolver el sistema de ecuaciones. (3) Ión-electrón (redox): balancear por separado las semirreacciones de oxidación y reducción. En LATAM, el balanceo por inspección es suficiente para los problemas del COMIPEMS, ICFES y PSU. Esta calculadora asume que la ecuación ya está balanceada y el usuario introduce los coeficientes correctos.'
+      q: "¿Y si hay gases o disoluciones?",
+      a: "Convierte primero a moles: para gases, con PV = nRT (o 22,4 L/mol en condiciones normales); para disoluciones, con n = M × V. Después aplica la proporción estequiométrica.",
     },
   ]}
 >

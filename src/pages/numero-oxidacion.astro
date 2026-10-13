@@ -4,40 +4,34 @@ import NumeroOxidacionTool from '@/components/tools/NumeroOxidacionTool';
 ---
 
 <CalcLayout slug="numero-oxidacion"
-  whatIs="El número de oxidación (NOx o estado de oxidación) es una carga hipotética que adquiere un átomo en un compuesto si todos los enlaces fueran iónicos. Se usa para seguir la transferencia de electrones en reacciones redox y para nombrar compuestos de metales de transición. Esta herramienta tiene dos secciones: (1) Reglas generales para asignar NOx a los elementos más comunes (O, H, F, metales alcalinos, alcalinotérreos, Cl, N, C, S) con sus excepciones; (2) Tabla de ejemplos de compuestos comunes con sus números de oxidación calculados."
-  whyUse="Los números de oxidación son la base de las reacciones de oxidación-reducción (redox), que incluyen la corrosión de metales, la producción de energía en baterías y pilas de combustible, la electrólisis (galvanotecnia, refinación de cobre), el metabolismo celular y la fotosíntesis. En Latinoamérica, la minería, la industria galvánica, la galvanoplastia y el tratamiento de aguas residuales usan reacciones redox masivamente. Es contenido de bachillerato y aparece en todos los exámenes de admisión universitaria de la región."
+  answer={"El número de oxidación se calcula aplicando reglas: los elementos libres tienen 0, el oxígeno suele tener −2 y el hidrógeno +1, y la suma en un compuesto neutro es 0. En el H₂SO₄: 2(+1) + S + 4(−2) = 0, así que el azufre tiene +6."}
+  howTo={[
+    "Consulta las reglas para asignar números de oxidación.",
+    "Revisa la tabla de números de oxidación de los elementos más comunes.",
+    "Aplica las reglas a tu compuesto para despejar el número de oxidación desconocido."
+  ]}
+  whatIs={"La herramienta de números de oxidación reúne las reglas para asignar estados de oxidación y los valores más habituales de los elementos, para formular y ajustar reacciones redox."}
+  whyUse={"Sirve para la formulación y nomenclatura inorgánica de la ESO y el Bachillerato y para el ajuste de reacciones redox, uno de los temas clásicos del examen de Química de la PAU."}
   faqs={[
     {
-      q: '¿Qué es el número de oxidación y por qué es una carga "hipotética"?',
-      a: 'El número de oxidación es una convención contable para rastrear electrones en reacciones químicas. Se asigna como si todos los enlaces fueran iónicos (aunque la mayoría son covalentes). La regla básica: los electrones compartidos se asignan al átomo más electronegativo. Ejemplo: en HCl, el Cl es más electronegativo → Cl se queda con ambos electrones del enlace → Cl actúa como Cl⁻ (NOx = −1) y H como H⁺ (NOx = +1). La "carga hipotética" no representa una carga real en la molécula (no hay iones en HCl puro), sino solo una convención de conteo de electrones. La suma de los NOx de todos los átomos en una molécula neutra siempre es cero; en un ión, la suma es igual a la carga del ión.'
+      q: "¿Qué reglas se usan?",
+      a: "Los elementos sin combinar tienen 0; los iones monoatómicos, su carga; el oxígeno, −2 (salvo en peróxidos, −1); el hidrógeno, +1 (salvo en hidruros metálicos, −1); los metales alcalinos, +1, y los alcalinotérreos, +2. La suma de todos los números de oxidación es igual a la carga total.",
     },
     {
-      q: '¿Cuáles son las reglas fundamentales para asignar números de oxidación?',
-      a: 'Reglas en orden de prioridad (cada regla tiene prioridad sobre las siguientes): (1) Elemento puro (O₂, Fe, Na): NOx = 0. (2) Ión monoatómico: NOx = carga del ión (Fe³⁺ → NOx = +3). (3) Flúor en compuestos: siempre −1 (es el más electronegativo). (4) Oxígeno en compuestos: −2 (excepción: peróxidos como H₂O₂ → −1; F₂O → +2). (5) Hidrógeno en compuestos: +1 (excepción: hidruros metálicos como NaH → −1). (6) Metales alcalinos (Li, Na, K, Rb, Cs): +1. (7) Metales alcalinotérreos (Be, Mg, Ca, Sr, Ba): +2. (8) La suma de NOx de todos los átomos = 0 (molécula) o = carga del ión. Con estas 8 reglas se calculan los NOx de la mayoría de los compuestos inorgánicos.'
+      q: "¿Para qué sirven en una reacción redox?",
+      a: "Para identificar qué especie se oxida (su número de oxidación aumenta) y cuál se reduce (disminuye), y para ajustar la reacción por el método del ion-electrón, que es el que se pide en Química de 2.º de Bachillerato y en la PAU.",
     },
     {
-      q: '¿Cómo calculo el número de oxidación de un elemento desconocido?',
-      a: 'Método: aplicar las reglas conocidas a todos los átomos y usar la condición de suma = 0 (o = carga del ión) para despejar el NOx desconocido. Ejemplo 1: KMnO₄ (permanganato de potasio). K = +1 (regla 6). O = −2 (regla 4). Suma = K + Mn + 4O = 0 → +1 + Mn + 4(−2) = 0 → Mn = +7. Ejemplo 2: Cr₂O₇²⁻ (dicromato). O = −2. 2Cr + 7(−2) = −2 → 2Cr = −2 + 14 = +12 → Cr = +6. Ejemplo 3: NH₄⁺. H = +1. N + 4(+1) = +1 → N = −3. Ejemplo 4: Fe₃O₄. O = −2. 3Fe + 4(−2) = 0 → 3Fe = +8 → Fe = +8/3 (mezcla de Fe²⁺ y Fe³⁺: 1 Fe²⁺ + 2 Fe³⁺ en la magnetita).'
+      q: "¿Qué nomenclatura se usa en España?",
+      a: "La de las recomendaciones de la IUPAC de 2005, que se enseña en la ESO y el Bachillerato: nomenclatura de composición con prefijos (trióxido de azufre) y con números de oxidación entre paréntesis (óxido de hierro(III)). La nomenclatura tradicional (-oso, -ico) se mantiene sobre todo para oxoácidos y oxosales.",
     },
     {
-      q: '¿Qué son las reacciones de oxidación-reducción (redox)?',
-      a: 'Una reacción redox es aquella en la que hay transferencia de electrones, reflejada como cambio de NOx. Oxidación: pérdida de electrones → aumento del NOx. Reducción: ganancia de electrones → disminución del NOx. Regla mnemotécnica OILRIG (del inglés): Oxidation Is Loss (of electrons); Reduction Is Gain. Agente oxidante: el que oxida a otro y se reduce él mismo (acepta electrones). Agente reductor: el que reduce a otro y se oxida él mismo (dona electrones). Ejemplo: Fe + Cu²⁺ → Fe²⁺ + Cu. El Fe pierde 2 electrones (se oxida de 0 a +2 → Fe es el agente reductor). El Cu²⁺ gana 2 electrones (se reduce de +2 a 0 → Cu²⁺ es el agente oxidante). Las reacciones redox incluyen la corrosión, la fotosíntesis, el metabolismo celular, la producción de energía en baterías y la galvanotecnia.'
+      q: "¿Puede un elemento tener varios números de oxidación?",
+      a: "Sí. Muchos elementos, sobre todo los metales de transición y los no metales, tienen varios: el hierro +2 y +3; el cobre +1 y +2; el azufre −2, +4 y +6; el nitrógeno de −3 a +5; el cloro −1, +1, +3, +5 y +7.",
     },
     {
-      q: '¿Cómo se nombran los compuestos usando el número de oxidación?',
-      a: 'La nomenclatura sistemática IUPAC y la tradicional (Stock) usan el NOx para diferenciar compuestos del mismo elemento con distintos estados de oxidación. Nomenclatura Stock: el NOx del metal se indica con número romano entre paréntesis. Ejemplos: FeCl₂ → cloruro de hierro(II); FeCl₃ → cloruro de hierro(III). Cu₂O → óxido de cobre(I); CuO → óxido de cobre(II). MnO₂ → dióxido de manganeso = óxido de manganeso(IV). Cr₂O₃ → óxido de cromo(III); CrO₃ → óxido de cromo(VI). Nomenclatura tradicional (usada en LATAM en bachillerato): usa prefijos -oso (menor NOx) y -ico (mayor NOx): FeCl₂ = cloruro ferroso; FeCl₃ = cloruro férrico. CuCl = cloruro cuproso; CuCl₂ = cloruro cúprico. Ambas nomenclaturas coexisten en los libros latinoamericanos de bachillerato.'
-    },
-    {
-      q: '¿Cómo aplica el número de oxidación en la minería latinoamericana?',
-      a: 'América Latina concentra una parte importante de la minería mundial. Los procesos metalúrgicos son esencialmente redox controlados por números de oxidación: (1) Refinación de cobre (Chile es el mayor productor mundial; Perú el 2°): CuFeS₂ (calcopirita) → oxidación → CuSO₄ (solución) → electrólisis → Cu metálico puro. El Cu pasa de NOx +2 en CuSO₄ a NOx 0 (reducción catódica). (2) Extracción de oro por cianurización (Colombia, Perú, Brasil): 4Au + 8CN⁻ + O₂ + 2H₂O → 4[Au(CN)₂]⁻ + 4OH⁻. Au pasa de 0 a +1 (oxidación). (3) Obtención de plata (México, 1er productor mundial): Ag₂S → tostación → Ag₂O → reducción con C → 2Ag. La plata pasa de +1 a 0. Entender los NOx de estos minerales es esencial para diseñar los flujos de proceso metalúrgico.'
-    },
-    {
-      q: '¿Cómo se balancea una reacción redox usando el método del ión-electrón?',
-      a: 'El método ión-electrón (o semirreacciones) es el más sistemático para balancear reacciones redox: Paso 1 — Identificar qué se oxida y qué se reduce (por los cambios de NOx). Paso 2 — Escribir las semirreacciones de oxidación y reducción por separado. Paso 3 — Balancear los átomos que cambian NOx. Paso 4 — Balancear O añadiendo H₂O (en solución acuosa). Paso 5 — Balancear H añadiendo H⁺ (medio ácido) u OH⁻ (medio básico). Paso 6 — Balancear cargas añadiendo electrones (e⁻). Paso 7 — Multiplicar las semirreacciones para igualar los e⁻ transferidos. Paso 8 — Sumar ambas semirreacciones y simplificar. Ejemplo: MnO₄⁻ + Fe²⁺ → Mn²⁺ + Fe³⁺ en medio ácido. La herramienta muestra los NOx para identificar qué se oxida/reduce; el balanceo completo queda a cargo del estudiante.'
-    },
-    {
-      q: '¿Cuáles son las reacciones redox más importantes en la industria y el ambiente en LATAM?',
-      a: 'Reacciones redox de impacto en Latinoamérica: (1) Corrosión del hierro (óxido de hierro): 4Fe + 3O₂ + 6H₂O → 4Fe(OH)₃ → 2Fe₂O₃·3H₂O. El Fe pasa de 0 a +3. La corrosión destruye infraestructura urbana e industrial en LATAM (≈ 3% del PIB en pérdidas según la OEA). (2) Producción de lejía/blanqueador (NaClO): Cl₂ + 2NaOH → NaCl + NaClO + H₂O. Cl pasa de 0 a −1 (en Cl⁻) y de 0 a +1 (en ClO⁻). La lejía doméstica (Clorox, Blancox, Ajax) se produce en plantas de toda LATAM. (3) Fotosíntesis: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂. El C pasa de +4 (en CO₂) a 0 (en glucosa), siendo reducido por la energía solar. La Amazonía brasileña y las selvas de Colombia y México son sumideros de carbono que realizan esta reacción a escala planetaria.'
+      q: "¿Cómo calculo el número de oxidación en un ion?",
+      a: "La suma debe ser igual a la carga del ion. En el ion permanganato, MnO₄⁻: Mn + 4(−2) = −1, así que el manganeso tiene +7.",
     },
   ]}
 >
