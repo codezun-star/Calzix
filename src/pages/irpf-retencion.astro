@@ -4,58 +4,64 @@ import IrpfRetencionTool from "@/components/tools/IrpfRetencionTool";
 ---
 
 <CalcLayout slug="irpf-retencion"
-  whatIs="La calculadora de IRPF calcula el impuesto sobre la renta anual, el tipo efectivo y la retención mensual orientativa de tu nómina a partir del salario bruto anual. Aplica la escala general estatal del IRPF 2026 de España (del 19 % al 47 %), la misma estructura de tramos vigente en los ejercicios 2021 a 2025. Las FAQs incluyen equivalentes para México (ISR), Colombia (retención en la fuente), Chile (impuesto único de segunda categoría) y Perú (impuesto a la renta de quinta categoría)."
-  whyUse="Contribuyentes, asesores fiscales, trabajadores autónomos y empleados en España usan esta calculadora para estimar su cuota de IRPF anual, comprobar si la retención de su nómina es correcta y planificar la declaración de la renta antes de que la Agencia Tributaria publique el borrador. Usuarios de México, Colombia, Chile y toda LATAM encontrarán en las FAQs las referencias completas a sus equivalentes locales con tramos, tasas y organismos tributarios de cada país."
+  answer="La retención de IRPF de 2026 en España se calcula restando al sueldo bruto las cotizaciones, 2.000 € de gastos y la reducción por rendimientos del trabajo, y aplicando la escala de retención (del 19 % al 47 %) menos la cuota de tu mínimo personal y familiar. Con 30.000 € brutos y sin hijos, el tipo de retención es del 16,42 %: unos 4.926 € al año."
+  howTo={[
+    'Introduce tu salario bruto anual y el tipo de contrato (indefinido o temporal de menos de un año).',
+    'Indica los hijos menores de 25 años a cargo, cuántos tienen menos de 3 años, tu edad y si compartes el mínimo por hijos con el otro progenitor.',
+    'Pulsa «Calcular retención» para ver tu tipo de retención, la retención mensual y el desglose del cálculo.',
+  ]}
+  whatIs="La calculadora de IRPF obtiene el tipo de retención que te corresponde en la nómina en 2026 siguiendo el algoritmo de la Agencia Tributaria (artículos 80 a 86 del Reglamento del IRPF): cotizaciones a la Seguridad Social, reducción por rendimientos del trabajo, escala de retención, mínimo personal y familiar, límite excluyente de retención y tope del 43 %. Muestra la retención anual y mensual, y avisa si tienes derecho a la nueva deducción para perceptores del salario mínimo."
+  whyUse="Úsala para comprobar si la retención de tu nómina es correcta, anticipar si la declaración de la Renta te saldrá a pagar o a devolver, decidir si pedir a tu empresa una retención mayor o comparar ofertas de empleo. Es especialmente útil al cambiar de trabajo, tener un hijo o pasar de un contrato temporal a uno indefinido."
   faqs={[
   {
-    q: "¿Que es el IRPF y como se estructura en Espana para 2026?",
-    a: "El IRPF (Impuesto sobre la Renta de las Personas Fisicas) es el impuesto que grava los ingresos de las personas fisicas en Espana. Es un impuesto progresivo, lo que significa que a mayores ingresos, mayor porcentaje se paga en el tramo adicional. Escala general de IRPF 2026 (sin cambios desde 2021): hasta 12.450 euros: 19 %; de 12.450 a 20.200 euros: 24 %; de 20.200 a 35.200 euros: 30 %; de 35.200 a 60.000 euros: 37 %; de 60.000 a 300.000 euros: 45 %; mas de 300.000 euros: 47 %. Tipos marginales autonómicos: las comunidades autónomas tienen competencia para fijar sus propios tipos adicionales, por lo que el tipo total (estatal + autonómico) varía según la region de residencia. Madrid tiene algunos de los tipos autonómicos más bajos de Espana, mientras que Cataluna y Valencia tienen tipos autonómicos más altos. Esta calculadora usa la escala general estatal. El tipo efectivo (porcentaje real pagado sobre el total de ingresos) es siempre menor que el tipo marginal (el del tramo más alto que alcanza el contribuyente) porque los tramos inferiores pagan tasas menores."
+    q: '¿Cuáles son los tramos del IRPF en 2026?',
+    a: 'La escala de retención que usan las empresas en 2026 no ha cambiado desde 2021: 19 % hasta 12.450 €; 24 % de 12.450 a 20.200 €; 30 % de 20.200 a 35.200 €; 37 % de 35.200 a 60.000 €; 45 % de 60.000 a 300.000 €; y 47 % a partir de 300.000 €. Es progresiva: cada porcentaje se aplica solo a la parte de la base que cae dentro de su tramo. En la declaración de la Renta, la escala se divide en una mitad estatal (9,5 %, 12 %, 15 %, 18,5 %, 22,5 % y 24,5 %) y otra autonómica que fija cada comunidad, por lo que el impuesto final varía ligeramente según dónde vivas.'
   },
   {
-    q: "¿Como funciona el ISR sobre ingresos en Mexico y que es el SAT?",
-    a: "En Mexico, el ISR (Impuesto Sobre la Renta) sobre ingresos de personas fisicas es administrado por el SAT (Servicio de Administracion Tributaria). Para trabajadores asalariados, la retencion mensual la hace el patron usando la tabla de ISR mensual publicada anualmente en el DOF (Diario Oficial de la Federacion). Tramos del ISR para persona fisica 2024 (orientativos en rangos mensuales): hasta 746 MXN: 1,92 %; de 746 a 6.332 MXN: 6,40 %; de 6.332 a 11.128 MXN: 10,88 %; de 11.128 a 12.936 MXN: 16,00 %; de 12.936 a 15.488 MXN: 17,92 %; de 15.488 a 31.236 MXN: 21,36 %; de 31.236 a 49.233 MXN: 23,52 %; de 49.233 a 93.994 MXN: 30,00 %; de 93.994 a 125.325 MXN: 32,00 %; de 125.325 a 375.976 MXN: 34,00 %; mas de 375.976 MXN: 35,00 %. Los trabajadores con ingresos bajos se benefician del subsidio al empleo, que reduce o elimina el ISR para salarios por debajo de cierto umbral mensual. Para calculos precisos, usa el portal del SAT en sat.gob.mx o la aplicacion del SAT movil. Los ingresos de personas fisicas con actividad empresarial pueden acogerse al RESICO (Regimen Simplificado de Confianza) con tasas del 1-2,5 % para ingresos hasta 3,5 millones MXN/ano."
+    q: '¿Qué porcentaje de IRPF me corresponde según mi sueldo?',
+    a: 'Para un contribuyente sin hijos, con contrato indefinido y menor de 65 años, la retención de 2026 es aproximadamente: 0 % hasta 15.876 € brutos; 3,1 % con el SMI (17.094 €); 8,9 % con 20.000 €; 14,1 % con 25.000 €; 16,4 % con 30.000 €; 19,4 % con 40.000 €; 24,4 % con 60.000 €; y 32,2 % con 100.000 €. Con hijos a cargo la retención baja, porque el mínimo familiar aumenta: con 30.000 € y dos hijos compartidos con el otro progenitor ronda el 14,8 %.'
   },
   {
-    q: "¿Como funciona el impuesto a la renta sobre salarios en Colombia?",
-    a: "En Colombia, el impuesto de renta sobre salarios de trabajadores dependientes se gestiona como retencion en la fuente. El empleador calcula y retiene mensualmente el impuesto usando el Procedimiento 1 (tabla de retencion mensual del articulo 383 del Estatuto Tributario) o el Procedimiento 2 (porcentaje calculado sobre el promedio de ingresos de los ultimos 12 meses). Tabla de retencion mensual 2024 (en UVT; 1 UVT = 47.065 COP en 2024): hasta 95 UVT (4.471.175 COP/mes): 0 %. De 95 a 150 UVT: 19 % sobre el exceso de 95 UVT. De 150 a 360 UVT: 28 % sobre el exceso de 150 UVT. De 360 a 640 UVT: 33 % sobre el exceso de 360 UVT. De 640 a 945 UVT: 35 % sobre el exceso de 640 UVT. De 945 a 2.300 UVT: 37 % sobre el exceso de 945 UVT. Mas de 2.300 UVT: 39 % sobre el exceso de 2.300 UVT. Las deducciones permitidas que reducen la base gravable incluyen: contribuciones a fondos de pensiones voluntarias (hasta el 30 % del ingreso), AFC (Ahorro para el Fomento de la Construccion), seguros de salud. Los independientes con ingresos superiores a 3.500 UVT anuales deben presentar declaracion de renta. Para mas informacion, consulta la DIAN en dian.gov.co."
+    q: '¿Qué es la reducción por rendimientos del trabajo?',
+    a: 'Es una rebaja de la base del IRPF para los sueldos bajos y medios (artículo 20 de la Ley del IRPF). En 2026 es de 7.302 € si tu rendimiento neto del trabajo (bruto menos cotizaciones) no supera 14.852 €; entre 14.852 € y 17.673,52 € se reduce 1,75 € por cada euro de exceso; entre 17.673,52 € y 19.747,50 € es de 2.364,34 € menos 1,14 € por euro de exceso; y por encima de 19.747,50 € desaparece. Gracias a ella, los sueldos cercanos al salario mínimo apenas tienen retención.'
   },
   {
-    q: "¿Como se calcula el impuesto unico de segunda categoria en Chile?",
-    a: "El Impuesto Unico de Segunda Categoria (IUSC) en Chile grava los ingresos provenientes de sueldos, salarios y pensiones de empleados dependientes. Es retenido mensualmente por el empleador y declarado al SII. Se calcula sobre la remuneracion imponible del mes. Tramos IUSC mensual 2024 (en UTM; 1 UTM enero 2024 = 66.362 CLP): hasta 13,5 UTM (895.887 CLP): exento. De 13,5 a 30 UTM: 4 % sobre el exceso de 13,5 UTM. De 30 a 50 UTM: 8 % sobre el exceso de 30 UTM. De 50 a 70 UTM: 13,5 % sobre el exceso de 50 UTM. De 70 a 90 UTM: 23 % sobre el exceso de 70 UTM. De 90 a 120 UTM: 30,4 % sobre el exceso de 90 UTM. De 120 a 150 UTM: 35 % sobre el exceso de 120 UTM. Mas de 150 UTM: 40 % sobre el exceso de 150 UTM. Al IUSC se suman las cotizaciones previsionales: AFP 10 % + comision, salud 7 %. El SII publica cada mes los valores actualizados de la UTM en sii.cl. Para verificar tu liquidacion de sueldo, puedes usar la calculadora de sueldo liquido del SII o plataformas como Sueldo.cl o Buk."
+    q: '¿Quién no tiene retención de IRPF en 2026?',
+    a: 'No se practica retención si el sueldo anual no supera el límite excluyente del artículo 81 del Reglamento. En la situación general («resto de casos»), el límite es de 15.876 € sin hijos, 16.342 € con un hijo y 16.867 € con dos o más. Es más alto para familias monoparentales (17.644 € con un hijo y 18.694 € con dos o más) y para quienes tienen un cónyuge con rentas inferiores a 1.500 € al año (17.197 € sin hijos). Además, la retención nunca puede superar el 43 % de la diferencia entre el sueldo y ese límite.'
   },
   {
-    q: "¿Como funciona el impuesto a la renta de quinta categoria en Peru?",
-    a: "En Peru, el impuesto a la renta de quinta categoria grava los sueldos, salarios y remuneraciones de trabajadores dependientes. Es retenido mensualmente por el empleador usando las tablas publicadas por la SUNAT (Superintendencia Nacional de Aduanas y de Administracion Tributaria). El calculo anual usa la UIT (Unidad Impositiva Tributaria; 5.150 PEN en 2024) como referencia. Tramos del impuesto a la renta anual 2024: hasta 5 UIT (25.750 PEN): exento. De 5 a 20 UIT: 8 %. De 20 a 35 UIT: 14 %. De 35 a 45 UIT: 17 %. De 45 a 55 UIT: 20 %. Mas de 55 UIT (283.250 PEN): 30 %. La retencion mensual se calcula proyectando el ingreso anual y dividiendolo entre 12. El trabajador tiene derecho a deducir 7 UIT (36.050 PEN) como minimo no imponible. En la practica, los trabajadores con ingresos anuales inferiores a 36.050 PEN (7 UIT) no pagan impuesto a la renta de quinta categoria. Para calculos precisos, usa el portal SUNAT en sunat.gob.pe. Los trabajadores independientes (cuarta categoria) tributan a una tasa fija de retencion del 8 % que el pagador retiene en cada recibo por honorarios."
+    q: '¿Qué es la deducción para quienes cobran el salario mínimo?',
+    a: 'El Real Decreto-ley 5/2026 creó una deducción en la cuota del IRPF de hasta 590,89 € para quienes ganan hasta 17.094 € al año (el SMI de 2026), que disminuye 0,20 € por cada euro que se supere esa cifra y desaparece a los 20.048,45 €; exige que el resto de rentas no exentas no pase de 6.500 €. Su objetivo es que el salario mínimo no pague IRPF. Como no se aplica en la nómina, a quien cobra el SMI le retienen unos 37-43 € al mes que recupera al presentar la declaración de la Renta de 2026, en la primavera de 2027.'
   },
   {
-    q: "¿Que es el tipo efectivo de IRPF y como difiere del tipo marginal?",
-    a: "El tipo marginal es la tasa del tramo de IRPF más alto que alcanza el contribuyente. El tipo efectivo es el porcentaje real de impuesto pagado sobre el ingreso total. Son cifras muy distintas y la confusion entre ellas lleva a errores en la planificacion fiscal. Ejemplo concreto: contribuyente con 50.000 euros de base imponible en Espana. Calculo por tramos: 12.450 × 19 % = 2.365,50 euros. 7.750 × 24 % = 1.860 euros. 15.000 × 30 % = 4.500 euros. 14.800 × 37 % = 5.476 euros. Total IRPF = 14.201,50 euros. Tipo efectivo = 14.201,50 / 50.000 = 28,4 %. Tipo marginal = 37 % (el tramo mas alto alcanzado). Si este contribuyente sube su salario bruto a 51.000 euros (+1.000 euros), paga 370 euros adicionales de IRPF (37 % del incremento), no 14.570 euros (28,4 % de 51.000). El tipo marginal importa para decisiones al margen (cuanto me queda de cada euro adicional ganado). El tipo efectivo importa para saber cuanto pago en total. Aplicado a LATAM: en Colombia, si estas en el tramo del 33 %, cada peso adicional de ingreso te cuesta 33 centavos de retencion, pero tu tipo efectivo total puede ser del 18-22 %. Entender esta distincion evita la erronea creencia de que aumentar el sueldo puede hacerte ganar menos neto."
+    q: '¿Qué diferencia hay entre tipo de retención, tipo efectivo y tipo marginal?',
+    a: 'El tipo de retención es el porcentaje que la empresa aplica en cada nómina como pago a cuenta. El tipo efectivo es lo que pagas realmente de IRPF dividido entre tu sueldo bruto, y se conoce al hacer la declaración. El tipo marginal es el del último tramo que alcanzas: indica cuánto IRPF pagarás por cada euro adicional. Con 40.000 € brutos, tu tipo marginal es el 37 % (y el 30 % es el del tramo anterior), pero tu retención ronda solo el 19 %. Subir de sueldo nunca hace que cobres menos neto: solo la parte que pasa a un tramo superior tributa más.'
   },
   {
-    q: "¿Que deducciones reducen la base imponible del IRPF en Espana?",
-    a: "En Espana, hay varias deducciones y reducciones que disminuyen la base imponible del IRPF y, por tanto, el impuesto a pagar. Las principales: Reduccion por rendimientos del trabajo: los asalariados tienen una reduccion de hasta 5.565 euros para rentas inferiores a 16.825 euros, decreciente hasta cero para rentas de 22.000 euros. Aportaciones a planes de pensiones: hasta 1.500 euros al ano (limite general) o 8.500 euros si son aportaciones de la empresa. Deduccion por alquiler de vivienda habitual: solo para contratos anteriores a 2015, hasta el 10,05 % de las cantidades satisfechas. Deduccion por maternidad: 1.200 euros por hijo menor de 3 anos para madres trabajadoras. Deduccion por discapacidad y dependencia. Deduccion por inversion en empresas de nueva creacion (business angels): hasta el 50 % de la inversion con limite de 100.000 euros. Donaciones a ONG: deduccion del 80 % de los primeros 150 euros y del 35 % del exceso. Vivienda habitual (antes de 2013): para los que compraron antes del 1 de enero de 2013, la deduccion del 15 % sobre un maximo de 9.040 euros de cantidades satisfechas sigue siendo aplicable. Recomendacion: para optimizar tu IRPF, consulta con un asesor fiscal o usa la Renta WEB del portal de la AEAT (agenciatributaria.gob.es)."
+    q: '¿Cómo puedo cambiar mi retención de IRPF?',
+    a: 'Con el modelo 145 comunicas a la empresa tu situación familiar: hijos, ascendientes a cargo, discapacidad, pensiones compensatorias o préstamo de vivienda habitual anterior a 2013. Si cambia (nace un hijo, te separas), actualízalo para que la retención se ajuste. También puedes pedir por escrito un tipo de retención voluntariamente más alto, útil si tienes dos pagadores o rentas de alquiler y no quieres pagar en la Renta. No puedes pedir que te retengan menos de lo que marca el algoritmo.'
   },
   {
-    q: "¿Como planificar el IRPF anual para evitar sorpresas en la declaracion?",
-    a: "La retencion mensual que calcula esta calculadora es una estimacion. Si al hacer la declaracion de la renta el importe retenido durante el ano fue mayor al IRPF real adeudado, la Agencia Tributaria te devuelve la diferencia. Si fue menor, debes pagar la diferencia. Como evitar sustos en la declaracion: (1) Comunica tu situacion personal a la empresa mediante el Modelo 145: si tienes hijos, conyuge sin rentas, discapacidad o ascendientes a cargo, la retencion bajara porque aplica el minimo personal y familiar. No actualizar el Modelo 145 cuando cambia tu situacion (nacimiento de hijo, separacion) puede generar exceso de retencion o retenciones insuficientes. (2) Si tienes otros ingresos ademas del salario (alquiler, actividad economica, dividendos), comunica a la empresa que aumente la retencion para que cubra el IRPF total. (3) Si realizas aportaciones a planes de pensiones, dile a la empresa que las tenga en cuenta para reducir la base de retencion. (4) Revisa el borrador de la renta cada ano en la AEAT. Estadistica: en 2023, el 74 % de los declarantes en Espana obtuvo devolucion (media de 1.100 euros), lo que indica que la retencion media es superior al IRPF real, actuando como ahorro forzoso. El 26 % restante tuvo que pagar la diferencia."
+    q: '¿Por qué me sale a pagar la declaración de la Renta si ya me retuvieron?',
+    a: 'Los casos más habituales son: haber tenido dos o más pagadores en el año (cada empresa calcula como si fuera la única, así que retienen de menos); cobrar prestaciones por desempleo o un ERTE; tener rendimientos de alquileres, intereses o ganancias por la venta de acciones o fondos que no llevaban suficiente retención; o vivir en una comunidad autónoma con una escala más alta que la general. Por el contrario, las deducciones por maternidad, familia numerosa, donativos o aportaciones a planes de pensiones suelen hacer que la declaración salga a devolver.'
   },
 ]}>
   <IrpfRetencionTool client:load />
 
   <div slot="extra" class="mt-8 space-y-6">
     <section class="p-5 bg-white rounded-xl border border-[var(--color-border)]">
-      <h2 class="text-lg font-bold text-[var(--color-text)] mb-3">Tramos del IRPF 2026 — escala general estatal</h2>
+      <h2 class="text-lg font-bold text-[var(--color-text)] mb-3">Escala de retención del IRPF 2026</h2>
       <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
-        Esta es la escala general del IRPF vigente en España para 2026 (la misma estructura de tramos que en los ejercicios 2021 a 2025).
-        El IRPF es progresivo: cada tipo se aplica <strong>solo a la parte del salario que cae dentro de su tramo</strong>, nunca al total.
+        Es la escala del artículo 85 del Reglamento del IRPF que aplican todas las empresas de régimen común en 2026 (sin cambios desde 2021).
+        Es progresiva: cada tipo se aplica <strong>solo a la parte de la base que cae dentro de su tramo</strong>, nunca al total.
       </p>
       <div class="overflow-x-auto">
         <table class="w-full text-sm border-collapse">
           <thead>
             <tr class="bg-[var(--color-calcs-bg)] text-[var(--color-text)]">
-              <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">Base imponible (desde)</th>
+              <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">Base para calcular la retención (desde)</th>
               <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">Hasta</th>
-              <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">Tipo aplicable</th>
+              <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">Tipo</th>
             </tr>
           </thead>
           <tbody class="text-[var(--color-text-secondary)]">
@@ -69,34 +75,35 @@ import IrpfRetencionTool from "@/components/tools/IrpfRetencionTool";
         </table>
       </div>
       <p class="text-xs text-[var(--color-text-muted)] mt-3">
-        Cada comunidad autónoma aplica su propia mitad autonómica sobre esta escala, por lo que el tipo total puede variar ligeramente según tu residencia.
+        País Vasco y Navarra tienen su propio IRPF foral, con escalas y tablas de retención distintas.
       </p>
     </section>
 
     <section class="p-5 bg-white rounded-xl border border-[var(--color-border)]">
-      <h2 class="text-lg font-bold text-[var(--color-text)] mb-3">Ejemplo resuelto: IRPF de un salario de 30.000 € brutos</h2>
+      <h2 class="text-lg font-bold text-[var(--color-text)] mb-3">Ejemplo resuelto: retención de un sueldo de 30.000 € brutos</h2>
       <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-3">
-        Así se calcula la cuota por tramos para una base imponible de 30.000 € anuales:
+        Contribuyente sin hijos, menor de 65 años y con contrato indefinido, en 2026:
       </p>
       <ul class="text-sm text-[var(--color-text-secondary)] leading-relaxed space-y-1 list-disc pl-5">
-        <li>Primeros 12.450 € × 19 % = <strong>2.365,50 €</strong></li>
-        <li>De 12.450 € a 20.200 € (7.750 €) × 24 % = <strong>1.860,00 €</strong></li>
-        <li>De 20.200 € a 30.000 € (9.800 €) × 30 % = <strong>2.940,00 €</strong></li>
+        <li>Cotizaciones a la Seguridad Social: 30.000 € × 6,50 % = <strong>1.950 €</strong></li>
+        <li>Rendimiento neto: 30.000 − 1.950 = 28.050 €; no hay reducción por rendimientos del trabajo (supera 19.747,50 €)</li>
+        <li>Base de retención: 28.050 − 2.000 € de gastos = <strong>26.050 €</strong></li>
+        <li>Escala sobre la base: 12.450 × 19 % + 7.750 × 24 % + 5.850 × 30 % = <strong>5.980,50 €</strong></li>
+        <li>Escala sobre el mínimo personal: 5.550 × 19 % = <strong>1.054,50 €</strong></li>
       </ul>
       <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mt-3">
-        Cuota total de IRPF: <strong>7.165,50 €</strong> al año. Tipo efectivo: <strong>23,9 %</strong> (aunque el tipo marginal sea el 30 %).
-        Neto anual aproximado: <strong>22.834,50 €</strong>, es decir, unos <strong>1.903 € netos al mes</strong> en 12 pagas, antes de aplicar
-        deducciones personales y familiares que reducen la cuota real.
+        Cuota de retención: 5.980,50 − 1.054,50 = <strong>4.926 €</strong> al año. Tipo de retención: 4.926 / 30.000 = <strong>16,42 %</strong>.
+        Sueldo neto: 30.000 − 1.950 − 4.926 = <strong>23.124 €</strong>, es decir, <strong>1.652 € al mes en 14 pagas</strong> o 1.927 € en 12.
       </p>
     </section>
 
     <section class="p-5 bg-white rounded-xl border border-[var(--color-border)]">
-      <h2 class="text-lg font-bold text-[var(--color-text)] mb-3">¿Cómo se refleja el IRPF en la retención de tu nómina?</h2>
+      <h2 class="text-lg font-bold text-[var(--color-text)] mb-3">De la retención a la declaración de la Renta</h2>
       <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
-        La empresa retiene cada mes un porcentaje de tu salario a cuenta del IRPF y lo ingresa en la Agencia Tributaria. Ese porcentaje se
-        calcula con tus datos del <strong>Modelo 145</strong> (hijos, cónyuge, discapacidad, pagas). Si la retención anual supera tu IRPF real,
-        la declaración de la renta te sale <em>a devolver</em>; si se queda corta, te sale <em>a pagar</em>. Usa el resultado de esta calculadora
-        para comparar la retención mensual orientativa con la que figura en tu nómina y detectar desviaciones a tiempo.
+        Lo que te retienen es un pago a cuenta. En la declaración de la Renta 2026 (que se presenta en abril-junio de 2027) se calcula el
+        impuesto real con la escala estatal y la de tu comunidad autónoma y con todas tus deducciones. Si lo retenido supera ese impuesto,
+        Hacienda te devuelve la diferencia; si no llega, pagas lo que falta. Si cobras el salario mínimo, la nueva deducción de hasta
+        590,89 € hará que recuperes lo que te hayan retenido.
       </p>
     </section>
   </div>
