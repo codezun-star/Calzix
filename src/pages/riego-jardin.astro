@@ -1,44 +1,43 @@
 ---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import RiegoJardinTool from "@/components/tools/RiegoJardinTool";
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import RiegoJardinTool from '@/components/tools/RiegoJardinTool';
 ---
 
 <CalcLayout slug="riego-jardin"
-  whatIs="La calculadora de riego del jardín estima los litros de agua necesarios por sesión, por semana y por mes para regar tu jardín, en función del tipo de planta (césped, arbustos, hortalizas, flores o árboles), el área en m² y el número de riegos semanales. Usa factores de necesidad hídrica calibrados por tipo de cultivo."
-  whyUse="Jardineros aficionados y profesionales, paisajistas y propietarios de casas con jardín en México, Colombia, Chile, Perú y el resto de LATAM usan esta calculadora para dimensionar su sistema de riego, estimar el consumo mensual de agua y decidir si instalar un sistema de goteo o riego por aspersión es económicamente justificable."
+  answer={"Un césped en verano en el centro de España necesita unos 4-5 litros por metro cuadrado en cada riego, tres veces por semana: un jardín de 100 m² gasta unos 1.200 litros semanales y casi 5.000 al mes. Los arbustos y plantas mediterráneas necesitan la mitad o menos."}
+  howTo={[
+    "Elige el tipo de planta: césped, arbustos, hortalizas, flores o árboles.",
+    "Introduce el área del jardín en m² y los riegos por semana.",
+    "Pulsa calcular para ver los litros por riego, por semana y por mes."
+  ]}
+  whatIs={"La calculadora de riego del jardín estima los litros de agua que necesita tu jardín en cada riego, a la semana y al mes según el tipo de plantas, la superficie y la frecuencia de riego."}
+  whyUse={"Te ayuda a regar lo justo, calcular el coste del agua de riego, dimensionar un depósito de pluviales y adaptar el jardín al clima español y a las restricciones por sequía."}
   faqs={[
-  {
-    q: '¿Cuánta agua necesita el césped por semana en LATAM?',
-    a: 'El césped es la planta que más agua consume en un jardín ornamental. La calculadora usa 4 L/m² por sesión de riego como referencia para césped. Necesidades reales por tipo y clima: Kikuyo (Pennisetum clandestinum), el más usado en Colombia (Bogotá, Medellín), Ecuador y Perú: 3–5 L/m²/sesión en temporada seca; en temporada lluviosa puede no necesitar riego. San Agustín (Stenotaphrum secundatum), popular en México tropical y costas caribeñas: 4–6 L/m²/sesión en verano. Pasto bermuda (Cynodon dactylon), zonas áridas de México y norte de Chile: 2–4 L/m²/sesión, es más resistente a la sequía. Fescue (zonas frías colombianas y chilenas): 5–8 L/m²/sesión en verano. En temporada lluviosa (junio–octubre en la mayor parte de México; noviembre–marzo en Chile y Argentina), el riego puede reducirse o eliminarse: las lluvias proveen 30–120 mm/mes, equivalente a 30–120 L/m². En México, durante la temporada de lluvias del Golfo y el Pacífico, los jardines de ciudad reciben suficiente agua natural; solo el norte árido (Baja California, Sonora) requiere riego en verano.'
-  },
-  {
-    q: '¿Cuántos riegos semanales necesita cada tipo de planta?',
-    a: 'La frecuencia de riego depende más del clima, el suelo y la especie que de una regla única. Guía por tipo de planta y clima: Hortalizas (jitomate, chile, frijol, lechuga): en clima cálido seco (norte de México, Piura-Perú), 1 riego diario o cada 2 días durante el desarrollo. La calculadora usa 5 L/m²/sesión para hortalizas. En la práctica, con riego por goteo y mulching (capa de paja) se puede reducir a 3–4 riegos/semana en verano. Flores de temporada (caléndula, petunia, impaciencia): 3–4 riegos/semana en temporada seca; 1–2 en temporada lluviosa. Arbustos: la calculadora usa 2 L/m²/sesión. Arbustos jóvenes recién plantados necesitan más agua (3–4 L/m² cada 2 días) durante los primeros 2 meses hasta establecer las raíces; los arbustos adultos establecidos pueden espaciar el riego a 1–2 veces/semana. Árboles frutales adultos: la calculadora usa 1,5 L/m²/sesión. Árboles jóvenes (1er año): 10–20 L por árbol cada 3–5 días. Árboles adultos de clima tropical: 1 riego/semana profundo (20–30 L) es más efectivo que riegos superficiales frecuentes.'
-  },
-  {
-    q: '¿Qué es el riego por goteo y cuánto ahorra frente al riego con manguera?',
-    a: 'El riego por goteo es un sistema que distribuye el agua directamente a la zona de las raíces mediante tubería con emisores (goteros) que liberan 1–4 L/hora por gotero. Ventajas del goteo vs manguera o aspersores: (1) Ahorro de agua: 40–60 % menos consumo porque no hay evaporación superficial ni escorrentía; el agua va directamente donde la planta la necesita. (2) Menos malezas: al no mojar la superficie entre plantas, crecen menos malas hierbas. (3) Menos enfermedades fúngicas: al no mojar el follaje se reducen hongos como el mildiú. (4) Automatización: se conecta a un temporizador; puedes irte de vacaciones sin preocuparte. Costo de instalación de goteo en LATAM para jardín de 30 m²: México: 1.500–4.000 MXN en materiales (tubería, goteros, temporizador, filtro). Colombia: 250.000–700.000 COP. Chile: 60.000–160.000 CLP. El sistema paga la inversión en 1–2 temporadas de riego considerando el ahorro en agua y tiempo de trabajo manual. Marcas de riego disponibles en LATAM: Netafim (Israel, líder mundial), Irritec (Italia), Rain Bird (USA), Hunter, Metzerplas. Todos tienen distribuidores en México, Colombia, Chile y Perú.'
-  },
-  {
-    q: '¿Cuáles son las señales de riego insuficiente o excesivo en las plantas?',
-    a: 'Saber interpretar las señales de tus plantas es fundamental para ajustar el riego. Señales de riego insuficiente (falta de agua): hojas marchitas o enrolladas hacia adentro especialmente a media tarde; bordes de hojas secos y marrones (quemado de puntas); hojas más pequeñas de lo normal o caída prematura de hojas; tierra muy seca a 5 cm de profundidad. Señales de riego excesivo (exceso de agua): hojas amarillas generalizadas (no solo las viejas de abajo); raíces marrones y blandas (pudrición de raíz); musgo o algas verdes en la superficie del suelo; tierra constantemente húmeda sin drenar. El exceso de riego es la causa número uno de muerte de plantas en jardines LATAM, especialmente en macetas sin agujero de drenaje. La prueba del dedo: introduce el dedo 5 cm en la tierra; si está húmeda, no riegues; si está seca, es hora de regar. Para hortalizas, la turgencia de las hojas por la mañana (antes del calor del día) es el mejor indicador de riego correcto. El mulching (cubierta de paja, corteza, hojas secas de 5–10 cm sobre el suelo) reduce la evaporación hasta un 50 % y permite espaciar más los riegos.'
-  },
-  {
-    q: '¿Cómo adaptar el riego a la temporada lluviosa en LATAM?',
-    a: 'La temporada de lluvias varía por país y región, y es el período en que el jardín puede necesitar cero riego o riego mínimo, lo que reduce el consumo de agua significativamente. Calendarios de temporada lluviosa por región LATAM: México: zona del Golfo y centro: mayo–octubre (lluvia intensa junio–septiembre); norte árido (Chihuahua, Sonora): lluvias de monzón julio–agosto, muy limitadas. Colombia: dos temporadas de lluvia por año (excepto en el Caribe): marzo–mayo y septiembre–noviembre. Bogotá: 580–880 mm/año muy distribuidos. Chile: Santiago y zona central: lluvias de mayo a septiembre (invierno mediterráneo); pocas lluvias en verano. Perú: Lima: nula lluvia (clima desértico); en Andes y selva: lluvia octubre–abril. Argentina: Buenos Aires: lluvias distribuidas todo el año, sin temporada seca marcada. Para sistemas de riego automático, instala un sensor de lluvia (pluviómetro conectado al controlador) que suspende el riego automáticamente cuando llueve. Costo del sensor: 500–1.500 MXN. Ahorro en agua: 20–40 % del consumo anual según la región.'
-  },
-  {
-    q: '¿Es posible regar un jardín con agua de lluvia reciclada?',
-    a: 'El aprovechamiento de agua de lluvia es una práctica con alta relación costo-beneficio en zonas con lluvias estacionales como el altiplano colombiano, el centro de México y los Andes peruanos. Sistema básico de captación: tejado como superficie captadora + canaleta + bajante + filtro de sedimentos + cisterna o tinaco. Para una casa con techo de 80 m² en Bogotá (precipitación media 860 mm/año): volumen captado = 80 m² x 0,86 m x 0,85 (eficiencia) = 58,5 m³/año = 4,9 m³/mes. Si el jardín necesita 1,5 m³/mes, el agua de lluvia cubre toda la demanda de riego. Costo del sistema: en México, un sistema doméstico con cisterna de 1.000–2.000 L: 2.000–6.000 MXN en materiales. En Colombia: 150.000–400.000 COP. En Chile: 50.000–150.000 CLP. En ciudad de México, Sacmex tiene el Programa de Cosecha de Agua de Lluvia con subsidios para instalación en colonias populares. En Medellín, EPM tiene el programa de recolección de agua lluvia para riego. En Chile, el Ministerio de Obras Públicas (MOP) tiene guías técnicas para sistemas de captación en zonas semiáridas. El agua captada puede cubrir el 100 % del riego del jardín en climas con lluvias moderadas y reducir la factura de agua del hogar un 10–30 %.'
-  },
-  {
-    q: '¿Qué plantas son más resistentes a la sequía para jardines de LATAM?',
-    a: 'Las plantas xerófitas (resistentes a la sequía) son ideales para jardines de bajo mantenimiento en LATAM, especialmente en zonas áridas o durante temporadas secas prolongadas. Plantas ornamentales de alto impacto y bajo consumo hídrico: México y zona árida: Agave (múltiples especies nativas, espectaculares; 0–1 riego/semana en establecimiento, 0 en madurez); nopal y tunas ornamentales; buganvilia (Bougainvillea, resiste todo tipo de suelo y sequía); echeveria y crassulas (suculentas). Colombia costa Caribe y zonas secas: cactus candelabro (Cereus), maguey (Agave fourcroydes), areca palma (algo más demandante). Chile zona norte (desierto de Atacama y Norte Chico): copiapoa y echinopsis (cactáceas nativas), molles (Schinus molle, árbol de uso paisajístico), prosopis (algarrobo). Perú zona costera (Lima y la costa): algarrobo costeño, huarango, tillandsias. Para jardines de tipo xerojardinería (xeriscaping), se combina piedra volcánica o grava como cubierta del suelo con plantas xerófitas: el consumo de agua puede ser 80–90 % menor que un jardín convencional de césped. La xerojardinería es especialmente adecuada para zonas urbanas de Lima (donde el agua es escasa y cara) y el norte árido de México.'
-  },
-  {
-    q: '¿Cómo instalar un sistema de riego automático por goteo en mi jardín?',
-    a: 'Un sistema de goteo básico para un jardín de 30–50 m² se instala en 1–2 días con herramientas básicas. Componentes: (1) Tubería principal de polietileno de 16 mm; (2) tubería secundaria de 12 mm para ramales; (3) goteros autocompensados de 2–4 L/h (1 gotero por planta pequeña, 2–3 por arbusto); (4) filtro de malla de 120 mesh (evita obstrucción de goteros); (5) regulador de presión (si la presión de la red supera 2–3 bar); (6) programador/temporizador electrónico con batería de 9V (permite configurar hora y duración del riego sin electricidad). Procedimiento de instalación: conectar tubería principal a la toma de agua → instalar filtro y regulador → extender tubería principal por el perímetro del jardín → conectar ramales con goteros hacia cada planta mediante conectores T o conectores de paso con perforador. El tiempo de riego: un gotero de 2 L/h funcionando 30 minutos aporta 1 L por planta por día. Para plantas ornamentales medianas en verano (necesidad 3 L/planta/día), programa 90 minutos diarios divididos en 2 riegos (6:00 y 20:00). Regla de oro: es mejor regar profundo y espaciado (1 vez/semana, 3 L/m²) que superficial y frecuente (diario, 0,5 L/m²) porque promueve raíces profundas y mayor resistencia a la sequía.'
-  },
-]}>
+    {
+      q: "¿Cuánta agua necesita el césped en España?",
+      a: "En verano, un césped de clima frío (festuca, ray-grass) necesita entre 25 y 40 litros por metro cuadrado a la semana en el interior y el sur peninsular, repartidos en 3-4 riegos. Las variedades de clima cálido (grama, Zoysia, Paspalum) necesitan un 30-40 % menos. En primavera y otoño basta con la mitad, y en invierno, en muchas zonas, no hace falta regar.",
+    },
+    {
+      q: "¿A qué hora es mejor regar?",
+      a: "Al amanecer o al anochecer, cuando la evaporación es menor. Regar en las horas centrales del día en verano puede hacer que se evapore hasta un tercio del agua. Muchos ayuntamientos prohíben el riego en las horas de más calor durante las épocas de sequía.",
+    },
+    {
+      q: "¿Qué es la xerojardinería?",
+      a: "Es el diseño de jardines con plantas adaptadas al clima seco y técnicas de ahorro de agua: especies mediterráneas y autóctonas (lavanda, romero, tomillo, olivo, adelfa, gramíneas ornamentales), acolchado o mulch para reducir la evaporación, agrupación de plantas según sus necesidades de agua, poco césped y riego por goteo. Puede reducir el consumo de agua del jardín entre un 50 % y un 75 %.",
+    },
+    {
+      q: "¿Riego por goteo o aspersión?",
+      a: "El goteo lleva el agua directamente a las raíces y tiene una eficiencia del 90-95 %, ideal para arbustos, setos, huertos y macetas. La aspersión es necesaria para el césped, pero pierde más agua por evaporación y viento (eficiencia del 65-75 %). Un programador con sensor de lluvia evita regar cuando no hace falta.",
+    },
+    {
+      q: "¿Cuánto cuesta regar el jardín?",
+      a: "Con el precio medio del agua en España (alrededor de 2 €/m³, más caro en los tramos altos de consumo), regar 100 m² de césped en verano (unos 15 m³ al mes) cuesta unos 30-45 € al mes. Un jardín mediterráneo con goteo puede costar un tercio. Recoger agua de lluvia o reutilizar aguas grises reduce el gasto.",
+    },
+    {
+      q: "¿Hay restricciones de riego en España?",
+      a: "En las sequías, los planes especiales de las confederaciones hidrográficas y los ayuntamientos pueden prohibir el riego de jardines privados con agua de la red, limitarlo a ciertas horas o días, o prohibir llenar piscinas. En los últimos años se han aplicado en Cataluña y en Andalucía. Infórmate de las normas de tu municipio.",
+    },
+  ]}
+>
   <RiegoJardinTool client:load />
 </CalcLayout>

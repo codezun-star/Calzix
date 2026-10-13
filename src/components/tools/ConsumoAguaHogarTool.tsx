@@ -5,7 +5,7 @@ export default function ConsumoAguaHogarTool() {
   const [personas, setPersonas] = useState('4');
   const [duchas, setDuchas] = useState('4');
   const [minutosDucha, setMinutosDucha] = useState('8');
-  const [cisternas, setCisternas] = useState('5');
+  const [cisternas, setCisternas] = useState('20');
   const [lavavajillas, setLavavajillas] = useState('1');
   const [lavadora, setLavadora] = useState('5');
   const [result, setResult] = useState<{ totalDia: number; totalMes: number; totalAnio: number } | null>(null);
@@ -44,7 +44,7 @@ export default function ConsumoAguaHogarTool() {
         {inp('Personas en el hogar', personas, setPersonas, '4')}
         {inp('Duchas diarias (total hogar)', duchas, setDuchas, '4')}
         {inp('Minutos por ducha', minutosDucha, setMinutosDucha, '8')}
-        {inp('Descargas WC diarias', cisternas, setCisternas, '5')}
+        {inp('Descargas de cisterna diarias (total hogar)', cisternas, setCisternas, '20')}
         {inp('Ciclos lavavajillas/día', lavavajillas, setLavavajillas, '1')}
         {inp('Ciclos lavadora/semana', lavadora, setLavadora, '5')}
       </div>

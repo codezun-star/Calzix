@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { formatNumber } from '@/lib/utils/format';
 
+// Valores de referencia del Real Decreto 3/2023 de calidad del agua de consumo
+// humano (turbidez en el grifo del consumidor; cloro libre residual recomendado).
 const PARAMETROS = [
-  { key: 'ph',     label: 'pH',                  min: 6.5,  max: 8.5,  unidad: '' },
-  { key: 'turbid', label: 'Turbidez (NTU)',       min: 0,    max: 4,    unidad: 'NTU' },
-  { key: 'cloro',  label: 'Cloro libre (mg/L)',   min: 0.2,  max: 1.5,  unidad: 'mg/L' },
+  { key: 'ph',     label: 'pH',                  min: 6.5,  max: 9.5,  unidad: '' },
+  { key: 'turbid', label: 'Turbidez (UNF)',       min: 0,    max: 4,    unidad: 'UNF' },
+  { key: 'cloro',  label: 'Cloro libre (mg/L)',   min: 0.2,  max: 1.0,  unidad: 'mg/L' },
   { key: 'nitrat', label: 'Nitratos (mg/L)',      min: 0,    max: 50,   unidad: 'mg/L' },
   { key: 'conduct',label: 'Conductividad (µS/cm)', min: 0,   max: 2500, unidad: 'µS/cm' },
 ];

@@ -4,74 +4,74 @@ import PropinaTool from '@/components/tools/PropinaTool';
 ---
 
 <CalcLayout slug="calculadora-propina"
-  whatIs="La calculadora de propina calcula el importe de la propina segun el porcentaje elegido (5, 10, 12, 15 o 20 %, o cualquier valor personalizado), el total a pagar incluyendo la propina y la parte que corresponde a cada comensal si la cuenta se divide entre varias personas. Util para restaurantes, bares, hoteles y cualquier servicio en que se acostumbre dejar propina."
-  whyUse="Comensales, turistas, equipos de trabajo y familias en Mexico, Colombia, Chile, Peru, Argentina y toda LATAM usan esta calculadora para calcular la propina al salir de un restaurante, dividir la cuenta equitativamente entre varias personas y conocer las costumbres de propina de cada pais antes de viajar o atender a invitados internacionales."
+  answer={"La propina es el importe de la cuenta por el porcentaje entre 100: el 10 % de 85,50 € son 8,55 €. En España la propina es voluntaria y no está incluida por ley: el precio de la carta ya incluye el servicio y el IVA. Lo habitual es redondear la cuenta o dejar entre un 5 % y un 10 % si el servicio ha sido bueno, algo más en restaurantes de nivel alto, y nada si no estás satisfecho."}
+  howTo={[
+    "Introduce el importe total de la cuenta.",
+    "Elige el porcentaje de propina (5 %, 10 %, 12 %, 15 % o 20 %) o escribe el tuyo.",
+    "Indica cuántos comensales sois y pulsa calcular para ver la propina, el total y lo que paga cada uno."
+  ]}
+  whatIs={"La calculadora de propina calcula el importe de la propina según el porcentaje que elijas, el total a pagar y cuánto pone cada comensal si dividís la cuenta a partes iguales, con atajos para los porcentajes más habituales."}
+  whyUse={"Te evita hacer cuentas en la mesa, ayuda a dividir la cuenta en cenas de grupo, comidas de empresa o celebraciones, y te orienta sobre cuánta propina dejar en España y en los viajes al extranjero, donde las costumbres cambian mucho."}
   faqs={[
-  {
-    q: "¿Cuanto se deja de propina en Mexico y que es lo costumbre?",
-    a: "En Mexico, dejar propina en restaurantes es una practica muy arraigada y socialmente esperada, aunque no obligatoria por ley. El rango habitual en 2024: restaurantes de servicio a la mesa en ciudades como CDMX, Guadalajara o Monterrey: entre el 10 % y el 15 % del total de la cuenta. En restaurantes de alta cocina o de categoria internacional: del 15 % al 20 %. En fondas, cocinas economicas o restaurantes de comida rapida sin servicio a la mesa: no se acostumbra ni se espera propina (pagas en caja). Delivery a domicilio (Uber Eats, Rappi, DiDi Food): se acostumbra entre 10 y 20 pesos fijos o el 5-10 % del pedido, especialmente en condiciones de lluvia o traslados largos. Taxis y transporte (Uber, Cabify, InDriver): no es obligatoria pero si bien recibida; entre 5 y 20 MXN o el 5-10 %. Hoteles: los botones (bellboys) esperan entre 20 y 50 MXN por maleta; la camarista de habitacion entre 20 y 50 MXN por dia. Peluquerias y salones de belleza: entre el 10 y el 15 % del servicio. La propina es una parte importante del ingreso de los trabajadores de servicios en Mexico; en muchos restaurantes, los meseros reciben un salario base minimo y la propina es la mayor parte de su remuneracion real."
-  },
-  {
-    q: "¿Como funciona la propina en Colombia y es obligatoria?",
-    a: "En Colombia, la propina tiene un estatus legal peculiar que la diferencia de otros paises de LATAM. Desde 1995, el articulo 139 del Codigo de Comercio prohibe el cobro obligatorio de propina en establecimientos de comercio. Sin embargo, muchos restaurantes incluian el porcentaje de propina en la cuenta de forma automatica. La Superintendencia de Industria y Comercio (SIC) ha reiterado en varias resoluciones que la propina es voluntaria y que los establecimientos no pueden cobrarla de forma obligatoria ni incluirla automaticamente en la factura sin consentimiento del consumidor. En la practica: en restaurantes de Bogota, Medellin, Cartagena y Cali de nivel medio-alto, es comun ver en la cuenta una sugerencia de propina del 10 %, pero el consumidor puede modificarla o no pagarla. Los restaurantes de fast food o autoservicio no esperan propina. Los deliveries por aplicacion (Rappi, iFood) tienen la opcion de agregar propina al hacer el pedido, tipicamente del 5-15 %. El estandar de propina cuando se da voluntariamente es del 10 % para servicio normal y del 15 % para servicio excelente. Los trabajadores de servicios en Colombia dependen menos de la propina que en Mexico porque tienen salario minimo garantizado mas prestaciones sociales."
-  },
-  {
-    q: "¿Cuanto se deja de propina en Chile y existe la propina legal?",
-    a: "Chile tiene una particularidad unica en LATAM: existe la propina legal establecida por ley. La Ley 20.122 de 2006 y su reglamento establecen que en restaurantes y similares, el 10 % del valor neto de la cuenta (sin IVA) debe destinarse como propina para los trabajadores, a menos que el cliente la rechace expresamente. Esto significa que la propina del 10 % viene preincluida en la cuenta final en la mayoria de los restaurantes formales, y el cliente puede rechazarla diciendo al cajero que no desea pagarla. La ley fue creada para garantizar que los trabajadores de la hosteleria recibieran esta compensacion de forma transparente y con obligacion del empleador de transferirla a los empleados, sin retenerla. En la practica: en restaurantes de Santiago, Valparaiso, Viña del Mar o Concepcion, la cuenta incluye el 10 % como propina sugerida. El cliente puede dar propina adicional voluntaria si el servicio fue excelente. En delivery y fast food, no se aplica la propina legal. Segun la Camara de Turismo de Chile, la propina legal representa el 20-30 % del ingreso mensual de los trabajadores de restaurante."
-  },
-  {
-    q: "¿Como es la cultura de propina en Peru, Argentina y otros paises de LATAM?",
-    a: "Las costumbres de propina varian significativamente en el resto de LATAM. Peru: la propina no esta regulada ni es obligatoria. En Lima (especialmente en Miraflores, San Isidro y Barranco), los restaurantes de nivel medio-alto incluyen a veces el 10 % como servicio sugerido. En la practica, dejar entre el 10 % y el 15 % es bien recibido en restaurantes formales. En el interior del pais y en comedores populares no se acostumbra. Argentina: en Buenos Aires y ciudades grandes, dejar entre el 10 % y el 15 % es lo habitual en restaurantes de servicio a la mesa. La alta inflacion de Argentina complica el calculo; muchas personas dejan un porcentaje fijo para que la propina se ajuste automaticamente al precio actual. En restaurantes de categoria, la propina se puede dejar en efectivo o via la aplicacion al pagar con tarjeta. Brasil: el servico (servicio) del 10 % se incluye automaticamente en la cuenta en la mayoria de los restaurantes; el cliente puede rechazarlo. Es equivalente al modelo chileno. Guatemala, Honduras, Costa Rica y Panama: entre el 10 % y el 15 % es lo habitual, con fuerte influencia de las costumbres turisticas norteamericanas en zonas de playa y hoteles de cadena internacional. Ecuador y Bolivia: propina menos arraigada; el 5-10 % es suficiente y apreciado en restaurantes formales."
-  },
-  {
-    q: "¿Como calcular la propina en un restaurante cuando hay descuentos o cupones?",
-    a: "Este es un tema de etiqueta que genera debate: ¿la propina se calcula sobre el precio original o sobre el precio final con descuento? La respuesta mas extendida en LATAM y en terminos de etiqueta internacional: la propina debe calcularse sobre el precio de la cuenta sin el descuento (precio original), porque el descuento lo otorga la empresa (via cupon, promocion o programa de fidelidad) y no debe afectar el ingreso del trabajador de servicio que trabajo igual que cualquier otro dia. Ejemplo: cuenta de 500 MXN, cupon del 30 % de descuento. Precio final = 350 MXN. Propina recomendada: 10 % sobre 500 MXN = 50 MXN (no 10 % sobre 350 MXN = 35 MXN). En la practica, muchos comensales calculan la propina sobre el precio final (lo cual resulta en propina menor), especialmente cuando el descuento es grande. Si usas aplicaciones de delivery con cupon (Uber Eats, Rappi), la propina en la app generalmente se sugiere sobre el precio original del pedido antes del descuento, lo que es la practica mas justa para el repartidor. En esta calculadora: introduce el precio original (sin descuento) como importe de la cuenta para calcular la propina correcta segun la etiqueta, o el precio final si quieres calcular la propina sobre el monto que realmente pagas."
-  },
-  {
-    q: "¿Que pasa si divides la cuenta entre varias personas con propina?",
-    a: "La calculadora calcula automaticamente la propina y la divide entre el numero de comensales que introduzcas. Hay varias formas de dividir la cuenta con propina en un grupo: (1) A partes iguales (esta calculadora): la cuenta total mas la propina se divide entre el numero de personas en partes iguales. Es lo mas sencillo y evita calculos individuales. (2) Cada quien paga lo que pidio: cada persona suma sus platos, la propina proporcional a lo que consumio y los impuestos correspondientes. Mas justo cuando los pedidos son muy dispares (alguien pido solo agua y otro una botella de vino). (3) Propina separada y voluntaria: se divide solo la cuenta sin propina; la propina la deja quien quiera, en efectivo, segun su criterio individual. Este modelo es menos conveniente pero da autonomia a cada comensal. Para grupos grandes (fiesta de cumpleanos, comida de empresa), dividir con esta calculadora a partes iguales es lo mas practico y rapido. Si el grupo quiere ser mas exacto en quien pago que, aplicaciones como Splitwise (disponible en toda LATAM, en español) o la calculadora de division de gastos de WhatsApp Pay o Mercado Pago permiten registrar gastos individuales y calcular quien le debe cuanto a quien."
-  },
-  {
-    q: "¿La propina tributa impuestos en LATAM?",
-    a: "El tratamiento fiscal de la propina varia por pais y por si se recibe de forma directa o a traves del establecimiento. Mexico: segun el SAT, la propina forma parte de los ingresos del trabajador y debe incluirse como ingreso en la declaracion anual. Sin embargo, el articulo 93 de la LISR incluye una exencion para propinas percibidas por trabajadores de la industria turistica y hotelera hasta el equivalente a 15 UMAs diarias. El SAT tiene criterios de fiscalizacion diferente para propinas en efectivo (dificiles de rastrear) versus las cobradas con tarjeta (que quedan registradas electronicamente). Colombia: la SIC ha reiterado que la propina no es salario (no esta sujeta a parafiscales ni prestaciones) pero si es ingreso laboral para efectos del impuesto de renta del trabajador. El empleador no debe incluirla en el PILA. Chile: la propina legal del 10 % es declarada por el establecimiento y transferida al trabajador; al ser un ingreso, esta sujeta al Impuesto Unico de Segunda Categoria junto con el sueldo. Las propinas voluntarias adicionales son ingresos no regulados y su tributacion depende del criterio contable del establecimiento. Argentina: las propinas recibidas por los trabajadores de hosteleria son rendimientos del trabajo y estan sujetas al Impuesto a las Ganancias si superan los minimos no imponibles."
-  },
-  {
-    q: "¿Cuanto propina dejar en hoteles, taxis y otros servicios en LATAM?",
-    a: "La propina no es solo para restaurantes; existen costumbres establecidas para otros servicios. Hoteles en LATAM: botones o portero que lleva el equipaje: 20-50 MXN en Mexico; 5.000-10.000 COP en Colombia; 1.000-2.000 CLP en Chile por maleta. Camarista de habitacion: 20-50 MXN o equivalente regional por dia de estancia (se deja cada dia, no al final, porque puede ser una persona diferente cada dia). Concierge que hace gestiones especiales: 50-100 MXN o equivalente. Taxis y aplicaciones en Mexico: Uber, Cabify, InDriver: entre 5 y 20 MXN o el 5-10 % del viaje. Los conductores pueden calificarte; una propina aumenta la probabilidad de una calificacion alta si el viaje tuvo algun inconveniente. Taxistas de sitio: no es obligatoria pero es apreciada; redondear la tarifa al multiplo de 10 superior es lo comun. Peluquerias y esteticas: entre el 10 % y el 15 % del servicio en salones de mediana y alta categoria. En barberías de barrio, redondear o dejar 20-30 MXN. Servicios a domicilio (plomero, electricista, mecanico): generalmente no se deja propina, aunque si el trabajo fue excelente o tomó mas tiempo del esperado, entre el 5 % y el 10 % del costo del servicio es bien recibido. Traslados y tours turisticos: en excursiones y tours organizados, el 10-15 % del costo del tour para el guia es el estandar internacional aplicable en toda LATAM."
-  },
-]}>
+    {
+      q: "¿Cuánta propina se deja en España?",
+      a: "En España la propina es voluntaria y no está incluida por ley: el precio de la carta ya incluye el servicio y el IVA. Lo habitual es redondear la cuenta o dejar entre un 5 % y un 10 % si el servicio ha sido bueno, algo más en restaurantes de nivel alto, y nada si no estás satisfecho. En bares y cafeterías se suelen dejar las monedas del cambio, y en taxis se redondea.",
+    },
+    {
+      q: "¿Es obligatorio dejar propina en España?",
+      a: "No. Ninguna ley obliga al cliente a dejar propina, y un restaurante no puede cobrar un recargo por servicio que no esté anunciado de forma clara antes de consumir. Si la cuenta incluye un «servicio» que no se indicaba en la carta, puedes pedir que lo retiren o reclamar con la hoja de reclamaciones, que todos los establecimientos deben tener.",
+    },
+    {
+      q: "¿Cuánta propina se deja en otros países?",
+      a: "En Estados Unidos es prácticamente obligatoria y se espera entre un 15 % y un 20 % (o más) en restaurantes, porque forma parte del salario de los camareros. En Reino Unido, a menudo se añade un 12,5 % de servicio opcional. En Francia, Italia o Portugal el servicio suele estar incluido y se redondea. En Japón dejar propina puede considerarse incluso descortés.",
+    },
+    {
+      q: "¿Se calcula la propina antes o después del IVA?",
+      a: "En España los precios de la carta ya incluyen el IVA del 10 % de la restauración, así que la propina se calcula sobre el total de la cuenta. En países donde los impuestos se suman al final (como Estados Unidos), lo habitual es calcularla sobre el importe antes de impuestos.",
+    },
+    {
+      q: "¿Cómo se reparten las propinas entre los camareros?",
+      a: "Depende del establecimiento y del convenio: lo habitual es un bote común que se reparte entre el personal de sala y cocina, a partes iguales o en proporción a las horas trabajadas. Las propinas que el cliente deja con tarjeta las ingresa el negocio y debe entregarlas a los trabajadores. Usa la calculadora de reparto de propinas por horas para hacerlo de forma justa.",
+    },
+    {
+      q: "¿Cómo dividir la cuenta entre varias personas?",
+      a: "Si todos habéis pedido algo parecido, suma la propina al total y divide entre los comensales. Si los consumos son muy distintos, cada uno paga lo suyo más el mismo porcentaje de propina. Para pagar a quien ha adelantado la cuenta, el Bizum es la forma más habitual en España.",
+    },
+  ]}
+>
   <PropinaTool client:load />
 
   <div slot="extra" class="mt-8 space-y-6">
     <section class="p-5 bg-white rounded-xl border border-[var(--color-border)]">
-      <h2 class="text-lg font-bold text-[var(--color-text)] mb-3">¿Cuánto es el 10 %, el 15 % o el 20 % de propina? Tabla rápida</h2>
+      <h2 class="text-lg font-bold text-[var(--color-text)] mb-3">¿Cuánto es el 5 %, el 10 % o el 15 % de propina? Tabla rápida</h2>
       <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mb-4">
-        Referencia rápida del importe de la propina según el total de la cuenta (misma cifra en euros, pesos, soles o cualquier moneda):
+        Referencia rápida del importe de la propina según el total de la cuenta, con los porcentajes más habituales en España:
       </p>
       <div class="overflow-x-auto">
         <table class="w-full text-sm border-collapse">
           <thead>
             <tr class="bg-[var(--color-calcs-bg)] text-[var(--color-text)]">
               <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">Cuenta</th>
+              <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">5 % de propina</th>
               <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">10 % de propina</th>
               <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">15 % de propina</th>
-              <th class="text-left font-semibold px-4 py-2 border border-[var(--color-border)]">20 % de propina</th>
             </tr>
           </thead>
           <tbody class="text-[var(--color-text-secondary)]">
-            <tr><td class="px-4 py-2 border border-[var(--color-border)]">10</td><td class="px-4 py-2 border border-[var(--color-border)]">1,00</td><td class="px-4 py-2 border border-[var(--color-border)]">1,50</td><td class="px-4 py-2 border border-[var(--color-border)]">2,00</td></tr>
-            <tr><td class="px-4 py-2 border border-[var(--color-border)]">20</td><td class="px-4 py-2 border border-[var(--color-border)]">2,00</td><td class="px-4 py-2 border border-[var(--color-border)]">3,00</td><td class="px-4 py-2 border border-[var(--color-border)]">4,00</td></tr>
-            <tr><td class="px-4 py-2 border border-[var(--color-border)]">30</td><td class="px-4 py-2 border border-[var(--color-border)]">3,00</td><td class="px-4 py-2 border border-[var(--color-border)]">4,50</td><td class="px-4 py-2 border border-[var(--color-border)]">6,00</td></tr>
-            <tr><td class="px-4 py-2 border border-[var(--color-border)]">50</td><td class="px-4 py-2 border border-[var(--color-border)]">5,00</td><td class="px-4 py-2 border border-[var(--color-border)]">7,50</td><td class="px-4 py-2 border border-[var(--color-border)]">10,00</td></tr>
-            <tr><td class="px-4 py-2 border border-[var(--color-border)]">100</td><td class="px-4 py-2 border border-[var(--color-border)]">10,00</td><td class="px-4 py-2 border border-[var(--color-border)]">15,00</td><td class="px-4 py-2 border border-[var(--color-border)]">20,00</td></tr>
-            <tr><td class="px-4 py-2 border border-[var(--color-border)]">200</td><td class="px-4 py-2 border border-[var(--color-border)]">20,00</td><td class="px-4 py-2 border border-[var(--color-border)]">30,00</td><td class="px-4 py-2 border border-[var(--color-border)]">40,00</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">10 €</td><td class="px-4 py-2 border border-[var(--color-border)]">0,50 €</td><td class="px-4 py-2 border border-[var(--color-border)]">1,00 €</td><td class="px-4 py-2 border border-[var(--color-border)]">1,50 €</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">20 €</td><td class="px-4 py-2 border border-[var(--color-border)]">1,00 €</td><td class="px-4 py-2 border border-[var(--color-border)]">2,00 €</td><td class="px-4 py-2 border border-[var(--color-border)]">3,00 €</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">30 €</td><td class="px-4 py-2 border border-[var(--color-border)]">1,50 €</td><td class="px-4 py-2 border border-[var(--color-border)]">3,00 €</td><td class="px-4 py-2 border border-[var(--color-border)]">4,50 €</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">50 €</td><td class="px-4 py-2 border border-[var(--color-border)]">2,50 €</td><td class="px-4 py-2 border border-[var(--color-border)]">5,00 €</td><td class="px-4 py-2 border border-[var(--color-border)]">7,50 €</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">80 €</td><td class="px-4 py-2 border border-[var(--color-border)]">4,00 €</td><td class="px-4 py-2 border border-[var(--color-border)]">8,00 €</td><td class="px-4 py-2 border border-[var(--color-border)]">12,00 €</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">100 €</td><td class="px-4 py-2 border border-[var(--color-border)]">5,00 €</td><td class="px-4 py-2 border border-[var(--color-border)]">10,00 €</td><td class="px-4 py-2 border border-[var(--color-border)]">15,00 €</td></tr>
+            <tr><td class="px-4 py-2 border border-[var(--color-border)]">200 €</td><td class="px-4 py-2 border border-[var(--color-border)]">10,00 €</td><td class="px-4 py-2 border border-[var(--color-border)]">20,00 €</td><td class="px-4 py-2 border border-[var(--color-border)]">30,00 €</td></tr>
           </tbody>
         </table>
       </div>
       <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed mt-4">
-        <strong>Truco mental:</strong> el 10 % se obtiene moviendo la coma un lugar a la izquierda (de 47,00 → 4,70). El 15 % es el 10 %
-        más su mitad (4,70 + 2,35 = 7,05). Y el 20 % es el 10 % multiplicado por dos (4,70 × 2 = 9,40). Para importes con céntimos o
-        para dividir entre varios comensales, usa la calculadora de arriba.
+        <strong>Truco mental:</strong> el 10 % se obtiene moviendo la coma un lugar a la izquierda (de 47,00 € a 4,70 €). El 5 % es la
+        mitad del 10 % (2,35 €) y el 15 % es el 10 % más su mitad (4,70 + 2,35 = 7,05 €). Para importes con céntimos o para dividir
+        entre varios comensales, usa la calculadora de arriba.
       </p>
     </section>
   </div>

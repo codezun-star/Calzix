@@ -1,44 +1,43 @@
 ---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import InstalacionSolarHogarTool from "@/components/tools/InstalacionSolarHogarTool";
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import InstalacionSolarHogarTool from '@/components/tools/InstalacionSolarHogarTool';
 ---
 
 <CalcLayout slug="instalacion-solar-hogar"
-  whatIs="La calculadora de instalación solar para hogar estima el número de paneles fotovoltaicos necesarios, la potencia del sistema en kWp, el ahorro económico anual y el período de retorno de la inversión (payback), a partir del consumo eléctrico anual, las horas sol pico (HSP), la potencia del panel y el precio del kWh de tu tarifa."
-  whyUse="Propietarios de casas, arquitectos e instaladores en México, Colombia, Chile, Argentina y Perú usan esta calculadora para dimensionar un sistema solar residencial antes de solicitar cotizaciones, comparar el ahorro con la inversión y justificar ante su familia o banco la instalación de paneles fotovoltaicos en el techo."
+  answer={"Para cubrir un consumo de 4.000 kWh al año con 4,5 horas de sol pico necesitas unos 3 kWp: 4.000 / (4,5 × 365 × 0,8). Con placas de 450 W son 7 paneles. Con la luz a 0,18 €/kWh, ahorrarías hasta unos 720 € al año si aprovechas toda la producción."}
+  howTo={[
+    "Introduce tu consumo anual de electricidad en kWh (está en tus facturas o en Datadis).",
+    "Escribe las horas de sol pico de tu zona, la potencia de cada panel y el precio que pagas por el kWh.",
+    "Pulsa calcular para ver la potencia necesaria, el número de placas, el ahorro anual y la amortización."
+  ]}
+  whatIs={"La calculadora de placas solares para casa dimensiona una instalación fotovoltaica de autoconsumo: calcula los kWp necesarios para cubrir tu consumo anual según las horas de sol de tu zona de España, cuántos paneles hacen falta, la producción, el ahorro y el periodo de amortización."}
+  whyUse={"Te ayuda a comprobar si el presupuesto de un instalador está bien dimensionado, a saber cuántas placas caben en tu tejado y a decidir si te compensa la inversión antes de pedir ofertas."}
   faqs={[
-  {
-    q: '¿Qué son las Horas Sol Pico (HSP) y por qué importan para calcular paneles?',
-    a: 'Las Horas Sol Pico (HSP) representan el número de horas equivalentes de radiación solar estándar (1.000 W/m²) que recibe una superficie en un día. No son las horas de luz solar, sino una medida de energía. En México, el norte del país (Sonora, Chihuahua, Baja California) tiene valores de 5,5–7 HSP, entre los más altos del mundo; el centro y el Bajío tienen 4,5–5,5; las costas del Pacífico sur y el Caribe, 4,5–5. En Colombia, la costa Caribe y la Orinoquia tienen 4,5–5,5 HSP; Bogotá y el altiplano, 3,5–4,5. En Chile, el norte desértico (Atacama, Antofagasta) tiene 7–9 HSP; Santiago, 5–5,5; la zona sur, 3–4. En Perú, Lima tiene 4–5 HSP; el norte y la selva, menos por nubosidad; el sur andino (Arequipa, Puno) tiene 5–6. Con más HSP, el mismo panel genera más energía y se necesitan menos paneles. Esta calculadora usa 4,5 HSP como valor por defecto, apropiado para la mayoría de ciudades de LATAM.'
-  },
-  {
-    q: '¿Cuántos paneles solares necesita una casa típica en LATAM?',
-    a: 'Una vivienda residencial promedio en LATAM consume entre 200 y 600 kWh/mes según el país, el clima y los hábitos. En México, el promedio residencial CFE es 300–450 kWh/mes. En Colombia, 150–250 kWh/mes. En Chile, 180–320 kWh/mes. Para una casa mexicana con consumo anual de 4.200 kWh, con paneles de 400 Wp y 5 HSP: necesita aproximadamente 4.200 / (365 × 5 × 0,4 kWp × 0,8) ≈ 2,88 kWp → 8 paneles de 400 Wp. Una familia colombiana con 2.400 kWh/año y 4,5 HSP necesitaría aproximadamente 5–6 paneles. El número exacto depende del factor de rendimiento del sistema (habitualmente 0,75–0,85 según la eficiencia del inversor y las pérdidas por temperatura, cableado y sombras). La calculadora usa 0,80 como factor de rendimiento estándar.'
-  },
-  {
-    q: '¿Cuánto cuesta una instalación solar residencial en México, Colombia y Chile?',
-    a: 'El costo de instalación fotovoltaica residencial ha bajado drásticamente en LATAM. Esta calculadora usa 1.200 €/kWp como referencia orientativa, que equivale aproximadamente a: México: 22.000–28.000 MXN/kWp; Colombia: 4.500.000–6.000.000 COP/kWp; Chile: 900.000–1.200.000 CLP/kWp; Perú: 380–500 USD/kWp. Para un sistema típico de 3 kWp: México 66.000–84.000 MXN; Colombia 13.500.000–18.000.000 COP; Chile 2.700.000–3.600.000 CLP. Incluye paneles, inversor, estructura de montaje, cableado, medidor bidireccional y mano de obra. Las marcas de paneles más instaladas en LATAM son Jinko Solar, LONGi, Canadian Solar y JA Solar (gama media-alta). Los inversores más comunes son Huawei, Growatt, SMA y Fronius. Con precios de electricidad en alza, el payback en muchas zonas de México, Colombia y Chile es 4–7 años.'
-  },
-  {
-    q: '¿Qué es la medición neta y cómo funciona en LATAM?',
-    a: 'La medición neta (o net metering) es un esquema regulatorio que permite a los propietarios de sistemas fotovoltaicos inyectar sus excedentes de energía a la red eléctrica y recibir un crédito en su factura. En México, la CFE regula la medición neta desde 2017 (Resolución RES/063/2018): los excedentes se compensan al precio de generación, no al minorista, lo que reduce el incentivo. En Colombia, la Ley 1715 de 2014 y la Resolución CREG 030 de 2018 permiten la autogeneración con excedentes; el Gobierno actualizó el marco regulatorio en 2021. En Chile, la Ley 20.571 de generación distribuida (actualizada 2018) permite inyectar hasta 300 kW. En Perú, la Resolución OSINERGMIN 306 de 2017 regula la generación distribuida residencial. En Argentina, la Ley 27.424 de 2017 da el marco para prosumidores pero su implementación varía por provincia. En prácticamente todos los países, el autosuficiencia (consumir lo que produces sin inyectar) es la estrategia más rentable.'
-  },
-  {
-    q: '¿Cuánto ahorra realmente un sistema solar en la factura eléctrica?',
-    a: 'El ahorro depende de cuánta energía solar puedes usar directamente (autoconsumo) versus cuánto inyectas a la red. En sistemas sin batería, el autoconsumo directo en una vivienda es del 30–50 % de la generación (si no hay nadie en casa durante el día, el resto se exporta). Con batería, el autoconsumo puede subir al 70–90 %. Ejemplo real en México: sistema de 8 paneles de 400 Wp = 3,2 kWp. Con 5 HSP y 0,8 de rendimiento: genera 3,2 × 5 × 0,8 × 365 = 4.672 kWh/año. Si la tarifa DAC es 4,5 MXN/kWh y el autoconsumo es 80 %: ahorro = 4.672 × 0,8 × 4,5 = 16.820 MXN/año. Payback: 75.000 MXN de instalación / 16.820 = 4,5 años. En Colombia, con tarifa EPM de 800 COP/kWh y 2.500 kWh/año generados a 70 % autoconsumo: 1.400.000 COP/año de ahorro; payback 12.000.000 COP / 1.400.000 = 8,6 años.'
-  },
-  {
-    q: '¿Vale la pena instalar baterías de almacenamiento en LATAM?',
-    a: 'Las baterías de almacenamiento solar (principalmente LiFePO4, como las Tesla Powerwall, BYD Battery-Box o Pylontech) incrementan el autoconsumo y dan independencia de la red durante cortes de luz. En LATAM, su rentabilidad depende del contexto local: son muy útiles donde los cortes de energía son frecuentes (zonas rurales de Colombia, Perú, Centro América, ciertas regiones de México), ya que reemplazan grupos electrógenos de gasolina. En zonas urbanas con red confiable, la rentabilidad es menor porque el costo de la batería (4.000–8.000 USD para 10 kWh) alarga el payback total a 10–15 años. En México, los cortes en zonas DAC son raros, por lo que la batería se justifica más por resiliencia que por ahorro económico. En zonas sin acceso a la red (fuera del alcance de CFE, Codensa, etc.), un sistema solar + batería es la solución más económica y sostenible versus la extensión de red o el diésel.'
-  },
-  {
-    q: '¿Qué incentivos fiscales y programas de apoyo existen para solar en LATAM?',
-    a: 'Varios países de LATAM tienen incentivos para la adopción de energía solar residencial. México: deducción inmediata del 100 % de la inversión en equipos de energía renovable en la declaración del ISR para personas morales; personas físicas con actividad empresarial también pueden aplicarla. Los paneles solares están exentos del IVA. FIDE tiene el programa de financiamiento para equipos eficientes. Colombia: La Ley 1715 permite deducción del 50 % del valor de la inversión del impuesto de renta, exclusión del IVA (arancel 0) y depreciación acelerada para personas jurídicas. Chile: CORFO tiene líneas de financiamiento para energía renovable (BancoEstado, BCI, Santander Chile tienen créditos verdes). Los sistemas de hasta 1 MW no pagan derechos de importación. Perú: MINEM tiene el Programa de Electrificación Rural con sistemas fotovoltaicos para comunidades sin red. Honduras: las empresas pueden deducir hasta el 100 % de la inversión en renovables. Consulta siempre con un asesor fiscal del país sobre las condiciones vigentes al momento de tu proyecto.'
-  },
-  {
-    q: '¿Cada cuántos años hay que cambiar los paneles solares?',
-    a: 'Los paneles fotovoltaicos modernos tienen una vida útil de 25–30 años con degradación anual de la potencia del 0,5–0,7 %. La mayoría de fabricantes (Jinko, LONGi, Canadian Solar) ofrecen garantía de producto de 12 años y garantía de rendimiento de 25 años (mínimo 80 % de la potencia nominal al año 25). En la práctica, muchos sistemas instalados en los años 90 siguen funcionando en 2024 con el 85–90 % de la potencia original. El inversor es el componente que falla primero: su vida útil es 10–15 años y su costo de reposición es 800–2.000 USD según la potencia. Los inversores de alta calidad (SMA, Fronius, ABB) suelen durar más que los económicos asiáticos sin marca reconocida. En climas agresivos (costas con salinidad alta en Cartagena, Acapulco, Lima o Valparaíso), las estructuras de montaje deben ser de aluminio anodizado o acero inoxidable para resistir la corrosión marina. El mantenimiento básico es limpiar los paneles con agua y paño suave una o dos veces al año para mantener el rendimiento.'
-  },
-]}>
+    {
+      q: "¿Cuántas placas solares necesita una casa en España?",
+      a: "Un hogar con un consumo de 3.500-4.500 kWh al año suele necesitar entre 2,5 y 3,5 kWp, es decir, de 6 a 8 paneles de 450 W, que ocupan unos 12-17 m² de tejado. En España, cada kWp instalado produce al año entre unos 1.200 kWh en la cornisa cantábrica y 1.700-1.800 kWh en Andalucía, Murcia y Canarias, con una media cercana a 1.450-1.500 kWh.",
+    },
+    {
+      q: "¿Qué son las horas de sol pico (HSP)?",
+      a: "Son las horas equivalentes al día en que la radiación sería de 1.000 W/m², la condición estándar con la que se mide la potencia de un panel. En España van de unas 3,5 HSP de media anual en Galicia y la cornisa cantábrica a 4,5-5 en el centro y 5-5,5 en Andalucía, Murcia y Canarias. En verano casi se duplican respecto al invierno.",
+    },
+    {
+      q: "¿Qué orientación e inclinación son las mejores?",
+      a: "En España, la orientación óptima es al sur, con una inclinación de entre 30° y 40° para maximizar la producción anual. Una orientación este u oeste produce un 15-20 % menos, pero reparte mejor la generación a lo largo del día. En cubiertas planas se usan estructuras inclinadas, y en tejados inclinados las placas se colocan coplanares.",
+    },
+    {
+      q: "¿Necesito baterías?",
+      a: "No es imprescindible. Con la compensación simplificada, los excedentes se descuentan de la factura sin necesidad de baterías. Las baterías aumentan el autoconsumo del 30-50 % al 60-80 %, pero cuestan entre 2.500 y 4.000 € por cada 5 kWh y alargan la amortización. Suelen compensar en viviendas con mucho consumo nocturno o aisladas de la red.",
+    },
+    {
+      q: "¿Cuánto se ahorra al año con placas solares?",
+      a: "Depende de cuánto de la producción consumes en el momento. Con un 50 % de autoconsumo y el resto compensado, una instalación de 3 kWp en el centro peninsular ahorra unos 400-600 € al año con los precios de 2026. Si tienes coche eléctrico o aerotermia y los usas en horas de sol, el ahorro aumenta.",
+    },
+    {
+      q: "¿Cuánto duran las placas solares?",
+      a: "Los fabricantes garantizan normalmente el 80-87 % de la potencia a los 25-30 años, con una degradación de alrededor del 0,4-0,5 % anual. El inversor suele durar 10-15 años y es el componente que antes hay que sustituir. El mantenimiento se limita a limpiar los paneles si se acumula polvo, algo más necesario en zonas secas del sur.",
+    },
+  ]}
+>
   <InstalacionSolarHogarTool client:load />
 </CalcLayout>

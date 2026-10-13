@@ -1,6 +1,12 @@
 import { useState } from 'react';
 import { formatNumber } from '@/lib/utils/format';
 
+/** Latitud de algunas capitales españolas, de norte a sur. */
+const CIUDADES: ReadonlyArray<[string, number]> = [
+  ['A Coruña', 43.4], ['Bilbao', 43.3], ['Barcelona', 41.4], ['Zaragoza', 41.7], ['Madrid', 40.4],
+  ['Valencia', 39.5], ['Palma', 39.6], ['Sevilla', 37.4], ['Málaga', 36.7], ['Las Palmas de G. C.', 28.1],
+];
+
 export default function AnguloSolarTool() {
   const [latitud, setLatitud] = useState('');
   const [mes, setMes] = useState('6');
@@ -30,6 +36,13 @@ export default function AnguloSolarTool() {
   return (
     <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 space-y-4">
       <p className="text-xs text-[var(--color-text-secondary)]">Ángulo de inclinación óptimo para paneles solares según la latitud y el mes.</p>
+      <div className="flex flex-wrap gap-2 text-xs">
+        {CIUDADES.map(([nombre, lat]) => (
+          <button key={nombre} onClick={() => { setLatitud(String(lat)); setResult(null); }} className="rounded-full border border-[var(--color-border)] px-2.5 py-1 text-[var(--color-text-secondary)] hover:border-[var(--color-accent)]">
+            {nombre}
+          </button>
+        ))}
+      </div>
       <div className="grid grid-cols-2 gap-4">
         <div className="space-y-1">
           <label className="text-xs font-medium text-[var(--color-text-secondary)]">Latitud (°)</label>

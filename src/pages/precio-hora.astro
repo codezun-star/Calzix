@@ -1,44 +1,43 @@
 ---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import PrecioHoraTool from "@/components/tools/PrecioHoraTool";
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import PrecioHoraTool from '@/components/tools/PrecioHoraTool';
 ---
 
 <CalcLayout slug="precio-hora"
-  whatIs="La calculadora de precio por hora convierte un salario anual en valor por mes, por día y por hora de trabajo, en función de los meses trabajados al año, los días laborales al mes y las horas diarias. Úsala para calcular tu tarifa freelance a partir de tu sueldo objetivo, o para saber cuánto vale realmente tu hora como empleado."
-  whyUse="Freelancers, consultores independientes, abogados, diseñadores y trabajadores en relación de dependencia de México, Colombia, Chile, Perú, Argentina y toda LATAM usan esta calculadora para fijar tarifas horarias competitivas, comparar ofertas de empleo y negociar aumentos salariales desde una perspectiva objetiva."
+  answer={"Para fijar tu precio por hora como autónomo divide los ingresos anuales que necesitas (incluida tu cuota de autónomo, impuestos y gastos) entre las horas que realmente puedes facturar: si necesitas 40.000 € al año y facturas 1.200 horas, tu tarifa mínima es de 33,33 € por hora, más IVA."}
+  howTo={[
+    "Introduce los ingresos anuales que quieres obtener.",
+    "Indica las horas que trabajas al día y los días laborables al año.",
+    "Pulsa calcular para ver tu tarifa por hora y por día."
+  ]}
+  whatIs={"La calculadora de precio por hora transforma los ingresos que quieres conseguir en una tarifa horaria y diaria según tu jornada y los días que trabajas, para autónomos, freelance y profesionales que cobran por horas en España."}
+  whyUse={"Te ayuda a no cobrar por debajo de tus costes, preparar presupuestos, comparar tu tarifa con la de un empleo por cuenta ajena y negociar con clientes."}
   faqs={[
-  {
-    q: '¿Cómo calcular mi tarifa freelance desde cero en LATAM?',
-    a: 'Para fijar una tarifa freelance sostenible, el punto de partida es cuánto necesitas ganar para cubrir tus gastos y ahorrar. Metodología paso a paso: (1) Define tu ingreso anual objetivo neto: suma todos tus gastos mensuales (renta/hipoteca, comida, transporte, servicios, ocio, ahorro) y multiplica por 12. Ejemplo: si necesitas 25.000 MXN/mes limpios, tu objetivo es 300.000 MXN/año neto. (2) Ajusta por impuestos y costos: como freelancer, pagas ISR (México) o Renta (Colombia) y IMSS/ISSSTE voluntario. En México, un ingreso de 300.000 MXN neto requiere ingresos brutos de aprox. 380.000–420.000 MXN (tasa efectiva de ISR del 20–25 % para ese rango más IMSS). (3) Define tus horas facturables reales: un freelancer trabaja 40 h/semana pero no todas son facturables (llamadas de ventas, administración, formación, vacaciones). Realistas: 60–70 % del tiempo total = 24–28 h/semana facturable = aprox. 100–120 h/mes. (4) Tarifa mínima: 420.000 MXN / 12 meses / 110 h facturables = 318 MXN/h. Esta es tu tarifa de supervivencia; añade un margen del 30–50 % para proyectos complejos y para negociación.'
-  },
-  {
-    q: '¿Cuánto cobran por hora los freelancers en LATAM en 2024?',
-    a: 'Las tarifas varían mucho según la especialidad, la experiencia, el mercado objetivo (local vs internacional) y el país. Rangos orientativos 2024 en mercados locales: Desarrollo de software (web, apps, backend): México: 400–1.500 MXN/h; Colombia: 80.000–200.000 COP/h; Chile: 25.000–70.000 CLP/h. Diseño gráfico / UX: México: 250–800 MXN/h; Colombia: 50.000–130.000 COP/h. Contabilidad y finanzas: México: 300–800 MXN/h; Colombia: 60.000–150.000 COP/h. Consultoría de marketing digital: México: 400–1.200 MXN/h; Colombia: 80.000–180.000 COP/h. Traductores: México: 200–500 MXN/h; Colombia: 40.000–100.000 COP/h. Para trabajo en mercados internacionales (clientes en EE.UU., Europa), los freelancers latinoamericanos suelen cobrar entre el 50–70 % de las tarifas locales de los países desarrollados, con ventaja competitiva por el tipo de cambio. Un desarrollador senior mexicano puede cobrar 30–60 USD/h en Upwork o Toptal, equivalente a 540–1.080 MXN/h (tipo de cambio 18 MXN/USD), muy por encima del mercado local. En plataformas como Workana (muy popular en LATAM), las tarifas promedio son más bajas pero el volumen de proyectos es mayor.'
-  },
-  {
-    q: '¿Cuál es el salario mínimo por hora en LATAM en 2024?',
-    a: 'Los salarios mínimos legales en LATAM varían enormemente. Valor mensual del salario mínimo en 2024: México: 248,93 MXN/día (Zona Libre de la Frontera Norte: 374,89 MXN/día); mensual: aprox. 7.468 MXN. Colombia: 1.300.000 COP/mes. Chile: 500.000 CLP/mes. Perú: 1.025 PEN/mes. Argentina: varía mensualmente por inflación (consultar INDEC o Ministerio de Trabajo). Uruguay: 22.268 UYU/mes. Bolivia: 2.362 BOB/mes. Ecuador: 460 USD/mes. Para calcular el salario mínimo por hora: Colombia: 1.300.000 COP / 30 días / 8 h = 5.417 COP/h (con días hábiles: 1.300.000 / 22 días / 8 h = 7.386 COP/h). México: 7.468 MXN / 30 días / 8 h = 31,1 MXN/h. Chile: 500.000 CLP / 22 días / 8 h = 2.841 CLP/h. El salario mínimo es el piso legal; ningún empleador puede pagar menos, aunque en la economía informal es ampliamente incumplido (estima el BID que el 56 % del empleo en LATAM es informal en 2024).'
-  },
-  {
-    q: '¿Qué otros factores debo considerar al fijar mi tarifa freelance además del salario objetivo?',
-    a: 'La tarifa freelance debe cubrir más que el salario equivalente de un empleado, porque el freelancer asume costos que el empleador cubre en una relación de dependencia: (1) Seguridad social: en México, un freelancer (persona física con actividad empresarial) puede afiliarse voluntariamente al IMSS por aprox. 3.600–8.000 MXN/año (Modalidad 40 para conservar derechos de pensión). En Colombia, un independiente debe cotizar a pensión (16 % de sus ingresos), salud (12,5 %), y ARL (variable); en total, aprox. 28,5 % de los ingresos sobre los que se paga. (2) Herramientas y equipo: laptop, software (Adobe CC, Office, herramientas de desarrollo), internet, espacio de trabajo (renta de oficina o coworking). Estima 5–15 % del ingreso en herramientas y equipos. (3) Vacaciones y tiempo muerto: un empleado tiene 12–30 días de vacaciones pagadas al año; el freelancer los tiene que autofinanciar. Si no facturas 2 semanas/año de vacaciones + 2 semanas de tiempo muerto entre proyectos = 4 semanas sin ingreso = 8 % del año sin facturar. (4) Riesgo de impago y tiempo de ventas: estima que el 15–25 % de tu tiempo lo pasas buscando proyectos y gestionando clientes, sin facturar. Sumando todos los factores, una tarifa freelance sostenible suele ser 1,5–2,5 veces el valor hora de un empleado con prestaciones equivalentes.'
-  },
-  {
-    q: '¿Cómo comparar salarios entre distintas ofertas de trabajo en LATAM?',
-    a: 'Al comparar dos ofertas de trabajo, el salario nominal no es suficiente; hay que analizar el paquete completo. Factores a considerar: (1) Prestaciones legales: en México, un empleado formal tiene derecho a aguinaldo (15 días mínimo), vacaciones (6–20 días según años de antigüedad), prima vacacional (25 % del salario durante vacaciones), IMSS (salud, incapacidad, pensión) y reparto de utilidades (PTU, 10 % de utilidades de la empresa). El valor de estas prestaciones puede equivaler al 30–40 % del salario bruto. (2) Bonos y comisiones: en ventas y finanzas, el bono puede duplicar o triplicar el salario base. Analiza el bono esperado vs el bono garantizado. (3) Beneficios no monetarios: home office (ahorra transporte: 500–2.000 MXN/mes en CDMX), vales de comida (1.000–2.500 MXN/mes exentos de ISR), seguro de gastos médicos mayores (en LATAM, los mejores planes cuestan 20.000–60.000 MXN/año), plan de pensiones complementario. (4) Crecimiento profesional y aprendizaje: especialmente importante para jóvenes de 25–35 años donde la curva de aprendizaje impacta el salario futuro. Para comparar, convierte todo a valor anual: salario bruto + prestaciones estimadas + bonos esperados. Luego aplica la calculadora para obtener el valor hora y comparar objectivamente.'
-  },
-  {
-    q: '¿Cuánto debo cobrar por un proyecto (precio por proyecto vs precio por hora)?',
-    a: 'Los proyectos de trabajo independiente se pueden cotizar de dos formas: precio por hora o precio fijo por proyecto. Precio por hora: ideal cuando el alcance del proyecto es incierto o cambiante; el cliente paga exactamente por el tiempo invertido; el freelancer no asume riesgo de scope creep (expansión del alcance). El riesgo es que el cliente perciba el precio como "variable" y reduzca la contratación. Precio fijo por proyecto: ideal cuando el alcance está claro (por ejemplo, diseñar un logo, crear un sitio web de 5 páginas, redactar un informe de 3.000 palabras). El cliente valora la certeza del precio; el freelancer puede trabajar eficientemente y ganar más que su tarifa horaria si termina antes de lo estimado. Cómo calcular el precio fijo: estima las horas que el proyecto tomará con honestidad → multiplica por tu tarifa horaria → añade un buffer del 20–30 % por imponderables y tiempo de revisiones → ese es tu precio mínimo. Para proyectos con clientes nuevos, añade un 10–20 % adicional como prima de riesgo (mayor incertidumbre). En LATAM, la práctica de cotizar en dólares para clientes internacionales (aunque el freelancer esté en México, Colombia o Argentina) es cada vez más común y protege contra las devaluaciones de las monedas locales.'
-  },
-  {
-    q: '¿Cómo facturar siendo freelance en México, Colombia o Chile?',
-    a: 'La formalidad fiscal varía por país pero es fundamental para crecer y acceder a mejores clientes. México: los freelancers pueden registrarse como personas físicas con actividad empresarial ante el SAT (Régimen Simplificado de Confianza, RESICO, desde 2022: tasa de ISR del 1–2,5 % para ingresos hasta 3,5 millones MXN/año). Se genera CFDI (factura electrónica) usando el portal del SAT gratuito o sistemas como CONTAPAQi, Factura.com, Nominapp. Colombia: los independientes con ingresos superiores a 3.500 UVT/año (aprox. 163 millones COP en 2024) se registran como responsables del IVA ante la DIAN. Por debajo de ese umbral, son "no responsables de IVA" y no cobran ni declaran IVA. Emiten facturas electrónicas a través de operadores habilitados por la DIAN. Chile: los freelancers deben emitir Boleta de Honorarios Electrónica a través del SII. A partir de 2020, hay retención obligatoria del 12,25 % (aumentando progresivamente al 17 % en 2028) que se retiene automáticamente; al hacer la Declaración de Renta anual (Formulario 22), se puede recuperar parte del exceso retenido. En todos los casos, llevar un registro claro de ingresos y gastos simplifica enormemente la declaración anual y permite deducir gastos del negocio (equipo, internet, arriendo de oficina, formación profesional).'
-  },
-  {
-    q: '¿Cómo negocia un aumento de sueldo en LATAM con datos concretos?',
-    a: 'Negociar un aumento de sueldo efectivamente requiere preparación y datos, no solo expectativas. Pasos recomendados: (1) Investiga el mercado: compara tu salario actual con el rango del mercado para tu puesto, experiencia y ciudad usando plataformas como LinkedIn Salary, OCC Mundial (México), Computrabajo (regional), Glassdoor (global) o el Informe Salarial de Michael Page o PageGroup LATAM (publicado anualmente). (2) Cuantifica tu impacto: identifica los resultados que has generado: ventas incrementadas, costos reducidos, proyectos entregados. Un argumento como "lideré la migración del sistema que redujo los costos de operación en 15 %/mes = 120.000 MXN/año" es mucho más sólido que "trabajé muy duro". (3) Define tu número objetivo: usa la calculadora para convertir tu aspiración de vida en salario objetivo. Si necesitas 35.000 MXN/mes netos y hoy ganas 28.000, necesitas un aumento del 25 %. (4) Elige el momento: el mejor momento para pedir un aumento es después de un logro notable, antes de la evaluación de desempeño anual, o cuando la empresa está contratando activamente (señal de bonanza). (5) Negocia con alternativas: si tienes una oferta de otra empresa, usarla como palanca es válido y efectivo; pero asegúrate de estar dispuesto a aceptarla si el empleador actual no iguala la propuesta. En Colombia y Chile, las tablas salariales del INEGI (México), el DANE (Colombia) y el INE (Chile) publican salarios promedio por sector y nivel educativo que son referencias objetivas.'
-  },
-]}>
+    {
+      q: "¿Cuánto debo cobrar por hora como autónomo en España?",
+      a: "Parte de lo que quieres ganar en neto y súmale la cuota de autónomo, los impuestos (IRPF) y los gastos del negocio (material, software, gestoría, seguros, coworking). Divide el total entre las horas facturables reales: descontando vacaciones, festivos, formación, gestión y búsqueda de clientes, un autónomo factura entre 1.000 y 1.400 horas al año, no las 1.760 de un asalariado.",
+    },
+    {
+      q: "¿Cuánto cuesta la cuota de autónomos en 2026?",
+      a: "Desde 2023 los autónomos cotizan según sus rendimientos netos reales, en 15 tramos. En 2026 se han prorrogado los tramos de 2025 (RDL 3/2026 y Orden PJC/297/2026) y la cuota mensual mínima va de unos 205 € (rendimientos de hasta 670 € al mes) a unos 605 € (más de 6.000 € al mes), por la subida del MEI. Los nuevos autónomos pagan una tarifa plana de 80 € al mes durante los primeros 12 meses, ampliable otros 12 si sus rendimientos no superan el SMI. Comprueba tu tramo en el portal Import@ss de la Seguridad Social.",
+    },
+    {
+      q: "¿Qué retención de IRPF lleva una factura de autónomo?",
+      a: "Los profesionales que facturan a empresas u otros autónomos aplican una retención del 15 % en sus facturas (7 % durante el año de alta y los dos siguientes). Esa retención es un pago a cuenta del IRPF. Las facturas a particulares no llevan retención: en ese caso, el autónomo paga trimestralmente el modelo 130 si la mayoría de sus ingresos no están retenidos.",
+    },
+    {
+      q: "¿El precio por hora incluye el IVA?",
+      a: "No. La tarifa que calcules es la base imponible: a ella hay que sumar el IVA (normalmente del 21 % en servicios profesionales) y restar, si facturas a empresas, la retención de IRPF. Ejemplo: 10 horas a 40 € = 400 € + 84 € de IVA − 60 € de retención = 424 € a cobrar.",
+    },
+    {
+      q: "¿Cómo comparar una tarifa de autónomo con un sueldo?",
+      a: "Un asalariado con 30.000 € brutos le cuesta a la empresa unos 39.600 € y tiene vacaciones pagadas, pagas extra y paro. Para obtener un neto similar como autónomo, con cuota, gastos y horas no facturables, necesitas facturar normalmente entre 45.000 y 55.000 € al año, lo que equivale a unos 35-45 € por hora facturada.",
+    },
+    {
+      q: "¿Debo cobrar por horas o por proyecto?",
+      a: "Cobrar por horas es transparente y protege frente a cambios de alcance, pero penaliza tu eficiencia. Cobrar por proyecto premia la experiencia y es más fácil de vender, aunque exige estimar bien. Muchos autónomos calculan el precio del proyecto con su tarifa horaria y añaden un margen del 15-25 % para imprevistos.",
+    },
+  ]}
+>
   <PrecioHoraTool client:load />
 </CalcLayout>
