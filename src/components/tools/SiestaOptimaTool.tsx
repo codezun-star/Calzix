@@ -9,7 +9,7 @@ function addMinutes(time: string, mins: number): string {
 }
 
 const TIPOS = [
-  { nombre: 'Nap turbo (10–20 min)', duracion: 20, descripcion: 'Ideal para recuperar energía rápida sin entrar en sueño profundo. Evita la inercia del sueño.' },
+  { nombre: 'Siesta corta (10–20 min)', duracion: 20, descripcion: 'Ideal para recuperar energía rápida sin entrar en sueño profundo. Evita la inercia del sueño.' },
   { nombre: 'Siesta regenerativa (30 min)', duracion: 30, descripcion: 'Mejora la memoria y el estado de ánimo. Puede causar algo de inercia del sueño.' },
   { nombre: 'Siesta completa (90 min)', duracion: 90, descripcion: 'Ciclo completo de sueño. Recupera a fondo pero requiere tiempo. Mejor antes de las 15h.' },
 ];

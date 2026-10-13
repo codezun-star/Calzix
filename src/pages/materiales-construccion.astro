@@ -4,41 +4,36 @@ import MaterialesConstruccionTool from '@/components/tools/MaterialesConstruccio
 ---
 
 <CalcLayout slug="materiales-construccion"
-  whatIs="La calculadora de materiales de construcción estima la cantidad de ladrillos (estándar, perforado o bloque de concreto), sacos de cemento y sacos de arena necesarios para levantar una pared de mampostería a partir de sus dimensiones en metros. Incluye un 5 % de desperdicio automático."
-  whyUse="Albañiles, maestros de obra, contratistas y propietarios en México, Colombia, Perú, Chile y Argentina usan esta herramienta para presupuestar materiales antes de ir a la ferretería, evitar viajes extras por faltante, y reducir el desperdicio en proyectos residenciales, comerciales y de autoproducción de vivienda."
+  answer={"Para levantar un muro calcula su superficie (largo × alto) y multiplícala por las piezas por m²: una pared de 5 × 2,5 m (12,5 m²) con ladrillo estándar de 24 × 11,5 × 7 cm necesita unos 790 ladrillos, contando un 5 % de roturas, además de los sacos de cemento y arena para el mortero."}
+  howTo={[
+    "Introduce el largo y el alto de la pared en metros.",
+    "Elige el tipo de pieza: ladrillo estándar, ladrillo perforado o bloque de hormigón.",
+    "Pulsa calcular para ver el número de piezas y los sacos de cemento y arena."
+  ]}
+  whatIs={"La calculadora de materiales de construcción estima cuántos ladrillos o bloques necesitas para levantar una pared y los sacos de cemento y arena para el mortero de agarre."}
+  whyUse={"Te ayuda a calcular materiales para una pared, un muro de jardín, una barbacoa o un cerramiento, comparar presupuestos y pedir la cantidad adecuada en el almacén."}
   faqs={[
-  {
-    q: '¿Por qué se añade un 5 % de desperdicio en el cálculo de ladrillos?',
-    a: 'El margen del 5 % cubre las pérdidas inevitables en cualquier obra de mampostería: roturas durante el transporte y la descarga (1–2 %), cortes al ajustar esquinas y huecos de puertas y ventanas (2–3 %), y piezas defectuosas descubiertas al momento de la colocación. En proyectos con diseños complejos, muchos ángulos no rectos o ladrillos a palomero (colocados de canto), los profesionales recomiendan aumentar este margen al 8–10 %. En obras de autoconstrucción en México (CONAVI estima que el 60 % de la vivienda se construye por autoproducción), donde el manejo de materiales es menos cuidadoso, agregar un 8 % es una práctica habitual. Siempre compra el material de un mismo lote para garantizar uniformidad de color y dimensiones.'
-  },
-  {
-    q: '¿Cuántos ladrillos caben en un metro cuadrado de pared según el tipo?',
-    a: 'El número de piezas por m² varía según las dimensiones del ladrillo y el espesor de la junta de mortero (generalmente 1–1,5 cm). Los valores usados en esta calculadora son: ladrillo estándar macizo (24 x 11,5 x 7 cm) = 60 unidades por m²; ladrillo perforado o hueco (24 x 11,5 x 9 cm) = 45 unidades por m²; bloque de concreto (40 x 20 x 20 cm) = 12,5 unidades por m². Estos valores corresponden a la colocación a soga (la cara larga visible). En Latinoamérica coexisten varias dimensiones normalizadas: el ladrillo "NMX" de México es ligeramente distinto al "NTC" de Colombia o al "UNIT" de Uruguay, pero las densidades por m² son similares. La ficha técnica del fabricante siempre indica el rendimiento por m² específico del producto.'
-  },
-  {
-    q: '¿Cuál es la diferencia entre ladrillo estándar, perforado y bloque de concreto?',
-    a: 'Son tres productos con propósitos distintos. El ladrillo macizo estándar (también llamado de barro cocido macizo) es el más resistente a compresión; se usa en muros estructurales, zoclos y paredes expuestas a lluvia directa. Su mayor peso (aproximadamente 2,5–3 kg/unidad) requiere una estructura de apoyo más sólida. El ladrillo perforado o tabique hueco es el más común en muros divisorios de vivienda en México y Colombia: pesa menos (1,5–2 kg), tiene mejor aislamiento térmico y acústico, y admite instalaciones eléctricas en sus huecos. El bloque de concreto (o bloque de cemento) mide entre 15 y 20 cm de espesor; es ideal para muros perimetrales, bardas, sótanos y construcciones industriales. En LATAM, el bloque es el material dominante en zonas costeras (resistente a humedad) y en la vivienda de interés social por su bajo costo y rapidez de colocación.'
-  },
-  {
-    q: '¿Cómo se calcula la cantidad de cemento y arena para pegar los ladrillos?',
-    a: 'Esta calculadora usa una estimación práctica estándar: 1 saco de cemento (de 50 kg) por cada 50 ladrillos, y 1 saco de arena (de 50 kg) por cada 30 ladrillos. Estas proporciones corresponden aproximadamente a un mortero de asiento 1:4 (cemento:arena en volumen) con junta de 1 cm. En proyectos reales, la dosificación puede variar: en zonas sísmicas de México y Colombia se puede usar 1:3 para mayor resistencia; en climas muy húmedos del Caribe se agrega cemento blanco o aditivos impermeabilizantes. La normativa mexicana NMX-C-485-ONNCCE y las normas técnicas NSR-10 de Colombia definen los requisitos de resistencia para los morteros de pega en distintas condiciones sísmicas y climáticas. Para obras importantes, siempre pide un diseño de mezcla a un laboratorio de concreto certificado.'
-  },
-  {
-    q: '¿La calculadora descuenta las puertas y ventanas del área de la pared?',
-    a: 'No: el cálculo se basa en el área total de la pared (largo x alto). Para descontar huecos, resta el área de cada puerta y ventana manualmente y calcula con el valor resultante. Por ejemplo, una pared de 5 x 2,5 m (12,5 m²) con una ventana de 1,2 x 1 m (1,2 m²) y una puerta de 0,9 x 2,1 m (1,89 m²) tiene un área neta de 12,5 - 1,2 - 1,89 = 9,41 m². Introduce 9,41 m² dividiendo entre largo y alto equivalentes. Alternativamente, haz el cálculo completo y resta el número de ladrillos que corresponden a los huecos multiplicando el área de cada hueco por la densidad de ladrillos por m².'
-  },
-  {
-    q: '¿Cuántos sacos de cemento necesito por m³ de mezcla para pegar ladrillos?',
-    a: 'Para un mortero de asiento o pegue de mampostería de dosificación 1:4 (1 parte de cemento por 4 de arena), se necesitan aproximadamente 6–7 sacos de 50 kg de cemento por m³ de mortero. Sin embargo, el volumen de mortero de junta por m² de pared es pequeño: para una junta de 1 cm y ladrillos de 7 cm de alto, la cantidad de mortero por m² es apenas 0,01–0,015 m³. La calculadora usa una aproximación práctica (1 saco por 50 ladrillos) que resulta suficientemente precisa para la mayoría de las obras residenciales. Para proyectos industriales o estructurales, solicita un diseño de mezcla certificado según la norma ACI 318 (adoptada en México como NTC-EC y en Colombia en la NSR-10). Los cementos más usados en LATAM son los Portland Compuesto (CPO, CPC) de marcas Cemex, Cementos Argos, Holcim y Colclinker, con sacos de 50 kg como presentación estándar.'
-  },
-  {
-    q: '¿Qué tipos de ladrillo se usan en la construcción de vivienda popular en LATAM?',
-    a: 'La vivienda popular en América Latina usa mayoritariamente dos materiales: el tabique rojo recocido (ladrillo artesanal de barro cocido) y el bloque de concreto hueco. En México, el tabique rojo es el material de autoconstrucción por excelencia; ciudades como Ecatepec, Nezahualcóyotl y municipios de Oaxaca y Chiapas tienen millones de viviendas construidas totalmente con este material. Las dimensiones varían por región: en el Estado de México el tabique estándar mide 24 x 12 x 6 cm; en Jalisco, 25 x 12 x 7 cm. En Colombia, el bloque de concreto N° 4 (39 x 19 x 9 cm) y el ladrillo de arcilla Santafé son los más usados en vivienda de interés social del SISBÉN. En Perú, el ladrillo King Kong de 18 huecos (24 x 13 x 9 cm) es el dominante. En Chile, el ladrillo silico-calcáreo y el bloque de hormigón son los más frecuentes en vivienda SERVIU. Conocer el formato local es clave para estimar cantidades correctamente.'
-  },
-  {
-    q: '¿Cuánto cuesta construir 1 m² de muro de ladrillo en LATAM?',
-    a: 'El costo por m² de muro varía enormemente según el país, la región, el tipo de ladrillo y el costo de mano de obra. Valores de referencia orientativos para 2024 (solo materiales + mano de obra básica, sin incluir acabados ni estructura): en México, 350–650 MXN/m² para tabique rojo con mezcla; en Colombia, 35.000–65.000 COP/m² para ladrillo de arcilla; en Chile, 18.000–35.000 CLP/m² para muro de ladrillo; en Perú, 80–150 PEN/m²; en Argentina, los precios son más variables por la inflación. Estos valores son referenciales y pueden duplicarse en zonas de alta sismicidad donde se exigen refuerzos de concreto (dalas y castillos en México, vigas de amarre en Colombia). Para presupuestar correctamente una obra, solicita al menos 3 cotizaciones de maestros de obra de tu localidad y verifica precios actualizados en ferreterías como Home Depot, Sodimac, Construrama o Ferretotal.'
-  },
-]}>
+    {
+      q: "¿Cuántos ladrillos entran en un metro cuadrado?",
+      a: "Depende del formato y del aparejo. Con el ladrillo de 24 × 11,5 × 7 cm y juntas de 1 cm se colocan unos 50-60 por m² en un muro de medio pie; con ladrillo perforado de 9 cm de altura, unos 45; y con bloque de hormigón de 40 × 20 cm, unas 12,5 piezas por m².",
+    },
+    {
+      q: "¿Por qué se añade un 5 % de más?",
+      a: "Para compensar las piezas que se rompen al transportarlas o al cortarlas para ajustar esquinas, huecos y remates. En trabajos con muchos cortes conviene un margen mayor.",
+    },
+    {
+      q: "¿Qué ladrillo uso para cada trabajo?",
+      a: "El ladrillo perforado se usa en muros de carga y fachadas para revestir; el hueco (doble o sencillo), en tabiques interiores; el macizo o caravista, en fachadas vistas y barbacoas; y el bloque de hormigón, en muros de cerramiento, naves y muros de jardín.",
+    },
+    {
+      q: "¿Necesito permiso para levantar un muro?",
+      a: "Normalmente sí. Un muro de cerramiento de una parcela o una construcción en el jardín suele requerir licencia o declaración responsable en el ayuntamiento, que además fija la altura máxima y los retranqueos. Los muros de carga y estructuras deben cumplir el Código Técnico de la Edificación.",
+    },
+    {
+      q: "¿Cuánto cuesta levantar un tabique?",
+      a: "En España, un tabique de ladrillo hueco con mano de obra cuesta aproximadamente entre 25 y 45 € por m², sin contar el enlucido y la pintura. Los tabiques de pladur suelen tener un precio similar y son más rápidos de montar.",
+    },
+  ]}
+>
   <MaterialesConstruccionTool client:load />
 </CalcLayout>

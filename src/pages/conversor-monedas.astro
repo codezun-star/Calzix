@@ -4,41 +4,40 @@ import ConvMonedasTool from '@/components/tools/ConvMonedasTool';
 ---
 
 <CalcLayout slug="conversor-monedas"
-  whatIs="El conversor de monedas transforma importes entre 12 divisas principales: euro (EUR), dólar estadounidense (USD), libra esterlina (GBP), yen japonés (JPY), franco suizo (CHF), dólar canadiense (CAD), dólar australiano (AUD), peso mexicano (MXN), real brasileño (BRL), peso chileno (CLP), peso colombiano (COP) y yuan chino (CNY). Usa tasas orientativas de referencia de 2024."
-  whyUse="Viajeros, importadores, estudiantes y trabajadores transfronterizos en México, Colombia, Chile, Brasil y toda LATAM usan este conversor para estimar equivalencias de precios en el extranjero, comparar cotizaciones de importación en dólares y euros, planificar presupuestos de viaje, o entender el impacto de la devaluación en sus ahorros y poder adquisitivo."
+  answer={"Para convertir euros a otra moneda multiplica por el tipo de cambio de referencia: 100 € son unos 112 dólares, 85 libras o 93 francos suizos con los tipos del BCE de octubre de 2026. Es un tipo medio de mercado: el banco o la casa de cambio aplicará además su margen."}
+  howTo={[
+    "Elige la moneda de origen.",
+    "Introduce el importe.",
+    "Consulta su equivalencia en las principales divisas al tipo de referencia."
+  ]}
+  whatIs={"El conversor de monedas convierte euros y otras divisas al tipo de cambio de referencia del Banco Central Europeo y muestra de un vistazo su equivalencia en las monedas más usadas desde España."}
+  whyUse={"Sirve para hacerte una idea rápida del precio de un vuelo, un hotel o una compra online en otra moneda, revisar una factura de un proveedor extranjero o preparar el presupuesto de un viaje."}
   faqs={[
-  {
-    q: '¿Son exactas las tasas de cambio de este conversor?',
-    a: 'Las tasas usadas en este conversor son orientativas y corresponden a valores de referencia de 2024. Los tipos de cambio fluctúan constantemente en los mercados financieros internacionales (Forex), influidos por tasas de interés, inflación, balanza comercial, calificación crediticia y eventos geopolíticos. La diferencia entre el tipo de cambio de referencia y el tipo real al que cambiarás en un banco o casa de cambio puede ser del 1 al 5 %, más las comisiones de la entidad. Para operaciones financieras reales —remesas a México o Colombia, compras en tiendas extranjeras, conversión de ahorros— siempre consulta la tasa del día en tu banco, en plataformas de remesas como Wise, Remitly o Western Union, o en el sitio del Banco de México (Banxico), el Banco de la República (Colombia) o el Banco Central de Chile. Este conversor es ideal para estimaciones rápidas: antes de un viaje, al comparar precios de artículos importados, o para entender el orden de magnitud de una cifra en moneda extranjera.'
-  },
-  {
-    q: '¿Qué es el tipo de cambio y cómo se determina en LATAM?',
-    a: 'El tipo de cambio es el precio de una moneda expresado en términos de otra. Existen dos sistemas principales: tipo de cambio fijo (el gobierno fija el valor de su moneda frente a otra) y tipo flotante (el mercado determina el precio mediante oferta y demanda). En LATAM, la mayoría de los países tienen tipos flotantes o administrados: México (peso libre flotante desde 1995, gestionado por Banxico), Colombia (flotación libre con intervenciones ocasionales del BanRep), Chile (flotación libre supervisada por el BCCh). Sin embargo, Venezuela y Cuba tienen regímenes de control de cambios con múltiples tipos (oficial vs. paralelo), lo que crea diferencias enormes entre el tipo oficial y el mercado informal. Los factores que mueven el tipo de cambio en LATAM incluyen: (1) decisiones de tasas de interés de la Fed (EE.UU.) que generan flujo de capital hacia o desde mercados emergentes; (2) precio de las materias primas exportadas (petróleo para Colombia y Venezuela, cobre para Chile y Perú, soya para Brasil y Argentina); (3) remesas (México recibió +60.000 millones de USD en remesas en 2023, siendo la segunda fuente de divisas tras el petróleo); (4) reservas internacionales de cada banco central.'
-  },
-  {
-    q: '¿Cuántos pesos mexicanos vale 1 dólar estadounidense y qué factores lo afectan?',
-    a: 'El tipo de cambio USD/MXN fluctúa continuamente y ha tenido una apreciación histórica notable del peso: desde ~20 MXN/USD en 2020 se llegó a ~16,5 MXN/USD a mediados de 2024 (la menor cotización en casi 10 años), antes de depreciarse nuevamente por factores electorales e incertidumbre política. Las tasas de referencia de este conversor son aproximadas; para el tipo exacto del día consulta Banxico (www.banxico.org.mx) que publica el "tipo de cambio FIX" diariamente. El MXN es la moneda latinoamericana más negociada en el mercado Forex global, con un volumen diario de ~60.000 millones de USD, detrás del BRL. Los factores que más mueven el USD/MXN son: (1) las remesas, que generan una demanda constante de pesos; (2) las exportaciones de manufacturas (Mexico es el principal exportador de autos a EE.UU.); (3) las decisiones de política monetaria de Banxico (tasas de referencia entre 10–11 % en 2024); (4) la inversión extranjera directa (IED) atraída por el nearshoring industrial en el norte de México. Las empresas que importan insumos o exportan productos en dólares gestionan este riesgo cambiario mediante contratos de cobertura (hedging) con bancos comerciales.'
-  },
-  {
-    q: '¿Cómo afecta la inflación al tipo de cambio y al poder adquisitivo en LATAM?',
-    a: 'La inflación y el tipo de cambio están íntimamente relacionados: según la Teoría de la Paridad del Poder Adquisitivo (PPA), en el largo plazo el tipo de cambio se ajusta para compensar las diferencias de inflación entre dos países. Si México tiene 5 % de inflación y EE.UU. tiene 3 %, la teoría predice que el peso se depreciará un 2 % anual frente al dólar. En la práctica, esta relación es imperfecta en el corto plazo, pero real a largo plazo: el peso argentino se ha depreciado masivamente frente al dólar en las últimas décadas en paralelo con su altísima inflación (superó el 200 % anual en 2023). Colombia logró reducir su inflación del 13 % (2022) al 6 % (2024), lo que estabilizó el COP. Venezuela experimentó hiperinflación, por lo que sus tasas de cambio tienen lógica diferente. Para el ciudadano latinoamericano, la depreciación de la moneda local reduce su poder adquisitivo en bienes importados (tecnología, medicamentos importados, repuestos) y encarece los viajes al exterior. Las remesas en dólares, por el contrario, benefician a sus receptores en México, Honduras, El Salvador y Colombia cuando el dólar sube.'
-  },
-  {
-    q: '¿Qué monedas latinoamericanas incluye el conversor y cuáles faltan?',
-    a: 'Este conversor incluye las cuatro monedas latinoamericanas con mayor volumen de transacciones internacionales: peso mexicano (MXN), real brasileño (BRL), peso chileno (CLP) y peso colombiano (COP). Entre las monedas LATAM no incluidas por su menor liquidez internacional están el sol peruano (PEN), el peso argentino (ARS), el peso uruguayo (UYU), el guaraní paraguayo (PYG), el boliviano (BOB), el quetzal guatemalteco (GTQ), el colón costarricense (CRC) y el lempira hondureño (HNL). El ARS no se incluye por su complejidad: Argentina tiene múltiples tipos de cambio simultáneos (oficial, MEP o dólar bolsa, CCL, blue/paralelo), haciendo cualquier tasa estática engañosa. Para convertir a monedas LATAM no listadas, se recomienda usar plataformas especializadas como XE.com, Wise o Revolut, que actualizan tasas en tiempo real. Las cuatro monedas incluidas representan aproximadamente el 80 % del PIB de habla hispana en LATAM, siendo las más útiles para comercio exterior, turismo, remesas e inversión en la región.'
-  },
-  {
-    q: '¿Cómo se calcula la conversión entre dos monedas cuando ninguna es el euro (base)?',
-    a: 'Este conversor usa el euro (EUR) como moneda pivote o base interna, lo que significa que convierte primero a EUR y luego de EUR a la moneda destino. Por ejemplo, para convertir 1.000 MXN a COP: primero se convierte 1.000 MXN a EUR (÷ 18,5 ≈ 54,05 EUR) y luego se convierte 54,05 EUR a COP (× 4.600 ≈ 248.630 COP). Este método de "par cruzado" (cross rate) es la práctica estándar del mercado Forex: la mayoría de los pares de divisas de países emergentes no tienen liquidez directa entre sí, sino que cotizan contra el USD o EUR como intermediario. La diferencia entre el tipo "cruzado calculado" y el tipo directo de mercado raramente supera el 1 % en divisas principales. Para importadores latinoamericanos que pagan en yuan (CNY) bienes de manufactura china (frecuente en México, Colombia y Chile), el cálculo típico es: precio en CNY × tipo CNY/USD × tipo USD/MXN, o usar este conversor pasando primero a EUR y luego a la moneda local. Bancos como BBVA Bancomer (México), Bancolombia y Banco de Chile ofrecen cuentas en divisas múltiples para empresas importadoras/exportadoras que manejan este tipo de operaciones.'
-  },
-  {
-    q: '¿Por qué el yen japonés tiene denominaciones tan altas comparado con otras monedas?',
-    a: 'El yen japonés (JPY) tiene valores nominales muy altos porque Japón nunca realizó una redenominación monetaria (processo de reducir el número de ceros de una moneda). El yen se creó en 1871 durante la Era Meiji; en aquel entonces 1 JPY valía aproximadamente 1 USD. Décadas de inflación de posguerra (en los 1940s-1950s) y la evolución de los mercados cambiarios llevaron a que hoy 1 USD equivalga a unos 150–160 JPY (2024). Esto es completamente normal: países como Indonesia tienen denominaciones aún mayores (1 USD ≈ 16.000 IDR, rupias indonesias) o Vietnam (1 USD ≈ 25.000 VND). No significa que la moneda sea "débil" en términos económicos, ya que el yen es una divisa de reserva global y Japón es la tercera economía mundial. En LATAM, los productos japoneses (autos Toyota, Honda, Mazda; electrónica Sony, Panasonic) se venden en moneda local, pero sus precios de fábrica y contratos mayoristas están denominados en JPY. Las empresas latinoamericanas que importan directamente de Japón (poco común; generalmente importan a través de distribuidores regionales) necesitan convertir JPY a USD o a su moneda local para calcular costos.'
-  },
-  {
-    q: '¿Cómo planificar el presupuesto de un viaje al extranjero desde LATAM?',
-    a: 'Planificar un viaje internacional desde México, Colombia, Chile, Argentina o Brasil requiere conocer los tipos de cambio con antelación y calcular costos en moneda local. Pasos prácticos: (1) Investigar el tipo de cambio actual con 2–4 semanas de anticipación: usar este conversor para estimaciones y plataformas en tiempo real (XE.com, Google) para el tipo del día. (2) Presupuestar todos los gastos en la moneda destino: alojamiento (Booking/Airbnb muestra en USD o moneda local), comida (restaurante promedio en Europa: 15–25 EUR; en EE.UU.: 15–30 USD; en Japón: 1.000–2.000 JPY), transporte (metro de Tokio: ~200 JPY por viaje; metro de París: ~2,15 EUR). (3) Convertir a tu moneda local usando la tasa del día menos el 2–3 % por comisiones bancarias. (4) Evaluar la mejor forma de llevar el dinero: tarjetas de débito de Wise o Revolut con tipos de cambio interbancarios (sin comisiones ocultas) son la opción más económica para ciudadanos LATAM que viajan a Europa, EE.UU. o Asia. (5) Considerar el seguro de viaje, que en muchos países de destino es recomendable o exigible: los precios se expresan en USD y representan 3–7 % del costo total del viaje. Destinos populares desde LATAM: México D.F.→Miami (precio referencia 350–500 USD), Bogotá→Madrid (450–700 USD), Santiago→Buenos Aires (150–250 USD).'
-  },
-]}>
+    {
+      q: "¿El tipo de cambio es el que me aplicará el banco?",
+      a: "No exactamente. El conversor usa el tipo de referencia del BCE, que es un precio medio del mercado. Tu banco, tu tarjeta o la casa de cambio aplicarán un margen o una comisión que puede ir del 0 % al 10 %. Para calcular lo que recibirás realmente con una comisión, usa la calculadora de cambio de divisas.",
+    },
+    {
+      q: "¿Cada cuánto se actualizan los tipos?",
+      a: "El BCE publica los tipos de referencia cada día laborable hacia las 16:00 (hora de España). Los tipos de esta herramienta son orientativos y se revisan periódicamente; se indica su fecha. Para operaciones importantes, consulta el tipo del día en tu banco o en la web del BCE o del Banco de España.",
+    },
+    {
+      q: "¿Cómo convierto un precio en dólares a euros?",
+      a: "Divide el importe en dólares entre el tipo de cambio euro-dólar. Si el euro está a 1,12 dólares, un producto de 50 $ cuesta unos 44,64 €. Ten en cuenta que las compras fuera de la UE pueden pagar además IVA y, en su caso, aranceles al importarse a España.",
+    },
+    {
+      q: "¿Pago IVA al comprar en una tienda de fuera de la UE?",
+      a: "Sí. Desde julio de 2021 todas las importaciones pagan IVA en España, sin el antiguo mínimo exento de 22 €. Muchas tiendas lo cobran ya al pagar (sistema IOSS). Si no, la empresa de transporte te lo cobrará al entregar el paquete, junto con una tasa de gestión.",
+    },
+    {
+      q: "¿Qué moneda usan los países vecinos de España?",
+      a: "Portugal, Francia y Andorra usan el euro (Andorra lo usa por acuerdo con la UE). Gibraltar usa la libra gibraltareña, equivalente a la libra esterlina, aunque se aceptan euros con un tipo poco favorable. Marruecos usa el dírham, que no puede sacarse del país.",
+    },
+    {
+      q: "¿Qué pasa con los céntimos al convertir?",
+      a: "Los importes se redondean a dos decimales para la mayoría de monedas. Algunas divisas, como el yen japonés o el florín húngaro, no usan decimales en la práctica. En pagos con tarjeta, el redondeo lo hace el banco al liquidar la operación.",
+    },
+  ]}
+>
   <ConvMonedasTool client:load />
 </CalcLayout>
