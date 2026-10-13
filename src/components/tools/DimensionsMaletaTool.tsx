@@ -1,11 +1,17 @@
 import { useState } from 'react';
 import { formatNumber } from '@/lib/utils/format';
 
+// Medidas máximas en cm (largo × ancho × alto). Revisadas en octubre de 2026;
+// las aerolíneas las cambian a menudo, así que el texto invita a comprobarlas.
 const LIMITES = [
-  { aerolinea: 'Vueling / Iberia (cabina)', largo: 55, ancho: 40, alto: 20 },
-  { aerolinea: 'Ryanair (cabina)',           largo: 40, ancho: 25, alto: 20 },
-  { aerolinea: 'EasyJet (cabina)',           largo: 56, ancho: 45, alto: 25 },
-  { aerolinea: 'IATA bodega estándar',       largo: 158, ancho: 158, alto: 158 },
+  { aerolinea: 'Ryanair: bolso gratis bajo el asiento',   largo: 40, ancho: 25, alto: 20 },
+  { aerolinea: 'Vueling: bolso gratis bajo el asiento',   largo: 40, ancho: 30, alto: 20 },
+  { aerolinea: 'easyJet: bolso gratis bajo el asiento',   largo: 45, ancho: 36, alto: 20 },
+  { aerolinea: 'Ryanair y Vueling: maleta de cabina',     largo: 55, ancho: 40, alto: 20 },
+  { aerolinea: 'Iberia: maleta de cabina',                largo: 56, ancho: 40, alto: 25 },
+  { aerolinea: 'Air Europa: maleta de cabina',            largo: 55, ancho: 35, alto: 25 },
+  { aerolinea: 'easyJet: maleta de cabina grande',        largo: 56, ancho: 45, alto: 25 },
+  { aerolinea: 'Bodega estándar (158 cm lineales)',       largo: 158, ancho: 158, alto: 158 },
 ];
 
 export default function DimensionsMaletaTool() {
@@ -36,7 +42,7 @@ export default function DimensionsMaletaTool() {
 
   return (
     <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 space-y-4">
-      <p className="text-xs text-[var(--color-text-secondary)]">Introduce las dimensiones de tu maleta en centímetros (sin ruedas ni asas).</p>
+      <p className="text-xs text-[var(--color-text-secondary)]">Introduce las medidas de tu maleta en centímetros, con ruedas y asas incluidas, que es como las miden en el aeropuerto. Comprueba siempre las condiciones de tu tarifa en la web de la aerolínea.</p>
       <div className="grid grid-cols-3 gap-3">
         <div className="space-y-1"><label className="text-xs font-medium text-[var(--color-text-secondary)]">Largo (cm)</label><input type="number" value={largo} onChange={(e) => { setLargo(e.target.value); setResult(null); }} placeholder="55" className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-2 text-sm text-[var(--color-text)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]" /></div>
         <div className="space-y-1"><label className="text-xs font-medium text-[var(--color-text-secondary)]">Ancho (cm)</label><input type="number" value={ancho} onChange={(e) => { setAncho(e.target.value); setResult(null); }} placeholder="40" className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-2 text-sm text-[var(--color-text)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]" /></div>

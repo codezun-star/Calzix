@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FACTOR_EMISION_RED } from '@/lib/constants/espana';
 import { formatNumber } from '@/lib/utils/format';
 
 type TipoCombustible = 'gasolina' | 'diesel' | 'electrico';
@@ -53,7 +54,7 @@ export default function HuellaCarbonTool() {
 
       const coche = km * FACTOR_COCHE[combustible];
       const vuelos = cortos * 255 + largos * 1950;
-      const electricidad = kwh * 12 * 0.233;
+      const electricidad = kwh * 12 * FACTOR_EMISION_RED;
       const dietaKg = FACTOR_DIETA[dieta];
 
       const totalKg = coche + vuelos + electricidad + dietaKg;

@@ -1,14 +1,13 @@
 import { useState } from 'react';
 import { formatNumber } from '@/lib/utils/format';
 
-type Escala = 'esp10' | 'pct' | 'us' | 'eu5' | 'col5';
+type Escala = 'esp10' | 'pct' | 'us' | 'eu5';
 
 const ESCALAS: Record<Escala, { label: string; min: number; max: number }> = {
-  esp10: { label: 'España (0–10)',      min: 0,   max: 10  },
-  pct:   { label: 'Porcentaje (0–100)', min: 0,   max: 100 },
-  us:    { label: 'EE.UU. (A–F)',       min: 0,   max: 4   },
-  eu5:   { label: 'Europa (1–5)',       min: 1,   max: 5   },
-  col5:  { label: 'Colombia (0–5)',     min: 0,   max: 5   },
+  esp10: { label: 'España (0–10)',          min: 0,   max: 10  },
+  pct:   { label: 'Porcentaje (0–100)',     min: 0,   max: 100 },
+  us:    { label: 'GPA de EE. UU. (0–4)',   min: 0,   max: 4   },
+  eu5:   { label: 'Escala de 1 a 5',        min: 1,   max: 5   },
 };
 
 function toBase(valor: number, escala: Escala): number {
@@ -17,7 +16,6 @@ function toBase(valor: number, escala: Escala): number {
     case 'pct':   return valor / 100;
     case 'us':    return valor / 4;
     case 'eu5':   return (valor - 1) / 4;
-    case 'col5':  return valor / 5;
   }
 }
 
@@ -27,7 +25,6 @@ function fromBase(base: number, escala: Escala): number {
     case 'pct':   return base * 100;
     case 'us':    return base * 4;
     case 'eu5':   return base * 4 + 1;
-    case 'col5':  return base * 5;
   }
 }
 
@@ -42,6 +39,14 @@ function letraUS(gpa: number): string {
   if (gpa >= 1.3) return 'C−';
   if (gpa >= 1.0) return 'D';
   return 'F';
+}
+
+/** Calificación oficial en España (RD 1125/2003). */
+function calificacionEs(nota: number): string {
+  if (nota >= 9) return 'Sobresaliente';
+  if (nota >= 7) return 'Notable';
+  if (nota >= 5) return 'Aprobado';
+  return 'Suspenso';
 }
 
 export default function ConversionNotasTool() {
@@ -84,6 +89,9 @@ export default function ConversionNotasTool() {
       {error && <p className="text-sm text-red-600">{error}</p>}
       {result !== null && (
         <div className="rounded-xl bg-[var(--color-calcs-bg)] p-4 space-y-2">
+          <p className="text-xs text-[var(--color-text-secondary)]">
+            Calificación en España: <strong className="text-[var(--color-text)]">{calificacionEs(result.esp10)}</strong> ({formatNumber(result.esp10, 2)} sobre 10)
+          </p>
           {(Object.entries(ESCALAS) as [Escala, (typeof ESCALAS)[Escala]][]).filter(([k]) => k !== de).map(([k, v]) => (
             <div key={k} className="flex justify-between text-sm">
               <span className="text-[var(--color-text-secondary)]">{v.label}</span>
@@ -94,6 +102,9 @@ export default function ConversionNotasTool() {
           ))}
         </div>
       )}
+      <p className="text-xs text-[var(--color-text-muted)]">
+        Conversión lineal orientativa. Para Erasmus y másteres, cada universidad aplica su propia tabla de equivalencias.
+      </p>
     </div>
   );
 }

@@ -17,7 +17,8 @@ export default function HorasExtraTool() {
       if (isNaN(s) || isNaN(h) || isNaN(r)) throw new Error('Introduce todos los valores.');
       if (s <= 0 || h <= 0) throw new Error('El salario y las horas deben ser positivos.');
       if (r < 0) throw new Error('El recargo no puede ser negativo.');
-      const horasAnuales = 1800;
+      // Jornada anual efectiva orientativa (40 h semanales menos vacaciones y festivos).
+      const horasAnuales = 1760;
       const valorHora = s / horasAnuales;
       const valorExtra = valorHora * (1 + r / 100);
       setResult({ valorHora, valorExtra, total: valorExtra * h });
@@ -38,7 +39,7 @@ export default function HorasExtraTool() {
           <input type="number" value={horasExtra} onChange={(e) => { setHorasExtra(e.target.value); setResult(null); }} placeholder="Ej. 10" className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-2 text-sm text-[var(--color-text)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]" />
         </div>
         <div className="space-y-1">
-          <label className="text-xs font-medium text-[var(--color-text-secondary)]">Recargo sobre hora normal (%)</label>
+          <label className="text-xs font-medium text-[var(--color-text-secondary)]">Recargo según tu convenio (%)</label>
           <input type="number" value={recargo} onChange={(e) => { setRecargo(e.target.value); setResult(null); }} placeholder="25" className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-2 text-sm text-[var(--color-text)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]" />
         </div>
       </div>
@@ -51,6 +52,10 @@ export default function HorasExtraTool() {
             <div><p className="text-xs text-[var(--color-text-secondary)]">Valor hora extra</p><p className="text-base font-extrabold text-[var(--color-text)]">{formatCurrency(result.valorExtra)}</p></div>
             <div><p className="text-xs text-[var(--color-text-secondary)]">Total a cobrar</p><p className="text-base font-extrabold text-[var(--color-text)]">{formatCurrency(result.total)}</p></div>
           </div>
+          <p className="text-xs text-[var(--color-text-muted)]">
+            Hora ordinaria = salario anual / 1.760 horas. Según el Estatuto de los Trabajadores (art. 35), la hora extra nunca se paga por debajo de la ordinaria
+            (o se compensa con descanso) y no puedes hacer más de 80 al año. Las horas extra tributan en el IRPF y cotizan a la Seguridad Social.
+          </p>
         </div>
       )}
     </div>

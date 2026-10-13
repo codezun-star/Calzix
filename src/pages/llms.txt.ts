@@ -19,10 +19,18 @@ export const GET: APIRoute = async () => {
   lines.push('');
   lines.push(`> ${SITE.description} ${CALCS.length} calculadoras gratuitas organizadas en ${CALC_GROUPS.length} grupos temáticos. Todos los cálculos se ejecutan en el navegador del usuario: no hay registro, ni backend, ni envío de datos a ningún servidor.`);
   lines.push('');
+  lines.push('## Ámbito: España');
+  lines.push('');
+  lines.push(`- ${SITE.name} se dirige exclusivamente a usuarios de España (idioma ${SITE.lang}, moneda euro, zona horaria ${SITE.timeZone}).`);
+  lines.push('- Los cálculos fiscales y laborales siguen la normativa española vigente en 2026: IRPF y retenciones (Agencia Tributaria), cotizaciones a la Seguridad Social, SMI 2026 (1.221 € en 14 pagas), IVA (21 %, 10 % y 4 %; IGIC en Canarias) y Estatuto de los Trabajadores.');
+  lines.push('- Las referencias educativas son las del sistema español (ESO, Bachillerato, PAU, créditos ECTS, becas del Ministerio de Educación); las de energía, las del mercado eléctrico español (PVPC, peajes, potencia contratada) y la tarifa TUR de gas.');
+  lines.push('- Formato numérico español: coma decimal y punto de millar (1.234,56 €). Unidades del Sistema Internacional.');
+  lines.push(`- Datos revisados por última vez el ${SITE.dateModified}. Los importes y tipos se citan con su fuente oficial (BOE, AEAT, Seguridad Social, INE, Banco de España, CNMC).`);
+  lines.push('');
   lines.push('## Cómo usar este sitio');
   lines.push('');
   lines.push('- Cada calculadora vive en su propia URL bajo el dominio raíz, sin barra final (ejemplo: https://calzix.com/calculadora-porcentaje).');
-  lines.push('- Todas las páginas están en español y son de acceso libre y gratuito, sin muro de pago ni registro.');
+  lines.push('- Todas las páginas están en español de España y son de acceso libre y gratuito, sin muro de pago ni registro.');
   lines.push('- Cada página incluye la fórmula empleada, un ejemplo resuelto y preguntas frecuentes con sus respuestas.');
   lines.push('- Los resultados se calculan en el cliente con JavaScript; el contenido explicativo es HTML estático y siempre legible sin ejecutar scripts.');
   lines.push('');
@@ -45,7 +53,7 @@ export const GET: APIRoute = async () => {
   if (posts.length > 0) {
     lines.push('## Blog');
     lines.push('');
-    lines.push(`Guías y artículos explicativos (${posts.length} artículos — índice en ${SITE.url}/blog)`);
+    lines.push(`Guías y artículos explicativos para España (${posts.length} artículos — índice en ${SITE.url}/blog)`);
     lines.push('');
     for (const post of posts) {
       lines.push(`- [${post.data.titulo}](${SITE.url}/blog/${post.id})${post.data.descripcion ? `: ${post.data.descripcion}` : ''}`);

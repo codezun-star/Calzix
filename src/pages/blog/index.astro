@@ -7,6 +7,7 @@ import { getCollection } from 'astro:content';
 import '@/styles/global.css';
 import AppHead from '@/components/layout/AppHead.astro';
 import { jsonLd } from '@/lib/utils/jsonld';
+import { SPAIN_AUDIENCE, ORG_ID } from '@/lib/utils/schema';
 import AdSlot from '@/components/ads/AdSlot.astro';
 import AdNative from '@/components/ads/AdNative.astro';
 
@@ -21,16 +22,16 @@ const articles = todos
     fecha:       art.data.fecha,
   }));
 
-const title       = `Blog — Guías y consejos sobre cálculo | ${SITE.name}`;
-const description = 'Artículos, guías y tutoriales para entender fórmulas, hacer mejores cálculos financieros y aprovechar al máximo las calculadoras de Calzix.';
+const title       = `Blog — Guías de cálculo, impuestos y ahorro en España | ${SITE.name}`;
+const description = 'Guías prácticas para España: IRPF y nómina, IVA, hipoteca y Euríbor, factura de la luz, finiquito, nota de la PAU y fórmulas explicadas paso a paso con ejemplos en euros.';
 const canonical   = `${SITE.url}/blog`;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={SITE.lang}>
   <head>
     <meta charset="UTF-8" />
-    <AppHead />
+    <AppHead canonical={canonical} />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
@@ -41,10 +42,13 @@ const canonical   = `${SITE.url}/blog`;
     <meta property="og:title"       content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:site_name"   content={SITE.name} />
+    <meta property="og:locale"      content={SITE.ogLocale} />
+    <meta property="og:image"       content={SITE.ogImage} />
 
-    <meta name="twitter:card"        content="summary" />
+    <meta name="twitter:card"        content="summary_large_image" />
     <meta name="twitter:title"       content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image"       content={SITE.ogImage} />
 
     <script is:inline type="application/ld+json" set:html={jsonLd({
       '@context': 'https://schema.org',
@@ -52,7 +56,9 @@ const canonical   = `${SITE.url}/blog`;
       name:        title,
       description,
       url:         canonical,
-      publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+      inLanguage:  SITE.lang,
+      audience:    SPAIN_AUDIENCE,
+      publisher: { '@type': 'Organization', '@id': ORG_ID, name: SITE.name, url: SITE.url },
     })} />
   </head>
 

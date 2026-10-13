@@ -7,17 +7,17 @@ import { SITE } from '@/lib/constants/seo';
  * de inicio del móvil y abrirla a pantalla completa, sin la interfaz del navegador.
  * Iconos generados con `node scripts/generate-icons.mjs` (public/icons/).
  */
-const SHORTCUTS = ['calculadora-hipoteca', 'calculadora-porcentaje', 'calculadora-iva'];
+const SHORTCUTS = ['calculadora-hipoteca', 'calculadora-nomina', 'calculadora-iva'];
 
 export const GET: APIRoute = () => {
   const shortcutIcon = [{ src: '/icons/icon-192.png', sizes: '192x192', type: 'image/png' }];
 
   const manifest = {
     id: '/',
-    name: `${SITE.name} — Calculadoras online gratuitas`,
+    name: `${SITE.name} — Calculadoras online gratis para España`,
     short_name: SITE.name,
     description: SITE.description,
-    lang: 'es',
+    lang: SITE.lang,
     dir: 'ltr',
     start_url: '/',
     scope: '/',

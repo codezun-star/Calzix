@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FACTOR_EMISION_RED } from '@/lib/constants/espana';
 import { formatNumber, formatCurrency } from '@/lib/utils/format';
 
 export default function AhorroEnergeticoTool() {
@@ -33,7 +34,7 @@ export default function AhorroEnergeticoTool() {
       const ahorroEurosMes = ahorroKwhMes * precioN;
       const ahorroEurosAnio = ahorroEurosMes * 12;
       const ahorroKwhAnio = ahorroKwhMes * 12;
-      const co2Evitado = ahorroKwhAnio * 0.233;
+      const co2Evitado = ahorroKwhAnio * FACTOR_EMISION_RED;
 
       setResult({ consumoNuevo, ahorroKwhMes, ahorroEurosMes, ahorroEurosAnio, co2Evitado });
     } catch (e) {

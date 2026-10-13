@@ -5,7 +5,7 @@ const INPUT = 'w-full rounded-xl border border-[var(--color-border)] bg-[var(--c
 
 export default function AhorroCo2SolarTool() {
   const [generacion, setGeneracion] = useState('');
-  const [factor, setFactor] = useState('0.25');
+  const [factor, setFactor] = useState('0.12');
   const [result, setResult] = useState<{ co2: number; arboles: number; km: number } | null>(null);
   const [error, setError] = useState('');
 
@@ -24,7 +24,7 @@ export default function AhorroCo2SolarTool() {
 
   return (
     <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 space-y-4">
-      <p className="text-xs text-[var(--color-text-secondary)]">El factor de emisión de la red varía por país (0,15-0,45 kg CO₂/kWh). Usa el de tu mix eléctrico.</p>
+      <p className="text-xs text-[var(--color-text-secondary)]">En España, la red eléctrica emite alrededor de 0,10-0,13 kg de CO₂ por kWh (generación de 2024-2025). Puedes cambiarlo si tu comercializadora publica otro factor.</p>
       <div className="grid grid-cols-2 gap-3">
         <div className="space-y-1">
           <label className="text-xs font-medium text-[var(--color-text-secondary)]">Generación solar (kWh/año)</label>
@@ -32,7 +32,7 @@ export default function AhorroCo2SolarTool() {
         </div>
         <div className="space-y-1">
           <label className="text-xs font-medium text-[var(--color-text-secondary)]">Factor red (kg CO₂/kWh)</label>
-          <input type="number" value={factor} onChange={(e) => { setFactor(e.target.value); setResult(null); }} placeholder="0.25" className={INPUT} />
+          <input type="number" value={factor} onChange={(e) => { setFactor(e.target.value); setResult(null); }} placeholder="0.12" className={INPUT} />
         </div>
       </div>
       <button onClick={calcular} className="w-full rounded-xl bg-[var(--color-accent)] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-accent-hover)]">Calcular CO₂ evitado</button>

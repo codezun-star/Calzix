@@ -2,21 +2,21 @@ import { useState } from 'react';
 
 interface Resultado {
   principales: number[];
-  complementario: number;
+  reintegro: number;
 }
 
 function generarNumeros(): Resultado {
   const set = new Set<number>();
-  while (set.size < 7) {
+  while (set.size < 6) {
     const arr = new Uint32Array(1);
     crypto.getRandomValues(arr);
     const n = (arr[0] % 49) + 1;
     set.add(n);
   }
-  const todos = Array.from(set);
-  const complementario = todos[6];
-  const principales = todos.slice(0, 6).sort((a, b) => a - b);
-  return { principales, complementario };
+  const principales = Array.from(set).sort((a, b) => a - b);
+  const r = new Uint32Array(1);
+  crypto.getRandomValues(r);
+  return { principales, reintegro: r[0] % 10 };
 }
 
 export default function NumerosSuerteTool() {
@@ -29,8 +29,8 @@ export default function NumerosSuerteTool() {
   return (
     <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 space-y-4">
       <p className="text-sm text-[var(--color-text-secondary)]">
-        Genera 6 números únicos del 1 al 49 más un número complementario para la Lotería Primitiva
-        española, usando un generador criptográficamente seguro.
+        Genera 6 números distintos del 1 al 49 y un reintegro del 0 al 9 para La Primitiva o la Bonoloto
+        de Loterías y Apuestas del Estado, con un generador criptográficamente seguro.
       </p>
 
       <button
@@ -60,15 +60,15 @@ export default function NumerosSuerteTool() {
 
           <div className="rounded-xl bg-[var(--color-calcs-bg)] p-4 flex flex-col items-center gap-2">
             <p className="text-xs font-medium text-[var(--color-text-secondary)]">
-              Número complementario
+              Reintegro
             </p>
             <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-[var(--color-accent)] bg-[var(--color-surface)] font-bold text-sm text-[var(--color-accent)]">
-              {resultado.complementario}
+              {resultado.reintegro}
             </span>
           </div>
 
           <p className="text-xs text-center text-[var(--color-text-muted)]">
-            Los números se generan de forma aleatoria y segura. No garantizan ningun premio.
+            Los números se generan de forma aleatoria y segura. No aumentan la probabilidad de ganar: todas las combinaciones tienen la misma (1 entre 13.983.816 para la de 6 aciertos).
           </p>
         </div>
       )}

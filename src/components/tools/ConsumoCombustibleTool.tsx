@@ -18,7 +18,7 @@ interface Resultado {
 export default function ConsumoCombustibleTool() {
   const [distancia, setDistancia] = useState('');
   const [consumo, setConsumo] = useState('7');
-  const [precio, setPrecio] = useState('1.70');
+  const [precio, setPrecio] = useState('1.85');
   const [personas, setPersonas] = useState('1');
   const [combustible, setCombustible] = useState<TipoCombustible>('gasolina');
   const [resultado, setResultado] = useState<Resultado | null>(null);

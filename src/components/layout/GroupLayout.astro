@@ -1,0 +1,148 @@
+---
+// Layout de las 9 páginas de categoría (/matematicas, /hogar, /trabajo…).
+// SEO completo: OpenGraph con imagen, segmentación a España (AppHead) y un
+// @graph JSON-LD con CollectionPage, BreadcrumbList e ItemList de las
+// calculadoras del grupo, generado desde CALCS.
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import CalcGrid from '@/components/ui/CalcGrid';
+import { CALC_GROUPS, CALCS } from '@/lib/constants/calcs';
+import { PAGE_SEO, SITE } from '@/lib/constants/seo';
+import '@/styles/global.css';
+import AppHead from './AppHead.astro';
+import { jsonLd } from '@/lib/utils/jsonld';
+import { organizationSchema, websiteSchema, SPAIN_PLACE, SPAIN_AUDIENCE, WEBSITE_ID } from '@/lib/utils/schema';
+import AdSlot from '@/components/ads/AdSlot.astro';
+import AdNative from '@/components/ads/AdNative.astro';
+
+interface Props {
+  /** Slug del grupo (coincide con CALC_GROUPS[].slug y con la clave de PAGE_SEO). */
+  slug: string;
+  /** H1 visible. Por defecto, "Calculadoras de {grupo}". */
+  heading?: string;
+  /** Sustantivo del contador ("calculadoras", "conversores"…). */
+  countLabel?: string;
+}
+
+const { slug, heading, countLabel = 'calculadoras' } = Astro.props;
+
+const group = CALC_GROUPS.find((g) => g.slug === slug);
+if (!group) throw new Error(`GroupLayout: grupo desconocido "${slug}"`);
+
+const domainIds = new Set(group.domains.map((d) => d.id));
+const calcs = CALCS.filter((c) => domainIds.has(c.domain));
+const seo = PAGE_SEO[slug];
+const title = seo?.title ?? `Calculadoras de ${group.label} — ${SITE.name}`;
+const description = seo?.description ?? group.description;
+const canonical = seo?.canonical ?? `${SITE.url}/${slug}`;
+const h1 = heading ?? `Calculadoras de ${group.label}`;
+
+const graph = jsonLd({
+  '@context': 'https://schema.org',
+  '@graph': [
+    organizationSchema(),
+    websiteSchema(),
+    {
+      '@type': 'CollectionPage',
+      '@id': `${canonical}#webpage`,
+      url: canonical,
+      name: title,
+      description,
+      inLanguage: SITE.lang,
+      isPartOf: { '@id': WEBSITE_ID },
+      audience: SPAIN_AUDIENCE,
+      spatialCoverage: SPAIN_PLACE,
+      dateModified: SITE.dateModified,
+      breadcrumb: { '@id': `${canonical}#breadcrumb` },
+      mainEntity: { '@id': `${canonical}#lista` },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${canonical}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: SITE.name, item: SITE.url },
+        { '@type': 'ListItem', position: 2, name: group.label, item: canonical },
+      ],
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${canonical}#lista`,
+      name: h1,
+      numberOfItems: calcs.length,
+      itemListElement: calcs.map((c, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: c.name,
+        url: `${SITE.url}/${c.slug}`,
+      })),
+    },
+  ],
+});
+---
+
+<!doctype html>
+<html lang={SITE.lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <AppHead canonical={canonical} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:locale" content={SITE.ogLocale} />
+    <meta property="og:image" content={SITE.ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={SITE.ogImage} />
+    <script is:inline type="application/ld+json" set:html={graph} />
+  </head>
+  <body>
+    <Header />
+
+    <div class="bg-[var(--color-text)]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
+        <nav class="hidden sm:flex items-center gap-2 text-xs text-[var(--color-text-muted)] mb-6">
+          <a href="/" class="hover:text-white transition-colors">Inicio</a>
+          <span>/</span>
+          <span style="color: var(--color-accent);">{group.label}</span>
+        </nav>
+        <div class="flex items-start justify-between gap-6 flex-wrap">
+          <div>
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight mb-2 sm:mb-3">
+              {h1}
+            </h1>
+            <p class="aeo-answer text-[var(--color-text-muted)] text-sm sm:text-base max-w-xl leading-relaxed">
+              {group.description}
+            </p>
+          </div>
+          <div class="shrink-0 self-start">
+            <span class="inline-flex items-center px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-sm font-medium text-white">
+              {calcs.length} {countLabel}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main class="bg-[var(--color-calcs-bg)] border-b border-[var(--color-calcs-border)] py-6 sm:py-10 min-h-[60vh]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <AdSlot placement="horizontal" class="mb-6 sm:mb-8" />
+
+        <CalcGrid groupSlug={slug} client:load />
+
+        <AdNative class="mt-12" />
+      </div>
+    </main>
+
+    <Footer />
+  </body>
+</html>

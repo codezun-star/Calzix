@@ -24,9 +24,9 @@ export default function BecaTool() {
     }
 
     const umbrales: Array<{ label: string; umbral: number }> = [
-      { label: 'Beca general', umbral: 5.0 },
-      { label: 'Cuantía fija ligada al rendimiento', umbral: 6.5 },
-      { label: 'Beca de excelencia', umbral: 8.0 },
+      { label: 'Beca de matrícula', umbral: 5.0 },
+      { label: 'Cuantías fijas (renta y residencia) y variable', umbral: 6.5 },
+      { label: 'Cuantía por excelencia académica', umbral: 8.0 },
     ];
 
     setResultado(
@@ -43,7 +43,7 @@ export default function BecaTool() {
     <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 space-y-4">
       <div className="space-y-1">
         <label className="text-xs font-medium text-[var(--color-text-secondary)]">
-          Nota media del expediente (0–10)
+          Nota de acceso (sin fase específica) o nota media del curso anterior
         </label>
         <input
           type="number"
@@ -98,8 +98,9 @@ export default function BecaTool() {
           <div className="rounded-xl border border-[var(--color-border)] p-4 flex items-start gap-2">
             <AlertCircle className="mt-0.5 shrink-0 text-[var(--color-text-muted)]" size={16} />
             <p className="text-xs text-[var(--color-text-secondary)]">
-              Criterio de nota. Para la beca también aplican criterios económicos y de matriculación.
-              Consulta la convocatoria oficial del Ministerio de Educación antes de presentarte.
+              Requisitos de nota para 1.º de grado en la beca general del Ministerio de Educación 2026-2027.
+              También cuentan los umbrales de renta y patrimonio familiar y la matrícula mínima de 60 créditos.
+              Consulta la convocatoria oficial antes de presentarte.
             </p>
           </div>
         </div>

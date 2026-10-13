@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { formatNumber } from '@/lib/utils/format';
 
 export default function VacacionesTool() {
-  const [diasAnuales, setDiasAnuales] = useState('22');
+  const [diasAnuales, setDiasAnuales] = useState('30');
   const [diasTrabajados, setDiasTrabajados] = useState('');
   const [result, setResult] = useState<{ diasCorresponden: number; diasPendientes: number } | null>(null);
   const [error, setError] = useState('');
@@ -26,8 +26,8 @@ export default function VacacionesTool() {
     <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 space-y-4">
       <div className="grid grid-cols-2 gap-4">
         <div className="space-y-1">
-          <label className="text-xs font-medium text-[var(--color-text-secondary)]">Días de vacaciones anuales</label>
-          <input type="number" value={diasAnuales} onChange={(e) => { setDiasAnuales(e.target.value); setResult(null); }} placeholder="22" className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-2 text-sm text-[var(--color-text)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]" />
+          <label className="text-xs font-medium text-[var(--color-text-secondary)]">Días de vacaciones al año (30 naturales o 22 laborables)</label>
+          <input type="number" value={diasAnuales} onChange={(e) => { setDiasAnuales(e.target.value); setResult(null); }} placeholder="30" className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-2 text-sm text-[var(--color-text)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]" />
         </div>
         <div className="space-y-1">
           <label className="text-xs font-medium text-[var(--color-text-secondary)]">Días trabajados en el período</label>

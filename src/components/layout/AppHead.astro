@@ -3,7 +3,18 @@
 // el móvil: viewport a pantalla completa (muescas y barra de inicio incluidas),
 // manifiesto PWA instalable, iconos de pantalla de inicio y color de la barra
 // del sistema. Se incluye en todos los layouts y páginas con <head> propio.
+//
+// También concentra las señales de segmentación geográfica (España):
+// idioma-región, geo.region y, en las páginas indexables (las que pasan
+// `canonical`), hreflang es-ES + x-default.
 import { SITE } from '@/lib/constants/seo';
+
+interface Props {
+  /** URL canónica de la página. Si se pasa, se emite hreflang (solo páginas indexables). */
+  canonical?: string;
+}
+
+const { canonical } = Astro.props;
 ---
 
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -17,3 +28,14 @@ import { SITE } from '@/lib/constants/seo';
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-title" content={SITE.name} />
 <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+<!-- Segmentación geográfica: sitio dirigido exclusivamente a España -->
+<meta http-equiv="content-language" content={SITE.lang} />
+<meta name="geo.region" content={SITE.country} />
+<meta name="geo.placename" content={SITE.countryName} />
+{canonical && (
+  <>
+    <link rel="alternate" hreflang={SITE.lang} href={canonical} />
+    <link rel="alternate" hreflang="x-default" href={canonical} />
+  </>
+)}

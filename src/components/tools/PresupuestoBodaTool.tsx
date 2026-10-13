@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { formatCurrency } from '@/lib/utils/format';
 
 const CATEGORIAS = [
-  { key: 'venue', label: 'Salón / Catering', placeholder: '8000' },
-  { key: 'catering', label: 'Comida y bebida extra', placeholder: '2000' },
+  { key: 'venue', label: 'Finca o restaurante (banquete)', placeholder: '12000' },
+  { key: 'catering', label: 'Barra libre y recena', placeholder: '2000' },
   { key: 'flores', label: 'Flores y decoración', placeholder: '1500' },
   { key: 'musica', label: 'Música / DJ / Banda', placeholder: '2000' },
   { key: 'foto', label: 'Fotografía y vídeo', placeholder: '2500' },

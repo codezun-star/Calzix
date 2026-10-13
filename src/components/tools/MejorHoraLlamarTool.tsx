@@ -1,26 +1,30 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { ZONAS_ESPANA, ZONAS_MUNDO, formatearEnZona, horaDeRelojAInstante, hoyEnZona } from '@/lib/utils/zonas';
 
 const INPUT = 'w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-2 text-sm text-[var(--color-text)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]';
+const LABEL = 'text-xs font-medium text-[var(--color-text-secondary)]';
 
 export default function MejorHoraLlamarTool() {
-  const [horaLocal, setHoraLocal] = useState('');
-  const [diferencia, setDiferencia] = useState('');
-  const [result, setResult] = useState<{ destino: string; ok: boolean } | null>(null);
+  const [origen, setOrigen] = useState('Europe/Madrid');
+  const [destino, setDestino] = useState('America/New_York');
+  const [horaLocal, setHoraLocal] = useState('18:00');
+  const [fecha, setFecha] = useState('');
+  const [result, setResult] = useState<{ destino: string; dia: string; ok: boolean } | null>(null);
   const [error, setError] = useState('');
+
+  useEffect(() => { setFecha(hoyEnZona('Europe/Madrid')); }, []);
 
   function calcular() {
     try {
       setError('');
-      const m = /^(\d{1,2}):(\d{2})$/.exec(horaLocal.trim());
-      if (!m) throw new Error('Introduce tu hora local en formato HH:MM.');
-      const hh = parseInt(m[1], 10), mm = parseInt(m[2], 10);
-      if (hh > 23 || mm > 59) throw new Error('Hora no válida.');
-      const dif = parseFloat(diferencia);
-      if (isNaN(dif)) throw new Error('Introduce la diferencia horaria del destino (ej. +6 o -3).');
-      let total = hh * 60 + mm + dif * 60;
-      total = ((total % (24 * 60)) + 24 * 60) % (24 * 60);
-      const dh = Math.floor(total / 60), dm = Math.round(total % 60);
-      setResult({ destino: `${dh.toString().padStart(2, '0')}:${dm.toString().padStart(2, '0')}`, ok: dh >= 8 && dh < 22 });
+      const instante = horaDeRelojAInstante(fecha || hoyEnZona(origen), horaLocal, origen);
+      if (!instante) throw new Error('Introduce tu hora local en formato HH:MM.');
+      const hora = Number(formatearEnZona(instante, destino, { hour: '2-digit', hourCycle: 'h23' }));
+      setResult({
+        destino: formatearEnZona(instante, destino, { hour: '2-digit', minute: '2-digit' }),
+        dia: formatearEnZona(instante, destino, { weekday: 'long', day: 'numeric', month: 'long' }),
+        ok: hora >= 9 && hora < 21,
+      });
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Error al calcular.');
     }
@@ -28,15 +32,27 @@ export default function MejorHoraLlamarTool() {
 
   return (
     <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 space-y-4">
-      <p className="text-xs text-[var(--color-text-secondary)]">Comprueba qué hora es en el destino para no llamar de madrugada.</p>
-      <div className="grid grid-cols-2 gap-3">
+      <p className="text-xs text-[var(--color-text-secondary)]">Comprueba qué hora es en el destino antes de llamar desde España. El horario de verano se tiene en cuenta automáticamente.</p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div className="space-y-1">
-          <label className="text-xs font-medium text-[var(--color-text-secondary)]">Tu hora local (HH:MM)</label>
-          <input value={horaLocal} onChange={(e) => { setHoraLocal(e.target.value); setResult(null); }} placeholder="18:00" className={INPUT} />
+          <label className={LABEL}>Llamas desde</label>
+          <select value={origen} onChange={(e) => { setOrigen(e.target.value); setResult(null); }} className={INPUT}>
+            {ZONAS_ESPANA.map((z) => <option key={z.id} value={z.id}>{z.label}</option>)}
+          </select>
         </div>
         <div className="space-y-1">
-          <label className="text-xs font-medium text-[var(--color-text-secondary)]">Diferencia horaria (h)</label>
-          <input type="number" value={diferencia} onChange={(e) => { setDiferencia(e.target.value); setResult(null); }} placeholder="Ej. +6" className={INPUT} />
+          <label className={LABEL}>País al que llamas</label>
+          <select value={destino} onChange={(e) => { setDestino(e.target.value); setResult(null); }} className={INPUT}>
+            {ZONAS_MUNDO.map((z) => <option key={z.id} value={z.id}>{z.label}</option>)}
+          </select>
+        </div>
+        <div className="space-y-1">
+          <label className={LABEL}>Fecha</label>
+          <input type="date" value={fecha} onChange={(e) => { setFecha(e.target.value); setResult(null); }} className={INPUT} />
+        </div>
+        <div className="space-y-1">
+          <label className={LABEL}>Tu hora en España</label>
+          <input type="time" value={horaLocal} onChange={(e) => { setHoraLocal(e.target.value); setResult(null); }} className={INPUT} />
         </div>
       </div>
       <button onClick={calcular} className="w-full rounded-xl bg-[var(--color-accent)] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-accent-hover)]">Comprobar hora</button>
@@ -45,7 +61,8 @@ export default function MejorHoraLlamarTool() {
         <div className="rounded-xl bg-[var(--color-calcs-bg)] p-4 space-y-1">
           <p className="text-xs text-[var(--color-text-secondary)]">Hora en el destino</p>
           <p className="text-2xl font-extrabold text-[var(--color-text)]">{result.destino}</p>
-          <p className="text-sm text-[var(--color-text-secondary)]">{result.ok ? 'Buena hora para llamar (horario diurno razonable).' : 'Evita llamar: en el destino es de noche o muy temprano.'}</p>
+          <p className="text-xs text-[var(--color-text-muted)]">{result.dia}</p>
+          <p className="text-sm text-[var(--color-text-secondary)]">{result.ok ? 'Buena hora para llamar (entre las 9:00 y las 21:00 allí).' : 'Mejor no llamar: en el destino es de noche o muy temprano.'}</p>
         </div>
       )}
     </div>
