@@ -1,44 +1,43 @@
 ---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import DistanciaTool from "@/components/tools/DistanciaTool";
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import DistanciaTool from '@/components/tools/DistanciaTool';
 ---
 
 <CalcLayout slug="calculadora-distancia"
-  whatIs="La calculadora de tiempo de viaje calcula cuanto tardas en llegar a tu destino en coche segun la distancia en km y la velocidad media de conduccion. Opcionalmente puedes incluir el tiempo de paradas en minutos y la hora de salida para obtener la hora estimada de llegada. La herramienta calcula el tiempo de conduccion puro, el tiempo total incluyendo paradas y la hora de llegada al destino. Es util para planificar salidas y estimar llegadas en viajes por carretera en cualquier pais de LATAM."
-  whyUse="Conductores que planifican viajes interurbanos o interregionales en Mexico, Colombia, Chile, Peru, Argentina y toda LATAM usan esta calculadora para saber a que hora llegan al destino segun la hora de salida, decidir si vale la pena salir hoy o manana en funcion del tiempo estimado, coordinar la llegada con personas que los esperan, y calcular si necesitan hacer noche en ruta o pueden completar el trayecto en el dia."
+  answer={"El tiempo de viaje es la distancia dividida entre la velocidad media, más las paradas. Madrid-Barcelona por la A-2 son unos 620 km: a una media de 100 km/h son 6 horas y 12 minutos de conducción, y con dos paradas de 20 minutos, unas 6 horas y 50 minutos."}
+  howTo={[
+    "Introduce la distancia en kilómetros.",
+    "Escribe la velocidad media que esperas mantener (en autovía, entre 95 y 110 km/h contando incorporaciones y tráfico).",
+    "Añade el tiempo de paradas y pulsa calcular para ver la duración del viaje y la hora de llegada."
+  ]}
+  whatIs={"La calculadora de tiempo de viaje estima cuánto tardarás en recorrer una distancia según la velocidad media, sumando el tiempo de las paradas de descanso, para viajes en coche, moto, bicicleta o tren."}
+  whyUse={"Sirve para planificar la hora de salida en las operaciones salida de verano, Semana Santa o puentes, calcular a qué hora llegarás y organizar las paradas que recomienda la DGT cada dos horas de conducción."}
   faqs={[
-  {
-    q: "¿Como estimar la velocidad media realista en carreteras de LATAM?",
-    a: "La velocidad media real en un trayecto de carretera en LATAM es tipicamente menor a la velocidad maxima permitida por varias razones estructurales. Limites de velocidad: las autopistas de cuota (peaje) en Mexico tienen limite de 110 km/h; las carreteras nacionales de Colombia de 80-100 km/h; la Ruta 5 de Chile de 100-120 km/h; las carreteras interurbanas de Peru de 90-100 km/h. Factores que reducen la velocidad media. Poblados intermedios: en LATAM, la mayoria de las carreteras pasan por o cerca de pequenas ciudades y pueblos donde el limite es de 30-60 km/h y hay controles de velocidad o topes; esto puede reducir la velocidad media significativamente en rutas que no son autopista de acceso controlado. Trafico: las salidas y llegadas de ciudades principales (CDMX los viernes por la tarde, Bogota en festivos, Santiago en verano) pueden multiplicar el tiempo de viaje. Peajes: en Mexico la Ruta CDMX-Guadalajara tiene 8-10 casetas de peaje; cada una supone 2-5 minutos de detencion. Estado del camino: en carreteras secundarias de Peru, Bolivia o Mexico rural, la velocidad practicable puede ser de 40-60 km/h en tramos de terraceria. Referencias utiles de velocidad media por tipo de ruta en LATAM: autopista de cuota sin trafico: 90-100 km/h; carretera nacional asfaltada: 70-80 km/h; carretera de montana con curvas: 50-65 km/h; carretera rural o terraceria: 35-50 km/h."
-  },
-  {
-    q: "¿Cuanto tiempo suelen durar los viajes interurbanos mas comunes de LATAM?",
-    a: "Estos son los tiempos reales de conduccion de los trayectos interurbanos mas transitados de LATAM (sin incluir trafico intenso ni paradas largas). Mexico: CDMX a Guadalajara (350 km por autopista): 3,5-4 horas. CDMX a Monterrey (940 km): 9-10 horas (se recomienda hacer noche). CDMX a Acapulco (400 km): 4-5 horas. Guadalajara a Puerto Vallarta (340 km): 3,5-4 horas. Colombia: Bogota a Medellin (420 km por la via de la Autopista de la Montana): 7-8 horas (ruta de montana con muchas curvas). Bogota a Cali (460 km): 8-9 horas. Bogota a Cartagena (1.050 km): 13-15 horas (2 dias recomendados). Chile: Santiago a Valparaiso (120 km): 1,5-2 horas. Santiago a Viña del Mar (140 km): 1,5-2 horas. Santiago a Concepcion (500 km): 5-6 horas. Peru: Lima a Ica (303 km): 3,5-4 horas. Lima a Arequipa (1.009 km): 14-16 horas (se recomienda tomar bus nocturno o dividir en 2 dias). Argentina: Buenos Aires a Mar del Plata (404 km): 4-5 horas. Buenos Aires a Cordoba (695 km): 7-8 horas. Estos tiempos son orientativos para velocidades promedio de 80-90 km/h en autopista y no incluyen paradas de descanso, combustible ni alimentacion."
-  },
-  {
-    q: "¿Cuantas paradas de descanso son necesarias en viajes largos por carretera en LATAM?",
-    a: "La normativa de conduccion segura y las recomendaciones de las agencias viales de LATAM coinciden en que se debe hacer al menos una parada de descanso cada 2 horas de conduccion continua. Esto no es solo una recomendacion de salud: la fatiga al volante es la segunda causa mas frecuente de accidentes en carretera en Mexico, Colombia y Chile segun los datos de sus respectivas agencias viales. Tiempos de parada recomendados: parada corta (estirar piernas, hidratacion): 10-15 minutos cada 2 horas. Parada para combustible y baño: 20-30 minutos. Parada para comer: 30-45 minutos. Noche de descanso: necesaria si el viaje supera las 8-9 horas de conduccion total. Planificacion practica para road trips de LATAM. Para el viaje Bogota-Medellin (7-8 horas): se recomienda 2 paradas en el camino; los puntos mas comunes son Honda o Guaduas (a 2-3 horas de Bogota) y La Pintada o Bolombolo (a 5-6 horas). Para el viaje Lima-Arequipa (14-16 horas): es necesario pernoctar en Ica o Nasca; conducir este trayecto de una sola vez es peligroso por la fatiga y los tramos nocturnos en carreteras con poca iluminacion. En la calculadora de Calzix: introduce el tiempo de paradas en el campo correspondiente (por ejemplo, 60 minutos para un viaje de 6 horas con dos paradas de 30 minutos) para obtener el tiempo total de puerta a puerta."
-  },
-  {
-    q: "¿Como planificar la hora de salida para evitar trafico en ciudades de LATAM?",
-    a: "Las ciudades de LATAM tienen algunos de los peores indices de congestion vial del mundo: Bogota, CDMX, Lima y Sao Paulo aparecen regularmente entre las 10 ciudades mas congestionadas globalmente segun el TomTom Traffic Index. Las horas pico mas criticas para salir de las principales ciudades de LATAM son las siguientes. CDMX: trafico intenso de lunes a viernes de 7:00-9:30 y 17:00-20:30; el viernes por la tarde antes de un puente es especialmente critico. Los sabados y domingos por la manana antes de las 8:00 son los mejores momentos para salir. Bogota: pico de 6:30-9:00 y 17:00-19:30 en dias laborables; ademas, los festivos colombianos (los lunes festivos son muy frecuentes) tienen salida masiva el domingo por la tarde y regreso el lunes por la noche. Lima: trafico congestionado practicamente todo el dia en los ejes principales; los sabados por la manana temprano son relativamente fluidos. Santiago: pico de 7:30-9:00 y 18:00-20:00; los veranos (enero-febrero) en la region Metropolitana tienen congestion de salida hacia la costa. Para road trips de fin de semana en LATAM, la recomendacion general es salir el viernes por la noche despues de las 22:00 o el sabado antes de las 7:00 para evitar la congestion de salida."
-  },
-  {
-    q: "¿Como usar la calculadora para comparar la ruta directa versus la ruta con desvio?",
-    a: "En LATAM existen frecuentemente dos o mas rutas para el mismo trayecto, con distintas combinaciones de distancia, calidad de carretera, peajes y velocidad practicable. Esta calculadora permite comparar facilmente las opciones. Ejemplo: viaje de Bogota a Medellin. Ruta 1 (via Honda): 420 km por carretera de 2 carriles con montana; velocidad media 55 km/h; tiempo calculado = 420/55 = 7,6 horas. Ruta 2 (Autopista de la Montana/Tunnel del Toyo cuando este terminado): 300 km con mejor infraestructura; velocidad media 75 km/h; tiempo calculado = 300/75 = 4 horas. La Ruta 2 ahorra mas de 3 horas a pesar de tener peajes. Otro ejemplo: Santiago a Mendoza (Argentina). Ruta directa (Paso Los Libertadores): 380 km, velocidad media 65 km/h incluyendo la frontera; tiempo = 5,8 horas mas la espera en migraciones (variable: 30 minutos a 3 horas segun la temporada). Ruta alternativa por Paso Pehuenche (sur): 600 km, velocidad media 60 km/h; tiempo = 10 horas. La ruta directa es mucho mejor incluso con esperas largas en la frontera. Para cada ruta, introduce la distancia y la velocidad media estimada por separado en la calculadora y compara los resultados."
-  },
-  {
-    q: "¿Es mas rapido viajar en coche o en autobus interurbano en LATAM?",
-    a: "La comparacion entre coche propio y autobus interurbano (bus de larga distancia) en LATAM depende del trayecto especifico. Los autobuses de primera clase en LATAM son en muchos casos competitivos o superiores al coche en tiempos de puerta a destino por varias razones. Ventajas de velocidad del autobus: los choferes profesionales de las empresas de autobuses de primera clase (ETN y Primera Plus en Mexico, Expreso Brasilia en Colombia, Tur Bus y Turbus en Chile, Cruz del Sur en Peru) tienen autorizacion para circular a velocidades ligeramente superiores en autopistas y conocen la ruta con un nivel de precision que les permite mantener velocidades promedio mas altas de forma segura. Los autobuses no paran en gasolineras ni hacen desvios; sus paradas estan calculadas con precision. Ventaja del autobus en trayectos nocturnos: para trayectos de 10-15 horas como Lima-Arequipa, Bogota-Cartagena o CDMX-Merida, el bus nocturno de lujo (con camas reclinables) permite viajar mientras duermes, llegando al destino a la manana siguiente descansado; hacerlo en coche requiere conduccion nocturna o hacer noche en hotel, lo que suma tiempo y costo. Ventajas del coche: flexibilidad de horario, puerta a puerta sin conexiones, posibilidad de llevar mucho equipaje. Para distancias de menos de 400 km en autopistas de cuota, el coche es generalmente mas rapido que el bus incluyendo las salidas de las terminales."
-  },
-  {
-    q: "¿Como calcular si puedo hacer el viaje de ida y vuelta en el mismo dia?",
-    a: "Para determinar si un viaje de ida y vuelta es factible en un solo dia, necesitas sumar el tiempo de conduccion de ida, el tiempo de paradas en destino y el tiempo de conduccion de vuelta. Usa la calculadora dos veces: una para la ida y otra para la vuelta (pueden ser iguales si es la misma ruta). La clave es no superar entre 8 y 10 horas de conduccion total en el dia (ida mas vuelta), que es el limite seguro de conduccion continua recomendado por las autoridades viales de Mexico, Colombia y Chile. Ejemplo practico para Mexico: viaje de Guadalajara a Puerto Vallarta de ida y vuelta. Ida (340 km a 80 km/h de media): 4,25 horas. Tiempo en Puerto Vallarta (comida y playa): 3 horas. Vuelta (340 km a 80 km/h): 4,25 horas. Total: 11,5 horas de viaje + 3 horas en destino = salida a las 6:00, llegada a casa a las 20:30. Es factible pero justo. Si el destino requiere estar 6 horas, seria mejor pernoctar. Ejemplo para Colombia: Bogota a Tunja (150 km a 60 km/h): 2,5 horas por trayecto; tiempo en Tunja 4 horas; total = 9 horas; factible con salida a las 7:00 y regreso a las 16:00. Un truco para la planificacion: usa la calculadora con la hora de salida para obtener la hora de llegada en destino; mentalmente resta de las 22:00 el tiempo del viaje de vuelta para saber la hora maxima de salida del destino."
-  },
-  {
-    q: "¿Que aplicaciones de navegacion son mas usadas en carreteras de LATAM?",
-    a: "Las aplicaciones de navegacion GPS mas populares en LATAM tienen fortalezas distintas segun el tipo de trayecto. Waze (la mas popular en LATAM): especialmente efectiva en zonas urbanas y semiurbanas donde la informacion en tiempo real de los usuarios sobre accidentes, policia y congestion es muy densa; en CDMX, Bogota, Lima y Santiago, Waze puede ahorrar 20-40 minutos en horas pico al sugerir rutas alternativas en tiempo real; en carreteras rurales o poco transitadas la informacion de Waze es menos confiable. Google Maps: mejor que Waze para trayectos de larga distancia por carretera en zonas rurales de LATAM; las estimaciones de tiempo de Google Maps son generalmente mas conservadoras (y por tanto mas realistas) que las de Waze. Maps.me (offline): fundamental para zonas sin cobertura movil que son comunes en carreteras montaniosas de Peru, Colombia y Mexico; permite descargar los mapas de un pais completo para navegacion sin internet; muy usado por motociclistas y aventureros que recorren la Ruta Panamericana. Inrix Traffic (menos conocida pero precisa): util para planificar viajes en Mexico en la red de autopistas de cuota. Para la planificacion previa al viaje, Google Maps permite programar la hora de salida y mostrar el trafico estimado, lo que complementa perfectamente la estimacion de tiempo de esta calculadora."
-  },
-]}>
+    {
+      q: "¿Qué velocidad media debo usar para calcular un viaje por carretera?",
+      a: "Aunque el límite en autovías y autopistas es de 120 km/h, la velocidad media real en un viaje largo suele estar entre 90 y 105 km/h por las incorporaciones, los tramos urbanos, las obras y el tráfico. En carreteras convencionales, con límite de 90 km/h, la media ronda los 65-75 km/h. En zonas de montaña o con muchas travesías, bastante menos.",
+    },
+    {
+      q: "¿Cuánto se tarda en coche entre las principales ciudades españolas?",
+      a: "Tiempos orientativos sin paradas: Madrid-Valencia (355 km), unas 3 h 30 min; Madrid-Barcelona (620 km), unas 6 h; Madrid-Sevilla (530 km), unas 5 h; Madrid-Bilbao (400 km), unas 4 h; Madrid-A Coruña (590 km), unas 5 h 45 min; Barcelona-Valencia (350 km), unas 3 h 30 min; Sevilla-Málaga (205 km), unas 2 h.",
+    },
+    {
+      q: "¿Cada cuánto debo parar a descansar?",
+      a: "La DGT recomienda parar al menos 20 minutos cada 2 horas o cada 200 km de conducción, y antes si notas cansancio. La fatiga y el sueño están detrás de muchos accidentes, especialmente en las primeras horas de la tarde y de madrugada. Los conductores profesionales tienen límites legales de conducción y descanso controlados por el tacógrafo.",
+    },
+    {
+      q: "¿Cuáles son los límites de velocidad en España?",
+      a: "Autopistas y autovías: 120 km/h para turismos y motocicletas, con límites inferiores para autobuses, camiones y vehículos con remolque. Carreteras convencionales: 90 km/h. Vías urbanas: 50 km/h con dos o más carriles por sentido, 30 km/h con un carril por sentido y 20 km/h en plataforma única.",
+    },
+    {
+      q: "¿Cuándo hay más tráfico en las carreteras españolas?",
+      a: "En las operaciones especiales de la DGT: los viernes por la tarde y domingos por la tarde de los puentes, la salida y la vuelta de Semana Santa, el primer y el último fin de semana de julio y agosto (operación salida y retorno) y las fiestas de Navidad. Consulta el estado del tráfico en la web y las redes de la DGT antes de salir.",
+    },
+    {
+      q: "¿Sirve la calculadora para bicicleta o a pie?",
+      a: "Sí: introduce la velocidad media correspondiente (unos 15-20 km/h en bicicleta y 4-5 km/h andando). Para estas actividades también puedes usar las calculadoras específicas de tiempo en bicicleta y de tiempo caminando, que estiman además las calorías.",
+    },
+  ]}
+>
   <DistanciaTool client:load />
 </CalcLayout>

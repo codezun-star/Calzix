@@ -1,44 +1,43 @@
 ---
-import CalcLayout from "@/components/layout/CalcLayout.astro";
-import PesoEquipajeTool from "@/components/tools/PesoEquipajeTool";
+import CalcLayout from '@/components/layout/CalcLayout.astro';
+import PesoEquipajeTool from '@/components/tools/PesoEquipajeTool';
 ---
 
 <CalcLayout slug="peso-equipaje"
-  whatIs="La calculadora de peso de equipaje te permite listar todos los articulos de tu maleta con su peso individual y verificar si el total supera el limite de la aerolinea. Selecciona el limite (equipaje facturado de 20, 23 o 32 kg, o equipaje de cabina de 8 o 10 kg), agrega cada articulo con su peso, y la herramienta calcula el peso total, el limite seleccionado y el margen disponible o el exceso en tiempo real."
-  whyUse="Viajeros que parten desde Mexico, Colombia, Chile, Peru, Argentina y toda LATAM usan esta calculadora para verificar el peso de la maleta antes de ir al aeropuerto y evitar cargos por exceso, optimizar que llevar y que dejar fuera cuando la maleta esta al limite, comparar si conviene repartir el peso entre varias personas del grupo, y planificar el equipaje para aerolineas de bajo costo con limites muy estrictos como Volaris, VivaAerobus, JetSMART o SKY Airline."
+  answer={"Para saber si tu maleta cumple el límite, suma el peso de cada objeto más el de la maleta vacía (de 2 a 4 kg una de cabina y de 3 a 5 kg una grande) y compáralo con la franquicia: normalmente 10 kg en cabina y 20 o 23 kg en bodega en vuelos europeos."}
+  howTo={[
+    "Elige el límite de tu billete: cabina (10 kg) o facturado (20, 23 o 32 kg).",
+    "Añade cada artículo de tu equipaje con su peso, incluida la propia maleta.",
+    "Comprueba el peso total y el margen que te queda antes de llegar al aeropuerto."
+  ]}
+  whatIs={"La calculadora de peso del equipaje suma el peso de todo lo que vas a llevar y lo compara con el límite de tu aerolínea para saber cuánto margen tienes o cuántos kilos te sobran antes de llegar al aeropuerto."}
+  whyUse={"Te ayuda a preparar la maleta sin sorpresas en el mostrador, a repartir el peso entre varias maletas y a decidir qué dejar en casa para no pagar exceso de equipaje."}
   faqs={[
-  {
-    q: "¿Cuales son los limites de peso de equipaje de las principales aerolineas en LATAM?",
-    a: "Los limites de peso varian segun el tipo de tarifa contratada y la aerolinea. Estos son los limites actuales de las principales aerolineas que operan en LATAM. Aerolineas de bajo costo (los limites son mas estrictos). Volaris (Mexico): la tarifa basica sin equipaje incluido; el equipaje facturado de 23 kg se puede agregar con cargo extra; equipaje de mano en cabina limitado a 10 kg y 55 x 40 x 25 cm. VivaAerobus (Mexico): similar a Volaris, equipaje de bodega de hasta 23 kg por bolsa con cargo adicional segun la tarifa. JetSMART (Chile, Argentina, Colombia, Peru): equipaje de mano de cabina de 10 kg incluido en tarifa basica; equipaje facturado de 15 o 23 kg con cargo extra segun la tarifa. SKY Airline (Chile): equipaje de cabina de 10 kg incluido; bodega de 23 kg con costo adicional. Wingo (Colombia): equipaje de cabina de 10 kg; bodega de 23 kg con cargo. Aerolineas tradicionales. Aeromexico: en tarifa Clase Turista basica, 1 maleta facturada de 25 kg incluida en la mayoria de tarifas internacionales; en tarifas economicas nacionales puede no incluir bodega. Avianca: en tarifa Light, sin bodega; en Economy, 1 maleta de 23 kg; en Premium Economy, 2 maletas de 23 kg. LATAM: 1 maleta de 23 kg en clase economica standard; tarifas light sin bodega. Copa Airlines: 1 maleta de 23 kg en Economy en rutas internacionales."
-  },
-  {
-    q: "¿Como pesar el equipaje sin bascula en casa antes del aeropuerto?",
-    a: "Hay varios metodos practicos para pesar el equipaje cuando no se tiene una bascula de maletas en casa. Bascula de bano personal: la bascula de bano comun tiene una precision de mas o menos 0,5-1 kg, suficiente para detectar un exceso de equipaje antes del aeropuerto. El metodo es: pesate tu solo primero; luego pesate cargando la maleta; resta el primer valor del segundo. Aplicaciones de pesaje por telefono (poco preciso): hay apps que intentan medir peso mediante sensores pero no son confiables para esto; no recomendadas para equipaje. Bascula de maletas portatil (muy recomendable para viajeros frecuentes): disponibles en Mexico y Colombia por 100-300 MXN o 30.000-60.000 COP en tiendas de viaje o plataformas como Amazon o MercadoLibre; permiten pesar la maleta directamente con precision de 0,1 kg. Tiendas y comercios: algunas tiendas de equipaje en los centros comerciales de LATAM tienen bascula disponible para los clientes. Aeropuerto (con tiempo de margen): si no puedes pesar en casa, llega al aeropuerto con 15-20 minutos adicionales de antelacion para pesar en los mostradores de facturacion antes de que te cobren el exceso. Esta calculadora de peso de equipaje de Calzix es util para hacer una estimacion antes de pesar fisicamente la maleta: introduce el peso aproximado de cada articulo y verifica si estas cerca del limite antes de ir al aeropuerto."
-  },
-  {
-    q: "¿Que articulos son los que mas pesan en las maletas de viajeros de LATAM?",
-    a: "Los articulos que mas pesan y que mas frecuentemente causan exceso de equipaje en viajeros de LATAM son los siguientes. Calzado: un par de zapatos formales pesa tipicamente 700-900 g; unas botas de cuero 1-1,5 kg; zapatillas deportivas 400-600 g. Llevar 3-4 pares de calzado puede suponer 2-3 kg solo en zapatos. Liquidos y cosmeticos: cada frasco de champú, acondicionador o crema de 200-500 ml suma 200-500 g; muchos viajeros de LATAM llevan mas cosmeticos de los necesarios; cambiar a tamanos de viaje (menos de 100 ml) o comprar en destino reduce significativamente el peso. Ropa de abrigo: un abrigo de invierno pesa 800 g a 2 kg; un par de botas de nieve 2-3 kg; si viajas de LATAM (clima calido) a un destino frio (invierno en Europa o EE.UU.), la ropa de abrigo puede ser el mayor peso de la maleta. Electrodomesticos y electronica: una plancha de viaje 400-600 g; una secadora de pelo 300-600 g; un cargador de laptop 400-600 g; varios cargadores, cables y dispositivos pueden sumar 2-3 kg. Libros y materiales educativos: cada libro puede pesar 300-800 g; estudiantes o lectores que llevan varios libros pueden acumular 2-5 kg solo en lectura; los libros electronicos (Kindle) son la alternativa con un peso de solo 170 g para toda la biblioteca."
-  },
-  {
-    q: "¿Como organizarse si el grupo de viajeros tiene restricciones de equipaje distintas?",
-    a: "En grupos de viajeros donde cada persona tiene distinta cantidad de equipaje facturado permitido (por tarifas distintas o estatus de viajero frecuente), la estrategia de redistribucion del peso puede ahorrar costos significativos. Redistribucion de peso entre maletas: si el grupo viaja junto y alguna persona tiene margen libre, es completamente legal repartir el peso de la maleta sobrecargada hacia la que tiene margen; el limite de peso aplica por maleta, no por persona en la mayoria de aerolineas. Atencion: la maleta sigue siendo de una persona (el que la factura); si en el aeropuerto preguntan, debe poderse retirar el exceso al momento del check-in. Compra de equipaje adicional con anticipacion: para aerolineas de bajo costo de LATAM como Volaris, VivaAerobus o JetSMART, comprar el equipaje adicional online al reservar o en los dias previos al vuelo cuesta tipicamente 30-60 % menos que pagarlo en el aeropuerto el dia del vuelo. En Colombia con Wingo o en Chile con JetSMART, el diferencial de precio entre comprar online vs. en el aeropuerto puede ser de mas del 100 %. Usa esta calculadora: para grupos de 2-4 personas, introduce los articulos de todas las maletas juntas para ver el peso total del grupo y luego redistribuyelo entre las maletas para que todas queden dentro del limite."
-  },
-  {
-    q: "¿Que diferencia hay entre equipaje facturado y equipaje de mano de cabina?",
-    a: "El equipaje facturado y el equipaje de mano son dos modalidades con reglas distintas de peso, dimensiones y contenido. Equipaje de mano de cabina: es el que llevas contigo al avion y colocas en el compartimento superior o bajo el asiento. Los limites tipicos en LATAM son 8-10 kg y dimensiones de 55 x 40 x 20-25 cm (incluyendo ruedas y asas). La ventaja del equipaje de cabina es que evitas esperar la cinta y el riesgo de perdida; la desventaja es el limite de liquidos (menos de 100 ml en contenedores separados en bolsa transparente) y que objetos como limas de metal, tijeras grandes, navajas o baterias de litio de mas de 100 Wh no pueden subir en cabina. Equipaje facturado o de bodega: va en el compartimento inferior del avion; los limites tipicos son 20, 23 o 32 kg por maleta. En el equipaje facturado puedes llevar liquidos de cualquier cantidad (no aplica la norma de 100 ml), herramientas, articulos de deporte (con condiciones), y objetos fragiles en empaque adecuado. Articulos prohibidos en ambos tipos: materiales explosivos o inflamables, armas sin declaracion previa, articulos de seguridad restringidos. Las baterias de litio de telefono y laptop generalmente deben ir en cabina (no en bodega) segun la normativa IATA."
-  },
-  {
-    q: "¿Cuales son los trucos para reducir el peso de la maleta sin sacrificar lo necesario?",
-    a: "Los viajeros experimentados de LATAM que viajan frecuentemente con aerolineas de bajo costo han desarrollado varias estrategias para maximizar lo que llevan dentro del limite de peso. Tecnica del enrollado (roll packing): enrollar la ropa en vez de doblarla reduce el espacio y el peso percibido es el mismo, pero permite llevar mas prendas en el mismo espacio y sin arrugas; especialmente efectivo con camisetas, pantalones de tela liviana y ropa interior. Ropa multiuso: llevar prendas que sirvan para distintas ocasiones (unos pantalones oscuros que sirven tanto para cena formal como para turismo) reduce el numero total de prendas y por tanto el peso. Laundry en destino: para viajes de mas de 5 dias, planificar lavar la ropa una o dos veces durante el viaje permite llevar menos prendas; en LATAM hay lavanderias de autoservicio en las grandes ciudades y muchos hoteles tienen servicio de lavanderia economico. Liquidos solo en tamano de viaje: usar los tamanos de menos de 100 ml o comprar lo que necesitas en el destino (champus, cremas, desodorante) en vez de llevar los de casa. Ropa tecnica liviana: la ropa de materiales sinteticos o merino es 30-50 % mas liviana que la ropa de algodon para el mismo nivel de abrigo; muy util para viajes de LATAM a Europa en invierno donde el abrigo es necesario."
-  },
-  {
-    q: "¿Como pesa el equipaje la aerolinea y que pasa si el peso es distinto al de casa?",
-    a: "El proceso de pesaje del equipaje en el aeropuerto en LATAM es estandarizado pero puede haber diferencias con el peso medido en casa. El proceso de pesaje en aeropuertos de LATAM: en el mostrador de facturacion (check-in), el agente coloca la maleta en una bascula electrónica industrial calibrada; el peso que aparece en pantalla es el oficial. Diferencias frecuentes respecto al pesaje en casa. Las basculas de bano personales tienen una precision de mas o menos 0,5-1 kg; si tu maleta pesa exactamente 23,0 kg en la bascula de bano, puede aparecer como 23,4 o 22,6 kg en el aeropuerto. Recomendacion: si el peso en casa es de 22,5 kg o menos para un limite de 23 kg, tienes margen comodo. La humedad del ambiente puede afectar el peso percibido en las basculas analogicas antiguas. En aeropuertos de LATAM (especialmente en aeropuertos pequenos de ciudades secundarias), ocasionalmente se usan basculas menos precisas; si crees que el peso es incorrecto, tienes derecho a pedir una verificacion en otra bascula antes de pagar el exceso. Las aerolineas tipicamente tienen una tolerancia de 0,5-1 kg sobre el limite nominal antes de cobrar el exceso, aunque esto no es obligatorio por ley y varia segun la aerolinea y el agente; no cuentes con ello como margen planificado."
-  },
-  {
-    q: "¿Que articulos de valor que no deberian ir en bodega llevan habitualmente los viajeros de LATAM?",
-    a: "Hay una lista de articulos que, por razones de seguridad y de proteccion legal, nunca deben ir en el equipaje facturado y que los viajeros de LATAM a veces llevan incorrectamente en bodega. Articulos que siempre deben ir en cabina. Documentos importantes: pasaporte, visa, tarjetas de credito, billetes de avion en papel, reservas de hotel; si la maleta de bodega se pierde, tener los documentos en bodega puede dejarte varado. Medicamentos esenciales: insulina, medicamentos de emergencia, pastillas anticoagulantes; si la maleta se pierde, quedarte sin medicacion critica puede ser una emergencia medica. Electronica de valor: laptop, camara fotografica profesional, drones, equipos de grabacion; las aerolineas tienen responsabilidad limitada por equipaje electronico en bodega (tipicamente hasta 1.500 USD o menos segun el convenio de Montreal). Joyeria y articulos de valor: el convenio de Varsovia (aplicable en LATAM) limita la responsabilidad de la aerolinea por equipaje perdido a una cantidad muy baja (alrededor de 640 SDR o 850 USD); la joyeria, relojes de valor y efectivo en bodega no estan cubiertos por encima de ese limite. Llaves del coche o casa de destino: si se pierde la maleta y las llaves van en ella, no puedes entrar a ningún lado. La regla de oro: todo lo que no puedes reemplazar facilmente o lo que necesitas para sobrevivir las primeras 24-48 horas de viaje debe ir siempre en el equipaje de cabina."
-  },
-]}>
+    {
+      q: "¿Cuánto pesa una maleta vacía?",
+      a: "Una maleta de cabina rígida pesa entre 2 y 3,5 kg; una blanda, entre 1,5 y 2,5 kg; una maleta grande de bodega, entre 3,5 y 5 kg. Elegir una maleta ligera te deja más peso disponible para tus cosas, sobre todo en cabina, donde el límite suele ser de 10 kg.",
+    },
+    {
+      q: "¿Cuánto equipaje de mano puedo llevar?",
+      a: "En Iberia, Vueling, Air Europa o Ryanair (con la tarifa que la incluye), la maleta de cabina admitida suele ser de 10 kg y unos 55 × 40 × 20 cm, más un bolso o mochila bajo el asiento. En las tarifas básicas de las aerolíneas de bajo coste solo se incluye el bulto pequeño gratuito. Comprueba la calculadora de medidas de maleta.",
+    },
+    {
+      q: "¿Qué límites de peso hay en la maleta facturada?",
+      a: "Lo habitual en vuelos europeos es 20 o 23 kg por pieza, y en vuelos transatlánticos, 23 kg en clase turista y 32 kg en business. Ninguna pieza puede superar los 32 kg por las normas de seguridad laboral de los manipuladores de equipaje, por lo que, si llevas más, tendrás que facturar otra maleta.",
+    },
+    {
+      q: "¿Cómo peso la maleta en casa sin báscula de equipaje?",
+      a: "Súbete a una báscula de baño con la maleta en brazos, anota el peso y réstale tu propio peso. El margen de error de las básculas domésticas es de unos cientos de gramos, así que deja un margen de 0,5 kg por seguridad. Las básculas colgantes de equipaje cuestan menos de 15 € y son más precisas.",
+    },
+    {
+      q: "¿Qué objetos pesan más en una maleta?",
+      a: "El calzado (cada par puede pesar 0,8-1,5 kg), los vaqueros y abrigos, los neceseres con botes, los libros y los aparatos electrónicos. Lleva puestas en el avión las prendas y zapatos más pesados, usa envases de viaje para los productos de higiene y considera comprar en destino lo que sea fácil de encontrar.",
+    },
+    {
+      q: "¿Puedo llevar alimentos en la maleta?",
+      a: "Dentro de la UE puedes llevar casi cualquier alimento envasado. Al volar a terceros países hay restricciones: Estados Unidos, Canadá o Australia limitan o prohíben la carne, los lácteos, la fruta y las semillas. Al volver a España desde fuera de la UE no puedes traer carne ni productos lácteos para consumo personal, salvo excepciones como la leche infantil.",
+    },
+  ]}
+>
   <PesoEquipajeTool client:load />
 </CalcLayout>
