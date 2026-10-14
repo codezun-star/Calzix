@@ -1,133 +1,93 @@
 ---
-titulo: "Precio sin impuesto: como extraer la base imponible de un precio con IVA incluido"
-descripcion: "Aprende a calcular el precio sin IVA o IGV correctamente en LATAM. El error de restar el porcentaje directamente puede costarte dinero. Formulas, ejemplos con tasas de Mexico, Colombia, Chile y Peru."
+titulo: "Cómo calcular el precio sin IVA: base imponible a partir del precio final"
+descripcion: "Aprende a quitar el IVA de un precio en España: divide entre 1,21, 1,10 o 1,04 según el tipo. Ejemplos con tickets, facturas y el error de restar el 21 %."
 categoria: "guias"
 fecha: "2026-06-07"
-modificado: "2026-06-12"
+modificado: "2026-10-14"
 keywords:
   - "precio sin IVA"
-  - "base imponible"
-  - "extraer IVA precio"
-  - "calcular IVA Mexico Colombia"
-  - "IGV Peru base imponible"
-  - "formula base imponible"
-  - "precio sin impuesto LATAM"
+  - "quitar IVA"
+  - "calcular base imponible"
+  - "dividir entre 1,21"
+  - "desglosar IVA ticket"
+  - "IVA incluido"
 autor: "Equipo Calzix"
 publicado: true
 ---
 
-## El error que comete casi todo el mundo al calcular el precio sin impuesto
+En España los precios que ves en tiendas, restaurantes y webs dirigidas a consumidores llevan el IVA incluido. Pero si eres autónomo, llevas la contabilidad de un negocio, pides presupuestos a proveedores o quieres saber cuánto IVA pagas en una compra, necesitas separar el precio en dos partes: la **base imponible** y la **cuota de IVA**. Aquí tienes cómo hacerlo bien.
 
-Tienes una factura por $1,160 MXN con IVA incluido al 16 % y quieres saber cual es la base imponible, es decir, el **precio sin IVA**. La reaccion instintiva de la mayoria es hacer esto: $1,160 × 16 % = $185.60 y luego restar: $1,160 - $185.60 = $974.40.
+## La fórmula para quitar el IVA
 
-Ese resultado esta **mal**. Y la diferencia no es pequena.
+Para obtener la base imponible, divide el precio final entre 1 más el tipo de IVA:
 
-El precio sin IVA correcto de $1,160 MXN (IVA 16 %) es exactamente **$1,000 MXN**. El error asciende a $25.60 en este ejemplo concreto. En facturas mas grandes, o cuando se acumulan muchas operaciones a lo largo del mes, ese error puede traducirse en cientos o miles de pesos de diferencia en las declaraciones fiscales.
+**Base imponible = Precio con IVA ÷ (1 + tipo / 100)**
 
-## Por que no puedes simplemente restar el porcentaje de impuesto
-
-El problema esta en la base sobre la que se aplica el porcentaje. El IVA se calcula **sobre el precio sin IVA**, no sobre el precio final.
-
-Cuando un comerciante fija un precio sin IVA de $1,000 y aplica el 16 %, el resultado es:
-
-$1,000 + ($1,000 × 0.16) = $1,000 + $160 = **$1,160 (precio con IVA)**
-
-Ahora fijate: el 16 % de $1,000 son $160. Pero si intentas calcular el 16 % de $1,160 (el precio final), obtienes $185.60, que es una cifra diferente y erronea.
-
-El error conceptual es confundir "el IVA es el 16 % del precio final" con "el IVA es el 16 % de la base imponible". Solo lo segundo es correcto.
-
-## La formula correcta para extraer la base imponible
-
-La formula que debes usar cuando conoces el precio con IVA incluido y quieres obtener la base imponible es:
-
-**base = precio_con_IVA / (1 + tasa / 100)**
-
-Para cada tasa de LATAM:
-
-| Tasa | Divisor | Formula |
+| Tipo de IVA | Divide entre | Ejemplos de productos |
 |---|---|---|
-| IVA 16 % (Mexico) | 1.16 | base = precio / 1.16 |
-| IVA 19 % (Colombia, Chile) | 1.19 | base = precio / 1.19 |
-| IGV 18 % (Peru) | 1.18 | base = precio / 1.18 |
-| IVA 21 % (Argentina) | 1.21 | base = precio / 1.21 |
-| IVA 15 % (Ecuador) | 1.15 | base = precio / 1.15 |
+| 21 % (general) | **1,21** | Electrónica, ropa, servicios profesionales, carburantes |
+| 10 % (reducido) | **1,10** | Restaurantes, hoteles, transporte, vivienda nueva |
+| 4 % (superreducido) | **1,04** | Pan, leche, frutas, verduras, libros, medicamentos |
+| 7 % (IGIC Canarias) | **1,07** | Tipo general en Canarias |
 
-Comprobemos con el ejemplo anterior: $1,160 / 1.16 = **$1,000 MXN**. Correcto.
+La cuota de IVA es la diferencia: **IVA = Precio con IVA − Base imponible**.
 
-La cuota de impuesto es simplemente la diferencia: $1,160 - $1,000 = **$160 MXN**.
+---
 
-## Tabla de referencia: precios con y sin IVA/IGV
+## Ejemplos paso a paso
 
-### Mexico (IVA 16 %)
+**Unos auriculares de 99,99 € (IVA del 21 %):**
 
-| Precio con IVA | Base imponible | Cuota IVA |
-|---|---|---|
-| $116 MXN | $100 | $16 |
-| $580 MXN | $500 | $80 |
-| $1,160 MXN | $1,000 | $160 |
-| $2,320 MXN | $2,000 | $320 |
-| $11,600 MXN | $10,000 | $1,600 |
+1. Base = 99,99 ÷ 1,21 = **82,64 €**
+2. IVA = 99,99 − 82,64 = **17,35 €**
 
-### Colombia (IVA 19 %)
+**Una cena de 55 € en un restaurante (IVA del 10 %):**
 
-| Precio con IVA | Base imponible | Cuota IVA |
-|---|---|---|
-| $119,000 COP | $100,000 | $19,000 |
-| $595,000 COP | $500,000 | $95,000 |
-| $1,190,000 COP | $1,000,000 | $190,000 |
+1. Base = 55 ÷ 1,10 = **50,00 €**
+2. IVA = 55 − 50 = **5,00 €**
 
-### Peru (IGV 18 %)
+**Una barra de pan de 2,08 € (IVA del 4 %):**
 
-| Precio con IGV | Base imponible | Cuota IGV |
-|---|---|---|
-| S/ 118 | S/ 100 | S/ 18 |
-| S/ 590 | S/ 500 | S/ 90 |
-| S/ 1,180 | S/ 1,000 | S/ 180 |
+1. Base = 2,08 ÷ 1,04 = **2,00 €**
+2. IVA = 2,08 − 2,00 = **0,08 €**
 
-## Como funciona esto para negocios y autonomos en LATAM
+---
 
-Si tienes un negocio en cualquier pais de LATAM, el impuesto tiene dos caras que debes distinguir bien:
+## El error más común: restar el 21 %
 
-**IVA repercutido / debito fiscal:** el impuesto que cobras a tus clientes en tus facturas. No es tuyo: lo recaudas en nombre del fisco.
+Muchas personas calculan el precio sin IVA restando el 21 % al precio final. **Es incorrecto**, porque el 21 % se calcula sobre la base, no sobre el total.
 
-**IVA soportado / credito fiscal:** el impuesto que pagas a tus proveedores en sus facturas. Este lo puedes acreditar contra el IVA que debes pagar.
+Con los auriculares de 99,99 €:
 
-**Lo que pagas al fisco cada periodo:** IVA repercutido − IVA soportado deducible
+- Forma incorrecta: 99,99 × 0,79 = 78,99 €
+- Forma correcta: 99,99 ÷ 1,21 = **82,64 €**
 
-### Periodos y declaraciones por pais
+La diferencia es de 3,65 €. En una factura de 12.100 €, el error sería de más de 440 €: suficiente para descuadrar una declaración trimestral.
 
-| Pais | Periodo | Tramite |
-|---|---|---|
-| Mexico | Mensual | Declaracion mensual via portal del SAT (sat.gob.mx) |
-| Colombia | Bimestral o cuatrimestral | Formulario 300 via portal DIAN (dian.gov.co) |
-| Chile | Mensual | Formulario 29 via portal SII (sii.cl) |
-| Peru | Mensual | PDT 621 via portal SUNAT (sunat.gob.pe) |
-| Argentina | Mensual | Declaracion via portal AFIP (afip.gob.ar) |
+**Comprobación rápida:** multiplica la base por 1,21. Si obtienes el precio final, el cálculo es correcto (82,64 × 1,21 = 99,99 €).
 
-### Ejemplo practico para autonomos en Mexico
+---
 
-Un disenador freelance en Mexico factura $50,000 MXN + IVA a sus clientes en el mes. Sus gastos deducibles (software, internet, materiales) suman $10,000 MXN + IVA.
+## Cuándo necesitas el precio sin IVA
 
-- IVA repercutido (cobrado a clientes): $50,000 × 16 % = **$8,000 MXN**
-- IVA acreditable (pagado a proveedores): $10,000 × 16 % = **$1,600 MXN**
-- **IVA a pagar al SAT ese mes: $8,000 − $1,600 = $6,400 MXN**
+**Si eres autónomo o empresa:** el IVA que pagas en tus compras para la actividad es deducible en el modelo 303, así que tu coste real es la base imponible. Al comparar presupuestos de proveedores, compara siempre bases.
 
-## Errores frecuentes al gestionar el IVA
+**Si vas a pedir una factura:** los tickets o facturas simplificadas (permitidos hasta 400 € con IVA incluido, o 3.000 € en ciertos sectores como el comercio minorista o la hostelería) solo indican «IVA incluido». Para deducir el IVA necesitas una factura completa con tus datos fiscales, la base y la cuota desglosadas.
 
-**Aplicar la tasa equivocada.** En Mexico, los alimentos sin procesar y los medicamentos tributan al 0 % (no al 16 %). En Colombia, los servicios de educacion y salud son exentos. Cobrar IVA sobre actividades exentas o a tasa equivocada genera un pasivo fiscal incorrecto.
+**Si compras fuera de España:** en compras a empresas de otros países de la Unión Europea con tu NIF-IVA (operaciones intracomunitarias), el vendedor factura sin IVA y tú lo autoliquidas. En las compras particulares de fuera de la UE, el IVA se paga al importar el paquete.
 
-**Confundir exento con tasa 0 %.** En Mexico, la tasa 0 % (alimentos, medicamentos) permite al vendedor acreditar el IVA de sus compras y solicitar devolucion. Las actividades exentas no generan ni traslado de IVA ni derecho a acreditamiento — son categorias distintas con efectos fiscales diferentes.
+**Si eres consumidor:** conocer la base te ayuda a entender cuánto pagas en impuestos. En un móvil de 1.000 €, más de 173 € son IVA.
 
-**No desglosar base e impuesto en la factura.** Para que una factura (CFDI en Mexico, factura electronica en Colombia/Chile/Peru) sea valida a efectos fiscales, debe mostrar por separado: base imponible, tasa aplicada y cuota del impuesto. Una nota sin desglose no sirve para acreditar IVA.
+---
 
-**Cobrar IVA cuando la actividad esta exenta.** Servicios medicos, educacion reglada, exportaciones, servicios financieros — cobrar IVA sobre estas actividades genera obligaciones tributarias indebidas.
+## Precios sin IVA en presupuestos y webs profesionales
 
-**No conservar los comprobantes originales.** Sin la factura electronica valida (con todos los datos del emisor y el desglose correcto), no puedes deducir el IVA aunque hayas pagado el importe.
+En las tarifas dirigidas a empresas es habitual anunciar los precios «+ IVA». Fíjate bien al comparar: un servicio de 500 € + IVA cuesta realmente 605 €, mientras que otro de 550 € con IVA incluido es más barato (454,55 € de base).
+
+Para los consumidores, la normativa de protección de los consumidores exige que el precio anunciado sea el precio final completo, con impuestos incluidos. Un comercio que anuncia precios sin IVA a particulares puede ser sancionado.
+
+---
 
 ## Calcula la base imponible al instante
 
-No hace falta hacer la division a mano cada vez. La [calculadora de IVA](/calculadora-iva) de Calzix te permite introducir el precio con impuesto, seleccionar la tasa de tu pais (Mexico 16 %, Colombia 19 %, Chile 19 %, Peru 18 %, Argentina 21 %) y obtener la base imponible y la cuota de IVA en un segundo.
-
-Tambien puedes usarla a la inversa: desde la base imponible, calcular el precio final con IVA incluido. Especialmente util a la hora de preparar presupuestos o facturas.
-
-Tener clara la diferencia entre base imponible y precio final no es solo cuestion de exactitud matematica: en contextos fiscales y comerciales, confundirlos puede tener consecuencias economicas reales en tus declaraciones.
+La **[calculadora de IVA](/calculadora-iva)** de Calzix tiene un modo para quitar el IVA: introduce el precio final, elige el tipo (21 %, 10 %, 4 % o el 7 % del IGIC) y obtendrás la base imponible y la cuota desglosadas. Para el proceso inverso, la guía [cómo calcular el IVA](/blog/como-calcular-iva) explica todos los tipos vigentes en 2026.

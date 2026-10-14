@@ -3,7 +3,7 @@ titulo: "Ley de Ohm: qué es, fórmula y cómo calcular voltaje, corriente y res
 descripcion: "La ley de Ohm explicada con claridad: fórmula V=IR, las tres variantes, analogía del agua, tabla de resistencias domésticas y cálculo de potencia eléctrica."
 categoria: "tutoriales"
 fecha: "2026-06-07"
-modificado: "2026-06-12"
+modificado: "2026-10-14"
 keywords:
   - "ley de Ohm"
   - "fórmula ley de Ohm"
@@ -69,13 +69,13 @@ Un recurso clásico para recordar las tres variantes es el **triángulo VIR**: e
 
 ### Ejemplo 1: calcular la corriente de un dispositivo
 
-Una bombilla conectada a 120 V tiene una resistencia de 144 Ω. ¿Cuánta corriente consume?
+Una bombilla incandescente conectada a un enchufe español de 230 V tiene una resistencia de 529 Ω. ¿Cuánta corriente consume?
 
 ```
-I = V / R = 120 / 144 ≈ 0,833 A
+I = V / R = 230 / 529 ≈ 0,435 A
 ```
 
-La bombilla consume **0,833 amperios**. A 120 V, eso equivale a una potencia de 100 W (0,833 × 120 = 100 W).
+La bombilla consume **0,435 amperios**. A 230 V, eso equivale a una potencia de 100 W (0,435 × 230 = 100 W).
 
 ### Ejemplo 2: calcular la resistencia de un cargador
 
@@ -101,35 +101,20 @@ Necesitas **30 voltios** para conseguir 2 amperios a través de esa resistencia.
 
 ## Tabla de resistencias en aparatos domésticos habituales
 
-Esta tabla muestra la resistencia aproximada de varios electrodomésticos cotidianos. Los valores de corriente y resistencia varían según el voltaje de red de tu país: **120 V** (México, Colombia, Venezuela, Centroamérica) o **220 V** (Chile, Perú, Argentina, Bolivia, Uruguay).
+En España, la red eléctrica doméstica funciona a **230 V** de corriente alterna y 50 Hz. Con ese dato y la potencia de cada aparato, la ley de Ohm permite calcular la corriente que consume (I = P / V) y la resistencia equivalente que presenta (R = V / I):
 
-**A 120 V** — aplica en México y Colombia:
-
-| Aparato | Potencia | Corriente (I = P/120) | Resistencia (R = 120/I) |
+| Aparato | Potencia | Corriente (I = P / 230) | Resistencia (R = 230 / I) |
 |---|---|---|---|
-| Bombilla LED 10 W | 10 W | 0,083 A | 1.440 Ω |
-| Bombilla incandescente 100 W | 100 W | 0,833 A | 144 Ω |
-| Refrigerador / nevera | 150 W | 1,25 A | 96 Ω |
-| Televisor 55" | 100 W | 0,833 A | 144 Ω |
-| Laptop (cargador) | 65 W | 0,54 A | 222 Ω |
-| Lavadora (ciclo normal) | 2.000 W | 16,67 A | 7,2 Ω |
-| Secador de pelo | 1.500 W | 12,50 A | 9,6 Ω |
-| Horno eléctrico | 2.500 W | 20,83 A | 5,76 Ω |
+| Bombilla LED | 10 W | 0,043 A | 5.290 Ω |
+| Bombilla incandescente | 100 W | 0,435 A | 529 Ω |
+| Frigorífico (en marcha) | 150 W | 0,652 A | 353 Ω |
+| Televisor 55" | 100 W | 0,435 A | 529 Ω |
+| Portátil (cargador) | 65 W | 0,283 A | 814 Ω |
+| Lavadora (calentando agua) | 2.000 W | 8,70 A | 26,5 Ω |
+| Secador de pelo | 2.000 W | 8,70 A | 26,5 Ω |
+| Horno eléctrico | 2.500 W | 10,87 A | 21,2 Ω |
 
-**A 220 V** — aplica en Chile, Perú, Argentina:
-
-| Aparato | Potencia | Corriente (I = P/220) | Resistencia (R = 220/I) |
-|---|---|---|---|
-| Bombilla LED 10 W | 10 W | 0,045 A | 4.840 Ω |
-| Bombilla incandescente 100 W | 100 W | 0,455 A | 484 Ω |
-| Refrigerador / nevera | 150 W | 0,68 A | 323 Ω |
-| Televisor 55" | 100 W | 0,455 A | 484 Ω |
-| Laptop (cargador) | 65 W | 0,30 A | 740 Ω |
-| Lavadora (ciclo normal) | 2.000 W | 9,09 A | 24,2 Ω |
-| Secador de pelo | 2.000 W | 9,09 A | 24,2 Ω |
-| Horno eléctrico | 2.500 W | 11,36 A | 19,4 Ω |
-
-Observa por qué los circuitos de 120 V requieren cables de mayor sección para la misma potencia: al tener menor voltaje, la corriente es mayor, y a mayor corriente se necesita un conductor más grueso para no sobrecalentarse.
+Los aparatos que producen calor (horno, secador, lavadora mientras calienta el agua) tienen una resistencia baja y consumen mucha corriente. Por eso necesitan circuitos con cables más gruesos. En países con redes de 110-120 V, como Estados Unidos, la corriente para la misma potencia es casi el doble, y los cables y las protecciones son distintos: tenlo en cuenta si compras aparatos de importación.
 
 ---
 
@@ -149,40 +134,34 @@ P = I² × R         →  útil cuando conoces I y R
 P = V² / R         →  útil cuando conoces V y R
 ```
 
-**Ejemplo:** un secador de 2.000 W conectado a 220 V (Chile, Perú, Argentina).
+**Ejemplo:** un secador de 2.000 W conectado a un enchufe español de 230 V.
 
-- Corriente: I = P / V = 2.000 / 220 ≈ **9,09 A**
-- Resistencia del elemento calefactor: R = V / I = 220 / 9,09 ≈ **24,2 Ω**
-- Verificación: P = I² × R = 9,09² × 24,2 ≈ 82,6 × 24,2 ≈ **1.999 W** (correcto)
-
-El mismo secador a 120 V (México, Colombia) requeriría casi el doble de corriente (16,67 A) para la misma potencia, de ahí que el calibre del cableado eléctrico sea diferente en ambos sistemas.
+- Corriente: I = P / V = 2.000 / 230 ≈ **8,70 A**
+- Resistencia del elemento calefactor: R = V / I = 230 / 8,70 ≈ **26,4 Ω**
+- Verificación: P = I² × R = 8,70² × 26,4 ≈ 75,7 × 26,4 ≈ **1.998 W** (correcto, con el redondeo)
 
 ---
 
-## Cómo elegir el fusible correcto para un circuito
+## Cómo elegir la protección de un circuito
 
-Uno de los usos más prácticos de la ley de Ohm en el hogar es dimensionar correctamente la protección eléctrica de un circuito. Los fusibles y los interruptores magnetotérmicos se seleccionan en función de la **corriente máxima** que debe soportar el circuito.
+Uno de los usos más prácticos de la ley de Ohm en casa es comprobar si un circuito aguanta los aparatos que conectas. Los interruptores magnetotérmicos (los «automáticos» del cuadro eléctrico) se eligen según la **corriente máxima** del circuito.
 
 **Regla práctica:**
 
-1. Suma la potencia de todos los aparatos que pueden estar conectados al mismo circuito simultáneamente.
-2. Divide entre el voltaje de red de tu país (120 V en México y Colombia; 220 V en Chile, Perú, Argentina) para obtener la corriente máxima.
-3. Elige un magnetotérmico o breaker con un valor de disparo inmediatamente superior.
+1. Suma la potencia de los aparatos que pueden funcionar a la vez en el mismo circuito.
+2. Divide entre 230 V para obtener la corriente.
+3. Comprueba que no supera el calibre del magnetotérmico del circuito.
 
-**Ejemplo en México (120 V):** un circuito de cocina con horno (2.500 W) + campana extractora (200 W) + pequeños electrodomésticos (500 W):
-
-```
-Potencia total = 2.500 + 200 + 500 = 3.200 W
-Corriente a 120 V = 3.200 / 120 ≈ 26,7 A
-```
-
-Se debe instalar un breaker de **30 A**. Con 120 V la corriente es el doble que con 220 V para la misma potencia — por eso los circuitos de alta potencia en México (A/C, cocina) requieren cableado calibre mayor y breakers de mayor amperaje.
-
-**El mismo circuito en Chile (220 V):**
+**Ejemplo:** en el circuito de cocina y horno conectas un horno (2.500 W), una campana (200 W) y un microondas (800 W):
 
 ```
-Corriente a 220 V = 3.200 / 220 ≈ 14,5 A → breaker de 16 A
+Potencia total = 2.500 + 200 + 800 = 3.500 W
+Corriente a 230 V = 3.500 / 230 ≈ 15,2 A
 ```
+
+El Reglamento Electrotécnico para Baja Tensión (REBT, ITC-BT-25) fija para el circuito de cocina y horno de una vivienda un cable de 6 mm² y un magnetotérmico de **25 A**, así que el circuito lo soporta. En cambio, las tomas de uso general llevan un magnetotérmico de **16 A** con cable de 2,5 mm²: conectar a la vez en una misma regleta una estufa de 2.000 W y un secador de 2.000 W (17,4 A) haría saltar el automático.
+
+Recuerda también el límite de la **potencia contratada**: con 4,6 kW, la corriente total de la vivienda no puede superar unos 20 A sin que salte el interruptor de control de potencia. Las instalaciones nuevas y las ampliaciones debe hacerlas siempre un instalador autorizado.
 
 ---
 

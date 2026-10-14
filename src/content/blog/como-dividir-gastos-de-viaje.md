@@ -1,79 +1,81 @@
 ---
-titulo: "Como dividir los gastos de un viaje en grupo sin pelear"
-descripcion: "Aprende a repartir los gastos de un viaje entre amigos de forma justa: quien debe a quien, como cuadrar las cuentas y trucos para evitar conflictos."
+titulo: "Cómo dividir los gastos de un viaje en grupo sin discutir"
+descripcion: "Aprende a repartir los gastos de un viaje entre amigos: cálculo del saldo de cada persona, cómo saldar las deudas con el mínimo de Bizums y trucos para evitar conflictos."
 categoria: "tips"
 fecha: "2026-06-16"
+modificado: "2026-10-14"
 keywords:
-  - "dividir gastos de viaje"
+  - "dividir gastos viaje"
   - "repartir gastos entre amigos"
-  - "como cuadrar cuentas viaje"
-  - "split gastos grupo"
-  - "quien debe a quien"
-  - "gastos compartidos viaje"
+  - "cuentas de un viaje en grupo"
+  - "quién debe a quién"
+  - "Bizum gastos compartidos"
 autor: "Equipo Calzix"
 publicado: true
 ---
 
-Uno paga el hotel, otro la gasolina, otro las cenas... y al final del viaje nadie sabe quien debe a quien. Repartir los gastos de un viaje en grupo de forma justa es una fuente clasica de tension entre amigos. Con un metodo claro, cuadrar las cuentas es facil. Te lo explicamos.
+Una escapada a la playa, un viaje de fin de curso o una casa rural con amigos: lo más fácil es que cada uno pague cosas sobre la marcha. El problema llega al final, cuando hay que cuadrar las cuentas. Con un método sencillo, se hace en minutos y sin malentendidos.
 
 ## El principio: todos pagan lo mismo
 
-La idea es sencilla: al final del viaje, **todos deben haber gastado lo mismo**. Quien pago de mas debe recibir dinero, y quien pago de menos debe aportarlo. El objetivo es igualar lo que ha puesto cada uno.
+Si todos participáis en todos los gastos, cada persona debe aportar la misma cantidad: **el total dividido entre el número de personas**. Después se compara lo que ha pagado cada uno con esa cuota: quien ha pagado de más recibe y quien ha pagado de menos devuelve.
 
 ---
 
-## Como se calcula paso a paso
+## Cómo se calcula paso a paso
 
-1. **Suma todos los gastos** comunes del viaje.
-2. **Divide entre el numero de personas** para saber lo que le corresponde a cada una.
-3. **Compara** lo que pago cada uno con esa parte: la diferencia es su saldo.
+1. **Suma todos los gastos** del viaje.
+2. **Divide entre el número de personas** para obtener la cuota de cada una.
+3. **Calcula el saldo** de cada persona: lo que pagó menos su cuota. Si es positivo, le deben; si es negativo, debe.
+4. **Salda las deudas:** los que deben pagan a los que les deben.
 
 ---
 
-## Ejemplo practico
+## Ejemplo práctico
 
-Cuatro amigos viajan. Pagan: Ana 120, Luis 0, Maria 60 y Carlos 220.
+Cuatro amigos pasan un fin de semana en una casa rural:
 
-1. Total = 120 + 0 + 60 + 220 = **$400**
-2. Por persona = 400 / 4 = **$100**
+| Persona | Pagó | Concepto |
+|---|---|---|
+| Lucía | 240 € | Alojamiento |
+| Marcos | 0 € | — |
+| Sara | 60 € | Compra del súper |
+| Javier | 100 € | Gasolina y peajes |
+
+1. Total = 240 + 0 + 60 + 100 = **400 €**
+2. Cuota por persona = 400 ÷ 4 = **100 €**
 3. Saldos:
+   - Lucía: 240 − 100 = **+140 €** (le deben)
+   - Marcos: 0 − 100 = **−100 €** (debe)
+   - Sara: 60 − 100 = **−40 €** (debe)
+   - Javier: 100 − 100 = **0 €** (está en paz)
 
-| Persona | Pago | Parte | Saldo |
-|---|---|---|---|
-| Ana | 120 | 100 | +20 (recibe) |
-| Luis | 0 | 100 | -100 (debe) |
-| Maria | 60 | 100 | -40 (debe) |
-| Carlos | 220 | 100 | +120 (recibe) |
-
-Luis y Maria pagan a Ana y Carlos hasta que todos queden a cero.
+**Resultado:** Marcos envía 100 € y Sara 40 € a Lucía. Con dos Bizums, cuentas cerradas.
 
 ---
 
-## Como saldar con menos pagos
+## Cómo saldar con menos pagos
 
-Para minimizar el numero de transferencias, **quien mas debe paga a quien mas tiene que recibir**. En el ejemplo: Luis paga 100 a Carlos; Maria paga 20 a Carlos y 20 a Ana. Con tres pagos, todos quedan en paz.
+Con muchos participantes, las deudas cruzadas se multiplican. El truco es emparejar al que más debe con al que más le deben, saldar todo lo posible entre ellos y repetir. Así el número de transferencias es como máximo el número de personas menos uno. Es lo que hacen las aplicaciones de gastos compartidos y la calculadora de Calzix.
 
 ---
 
 ## Trucos para evitar conflictos
 
-| Truco | Por que funciona |
-|---|---|
-| Acordar las reglas antes del viaje | Evita malentendidos despues |
-| Anotar cada gasto al momento | No se olvida nada |
-| Separar gastos no comunes | Lo que no usan todos, se paga aparte |
-| Usar una sola moneda de referencia | Evita lios con el cambio |
+- **Hablad del presupuesto antes de salir:** tipo de alojamiento, comidas fuera o en casa, actividades.
+- **Haced un bote común** para los gastos diarios (súper, gasolina), por ejemplo con una cuenta compartida.
+- **Apuntad cada gasto en el momento**, con quién pagó y quién participa. Guardad los tickets.
+- **Decidid antes cómo repartir la gasolina:** solo entre los que van en el coche o entre todos.
+- **Cerrad las cuentas el último día**, con los gastos frescos en la memoria.
 
 ---
 
-## Y si alguien no participo en un gasto
+## Y si alguien no participó en un gasto
 
-Si una excursion o cena no la hicieron todos, conviene **separar ese gasto** y repartirlo solo entre quienes participaron, en vez de meterlo en el bote comun. Asi el reparto sigue siendo justo.
+Si alguien no fue a una excursión o no bebe alcohol, ese gasto se reparte solo entre los que participaron. Hazlo por separado: calcula la cuota de ese gasto entre los participantes y súmala a sus saldos. Para gastos muy desiguales (habitaciones distintas, vuelos a precios distintos), es mejor que cada uno pague lo suyo directamente.
 
 ---
 
 ## Cuadra las cuentas en segundos
 
-Usa la **[calculadora para dividir gastos de viaje](/split-gastos-viaje)** de Calzix: introduce lo que pago cada persona y te dira al instante quien debe pagar y quien debe recibir, con el saldo de cada uno.
-
-Para presupuestar el viaje antes de salir, prueba la [calculadora de coste total del viaje](/coste-viaje) y la de [presupuesto de viaje](/presupuesto-viaje).
+La **[calculadora para dividir gastos de viaje](/split-gastos-viaje)** de Calzix calcula el saldo de cada persona y te dice quién debe pagar a quién con el mínimo de transferencias. Antes del viaje, prepara el [presupuesto](/presupuesto-viaje) y calcula el [coste del viaje](/coste-viaje) en coche.

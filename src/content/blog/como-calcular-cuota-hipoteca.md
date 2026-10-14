@@ -1,170 +1,97 @@
 ---
-titulo: "Como calcular la cuota de tu hipoteca en LATAM: Mexico, Colombia y Chile"
-descripcion: "La formula de amortizacion francesa explicada para LATAM: ejemplos con tasas de Mexico (TIIE), Colombia (tasa fija) y Chile (UF). Calcula tu cuota mensual sin errores."
+titulo: "Cómo calcular la cuota de la hipoteca en 2026: fórmula, Euríbor y ejemplos"
+descripcion: "Calcula la cuota mensual de tu hipoteca con el sistema francés: fórmula, ejemplos a tipo fijo y variable con el Euríbor de 2026, intereses totales, gastos de la Ley 5/2019 y cuánto puedes pedir."
 categoria: "finanzas"
 fecha: "2026-06-07"
-modificado: "2026-06-12"
+modificado: "2026-10-14"
 keywords:
-  - "calcular cuota hipoteca Mexico"
-  - "credito hipotecario Colombia"
-  - "hipoteca UF Chile"
-  - "formula amortizacion hipoteca LATAM"
-  - "cuota mensual hipoteca"
-  - "calculadora hipoteca"
-  - "TIIE hipoteca Mexico"
+  - "calcular cuota hipoteca"
+  - "fórmula cuota hipoteca"
+  - "hipoteca fija o variable 2026"
+  - "Euríbor 2026"
+  - "sistema de amortización francés"
+  - "intereses hipoteca"
+  - "cuánto me prestan hipoteca"
 autor: "Equipo Calzix"
 publicado: true
 ---
 
-Antes de firmar un credito hipotecario, la pregunta mas importante es siempre la misma: **cuanto voy a pagar cada mes?** La respuesta no es un numero arbitrario — existe una formula precisa que usan todos los bancos de LATAM y que puedes calcular tu mismo.
+Antes de firmar una hipoteca conviene saber cuánto pagarás cada mes y cuánto acabarás pagando en total. Casi todas las hipotecas en España usan el **sistema de amortización francés**: una cuota constante (en las fijas) en la que al principio pagas sobre todo intereses y, con los años, sobre todo capital. Así se calcula.
 
-## La formula de la cuota hipotecaria
+## La fórmula de la cuota mensual
 
-La mayoria de creditos hipotecarios en LATAM utilizan el sistema de **amortizacion frances**: cuota mensual constante durante toda la vida del prestamo. La formula es:
+**Cuota = P × i ÷ (1 − (1 + i)^−n)**
 
-```
-C = P × [r × (1 + r)^n] / [(1 + r)^n - 1]
-```
+- **P**: capital prestado.
+- **i**: tipo de interés mensual = TIN anual ÷ 12 ÷ 100.
+- **n**: número de cuotas = años × 12.
 
-Donde:
+**Ejemplo:** 180.000 € a 25 años con un TIN fijo del 3 %.
 
-| Variable | Significado |
-|---|---|
-| **C** | Cuota mensual |
-| **P** | Capital prestado |
-| **r** | Tasa de interes mensual (tasa anual ÷ 12) |
-| **n** | Numero total de cuotas (anos × 12) |
+- i = 3 ÷ 12 ÷ 100 = 0,0025
+- n = 25 × 12 = 300
+- Cuota = 180.000 × 0,0025 ÷ (1 − 1,0025^−300) = **853,58 € al mes**
 
-Esta formula es universal — lo que cambia entre paises es la tasa de interes de referencia, la moneda y las condiciones regulatorias.
+En total pagarás 853,58 × 300 = 256.074 €, de los que **76.074 € son intereses**.
 
 ---
 
-## Mexico: credito hipotecario
+## Cómo influyen el plazo y el tipo de interés
 
-### Tipos de credito hipotecario en Mexico
+| Capital | TIN | Plazo | Cuota mensual | Intereses totales |
+|---|---|---|---|---|
+| 180.000 € | 3,00 % | 25 años | 853,58 € | 76.074 € |
+| 180.000 € | 3,00 % | 30 años | 758,89 € | 93.199 € |
+| 180.000 € | 4,00 % | 25 años | 950,11 € | 105.032 € |
+| 200.000 € | 3,50 % | 25 años | 1.001,25 € | 100.374 € |
+| 150.000 € | 2,75 % | 30 años | 612,36 € | 70.450 € |
 
-En Mexico existen tres fuentes principales de financiamiento hipotecario:
-
-- **INFONAVIT**: para trabajadores del sector privado con aportaciones al fondo. Tasa fija en VSM (Veces Salario Minimo) con condiciones especiales
-- **FOVISSSTE**: para trabajadores del sector publico federal
-- **Banca privada** (BBVA, Banorte, Santander, HSBC, Citibanamex): creditos hipotecarios con tasas fijas o variables
-
-### Tasas hipotecarias en Mexico
-
-Las tasas hipotecarias de banca privada en Mexico se mueven en el rango de **9 % a 12 % anual** para creditos en pesos a tasa fija (referencia 2025-2026). Las tasas variables se expresan como TIIE + un diferencial (ej. TIIE 28 + 3 %).
-
-La **TIIE de 28 dias** es la tasa de referencia del Banco de Mexico; consulta el valor actual en **banxico.org.mx**.
-
-### Ejemplo real en pesos mexicanos
-
-Credito de **$1,500,000 MXN** a **25 anos** con tasa fija del **10.5 % anual**:
-
-- r mensual = 10.5 % / 12 = 0.875 % = 0.00875
-- n = 25 × 12 = 300 cuotas
-- C = $1,500,000 × [0.00875 × (1.00875)^300] / [(1.00875)^300 - 1]
-- (1.00875)^300 = 13.716
-- C = $1,500,000 × [0.00875 × 13.716] / [13.716 - 1]
-- C = $1,500,000 × 0.12001 / 12.716
-- **C ≈ $14,157 MXN/mes**
-
-En 25 anos pagaras **$4,247,100 MXN**, de los cuales **$2,747,100 MXN son intereses** — casi el doble del capital prestado.
-
-### Como cambia la cuota segun el plazo (mismo capital $1,500,000 MXN al 10.5 %)
-
-| Plazo | Cuota mensual | Total intereses |
-|---|---|---|
-| 10 anos | $20,182 MXN | $920,000 MXN |
-| 15 anos | $16,611 MXN | $1,490,000 MXN |
-| 20 anos | $14,981 MXN | $2,095,000 MXN |
-| 25 anos | $14,157 MXN | $2,747,000 MXN |
-
-Alargar el plazo 5 anos reduce la cuota ~$800/mes pero agrega ~$650,000 en intereses totales.
-
-### Gastos adicionales en Mexico
-
-- **Comision de apertura**: 0–1 % del credito (negociable)
-- **Avaluo**: $3,000–$8,000 MXN (pago unico)
-- **Seguro de vida vinculado**: 0.3–0.5 % del saldo anual
-- **Seguro de dano**: ~0.25 % del valor del inmueble por ano
-- **Gastos notariales y derechos de registro**: 4–8 % del valor del inmueble (varia por estado)
+Alargar el plazo baja la cuota, pero dispara los intereses. Un punto más de interés en 180.000 € a 25 años supone casi 100 € más al mes y unos 29.000 € más en total.
 
 ---
 
-## Colombia: credito hipotecario
+## Hipoteca fija, variable o mixta
 
-### Tasas y modalidades
+**Fija:** el tipo no cambia durante toda la vida del préstamo. Sabes siempre lo que pagas. Según el INE, en julio de 2026 el **62,3 %** de las hipotecas sobre viviendas se firmaron a tipo fijo, con un tipo medio del 3,01 % para el conjunto de hipotecas.
 
-Los bancos colombianos (Bancolombia, Davivienda, BBVA, Banco de Bogota) ofrecen creditos hipotecarios principalmente en dos modalidades:
+**Variable:** el tipo es el **Euríbor a 12 meses más un diferencial** (por ejemplo, Euríbor + 0,75 %) y se revisa cada 6 o 12 meses. El Euríbor cerró septiembre de 2026 con una media del **3,251 %**, su nivel más alto del año. Con ese valor y un diferencial del 0,75 %, la hipoteca del ejemplo pagaría unos 950 € al mes.
 
-- **Tasa fija en pesos**: mas certeza, tasa generalmente mas alta (~12–16 % EA — efectiva anual)
-- **Tasa variable en UVR**: indexada a la Unidad de Valor Real (que refleja la inflacion), con tasa de interes adicional de ~8–10 % EA sobre UVR
+**Mixta:** tipo fijo los primeros años (normalmente de 5 a 15) y variable el resto.
 
-La mayoria de los colombianos optan por tasa fija en pesos para evitar la incertidumbre de la UVR en periodos de alta inflacion.
-
-### Ejemplo real en pesos colombianos
-
-Credito de **$200,000,000 COP** a **20 anos** con tasa del **13 % EA** (efectiva anual):
-
-- Tasa mensual equivalente = (1.13)^(1/12) - 1 = 0.01024 (1.024 %)
-- n = 20 × 12 = 240 cuotas
-- C = $200M × [0.01024 × (1.01024)^240] / [(1.01024)^240 - 1]
-- (1.01024)^240 = 11.33
-- **C ≈ $2,351,000 COP/mes**
-
-### Gastos adicionales en Colombia
-
-- **Estudio de credito**: gratuito en la mayoria de bancos
-- **Avaluo**: $300,000–$700,000 COP
-- **Seguro de vida deudor**: ~0.3–0.4 % del saldo anual
-- **Seguro de todo riesgo**: ~0.2–0.3 % del valor del inmueble
-- **Gastos notariales**: ~0.5 % del valor del inmueble
-- **Registro**: ~0.5 % del credito
+**Cómo afecta una subida del Euríbor:** en una hipoteca variable de 180.000 € a 25 años, cada subida de 0,5 puntos encarece la cuota en unos 45-50 € al mes. La [calculadora de hipoteca](/calculadora-hipoteca) permite simular distintos escenarios.
 
 ---
 
-## Chile: credito hipotecario en UF
+## TIN y TAE: no son lo mismo
 
-El mercado hipotecario chileno es particular: la gran mayoria de los creditos se denominan en **UF (Unidad de Fomento)**, una unidad de cuenta indexada a la inflacion que reajusta su valor en pesos cada dia. Esto protege al banco del riesgo inflacionario y permite tasas de interes mas bajas.
+- **TIN** (tipo de interés nominal): el interés puro del préstamo. Es el que se usa en la fórmula de la cuota.
+- **TAE** (tasa anual equivalente): incluye además las comisiones y el coste de los productos vinculados obligatorios (seguros, domiciliación de la nómina…). Es la cifra que debes usar para comparar ofertas entre bancos.
 
-### Como funciona la UF
-
-La cuota se pacta en UF a una tasa fija anual (generalmente entre **3.5 % y 5 % anual en UF**). El valor en pesos de tu cuota cambia cada mes segun como evoluciona la UF, pero el monto en UF es constante.
-
-Valor UF en junio 2026: ~$38,500 CLP (consultar valor exacto en **cmfchile.cl**)
-
-### Ejemplo real en UF
-
-Credito de **3,500 UF** (~$134,750,000 CLP a valor de junio 2026) a **20 anos** con tasa del **4.2 % anual en UF**:
-
-- r mensual = 4.2 % / 12 = 0.35 % = 0.0035
-- n = 20 × 12 = 240 cuotas
-- C = 3,500 × [0.0035 × (1.0035)^240] / [(1.0035)^240 - 1]
-- (1.0035)^240 = 2.310
-- **C ≈ 21.4 UF/mes** (~$823,900 CLP/mes a valor actual)
-
-Si la UF sube por inflacion, tu cuota en pesos tambien sube — aunque el monto en UF es siempre 21.4 UF.
-
-### Gastos adicionales en Chile
-
-- **Tasacion**: $80,000–$200,000 CLP
-- **Seguro de desgravamen (vida)**: ~0.03 % del saldo mensual
-- **Seguro de incendio**: obligatorio, ~0.015 % del valor anual
-- **Gastos notariales y Conservador de Bienes Raices**: ~1–2 % del credito
+Muchas hipotecas ofrecen un TIN bonificado si contratas seguros de vida, de hogar o un plan de pensiones. Calcula si la rebaja compensa el coste de esos productos.
 
 ---
 
-## El error mas frecuente: ignorar el costo total del credito
+## Cuánto te presta el banco
 
-La cuota mensual captura la atencion, pero el costo total del credito — capital + todos los intereses durante toda la vida del prestamo — es el numero que realmente importa para comparar alternativas.
+- **Financiación:** los bancos suelen prestar como máximo el **80 % del valor de tasación** o de compraventa (el menor de los dos) para vivienda habitual. Para segunda vivienda, el 60-70 %.
+- **Esfuerzo:** la cuota no debería superar el **30-35 % de los ingresos netos** del hogar, incluidas otras deudas.
+- **Jóvenes y familias con menores:** la línea de avales del ICO para la compra de la primera vivienda permite financiar hasta el 100 % a quienes cumplan los requisitos de edad e ingresos.
 
-Reducir el plazo 5 anos generalmente ahorra entre un 20–40 % en intereses totales, dependiendo de la tasa. Por otro lado, una tasa 1 punto porcentual mas baja en un credito a 20 anos puede significar el equivalente a varios meses de cuota de ahorro.
-
-**Regla practica para LATAM:** negocia siempre la tasa de interes antes de aceptar el plazo. Bajar la tasa 0.5 % tiene mas impacto que bajar la cuota aceptando mas anos.
+Necesitarás ahorrado el **20 % restante más los gastos de compra**, que suman entre un 8 % y un 12 % del precio según la comunidad autónoma (ITP o IVA, notaría, registro, gestoría y tasación). Calcúlalos con la calculadora de [gastos de compra de vivienda](/gastos-compra-vivienda) y comprueba tu margen con la de [capacidad de endeudamiento](/capacidad-endeudamiento).
 
 ---
 
-## Calcula tu cuota al instante
+## Gastos de la hipoteca: quién paga qué
 
-Usa la **[calculadora de hipoteca](/calculadora-hipoteca)** de Calzix: introduce el monto del credito, la tasa de interes anual y el plazo en anos. Obtendras la cuota mensual, el total de intereses y la evolucion de tu deuda mes a mes.
+Desde la **Ley 5/2019 de crédito inmobiliario**, el banco paga la notaría de la escritura del préstamo, el registro, la gestoría y el impuesto de actos jurídicos documentados (AJD) del préstamo. El cliente paga la **tasación** y las copias de la escritura que solicite.
 
-Antes de firmar, simula al menos tres escenarios: la oferta del banco, la misma tasa con 5 anos menos de plazo, y la misma con tasa 0.5 % menor. Esa comparacion te dara el poder de negociacion que necesitas.
+La ley también limita las **comisiones por amortización anticipada**:
+
+- Hipoteca variable: hasta el 0,25 % los 3 primeros años o el 0,15 % los 5 primeros (según contrato), y 0 % después.
+- Hipoteca fija: hasta el 2 % los 10 primeros años y el 1,5 % el resto.
+
+---
+
+## Calcula tu cuota
+
+La **[calculadora de hipoteca](/calculadora-hipoteca)** de Calzix calcula la cuota mensual, los intereses totales y el coste total con el capital, el plazo y el tipo que elijas. Para ver cómo se reparte cada cuota entre intereses y capital mes a mes, usa la [tabla de amortización](/amortizacion-hipoteca).

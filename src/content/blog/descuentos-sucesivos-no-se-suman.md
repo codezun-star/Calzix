@@ -1,78 +1,83 @@
 ---
-titulo: "Descuentos sucesivos: por que 20 % + 10 % no es 30 %"
-descripcion: "Descubre por que dos descuentos encadenados no se suman y como calcular el descuento real equivalente. Evita el error mas comun en rebajas y promociones."
+titulo: "Descuentos sucesivos: por qué un 20 % más un 10 % no es un 30 %"
+descripcion: "Descubre por qué los descuentos encadenados no se suman, cómo calcular el descuento equivalente con una fórmula sencilla y una tabla con las combinaciones más habituales de las rebajas."
 categoria: "finanzas"
 fecha: "2026-06-17"
+modificado: "2026-10-14"
 keywords:
   - "descuentos sucesivos"
-  - "descuento sobre descuento"
-  - "como calcular descuentos encadenados"
+  - "descuento adicional rebajas"
+  - "20 más 10 por ciento"
   - "descuento equivalente"
-  - "rebajas calcular"
-  - "20 mas 10 descuento"
+  - "segunda rebaja"
 autor: "Equipo Calzix"
 publicado: true
 ---
 
-"30 % y un 10 % adicional en caja". Suena a 40 % de descuento, verdad? Pues no: es un 37 %. Los **descuentos sucesivos** son una de las trampas mentales mas comunes en rebajas y promociones. Esta guia te explica por que no se suman y como calcular el descuento real que estas recibiendo.
+«Rebajas del 50 % y un 20 % adicional en caja». En las segundas rebajas de enero y julio, en el Black Friday o con los cupones de las tiendas online, es habitual encadenar descuentos. Y casi todo el mundo cae en el mismo error: sumarlos.
 
-## Por que los descuentos no se suman
+## Por qué los descuentos no se suman
 
-Cuando aplicas dos descuentos encadenados, el segundo se calcula **sobre el precio ya rebajado**, que es mas pequeno, no sobre el precio original. Por eso el descuento total siempre es menor que la suma de los porcentajes.
+Cada descuento se aplica sobre el precio que queda después del anterior, no sobre el precio original. El segundo porcentaje se calcula sobre una cantidad más pequeña, así que ahorra menos de lo que parece.
 
 ---
 
 ## Ejemplo paso a paso
 
-Un producto cuesta **$100** con un 20 % y luego un 10 % adicional:
+Un abrigo de **100 €** con un 20 % de descuento y un 10 % adicional:
 
-1. Primer descuento: 100 - 20 % = **$80**
-2. Segundo descuento sobre 80: 80 - 10 % = **$72**
-3. Precio final: **$72**
+1. Primer descuento: 100 − 20 % = **80 €**
+2. Segundo descuento sobre 80 €: 80 − 10 % = **72 €**
 
-Has ahorrado 28, es decir, un **28 %**, no un 30 %. El 10 % se aplico sobre 80 (8) y no sobre 100 (10), de ahi la diferencia.
+Pagas 72 €: el descuento total es del **28 %**, no del 30 %.
+
+Con un «50 % + 20 % adicional» sobre 100 €: 100 → 50 € → 40 €. El descuento real es del **60 %**, no del 70 %.
 
 ---
 
-## Como calcular el descuento equivalente
+## Cómo calcular el descuento equivalente
 
-Para saber el descuento unico que equivale a varios sucesivos, compara el precio final con el original:
+Multiplica los «porcentajes que pagas» de cada descuento:
 
-**Descuento equivalente = (Ahorro / Precio original) x 100**
+**Descuento total = 1 − (1 − d₁) × (1 − d₂) × …**
 
-En el ejemplo: 28 / 100 x 100 = **28 %**.
+Con 20 % y 10 %: 1 − 0,80 × 0,90 = 1 − 0,72 = **28 %**.
 
-Otra forma es multiplicar los factores: 100 x 0,80 x 0,90 = 72. El factor total es 0,72, asi que el descuento es del 28 %.
+Para hacerlo de cabeza: un 20 % de descuento es pagar el 80 % (× 0,8) y un 10 %, pagar el 90 % (× 0,9). El precio final es el original × 0,8 × 0,9.
 
 ---
 
 ## Tabla de descuentos sucesivos habituales
 
-| Descuentos | Suma aparente | Descuento real |
-|---|---|---|
-| 20 % + 10 % | 30 % | 28 % |
-| 30 % + 10 % | 40 % | 37 % |
-| 50 % + 20 % | 70 % | 60 % |
-| 30 % + 20 % + 10 % | 60 % | 49,6 % |
-
-Como ves, cuantos mas descuentos encadenas, mayor es la diferencia respecto a la suma simple.
+| Descuentos | Descuento real equivalente |
+|---|---|
+| 10 % + 10 % | 19 % |
+| 20 % + 10 % | 28 % |
+| 20 % + 20 % | 36 % |
+| 30 % + 10 % | 37 % |
+| 30 % + 20 % | 44 % |
+| 40 % + 20 % | 52 % |
+| 50 % + 10 % | 55 % |
+| 50 % + 20 % | 60 % |
+| 50 % + 50 % | 75 % |
+| 70 % + 20 % | 76 % |
 
 ---
 
 ## El orden no cambia el resultado
 
-Aplicar primero el 20 % y luego el 10 %, o al reves, da exactamente el mismo precio final, porque la multiplicacion es conmutativa: 100 x 0,8 x 0,9 = 100 x 0,9 x 0,8 = 72. Asi que da igual el orden en que te apliquen los descuentos.
+Da igual aplicar primero el 20 % y luego el 10 %, o al revés: la multiplicación es conmutativa, así que 0,8 × 0,9 = 0,9 × 0,8. Lo que sí cambia el resultado es si el segundo descuento se aplica sobre el precio original (entonces sí se suman) o sobre el ya rebajado, que es lo habitual. Si dudas, pregunta en caja o mira el desglose del ticket.
 
 ---
 
-## Para que sirve saberlo
+## Para qué sirve saberlo
 
-Conocer el descuento equivalente te permite **comparar ofertas de forma justa** y detectar promociones que parecen mejores de lo que son. Una tienda puede anunciar "30 % + 10 %" que en realidad es un 37 %, no un 40 %. Asi puedes compararla con otra de "38 % directo" y ver cual conviene mas.
+- **Comparar ofertas:** un «35 %» directo es mejor que un «20 % + 15 %» (32 %).
+- **Comprobar el ticket:** si te cobran de más, puedes reclamar. El precio anunciado, con sus descuentos, es vinculante para el comercio.
+- **Fijar precios en tu negocio:** si encadenas descuentos comerciales a un cliente (descuento por volumen y pronto pago), calcula el equivalente para saber el margen que te queda. Recuerda que el IVA se aplica sobre el precio final ya descontado.
 
 ---
 
 ## Calcula descuentos sucesivos al instante
 
-Usa la **[calculadora de descuentos sucesivos](/descuento-sucesivo)** de Calzix para encadenar hasta tres descuentos y obtener el precio final, el ahorro y el descuento unico equivalente.
-
-Para otros calculos de precios, prueba la [calculadora de descuento](/calculadora-descuento) simple, la de [IVA](/calculadora-iva) o la de [precio original con descuento](/precio-original-descuento).
+La **[calculadora de descuentos sucesivos](/descuento-sucesivo)** de Calzix aplica varios descuentos encadenados y te da el precio final y el descuento real equivalente. Para un descuento simple, usa la [calculadora de descuentos](/calculadora-descuento), y para saber cuánto costaba algo antes de la rebaja, la del [precio original](/precio-original-descuento).

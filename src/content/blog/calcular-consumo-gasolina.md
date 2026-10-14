@@ -1,135 +1,93 @@
 ---
-titulo: "Como calcular el consumo de gasolina de tu coche: litros, costo y trucos para gastar menos"
-descripcion: "Aprende a calcular el consumo de gasolina real de tu coche con la formula exacta, tabla por tipo de vehiculo y 5 habitos para reducir el gasto en Mexico, Colombia y Chile."
+titulo: "Cómo calcular el consumo de gasolina de tu coche y lo que te cuesta cada viaje"
+descripcion: "Calcula el consumo real de tu coche en litros a los 100 km, el coste de un viaje con los precios de la gasolina y el diésel en España en 2026 y los hábitos de conducción que más ahorran."
 categoria: "tips"
 fecha: "2026-06-07"
-modificado: "2026-06-12"
+modificado: "2026-10-14"
 keywords:
   - "calcular consumo gasolina"
+  - "litros a los 100 km"
+  - "coste viaje gasolina"
+  - "precio gasolina España 2026"
   - "consumo real coche"
-  - "litros por 100 km"
-  - "costo por kilometro"
-  - "consumo combustible"
-  - "calculo gasolina viaje"
-  - "reducir consumo coche"
-  - "precio gasolina Mexico Colombia Chile"
+  - "conducción eficiente"
 autor: "Equipo Calzix"
 publicado: true
 ---
 
-## Por que el consumo oficial de tu coche no tiene nada que ver con la realidad
+Con la gasolina y el diésel por encima de 1,80 € el litro en el otoño de 2026, saber cuánto consume realmente tu coche y cuánto te cuesta cada desplazamiento es más útil que nunca. Aquí tienes las fórmulas, un método para medir el consumo real y los hábitos que más ahorran.
 
-El catalogo dice 5,2 L/100km. Tu llevas meses llenando el deposito y la experiencia te dice que te gastas bastante mas. No estas equivocado y el fabricante no miente exactamente, pero los numeros de homologacion se obtienen en condiciones de laboratorio que no tienen nada que ver con como conduces de verdad.
+## El consumo se mide en litros a los 100 km
 
-Calcular el consumo de gasolina real es sencillo: solo necesitas el surtidor y el cuentakilometros. Pero hay matices que marcan la diferencia entre saber lo que gastas y saber por que lo gastas, y entre resignarte a ese numero y tomar decisiones concretas para reducirlo entre un 10% y un 20%.
+En España y en el resto de Europa, el consumo de un coche se expresa en **litros a los 100 km (L/100 km)**. Cuanto más bajo, más eficiente.
 
-## La formula para calcular el consumo real de gasolina
+**Consumo (L/100 km) = Litros repostados ÷ Kilómetros recorridos × 100**
 
-El consumo de un vehiculo se expresa en litros por cada 100 kilometros recorridos (L/100km). Para calcularlo con precision, sigue este procedimiento:
+**Coste de un viaje (€) = Kilómetros × Consumo ÷ 100 × Precio por litro**
 
-1. Llena el deposito hasta el maximo y anota el numero de kilometros del cuentakilometros (o pon el parcial a cero).
-2. Conduce con normalidad hasta que el deposito este en torno a un cuarto o necesites repostar.
-3. Llena de nuevo hasta el maximo y anota cuantos litros has echado y los kilometros recorridos.
+---
 
-La formula es:
+## Cómo medir el consumo real de tu coche
 
-```
-Consumo (L/100km) = (Litros repostados / Kilometros recorridos) × 100
-```
+El ordenador de a bordo suele quedarse corto. El método más fiable es el del **depósito lleno**:
 
-**Ejemplo:** Has repostado 42 litros y has recorrido 540 km.
-- Consumo = (42 / 540) × 100 = **7,78 L/100km**
+1. Llena el depósito hasta que salte el surtidor y pon a cero el cuentakilómetros parcial.
+2. Conduce con normalidad hasta gastar al menos medio depósito.
+3. Vuelve a llenarlo hasta que salte el surtidor y apunta los litros.
+4. Divide los litros entre los kilómetros y multiplica por 100.
 
-Para que el calculo sea fiable, el ciclo debe cubrir al menos 300-400 km. Con trayectos muy cortos, los errores de llenado del surtidor distorsionan el resultado.
+**Ejemplo:** has recorrido 640 km y repostas 41,6 litros → 41,6 ÷ 640 × 100 = **6,5 L/100 km**.
 
-## Por que el consumo oficial siempre miente
+---
 
-Los fabricantes utilizan el ciclo de homologacion WLTP (Worldwide Harmonised Light Vehicle Test Procedure) desde 2018, que sustituyo al antiguo NEDC. El WLTP es mas realista que su antecesor, pero sigue siendo un protocolo de laboratorio con condiciones muy concretas:
+## Consumo homologado y consumo real
 
-- Temperatura controlada entre 23°C y 29°C
-- Sin climatizacion encendida
-- Sin carga de pasajeros ni equipaje
-- Velocidad maxima de 131 km/h en el ciclo mas exigente
-- Sin paradas de semaforos reales
-- Neumaticos con la presion optima y sin desgaste
+El consumo oficial que aparece en la ficha técnica y en la etiqueta del concesionario se mide con el ciclo **WLTP**, más realista que el antiguo NEDC. Aun así, el consumo real suele ser entre un **10 % y un 25 % mayor**, sobre todo en ciudad, con trayectos cortos, con el aire acondicionado puesto o con una conducción brusca.
 
-En la vida real, la climatizacion en verano puede anadir entre 0,5 y 1,5 L/100km. El trafico urbano con arranques y frenadas frecuentes dispara el consumo un 30% respecto al ciclo mixto. Un coche cargado con cuatro adultos y equipaje puede consumir entre un 15% y un 20% mas.
+| Tipo de coche | Consumo real en uso mixto |
+|---|---|
+| Utilitario de gasolina | 5,5-7 L/100 km |
+| Compacto diésel | 4,5-6 L/100 km |
+| SUV de gasolina | 7-9 L/100 km |
+| Híbrido no enchufable | 4-5,5 L/100 km |
+| Furgoneta diésel | 7-9 L/100 km |
 
-La diferencia media entre el consumo WLTP y el consumo real medido por usuarios en condiciones cotidianas ronda el **15%-25%** segun datos de plataformas de seguimiento de consumo a nivel global.
+---
 
-## Tabla de consumo segun tipo de vehiculo
+## Precio de los carburantes en España en 2026
 
-Estos son los rangos de consumo real que puedes esperar en uso mixto (ciudad y carretera) para los tipos de vehiculo mas comunes en LATAM:
+Según el Boletín Petrolero de la Unión Europea del 5 de octubre de 2026, el precio medio en España era de **1,849 €/L la gasolina 95** y **1,918 €/L el gasóleo**, muy por encima de los meses anteriores por la crisis en Oriente Medio. El Gobierno ha aprobado rebajas temporales del impuesto sobre hidrocarburos para los últimos meses del año. Los precios varían mucho entre gasolineras: las de bajo coste y las de grandes superficies suelen ser varios céntimos más baratas, y en Canarias el carburante es mucho más barato por su menor fiscalidad.
 
-| Tipo de vehiculo | Consumo real estimado | Perfil de uso ideal |
-|---|---|---|
-| Utilitario urbano (gasolina, 1.0T) | 6,0–8,0 L/100km | Ciudad y trayectos cortos |
-| Turismo familiar (gasolina, 1.5T) | 7,0–9,0 L/100km | Uso mixto, autopista y ciudad |
-| SUV compacto (gasolina, 1.5T) | 8,0–10,5 L/100km | Mixto, mayor peso y resistencia |
-| SUV grande (gasolina o diesel, 2.0T) | 9,0–13,0 L/100km | Autopista, cargas frecuentes |
-| Turismo diesel eficiente (1.6-2.0 TDI) | 4,5–6,5 L/100km | Autopista, viajes largos |
-| Hibrido no enchufable | 4,0–5,5 L/100km | Ciudad (donde mas se beneficia) |
-| Hibrido enchufable (en modo electrico) | 1,0–2,5 L/100km | Trayectos cortos cargados |
-| Camioneta pickup (gasolina, 3.5L V6) | 10,0–14,0 L/100km | Carretera con carga, uso rural |
+Consulta los precios de cada gasolinera en el **Geoportal de Gasolineras** del Ministerio para la Transición Ecológica.
 
-Las pickups y camionetas son especialmente comunes en Mexico y Centro America. El hibrido brilla en ciudad donde el motor electrico recupera energia en cada frenada. En autopista a velocidad constante, el beneficio del hibrido se reduce notablemente.
+---
 
-## Como calcular el costo real por kilometro
+## Ejemplo: cuánto cuesta un viaje
 
-Saber el consumo en L/100km es util, pero el numero que de verdad importa cuando planeas un viaje es el costo en tu moneda local por kilometro.
+Un viaje de **Madrid a Valencia y vuelta (unos 720 km)** en un coche que consume 6,5 L/100 km, con la gasolina a 1,849 €/L:
 
-**Formula:**
+- Litros: 720 × 6,5 ÷ 100 = **46,8 L**
+- Coste: 46,8 × 1,849 = **86,53 €**
+- Entre 4 ocupantes: **21,63 €** por persona
 
-```
-Costo por km = (Precio gasolina por litro × Consumo L/100km) / 100
-```
+Y si haces **15.000 km al año** con un consumo de 6 L/100 km, gastas 900 litros: unos **1.664 €** en combustible al año.
 
-**Precios de referencia de gasolina regular (2025-2026):**
+---
 
-| Pais | Tipo combustible mas comun | Precio aprox. por litro |
-|---|---|---|
-| Mexico | Gasolina Magna (87 oct.) | $22–$25 MXN |
-| Colombia | Corriente / Extra (gasolina) | $10,000–$15,000 COP |
-| Chile | Gasolina 93 / 97 oct. | $1,000–$1,200 CLP |
-| Peru | Gasolina 90 oct. | S/ 6.5–8.0 |
+## 7 hábitos que reducen el consumo
 
-**Ejemplo en Mexico:**
-- Coche que consume 8 L/100km
-- Precio gasolina Magna: $23 MXN/L
-- Costo por km = (23 × 8) / 100 = **$1.84 MXN/km**
+1. **Conduce a velocidad constante** y anticípate al tráfico: las aceleraciones y frenadas bruscas pueden aumentar el consumo hasta un 20 %.
+2. **Usa marchas largas** y cambia pronto: hacia las 2.000 rpm en gasolina y 1.500-1.800 rpm en diésel.
+3. **Reduce la velocidad en autovía:** pasar de 120 a 100 km/h puede ahorrar alrededor de un 15-20 % de combustible.
+4. **Revisa la presión de los neumáticos** cada mes: una presión baja aumenta el consumo y el desgaste.
+5. **Quita peso y la baca** cuando no los uses: un portaequipajes en el techo puede subir el consumo más de un 10 % en carretera.
+6. **Usa el aire acondicionado con cabeza:** a baja velocidad, mejor ventanillas; en autovía, mejor el aire, porque las ventanillas abiertas aumentan la resistencia aerodinámica.
+7. **Haz el mantenimiento:** filtros de aire, aceite y bujías en buen estado.
 
-Para un viaje de 500 km:
-- Costo total combustible = 1.84 × 500 = **$920 MXN**
+La DGT y el IDAE ofrecen cursos y guías de conducción eficiente que pueden ahorrar hasta un 15 % de combustible.
 
-Para calcular el costo total del viaje de forma rapida y exacta, la [calculadora de consumo de combustible](/consumo-combustible) de Calzix te da el resultado al instante.
+---
 
-## 5 habitos de conduccion que reducen el consumo entre un 10% y un 20%
+## Calcula el consumo y el coste de tus viajes
 
-No hace falta cambiar de coche para gastar menos. Estos cambios en la forma de conducir tienen un impacto real y medible:
-
-**1. Anticipa y conduce con suavidad.** La mayor parte del combustible extra se consume en las aceleraciones bruscas y en los frenazos que las siguen. Si mantienes distancia de seguridad y anticipas los cambios de semaforo, reduces las aceleraciones agresivas y el consumo baja entre un 8% y un 12% en ciudad.
-
-**2. Mantener la presion de los neumaticos.** Un neumatico con 0,5 bares menos de presion de la recomendada aumenta la resistencia a la rodadura y sube el consumo entre un 1,5% y un 3%. Comprueba la presion cada mes en frio.
-
-**3. Usa las marchas altas a bajas revoluciones.** Los motores modernos de inyeccion directa estan disenados para trabajar eficientemente entre 1.500 y 2.500 rpm. Cambiar de marcha entre 2.000 y 2.500 rpm en gasolina y entre 1.800 y 2.000 rpm en diesel mantiene el motor en su zona de maximo rendimiento.
-
-**4. Apaga el motor si vas a parar mas de 60 segundos.** El arranque moderno con sistema Start-Stop consume menos combustible del que gasta el motor al ralenti. En atascos largos, apagar el motor manualmente si tu coche no lo hace automaticamente puede ahorrar entre 0,2 y 0,5 L/100km en conduccion urbana intensa.
-
-**5. Reduce la velocidad en autopista.** La resistencia aerodinamica crece con el cuadrado de la velocidad. Pasar de 130 km/h a 110 km/h puede reducir el consumo entre un 15% y un 20% en autopista, que es el trayecto donde la aerodinamica domina sobre los demas factores. En un viaje de 400 km de autopista, eso puede suponer entre 4 y 6 litros de diferencia.
-
-## El impacto de la climatizacion y otros consumidores electricos
-
-El aire acondicionado es el gran villano oculto del consumo. En climas tropicales y calidos como los de Mexico, Colombia costera, el Caribe o los valles de Peru y Bolivia, el compresor trabaja a pleno rendimiento durante meses enteros. Cuando eso ocurre, puede anadir entre 1 y 2 L/100km al consumo base.
-
-Estrategias para minimizarlo:
-- Ventila el coche antes de encender el A/C si ha estado al sol para no refrigerar el habitaculo recalentado.
-- Usa el modo de recirculacion de aire interior cuando el exterior este muy caliente: el A/C trabaja menos para mantener la temperatura porque parte de aire ya esta fresco.
-- A velocidades superiores a 80 km/h, abrir las ventanillas genera mas resistencia aerodinamica que el ahorro del A/C apagado. Por encima de esa velocidad, el aire acondicionado es la opcion mas eficiente.
-
-Otros consumidores que muchos subestiman: las lunas traseras calefactables (utiles en zonas de altura como Bogota, Quito o La Paz) tienen un impacto de 0,2-0,4 L/100km. La carga USB y las pantallas del salpicadero son marginales en comparacion.
-
-## Calcula tu consumo y el costo de tu proximo viaje
-
-Con la formula (litros / kilometros) × 100 tienes el consumo real en L/100km. Multiplica por el precio del combustible y divide entre 100 para saber el costo por kilometro. Aplica los cinco habitos de conduccion descritos y puedes recortar ese numero entre un 10% y un 20% sin ningun gasto adicional.
-
-La [calculadora de consumo de combustible](/consumo-combustible) de Calzix te da el resultado al instante con los precios de tu pais.
+Con la **[calculadora de consumo de combustible](/consumo-combustible)** de Calzix calculas tu consumo real en L/100 km y el coste de cualquier trayecto con el precio actual del litro. Si quieres saber cuánto te cuesta de verdad cada kilómetro, incluido el mantenimiento, el seguro y la depreciación, usa la calculadora de [coste por kilómetro](/coste-km).

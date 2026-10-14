@@ -1,77 +1,82 @@
 ---
-titulo: "Cuantas horas hay que dormir segun la edad"
-descripcion: "Descubre cuantas horas de sueno se recomiendan por edad, de bebes a adultos mayores, segun la National Sleep Foundation. Consejos para dormir mejor."
+titulo: "Cuántas horas hay que dormir según la edad"
+descripcion: "Horas de sueño recomendadas por edad, de los bebés a los mayores, qué pasa si duermes poco, por qué en España dormimos menos y consejos para descansar mejor."
 categoria: "guias"
 fecha: "2026-06-24"
+modificado: "2026-10-14"
 keywords:
-  - "cuantas horas dormir"
-  - "horas de sueno por edad"
-  - "cuanto debe dormir un nino"
-  - "horas de sueno recomendadas"
-  - "dormir bien"
-  - "higiene del sueno"
+  - "horas de sueño por edad"
+  - "cuántas horas dormir"
+  - "sueño adolescentes"
+  - "dormir poco consecuencias"
+  - "higiene del sueño"
 autor: "Equipo Calzix"
 publicado: true
 ---
 
-Dormir las horas adecuadas es tan importante para la salud como comer bien o hacer ejercicio. Pero las necesidades de sueno cambian mucho a lo largo de la vida: un bebe necesita el doble que un adulto. Esta guia recoge las recomendaciones por edad de la National Sleep Foundation y consejos para descansar mejor.
+Dormir bien es tan importante para la salud como comer bien o hacer ejercicio. Pero las horas de sueño que necesitamos cambian mucho a lo largo de la vida. Estas son las recomendaciones de referencia internacional, que recogen también la Sociedad Española de Neurología y la Sociedad Española de Sueño.
 
-## Horas de sueno recomendadas por edad
+## Horas de sueño recomendadas por edad
 
-| Edad | Horas recomendadas |
+| Edad | Horas recomendadas al día |
 |---|---|
-| Bebes (0-11 meses) | 12 a 16 h (incluidas siestas) |
-| Ninos pequenos (1-2 anos) | 11 a 14 h |
-| Preescolares (3-5 anos) | 10 a 13 h |
-| Escolares (6-13 anos) | 9 a 11 h |
-| Adolescentes (14-17 anos) | 8 a 10 h |
-| Adultos jovenes (18-25 anos) | 7 a 9 h |
-| Adultos (26-64 anos) | 7 a 9 h |
-| Adultos mayores (65+ anos) | 7 a 8 h |
+| Recién nacidos (0-3 meses) | 14-17 h |
+| Bebés (4-11 meses) | 12-15 h |
+| 1-2 años | 11-14 h |
+| 3-5 años | 10-13 h |
+| 6-13 años | 9-11 h |
+| Adolescentes (14-17 años) | 8-10 h |
+| Adultos jóvenes (18-25 años) | 7-9 h |
+| Adultos (26-64 años) | 7-9 h |
+| Mayores de 65 años | 7-8 h |
+
+En los niños pequeños, las siestas cuentan dentro del total diario.
 
 ---
 
-## Por que cambian las necesidades con la edad
+## Por qué cambian las necesidades con la edad
 
-En la infancia y la adolescencia el sueno es esencial para el crecimiento, el desarrollo del cerebro y la consolidacion del aprendizaje, por eso se necesita mas. En la edad adulta se estabiliza en torno a 7-9 horas, y en la vejez tiende a fragmentarse y reducirse algo, aunque la necesidad de un descanso reparador se mantiene toda la vida.
+Durante la infancia el sueño es fundamental para el crecimiento y el desarrollo del cerebro, por eso los bebés duermen la mayor parte del día. En la **adolescencia**, el reloj biológico se retrasa de forma natural: los adolescentes tienden a dormirse más tarde, pero siguen necesitando 8-10 horas, algo difícil de cumplir con clases a primera hora. Con la edad, el sueño se vuelve más ligero y fragmentado, aunque las necesidades no bajan tanto como se cree.
 
 ---
 
-## Que pasa si duermes poco
+## En España dormimos poco
 
-La falta cronica de sueno se asocia con:
+Según la Sociedad Española de Neurología, entre un 20 % y un 48 % de los adultos tiene en algún momento dificultades para conciliar o mantener el sueño. Los horarios españoles influyen: cenamos tarde, la programación de televisión se alarga hasta pasada la medianoche y usamos la hora de Europa central pese a que la mayor parte de la península está geográficamente alineada con Reino Unido y Portugal. El resultado es que nos acostamos tarde y madrugamos igual.
 
-- Peor memoria, concentracion y rendimiento.
-- Mas irritabilidad y peor estado de animo.
-- Mayor riesgo de obesidad, diabetes e hipertension.
-- Sistema inmune debilitado.
+---
 
-Dormir menos de 7 horas de forma habitual en adultos esta vinculado a peor salud a largo plazo.
+## Qué pasa si duermes poco
+
+Dormir menos de lo necesario de forma habitual acumula **deuda de sueño** y se asocia a:
+
+- Peor concentración, memoria y rendimiento en el trabajo o los estudios.
+- Más irritabilidad, ansiedad y riesgo de depresión.
+- Mayor riesgo de obesidad, diabetes tipo 2 e hipertensión.
+- Defensas más bajas.
+- Más riesgo de accidentes: la somnolencia está detrás de una parte importante de los siniestros de tráfico, según la DGT.
 
 ---
 
 ## La calidad importa tanto como la cantidad
 
-Puedes dormir muchas horas pero con un sueno fragmentado y poco reparador, y levantarte cansado. Por eso, ademas de las horas, importa la **calidad**: alcanzar las fases de sueno profundo sin interrupciones. Cuidar la higiene del sueno es clave.
+Dormir 8 horas con despertares frecuentes no descansa igual que 7 horas de sueño continuo. El sueño se organiza en ciclos de unos 90 minutos con fases de sueño ligero, profundo y REM. Despertar al final de un ciclo hace que te levantes más despejado. Los ronquidos con pausas respiratorias, el insomnio que dura meses o la somnolencia diurna intensa son motivos para consultar al médico.
 
 ---
 
 ## Consejos para dormir mejor
 
-| Habito | Por que ayuda |
-|---|---|
-| Horarios regulares | Sincroniza tu reloj biologico |
-| Evitar pantallas antes de dormir | La luz azul retrasa el sueno |
-| Controlar la cafeina | Permanece horas en el cuerpo |
-| Ambiente oscuro y fresco | Favorece el sueno profundo |
-| Ejercicio (no justo antes) | Mejora la calidad del descanso |
-
-Un punto clave es la **[cafeina](/cafeina-sueno)**: tiene una vida media de 5-6 horas, asi que un cafe de media tarde puede seguir afectando por la noche.
+1. **Horarios regulares**, también el fin de semana.
+2. **Luz natural por la mañana** y poca luz por la noche.
+3. **Pantallas fuera** la última hora antes de dormir.
+4. **Cena ligera**, al menos dos horas antes de acostarte.
+5. **Cafeína solo por la mañana:** su efecto puede durar más de 6 horas.
+6. **Dormitorio oscuro, silencioso y fresco**, a unos 18-20 °C.
+7. **Siesta corta**, de 20 minutos y antes de las 16:00.
+8. **Ejercicio regular**, pero no justo antes de acostarte.
 
 ---
 
 ## Calcula tu descanso ideal
 
-Usa la **[calculadora de horas de sueno por edad](/horas-sueno-edad)** de Calzix para conocer la franja recomendada para ti o tus hijos. Y con la **[calculadora de cafeina y sueno](/cafeina-sueno)** sabras a que hora dejar el cafe para no arruinar tu descanso.
-
-Para despertar descansado respetando los ciclos de 90 minutos, prueba tambien la [calculadora de sueno](/calculadora-sueno).
+Con la **[calculadora de horas de sueño por edad](/horas-sueno-edad)** de Calzix compruebas cuántas horas te corresponden, y con la [calculadora de sueño](/calculadora-sueno) eliges la hora de acostarte para completar ciclos enteros. Si tomas café o refrescos por la tarde, la calculadora de [cafeína y sueño](/cafeina-sueno) te dice cuánto tarda en eliminarse.

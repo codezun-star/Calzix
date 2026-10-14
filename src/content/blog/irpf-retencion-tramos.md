@@ -1,159 +1,118 @@
 ---
-titulo: "Impuesto sobre la Renta en LATAM: tramos, retenciones y ejemplos por pais"
-descripcion: "Guia completa del Impuesto sobre la Renta en Mexico (ISR), Colombia, Chile, Peru y Argentina: tramos vigentes, como funciona la retencion en nomina y ejemplos reales."
+titulo: "Tramos del IRPF 2026 y cómo se calcula la retención de tu nómina"
+descripcion: "Escala de retención del IRPF en 2026 (19 %, 24 %, 30 %, 37 %, 45 % y 47 %), cálculo paso a paso de la retención de una nómina de 30.000 €, mínimos personales y familiares y diferencia entre retención y declaración de la Renta."
 categoria: "finanzas"
 fecha: "2026-06-07"
-modificado: "2026-06-12"
+modificado: "2026-10-14"
 keywords:
-  - "ISR Mexico 2025"
-  - "impuesto renta Colombia"
-  - "impuesto segunda categoria Chile"
-  - "tramos impuesto renta LATAM"
-  - "retencion nomina Mexico"
-  - "calcular ISR"
-  - "impuesto renta Peru Argentina"
+  - "tramos IRPF 2026"
+  - "retención IRPF nómina"
+  - "calcular retención IRPF"
+  - "escala IRPF"
+  - "tipo de retención"
+  - "mínimo personal y familiar"
+  - "modelo 145"
 autor: "Equipo Calzix"
 publicado: true
 ---
 
-El Impuesto sobre la Renta es el tributo que mas afecta el bolsillo de los trabajadores en toda America Latina, pero sus reglas varian bastante entre paises. Esta guia explica como funciona en Mexico, Colombia, Chile, Peru y Argentina: los tramos vigentes, como se aplica la retencion en nomina y como calcular tu carga real.
+Cada mes, tu empresa retiene una parte de tu sueldo y la ingresa a Hacienda como **pago a cuenta del IRPF**. Ese porcentaje no es un tramo fijo: se calcula con un algoritmo que tiene en cuenta tu salario anual, tus cotizaciones, tu situación familiar y otros datos. Aquí verás la escala de 2026 y cómo se aplica con un ejemplo real.
 
-## Que es el Impuesto sobre la Renta y como funciona la retencion
+## La escala de retención del IRPF en 2026
 
-En todos los paises de LATAM el Impuesto sobre la Renta de personas fisicas sigue el mismo principio: es progresivo (quien mas gana, mayor porcentaje paga) y funciona por tramos escalonados. El tramo mas alto al que llega tu ingreso se llama tipo marginal, pero el porcentaje que pagas sobre el total de tus ingresos — el tipo efectivo — siempre es menor.
+Es la escala general que usan las empresas para calcular las retenciones de los trabajadores, la misma que en los últimos años:
 
-Para las rentas del trabajo, el patron es identico en toda la region: la empresa retiene el impuesto estimado cada quincena o mes y lo paga directamente al fisco. Al final del ano fiscal, el trabajador declara todos sus ingresos y el fisco compara lo retenido con lo que realmente correspondía pagar.
-
----
-
-## Mexico: ISR 2025
-
-El **Impuesto Sobre la Renta (ISR)** en Mexico se calcula sobre el ingreso gravable anual acumulado. La tabla de tarifas 2025 tiene 11 tramos con tipos que van del 1.92 % al 35 %:
-
-| Limite inferior (MXN/ano) | Cuota fija | Tasa sobre excedente |
-|---|---|---|
-| $0 | $0 | 1.92 % |
-| $8,952.50 | $171.88 | 6.40 % |
-| $75,984.56 | $4,461.94 | 10.88 % |
-| $133,536.08 | $10,723.55 | 16.00 % |
-| $155,229.81 | $14,194.54 | 17.92 % |
-| $185,852.58 | $19,682.13 | 21.36 % |
-| $374,837.89 | $60,049.40 | 23.52 % |
-| $590,796.00 | $110,842.74 | 30.00 % |
-| $1,127,926.85 | $271,981.99 | 32.00 % |
-| $1,503,902.47 | $392,294.17 | 34.00 % |
-| $4,511,707.38 | $1,414,947.85 | 35.00 % |
-
-**Como se retiene en nomina:**
-La empresa calcula el ISR mensual estimado aplicando el subsidio al empleo (un credito fiscal para salarios bajos que reduce o elimina el ISR) y retiene la diferencia en cada pago. Al hacer la declaracion anual en abril, si retuvieron de mas te devuelven; si retuvieron de menos, pagas la diferencia.
-
-**Ejemplo con salario de $25,000 MXN brutos al mes ($300,000 MXN/ano):**
-- El ingreso cae en el tramo del 23.52 % (entre $185,852 y $374,837)
-- ISR sobre $300,000: cuota fija $19,682.13 + (($300,000 - $185,852.58) × 21.36 %) = $19,682.13 + $24,387 = ~$44,069/ano
-- Retencion mensual estimada: ~$3,672/mes
-- Tipo efectivo: ~14.7 % sobre el bruto
-
-Importante: a diferencia de Espana, Mexico no tiene un minimo personal exento como tal, pero el subsidio al empleo compensa el ISR para salarios mensuales de hasta ~$10,000-$15,000 MXN aproximadamente.
-
----
-
-## Colombia: Impuesto de Renta para empleados 2025
-
-En Colombia el impuesto de renta de personas naturales se declara anualmente (abril-mayo). Para empleados, la empresa practica **retencion en la fuente** mensual.
-
-El umbral de retencion en 2025 aplica a partir de ingresos laborales superiores a **95 UVT mensuales** (~$4,408,025 COP). Empleados con salario menor a ese umbral generalmente no tienen retencion en la fuente laboral (aunque pueden tener impuesto al declarar si tienen otros ingresos).
-
-**Tramos aproximados de impuesto de renta 2025** (base en UVT anuales; 1 UVT 2025 = $49,799 COP):
-
-| Renta gravable (UVT/ano) | Rango en COP aprox. | Tarifa marginal |
-|---|---|---|
-| 0 a 1,090 | Hasta $54,280,910 | 0 % |
-| 1,090 a 1,700 | $54M a $84.7M | 19 % |
-| 1,700 a 4,100 | $84.7M a $204.2M | 28 % |
-| 4,100 a 8,670 | $204.2M a $432M | 33 % |
-| 8,670 a 18,970 | $432M a $945M | 35 % |
-| 18,970 a 31,000 | $945M a $1,544M | 37 % |
-| Mas de 31,000 | Mas de $1,544M | 39 % |
-
-**Deducciones importantes para empleados colombianos:**
-- Rentas exentas laborales: el 25 % del ingreso laboral neto (hasta 2,880 UVT/ano) esta exento
-- Aportes a pension AFP (4 % del salario): deducibles
-- Aportes salud EPS (4 % del salario): deducibles si el trabajador los asume
-
----
-
-## Chile: Impuesto Unico de Segunda Categoria (IUSC) 2025
-
-En Chile los trabajadores dependientes pagan el **Impuesto Unico de Segunda Categoria** que se retiene mensualmente por el empleador. La escala es mensual:
-
-| Renta imponible mensual (CLP) | Tasa marginal |
+| Base para calcular la retención | Tipo del tramo |
 |---|---|
-| Hasta $820,658 | 0 % (exento) |
-| $820,659 - $1,822,574 | 4 % |
-| $1,822,575 - $3,037,624 | 8 % |
-| $3,037,625 - $4,252,673 | 13.5 % |
-| $4,252,674 - $5,467,722 | 23 % |
-| $5,467,723 - $7,275,624 | 30.4 % |
-| $7,275,625 - $18,188,424 | 35 % |
-| Mas de $18,188,425 | 40 % |
+| Hasta 12.450 € | 19 % |
+| De 12.450 a 20.200 € | 24 % |
+| De 20.200 a 35.200 € | 30 % |
+| De 35.200 a 60.000 € | 37 % |
+| De 60.000 a 300.000 € | 45 % |
+| Más de 300.000 € | 47 % |
 
-*Valores referencia 2025 en CLP; la tabla se actualiza anualmente en UTA (Unidad Tributaria Anual).*
-
-La base imponible del IUSC es el salario bruto menos los aportes a AFP (~11.5 % del salario) y salud (7 % al Fonasa o Isapre). Esto significa que los descuentos previsionales reducen significativamente la base tributable.
+**Es una escala progresiva:** cada porcentaje se aplica solo a la parte de la base que cae en su tramo. Ganar 20.300 € no hace que todo tu sueldo tribute al 30 %, solo los 100 € que superan los 20.200.
 
 ---
 
-## Peru: Impuesto a la Renta de Quinta Categoria 2025
+## Cómo se calcula la retención paso a paso
 
-Para los trabajadores dependientes peruanos, el impuesto se denomina **Impuesto a la Renta de Quinta Categoria** y se calcula anualmente sobre los ingresos del ano en curso, con retenciones mensuales por el empleador.
+Ejemplo: **30.000 € brutos anuales**, contrato indefinido, soltero y sin hijos.
 
-La escala usa la **UIT 2025 (S/ 5,350)**:
+**1. Restar las cotizaciones a la Seguridad Social del trabajador.** En 2026 suman el 6,50 % para un contrato indefinido (contingencias comunes 4,70 %, desempleo 1,55 %, formación profesional 0,10 % y MEI 0,15 %): 30.000 × 6,5 % = **1.950 €**.
 
-| Renta neta anual | Tasa |
+**2. Restar los gastos deducibles.** Todos los trabajadores restan 2.000 € de «otros gastos». Rendimiento neto: 30.000 − 1.950 − 2.000 = **26.050 €**.
+
+**3. Aplicar la reducción por rendimientos del trabajo.** Solo para rendimientos netos bajos: 7.302 € si no superan 14.852 €, decreciente hasta desaparecer en 19.747,50 €. Aquí es 0. Base para la retención: **26.050 €**.
+
+**4. Aplicar la escala a la base:**
+- 12.450 × 19 % = 2.365,50 €
+- 7.750 × 24 % = 1.860,00 €
+- 5.850 × 30 % = 1.755,00 €
+- Total: **5.980,50 €**
+
+**5. Restar la escala aplicada al mínimo personal y familiar.** El mínimo personal es de 5.550 €: 5.550 × 19 % = **1.054,50 €**.
+
+**6. Cuota de retención:** 5.980,50 − 1.054,50 = **4.926 €** al año.
+
+**7. Tipo de retención:** 4.926 ÷ 30.000 = **16,42 %**. Con 14 pagas, unos 352 € de retención en cada nómina.
+
+---
+
+## Tipos de retención orientativos en 2026
+
+Para un trabajador soltero, sin hijos y con contrato indefinido:
+
+| Salario bruto anual | Tipo de retención aproximado |
 |---|---|
-| Hasta 5 UIT (S/ 26,750) | 8 % |
-| De 5 a 20 UIT (S/ 26,750 - S/ 107,000) | 14 % |
-| De 20 a 35 UIT (S/ 107,000 - S/ 187,250) | 17 % |
-| De 35 a 45 UIT (S/ 187,250 - S/ 240,750) | 20 % |
-| Mas de 45 UIT (mas de S/ 240,750) | 30 % |
+| 17.094 € (SMI 2026) | 3,06 % |
+| 20.000 € | 8,86 % |
+| 25.000 € | 14,09 % |
+| 30.000 € | 16,42 % |
+| 40.000 € | 19,36 % |
+| 50.000 € | 22,40 % |
+| 60.000 € | 24,44 % |
 
-Se descuenta como minimo exento **7 UIT (S/ 37,450)** antes de aplicar los tramos.
-
-**Ejemplo con sueldo de S/ 5,000 mensuales (S/ 60,000/ano):**
-- Renta bruta anual: S/ 60,000
-- Menos 7 UIT exentas: S/ 60,000 - S/ 37,450 = S/ 22,550 de renta neta gravable
-- Renta neta gravable cae entre 0 y 5 UIT: impuesto = 8 % × S/ 22,550 = S/ 1,804 anuales
-- Retencion mensual estimada: S/ 150/mes
+Con hijos, discapacidad o más de 65 años, el mínimo personal y familiar aumenta y la retención baja. Por ejemplo, con 30.000 € y dos hijos (mínimo compartido con el otro progenitor), la retención baja al 14,8 %.
 
 ---
 
-## Argentina: Impuesto a las Ganancias 2024-2025
+## Mínimos personales y familiares
 
-Argentina tiene un esquema de Impuesto a las Ganancias para personas fisicas con cambios frecuentes. A partir de 2024 se incorporo el **Impuesto PAIS** y se modificaron los minimos no imponibles.
+| Concepto | Importe |
+|---|---|
+| Mínimo personal | 5.550 € (+1.150 € a partir de 65 años; +1.400 € más a partir de 75) |
+| Primer hijo | 2.400 € |
+| Segundo hijo | 2.700 € |
+| Tercer hijo | 4.000 € |
+| Cuarto y siguientes | 4.500 € |
+| Por cada hijo menor de 3 años | +2.800 € |
 
-Para empleados en relacion de dependencia, la AFIP aplica retencion en la fuente. El Minimo No Imponible (MNI) 2025 se actualiza trimestralmente; para la mayoria de los trabajadores, los salarios inferiores a aproximadamente **$3,500,000 ARS brutos mensuales** (actualizacion Jun 2025) quedaron fuera del impuesto con las reformas de 2024. Para los que superan ese umbral, las alicuotas van del 5 % al 35 % sobre el excedente.
-
-Dado que las cifras cambian con alta frecuencia por la inflacion y las reformas, se recomienda consultar el sitio de la **AFIP (afip.gob.ar)** para los valores vigentes actualizados.
-
----
-
-## Como calcular tu tipo efectivo
-
-Independientemente del pais, el calculo del tipo efectivo sigue estos pasos:
-
-1. **Ingreso bruto anual** (sueldo bruto × 12 o × 13 si hay aguinaldo)
-2. **Menos deducciones autorizadas** (aportes previsionales, de salud, etc.)
-3. **Menos minimo exento** (tramo 0 % o deduccion base)
-4. **Base gravable** = resultado del paso anterior
-5. **Aplicar tramos escalonados** para calcular el impuesto total anual
-6. **Tipo efectivo** = impuesto total anual / ingreso bruto anual × 100
-
-El tipo marginal (el tramo mas alto al que llega tu ingreso) siempre es mayor que el tipo efectivo porque los tramos inferiores pagan porcentajes menores.
+Si los hijos conviven con ambos progenitores, el mínimo se reparte a partes iguales entre los dos.
 
 ---
 
-## Calculadoras por pais en Calzix
+## Retención mínima y límites
 
-Usa la **[calculadora de nomina](/calculadora-nomina)** para Mexico para obtener el desglose completo de ISR y deducciones IMSS. Para calcular tu numero en otros paises de LATAM, la **[calculadora de descuentos](/calcular-descuento)** te permite estimar rapidamente el impacto de los porcentajes sobre tu salario.
+- **Sueldos bajos:** no se practica retención si el salario no supera unos límites que dependen de la situación familiar (por ejemplo, 15.876 € para un soltero sin hijos). Por encima, la retención no puede superar el 43 % de la diferencia, lo que suaviza el salto.
+- **Contratos de menos de un año:** el tipo mínimo de retención es del **2 %**.
+- **Deducción por SMI:** desde 2025 existe una deducción en la Renta para quienes cobran el salario mínimo, que en 2026 es de hasta 590,89 €. No reduce la retención mensual, pero se recupera al presentar la declaración.
 
-Conocer los tramos del impuesto de tu pais no es solo informacion fiscal: es saber cuanto vale realmente un aumento de sueldo, cuando te conviene hacer deducciones voluntarias (como aportaciones a pension complementaria) y como comparar ofertas laborales en distintos paises de la region.
+---
+
+## Retención no es lo que pagas de IRPF
+
+La retención es un **adelanto**. El impuesto real se calcula en la **declaración de la Renta** (de abril a finales de junio del año siguiente) con la escala estatal más la autonómica de tu comunidad, que varían ligeramente entre comunidades, y con las deducciones a las que tengas derecho. Si te han retenido de más, Hacienda te devuelve; si de menos, pagas la diferencia.
+
+Estás obligado a declarar, entre otros casos, si tus rendimientos del trabajo superan **22.000 €** con un solo pagador, o **15.876 €** si tienes más de un pagador y el segundo y siguientes te pagaron más de 1.500 € en total.
+
+### Cómo cambiar tu retención
+
+- Comunica cualquier cambio personal (hijos, discapacidad, pensión compensatoria, préstamo para vivienda habitual anterior a 2013) a tu empresa con el **modelo 145**.
+- Puedes **pedir un tipo de retención más alto** por escrito para evitar pagar en la Renta, por ejemplo si tienes dos pagadores.
+
+---
+
+## Calcula tu retención
+
+La **[calculadora de retención de IRPF](/irpf-retencion)** de Calzix aplica el algoritmo oficial de 2026 con tu salario, tu tipo de contrato y tu situación familiar. Para ver tu sueldo neto mensual, usa la [calculadora de nómina](/calculadora-nomina).

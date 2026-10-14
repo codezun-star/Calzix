@@ -1,90 +1,100 @@
 ---
-titulo: "Como calcular fracciones: suma, resta, multiplicacion y division"
-descripcion: "Aprende a operar con fracciones paso a paso: suma y resta con comun denominador, multiplicacion, division y como simplificar. Con ejemplos resueltos."
+titulo: "Cómo calcular fracciones: suma, resta, multiplicación y división"
+descripcion: "Aprende a operar con fracciones paso a paso: suma y resta con el mínimo común múltiplo, multiplicación, división, simplificación y errores frecuentes, con ejemplos de Primaria y ESO."
 categoria: "tutoriales"
 fecha: "2026-06-20"
+modificado: "2026-10-14"
 keywords:
-  - "como calcular fracciones"
+  - "calcular fracciones"
   - "sumar fracciones"
   - "multiplicar y dividir fracciones"
   - "simplificar fracciones"
-  - "comun denominador"
-  - "operaciones con fracciones ejemplos"
+  - "fracciones ESO"
 autor: "Equipo Calzix"
 publicado: true
 ---
 
-Las fracciones aparecen en la escuela, en la cocina, en las medidas y en cualquier reparto. Operar con ellas a mano genera muchos errores, sobre todo al buscar el comun denominador o al simplificar. Esta guia te explica las cuatro operaciones paso a paso, con ejemplos resueltos, para que domines las fracciones de una vez por todas.
+Las fracciones aparecen en las Matemáticas desde 3.º de Primaria hasta el Bachillerato, y también en la vida diaria: media pizza, tres cuartos de hora, un tercio de la factura. Dominar las cuatro operaciones básicas es más fácil de lo que parece si sigues siempre los mismos pasos.
 
-## Que es una fraccion
+## Qué es una fracción
 
-Una fraccion representa una parte de un todo y se escribe como dos numeros separados por una raya: el de arriba es el **numerador** (cuantas partes tomas) y el de abajo el **denominador** (en cuantas partes se divide el todo). Por ejemplo, 3/4 significa tres de cuatro partes iguales.
+Una fracción representa una parte de un todo y se escribe **a/b**:
+
+- El **numerador** (a) indica cuántas partes tomas.
+- El **denominador** (b) indica en cuántas partes iguales se divide el todo. Nunca puede ser cero.
+
+En 3/4, el todo se divide en 4 partes iguales y tomas 3. Como número decimal, 3/4 = 0,75, es decir, el 75 %.
 
 ---
 
 ## Suma y resta de fracciones
 
-La clave es que **solo se pueden sumar o restar fracciones con el mismo denominador**. Si son distintos, primero hay que igualarlos.
+**Con el mismo denominador**, se suman o restan los numeradores y se deja el denominador:
 
-### Con el mismo denominador
+2/7 + 3/7 = **5/7**
 
-Se suman (o restan) los numeradores y se mantiene el denominador:
+**Con distinto denominador**, primero hay que reducirlas a común denominador, normalmente con el **mínimo común múltiplo (MCM)** de los denominadores:
 
-**2/7 + 3/7 = 5/7**
+1/4 + 1/6 → MCM(4, 6) = 12 → 3/12 + 2/12 = **5/12**
 
-### Con distinto denominador
+Pasos:
 
-Se busca el minimo comun multiplo (MCM) de los denominadores, se convierten ambas fracciones a ese denominador comun y se suman los numeradores.
-
-Ejemplo: **1/4 + 1/6**
-
-1. El MCM de 4 y 6 es 12.
-2. 1/4 = 3/12 y 1/6 = 2/12.
-3. 3/12 + 2/12 = **5/12**.
+1. Calcula el MCM de los denominadores.
+2. Divide el MCM entre cada denominador y multiplica el resultado por su numerador.
+3. Suma o resta los nuevos numeradores.
+4. Simplifica si se puede.
 
 ---
 
-## Multiplicacion de fracciones
+## Multiplicación de fracciones
 
-Es la operacion mas sencilla: se multiplican los numeradores entre si y los denominadores entre si, sin buscar comun denominador.
+Se multiplican los numeradores entre sí y los denominadores entre sí:
 
-**2/3 x 4/5 = (2x4)/(3x5) = 8/15**
+2/3 × 4/5 = (2 × 4) / (3 × 5) = **8/15**
 
----
-
-## Division de fracciones
-
-Para dividir, se multiplica la primera fraccion por la **inversa** de la segunda (se da vuelta la segunda fraccion):
-
-**2/3 / 4/5 = 2/3 x 5/4 = 10/12 = 5/6**
-
-Una regla rapida es multiplicar en cruz: numerador del primero por denominador del segundo arriba, y denominador del primero por numerador del segundo abajo.
+Truco: simplifica antes de multiplicar si un numerador y un denominador tienen factores comunes. En 3/8 × 4/9, el 3 y el 9 se simplifican entre 3, y el 4 y el 8 entre 4: 1/2 × 1/3 = **1/6**.
 
 ---
 
-## Como simplificar una fraccion
+## División de fracciones
 
-Simplificar es reducir la fraccion a su minima expresion dividiendo numerador y denominador entre su **maximo comun divisor (MCD)**.
+Se multiplica la primera por la **inversa** de la segunda (se le da la vuelta):
 
-Ejemplo: **8/12**. El MCD de 8 y 12 es 4, asi que 8/12 = (8/4)/(12/4) = **2/3**.
+3/4 ÷ 2/5 = 3/4 × 5/2 = **15/8**
 
-Si el MCD es 1, la fraccion ya esta simplificada.
+También se puede hacer «en cruz»: numerador de la primera por denominador de la segunda, y denominador de la primera por numerador de la segunda.
+
+15/8 es una fracción impropia (el numerador es mayor que el denominador). Como número mixto, 15/8 = 1 entero y 7/8.
 
 ---
 
-## Errores frecuentes con fracciones
+## Cómo simplificar una fracción
 
-| Error | Por que esta mal |
-|---|---|
-| Sumar numeradores y denominadores (1/2 + 1/3 = 2/5) | Hay que buscar comun denominador primero |
-| Olvidar simplificar el resultado | La respuesta queda incompleta (4/8 en vez de 1/2) |
-| Invertir la fraccion equivocada al dividir | Se invierte la segunda, no la primera |
-| Multiplicar buscando comun denominador | Al multiplicar no hace falta comun denominador |
+Divide el numerador y el denominador entre su **máximo común divisor (MCD)**:
+
+18/24 → MCD(18, 24) = 6 → **3/4**
+
+Una fracción está simplificada al máximo (es irreducible) cuando el MCD del numerador y el denominador es 1. Las fracciones equivalentes representan la misma cantidad: 1/2 = 2/4 = 50/100.
+
+---
+
+## Fracciones en la vida diaria
+
+- **Recetas:** si una receta para 4 personas lleva 3/4 de litro de leche y cocinas para 6, necesitas 3/4 × 6/4 = 18/16 = 9/8 de litro, algo más de un litro.
+- **Tiempo:** tres cuartos de hora son 3/4 × 60 = 45 minutos.
+- **Repartos:** si pagas 2/5 de un regalo de 85 €, te tocan 85 × 2/5 = 34 €.
+
+---
+
+## Errores frecuentes
+
+- **Sumar numeradores y denominadores:** 1/2 + 1/3 no es 2/5, sino 5/6.
+- **Olvidar invertir en la división:** se invierte la segunda fracción, no la primera.
+- **No simplificar el resultado:** en los exámenes, el resultado debe darse simplificado.
+- **Confundir el signo:** en −2/3, el signo afecta a toda la fracción.
 
 ---
 
 ## Calcula fracciones en segundos
 
-Usa la **[calculadora de fracciones](/calculadora-fracciones)** de Calzix para sumar, restar, multiplicar y dividir dos fracciones y obtener el resultado ya simplificado y en decimal. Es ideal para revisar la tarea, comprobar un resultado o resolver operaciones complejas sin equivocarte con el comun denominador.
-
-Dominar las fracciones es la base para entender porcentajes, proporciones y muchas formulas posteriores. Si quieres repasar otros conceptos, prueba tambien la calculadora de [MCM y MCD](/mcm-mcd), imprescindible para sumar fracciones, o la de [porcentajes](/calculadora-porcentaje).
+La **[calculadora de fracciones](/calculadora-fracciones)** de Calzix suma, resta, multiplica y divide fracciones y te da el resultado simplificado y en decimal. Para encontrar el denominador común, usa la calculadora de [MCM y MCD](/mcm-mcd), y para expresar una fracción como porcentaje, la [calculadora de porcentajes](/calculadora-porcentaje).

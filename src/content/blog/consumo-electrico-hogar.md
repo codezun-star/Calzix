@@ -1,133 +1,102 @@
 ---
-titulo: "Consumo electrico del hogar en LATAM: como calcularlo y reducir la factura"
-descripcion: "Aprende a calcular el consumo electrico hogar por electrodomestico en Mexico, Colombia, Chile y Peru. Detecta los vampiros energeticos y recorta tu factura de la luz."
+titulo: "Consumo eléctrico del hogar: cuánto gasta cada electrodoméstico y cómo bajar la factura de la luz"
+descripcion: "Calcula el consumo de tus electrodomésticos en kWh y su coste con el precio de la luz en España en 2026. Tramos horarios punta, llano y valle, potencia contratada y trucos para ahorrar."
 categoria: "tips"
 fecha: "2026-06-07"
-modificado: "2026-06-12"
+modificado: "2026-10-14"
 keywords:
-  - "consumo electrico hogar"
-  - "calcular consumo electricidad"
-  - "factura de la luz LATAM"
-  - "electrodomesticos consumo"
-  - "tarifa electricidad Mexico Colombia"
-  - "vampiros energeticos"
-  - "kWh hogar"
-  - "ahorro energetico"
+  - "consumo eléctrico electrodomésticos"
+  - "calcular kWh"
+  - "factura de la luz 2026"
+  - "precio kWh España"
+  - "tramos horarios luz"
+  - "ahorrar luz"
+  - "potencia contratada"
 autor: "Equipo Calzix"
 publicado: true
 ---
 
-## Por que tu factura de la luz no cuadra con lo que consumes
+La factura de la luz depende de dos cosas: la **potencia** que tienes contratada y la **energía** que consumes. La primera la decides una vez; la segunda, cada día, con cada electrodoméstico que enciendes. Saber cuánto gasta cada aparato es el primer paso para ahorrar.
 
-El consumo electrico del hogar es uno de esos gastos que casi todo el mundo paga sin entender del todo de donde sale el importe final. Llega la factura, ves una cifra y en el mejor de los casos la comparas con el mes anterior. Pero si quieres recortar lo que pagas, necesitas saber cuanto consume cada aparato, cuando lo usas y como funciona la tarifa de tu pais. Con esos tres datos, tomar decisiones concretas deja de ser intuicion.
+## La fórmula del consumo eléctrico
 
-## La formula fundamental: potencia, horas y kilovatios-hora
+**Consumo (kWh) = Potencia (kW) × Horas de uso**
 
-Todo aparato electrico consume energia en funcion de su potencia (medida en vatios, W) y del tiempo que lo tienes encendido. El resultado se mide en kilovatios-hora (kWh), que es la unidad que aparece en tu factura.
+**Coste (€) = Consumo (kWh) × Precio del kWh (€/kWh)**
 
-La formula es:
+La potencia aparece en la etiqueta o en el manual del aparato en vatios (W); divídela entre 1.000 para pasarla a kilovatios.
 
-**Consumo (kWh) = Potencia (W) × Horas de uso / 1.000**
+**Ejemplo:** un horno de 2.000 W funcionando 1 hora consume 2 × 1 = **2 kWh**. Con la electricidad a 0,15 €/kWh, cuesta **0,30 €** cada vez que lo usas.
 
-Por ejemplo, un calentador de 2.000 W encendido durante 3 horas consume:
+---
 
-2.000 × 3 / 1.000 = **6 kWh**
+## Cuánto cuesta el kWh en España en 2026
 
-Para saber cuanto te cuesta en dinero, multiplicas los kWh por el precio de la electricidad vigente en tu pais. Como referencia 2025-2026:
+En el mercado regulado (**PVPC**), el precio varía cada hora. La media de 2026 hasta octubre ronda los **0,15 €/kWh** con impuestos, aunque con fuertes diferencias entre horas y meses. En el mercado libre, depende de tu contrato: muchas tarifas tienen un precio fijo entre 0,12 y 0,18 €/kWh.
 
-| Pais | Precio promedio residencial |
-|---|---|
-| Mexico (CFE tarifa 1) | $1.10–$2.80 MXN/kWh (tarifas subsidiadas, varia por region) |
-| Colombia (estrato 3-4) | ~$650–$900 COP/kWh |
-| Chile | ~$120–$160 CLP/kWh |
-| Peru | ~S/ 0.55–0.75 /kWh |
+Desde 2021, todos los consumidores con menos de 15 kW tienen **tres tramos horarios** (peaje 2.0TD):
 
-Usando $2.00 MXN/kWh como referencia en Mexico:
-6 kWh × $2.00 = **$12 MXN al dia** ese calentador.
-
-En 30 dias de invierno: mas de $360 MXN al mes de un unico aparato. Eso es lo que transforma una cifra abstracta en algo accionable.
-
-## Voltajes en LATAM
-
-Un dato importante para hacer tus calculos: el voltaje de red varia segun el pais.
-
-| Pais | Voltaje residencial | Frecuencia |
+| Tramo | Laborables | Precio relativo |
 |---|---|---|
-| Mexico | 120 V | 60 Hz |
-| Colombia | 120 V | 60 Hz |
-| Chile | 220 V | 50 Hz |
-| Peru | 220 V | 60 Hz |
-| Argentina | 220 V | 50 Hz |
+| **Punta** | 10:00-14:00 y 18:00-22:00 | El más caro |
+| **Llano** | 8:00-10:00, 14:00-18:00 y 22:00-24:00 | Intermedio |
+| **Valle** | 0:00-8:00, y todo el día sábados, domingos y festivos nacionales | El más barato |
 
-Los aparatos de Mexico y Colombia estan diseniados para 120 V; los de Chile, Peru y Argentina para 220 V. Usar un aparato en un voltaje diferente sin transformador puede danarlo o generar un consumo incorrecto.
+Poner la lavadora, el lavavajillas o cargar el coche eléctrico en horas valle reduce mucho el coste de cada uso, sobre todo si tienes PVPC o una tarifa con discriminación horaria.
 
-## Consumo real de los electrodomesticos mas comunes
+---
 
-Esta tabla recoge los valores de consumo habituales. Los datos son aproximados porque la potencia varia segun el modelo y la antiguedad del aparato, pero sirven de referencia fiable.
+## Consumo de los electrodomésticos más habituales
 
-| Electrodomestico | Potencia tipica | Uso estimado/dia | Consumo diario |
+| Aparato | Potencia típica | Uso típico | Consumo aproximado |
 |---|---|---|---|
-| Refrigerador/heladera | 150 W (media) | 24 h (ciclos) | 1.0–1.4 kWh |
-| Lavadora | 500–2.000 W | 1.5 h/ciclo | 0.8–3 kWh |
-| Secadora | 2.000–2.500 W | 1.5 h/ciclo | 3–3.75 kWh |
-| TV LED 50" | 90 W | 4 h | 0.36 kWh |
-| Computadora portatil | 45 W | 6 h | 0.27 kWh |
-| Horno electrico | 1.500–2.000 W | 1 h | 1.5–2 kWh |
-| Microondas | 700–1.200 W | 0.25 h | 0.18–0.3 kWh |
-| Aire acondicionado (mini-split) | 1.000–2.000 W | 6 h | 6–12 kWh |
-| Calentador de agua electrico | 1.200–1.500 W | 2 h | 2.4–3 kWh |
-| Cargador de movil | 10 W | 2 h | 0.02 kWh |
+| Frigorífico combi (clase A-C) | — | Siempre encendido | 150-300 kWh/año |
+| Termo eléctrico 80 L | 1.500-2.000 W | Agua caliente diaria | 1.200-2.000 kWh/año |
+| Lavadora | 2.000 W | Ciclo a 40 °C | 0,5-1 kWh por lavado |
+| Lavavajillas | 1.800 W | Programa eco | 0,8-1 kWh por lavado |
+| Secadora (bomba de calor) | 800-1.000 W | Un ciclo | 1,5-2 kWh por ciclo |
+| Horno | 2.000-3.000 W | 1 hora | 1-2 kWh |
+| Vitrocerámica / inducción | 1.200-2.500 W por fuego | 1 hora | 1-2 kWh |
+| Aire acondicionado (3.000 frigorías) | 900-1.200 W | 1 hora | 0,9-1,2 kWh |
+| Televisor LED 55" | 80-120 W | 1 hora | 0,1 kWh |
+| Ordenador portátil | 45-65 W | 1 hora | 0,05 kWh |
+| Bombilla LED | 8-10 W | 1 hora | 0,01 kWh |
 
-El cargador de movil tiene un impacto casi irrelevante. El aire acondicionado es, con diferencia, el aparato que mas pesa en la factura durante los meses de calor en climas tropicales.
+Los aparatos que producen **calor** (termo, calefactores, horno, secadora, aire acondicionado) son los que más pesan en la factura. El frigorífico tiene poca potencia, pero funciona las 24 horas.
 
-**Nota para Mexico:** el calentador de agua (boiler) de resistencia electrica es comun en zonas frias del pais y representa uno de los mayores consumidores del hogar. Los boilers de gas son mucho mas eficientes en terminos de costo.
+Un hogar medio en España consume entre **3.000 y 4.000 kWh al año** de electricidad, más si la calefacción o el agua caliente son eléctricas.
 
-## Los 3 vampiros energeticos que mas se infravalozan
+---
 
-Se llaman "vampiros energeticos" a los aparatos que consumen electricidad aunque esten apagados o en modo de espera. Es un consumo continuo y silencioso.
+## La potencia contratada
 
-**1. El modo standby de televisores y equipos de entretenimiento.** Un televisor moderno en standby consume entre 0.5 y 2 W de forma constante. Si anades el decodificador de cable/satelite (que puede consumir 10-15 W en standby), la consola de videojuegos y el equipo de sonido, puedes llegar facilmente a 10–15 W continuos. Se estima que el standby puede representar hasta el **10 % de la factura electrica** en hogares con mucha electronica.
+Además de la energía, pagas cada día por la potencia contratada, la tengas en uso o no. Las más habituales son **3,45 kW, 4,6 kW y 5,75 kW**. Cada kW de potencia cuesta, de media, unos **30-40 € al año** con impuestos.
 
-**2. El router y los dispositivos de red.** El router tipico consume entre 10 y 20 W las 24 horas del dia. Son unos 120–175 kWh anuales, equivalentes a entre $240–$490 MXN anuales solo ese dispositivo. Si ademas tienes repetidores WiFi o consolas conectadas en modo descanso, el acumulado es considerable.
+Para elegirla, suma la potencia de los aparatos que suelen funcionar a la vez. Si nunca te salta el interruptor, quizá puedas bajarla; si te salta a menudo, la tienes demasiado ajustada. Con el contador digital, cambiar de potencia es un trámite sencillo con tu distribuidora o comercializadora.
 
-**3. Los cargadores conectados sin dispositivo.** Los transformadores de los cargadores de laptops, tablets y pequenos electrodomesticos siguen consumiendo aunque no carguen nada. Es pequeno (1–3 W), pero si tienes 6 o 7 cargadores conectados por la casa, estas gastando energia de forma gratuita. La solucion mas simple: regleta con interruptor para desconectar todo de un golpe.
+---
 
-## Como leer tu factura: cargos fijos y variables
+## Los impuestos de la factura de la luz
 
-En todos los paises de LATAM la factura electrica tiene dos componentes principales:
+Al coste de la energía y la potencia se suman el **impuesto especial sobre la electricidad** (tipo general del 5,11 %), el alquiler del contador y el **IVA** (21 % con carácter general). En 2026 el Gobierno ha aprobado **rebajas temporales del IVA y del impuesto eléctrico** para los consumidores domésticos por la subida de los precios energéticos, condicionadas a la evolución del IPC y de los precios. Revisa en tu factura qué tipos se te aplican.
 
-**Cargo fijo:** pagas por tener la conexion activa, independientemente de lo que consumas. En Mexico la CFE cobra una cuota fija por el servicio basico; en Colombia es la "tarifa fija" del comercializador; en Chile el "cargo fijo por cliente".
+Si tienes ingresos bajos, familia numerosa o eres pensionista con la pensión mínima, puedes tener derecho al **bono social eléctrico**, que solo se puede pedir con la tarifa regulada (PVPC) a través de una comercializadora de referencia.
 
-**Cargo variable por consumo:** es lo que pagas por los kWh que has consumido. En Mexico, la CFE aplica un sistema de bloques tarifarios subsidiados (tarifas 1, 1A, 1B, 1C, 1D, 1E, 1F segun la region climatica), donde los primeros kWh son muy baratos y los excedentes tienen un precio mas alto. En Colombia, Chile y Peru el precio por kWh es mas uniforme aunque puede haber bloques.
+---
 
-**Impuestos y cargos adicionales:**
-- Mexico: IVA del 16 % sobre el importe del consumo
-- Colombia: IVA del 5 % sobre la tarifa de energia mas el impuesto de alumbrado publico municipal
-- Chile: IVA del 19 %
-- Peru: IGV del 18 %
+## 8 trucos para ahorrar en la factura
 
-Un error frecuente es tener contratada mas capacidad (amperaje o potencia) de la necesaria, lo que implica pagar un cargo fijo mayor sin beneficio real. Verifica con tu proveedor si puedes ajustar la potencia contratada.
+1. **Desplaza consumos a horas valle:** lavadora, lavavajillas, secadora y recarga del coche, por la noche o el fin de semana.
+2. **Ajusta el termostato:** cada grado de más en la calefacción o de menos en el aire acondicionado aumenta el consumo alrededor de un 7 %. Lo recomendado es 20 °C en invierno y 26 °C en verano.
+3. **Programa el termo eléctrico** para que caliente en horas valle y baja su temperatura a 55-60 °C.
+4. **Lava en frío o a 30 °C:** la mayor parte de la energía de la lavadora se gasta en calentar el agua.
+5. **Elimina el consumo fantasma:** los aparatos en espera pueden suponer entre un 5 % y un 10 % del consumo. Usa regletas con interruptor.
+6. **Cambia a LED** las bombillas que más usas: gastan un 80 % menos que las incandescentes.
+7. **Mira la etiqueta energética** al comprar: un frigorífico de clase A puede consumir la mitad que uno de clase E.
+8. **Revisa tu tarifa y tu potencia** una vez al año: compara ofertas en el comparador de la CNMC.
 
-## Franjas horarias y tarifas diferenciadas
+---
 
-Algunos paises de LATAM estan implementando tarifas de tiempo de uso (Time of Use o TOU) que cobran diferentes precios segun la hora del dia:
+## Calcula el consumo de tus aparatos
 
-- **Mexico:** la CFE tiene tarifas comerciales con horario punta/base/vacio; para uso residencial la tarifa 1 es mayoritariamente de precio unico, pero en zonas de alta temperatura (tarifa DAC) hay penalizaciones por alto consumo
-- **Colombia:** el CREG ha implementado progresivamente tarifas horarias en zonas piloto
-- **Chile:** las distribuidoras ofrecen opciones de tarifa horaria (BT2) para hogares con mayor capacidad
-
-Si tu comercializadora ofrece tarifa diferenciada y tienes electrodomesticos programables (lavadora, lavavajillas, calentador de agua), programarlos en horas de menor demanda puede generar ahorros de 15–30 % en esos consumos.
-
-## Errores frecuentes al intentar reducir el consumo
-
-**Sustituir bombillas antes de tiempo.** Cambiar a LED es una gran decision, pero si tus bombillas actuales todavia funcionan, el ahorro real de sustituirlas antes de que se fundan es minimo comparado con el impacto de los grandes electrodomesticos.
-
-**Ignorar el aislamiento termico.** En climas calidos (buena parte de Mexico, Colombia y Peru costera) un aire acondicionado mal posicionado o una vivienda sin persianas o cortinas puede doblar el consumo del equipo. Bloquear la luz solar directa en ventanas orientadas al poniente reduce dramaticamente la carga termica.
-
-**No revisar el refrigerador.** La heladera es el unico aparato que funciona las 24 horas del dia. Un refrigerador de mas de 10 anos puede consumir el triple que uno moderno clase A. Ademas, mantenerlo lleno (o con botellas de agua si esta semivacio) mejora su eficiencia porque la masa termica reduce los ciclos del compresor.
-
-## Calcula exactamente cuanto consume tu hogar
-
-Con los datos de esta guia puedes hacer un inventario de tus aparatos, estimar sus horas de uso y sumar los kWh diarios. Pero si prefieres hacerlo de forma rapida y sin calculos manuales, la [calculadora de consumo electrico](/consumo-electrico) de Calzix hace el trabajo por ti: introduce la potencia de cada aparato y las horas de uso, y obtien el costo diario, mensual y anual al instante.
-
-Conocer tu consumo electrico real es el primer paso para tomar el control de tu factura. El segundo es actuar sobre los puntos de mayor impacto.
+Con la **[calculadora de consumo eléctrico](/consumo-electrico)** de Calzix introduces la potencia de un aparato, las horas de uso y el precio del kWh y obtienes su consumo y su coste diario, mensual y anual. Para comparar electrodomésticos antes de comprar, usa la calculadora de [etiqueta energética](/etiqueta-energetica).

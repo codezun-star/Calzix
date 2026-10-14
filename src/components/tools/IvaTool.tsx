@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { formatCurrency } from '@/lib/utils/format';
 
 type Modo = 'anadir' | 'extraer';
-type TipoIva = 4 | 10 | 21;
+/** 4, 10 y 21: IVA peninsular y balear. 7: IGIC general de Canarias. */
+type TipoIva = 4 | 7 | 10 | 21;
 
 export default function IvaTool() {
   const [modo, setModo] = useState<Modo>('anadir');
@@ -41,6 +42,8 @@ export default function IvaTool() {
       setError(e instanceof Error ? e.message : 'Error al calcular.');
     }
   }
+
+  const impuesto = tipoIva === 7 ? 'IGIC' : 'IVA';
 
   return (
     <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 space-y-4">
@@ -84,7 +87,7 @@ export default function IvaTool() {
       </div>
 
       <div className="space-y-1">
-        <label className="text-xs font-medium text-[var(--color-text-secondary)]">Tipo de IVA</label>
+        <label className="text-xs font-medium text-[var(--color-text-secondary)]">Tipo de IVA o IGIC</label>
         <select
           value={tipoIva}
           onChange={(e) => setTipoIva(parseInt(e.target.value) as TipoIva)}
@@ -93,6 +96,7 @@ export default function IvaTool() {
           <option value={4}>4% — Tipo superreducido</option>
           <option value={10}>10% — Tipo reducido</option>
           <option value={21}>21% — Tipo general</option>
+          <option value={7}>7% — IGIC general (Canarias)</option>
         </select>
       </div>
 
@@ -109,7 +113,7 @@ export default function IvaTool() {
         <div className="rounded-xl bg-[var(--color-calcs-bg)] p-4 space-y-3">
           <div>
             <p className="text-xs font-medium text-[var(--color-text-secondary)] uppercase tracking-wide">
-              Precio total con IVA
+              Precio total con {impuesto}
             </p>
             <p className="text-2xl font-extrabold text-[var(--color-text)]">
               {formatCurrency(result.total)}
@@ -121,7 +125,7 @@ export default function IvaTool() {
               <p className="text-sm font-bold text-[var(--color-text)]">{formatCurrency(result.base)}</p>
             </div>
             <div className="rounded-lg bg-[var(--color-surface)] border border-[var(--color-border)] p-3">
-              <p className="text-xs text-[var(--color-text-secondary)]">Cuota IVA ({tipoIva}%)</p>
+              <p className="text-xs text-[var(--color-text-secondary)]">Cuota {impuesto} ({tipoIva}%)</p>
               <p className="text-sm font-bold text-[var(--color-text)]">{formatCurrency(result.cuota)}</p>
             </div>
           </div>

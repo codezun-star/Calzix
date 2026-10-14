@@ -1,176 +1,104 @@
 ---
-titulo: "Examenes de ingreso a la universidad en LATAM: PAES, ICFES, EXANI-II y mas"
-descripcion: "Guia completa de los examenes de admision universitaria en LATAM: PAES Chile, ICFES Saber 11 Colombia, EXANI-II Mexico, examen San Marcos Peru. Como se calcula la nota de acceso."
+titulo: "Nota de la PAU (antigua EBAU o selectividad): cómo se calcula la nota de acceso y de admisión"
+descripcion: "Guía de la PAU en España: fórmula de la nota de acceso (60 % Bachillerato y 40 % fase general), fase de admisión con ponderaciones de 0,1 y 0,2, nota máxima de 14 y ejemplos resueltos."
 categoria: "guias"
 fecha: "2026-06-07"
-modificado: "2026-06-12"
+modificado: "2026-10-14"
 keywords:
-  - "PAES Chile puntaje"
-  - "ICFES Saber 11 Colombia"
-  - "EXANI-II Mexico CENEVAL"
-  - "examen admision universidad LATAM"
-  - "como calcular nota ingreso universidad"
-  - "puntaje PAES calculo"
-  - "nota de corte universidad"
+  - "nota PAU"
+  - "calcular nota selectividad"
+  - "nota EBAU EvAU"
+  - "nota de acceso universidad"
+  - "nota de admisión ponderaciones"
+  - "fase de admisión 0,2"
+  - "nota de corte"
 autor: "Equipo Calzix"
 publicado: true
 ---
 
-Cada ano, millones de estudiantes de toda America Latina presentan examenes de admision universitaria cuyo resultado determinara a que carrera y en que institucion pueden ingresar. Pero muchos llegan al dia de los resultados sin entender bien como se calcula esa puntuacion. Esta guia explica el funcionamiento de los principales sistemas de admision universitaria en LATAM.
+La Prueba de Acceso a la Universidad (**PAU**), que muchos siguen llamando selectividad, EBAU o EvAU según la comunidad autónoma, es el examen que da acceso a los grados universitarios en España. Desde 2025 tiene un modelo común en todo el país, regulado por el Real Decreto 534/2024, con exámenes más competenciales. Lo que no ha cambiado es la forma de calcular la nota: aquí te explicamos cómo se obtienen la nota de acceso y la de admisión, con ejemplos.
+
+## Las dos notas que importan
+
+En la PAU se calculan dos notas distintas:
+
+1. **Nota de acceso** (de 0 a 10): sirve para saber si has superado la prueba y puedes acceder a la universidad.
+2. **Nota de admisión** (de 0 a 14): es la que se compara con la **nota de corte** de cada grado para conseguir plaza.
 
 ---
 
-## Chile: la PAES
+## La nota de acceso: 60 % Bachillerato y 40 % PAU
 
-La **Prueba de Acceso a la Educacion Superior (PAES)** reemplazo a la PSU en 2022 y es administrada por el DEMRE (Departamento de Evaluacion, Medicion y Registro Educacional) de la Universidad de Chile.
+**Nota de acceso = 0,6 × Nota media de Bachillerato + 0,4 × Calificación de la fase general**
 
-### Pruebas que componen la PAES
+Para aprobar se necesitan dos condiciones:
 
-| Prueba | Caracter | Puntaje |
-|---|---|---|
-| Competencia Lectora | Obligatoria | 150 – 1000 |
-| Competencia Matematica 1 (M1) | Obligatoria | 150 – 1000 |
-| Competencia Matematica 2 (M2) | Electiva | 150 – 1000 |
-| Historia y Ciencias Sociales | Electiva | 150 – 1000 |
-| Ciencias (Biologia, Fisica o Quimica) | Electiva | 150 – 1000 |
+- Que la calificación de la fase general (CFG) sea **al menos un 4**.
+- Que la nota de acceso resultante sea **al menos un 5**.
 
-El puntaje de 600 equivale a la media nacional (percentil 50). El puntaje minimo para postular a universidades del CRUCH es **450 puntos** en las pruebas obligatorias.
+La **fase general** incluye los exámenes obligatorios para todos: Lengua Castellana y Literatura II, Historia de España o Historia de la Filosofía (según la elección y la comunidad), Lengua Extranjera II y la materia obligatoria de la modalidad de Bachillerato que hayas cursado (por ejemplo, Matemáticas II en Ciencias). En las comunidades con lengua cooficial se añade el examen de esa lengua. La CFG es la media de esos exámenes.
 
-### Como se calcula el puntaje de postulacion
+**Ejemplo:** media de Bachillerato de 8,2 y CFG de 7,0.
 
-Las universidades del Consejo de Rectores (CRUCH) usan una ponderacion combinada:
+Nota de acceso = 0,6 × 8,2 + 0,4 × 7,0 = 4,92 + 2,80 = **7,72**
 
-```
-Puntaje ponderado = NEM × W_nem + RK × W_rk + PAES_obligatorias × W_paes + Pruebas_electivas × W_elect
-```
+### ¿Y si suspendo un examen?
 
-Donde:
-- **NEM**: Notas de Ensenanza Media (tu promedio escolar)
-- **RK**: Ranking de notas (tu posicion relativa dentro de tu generacion en tu colegio)
-- Las ponderaciones (W) las define cada universidad y carrera; suman 100 %
-
-**Ejemplo tipico para Ingenieria Civil:**
-- NEM: 10 %
-- Ranking: 10 %
-- Competencia Lectora: 20 %
-- Matematica 1: 30 %
-- Matematica 2: 30 %
-
-Con NEM 600, Ranking 650, Lectora 680, M1 720, M2 710:
-Puntaje = (600×0.10) + (650×0.10) + (680×0.20) + (720×0.30) + (710×0.30) = 60 + 65 + 136 + 216 + 213 = **690 puntos**
-
-### Nota de corte en Chile
-
-La nota de corte es el puntaje ponderado del ultimo estudiante seleccionado en cada carrera y universidad el ano anterior. Cambia cada ano segun la demanda. Puedes consultarla en **demre.cl** o en el portal de **accesauniversidades.cl**.
+No pasa nada mientras la media de la fase general llegue al 4 y la nota de acceso al 5. Un 3,5 en un examen se compensa con buenas notas en los demás.
 
 ---
 
-## Colombia: ICFES Saber 11
+## La nota de admisión: hasta 4 puntos más
 
-El **Examen de Estado Saber 11** del ICFES (Instituto Colombiano para la Evaluacion de la Educacion) es obligatorio para todos los estudiantes que terminan la educacion media y es requisito de admision en la mayoria de universidades colombianas.
+Para subir nota y competir por grados con nota de corte alta, puedes examinarte en la **fase de admisión** (antes llamada fase específica) de materias de modalidad. Cada universidad publica qué materias **ponderan** para cada grado y con qué parámetro: **0,1 o 0,2** (algunas universidades usan otros valores intermedios).
 
-### Estructura del examen
+**Nota de admisión = Nota de acceso + a × M1 + b × M2**
 
-| Componente | Preguntas aprox. | Puntaje |
-|---|---|---|
-| Lectura critica | 45 | 0 – 100 |
-| Matematicas | 50 | 0 – 100 |
-| Ciencias naturales | 58 | 0 – 100 |
-| Ciencias sociales y competencias ciudadanas | 57 | 0 – 100 |
-| Ingles | 45 | 0 – 100 |
-| **Puntaje global** | | **0 – 500** |
+- M1 y M2 son las **dos mejores notas** de materias que ponderen para ese grado, siempre que estén **aprobadas (5 o más)**.
+- a y b son los parámetros de ponderación (0,1 o 0,2).
+- La nota máxima posible es **14**.
 
-El puntaje global es la suma de los 5 componentes. El promedio nacional historico ronda los 250 puntos (50 por componente).
+Las materias de la modalidad que te examinas en la fase general también pueden contar para la admisión si ponderan para el grado.
 
-### Como usan el ICFES las universidades colombianas
+**Ejemplo para un grado de Ingeniería:** nota de acceso 7,72; Física 8 (pondera 0,2) y Química 7 (pondera 0,2).
 
-Cada universidad define sus propios requisitos. Las universidades publicas del sistema SUE usan el Saber 11 de forma directa o como parte de su proceso:
+Nota de admisión = 7,72 + 0,2 × 8 + 0,2 × 7 = 7,72 + 1,6 + 1,4 = **10,72**
 
-- **Universidad Nacional de Colombia**: tiene su propio examen de admision (PEAMA) ademas del Saber 11
-- **Universidades privadas**: muchas usan el Saber 11 como criterio unico o combinado con entrevista o examen propio
-- **Universidades regionales**: algunas requieren puntajes minimos por componente (ej. Matematicas > 55) para carreras de ciencias
+Si para otro grado esas materias solo ponderaran 0,1, la nota sería 7,72 + 0,8 + 0,7 = 9,22. Por eso una misma persona tiene notas de admisión distintas para cada grado.
 
 ---
 
-## Mexico: EXANI-II y examenes propios
+## Validez de las notas
 
-En Mexico no existe un examen de admision nacional unico. Cada institucion tiene su propio proceso, aunque el **EXANI-II** del CENEVAL es ampliamente utilizado.
-
-### EXANI-II (CENEVAL)
-
-El **Examen Nacional de Ingreso a la Educacion Superior** mide habilidades y conocimientos de nivel medio superior en dos areas:
-
-- **Nucleo de habilidades**: razonamiento verbal, razonamiento matematico
-- **Nucleo de conocimientos**: matematicas, espanol, ciencias naturales, historia y ciencias sociales, ingles (optativo)
-
-El puntaje se expresa en **CENEVAL Score**, donde 1,000 es el promedio nacional y la escala va de 700 a 1,300 aproximadamente.
-
-### Examenes de las grandes instituciones
-
-**UNAM (Concurso de Seleccion UNAM):**
-- Aplica para bachillerato propio (CCH, ENP) y para licenciatura con ingreso directo
-- Examenes por area del conocimiento (Biologico-Medico, Fisico-Matematicas, Ciencias Sociales, Humanidades-Artes)
-- El puntaje de asignacion combina el promedio del bachillerato con el resultado del examen
-
-**IPN:**
-- Examen de admision propio por escuela
-- Alta competencia especialmente en medicina, ingenieria y computacion
-
-**Universidades estatales:**
-- La mayoria aplica el EXANI-II como examen unico o lo combina con un examen institucional
-- Algunas como la Universidad de Guadalajara (UdeG) o la UAM tienen examenes propios con alto nivel de competencia
-
-### Que hacer si no quedas seleccionado en Mexico
-
-A diferencia de Chile y Colombia, en Mexico el sistema permite **reinscribirse indefinidamente** a los concursos de seleccion. Las opciones habituales son: prepararse durante un ciclo adicional, considerar instituciones con menor demanda relativa, explorar universidades privadas con becas de excelencia o iniciar en un plantel incorporado y transferirse despues.
+- La **nota de acceso** no caduca: una vez aprobada la PAU, tienes acceso a la universidad para siempre.
+- Las notas de la **fase de admisión** son válidas para los dos cursos académicos siguientes al de la prueba.
+- Puedes volver a presentarte para **subir nota** en convocatorias posteriores; se tiene en cuenta la mejor calificación obtenida.
 
 ---
 
-## Peru: examenes de admision universitarios
+## Notas de corte: qué nota necesitas
 
-En Peru cada universidad tiene su propio examen de admision. La **UNMSM** (Universidad Nacional Mayor de San Marcos, la decana de America) es una de las mas competidas.
+La nota de corte es la nota de admisión del último estudiante que obtuvo plaza en un grado el curso anterior. Depende de la oferta de plazas y de la demanda, así que cambia cada año. Como referencia, los grados de Medicina en las universidades públicas suelen tener notas de corte por encima de 13, y dobles grados muy demandados, como Matemáticas y Física, superan con frecuencia el 13,5. Muchos otros grados tienen nota de corte de 5, es decir, admiten a todos los que aprueban.
 
-### Examen de admision UNMSM
-
-La UNMSM tiene modalidades ordinaria y especial. La modalidad ordinaria incluye:
-
-- Razonamiento verbal
-- Razonamiento matematico
-- Aptitud academica (segun area)
-- Conocimientos de la especialidad
-
-El puntaje maximo es de 100 puntos. Las plazas son limitadas por escuela academico-profesional; la nota de corte varia por carrera (Medicina Humana suele tener la nota de corte mas alta, seguida de Derecho y Economia).
-
-Otras universidades publicas importantes como la **PUCP** (Pontificia Universidad Catolica del Peru, privada), la **UNI** (Universidad Nacional de Ingenieria) y la **UNALM** tienen procesos similares con examenes propios.
+Consulta las notas de corte en la web de cada universidad o en el buscador del Ministerio de Ciencia, Innovación y Universidades.
 
 ---
 
-## Argentina: el acceso universitario mas abierto de LATAM
+## Calendario y reclamaciones
 
-Argentina tiene el sistema de acceso universitario mas inclusivo de la region. Las **universidades nacionales publicas** — incluida la UBA (Universidad de Buenos Aires), la mas grande de LATAM con ~300,000 estudiantes — tienen **ingreso libre, gratuito y sin examen de admision** como principio constitucional.
-
-### CBC de la UBA
-
-Quienes quieren ingresar a la UBA deben completar el **CBC (Ciclo Basico Comun)**: 6 materias de formacion general en el primer ano universitario que actuan como nivel de entrada. El CBC no es examen de ingreso sino el primer ano de la carrera; aprobarlo habilita el ingreso a la facultad.
-
-### Universidades privadas argentinas
-
-Las universidades privadas (Universidad Austral, Universidad Di Tella, UADE, etc.) tienen procesos de admision propios con examenes de nivelacion o entrevistas, especialmente para carreras de alta demanda.
+La convocatoria ordinaria se celebra a principios de junio y la extraordinaria, a finales de junio o en julio, según la comunidad. Tras publicarse las notas, tienes **tres días hábiles** para solicitar la revisión de cualquier examen. El examen lo corrige un segundo profesor y, si la diferencia entre ambas notas es de dos o más puntos, interviene un tercero. La nota puede subir o bajar.
 
 ---
 
-## Tabla comparativa de los sistemas de admision en LATAM
+## Consejos para preparar la PAU
 
-| Pais | Instrumento principal | Puntaje | Administra |
-|---|---|---|---|
-| Chile | PAES | 150 – 1000 por prueba | DEMRE (U. de Chile) |
-| Colombia | Saber 11 | 0 – 500 global | ICFES |
-| Mexico | EXANI-II + propios | 700 – 1,300 (CENEVAL) | CENEVAL + cada U |
-| Peru | Examenes propios | 0 – 100 (varía por U) | Cada universidad |
-| Argentina | Sin examen (UNA) / CBC | — | Cada universidad |
+- **Practica con exámenes de años anteriores** de tu comunidad: las universidades los publican con sus criterios de corrección.
+- **Cuida la expresión escrita**: las faltas de ortografía y la presentación restan puntos en todas las materias.
+- **Elige bien las materias de la fase de admisión**: examinarte de materias que ponderan 0,2 para el grado que quieres puede sumarte hasta 4 puntos.
+- **No descuides la media de Bachillerato**: pesa un 60 % de la nota de acceso.
 
 ---
 
-## Calcula tu puntaje ponderado
+## Calcula tu nota
 
-Si eres estudiante en Chile y quieres estimar tu puntaje de postulacion antes de los resultados oficiales, usa la **[calculadora de nota de selectividad](/nota-selectividad)** de Calzix. Introduce tus resultados PAES, NEM y ranking, y ajusta las ponderaciones de la carrera que te interesa para ver si alcanzas la nota de corte historica.
+Con la **[calculadora de nota de la PAU](/nota-selectividad)** de Calzix puedes calcular tu nota de acceso y de admisión introduciendo tu media de Bachillerato, la nota de la fase general y las materias de la fase de admisión con sus ponderaciones. Si quieres saber qué nota necesitas en un examen para llegar a tu objetivo, usa la calculadora de [nota necesaria](/nota-necesaria).
