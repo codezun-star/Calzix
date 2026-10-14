@@ -6,18 +6,35 @@ import { SITE } from '@/lib/constants/seo';
 <LegalLayout slug="cookies">
   <h1>Política de cookies</h1>
 
-  <h2>¿Usamos cookies?</h2>
   <p>
-    <strong>{SITE.name} no utiliza cookies propias de seguimiento ni herramientas de analítica</strong>
-    (no hay Google Analytics, Facebook Pixel ni similares). Sí mostramos publicidad de terceros,
-    y esa publicidad puede usar cookies y tecnologías equivalentes, tal y como se detalla más abajo.
+    Esta política informa sobre el uso de cookies y tecnologías similares en {SITE.name}, de acuerdo
+    con el artículo 22.2 de la Ley 34/2002 de servicios de la sociedad de la información (LSSI-CE) y
+    la Guía sobre el uso de las cookies de la Agencia Española de Protección de Datos.
   </p>
 
-  <h2>Cookies técnicas</h2>
+  <h2>¿Qué son las cookies?</h2>
   <p>
-    El navegador puede guardar preferencias mínimas (por ejemplo, el tab activo en el home o si has
-    cerrado el banner inferior) usando <code>localStorage</code> y <code>sessionStorage</code>.
-    Estos datos permanecen en tu dispositivo y nunca se transmiten a ningún servidor.
+    Son pequeños archivos o identificadores que un sitio web guarda en tu navegador para recordar
+    información entre visitas. También se consideran tecnologías similares el almacenamiento local
+    del navegador (<code>localStorage</code>) y los identificadores de dispositivo.
+  </p>
+
+  <h2>Almacenamiento propio (técnico)</h2>
+  <p>
+    <strong>{SITE.name} no utiliza cookies propias de seguimiento ni herramientas de analítica</strong>
+    (no hay Google Analytics, píxeles de redes sociales ni similares). El navegador guarda en
+    <code>localStorage</code> algunos datos necesarios para el funcionamiento del sitio, que nunca se
+    envían a ningún servidor:
+  </p>
+  <ul>
+    <li><code>calzix:recent</code>: las últimas calculadoras que has visitado, para mostrarlas en el buscador y en el inicio.</li>
+    <li><code>calzix:ad-sticky</code>: si has cerrado la barra de publicidad inferior.</li>
+    <li><code>calzix:pop</code>: la fecha del último anuncio emergente, para no mostrarlo en cada visita.</li>
+    <li>Preferencias de la interfaz, como la pestaña activa en el inicio.</li>
+  </ul>
+  <p>
+    Además, si instalas la aplicación o la usas sin conexión, el navegador guarda una copia de las
+    páginas visitadas (caché del service worker) para que funcionen sin internet.
   </p>
 
   <h2>Cookies publicitarias de terceros</h2>
@@ -26,30 +43,34 @@ import { SITE } from '@/lib/constants/seo';
     <code>highrevenueformat.com</code> y <code>profitableratecpmnetwork.com</code>. Al cargarse un
     anuncio, esas redes pueden colocar cookies o identificadores en tu navegador y recibir datos
     técnicos (dirección IP, tipo de dispositivo, navegador y página desde la que se sirve el anuncio)
-    para medir impresiones, limitar la repetición de un mismo anuncio y prevenir el fraude.
+    para medir impresiones, limitar la repetición de un mismo anuncio y prevenir el fraude. Son
+    cookies de terceros, gestionadas por cada red publicitaria según su propia política de privacidad.
   </p>
   <p>
-    {SITE.name} no controla esas cookies ni tiene acceso a la información que recogen: se rigen por
-    las políticas de privacidad de cada red publicitaria. Los anuncios se cargan solo cuando están a
-    punto de aparecer en pantalla, así que si no llegas a esa parte de la página no se descargan.
-  </p>
-
-  <h2>Cómo bloquear o limitar estas cookies</h2>
-  <p>
-    Puedes bloquear las cookies de terceros desde la configuración de tu navegador (Chrome, Firefox,
-    Safari y Edge permiten hacerlo en pocos clics) o usar una extensión de bloqueo de publicidad.
-    Las calculadoras del sitio seguirán funcionando con normalidad: todos los cálculos se ejecutan en
-    tu navegador y no dependen de la publicidad.
+    Los anuncios se cargan solo cuando están a punto de aparecer en pantalla, así que si no llegas a
+    esa parte de la página no se descargan.
   </p>
 
-  <h2>Otras cookies de terceros</h2>
+  <h2>Cookies del proveedor de alojamiento</h2>
   <p>
-    Si el sitio está alojado en Cloudflare Pages, este proveedor puede establecer cookies técnicas
-    propias. Consulta la política de cookies de Cloudflare para más información.
+    El sitio se sirve a través de Cloudflare, que puede establecer cookies técnicas necesarias para la
+    seguridad y el rendimiento del servicio. Consulta la política de cookies de Cloudflare para más
+    información.
+  </p>
+
+  <h2>Cómo bloquear o eliminar las cookies</h2>
+  <p>
+    Puedes permitir, bloquear o eliminar las cookies desde la configuración de tu navegador (Chrome,
+    Firefox, Safari y Edge permiten bloquear las cookies de terceros en pocos clics) o usar una
+    extensión de bloqueo de publicidad. Las calculadoras seguirán funcionando con normalidad: todos los
+    cálculos se ejecutan en tu navegador y no dependen de la publicidad.
   </p>
 
   <h2>Contacto</h2>
   <p>
-    Dudas sobre privacidad: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+    Para cualquier duda sobre esta política: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>. Si
+    consideras que se han vulnerado tus derechos, puedes acudir a la
+    <a href="https://www.aepd.es" rel="noopener" target="_blank">Agencia Española de Protección de
+    Datos</a>.
   </p>
 </LegalLayout>

@@ -4,14 +4,35 @@ import GastosCompraViviendaTool from '@/components/tools/GastosCompraViviendaToo
 ---
 
 <CalcLayout slug="gastos-compra-vivienda"
-  whatIs="Esta calculadora estima los gastos adicionales que conlleva comprar una vivienda, más allá del precio de venta: impuestos de compraventa, notaría, registro de la propiedad y gestoría. Como estos porcentajes varían mucho de un país a otro (e incluso entre regiones), la herramienta te deja ajustar cada porcentaje para adaptarlo a tu caso, y suma el total de gastos y el desembolso completo que necesitas."
-  whyUse="Uno de los errores más comunes al comprar una casa es presupuestar solo el precio y olvidar los gastos asociados, que pueden suponer entre un 8 % y un 15 % adicional. Saberlo de antemano evita sustos y te permite calcular cuánto dinero necesitas ahorrado realmente, ya que estos gastos no suele cubrirlos la hipoteca. Esta herramienta te da una visión completa del coste total de la operación."
+  answer={"Comprar una vivienda en España cuesta entre un 8 % y un 12 % más que su precio: en vivienda usada se paga el ITP de tu comunidad (6 % en Madrid, 7 % en Andalucía, 10 % en Cataluña) y en nueva, el IVA del 10 % más el AJD; a eso se suman notaría, registro, gestoría y tasación. Un piso usado de 220.000 € en Madrid supone unos 15.200 € de gastos."}
+  howTo={[
+    "Elige si la vivienda es nueva o de segunda mano.",
+    "Introduce el precio y elige tu comunidad autónoma o ajusta el ITP o el AJD.",
+    "Revisa el importe de notaría, registro, gestoría y tasación y pulsa calcular para ver el total."
+  ]}
+  whatIs={"La calculadora de gastos de compra de vivienda calcula los impuestos (ITP o IVA y AJD) y los gastos de notaría, registro, gestoría y tasación de una compraventa en España, con los tipos de las principales comunidades autónomas."}
+  whyUse={"Te permite saber cuánto dinero necesitas ahorrado además de la entrada, comparar el coste de comprar en distintas comunidades y preparar la conversación con el banco."}
   faqs={[
-    { q: '¿Qué gastos hay al comprar una vivienda además del precio?', a: 'Los principales son: el impuesto de compraventa (que cambia según el país y si la vivienda es nueva o usada), los honorarios de la notaría por la escritura, la inscripción en el registro de la propiedad y, opcionalmente, la gestoría que tramita todo. Si hay hipoteca, se añaden la tasación y algunos gastos asociados al préstamo.' },
-    { q: '¿Cuánto suponen los gastos en total?', a: 'Como referencia general, los gastos de compra suelen rondar entre el 8 % y el 12 % del precio de la vivienda, pudiendo llegar al 15 % en algunos casos. El componente más grande casi siempre son los impuestos. Por eso esta calculadora te deja ajustar cada porcentaje: introduce los que apliquen en tu país o región para obtener una cifra realista.' },
-    { q: '¿La hipoteca cubre estos gastos?', a: 'Por lo general no. La mayoría de hipotecas financian un porcentaje del precio o tasación de la vivienda (habitualmente el 80 %), pero no los gastos e impuestos asociados a la compra. Esto significa que necesitas tener ahorrado, además de la entrada, el dinero suficiente para cubrir estos gastos. Es el principal motivo por el que conviene calcularlos antes.' },
-    { q: '¿Pagan los mismos gastos la vivienda nueva y la usada?', a: 'No. La fiscalidad suele ser distinta: la vivienda nueva acostumbra a tributar por un impuesto sobre el valor añadido más otro de actos jurídicos, mientras que la usada tributa por un impuesto de transmisiones patrimoniales con un porcentaje diferente. Ajusta el porcentaje de impuestos de la calculadora según el tipo de vivienda y la normativa de tu zona.' },
-    { q: '¿Cuánto dinero necesito ahorrado para comprar?', a: 'Como regla práctica, conviene tener ahorrado en torno al 30 % del precio de la vivienda: aproximadamente un 20 % de entrada (lo que no suele financiar la hipoteca) más un 10-12 % para los gastos e impuestos. Esta calculadora te ayuda a estimar esa segunda parte con precisión para que sepas el desembolso total real.' },
+    {
+      q: "¿Qué impuesto se paga al comprar una vivienda usada?",
+      a: "El Impuesto sobre Transmisiones Patrimoniales (ITP), que fija cada comunidad autónoma: por ejemplo, el 6 % en Madrid, el 6,5 % en Canarias, el 7 % en Andalucía, el 10 % en Cataluña o el 4 % en el País Vasco. Muchas comunidades aplican tipos reducidos a jóvenes, familias numerosas o personas con discapacidad.",
+    },
+    {
+      q: "¿Y en una vivienda nueva?",
+      a: "Se paga el IVA del 10 % (el 4 % en viviendas de protección oficial de régimen especial) y el impuesto de Actos Jurídicos Documentados (AJD), que según la comunidad va del 0,5 % al 1,5 % (0,75 % en Madrid, 1,5 % en Cataluña). En Canarias, en lugar del IVA se aplica el IGIC.",
+    },
+    {
+      q: "¿Cuánto cuestan notaría, registro y gestoría?",
+      a: "La notaría y el registro tienen aranceles regulados que dependen del precio: como referencia, entre 600 y 1.200 € de notaría y entre 400 y 800 € de registro. La gestoría suele cobrar entre 300 y 500 € y la tasación, entre 300 y 600 €. Con la Ley 5/2019, los gastos de notaría, registro y gestoría de la hipoteca los paga el banco.",
+    },
+    {
+      q: "¿Cuánto dinero necesito ahorrado para comprar un piso?",
+      a: "En torno al 30 % del precio: un 20 % de entrada que no financia el banco más un 8-12 % de gastos e impuestos. Para un piso de 220.000 €, unos 44.000 € de entrada y entre 17.000 y 26.000 € de gastos.",
+    },
+    {
+      q: "¿Los gastos de compra desgravan?",
+      a: "No se deducen en el IRPF de forma directa, pero forman parte del valor de adquisición de la vivienda: cuando la vendas, se suman al precio de compra y reducen la ganancia patrimonial. Guarda todas las facturas y justificantes.",
+    },
   ]}
 >
   <GastosCompraViviendaTool client:load />

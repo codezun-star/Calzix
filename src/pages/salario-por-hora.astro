@@ -4,14 +4,35 @@ import SalarioPorHoraTool from '@/components/tools/SalarioPorHoraTool';
 ---
 
 <CalcLayout slug="salario-por-hora"
-  whatIs="Esta calculadora convierte un salario anual en salario por hora y viceversa, a partir de las horas que trabajas a la semana y las semanas que trabajas al año. Divide el salario anual entre el total de horas trabajadas en el año (horas semanales por semanas) para obtener el precio de cada hora, o multiplica para hacer el camino inverso. Así sabes exactamente cuánto vale tu tiempo de trabajo."
-  whyUse="Conocer tu salario por hora es muy útil para comparar ofertas de empleo con distintas jornadas, valorar si te compensan las horas extra, decidir entre un trabajo a tiempo completo o parcial, o saber cuánto ganas realmente por cada hora invertida. También ayuda a freelancers y a quien pasa de asalariado a autónomo a fijar tarifas. Esta herramienta hace la conversión en ambos sentidos al instante."
+  answer={"Para pasar de salario anual a salario por hora divide el bruto anual entre las horas trabajadas al año: con 30.000 € y 40 horas semanales durante 52 semanas (2.080 horas), son 14,42 € por hora; descontando vacaciones y festivos (unas 1.760 horas efectivas), son 17,05 € por hora."}
+  howTo={[
+    "Elige si quieres pasar de salario anual a salario por hora o al revés.",
+    "Introduce el importe, las horas semanales y las semanas al año.",
+    "Pulsa calcular para ver el resultado."
+  ]}
+  whatIs={"La calculadora de salario por hora convierte un salario anual en salario por hora, y viceversa, según la jornada semanal y las semanas trabajadas al año."}
+  whyUse={"Te ayuda a comparar ofertas con distinta jornada, saber cuánto vale tu hora para valorar horas extra o un trabajo por cuenta propia y comprobar que cobras al menos el salario mínimo."}
   faqs={[
-    { q: '¿Cómo se calcula el salario por hora desde el anual?', a: 'Se divide el salario anual entre el número total de horas trabajadas en el año, que es el resultado de multiplicar las horas semanales por las semanas trabajadas. Por ejemplo, 24.000 al año con 40 horas semanales durante 52 semanas: 24.000 / (40 × 52) = 24.000 / 2.080 ≈ 11,54 por hora.' },
-    { q: '¿Cuántas horas tiene una jornada laboral al año?', a: 'Una jornada de 40 horas semanales durante 52 semanas da 2.080 horas teóricas al año. Pero si descuentas las vacaciones (unas 4-5 semanas) y los festivos, las horas realmente trabajadas bajan a unas 1.700-1.800. Puedes ajustar las semanas en la calculadora para reflejar tus vacaciones y obtener un salario por hora más realista.' },
-    { q: '¿Debo usar el salario bruto o el neto?', a: 'Depende de lo que quieras saber. Con el salario bruto obtienes tu coste por hora antes de impuestos, útil para comparar ofertas en igualdad de condiciones. Con el neto sabes cuánto te llevas realmente a casa por cada hora. La calculadora funciona con cualquiera de los dos; solo asegúrate de usar el mismo tipo en todas las comparaciones.' },
-    { q: '¿Sirve para calcular el precio de las horas extra?', a: 'Sí. Una vez conoces tu salario por hora ordinario, puedes valorar si te compensan las horas extra y a qué precio deberían pagártelas. Las horas extra suelen retribuirse por encima de la hora ordinaria. Saber tu valor por hora es el primer paso para negociarlas o para decidir si te interesa hacerlas.' },
-    { q: '¿Por qué un sueldo anual más alto puede pagar menos por hora?', a: 'Porque las horas trabajadas importan tanto como el sueldo. Un empleo de 30.000 con 45 horas semanales paga menos por hora que uno de 28.000 con 35 horas. Convertir ambos a salario por hora revela cuál te compensa realmente en función del tiempo que te exige, algo que el sueldo anual por sí solo no muestra.' },
+    {
+      q: "¿Cuántas horas se trabajan al año en España?",
+      a: "La jornada máxima legal es de 40 horas semanales de trabajo efectivo de promedio anual. Descontando 30 días naturales de vacaciones y 14 festivos, salen unas 1.760 horas efectivas al año. Muchos convenios fijan jornadas anuales algo menores, entre 1.700 y 1.780 horas.",
+    },
+    {
+      q: "¿Cuál es el salario mínimo por hora?",
+      a: "El salario mínimo de 2026 es de 1.221 € brutos al mes en 14 pagas (17.094 € al año). Para los empleados del hogar que trabajan por horas, el Real Decreto del SMI fija un salario mínimo por hora efectivamente trabajada, que en 2026 ronda los 9,5 € brutos.",
+    },
+    {
+      q: "¿Debo usar 52 semanas o descontar las vacaciones?",
+      a: "Si quieres saber cuánto te pagan por cada hora realmente trabajada, descuenta las vacaciones y los festivos (unas 44 semanas efectivas). Si quieres comparar con una tarifa de autónomo, usa las horas facturables reales, que suelen ser bastantes menos.",
+    },
+    {
+      q: "¿Cómo se pagan las horas extra?",
+      a: "Según el convenio o el contrato, con una cantidad que no puede ser inferior al valor de la hora ordinaria, o compensadas con descanso en los cuatro meses siguientes. El máximo legal es de 80 horas extra al año. Usa la calculadora de horas extra para el detalle.",
+    },
+    {
+      q: "¿El salario por hora es bruto o neto?",
+      a: "La calculadora trabaja con el bruto. Para conocer el neto, resta las cotizaciones del trabajador (6,50 % en 2026) y la retención del IRPF, o usa la calculadora de nómina.",
+    },
   ]}
 >
   <SalarioPorHoraTool client:load />

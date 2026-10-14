@@ -4,14 +4,35 @@ import ConversorTiempoDecimalTool from '@/components/tools/ConversorTiempoDecima
 ---
 
 <CalcLayout slug="conversor-tiempo-decimal"
-  whatIs="Este conversor transforma el tiempo entre el formato de horas y minutos (como 2:30) y el formato decimal (como 2,5 horas), en ambos sentidos. La conversión se basa en que una hora tiene 60 minutos, así que 30 minutos son 0,5 horas y 15 minutos son 0,25 horas. Es una operación sencilla pero propensa a errores cuando se hace de cabeza, sobre todo al sumar tiempos para una nómina o una factura."
-  whyUse="El tiempo decimal es imprescindible para calcular pagos por horas, facturar trabajo, registrar jornadas laborales y rellenar partes de horas. Los sistemas de nómina y facturación trabajan en decimal: si has trabajado 7 horas y 45 minutos, necesitas saber que son 7,75 horas para multiplicarlas por tu tarifa. Esta herramienta evita el error típico de tratar los minutos como céntimos (poner 7,45 en vez de 7,75)."
+  answer={"Para pasar de horas y minutos a horas decimales divide los minutos entre 60: 2 horas y 30 minutos son 2,5 horas y 7 horas y 45 minutos, 7,75 horas. Al revés, multiplica los decimales por 60: 1,2 horas son 1 hora y 12 minutos."}
+  howTo={[
+    "Elige si quieres pasar de horas y minutos a decimal o al revés.",
+    "Introduce las horas y los minutos, o las horas en decimal.",
+    "Pulsa convertir para ver el resultado."
+  ]}
+  whatIs={"El conversor de tiempo decimal convierte entre horas y minutos y horas en formato decimal, el que usan las hojas de cálculo, las nóminas y la facturación por horas."}
+  whyUse={"Te ayuda a sumar las horas del registro de jornada, calcular las horas extra, facturar por horas como autónomo y rellenar partes de trabajo sin errores."}
   faqs={[
-    { q: '¿Cómo se pasan los minutos a decimal?', a: 'Se dividen los minutos entre 60. Por ejemplo, 30 minutos son 30/60 = 0,5 horas; 15 minutos son 0,25; y 45 minutos son 0,75. Así, 2 horas y 30 minutos equivalen a 2,5 horas en decimal. El error más común es escribir directamente los minutos tras la coma (2,30 en vez de 2,5), lo que da un valor incorrecto.' },
-    { q: '¿Cómo se pasa de decimal a horas y minutos?', a: 'La parte entera son las horas y la parte decimal se multiplica por 60 para obtener los minutos. Por ejemplo, 3,75 horas: la parte entera es 3 horas, y 0,75 × 60 = 45 minutos, así que son 3 horas y 45 minutos. La calculadora hace este cálculo automáticamente y redondea los minutos al entero más cercano.' },
-    { q: '¿Por qué es importante para la nómina?', a: 'Porque el salario por horas se calcula multiplicando las horas trabajadas (en decimal) por la tarifa horaria. Si cobras 10 por hora y trabajas 7 horas y 30 minutos, debes multiplicar 7,5 × 10 = 75, no 7,30 × 10. Convertir correctamente a decimal evita pagar o cobrar de menos o de más, un error frecuente en partes de horas y facturas.' },
-    { q: '¿Cuánto es 20 minutos en decimal?', a: '20 minutos son 20/60 = 0,333… horas, aproximadamente 0,33. Otras equivalencias útiles: 10 minutos = 0,17; 12 minutos = 0,20; 40 minutos = 0,67; 50 minutos = 0,83. Como muchos valores no son exactos, la calculadora muestra varios decimales para que el cálculo de horas trabajadas sea lo más preciso posible.' },
-    { q: '¿Sirve para sumar varias jornadas?', a: 'Sí. La forma más fiable de sumar tiempos es convertir cada jornada a decimal, sumar los decimales y, si lo necesitas, volver a convertir el total a horas y minutos. Por ejemplo, 7:30 + 6:45 = 7,5 + 6,75 = 14,25 horas, que son 14 horas y 15 minutos. Sumar directamente en formato horas:minutos suele provocar errores con el acarreo de los 60 minutos.' },
+    {
+      q: "¿Por qué 1,5 horas no son 1 hora y 50 minutos?",
+      a: "Porque una hora tiene 60 minutos, no 100: 0,5 horas son 30 minutos. 1 hora y 50 minutos son 1,83 horas.",
+    },
+    {
+      q: "¿Cómo sumo horas del registro de jornada?",
+      a: "Pasa cada jornada a horas decimales, súmalas y vuelve a convertir el total si lo necesitas. Desde 2019 todas las empresas deben llevar un registro diario de la jornada de cada trabajador y conservarlo 4 años.",
+    },
+    {
+      q: "¿Cómo facturo horas con minutos?",
+      a: "Convierte el tiempo a decimal y multiplícalo por tu tarifa: 3 horas y 20 minutos (3,333 h) a 40 €/h son 133,33 €, más IVA.",
+    },
+    {
+      q: "¿Cómo convierto minutos en horas decimales?",
+      a: "Divide entre 60: 15 min = 0,25 h; 20 min = 0,333 h; 45 min = 0,75 h.",
+    },
+    {
+      q: "¿Y en una hoja de cálculo?",
+      a: "En Excel o LibreOffice, las horas se guardan como fracción de día: multiplica la celda por 24 para obtener horas decimales.",
+    },
   ]}
 >
   <ConversorTiempoDecimalTool client:load />

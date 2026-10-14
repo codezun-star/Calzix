@@ -4,14 +4,35 @@ import PresupuestoEstudianteTool from '@/components/tools/PresupuestoEstudianteT
 ---
 
 <CalcLayout slug="presupuesto-estudiante"
-  whatIs="Esta calculadora suma tus gastos mensuales como estudiante —alojamiento, alimentación, transporte, material y ocio— para darte el gasto total al mes y el coste anual estimado. Es una herramienta sencilla de presupuesto personal pensada para la vida de estudiante, que te permite ver de un vistazo cuánto necesitas cada mes y cuánto supone el curso completo."
-  whyUse="Estudiar, sobre todo fuera de casa, conlleva gastos que conviene tener controlados para no llevarse sustos. Hacer un presupuesto ayuda a saber cuánto dinero necesitas, a solicitar la beca o el préstamo adecuado, a buscar trabajo a tiempo parcial si hace falta y a no gastar de más. Esta calculadora es ideal para estudiantes que se independizan o se van de intercambio y necesitan planificar su economía."
+  answer={"Estudiar fuera de casa en España cuesta entre 600 y 1.200 € al mes según la ciudad y el alojamiento: una habitación en piso compartido cuesta de media entre 300 y 600 € (más en Madrid y Barcelona) y una residencia universitaria, entre 600 y 1.200 € con comidas, a los que se suman comida, transporte, material y ocio."}
+  howTo={[
+    "Introduce lo que gastas al mes en alojamiento, alimentación, transporte, material y ocio.",
+    "Revisa que no falte ninguna partida importante.",
+    "Pulsa calcular presupuesto para ver el gasto mensual y el coste anual estimado."
+  ]}
+  whatIs={"La calculadora de presupuesto de estudiante suma tus gastos mensuales de estudiante (alojamiento, comida, transporte, material y ocio) y calcula el coste de todo el curso."}
+  whyUse={"Te ayuda a decidir dónde estudiar, comparar piso compartido y residencia, saber cuánta ayuda necesitas de tu familia o de una beca y si te conviene trabajar a tiempo parcial."}
   faqs={[
-    { q: '¿Qué gastos debe incluir un presupuesto de estudiante?', a: 'Los principales son el alojamiento (alquiler o residencia), la alimentación, el transporte, el material y los libros, y el ocio. A estos pueden sumarse otros como teléfono e internet, ropa, gimnasio o seguros. Cuanto más completo sea el desglose, más realista será tu presupuesto y menos imprevistos tendrás a lo largo del curso.' },
-    { q: '¿Cuál suele ser el mayor gasto de un estudiante?', a: 'Para quien estudia fuera de casa, el alojamiento es casi siempre el gasto más grande, seguido de la alimentación. Por eso, compartir piso, vivir en residencia o quedarse en casa familiar marca una diferencia enorme en el presupuesto total. Ajustar el alojamiento es la palanca que más reduce el coste de estudiar fuera.' },
-    { q: '¿Cómo calculo el coste de todo el curso?', a: 'Multiplica tu gasto mensual por el número de meses que dura el curso. La calculadora usa 12 meses para el coste anual, pero si solo vives fuera durante el curso académico (unos 9-10 meses), multiplica tu gasto mensual por esos meses. Recuerda añadir aparte gastos puntuales como la matrícula, que no es mensual.' },
-    { q: '¿Cómo puedo reducir mis gastos como estudiante?', a: 'Las mayores partidas son las que más margen ofrecen: compartir alojamiento, cocinar en casa en vez de comer fuera, usar transporte público con abono de estudiante y aprovechar descuentos y bibliotecas para el material. Llevar un registro de gastos (empezando por este presupuesto) es el primer paso para detectar dónde se va el dinero y recortar.' },
-    { q: '¿Debo incluir un colchón para imprevistos?', a: 'Sí, es muy recomendable reservar un margen mensual (por ejemplo, un 10 %) para imprevistos: una reparación, un gasto médico, un viaje inesperado o material extra. Presupuestar al límite es arriesgado. Añadir ese colchón en la partida de "ocio y otros" o como una reserva aparte te dará tranquilidad y evitará que un imprevisto descuadre todo el mes.' },
+    {
+      q: "¿Cuánto cuesta una habitación para estudiantes?",
+      a: "Depende mucho de la ciudad: en Madrid y Barcelona, una habitación en piso compartido supera con facilidad los 500-600 € al mes; en ciudades como Granada, Salamanca, Santiago o Valencia, suele estar entre 250 y 450 €. Los colegios mayores y residencias, con pensión completa, cuestan entre 600 y más de 1.200 €.",
+    },
+    {
+      q: "¿Hay descuentos en el transporte para estudiantes?",
+      a: "Sí. Los abonos de transporte público tienen descuentos para jóvenes (como el abono joven de Madrid o las tarjetas joven de otras comunidades), y el Carné Joven Europeo da descuentos en transporte, cultura y viajes en toda España.",
+    },
+    {
+      q: "¿Qué beca cubre el alojamiento?",
+      a: "La beca del Ministerio incluye una cuantía fija ligada a la residencia de 2.700 € para quienes estudian fuera del domicilio familiar y cumplen los umbrales de renta. Algunas universidades y comunidades ofrecen ayudas adicionales de alojamiento o plazas en residencias públicas.",
+    },
+    {
+      q: "¿Puedo trabajar mientras estudio?",
+      a: "Sí. Muchos estudiantes trabajan a tiempo parcial, sobre todo en hostelería, comercio o clases particulares. Calcula las horas que necesitas para tus estudios con la calculadora de horas ECTS para no comprometer tu rendimiento ni, en su caso, los requisitos académicos de tu beca.",
+    },
+    {
+      q: "¿Cómo ahorrar como estudiante?",
+      a: "Compartir piso, cocinar en casa y llevarte la comida, usar la biblioteca y libros de segunda mano, aprovechar los descuentos con el carné de estudiante y controlar los gastos de ocio con un presupuesto mensual.",
+    },
   ]}
 >
   <PresupuestoEstudianteTool client:load />

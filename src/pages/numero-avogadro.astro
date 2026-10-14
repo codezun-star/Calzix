@@ -4,14 +4,35 @@ import NumeroAvogadroTool from '@/components/tools/NumeroAvogadroTool';
 ---
 
 <CalcLayout slug="numero-avogadro"
-  whatIs="El número de Avogadro es la cantidad de partículas (átomos, moléculas o iones) que hay en un mol de cualquier sustancia: 6,022 × 10²³. Es el puente entre el mundo microscópico de las partículas y las cantidades que podemos medir en el laboratorio. Esta calculadora convierte en ambos sentidos: de moles a número de partículas y de número de partículas a moles, manejando cómodamente la notación científica."
-  whyUse="Pasar de moles a partículas y viceversa es una de las operaciones más frecuentes en química, presente en casi todos los problemas de estequiometría y disoluciones. Manejar números tan grandes a mano es propenso a errores con los ceros y los exponentes. Esta herramienta automatiza la conversión usando la notación científica, ideal para estudiantes de secundaria, bachillerato y primeros cursos universitarios."
+  answer={"El número de Avogadro es exactamente 6,02214076 × 10²³ partículas por mol. Para pasar de moles a partículas se multiplica por él: 2 moles de agua contienen 1,2 × 10²⁴ moléculas; y para pasar de partículas a moles se divide."}
+  howTo={[
+    "Elige si quieres pasar de moles a partículas o de partículas a moles.",
+    "Introduce la cantidad.",
+    "Pulsa calcular para obtener el resultado en notación científica."
+  ]}
+  whatIs={"La calculadora del número de Avogadro convierte entre moles y número de partículas (átomos, moléculas o iones) con la constante de Avogadro."}
+  whyUse={"Sirve para los problemas de cantidad de sustancia de Física y Química de 4.º de ESO y Bachillerato, y para manejar sin errores números tan grandes."}
   faqs={[
-    { q: '¿Qué es exactamente el número de Avogadro?', a: 'Es el número de unidades elementales que contiene un mol: 6,02214076 × 10²³. Da igual la sustancia: un mol de agua, un mol de hierro o un mol de electrones tienen todos ese mismo número de partículas. Es una constante fundamental que permite contar partículas mediante la masa, ya que contarlas una a una sería imposible.' },
-    { q: '¿Qué es un mol?', a: 'Un mol es la unidad de cantidad de sustancia del Sistema Internacional, y se define como la cantidad que contiene exactamente 6,022 × 10²³ partículas. Es análogo a una "docena", pero en lugar de 12 son 6,022 × 10²³ unidades. El mol permite trabajar en el laboratorio con cantidades manejables de materia que representan un número conocido de átomos o moléculas.' },
-    { q: '¿Cómo se pasa de moles a partículas?', a: 'Se multiplica el número de moles por el número de Avogadro: partículas = moles × 6,022 × 10²³. Por ejemplo, 2,5 moles contienen 2,5 × 6,022 × 10²³ = 1,506 × 10²⁴ partículas. La calculadora hace esta multiplicación automáticamente y muestra el resultado en notación científica para que sea legible.' },
-    { q: '¿Cómo se pasa de partículas a moles?', a: 'Se divide el número de partículas entre el número de Avogadro: moles = partículas / 6,022 × 10²³. Por ejemplo, 1,2 × 10²⁴ moléculas equivalen a 1,2 × 10²⁴ / 6,022 × 10²³ ≈ 1,99 moles. Puedes introducir el número de partículas en notación científica (como 1.2e24) y la calculadora lo interpreta correctamente.' },
-    { q: '¿Para qué sirve en los problemas de química?', a: 'Es esencial en estequiometría para relacionar la cantidad de reactivos y productos a nivel de partículas, y para conectar moles con masa (a través de la masa molar) y con volumen de gases. Casi cualquier cálculo que parta de gramos y necesite llegar a número de moléculas, o al revés, pasa por el número de Avogadro en algún paso.' },
+    {
+      q: "¿Qué es el número de Avogadro?",
+      a: "Es el número de entidades elementales que hay en un mol: 6,02214076 × 10²³. Desde la redefinición del Sistema Internacional de 2019 es un valor exacto que define el mol. Se estudia en Física y Química de la ESO y del Bachillerato (currículos de la LOMLOE).",
+    },
+    {
+      q: "¿Cómo calculo los átomos de una muestra?",
+      a: "Pasa la masa a moles (n = m / M) y multiplica por el número de Avogadro. 12 g de carbono son 1 mol, es decir, 6,022 × 10²³ átomos.",
+    },
+    {
+      q: "¿Por qué es tan grande?",
+      a: "Porque los átomos son extraordinariamente pequeños. El mol permite pasar de la escala atómica a cantidades que se pueden pesar en el laboratorio.",
+    },
+    {
+      q: "¿Cómo se escribe en notación científica?",
+      a: "6,022 × 10²³ significa 6.022 seguido de 20 ceros. En la calculadora se introduce como 6.022E23. Usa la calculadora de notación científica para practicar.",
+    },
+    {
+      q: "¿Quién fue Avogadro?",
+      a: "Amedeo Avogadro, científico italiano que en 1811 propuso que volúmenes iguales de gases en las mismas condiciones contienen el mismo número de moléculas. La constante lleva su nombre en su honor.",
+    },
   ]}
 >
   <NumeroAvogadroTool client:load />

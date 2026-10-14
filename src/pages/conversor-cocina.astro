@@ -4,14 +4,35 @@ import ConversorCocinaTool from '@/components/tools/ConversorCocinaTool';
 ---
 
 <CalcLayout slug="conversor-cocina"
-  whatIs="Este conversor de medidas de cocina transforma entre las unidades de volumen que aparecen en las recetas: tazas, cucharadas, cucharaditas, mililitros, onzas líquidas y litros. Resulta especialmente útil para adaptar recetas escritas en un sistema de medidas a otro, por ejemplo cuando una receta usa 'tazas' y tu jarra está en mililitros. Trabaja con el mililitro como unidad base para garantizar conversiones precisas entre todas las medidas."
-  whyUse="Las recetas de distintos países usan medidas diferentes: las estadounidenses y muchas de las que circulan por internet emplean tazas y cucharadas, mientras que en España se cocina con gramos, mililitros y cucharadas. Este conversor evita errores al cocinar y hornear, donde las proporciones importan. Es ideal para seguir recetas de internet, adaptar cantidades y entender equivalencias sin necesidad de tener todos los utensilios medidores a mano."
+  answer={"En la cocina, una cucharada sopera equivale a unos 15 ml, una cucharadita de postre a 5 ml y una taza de las recetas americanas a unos 240 ml. Para ingredientes secos, el peso depende del ingrediente: una taza de harina pesa unos 120-125 g y una de azúcar, unos 200 g."}
+  howTo={[
+    "Introduce la cantidad.",
+    "Elige la unidad de origen (taza, cucharada, cucharadita, mililitros…).",
+    "Pulsa convertir para ver la equivalencia en las demás unidades."
+  ]}
+  whatIs={"El conversor de medidas de cocina convierte entre tazas, cucharadas, cucharaditas, mililitros y otras medidas de volumen para seguir recetas de cualquier país con las medidas que usamos en España."}
+  whyUse={"Te ayuda a seguir recetas de blogs y libros en inglés que usan tazas y onzas, a cocinar sin báscula y a adaptar cantidades en repostería, donde la precisión importa."}
   faqs={[
-    { q: '¿Cuántos mililitros tiene una taza?', a: 'Depende del estándar: la taza más usada en recetas de internet equivale a 240 ml, la taza métrica a 250 ml y la taza estadounidense legal a unos 236,6 ml. Este conversor usa 240 ml como taza estándar e incluye también la taza EE.UU. por separado. Las pequeñas diferencias rara vez afectan al resultado salvo en repostería de precisión.' },
-    { q: '¿Cuántos mililitros son una cucharada y una cucharadita?', a: 'Una cucharada (cda) equivale a 15 ml y una cucharadita (cdta) a 5 ml, de modo que 1 cucharada son 3 cucharaditas. Estas equivalencias son estándar internacional para utensilios medidores de cocina. Para ingredientes líquidos la conversión es exacta; para sólidos como harina o azúcar, el peso varía según la densidad del ingrediente.' },
-    { q: '¿Puedo convertir tazas a gramos con esta herramienta?', a: 'Este conversor trabaja con volumen (mililitros), no con peso, porque los gramos dependen del ingrediente: una taza de harina pesa unos 120 g, pero una taza de azúcar pesa unos 200 g y una de agua 240 g. Para convertir a gramos necesitas la densidad concreta del ingrediente. La conversión de volumen sí es universal e independiente del ingrediente.' },
-    { q: '¿Por qué hornear requiere medidas tan precisas?', a: 'En repostería las reacciones químicas (levadura, bicarbonato, gluten) dependen de proporciones exactas entre ingredientes, por lo que un error de medida puede arruinar un bizcocho o un pan. Cocinar a fuego, en cambio, tolera más variación. Por eso conviene medir con precisión los líquidos en mililitros y, si es posible, pesar los sólidos en una báscula.' },
-    { q: '¿Una onza líquida es lo mismo que una onza de peso?', a: 'No. La onza líquida (fl oz) mide volumen y equivale a unos 29,57 ml, mientras que la onza de peso (oz) mide masa y equivale a unos 28,35 gramos. Aunque tienen nombre parecido, no son intercambiables: una mide cuánto espacio ocupa un líquido y la otra cuánto pesa un sólido. Este conversor usa la onza líquida.' },
+    {
+      q: "¿Cuántos ml tiene una cucharada?",
+      a: "Una cucharada sopera tiene unos 15 ml y una cucharadita de postre o de café, unos 5 ml. En las recetas españolas «una cucharada» suele referirse a la sopera, rasa salvo que se indique «colmada».",
+    },
+    {
+      q: "¿Cuántos gramos son una taza de harina?",
+      a: "Una taza americana (240 ml) de harina de trigo pesa unos 120-125 g si se llena sin apretar. De azúcar, unos 200 g; de arroz, unos 185 g; de mantequilla, unos 225 g. Por eso en repostería es mejor pesar.",
+    },
+    {
+      q: "¿Cuánto es un vaso en las recetas españolas?",
+      a: "Un vaso de agua de los de toda la vida tiene unos 200-250 ml. Muchas recetas tradicionales usan el vaso como medida; con una báscula o una jarra medidora el resultado es más preciso.",
+    },
+    {
+      q: "¿Cuánto es una onza?",
+      a: "En peso, una onza son 28,35 g; en volumen, una onza líquida estadounidense son 29,57 ml. En España, «una onza de chocolate» es una de las porciones de la tableta, que varía según la marca.",
+    },
+    {
+      q: "¿Cómo convierto grados Fahrenheit del horno?",
+      a: "350 °F son unos 180 °C, 375 °F unos 190 °C y 400 °F unos 200 °C. Usa el conversor de temperatura para otras temperaturas.",
+    },
   ]}
 >
   <ConversorCocinaTool client:load />

@@ -4,14 +4,35 @@ import ParadasDescansoTool from '@/components/tools/ParadasDescansoTool';
 ---
 
 <CalcLayout slug="paradas-descanso"
-  whatIs="Esta calculadora indica cuántas paradas de descanso deberías hacer en un viaje por carretera y cuánto se alargará el trayecto al incluirlas. Las autoridades de tráfico recomiendan descansar al menos 15-20 minutos cada 2 horas de conducción para combatir la fatiga. A partir de las horas que vas a conducir, la herramienta calcula las paradas recomendadas y el tiempo total con descansos."
-  whyUse="La fatiga al volante es una de las principales causas de accidentes en viajes largos, y planificar los descansos es clave para una conducción segura. Esta herramienta ayuda a organizar las paradas de un viaje, a calcular cuánto tiempo añadir al trayecto y a tomar conciencia de la importancia de descansar. Es útil para preparar viajes largos, vacaciones por carretera o trayectos profesionales."
+  answer={"La DGT recomienda parar a descansar al menos 20 minutos cada 2 horas o 200 km: un viaje de 7 horas de conducción necesita 3 paradas, que añaden 1 hora al trayecto."}
+  howTo={[
+    "Introduce las horas de conducción del viaje.",
+    "Ajusta cada cuántas horas quieres descansar (2 por defecto).",
+    "Indica la duración de cada parada y pulsa calcular para ver las paradas y el tiempo total."
+  ]}
+  whatIs={"La calculadora de paradas de descanso calcula cuántas paradas debes hacer en un viaje largo en coche y cuánto tiempo añaden al trayecto, según las recomendaciones de la DGT."}
+  whyUse={"Te ayuda a planificar la operación salida, los viajes de vacaciones y los desplazamientos largos sin conducir con fatiga, una de las causas de accidente más frecuentes."}
   faqs={[
-    { q: '¿Cada cuánto hay que parar a descansar conduciendo?', a: 'Las autoridades de tráfico recomiendan parar al menos 15-20 minutos cada 2 horas de conducción o cada 200 km, aproximadamente. La fatiga se acumula de forma gradual y a menudo no se percibe hasta que es peligrosa, por eso conviene descansar de forma preventiva, antes de notar cansancio, y no esperar a sentirse agotado al volante.' },
-    { q: '¿Cuántas paradas necesito en mi viaje?', a: 'Se calcula dividiendo las horas de conducción entre el intervalo de descanso. Por ejemplo, 7 horas de viaje descansando cada 2 horas suponen unas 3 paradas. La calculadora lo calcula automáticamente y te dice también cuánto se alarga el viaje al sumar el tiempo de los descansos, para que planifiques con realismo.' },
-    { q: '¿Por qué es tan importante descansar al volante?', a: 'Porque la fatiga reduce los reflejos, la atención y la capacidad de reacción, de forma similar al alcohol. Conducir muchas horas seguidas aumenta el riesgo de microsueños (segundos de sueño involuntario) y de accidentes. Parar a estirar las piernas, hidratarse y despejarse restablece la concentración y es una de las medidas de seguridad vial más eficaces.' },
-    { q: '¿Qué debo hacer en las paradas de descanso?', a: 'Lo ideal es bajar del coche, caminar y estirar las piernas para activar la circulación, hidratarse, tomar algo ligero y, si tienes sueño, una siesta corta de 15-20 minutos o un café (que tarda unos 20 minutos en hacer efecto). Evita las comidas copiosas, que dan somnolencia. El objetivo es llegar a la siguiente etapa despejado y atento.' },
-    { q: '¿Cómo reconocer que necesito parar antes de tiempo?', a: 'Señales de alerta son: bostezos frecuentes, parpadeo lento o pesadez de ojos, dificultad para mantener la velocidad o el carril, no recordar los últimos kilómetros, e irritabilidad. Ante cualquiera de ellas, hay que parar cuanto antes, aunque no toque según el plan. La planificación es una guía, pero tu estado real manda siempre.' },
+    {
+      q: "¿Cada cuánto hay que parar al conducir?",
+      a: "La DGT recomienda parar al menos 20 minutos cada 2 horas o cada 200 km, y antes si notas cansancio. En los descansos conviene salir del coche, caminar, estirarse e hidratarse.",
+    },
+    {
+      q: "¿Qué dice la ley para los conductores profesionales?",
+      a: "El Reglamento europeo 561/2006 obliga a los conductores de camiones y autobuses a hacer una pausa de 45 minutos después de 4 horas y media de conducción, que puede dividirse en una de 15 y otra de 30 minutos. La conducción diaria no puede superar 9 horas (10 dos veces por semana).",
+    },
+    {
+      q: "¿Cuáles son las señales de fatiga?",
+      a: "Bostezos frecuentes, parpadeo, picor de ojos, dificultad para mantener la velocidad o el carril, no recordar los últimos kilómetros o cabezadas. Ante cualquiera de ellas, para en un lugar seguro. Una siesta de 15-20 minutos ayuda.",
+    },
+    {
+      q: "¿Qué hago si viajo de noche?",
+      a: "Evita conducir entre las 2 y las 6 de la madrugada, cuando el cuerpo tiende al sueño. Si no puedes evitarlo, descansa antes de salir, haz paradas más frecuentes y, si es posible, alterna la conducción con otra persona.",
+    },
+    {
+      q: "¿Cuánto tiempo añaden las paradas?",
+      a: "Con paradas de 20 minutos cada 2 horas, unos 10 minutos por hora de conducción. Para un Madrid-Cádiz de unas 6 horas y media, cuenta con unos 3 descansos, una hora más de viaje.",
+    },
   ]}
 >
   <ParadasDescansoTool client:load />

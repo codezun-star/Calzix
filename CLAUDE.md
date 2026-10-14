@@ -2,11 +2,34 @@
 
 ## Descripción general
 
-**Calzix** es una plataforma web de calculadoras online gratuitas.
+**Calzix** es una plataforma web de calculadoras online gratuitas **dirigida exclusivamente a España** (ver "Enfoque España").
 - Dominio: https://calzix.com
 - Carpeta: `C:\Users\Jose\calzix`
 - Todos los cálculos se realizan 100% en el navegador. Sin backend, sin base de datos, sin autenticación.
 - Contacto público: `codezun@gmail.com`
+
+---
+
+## Enfoque España (regla obligatoria)
+
+Todo el sitio se dirige **solo a España**: textos, ejemplos, datos, moneda (euros), normativa y SEO/GEO/AEO. Nada de referencias a otros países como mercado objetivo (México, Colombia, LATAM…). Otros países solo aparecen como destino visto desde España (zonas horarias, vuelos, divisas).
+
+| Pieza | Dónde vive | Qué hace |
+|---|---|---|
+| Datos del país | `SITE` en `seo.ts` | `lang: 'es-ES'`, `ogLocale: 'es_ES'`, `country: 'ES'`, `countryName`, `currency: 'EUR'`, `timeZone: 'Europe/Madrid'` |
+| Metaetiquetas GEO | `AppHead.astro` | `content-language`, `geo.region` (ES), `geo.placename`, y `hreflang` es-ES + x-default cuando recibe `canonical` |
+| Schema | `src/lib/utils/schema.ts` | `SPAIN_PLACE`, `SPAIN_AUDIENCE`, `organizationSchema()`, `websiteSchema()`: `areaServed`, `audience`, `spatialCoverage`, `countriesSupported` y `eligibleRegion` = España |
+| Datos legales y fiscales 2026 | `src/lib/constants/espana.ts` | SMI, IPREM, cotizaciones, escala de retención del IRPF, mínimos, IVA/IGIC, interés legal y de demora, Euríbor, TUR del gas, PVPC, becas, carburantes. **Fuente única**: los componentes importan de aquí |
+| Retención y nómina | `src/lib/utils/nomina.ts` | Algoritmo oficial de retenciones de la AEAT (`calcularNomina()`), usado por `NominaTool` e `IrpfRetencionTool` |
+| Divisas | `src/lib/constants/divisas.ts` | Tipos de referencia del BCE por euro + `DIVISAS_FECHA` |
+| Zonas horarias | `src/lib/utils/zonas.ts` | Península y Baleares (`Europe/Madrid`) y Canarias (`Atlantic/Canary`) frente al resto del mundo, con IANA (cambio de hora automático) |
+| Titular legal | `TITULAR` en `seo.ts` | Nombre, NIF, domicilio y registro para el aviso legal (art. 10 LSSI-CE). Vacíos = no se muestran |
+
+### Reglas
+
+1. **Ejemplos y FAQs con contexto español**: normativa (AEAT, Seguridad Social, BOE, Estatuto de los Trabajadores, LOMLOE/PAU, CTE, REBT, DGT…), precios en euros y ortografía con tildes.
+2. **Cifras legales solo desde `espana.ts`**. Al cambiar de año (enero) o al publicarse un BOE que las modifique, actualizar `espana.ts`, `divisas.ts` (`DIVISAS_FECHA`), los textos de las páginas que citen esas cifras y `SITE.dateModified`.
+3. Repaso anual mínimo: SMI, bases y tipos de cotización, IPREM, interés legal y de demora (semestral), TUR del gas (trimestral), umbrales de becas (curso), cambio de hora y precios de referencia de carburantes y luz.
 
 ---
 
@@ -75,12 +98,18 @@ calzix/
 │   ├── lib/
 │   │   ├── utils/
 │   │   │   ├── format.ts        # formatNumber(), formatCurrency(), formatPercent(), formatScientific()
-│   │   │   └── download.ts      # triggerDownload(), downloadText(), downloadCsv()
+│   │   │   ├── download.ts      # triggerDownload(), downloadText(), downloadCsv()
+│   │   │   ├── jsonld.ts        # jsonLd(): serialización segura del JSON-LD
+│   │   │   ├── schema.ts        # Organization, WebSite y audiencia/área España para el JSON-LD
+│   │   │   ├── nomina.ts        # Algoritmo de retención del IRPF y nómina neta (AEAT 2026)
+│   │   │   └── zonas.ts         # Zonas horarias de España y del mundo (IANA)
 │   │   └── constants/
 │   │       ├── ads.ts           # Claves, formatos y emplazamientos de publicidad
 │   │       ├── app.ts           # Populares del buscador, enlaces de "Más", tipos de la app
 │   │       ├── calcs.ts         # Metadata de las calculadoras — CalcMeta + CalcDomain
-│   │       └── seo.ts           # Títulos, descriptions, canonicals + SITE object
+│   │       ├── divisas.ts       # Tipos de cambio de referencia del BCE
+│   │       ├── espana.ts        # Datos legales, fiscales y de precios de España (2026)
+│   │       └── seo.ts           # Títulos, descriptions, canonicals + SITE + TITULAR
 │   └── styles/
 │       └── global.css           # @import "tailwindcss" + @theme con tokens de diseño
 ├── public/
@@ -318,7 +347,7 @@ Por debajo de **1280px** (móvil y tablet) el sitio se comporta como una app nat
 | Hojas deslizables | `AppSheets.astro` | `<dialog>` modales: se cierran con Escape, gesto "atrás" de Android, toque fuera o arrastrando hacia abajo. En >= 768px se abren como ventana centrada |
 | Buscador | `AppSheets.astro` + `app-shell.ts` | Descarga `/search-index.json` al abrirse. Sin acentos, con plurales y palabras vacías ("calcular el iva" = "iva"). Atajos: `Ctrl/Cmd + K` y `/`. `/#buscar` lo abre |
 | Recientes | `app-shell.ts` | Cada calculadora visitada se guarda en `localStorage` (`calzix:recent`, máx. 8). Se muestran en el buscador, en el inicio ("Seguir calculando") y en `/offline` |
-| PWA instalable | `manifest.webmanifest.ts` + `AppHead.astro` | Pantalla completa (`standalone`), accesos directos (buscar, hipoteca, porcentaje, IVA). "Instalar la app" en la hoja "Más" (Android: diálogo nativo; iOS: instrucciones) |
+| PWA instalable | `manifest.webmanifest.ts` + `AppHead.astro` | Pantalla completa (`standalone`), accesos directos (buscar, hipoteca, nómina, IVA). "Instalar la app" en la hoja "Más" (Android: diálogo nativo; iOS: instrucciones) |
 | Uso sin conexión | `public/sw.js` | Páginas: primero la red (copia guardada como respaldo, o si la red tarda > 4 s). `/_astro/*`: primero la caché. Terceros (anuncios): nunca se tocan. Sin red ni copia → `/offline` |
 | Transiciones | `global.css` | `@view-transition` entre páginas (Chrome/Safari recientes; en el resto no cambia nada). Respeta `prefers-reduced-motion` |
 | Precarga | `astro.config.mjs` | `prefetch` con estrategia `hover`: la página de destino se descarga al pasar el ratón por el enlace |
@@ -512,6 +541,7 @@ Actualizar este contador al añadir calculadoras. El número real de calculadora
 
 | Fecha | Acción |
 |---|---|
+| 2026-10-14 | **Enfoque exclusivo en España (SEO, GEO y AEO).** (1) `SITE` gana `lang`, `ogLocale`, `country`, `countryName`, `currency` y `timeZone`; `<html lang="es-ES">`, `og:locale es_ES`, `content-language`, `geo.region`/`geo.placename` y `hreflang` es-ES + x-default en `AppHead`. Nuevo `src/lib/utils/schema.ts`: `Organization`, `WebSite`, `WebApplication`, `CollectionPage` y artículos con `areaServed`, `audience`, `spatialCoverage`, `countriesSupported` y `eligibleRegion` = España. `llms.txt` con sección "Ámbito: España"; manifiesto con accesos a hipoteca, nómina e IVA. (2) Nuevo `GroupLayout.astro` para las 9 categorías (OG y JSON-LD completos). (3) Datos 2026 verificados en `src/lib/constants/espana.ts` (SMI 1.221 € × 14, cotización 6,50 %, escala IRPF, mínimos, deducción SMI, IPREM, interés legal 3,25 %, demora comercial 10,40 %, Euríbor, TUR gas, PVPC, becas RD 179/2026, carburantes) y `divisas.ts` (BCE). Retención de IRPF con el algoritmo oficial (`nomina.ts`); antes aplicaba la escala al bruto. Calculadoras rehechas o corregidas: nómina, IRPF, finiquito (alta/baja, 12/20/33 días), cambio de divisas con comisión, diferencia horaria con IANA y Canarias, factura de gas TUR, gastos de compra por comunidad, coste empresa, recargo por mora, becas y umbrales, notas (PAU, conversión), lotería (SELAE), IGIC en la de IVA, entre otras. (4) Los 287 títulos y descripciones de `seo.ts` y los textos de `calcs.ts` reescritos para España. (5) Las 272 páginas de calculadora con `answer`, `howTo`, `whatIs`, `whyUse` y FAQs con contexto español; 22 artículos del blog reescritos (IVA, PAU, finiquito, IRPF, nómina, hipoteca, luz, agua, gasolina…). Ninguna página dirigida a LATAM. (6) Legales adaptados: aviso legal (art. 10 LSSI-CE, con `TITULAR` en `seo.ts`), privacidad (RGPD/LOPDGDD, AEPD) y cookies (art. 22.2 LSSI-CE, detalle de `localStorage`). (7) Imágenes OG regeneradas ("Hecho para España"). (8) Ajustes menores de herramientas: IGIC 7 % en la de IVA, sacos de cemento de 25 kg en la de losa de hormigón, precio de carburante 2026 en la de coste por kilómetro, "siesta corta" en la de siesta. Build: 322 páginas. |
 | 2026-09-28 | **Experiencia de app nativa en móvil y PWA.** Por debajo de 1280px: barra superior con botón "atrás" a la pantalla padre, título que aparece al desplazar y botón de compartir; barra de pestañas inferior (Inicio · Categorías · Buscar · Blog · Más); hojas deslizables (`<dialog>`) con buscador instantáneo (`/search-index.json`, sin acentos, atajos `Ctrl+K` y `/`), rejilla de categorías y menú "Más" (instalar app, compartir, legales). Calculadoras recientes en `localStorage` (buscador, "Seguir calculando" en el inicio y `/offline`). PWA instalable (`manifest.webmanifest`, iconos en `public/icons/` con `scripts/generate-icons.mjs`) y `public/sw.js` para uso sin conexión, con pantalla `/offline` (+1 página, fuera del sitemap). Transiciones entre páginas (`@view-transition`), precarga al pasar el ratón (`prefetch`), respuesta táctil al pulsar, campos a 16px en pantallas táctiles (iOS ya no amplía al enfocar) y barra inferior oculta con el teclado abierto. Tarjetas de calculadora como filas de lista en móvil, cabeceras compactas y migas sustituidas por el botón "atrás". Nuevo `<AppHead />` en todas las páginas. Arreglos: el menú de escritorio desbordaba entre 768 y 1279px (scroll horizontal), ahora aparece desde 1280px; el inicio cargaba ya desplazado en móvil (`scrollIntoView` de las pestañas). Build: 322 páginas. |
 | 2026-09-23 | Popunder del proveedor añadido sin volverlo intrusivo. Nuevas constantes en `ads.ts` (`ADS_POPUNDER`, `AD_POPUNDER_SRC`, `AD_POPUNDER_DELAY`, `AD_POPUNDER_EVERY_HOURS`, `AD_POPUNDER_EXCLUDED`) y carga gestionada por `AdEngine`: espera al `load` + `requestIdleCallback` + 8 s, se salta las cinco páginas legales/contacto, aguarda si la pestaña está en segundo plano y se limita a una vez cada 6 h por visitante vía `localStorage`. De paso, la social bar pasa a respetar `ADS_ENABLED` (antes solo miraba `ADS_SOCIAL_BAR`, contra lo documentado). Build: 321 páginas. |
 | 2026-08-28 | Publicidad en todo el sitio. Nuevo `src/lib/constants/ads.ts` (claves, formatos, emplazamientos e interruptores) y cinco componentes en `src/components/ads/`: `AdSlot` (banner responsive en iframe aislado), `AdNative`, `AdRail` (columna lateral >= 1280px), `AdSticky` (barra inferior descartable) y `AdEngine` (motor + social bar, montado desde el `Footer`). Cada anuncio vive en su propio iframe con su `atOptions`, de modo que conviven varias unidades por página; carga diferida por proximidad al viewport, formato elegido según el ancho real, altura reservada por breakpoint (sin CLS) y retirada automática del hueco si el proveedor no devuelve anuncio. Emplazamientos en calculadoras, home, las 9 categorías, blog (índice y artículo, con rectángulos intercalados entre párrafos) y cierre + barra fija en todo el sitio vía `Footer`. `/privacidad` y `/cookies` actualizadas: ya no afirman que no hay scripts de terceros y detallan las cookies publicitarias y cómo bloquearlas. Build: 321 páginas. |

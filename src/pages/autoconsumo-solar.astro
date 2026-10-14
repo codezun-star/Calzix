@@ -4,14 +4,35 @@ import AutoconsumoSolarTool from '@/components/tools/AutoconsumoSolarTool';
 ---
 
 <CalcLayout slug="autoconsumo-solar"
-  whatIs="Esta calculadora estima dos indicadores clave de una instalación solar: la tasa de autoconsumo (qué parte de la energía que generan tus paneles aprovechas directamente) y la tasa de autosuficiencia (qué parte de tu consumo cubres con energía solar). A partir de la generación y el consumo anuales y un factor de autoconsumo, calcula ambos porcentajes y la energía excedente que viertes a la red."
-  whyUse="No toda la energía que generan los paneles se aprovecha: cuando produces más de lo que consumes en ese momento, el excedente va a la red (a veces compensado, a veces no). Entender las tasas de autoconsumo y autosuficiencia ayuda a dimensionar bien la instalación, a valorar si compensa una batería y a estimar el ahorro real. Esta herramienta da una visión clara del aprovechamiento de tu energía solar."
+  answer={"El porcentaje de autoconsumo es la parte de la energía solar que gastas en el momento en que se produce: con 4.500 kWh generados al año y un 35 % de autoconsumo directo, aprovechas 1.575 kWh y viertes 2.925 kWh a la red, que en España se compensan en la factura con la compensación simplificada."}
+  howTo={[
+    "Introduce la energía que generan tus paneles al año.",
+    "Escribe tu consumo anual de electricidad.",
+    "Ajusta el porcentaje de autoconsumo directo y pulsa calcular para ver la energía autoconsumida, los excedentes y la cobertura de tu consumo."
+  ]}
+  whatIs={"La calculadora de autoconsumo solar reparte la producción anual de una instalación fotovoltaica entre la energía que consumes directamente y los excedentes que viertes a la red, y calcula qué parte de tu consumo cubre el sol."}
+  whyUse={"Te ayuda a dimensionar una instalación de autoconsumo, entender cuánto ahorrarás realmente y valorar si te compensa añadir baterías."}
   faqs={[
-    { q: '¿Qué diferencia hay entre autoconsumo y autosuficiencia?', a: 'La tasa de autoconsumo mide qué porcentaje de la energía que generas la usas tú directamente (en vez de verterla a la red). La autosuficiencia mide qué porcentaje de tu consumo total cubres con energía solar. Son distintas: puedes tener alto autoconsumo y baja autosuficiencia si la instalación es pequeña, o al revés con una grande y mucho excedente.' },
-    { q: '¿Qué tasa de autoconsumo es normal?', a: 'Sin batería, una instalación doméstica suele autoconsumir entre el 30 % y el 40 % de lo que genera, porque buena parte de la producción ocurre a mediodía, cuando muchos hogares consumen poco. Con una batería que almacena el excedente para la noche, la tasa de autoconsumo puede subir al 60-70 % o más, aprovechando mucha más energía propia.' },
-    { q: '¿Qué pasa con la energía excedente?', a: 'El excedente es la energía que generas pero no consumes en el momento. Se vierte a la red eléctrica y, según el país y el contrato, puede compensarse en la factura (descontando de lo que pagas) o venderse. Reducir el excedente aprovechándolo tú (con batería o desplazando consumos a las horas de sol) suele ser más rentable que verterlo.' },
-    { q: '¿Merece la pena instalar una batería?', a: 'La batería aumenta el autoconsumo y la autosuficiencia al guardar el excedente del día para usarlo de noche, pero tiene un coste elevado. Compensa más si tu consumo nocturno es alto, si el excedente no se compensa bien en tu contrato, o si buscas independencia de la red. La calculadora te ayuda a ver cuánta energía estás vertiendo, dato clave para decidir.' },
-    { q: '¿Cómo aumento mi autoconsumo sin batería?', a: 'Desplazando consumos a las horas de sol: programar la lavadora, el lavavajillas, el termo eléctrico o la carga del coche eléctrico para el mediodía, cuando los paneles producen más. Así aprovechas directamente esa energía en lugar de verterla. Es la forma más barata de subir la tasa de autoconsumo y maximizar el ahorro de la instalación solar.' },
+    {
+      q: "¿Qué porcentaje de autoconsumo es habitual?",
+      a: "En una vivienda sin baterías, entre el 30 % y el 50 % de la producción se consume en el momento; el resto se vierte a la red. Si trabajas en casa, programas lavadora y lavavajillas a mediodía o tienes aerotermia, el porcentaje sube. Con baterías puede superar el 70 %.",
+    },
+    {
+      q: "¿Qué es la compensación simplificada de excedentes?",
+      a: "Es el mecanismo del Real Decreto 244/2019 por el que la comercializadora descuenta de tu factura la energía que viertes a la red, a un precio menor que el de compra. El descuento no puede superar el coste de la energía consumida en el mes. Algunas comercializadoras ofrecen además baterías virtuales.",
+    },
+    {
+      q: "¿Cuánto produce un panel en España?",
+      a: "Cada kWp instalado produce entre 1.300 y 1.700 kWh al año según la zona: más en Andalucía, Murcia o Canarias y menos en la cornisa cantábrica. Una instalación doméstica típica de 3-4 kWp genera entre 4.000 y 6.000 kWh al año.",
+    },
+    {
+      q: "¿Hay ayudas para el autoconsumo?",
+      a: "Muchos ayuntamientos bonifican el IBI (hasta el 50 % durante varios años) y el ICIO. Las deducciones en el IRPF por obras de mejora de la eficiencia energética se han ido prorrogando en los últimos años, y algunas comunidades autónomas abren convocatorias de subvenciones. Comprueba las vigentes en tu municipio y comunidad.",
+    },
+    {
+      q: "¿Necesito permisos para instalar paneles?",
+      a: "Normalmente basta con una comunicación previa o declaración responsable en el ayuntamiento. Las instalaciones de hasta 15 kW sin excedentes o en suelo urbanizado están exentas de permisos de acceso y conexión. En un edificio, la instalación en la cubierta común requiere el acuerdo de la comunidad de propietarios.",
+    },
   ]}
 >
   <AutoconsumoSolarTool client:load />

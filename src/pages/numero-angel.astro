@@ -4,14 +4,35 @@ import NumeroAngelTool from '@/components/tools/NumeroAngelTool';
 ---
 
 <CalcLayout slug="numero-angel"
-  whatIs="Esta herramienta interpreta el significado de los números ángel: secuencias repetidas de cifras (como 111, 222, 1111 o 1212) que, según ciertas creencias espirituales, transmiten mensajes. Introduces el número que ves repetido con frecuencia —en relojes, matrículas, recibos o tickets— y la calculadora te muestra el significado que la numerología angelical le atribuye, junto con su mensaje asociado."
-  whyUse="Muchas personas se topan una y otra vez con los mismos números repetidos y sienten curiosidad por su significado. Los números ángel forman parte de la cultura espiritual y de bienestar, y consultarlos es una forma popular de reflexión e introspección. Esta herramienta reúne los significados más conocidos para que descubras qué mensaje se asocia al número que te persigue, como inspiración o simple curiosidad."
+  answer={"En numerología, los «números ángel» son secuencias repetidas como 111, 222 o 1111 a las que se atribuye un mensaje simbólico: el 1111 se asocia a nuevos comienzos y el 222 al equilibrio. Es un entretenimiento sin base científica: úsalo para pasar un buen rato, no para tomar decisiones importantes."}
+  howTo={[
+    "Escribe el número repetido que has visto (por ejemplo, 1111).",
+    "Pulsa ver significado.",
+    "Lee la interpretación simbólica tradicional."
+  ]}
+  whatIs={"La calculadora de números ángel muestra el significado simbólico que la numerología popular atribuye a las secuencias de números repetidos."}
+  whyUse={"Es un entretenimiento para curiosos de la numerología y las coincidencias, por ejemplo cuando ves la misma hora repetida en el reloj."}
   faqs={[
-    { q: '¿Qué son los números ángel?', a: 'Son secuencias de números repetidos (111, 222, 333…) o con patrón (1212, 1234) que, según la numerología angelical, serían mensajes de guías espirituales o del universo. La creencia sostiene que verlos repetidamente no es casualidad, sino una señal para prestar atención a algún aspecto de tu vida. Cada secuencia tiene un significado simbólico asociado.' },
-    { q: '¿Qué significa ver el 1111?', a: 'El 1111 es uno de los números ángel más conocidos. Se interpreta como un "portal de manifestación": un momento de gran alineación en el que tus pensamientos e intenciones tienen mucha fuerza. La recomendación habitual es enfocarte en lo que deseas y mantener pensamientos positivos cuando lo veas, ya que se considera un instante propicio para pedir un deseo o fijar una intención.' },
-    { q: '¿Por qué veo siempre los mismos números?', a: 'Desde un punto de vista psicológico, suele deberse al fenómeno de atención selectiva: una vez que un número te llama la atención, tu mente lo busca y lo nota más, reforzando la sensación de que aparece constantemente. Desde la perspectiva espiritual, se interpreta como una señal con significado. Cada persona elige cómo interpretarlo, desde la curiosidad o desde la creencia.' },
-    { q: '¿Cómo interpreto un número ángel que no está en la lista?', a: 'Para secuencias menos comunes, la numerología angelical suele sumar y reducir las cifras a un solo dígito para interpretar su vibración base, o combina el significado de los números que lo componen. La calculadora ofrece un mensaje general para los números no incluidos, invitándote a reflexionar sobre tus pensamientos y emociones en ese momento.' },
-    { q: '¿Tienen algún fundamento real los números ángel?', a: 'No. Los números ángel pertenecen al ámbito de las creencias espirituales y la numerología, sin base científica que respalde que transmitan mensajes o influyan en la realidad. Esta herramienta es de entretenimiento y reflexión personal. Si estos números te inspiran o te ayudan a pararte a pensar, disfrútalos como tales, pero sin tomarlos como predicciones literales.' },
+    {
+      q: "¿Qué son los números ángel?",
+      a: "Secuencias de cifras repetidas (111, 222, 333…) que, según la numerología popular, transmiten mensajes simbólicos. Es una creencia reciente y muy difundida en redes sociales.",
+    },
+    {
+      q: "¿Por qué veo tanto el 11:11?",
+      a: "Por un sesgo cognitivo llamado ilusión de frecuencia: cuando algo nos llama la atención, empezamos a notarlo más. La probabilidad de mirar el reloj a las 11:11 es la misma que a cualquier otra hora.",
+    },
+    {
+      q: "¿Tienen base científica?",
+      a: "No. Es un entretenimiento sin base científica: úsalo para pasar un buen rato, no para tomar decisiones importantes.",
+    },
+    {
+      q: "¿Qué significa el 1111?",
+      a: "En la numerología popular se asocia a nuevos comienzos, intuición y oportunidades. Otras interpretaciones habituales: 222, equilibrio; 333, creatividad; 444, estabilidad; 555, cambios.",
+    },
+    {
+      q: "¿Se guarda lo que escribo?",
+      a: "No. El cálculo se hace en tu navegador y los datos no se envían a ningún servidor.",
+    },
   ]}
 >
   <NumeroAngelTool client:load />

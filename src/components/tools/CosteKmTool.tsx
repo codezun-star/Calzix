@@ -32,7 +32,7 @@ export default function CosteKmTool() {
         </div>
         <div className="space-y-1">
           <label className="text-xs font-medium text-[var(--color-text-secondary)]">Precio combustible/L</label>
-          <input type="number" value={precio} onChange={(e) => { setPrecio(e.target.value); setResult(null); }} placeholder="Ej. 1.6" className={INPUT} />
+          <input type="number" value={precio} onChange={(e) => { setPrecio(e.target.value); setResult(null); }} placeholder="Ej. 1.85" className={INPUT} />
         </div>
         <div className="space-y-1">
           <label className="text-xs font-medium text-[var(--color-text-secondary)]">Mantenimiento/km <span className="opacity-60">opc.</span></label>

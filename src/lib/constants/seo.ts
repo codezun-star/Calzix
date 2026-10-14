@@ -10,7 +10,7 @@ export const SITE = {
   // Señales de frescura para buscadores y motores de respuesta.
   // Actualizar `dateModified` cuando se revise el contenido del sitio.
   datePublished: '2026-05-01',
-  dateModified: '2026-10-13',
+  dateModified: '2026-10-14',
   // ── Mercado único: España ───────────────────────────────────────────────
   // Todo el sitio (textos, schema, metaetiquetas, ejemplos y datos) se dirige
   // exclusivamente a España. Ver la sección "Enfoque España" de CLAUDE.md.
@@ -21,6 +21,19 @@ export const SITE = {
   currency: 'EUR',
   timeZone: 'Europe/Madrid',
 } as const;
+
+/**
+ * Datos del titular para el aviso legal (art. 10 de la Ley 34/2002, LSSI-CE).
+ * La ley exige identificar al responsable del sitio: nombre o razón social,
+ * NIF y domicilio (y la inscripción registral si es una sociedad).
+ * Mientras un campo esté vacío, el aviso legal no lo muestra.
+ */
+export const TITULAR: { nombre: string; nif: string; domicilio: string; registro: string } = {
+  nombre: '',
+  nif: '',
+  domicilio: '',
+  registro: '',
+};
 
 export interface PageSEO {
   title: string;

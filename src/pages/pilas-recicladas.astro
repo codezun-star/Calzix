@@ -4,14 +4,35 @@ import PilasRecicladasTool from '@/components/tools/PilasRecicladasTool';
 ---
 
 <CalcLayout slug="pilas-recicladas"
-  whatIs="Esta calculadora estima el impacto ambiental de reciclar pilas y baterías en lugar de tirarlas a la basura. A partir de cuántas pilas reciclas y cada cuánto, proyecta el total anual, el peso de residuo peligroso gestionado correctamente y el agua que evitas contaminar. Las pilas contienen metales pesados muy tóxicos, por lo que depositarlas en puntos de reciclaje en vez de en la basura común es fundamental."
-  whyUse="Una pila tirada a la basura acaba en el vertedero, donde sus metales pesados (mercurio, cadmio, níquel, plomo) pueden filtrarse al suelo y al agua, contaminando durante mucho tiempo. Reciclarlas permite recuperar esos materiales y evitar la contaminación. Esta herramienta hace visible el impacto de un gesto sencillo —llevar las pilas usadas a un contenedor específico— para animar a hacerlo de forma sistemática."
+  answer={"Las pilas contienen metales que contaminan el suelo y el agua si acaban en la basura: reciclar 4 pilas al mes son 48 pilas y casi 1 kg al año que se recuperan correctamente. En España se entregan en los contenedores de pilas de tiendas y supermercados o en el punto limpio."}
+  howTo={[
+    "Introduce cuántas pilas reciclas.",
+    "Indica cada cuántos días.",
+    "Pulsa calcular impacto para ver los kilos de pilas y el agua que evitas contaminar al año."
+  ]}
+  whatIs={"La calculadora de reciclaje de pilas estima el peso de las pilas que reciclas al año y el impacto ambiental que evitas al no tirarlas a la basura."}
+  whyUse={"Te ayuda a tomar conciencia del número de pilas que usas, a reciclarlas correctamente y a valorar el cambio a pilas recargables."}
   faqs={[
-    { q: '¿Por qué son tan contaminantes las pilas?', a: 'Porque contienen metales pesados como mercurio, cadmio, níquel, plomo o litio, que son tóxicos y persistentes. Si una pila acaba en un vertedero y su carcasa se degrada, esos metales pueden filtrarse al suelo y a las aguas subterráneas, entrando en la cadena alimentaria. Una sola pila mal desechada puede contaminar un gran volumen de agua durante años.' },
-    { q: '¿Cuánta agua puede contaminar una pila?', a: 'Las estimaciones varían según el tipo de pila, pero una pila de botón puede llegar a contaminar decenas de miles de litros de agua, y una pila normal, varios miles. Por eso, aunque cada pila sea pequeña, su impacto potencial es enorme. Reciclar las pilas de un hogar a lo largo del año evita contaminar volúmenes de agua muy considerables.' },
-    { q: '¿Dónde se reciclan las pilas?', a: 'En contenedores específicos para pilas y baterías, que suelen encontrarse en supermercados, tiendas de electrónica, centros comerciales, puntos limpios y muchos comercios. No deben ir nunca al contenedor de basura común ni al de envases. Muchos establecimientos que venden pilas están obligados a recogerlas usadas. Guárdalas en casa en un recipiente y deposítalas cuando acumules unas cuantas.' },
-    { q: '¿Las pilas recargables también se reciclan?', a: 'Sí, las pilas recargables y las baterías de dispositivos (móviles, portátiles, herramientas) también deben reciclarse en los puntos adecuados, ya que contienen materiales valiosos y potencialmente peligrosos. De hecho, usar pilas recargables en lugar de desechables reduce mucho la cantidad de residuo generado, porque una recargable sustituye a cientos de pilas de un solo uso a lo largo de su vida.' },
-    { q: '¿Qué se hace con las pilas recicladas?', a: 'En las plantas de reciclaje se separan y recuperan los metales (acero, zinc, manganeso, níquel, etc.), que vuelven a usarse como materia prima para nuevos productos. Así se evita extraer minerales nuevos y se neutralizan los componentes peligrosos de forma controlada. Reciclar pilas convierte un residuo tóxico en recursos aprovechables y protege el medio ambiente.' },
+    {
+      q: "¿Dónde se reciclan las pilas?",
+      a: "En los contenedores de pilas de supermercados, tiendas de electrónica, ferreterías y centros comerciales, en los puntos limpios y en algunos contenedores en la calle. Las tiendas que venden pilas están obligadas a recogerlas gratuitamente.",
+    },
+    {
+      q: "¿Por qué son peligrosas?",
+      a: "Contienen metales como el zinc, el manganeso, el níquel o el litio, y algunas antiguas, mercurio y cadmio. En un vertedero o en la naturaleza pueden liberar sustancias tóxicas al suelo y al agua.",
+    },
+    {
+      q: "¿Y las baterías de litio de móviles y patinetes?",
+      a: "Son residuos especiales: no deben tirarse a la basura ni a los contenedores de pilas pequeñas si son grandes, porque pueden incendiarse. Llévalas al punto limpio o a la tienda donde compres el aparato nuevo.",
+    },
+    {
+      q: "¿Compensan las pilas recargables?",
+      a: "Sí, en aparatos de uso frecuente (mandos de consolas, juguetes, cámaras): una pila recargable puede sustituir a cientos de pilas desechables. Reduce residuos y, a medio plazo, gasto.",
+    },
+    {
+      q: "¿Qué pasa con las pilas recogidas?",
+      a: "Las gestionan sistemas de responsabilidad ampliada del productor, que las clasifican y recuperan sus metales para fabricar nuevos productos, según la normativa de pilas y acumuladores.",
+    },
   ]}
 >
   <PilasRecicladasTool client:load />

@@ -4,14 +4,35 @@ import PromedioAcumuladoTool from '@/components/tools/PromedioAcumuladoTool';
 ---
 
 <CalcLayout slug="promedio-acumulado"
-  whatIs="Esta calculadora obtiene tu promedio acumulado (o GPA acumulado) combinando el promedio que ya tenías con el de un nuevo semestre o periodo, ponderando cada uno por el número de créditos cursados. Como las asignaturas con más créditos pesan más, no basta con hacer la media de los dos promedios: hay que ponderarlos. La herramienta da tu nuevo promedio global y el total de créditos."
-  whyUse="El promedio acumulado es la nota que aparece en tu expediente y la que miran para becas, prácticas, intercambios, posgrados y empleo. Saber cómo evoluciona tras cada semestre te permite ver el impacto real de tus notas y planificar cuánto necesitas mejorar. Esta herramienta es ideal para estudiantes universitarios que quieren llevar el control de su expediente a lo largo de la carrera."
+  answer={"La nueva nota media del expediente es la media ponderada por créditos: con una media de 8,2 en 120 créditos y un 9,0 en los 30 créditos del último periodo, la nueva media es (8,2 × 120 + 9,0 × 30) ÷ 150 = 8,36."}
+  howTo={[
+    "Introduce tu nota media anterior y los créditos que ya habías cursado.",
+    "Introduce la media del nuevo periodo y sus créditos.",
+    "Pulsa calcular para ver tu nueva nota media acumulada."
+  ]}
+  whatIs={"La calculadora de nota media acumulada combina tu media anterior y la del último cuatrimestre o curso, ponderadas por los créditos, para obtener la nueva media de tu expediente."}
+  whyUse={"Te ayuda a saber cómo evoluciona tu expediente, si llegas a la nota que te piden para una beca de excelencia, un Erasmus, un máster o unas prácticas."}
   faqs={[
-    { q: '¿Qué es el promedio acumulado?', a: 'Es la media ponderada de todas las notas que has obtenido a lo largo de tus estudios, teniendo en cuenta los créditos de cada asignatura. Refleja tu rendimiento global y es la nota que figura en tu expediente académico. A diferencia del promedio de un solo semestre, el acumulado integra toda tu trayectoria y cambia más lentamente a medida que avanzas.' },
-    { q: '¿Por qué se ponderan los créditos?', a: 'Porque no todas las asignaturas tienen el mismo peso: una de 9 créditos influye más en tu expediente que una de 3. Si hicieras la media simple de las notas ignorando los créditos, una asignatura pequeña pesaría lo mismo que una grande, lo que distorsionaría el resultado. Ponderar por créditos da a cada nota la importancia que le corresponde.' },
-    { q: '¿Cómo se calcula el promedio acumulado nuevo?', a: 'Se multiplica el promedio anterior por sus créditos, se suma el promedio del nuevo periodo multiplicado por sus créditos, y se divide todo entre el total de créditos. Por ejemplo, 8,2 en 120 créditos más 9,0 en 30 créditos: (8,2×120 + 9,0×30) / 150 = (984 + 270) / 150 = 8,36 de promedio acumulado.' },
-    { q: '¿Cuánto puede subir mi promedio en un semestre?', a: 'Cada vez menos a medida que acumulas créditos. Al principio de la carrera, un buen semestre mueve bastante el promedio; al final, con muchos créditos ya cursados, un solo semestre apenas lo altera. Por eso es importante mantener buenas notas desde el inicio: recuperar un promedio bajo es cada vez más difícil cuantos más créditos llevas.' },
-    { q: '¿Sirve para cualquier sistema de calificación?', a: 'Sí. La calculadora funciona con cualquier escala (sobre 10, sobre 100, GPA sobre 4…), siempre que uses la misma en el promedio anterior y en el nuevo. Lo importante es la coherencia: si tu sistema usa GPA sobre 4, introduce ambos promedios en esa escala. El resultado se expresará en la misma escala que hayas usado.' },
+    {
+      q: "¿Cómo se calcula la nota media del expediente en España?",
+      a: "Se multiplica la nota de cada asignatura por sus créditos, se suman y se divide entre el total de créditos, según el Real Decreto 1125/2003. La matrícula de honor cuenta como 10. Los créditos reconocidos sin nota pueden no computar, según la universidad.",
+    },
+    {
+      q: "¿Cuentan los suspensos en la media?",
+      a: "Depende de la universidad y del uso de la nota. En la nota media del expediente académico suele contar solo la calificación con la que se superó cada asignatura. Para algunas becas o convocatorias se calcula una media que incluye todas las convocatorias. Consulta la normativa de tu universidad.",
+    },
+    {
+      q: "¿Qué nota media piden las becas de excelencia?",
+      a: "Varía mucho. La cuantía de excelencia de la beca del Ministerio se otorga a partir de un 8 de nota media, y muchas becas de excelencia autonómicas o de fundaciones exigen medias de 8 o más.",
+    },
+    {
+      q: "¿Cómo se equipara la nota de un título extranjero?",
+      a: "El Ministerio de Ciencia, Innovación y Universidades ofrece un procedimiento de declaración de equivalencia de la nota media de estudios universitarios realizados en el extranjero a la escala española de 0 a 10.",
+    },
+    {
+      q: "¿Qué media necesito para entrar en un máster?",
+      a: "Depende de la demanda: los másteres con más solicitudes que plazas ordenan a los candidatos por nota media y otros méritos. Consulta los criterios de admisión de cada máster.",
+    },
   ]}
 >
   <PromedioAcumuladoTool client:load />

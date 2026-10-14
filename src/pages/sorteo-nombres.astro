@@ -4,14 +4,35 @@ import SorteoNombresTool from '@/components/tools/SorteoNombresTool';
 ---
 
 <CalcLayout slug="sorteo-nombres"
-  whatIs="Este sorteador elige al azar un ganador de entre una lista de nombres que introduces. Escribes los participantes separados por comas o saltos de línea, pulsas el botón y la herramienta selecciona uno de forma totalmente aleatoria e imparcial. Usa generación aleatoria criptográficamente segura, de modo que todos los participantes tienen exactamente la misma probabilidad de ser elegidos."
-  whyUse="Es la forma más rápida y transparente de hacer un sorteo justo: para rifas, concursos de redes sociales, repartir tareas, elegir quién paga, decidir el orden de turnos o cualquier situación en la que haya que elegir a alguien al azar sin favoritismos. Evita discusiones y la sospecha de trampa, ya que la selección es aleatoria y nadie puede influir en el resultado. Sencillo, instantáneo e imparcial."
+  answer={"Para sortear entre varias personas, escribe sus nombres y el sorteador elige uno al azar con la misma probabilidad para todos: entre 20 participantes, cada uno tiene un 5 % de probabilidad de ganar. Se usa crypto.getRandomValues(), el generador aleatorio criptográfico del navegador, de modo que cada resultado tiene la misma probabilidad. El cálculo se hace en tu navegador y los datos no se envían a ningún servidor."}
+  howTo={[
+    "Escribe los nombres de los participantes, separados por comas o en líneas distintas.",
+    "Pulsa sortear ganador.",
+    "Repite el sorteo si necesitas más ganadores, quitando los que ya han salido."
+  ]}
+  whatIs={"El sorteador de nombres elige al azar un ganador entre una lista de nombres, de forma justa e imparcial."}
+  whyUse={"Es útil para el amigo invisible, sorteos en redes sociales, rifas, asignar tareas o turnos en casa, en clase o en el trabajo, y para cualquier elección que deba ser imparcial."}
   faqs={[
-    { q: '¿Cómo funciona el sorteo de nombres?', a: 'Introduces todos los participantes separados por comas o en líneas distintas y la herramienta elige uno al azar. Cada nombre de la lista tiene la misma probabilidad de salir, sin importar el orden ni la posición. El resultado es completamente aleatorio, lo que garantiza un sorteo limpio y justo para todos los participantes.' },
-    { q: '¿El sorteo es realmente justo?', a: 'Sí. La calculadora usa el generador de números aleatorios criptográficamente seguro del navegador, que produce resultados impredecibles y equiprobables. No hay patrones ni sesgos: cada participante tiene exactamente la misma probabilidad de ganar. Es tan imparcial como sacar un papel de un sombrero, pero más rápido y sin posibilidad de manipulación.' },
-    { q: '¿Para qué puedo usar el sorteador?', a: 'Para rifas y concursos (incluidos los de redes sociales), elegir quién hace una tarea, decidir el orden de intervención, repartir regalos del amigo invisible, escoger equipos, seleccionar al afortunado de una promoción, o cualquier decisión que quieras dejar al azar. Es útil tanto en el ámbito personal y familiar como en eventos, clases o pequeños negocios.' },
-    { q: '¿Cuántos nombres puedo introducir?', a: 'Puedes introducir tantos como necesites, desde dos participantes hasta listas largas. La herramienta los procesa todos por igual. Solo asegúrate de separarlos correctamente con comas o saltos de línea para que cada nombre se cuente como un participante independiente. Cuantos más participantes, menor es la probabilidad individual de cada uno, como en cualquier sorteo.' },
-    { q: '¿Sirve para sorteos de Instagram o redes sociales?', a: 'Sí, es ideal para elegir al ganador de un sorteo en redes sociales: copia los nombres de los participantes y pégalos en la calculadora para obtener un ganador aleatorio. Para que el sorteo sea transparente, conviene grabar o mostrar el momento de la elección. Recuerda cumplir las normas de cada plataforma y la legislación aplicable a los sorteos.' },
+    {
+      q: "¿Es justo el sorteo?",
+      a: "Se usa crypto.getRandomValues(), el generador aleatorio criptográfico del navegador, de modo que cada resultado tiene la misma probabilidad. El cálculo se hace en tu navegador y los datos no se envían a ningún servidor.",
+    },
+    {
+      q: "¿Cómo hago un sorteo en Instagram o en otras redes?",
+      a: "Exporta o copia la lista de participantes que cumplen los requisitos, pégala en el sorteador y elige el ganador. Si eres una empresa, publica unas bases legales con los requisitos, las fechas, el premio y cómo se elige y comunica el ganador.",
+    },
+    {
+      q: "¿Tributa el premio de un sorteo?",
+      a: "Sí. Los premios de concursos y sorteos promocionales son ganancias patrimoniales para quien los recibe, y si superan los 300 €, la empresa debe practicar una retención o un ingreso a cuenta del IRPF.",
+    },
+    {
+      q: "¿Sirve para el amigo invisible?",
+      a: "Para un amigo invisible completo, en el que nadie se regale a sí mismo, es mejor un generador específico de parejas. Este sorteador elige un ganador cada vez.",
+    },
+    {
+      q: "¿Puede un nombre salir dos veces?",
+      a: "Si un nombre aparece repetido en la lista, tiene más probabilidades. Revisa que cada participante aparezca una sola vez.",
+    },
   ]}
 >
   <SorteoNombresTool client:load />

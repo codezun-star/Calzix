@@ -4,14 +4,35 @@ import BecaCoberturaTool from '@/components/tools/BecaCoberturaTool';
 ---
 
 <CalcLayout slug="beca-cobertura"
-  whatIs="Esta calculadora indica qué porcentaje de los costes de tus estudios cubre una beca y cuánto tendrás que aportar tú. A partir del coste total (matrícula más otros gastos) y del importe de la beca, calcula el porcentaje de cobertura y el dinero que queda a tu cargo. Es una forma rápida de dimensionar la ayuda real que supone una beca sobre el coste completo de estudiar."
-  whyUse="No todas las becas cubren lo mismo: algunas pagan solo la matrícula, otras incluyen material, transporte o alojamiento. Saber qué porcentaje del coste total cubre una beca te ayuda a comparar distintas ayudas, a planificar cómo financiar la parte restante y a decidir entre opciones de estudio. Esta herramienta pone en cifras claras el alcance real de una beca respecto a lo que cuesta estudiar."
+  answer={"La cobertura de una beca es el importe de la beca dividido entre el coste total de los estudios: una beca de 2.500 € para un curso que cuesta 4.000 € (matrícula, alojamiento y material) cubre el 62,5 %, y te quedan 1.500 € por pagar."}
+  howTo={[
+    "Introduce el coste total del curso: matrícula, alojamiento, transporte y material.",
+    "Escribe el importe de la beca o ayuda.",
+    "Pulsa calcular para ver el porcentaje cubierto y lo que tendrás que pagar tú."
+  ]}
+  whatIs={"La calculadora de cobertura de beca calcula qué porcentaje del coste de tus estudios cubre una beca o ayuda y cuánto dinero tendrás que aportar tú o tu familia."}
+  whyUse={"Te ayuda a planificar el curso, comparar ofertas de universidades y residencias, y decidir si necesitas trabajar, pedir otra ayuda o un préstamo para completar la financiación."}
   faqs={[
-    { q: '¿Cómo se calcula el porcentaje de cobertura de una beca?', a: 'Se divide el importe de la beca entre el coste total de los estudios y se multiplica por cien. Por ejemplo, una beca de 2.500 sobre un coste total de 4.000 cubre 2.500 / 4.000 × 100 = 62,5 %. El resto, 1.500, es lo que tendrías que aportar tú. La calculadora muestra ambas cifras: el porcentaje cubierto y el importe a tu cargo.' },
-    { q: '¿Qué gastos debo incluir en el coste total?', a: 'Depende de lo que quieras evaluar. Como mínimo, la matrícula; pero para una visión realista conviene sumar también material y libros, transporte, y si te desplazas, alojamiento y manutención. Cuanto más completo sea el coste total que introduzcas, más fiel será el porcentaje de cobertura real de la beca sobre el conjunto de tu gasto.' },
-    { q: '¿Una beca puede cubrir más del 100 %?', a: 'Algunas becas completas no solo cubren la matrícula, sino que incluyen una ayuda económica adicional (para manutención o alojamiento) que puede superar los costes directos de estudio. En esos casos, sobre el coste de matrícula la cobertura supera el 100 %. La calculadora limita el porcentaje mostrado al 100 % del coste que introduzcas para evitar confusiones.' },
-    { q: '¿Cómo financio la parte que no cubre la beca?', a: 'Las opciones más habituales son: ahorros propios o familiares, un trabajo a tiempo parcial compatible con los estudios, un préstamo estudiantil para la parte restante, o combinar varias becas y ayudas. Conocer con exactitud el importe a tu cargo (lo que da esta calculadora) es el primer paso para planificar cómo cubrirlo sin sustos.' },
-    { q: '¿Conviene aceptar una beca parcial?', a: 'Casi siempre sí, porque cualquier ayuda reduce el coste de estudiar. Lo importante es comprobar que puedes financiar la parte no cubierta y revisar las condiciones de la beca (nota mínima para mantenerla, dedicación exigida, etc.). Comparar el porcentaje de cobertura de varias becas te ayuda a priorizar las que más alivian tu gasto total.' },
+    {
+      q: "¿Qué cubre la beca del Ministerio?",
+      a: "La beca general del Ministerio de Educación para estudios postobligatorios y universitarios incluye la matrícula gratuita (beca de matrícula) y, según la renta y el rendimiento, cuantías fijas como la ligada a la renta (1.700 €) y a la residencia (2.700 €) más una cuantía variable. Puedes estimarlo con el simulador de becas.",
+    },
+    {
+      q: "¿Cuánto cuesta estudiar una carrera en España?",
+      a: "En una universidad pública, la matrícula de un curso de grado cuesta normalmente entre 600 y 2.000 € según la comunidad autónoma y la rama, y algunas comunidades bonifican la matrícula de las asignaturas aprobadas. En una privada, entre 6.000 y más de 20.000 € al año. Si estudias fuera de casa, el alojamiento suele ser el gasto mayor.",
+    },
+    {
+      q: "¿Puedo compatibilizar varias becas?",
+      a: "La beca del Ministerio es compatible con algunas ayudas autonómicas, de la universidad o de fundaciones, pero no con otras ayudas para la misma finalidad. Lee las bases de cada convocatoria antes de aceptarlas.",
+    },
+    {
+      q: "¿Tengo que devolver la beca si suspendo?",
+      a: "En la beca del Ministerio, si no te presentas a exámenes de al menos el 50 % de los créditos, o no apruebas un porcentaje mínimo según la rama, puedes tener que reintegrar parte o la totalidad de la ayuda. Consulta los requisitos académicos de tu convocatoria.",
+    },
+    {
+      q: "¿Qué otras ayudas existen?",
+      a: "Becas autonómicas, de las propias universidades (comedor, residencia, colaboración), de excelencia académica, de fundaciones y empresas, las becas Erasmus+ para estudiar en el extranjero y las ayudas para alumnado con necesidades específicas de apoyo educativo.",
+    },
   ]}
 >
   <BecaCoberturaTool client:load />

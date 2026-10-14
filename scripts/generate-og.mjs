@@ -87,7 +87,7 @@ function buildSvg(nombre, desc) {
 
   <!-- Pie -->
   <rect x="80" y="536" width="150" height="4" fill="${ACCENT_LIGHT}"/>
-  <text x="80" y="586" font-family="${FONT}" font-size="24" fill="${ACCENT_LIGHT}">Gratis · Sin registro · Resultados al instante</text>
+  <text x="80" y="586" font-family="${FONT}" font-size="24" fill="${ACCENT_LIGHT}">Gratis · Sin registro · Hecho para España</text>
 </svg>`;
 }
 
@@ -116,7 +116,7 @@ for (const { slug, name, desc } of entries) {
 
 // Imagen por defecto (home, categorías, blog y cualquier página sin OG propia)
 await render(
-  buildSvg('Calculadoras online gratuitas', `${entries.length} calculadoras de matemáticas, ciencias, conversión, hogar, trabajo y más.`),
+  buildSvg('Calculadoras online gratis para España', `${entries.length} calculadoras: IRPF y nómina, IVA, hipoteca, factura de la luz, notas de la PAU, conversores y más.`),
   join(outDir, 'default.jpg'),
 );
 

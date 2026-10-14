@@ -4,14 +4,35 @@ import PagaExtraTool from '@/components/tools/PagaExtraTool';
 ---
 
 <CalcLayout slug="paga-extra"
-  whatIs="Esta calculadora reparte un salario bruto anual entre el número de pagas que recibes al año (12, 14, 15 o 16) para mostrar el importe de cada paga. También indica cuántas son pagas extraordinarias y cuánto cobrarías al mes si decidieras prorratearlas en doce mensualidades en lugar de recibirlas en momentos concretos del año."
-  whyUse="Muchos convenios establecen pagas extraordinarias (habitualmente en verano y Navidad), y entender cómo se reparte el salario anual ayuda a planificar las finanzas personales. Esta herramienta es útil para comparar ofertas con distinto número de pagas, para saber cuánto ingresarás cada mes y cuánto en las extras, y para decidir si te conviene cobrar las pagas prorrateadas o concentradas."
+  answer={"Para calcular cada paga divide el salario bruto anual entre el número de pagas: 21.000 € en 14 pagas son 1.500 € por paga, y en 12 pagas (con las extras prorrateadas), 1.750 € al mes. El total anual es el mismo; solo cambia el reparto."}
+  howTo={[
+    "Introduce tu salario bruto anual.",
+    "Elige el número de pagas (12, 14, 15 o 16).",
+    "Pulsa calcular para ver el importe de cada paga y cuánto cobrarías al mes con las extras prorrateadas."
+  ]}
+  whatIs={"La calculadora de pagas extra reparte el salario bruto anual entre el número de pagas que fija tu contrato o convenio, y muestra el importe de cada paga ordinaria y extraordinaria y el importe mensual con las pagas prorrateadas."}
+  whyUse={"Te ayuda a comparar ofertas de empleo con distinto número de pagas, a organizar el presupuesto mensual y a decidir si te conviene cobrar las pagas extra prorrateadas."}
   faqs={[
-    { q: '¿Qué son las pagas extraordinarias?', a: 'Son retribuciones adicionales que se cobran en momentos concretos del año, normalmente en verano y en Navidad, además de las doce mensualidades ordinarias. Un salario con 14 pagas significa 12 mensualidades más 2 pagas extra. El salario anual total es el mismo se reparta como se reparta; lo que cambia es cómo se distribuye a lo largo del año.' },
-    { q: '¿Cómo se calcula el importe de cada paga?', a: 'Se divide el salario bruto anual entre el número total de pagas. Por ejemplo, 21.000 anuales en 14 pagas son 21.000 / 14 = 1.500 por paga (tanto las 12 ordinarias como las 2 extras). Si fueran 12 pagas, cada mensualidad sería 21.000 / 12 = 1.750. El total del año es idéntico en ambos casos.' },
-    { q: '¿Qué significa prorratear las pagas extra?', a: 'Prorratear es repartir el importe de las pagas extraordinarias entre las doce mensualidades, de modo que cobras algo más cada mes y no recibes pagas separadas en verano y Navidad. Con un sueldo de 21.000, prorrateado serían 1.750 al mes los doce meses, en lugar de 1.500 en 14 pagas. El total anual no cambia.' },
-    { q: '¿Es mejor cobrar las pagas prorrateadas o no?', a: 'Es una cuestión de preferencia y disciplina financiera. Prorratearlas da más ingreso mensual constante, cómodo para muchos presupuestos. Cobrarlas aparte funciona como un "ahorro forzoso" que llega en momentos de más gasto (vacaciones, Navidad). Económicamente el total es el mismo; depende de cómo prefieras organizar tu dinero a lo largo del año.' },
-    { q: '¿Las pagas extra tributan igual que las mensuales?', a: 'Sí, forman parte del salario y tributan y cotizan igual que el resto de la retribución anual. Lo que sí puede variar es la retención aplicada en el momento del cobro. El salario bruto anual es la referencia para calcular impuestos, con independencia de si se reparte en 12, 14 o más pagas a lo largo del año.' },
+    {
+      q: "¿Cuántas pagas extra hay en España?",
+      a: "El Estatuto de los Trabajadores (artículo 31) reconoce al menos dos pagas extraordinarias al año, una con ocasión de la Navidad y otra en el mes que fije el convenio (normalmente en junio o julio). Algunos convenios añaden una tercera paga, por ejemplo de beneficios, hasta llegar a 15 o 16 pagas.",
+    },
+    {
+      q: "¿Se pueden prorratear las pagas extra?",
+      a: "Sí, si lo permite el convenio colectivo: el importe de las pagas extra se reparte entre las 12 mensualidades. El salario anual no cambia, pero cobras más cada mes y no hay pagas en verano y Navidad.",
+    },
+    {
+      q: "¿Cuándo se cobra la paga de Navidad y la de verano?",
+      a: "La de Navidad, normalmente antes del 20-22 de diciembre, y la de verano en junio o julio, según el convenio. Cada paga se genera durante un periodo (lo habitual es de enero a junio y de julio a diciembre, o anual), lo que importa si dejas la empresa antes de cobrarla: la parte generada se incluye en el finiquito.",
+    },
+    {
+      q: "¿Cuánto se cobra con el salario mínimo?",
+      a: "En 2026 el salario mínimo interprofesional es de 1.221 € brutos al mes en 14 pagas, es decir, 17.094 € al año. Si se prorratean las pagas extra, son 1.424,50 € brutos al mes en 12 pagas.",
+    },
+    {
+      q: "¿Las pagas extra tienen más retención de IRPF?",
+      a: "No. La retención se calcula sobre el salario anual y se aplica el mismo tipo a todas las pagas. Las cotizaciones a la Seguridad Social, en cambio, se calculan cada mes incluyendo la parte proporcional de las pagas extra, por eso en el mes de la paga extra no se cotiza el doble.",
+    },
   ]}
 >
   <PagaExtraTool client:load />

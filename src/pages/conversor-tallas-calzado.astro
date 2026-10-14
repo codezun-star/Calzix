@@ -4,14 +4,35 @@ import ConversorTallasCalzadoTool from '@/components/tools/ConversorTallasCalzad
 ---
 
 <CalcLayout slug="conversor-tallas-calzado"
-  whatIs="Este conversor de tallas de calzado muestra la equivalencia entre los sistemas europeo (EU), estadounidense de hombre y de mujer (US) y británico (UK), junto con la longitud del pie en centímetros. Cada país usa una escala distinta para numerar el calzado, por lo que una misma talla recibe números diferentes. Selecciona tu talla europea y obtén su correspondencia aproximada en los demás sistemas."
-  whyUse="Comprar calzado en tiendas online internacionales obliga a entender las equivalencias de tallas: una talla 40 europea no es una 40 estadounidense. Este conversor evita errores de compra al traducir entre sistemas, algo muy útil al pedir zapatillas o zapatos de marcas de EE.UU. o Reino Unido. La longitud en centímetros sirve además como referencia universal para acertar con la talla."
+  answer={"En España se usa la talla europea (EU) de calzado. Una talla 40 EU equivale aproximadamente a una 7 de hombre en EE. UU. y a una 6,5 en Reino Unido; una 38 EU, a una 7,5 de mujer en EE. UU. Las equivalencias varían ligeramente según la marca."}
+  howTo={[
+    "Elige tu talla europea (EU).",
+    "Consulta su equivalencia en Reino Unido, EE. UU. (hombre y mujer) y la longitud del pie en centímetros.",
+    "Comprueba la guía de tallas de la marca antes de comprar."
+  ]}
+  whatIs={"El conversor de tallas de calzado convierte la talla europea que se usa en España a las tallas de Reino Unido, Estados Unidos (hombre y mujer) y a la longitud del pie en centímetros."}
+  whyUse={"Te ayuda a comprar zapatillas y zapatos en tiendas online extranjeras, en viajes o de marcas que solo indican tallas americanas o británicas."}
   faqs={[
-    { q: '¿Cómo sé qué talla soy en centímetros?', a: 'Mide la longitud de tu pie desde el talón hasta la punta del dedo más largo, de pie y sobre una hoja de papel, preferiblemente por la tarde (los pies se hinchan a lo largo del día). Esa longitud en centímetros es la referencia más fiable para elegir talla, porque es independiente del sistema de numeración de cada país.' },
-    { q: '¿Por qué las tallas de hombre y mujer son distintas en EE.UU.?', a: 'En el sistema estadounidense, las tallas de mujer son aproximadamente 1,5 números más altas que las de hombre para el mismo largo de pie. Así, un pie que en hombre es US 7 equivale a US 8,5 en mujer. El sistema europeo (EU), en cambio, usa la misma numeración para ambos sexos, basada directamente en la longitud del pie.' },
-    { q: '¿Las equivalencias son exactas?', a: 'Son aproximadas. Cada marca aplica su propio patrón (horma), por lo que una misma talla puede calzar distinto según el fabricante. Estas tablas sirven como guía general, pero conviene consultar la guía de tallas específica de la marca y, si es posible, la longitud del pie en centímetros que indica el fabricante para afinar la elección.' },
-    { q: '¿Qué hago si estoy entre dos tallas?', a: 'Si tu pie queda entre dos tallas, lo habitual es elegir la mayor, sobre todo en calzado cerrado o deportivo, para dejar algo de holgura en la punta. También influye el tipo de calcetín y la anchura del pie. Ante la duda, la talla más grande suele ser más cómoda que una demasiado ajustada, que puede causar rozaduras.' },
-    { q: '¿La talla UK es igual que la US?', a: 'No. La talla británica (UK) es aproximadamente un número menor que la estadounidense de hombre: una US 8 de hombre equivale más o menos a una UK 7. Ambos sistemas parten de una escala parecida pero con un punto de inicio distinto. Por eso es importante fijarse bien en si una tienda usa tallas US o UK al comprar.' },
+    {
+      q: "¿Qué sistema de tallas se usa en España?",
+      a: "El europeo (EU), basado en el «punto de París», en el que cada talla equivale a dos tercios de centímetro de la horma. Va normalmente del 35 al 47 en adultos.",
+    },
+    {
+      q: "¿Cómo mido mi pie para saber mi talla?",
+      a: "De pie, apoya el talón contra la pared sobre un papel, marca el dedo más largo y mide la distancia en centímetros. Hazlo por la tarde, cuando el pie está más hinchado, y mide los dos pies: usa el más largo.",
+    },
+    {
+      q: "¿Por qué no coinciden las tallas entre marcas?",
+      a: "Porque cada fabricante usa sus propias hormas. Por eso conviene consultar la guía de tallas de cada marca, que suele indicar la longitud del pie en centímetros para cada talla.",
+    },
+    {
+      q: "¿Puedo devolver un calzado comprado online si no me vale?",
+      a: "Sí. En las compras online en tiendas de la Unión Europea tienes 14 días naturales para desistir sin dar explicaciones. Revisa quién paga los gastos de devolución.",
+    },
+    {
+      q: "¿Y las tallas infantiles?",
+      a: "En los niños también se usa la talla europea, desde la 16-17 de los bebés. Su pie crece rápido: comprueba la talla cada pocos meses y deja un centímetro de holgura.",
+    },
   ]}
 >
   <ConversorTallasCalzadoTool client:load />

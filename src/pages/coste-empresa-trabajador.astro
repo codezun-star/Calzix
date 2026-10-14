@@ -4,14 +4,35 @@ import CosteEmpresaTrabajadorTool from '@/components/tools/CosteEmpresaTrabajado
 ---
 
 <CalcLayout slug="coste-empresa-trabajador"
-  whatIs="Esta calculadora estima cuánto le cuesta realmente a una empresa un trabajador, sumando a su salario bruto anual las cotizaciones a la seguridad social que paga la empresa (no las que paga el empleado). Ese porcentaje suele rondar el 28-32 % del bruto. El resultado es el coste empresarial total anual y mensual, una cifra siempre superior al salario que figura en el contrato."
-  whyUse="Saber el coste real de un empleado es esencial para presupuestar contrataciones, calcular el precio de los servicios que vende la empresa y entender la diferencia entre lo que cuesta un trabajador y lo que este cobra. Es útil para emprendedores, responsables de recursos humanos y autónomos que valoran contratar a alguien. También ayuda al empleado a comprender el valor total que genera su puesto."
+  answer={"Un trabajador cuesta a la empresa su salario bruto más alrededor de un 32 % de cotizaciones sociales en 2026: contingencias comunes 23,60 %, desempleo 5,50 % (6,70 % si es temporal), FOGASA 0,20 %, formación 0,60 %, MEI 0,75 % y accidentes de trabajo según la actividad. Un sueldo de 24.000 € brutos cuesta unos 31.700 € al año."}
+  howTo={[
+    "Introduce el salario bruto anual del trabajador.",
+    "Elige el tipo de contrato (indefinido o temporal).",
+    "Indica el tipo de accidentes de trabajo y enfermedades profesionales de la actividad y pulsa calcular."
+  ]}
+  whatIs={"La calculadora de coste de un trabajador para la empresa suma al salario bruto las cotizaciones a la Seguridad Social a cargo del empleador con los tipos de 2026, desglosadas por concepto, y calcula el coste total anual y mensual."}
+  whyUse={"Es imprescindible para autónomos y pymes que van a contratar, para presupuestar una plantilla, fijar precios que cubran los costes de personal o comparar con la subcontratación."}
   faqs={[
-    { q: '¿Qué incluye el coste de un trabajador para la empresa?', a: 'Incluye el salario bruto del empleado más las cotizaciones sociales a cargo de la empresa (contingencias comunes, desempleo, formación, accidentes…). A veces se añaden otros costes como seguros, dietas, formación o equipamiento. La cifra clave es que el coste empresarial es siempre bastante mayor que el salario bruto que aparece en la nómina del trabajador.' },
-    { q: '¿Cuánto cotiza la empresa por un trabajador?', a: 'El porcentaje varía según el país y el tipo de contrato, pero suele situarse en torno al 28-32 % del salario bruto en muchos sistemas. Por ejemplo, con un 30 %, un empleado que cobra 24.000 brutos al año le cuesta a la empresa 24.000 × 1,30 = 31.200. Ajusta el porcentaje en la calculadora según la normativa de tu país.' },
-    { q: '¿Por qué el coste es mayor que el salario bruto?', a: 'Porque, además del salario que recibe el trabajador, la empresa paga por su cuenta unas cotizaciones sociales que no salen de la nómina del empleado, sino que asume directamente. Por eso un sueldo bruto de 24.000 puede costar más de 31.000 a la empresa. Esta diferencia es clave para entender por qué contratar tiene un coste superior al salario pactado.' },
-    { q: '¿Qué diferencia hay entre salario bruto, neto y coste empresa?', a: 'Son tres cifras distintas de mayor a menor: el coste de empresa (lo que paga el empleador en total), el salario bruto (lo que se pacta en contrato, antes de descuentos del trabajador) y el salario neto (lo que el empleado recibe en su cuenta tras restar su parte de cotizaciones e impuestos). Esta calculadora obtiene la primera a partir de la segunda.' },
-    { q: '¿Para qué sirve conocer el coste total?', a: 'Para fijar correctamente el precio de venta de productos y servicios (que debe cubrir el coste real de la plantilla), para presupuestar una nueva contratación sabiendo el desembolso total, y para valorar inversiones en automatización o externalización. Sin conocer el coste empresa, es fácil infravalorar el gasto real de personal y poner precios que no cubren costes.' },
+    {
+      q: "¿Cuánto cotiza la empresa por un trabajador en 2026?",
+      a: "Por contingencias comunes, el 23,60 %; por desempleo, el 5,50 % en contratos indefinidos y el 6,70 % en temporales; por FOGASA, el 0,20 %; por formación profesional, el 0,60 %; y por el Mecanismo de Equidad Intergeneracional (MEI), el 0,75 %. Además paga la tarifa de accidentes de trabajo y enfermedades profesionales, que depende de la actividad (alrededor del 1,5 % en oficinas).",
+    },
+    {
+      q: "¿Hay un límite de cotización?",
+      a: "Sí. Las cotizaciones se calculan sobre la base de cotización, que en 2026 tiene un máximo de 5.101,20 € al mes. Por la parte del salario que supera la base máxima se aplica la cotización de solidaridad, introducida en 2025, con tipos crecientes en los próximos años.",
+    },
+    {
+      q: "¿Qué otros costes tiene un trabajador?",
+      a: "Además del salario y las cotizaciones: formación, equipos, prevención de riesgos laborales, seguros del convenio, dietas y desplazamientos, la parte de la indemnización que puede generar una extinción del contrato y los días de vacaciones y festivos retribuidos.",
+    },
+    {
+      q: "¿Hay bonificaciones a la contratación?",
+      a: "Sí. Existen bonificaciones y reducciones en las cotizaciones para la contratación de personas desempleadas de larga duración, con discapacidad, víctimas de violencia de género o jóvenes con garantía juvenil, entre otros colectivos, según la normativa vigente del SEPE. Consúltalas antes de contratar.",
+    },
+    {
+      q: "¿Por qué hay tanta diferencia entre el coste y el neto?",
+      a: "Porque al coste de la empresa se restan sus cotizaciones (unos 7.700 € en un sueldo de 24.000 €), y al bruto se restan las cotizaciones del trabajador (6,50 %) y la retención del IRPF. Un sueldo de 24.000 € brutos que cuesta 31.700 € a la empresa deja al trabajador unos 19.200 € netos.",
+    },
   ]}
 >
   <CosteEmpresaTrabajadorTool client:load />

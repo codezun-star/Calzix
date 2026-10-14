@@ -4,15 +4,35 @@ import FraccionesTool from '@/components/tools/FraccionesTool';
 ---
 
 <CalcLayout slug="calculadora-fracciones"
-  whatIs="Una calculadora de fracciones resuelve operaciones entre dos fracciones —suma, resta, multiplicación y división— y entrega el resultado ya simplificado a su mínima expresión, además de su equivalente decimal. Funciona aplicando las reglas clásicas: para sumar o restar busca común denominador, para multiplicar opera numeradores y denominadores en línea, y para dividir multiplica por la fracción inversa. Después reduce el resultado dividiendo numerador y denominador entre su máximo común divisor."
-  whyUse="Operar con fracciones a mano es una de las tareas donde más errores se cometen, sobre todo al buscar el común denominador o al simplificar. Esta herramienta es útil para estudiantes de primaria y secundaria que revisan su tarea, para recetas de cocina que hay que escalar, para repartos proporcionales y para cualquier cálculo donde necesites precisión exacta en lugar de un decimal redondeado. El resultado simplificado te ahorra el paso final que muchas veces se olvida."
+  answer={"Para operar con fracciones: suma y resta con común denominador (1/4 + 1/6 = 3/12 + 2/12 = 5/12), multiplica numeradores y denominadores (2/3 × 4/5 = 8/15) y divide multiplicando por la inversa (3/4 ÷ 2/5 = 15/8). La calculadora da el resultado simplificado."}
+  howTo={[
+    "Escribe el numerador y el denominador de la primera fracción.",
+    "Elige la operación: suma, resta, multiplicación o división.",
+    "Escribe la segunda fracción y pulsa calcular para ver el resultado simplificado."
+  ]}
+  whatIs={"La calculadora de fracciones suma, resta, multiplica y divide fracciones y muestra el resultado simplificado al máximo."}
+  whyUse={"Sirve para comprobar los ejercicios de fracciones de Primaria y la ESO, ayudar con los deberes y resolver cálculos cotidianos con fracciones en recetas o repartos."}
   faqs={[
-    { q: '¿Cómo se suman dos fracciones con distinto denominador?', a: 'Se busca un denominador común (el mínimo común múltiplo de los denominadores), se convierten ambas fracciones a ese denominador y se suman los numeradores. Ejemplo: 1/4 + 1/6. El MCM de 4 y 6 es 12, así que 1/4 = 3/12 y 1/6 = 2/12; la suma es 5/12. La calculadora hace este proceso automáticamente y entrega el resultado ya simplificado.' },
-    { q: '¿Cómo se multiplican y dividen fracciones?', a: 'Multiplicar es directo: numerador por numerador y denominador por denominador. Ejemplo: 2/3 × 4/5 = 8/15. Para dividir, se multiplica la primera fracción por la inversa de la segunda (se da vuelta la segunda). Ejemplo: 2/3 ÷ 4/5 = 2/3 × 5/4 = 10/12 = 5/6 simplificado.' },
-    { q: '¿Qué significa simplificar una fracción?', a: 'Simplificar es reducir la fracción a su mínima expresión dividiendo numerador y denominador entre su máximo común divisor (MCD). Ejemplo: 8/12 tiene MCD 4, así que 8/12 = 2/3. Una fracción simplificada representa el mismo valor pero con los números más pequeños posibles. Si el MCD es 1, la fracción ya está simplificada.' },
-    { q: '¿Puedo usar números negativos en las fracciones?', a: 'Sí. Puedes introducir un numerador o denominador negativo y la calculadora respeta el signo en todas las operaciones, mostrando el resultado con el signo correcto. Lo único que no se permite es un denominador igual a cero, porque una fracción con denominador cero no está definida matemáticamente.' },
-    { q: '¿La calculadora convierte la fracción a decimal?', a: 'Sí. Junto al resultado en forma de fracción simplificada se muestra su valor decimal, redondeado a cuatro cifras. Por ejemplo, 5/8 se muestra también como 0,625. Esto es útil cuando necesitas el valor para una medida, un porcentaje o para comparar dos fracciones rápidamente.' },
-    { q: '¿Qué pasa si el resultado es un número entero?', a: 'Cuando el denominador simplificado es 1, el resultado es un número entero y se muestra solo ese número, sin la barra de fracción. Por ejemplo, 3/4 + 1/4 = 4/4 = 1. La calculadora detecta automáticamente estos casos para no mostrar fracciones como 5/1.' },
+    {
+      q: "¿Cómo se suman fracciones con distinto denominador?",
+      a: "Se busca el mínimo común múltiplo de los denominadores, se convierte cada fracción a ese denominador y se suman los numeradores. 1/4 + 1/6: MCM = 12, 3/12 + 2/12 = 5/12. Forma parte del currículo de Matemáticas de la ESO y el Bachillerato establecido por la LOMLOE.",
+    },
+    {
+      q: "¿Cómo se simplifica una fracción?",
+      a: "Dividiendo numerador y denominador entre su máximo común divisor: 18/24, con MCD 6, queda 3/4.",
+    },
+    {
+      q: "¿Cómo se dividen fracciones?",
+      a: "Multiplicando la primera por la inversa de la segunda: 3/4 ÷ 2/5 = 3/4 × 5/2 = 15/8, o «en cruz».",
+    },
+    {
+      q: "¿Qué es un número mixto?",
+      a: "Una forma de escribir una fracción impropia (numerador mayor que el denominador) como un entero más una fracción: 15/8 = 1 y 7/8.",
+    },
+    {
+      q: "¿Cómo paso una fracción a decimal o porcentaje?",
+      a: "Divide el numerador entre el denominador: 3/4 = 0,75, es decir, el 75 %. Algunas fracciones dan decimales periódicos, como 1/3 = 0,333…",
+    },
   ]}
 >
   <FraccionesTool client:load />

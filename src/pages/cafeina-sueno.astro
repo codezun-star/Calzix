@@ -4,14 +4,35 @@ import CafeinaSuenoTool from '@/components/tools/CafeinaSuenoTool';
 ---
 
 <CalcLayout slug="cafeina-sueno"
-  whatIs="Esta calculadora te indica a qué hora deberías tomar tu última bebida con cafeína (café, té, refrescos de cola, energéticas) para que no interfiera con tu descanso. Introduces la hora a la que quieres dormir y el margen de horas sin cafeína que prefieres (por defecto 6, una recomendación habitual) y la herramienta calcula la hora límite para tu último consumo de cafeína del día."
-  whyUse="La cafeína es un estimulante que permanece en el cuerpo muchas horas y puede dificultar conciliar el sueño y restar calidad al descanso, aunque no lo notes conscientemente. Saber cuándo dejar de consumirla ayuda a dormir mejor sin renunciar al café del día. Esta herramienta es útil para quien tiene problemas de sueño, trabaja a turnos o simplemente quiere optimizar su descanso cuidando el consumo de cafeína."
+  answer={"La cafeína tiene una vida media de unas 5 horas, por eso se recomienda dejar entre 6 y 8 horas entre el último café y la hora de dormir: si te acuestas a las 23:00, toma el último café antes de las 17:00. La EFSA considera seguros para adultos hasta 400 mg de cafeína al día."}
+  howTo={[
+    "Introduce la hora a la que sueles dormir.",
+    "Ajusta las horas de margen sin cafeína (6 por defecto).",
+    "Pulsa calcular para ver la hora límite para tu último café."
+  ]}
+  whatIs={"La calculadora de cafeína y sueño te dice a qué hora tomar el último café, té o refresco con cafeína para que no afecte a tu descanso, según tu hora de dormir."}
+  whyUse={"Te ayuda a dormir mejor sin renunciar al café, especialmente si tomas café después de comer o refrescos y bebidas energéticas por la tarde."}
   faqs={[
-    { q: '¿Cuánto tiempo antes de dormir debo dejar la cafeína?', a: 'La recomendación más extendida es evitar la cafeína al menos 6 horas antes de acostarse, aunque las personas más sensibles pueden necesitar 8 horas o más. La calculadora usa 6 horas por defecto, pero puedes ajustar el margen según tu tolerancia. Si te cuesta dormir, prueba a adelantar la hora de tu último café y observa si mejora.' },
-    { q: '¿Cuánto dura la cafeína en el cuerpo?', a: 'La cafeína tiene una vida media de unas 5 a 6 horas, lo que significa que pasado ese tiempo aún queda la mitad en tu organismo. Por eso un café de media tarde puede seguir afectando al sueño por la noche. La eliminación completa lleva muchas horas y varía según el metabolismo, la edad, el embarazo y otros factores individuales.' },
-    { q: '¿Qué bebidas y alimentos contienen cafeína?', a: 'Además del café, contienen cafeína el té (incluido el verde), los refrescos de cola, las bebidas energéticas, el chocolate (sobre todo el negro), el mate y algunos medicamentos y suplementos. Conviene tenerlos todos en cuenta al calcular tu corte de cafeína, ya que su efecto se suma. Una infusión o un chocolate a última hora también pueden afectar al sueño.' },
-    { q: '¿Por qué a veces duermo aunque tome café?', a: 'La sensibilidad a la cafeína varía mucho entre personas por factores genéticos y de hábito. Algunas la metabolizan rápido y pueden dormir tras un café; otras notan sus efectos durante horas. Además, aunque consigas dormirte, la cafeína puede reducir la calidad del sueño profundo sin que lo percibas, dejándote menos descansado al día siguiente.' },
-    { q: '¿Cómo mejorar el sueño además de controlar la cafeína?', a: 'Algunas pautas eficaces: mantener horarios regulares de sueño, evitar pantallas antes de dormir, no cenar copioso ni tomar alcohol tarde, hacer ejercicio (pero no justo antes de acostarse), y crear un ambiente oscuro, silencioso y fresco. Controlar la cafeína es una pieza importante, pero combinarla con una buena higiene del sueño da los mejores resultados.' },
+    {
+      q: "¿Cuánta cafeína tiene cada bebida?",
+      a: "Como referencia: un café expreso, unos 60-80 mg; una taza de café de filtro, 80-120 mg; un café con leche, 60-100 mg; una lata de refresco de cola de 33 cl, unos 30-35 mg; una lata de bebida energética de 250 ml, unos 80 mg; y una taza de té, 30-50 mg.",
+    },
+    {
+      q: "¿Cuánta cafeína es segura?",
+      a: "Según la Autoridad Europea de Seguridad Alimentaria (EFSA), hasta 400 mg al día para adultos sanos (unos 4-5 cafés) y hasta 200 mg de una vez. En el embarazo y la lactancia, hasta 200 mg al día. En niños y adolescentes, unos 3 mg por kilo de peso al día.",
+    },
+    {
+      q: "¿Cuánto tarda en eliminarse la cafeína?",
+      a: "Su vida media es de unas 3 a 7 horas según la persona: a las 5 horas aún queda la mitad de la cafeína en sangre. El tabaco acelera su eliminación y algunos anticonceptivos y el embarazo la ralentizan.",
+    },
+    {
+      q: "¿Afecta la cafeína al sueño aunque me duerma?",
+      a: "Sí. Aunque consigas dormirte, la cafeína puede reducir el sueño profundo y hacer que te despiertes más veces. Si duermes mal, prueba a eliminar la cafeína a partir del mediodía durante unas semanas.",
+    },
+    {
+      q: "¿El café descafeinado tiene cafeína?",
+      a: "Muy poca: unos 2-5 mg por taza, insuficiente para afectar al sueño en la mayoría de personas.",
+    },
   ]}
 >
   <CafeinaSuenoTool client:load />

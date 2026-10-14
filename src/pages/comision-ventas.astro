@@ -4,14 +4,35 @@ import ComisionVentasTool from '@/components/tools/ComisionVentasTool';
 ---
 
 <CalcLayout slug="comision-ventas"
-  whatIs="Esta calculadora obtiene la comisión que corresponde a un vendedor a partir de las ventas del periodo y el porcentaje de comisión pactado, y suma además un salario base fijo si lo hay. La comisión se calcula multiplicando las ventas por el porcentaje y dividiendo entre cien, y el total a cobrar es la suma de esa comisión más la parte fija del sueldo."
-  whyUse="Las comisiones son la forma más habitual de retribuir al personal de ventas, y tanto el comercial como la empresa necesitan calcularlas con claridad. Esta herramienta es útil para vendedores que quieren saber cuánto van a cobrar, para autónomos que trabajan a comisión y para pequeños negocios que diseñan la retribución de su equipo comercial. Sumar la parte fija da la cifra real de la nómina del mes."
+  answer={"La comisión de ventas es el importe vendido por el porcentaje pactado: con 15.000 € de ventas y una comisión del 5 %, cobras 750 €, que se suman a tu salario fijo. Las comisiones forman parte del salario y cotizan y tributan en el IRPF como el resto de la nómina."}
+  howTo={[
+    "Introduce las ventas del periodo.",
+    "Escribe el porcentaje de comisión.",
+    "Añade el salario fijo, si lo tienes, y pulsa calcular para ver la comisión y la retribución total."
+  ]}
+  whatIs={"La calculadora de comisiones de ventas calcula la comisión que corresponde a unas ventas según el porcentaje pactado y la suma al salario base fijo para obtener la retribución total del periodo."}
+  whyUse={"Sirve a comerciales, agentes y responsables de ventas para comprobar su nómina, simular objetivos y diseñar planes de incentivos."}
   faqs={[
-    { q: '¿Cómo se calcula una comisión de ventas?', a: 'Se multiplica el importe de las ventas por el porcentaje de comisión y se divide entre cien. Por ejemplo, una comisión del 5 % sobre 15.000 de ventas es 15.000 × 5 / 100 = 750. Si además hay un salario base, se suma a esa cantidad para obtener el total a cobrar en el periodo.' },
-    { q: '¿Qué es un esquema de base más comisión?', a: 'Es un modelo retributivo muy común que combina un salario fijo garantizado (la base) con una parte variable que depende de las ventas (la comisión). Da seguridad al vendedor con la base y le incentiva a vender más con la parte variable. Esta calculadora suma ambas para mostrarte el total que percibirás en el periodo.' },
-    { q: '¿Qué porcentaje de comisión es habitual?', a: 'Varía mucho según el sector y el margen del producto: en productos de gran consumo o alto volumen las comisiones suelen ser bajas (1-5 %), mientras que en servicios, seguros o productos de alto margen pueden llegar al 10-20 % o más. Lo importante es que el porcentaje sea sostenible para la empresa y motivador para el vendedor.' },
-    { q: '¿La comisión se calcula sobre las ventas o sobre el beneficio?', a: 'Depende de lo pactado. Lo más sencillo y frecuente es calcularla sobre el importe de las ventas (facturación), que es lo que hace esta calculadora. Algunas empresas la calculan sobre el margen o el beneficio para alinear al vendedor con la rentabilidad, evitando que venda con descuentos excesivos solo por facturar más.' },
-    { q: '¿Las comisiones cotizan e tributan?', a: 'Sí. Las comisiones forman parte del salario a todos los efectos: cotizan a la seguridad social y tributan en el impuesto sobre la renta igual que el resto de la retribución. La cifra que da esta calculadora es la comisión bruta; el importe neto que se recibe será algo menor tras aplicar las retenciones correspondientes.' },
+    {
+      q: "¿Las comisiones forman parte del salario?",
+      a: "Sí. Las comisiones son salario a todos los efectos: cotizan a la Seguridad Social, tributan en el IRPF, se tienen en cuenta para calcular las vacaciones retribuidas (según la jurisprudencia, la media de las comisiones habituales) y para la indemnización por despido.",
+    },
+    {
+      q: "¿Las comisiones se calculan con o sin IVA?",
+      a: "Normalmente sobre la base imponible, sin IVA, salvo que el contrato diga otra cosa. Revisa también si se calculan sobre ventas facturadas o cobradas, y qué ocurre con las devoluciones y los impagados.",
+    },
+    {
+      q: "¿Qué es un agente comercial?",
+      a: "Es un profesional independiente (autónomo) que promueve ventas por cuenta de una empresa a cambio de una comisión, regulado por la Ley 12/1992 del contrato de agencia. Factura sus comisiones con IVA y, al terminar el contrato, puede tener derecho a una indemnización por clientela.",
+    },
+    {
+      q: "¿Cómo funcionan las comisiones escalonadas?",
+      a: "El porcentaje aumenta al superar ciertos tramos de ventas: por ejemplo, un 3 % hasta 10.000 € y un 5 % por encima. Se calcula cada tramo por separado y se suman. Revisa en tu contrato si el porcentaje mayor se aplica solo al exceso o a todas las ventas.",
+    },
+    {
+      q: "¿Se pagan comisiones durante las vacaciones?",
+      a: "Las vacaciones deben retribuirse con la remuneración normal o media, lo que incluye las comisiones habituales, según el Tribunal Supremo y el Tribunal de Justicia de la Unión Europea. Por eso muchas empresas pagan en vacaciones la media de las comisiones de los meses anteriores.",
+    },
   ]}
 >
   <ComisionVentasTool client:load />

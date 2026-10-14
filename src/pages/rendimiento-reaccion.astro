@@ -4,14 +4,35 @@ import RendimientoReaccionTool from '@/components/tools/RendimientoReaccionTool'
 ---
 
 <CalcLayout slug="rendimiento-reaccion"
-  whatIs="El rendimiento de una reacción química es el porcentaje del producto que realmente se obtiene respecto a la cantidad máxima que predice la teoría. Se calcula dividiendo el rendimiento real entre el rendimiento teórico y multiplicando por cien: % = (real / teórico) × 100. Esta calculadora obtiene ese porcentaje y además la cantidad de producto que se ha perdido por reacciones incompletas, impurezas o pérdidas en el proceso."
-  whyUse="En la práctica, ninguna reacción química produce el 100 % de lo que predice la estequiometría: siempre hay pérdidas. Calcular el rendimiento permite evaluar la eficiencia de un proceso, comparar métodos de síntesis y controlar la calidad en la industria química y farmacéutica. Es un cálculo habitual en los laboratorios y en los problemas de química de bachillerato y universidad, y esta herramienta lo resuelve al instante."
+  answer={"El rendimiento de una reacción es el producto obtenido realmente dividido entre el teórico, por 100: si en teoría deberías obtener 10 g y obtienes 8,2 g, el rendimiento es del 82 %."}
+  howTo={[
+    "Introduce la cantidad de producto obtenida realmente.",
+    "Introduce la cantidad teórica calculada por estequiometría (en las mismas unidades).",
+    "Pulsa calcular rendimiento para obtener el porcentaje."
+  ]}
+  whatIs={"La calculadora de rendimiento de una reacción química calcula el porcentaje de producto que se obtiene realmente frente al máximo teórico."}
+  whyUse={"Sirve para los problemas de estequiometría de Física y Química de 1.º de Bachillerato y Química de 2.º, y para evaluar los resultados de las prácticas de laboratorio."}
   faqs={[
-    { q: '¿Cómo se calcula el rendimiento de una reacción?', a: 'Se divide el rendimiento real (lo que realmente obtienes) entre el rendimiento teórico (lo que deberías obtener según la estequiometría) y se multiplica por 100. Por ejemplo, si esperabas 10 g de producto y obtuviste 8,2 g, el rendimiento es (8,2 / 10) × 100 = 82 %. Ambas cantidades deben estar en la misma unidad, normalmente gramos o moles.' },
-    { q: '¿Qué es el rendimiento teórico?', a: 'Es la cantidad máxima de producto que se podría obtener si la reacción fuera perfecta y todo el reactivo limitante se convirtiera en producto. Se calcula a partir de la ecuación química balanceada y las cantidades de reactivos. Es un valor ideal que sirve de referencia: en la realidad, el rendimiento real siempre es menor o, como mucho, igual.' },
-    { q: '¿Por qué el rendimiento casi nunca llega al 100 %?', a: 'Por varias razones: reacciones secundarias que consumen reactivos en productos no deseados, reacciones que no llegan a completarse (reversibles), pérdidas de producto al filtrar, transferir o purificar, e impurezas en los reactivos. Un rendimiento alto indica un proceso eficiente; uno bajo señala que conviene optimizar las condiciones de la reacción.' },
-    { q: '¿Puede el rendimiento superar el 100 %?', a: 'En teoría no: obtener más producto del máximo posible violaría la conservación de la materia. Si el cálculo da más del 100 %, casi siempre indica un error: el producto está húmedo o impuro (pesa de más), o se ha calculado mal el rendimiento teórico. Por eso esta calculadora avisa si introduces un rendimiento real mayor que el teórico.' },
-    { q: '¿Para qué sirve conocer el rendimiento en la industria?', a: 'El rendimiento determina la rentabilidad de un proceso: un porcentaje bajo significa desperdiciar materias primas y dinero. En la industria farmacéutica y química se optimizan las condiciones (temperatura, catalizadores, concentraciones) para maximizar el rendimiento. También permite calcular cuánta materia prima se necesita para obtener una cantidad concreta de producto final.' },
+    {
+      q: "¿Cómo se calcula el rendimiento?",
+      a: "Rendimiento (%) = (cantidad real ÷ cantidad teórica) × 100. La cantidad teórica se obtiene con la estequiometría a partir del reactivo limitante. Se estudia en Física y Química de la ESO y del Bachillerato (currículos de la LOMLOE).",
+    },
+    {
+      q: "¿Por qué el rendimiento suele ser menor del 100 %?",
+      a: "Por reacciones incompletas o reversibles, reacciones secundarias que generan otros productos, pérdidas al filtrar, trasvasar o purificar, e impurezas de los reactivos.",
+    },
+    {
+      q: "¿Puede ser mayor del 100 %?",
+      a: "En teoría no. Si te sale más del 100 %, probablemente el producto está húmedo o impuro, o hay un error en el cálculo de la cantidad teórica.",
+    },
+    {
+      q: "¿Qué es el reactivo limitante?",
+      a: "El reactivo que se agota primero y determina la cantidad máxima de producto. Hay que identificarlo antes de calcular la cantidad teórica.",
+    },
+    {
+      q: "¿Cómo se usa el rendimiento en los problemas?",
+      a: "Para calcular la cantidad real de producto (teórica × rendimiento / 100) o, al revés, la cantidad de reactivo necesaria para obtener una cantidad de producto con un rendimiento dado.",
+    },
   ]}
 >
   <RendimientoReaccionTool client:load />

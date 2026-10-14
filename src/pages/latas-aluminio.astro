@@ -4,14 +4,35 @@ import LatasAluminioTool from '@/components/tools/LatasAluminioTool';
 ---
 
 <CalcLayout slug="latas-aluminio"
-  whatIs="Esta calculadora estima el impacto ambiental positivo de reciclar latas de aluminio. A partir de cuántas latas reciclas y cada cuántos días, proyecta el total anual, el peso de aluminio recuperado y la energía que se ahorra. Reciclar aluminio es uno de los gestos de reciclaje más rentables ecológicamente, porque producir aluminio nuevo a partir del mineral consume enormes cantidades de energía."
-  whyUse="El aluminio es reciclable de forma infinita sin perder calidad, y reciclarlo ahorra hasta un 95 % de la energía necesaria para fabricarlo nuevo. Esta herramienta hace visible ese beneficio, ayudando a tomar conciencia del valor de separar correctamente las latas. Es útil para hogares, oficinas y centros educativos que quieran cuantificar y comunicar el impacto de su reciclaje de aluminio."
+  answer={"Cada lata de aluminio pesa unos 15 g y reciclarla ahorra alrededor del 95 % de la energía necesaria para fabricar aluminio nuevo: reciclar 10 latas a la semana son unas 520 latas y casi 8 kg de aluminio al año. En España, las latas van al contenedor amarillo."}
+  howTo={[
+    "Introduce cuántas latas reciclas.",
+    "Indica cada cuántos días.",
+    "Pulsa calcular impacto para ver los kilos de aluminio, la energía y el CO₂ que ahorras al año."
+  ]}
+  whatIs={"La calculadora de reciclaje de latas estima el aluminio, la energía y las emisiones de CO₂ que ahorras al año reciclando latas de bebidas y conservas."}
+  whyUse={"Te ayuda a ver el efecto de un gesto cotidiano, motivar el reciclaje en casa, en la oficina o en el colegio y comprender el valor del aluminio como material reciclable."}
   faqs={[
-    { q: '¿Cuánta energía se ahorra al reciclar una lata?', a: 'Reciclar una lata de aluminio ahorra alrededor del 95 % de la energía que costaría fabricar una nueva a partir de la bauxita (el mineral del aluminio). En términos de energía, reciclar una sola lata ahorra lo suficiente para tener encendida una bombilla LED durante muchas horas. Multiplicado por las latas de un año, el ahorro energético es muy notable.' },
-    { q: '¿El aluminio se puede reciclar siempre?', a: 'Sí, el aluminio es uno de los pocos materiales que se puede reciclar infinitas veces sin perder propiedades. Una lata reciclada puede volver a ser una lata nueva en unas pocas semanas. Esto lo convierte en un material idóneo para la economía circular: cada lata que reciclas vuelve al ciclo en lugar de extraer mineral nuevo, con todo el ahorro energético que eso supone.' },
-    { q: '¿Dónde debo depositar las latas?', a: 'Las latas de bebidas y conservas van al contenedor de envases (normalmente el amarillo). Conviene vaciarlas y, si puedes, aplastarlas para que ocupen menos. No hace falta lavarlas a fondo, basta con que estén razonablemente limpias. Separarlas correctamente garantiza que entren en la cadena de reciclaje y se aproveche su valioso aluminio.' },
-    { q: '¿Cuánto pesa una lata de aluminio?', a: 'Una lata de bebida estándar vacía pesa alrededor de 13-15 gramos, mucho menos que hace décadas gracias a la mejora en su fabricación. Aunque cada lata pese poco, el volumen que se consume es enorme: por eso reciclarlas tiene un impacto agregado importante. La calculadora usa unos 15 gramos por lata para estimar el aluminio recuperado.' },
-    { q: '¿Los datos de la calculadora son exactos?', a: 'Son estimaciones orientativas basadas en valores medios de peso por lata y ahorro energético del reciclaje. Las cifras reales varían según el tipo de lata y los procesos industriales, pero el orden de magnitud es fiable y refleja bien el gran beneficio energético de reciclar aluminio frente a producirlo nuevo. El objetivo es concienciar y motivar el reciclaje.' },
+    {
+      q: "¿En qué contenedor van las latas?",
+      a: "En el contenedor amarillo de envases, junto con los envases de plástico y los briks. No hace falta lavarlas, solo vaciarlas.",
+    },
+    {
+      q: "¿Cuántas veces se puede reciclar el aluminio?",
+      a: "Indefinidamente, sin perder calidad. Una lata reciclada puede volver a estar en el supermercado en pocas semanas.",
+    },
+    {
+      q: "¿Habrá depósito por las latas en España?",
+      a: "La Ley 7/2022 de residuos prevé implantar un sistema de depósito, devolución y retorno (SDDR) para envases de bebidas de un solo uso si no se alcanzan los objetivos de recogida separada. Con un SDDR, se paga un pequeño depósito al comprar la bebida que se recupera al devolver el envase.",
+    },
+    {
+      q: "¿Cuánta energía ahorra reciclar una lata?",
+      a: "Producir aluminio a partir de chatarra requiere alrededor de un 5 % de la energía necesaria para obtenerlo a partir de bauxita. Es uno de los materiales cuyo reciclaje más energía ahorra.",
+    },
+    {
+      q: "¿Las tapas de las latas se separan?",
+      a: "No hace falta: la anilla es del mismo material y se recicla con la lata. Las latas de conservas, los aerosoles vacíos y las bandejas de aluminio también van al contenedor amarillo.",
+    },
   ]}
 >
   <LatasAluminioTool client:load />

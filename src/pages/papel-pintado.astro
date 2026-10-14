@@ -4,14 +4,35 @@ import PapelPintadoTool from '@/components/tools/PapelPintadoTool';
 ---
 
 <CalcLayout slug="papel-pintado"
-  whatIs="Esta calculadora estima cuántos rollos de papel pintado necesitas para empapelar una habitación, a partir del perímetro de las paredes, su altura y las dimensiones del rollo. Funciona calculando cuántas tiras verticales salen de cada rollo y cuántas tiras hacen falta para cubrir todo el perímetro, dejando un margen de corte. El rollo estándar mide 10 metros de largo por 0,53 metros de ancho, pero puedes ajustar esos valores."
-  whyUse="Comprar la cantidad correcta de papel pintado evita quedarse corto (y arriesgarse a que la tienda ya no tenga el mismo lote, con ligeras diferencias de color) o gastar de más. Esta herramienta es útil para reformas y decoración, dándote el número de rollos de forma rápida. Tener en cuenta el margen de corte y un rollo extra para cuadrar dibujos es clave para un acabado profesional sin sorpresas."
+  answer={"Para saber cuántos rollos de papel pintado necesitas divide el perímetro a empapelar entre el ancho del rollo (tiras) y calcula cuántas tiras salen de cada rollo según la altura: con 16 m de perímetro, 2,5 m de altura y rollos estándar de 10 × 0,53 m, necesitas 31 tiras; como de cada rollo salen 3 tiras con margen de corte, unos 11 rollos."}
+  howTo={[
+    "Introduce el perímetro de las paredes que vas a empapelar.",
+    "Indica la altura de las paredes.",
+    "Comprueba el largo y el ancho del rollo (10 × 0,53 m es el estándar europeo) y pulsa calcular."
+  ]}
+  whatIs={"La calculadora de papel pintado calcula cuántas tiras y rollos de papel necesitas para empapelar una habitación según el perímetro, la altura de las paredes y las medidas del rollo."}
+  whyUse={"Te ayuda a comprar la cantidad justa de rollos del mismo lote, evitar quedarte corto a mitad del trabajo y presupuestar la decoración."}
   faqs={[
-    { q: '¿Cómo se calcula cuántos rollos de papel pintado necesito?', a: 'Primero se calcula cuántas tiras verticales salen de un rollo: se divide el largo del rollo entre la altura de la pared más un margen de corte. Luego se calcula cuántas tiras hacen falta para cubrir el perímetro: se divide el perímetro entre el ancho del rollo. Dividiendo las tiras necesarias entre las que da cada rollo se obtiene el número de rollos.' },
-    { q: '¿Qué medidas tiene un rollo de papel pintado estándar?', a: 'El rollo europeo estándar mide 10 metros de largo por 0,53 metros de ancho, lo que cubre unos 5 m² brutos. También existen rollos anchos de 0,70 m o 1,06 m, habituales en papeles americanos. La calculadora viene con los valores estándar, pero puedes cambiarlos según las medidas que indique el fabricante de tu papel.' },
-    { q: '¿Por qué conviene comprar un rollo de más?', a: 'Por dos motivos: para cuadrar el dibujo (los papeles con motivos repetidos desperdician papel al alinear el patrón entre tiras) y para tener reserva ante manchas, roturas o futuros retoques. Además, comprar todo del mismo lote garantiza que el color coincida; los lotes distintos pueden variar ligeramente de tono.' },
-    { q: '¿Tengo que descontar puertas y ventanas?', a: 'Para una estimación segura, conviene NO descontarlas o descontar solo las muy grandes, porque el papel sobre y bajo una ventana suele desperdiciarse al no poder aprovechar las tiras completas. Esta calculadora trabaja con el perímetro total; si tienes huecos muy grandes, puedes restar su anchura al perímetro, pero siempre dejando margen.' },
-    { q: '¿Qué es el "rapport" o repetición del dibujo?', a: 'El rapport es la distancia cada cuánto se repite el motivo del papel. Cuanto mayor es, más papel se desperdicia al cuadrar el dibujo entre tiras, por lo que necesitarás más rollos. Los papeles lisos o de rayas verticales casi no tienen desperdicio; los de grandes motivos florales pueden requerir un 10-15 % más de material.' },
+    {
+      q: "¿Qué medidas tiene un rollo de papel pintado?",
+      a: "El rollo estándar en España y Europa mide unos 10 m de largo por 0,53 m de ancho, aproximadamente 5,3 m². También existen rollos anchos de 0,70 m y 1,06 m, habituales en papeles vinílicos y de tejido no tejido.",
+    },
+    {
+      q: "¿Hay que descontar puertas y ventanas?",
+      a: "Normalmente no se descuentan, o solo las grandes, porque los recortes alrededor generan desperdicio y conviene tener papel de sobra. Si la habitación tiene muchas ventanas grandes, puedes restar su ancho del perímetro.",
+    },
+    {
+      q: "¿Qué es el rapport?",
+      a: "Es la distancia vertical a la que se repite el dibujo del papel. Con dibujos grandes hay que casar el motivo entre tiras, lo que genera más desperdicio: añade un rollo más si el rapport es grande.",
+    },
+    {
+      q: "¿Por qué comprar todos los rollos del mismo lote?",
+      a: "Porque cada fabricación (lote o baño) puede tener ligeras diferencias de tono. El número de lote figura en la etiqueta del rollo. Compra uno de más para futuras reparaciones.",
+    },
+    {
+      q: "¿Qué papel es mejor para baños o cocinas?",
+      a: "Los papeles vinílicos son lavables y resisten mejor la humedad. Los de tejido no tejido (TNT) se colocan encolando la pared y se retiran en seco con facilidad, por eso son cada vez más usados.",
+    },
   ]}
 >
   <PapelPintadoTool client:load />

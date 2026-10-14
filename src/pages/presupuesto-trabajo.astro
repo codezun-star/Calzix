@@ -4,14 +4,35 @@ import PresupuestoTrabajoTool from '@/components/tools/PresupuestoTrabajoTool';
 ---
 
 <CalcLayout slug="presupuesto-trabajo"
-  whatIs="Esta calculadora elabora un presupuesto de trabajo profesional sumando el coste de los materiales y la mano de obra (horas por precio hora), aplicando después un margen de beneficio y, por último, el IVA. Muestra el desglose completo —mano de obra, subtotal, importe con margen y total con impuestos— para que puedas presentar un presupuesto claro a tu cliente con todos los conceptos."
-  whyUse="Presupuestar bien es vital para cualquier autónomo, profesional o pequeño taller: olvidar el margen significa trabajar sin beneficio, y olvidar el IVA provoca cobrar de menos. Esta herramienta es ideal para fontaneros, electricistas, reformistas, diseñadores y cualquier oficio que presupueste por proyecto, garantizando que el precio final cubre costes, deja beneficio y repercute correctamente los impuestos."
+  answer={"Un presupuesto de trabajo suma materiales y mano de obra, añade el margen y después el IVA: 300 € de materiales y 10 horas a 25 € (250 €) son 550 €; con un margen del 20 %, 660 €; y con el IVA del 21 %, 798,60 € a cobrar al cliente."}
+  howTo={[
+    "Introduce el coste de los materiales.",
+    "Escribe las horas de trabajo y tu precio por hora.",
+    "Indica el margen y el tipo de IVA (21 % o 10 % en reformas de vivienda) y pulsa calcular."
+  ]}
+  whatIs={"La calculadora de presupuesto de trabajo prepara el importe de un presupuesto para un cliente sumando materiales, mano de obra y margen de beneficio, y añadiendo el IVA correspondiente."}
+  whyUse={"Es útil para autónomos y pequeñas empresas de reformas, instalaciones, diseño o servicios profesionales que necesitan presupuestar rápido sin olvidar el margen ni el IVA."}
   faqs={[
-    { q: '¿Cómo se calcula un presupuesto de trabajo?', a: 'Se suman los materiales y la mano de obra (horas trabajadas por el precio por hora) para obtener el coste directo. A ese subtotal se le aplica un margen de beneficio y, finalmente, el IVA correspondiente. La calculadora muestra cada paso por separado para que entiendas de qué se compone el precio final que ofreces al cliente.' },
-    { q: '¿Qué diferencia hay entre margen y beneficio?', a: 'En esta calculadora, el margen es el porcentaje que añades sobre tus costes para obtener beneficio y cubrir gastos generales (local, herramientas, desplazamientos, tiempo de gestión). No es lo mismo que el beneficio neto final, ya que de él aún hay que descontar impuestos sobre la renta y otros gastos no imputados directamente al trabajo.' },
-    { q: '¿Por qué hay que añadir el IVA al final?', a: 'Porque el IVA se aplica sobre el precio de venta (coste más margen), no sobre el coste. El IVA no es un ingreso tuyo: lo cobras al cliente y lo ingresas a Hacienda. Por eso se calcula al final, sobre el importe ya con margen, y debe aparecer desglosado en la factura para que sea válida fiscalmente.' },
-    { q: '¿Cómo fijo mi precio por hora?', a: 'Tu precio por hora debe cubrir no solo tu sueldo deseado, sino también los costes que no facturas directamente: tiempo de desplazamiento, gestión, formación, herramientas, seguros y los periodos sin trabajo. Una forma de calcularlo es dividir tus ingresos anuales objetivo más los gastos entre las horas realmente facturables del año.' },
-    { q: '¿Debo incluir un margen para imprevistos?', a: 'Es muy recomendable, sobre todo en obras y reformas, donde casi siempre surgen imprevistos. Puedes reflejarlo subiendo ligeramente el margen o añadiendo una partida específica de contingencia. Presupuestar demasiado ajustado es uno de los errores más comunes y la causa de que muchos trabajos acaben dando pérdidas en lugar de beneficio.' },
+    {
+      q: "¿Qué IVA lleva un presupuesto?",
+      a: "El general del 21 % en la mayoría de servicios. Las reformas de una vivienda particular pueden ir al 10 % si la vivienda tiene más de dos años, el cliente es un particular que la usa como vivienda y los materiales que aportas no superan el 40 % de la base. En Canarias se aplica el IGIC.",
+    },
+    {
+      q: "¿Tengo que aplicar retención de IRPF?",
+      a: "Si eres profesional y facturas a una empresa o a otro autónomo, aplicas la retención del 15 % (7 % los primeros años). A particulares no se aplica retención. Los oficios y actividades empresariales en estimación directa normalmente no aplican retención.",
+    },
+    {
+      q: "¿Qué margen debo aplicar?",
+      a: "Depende del sector y de tus costes fijos (local, vehículo, seguros, cuota de autónomo, herramientas). Un margen del 15-30 % sobre los costes directos es habitual en oficios y reformas. Calcula tu punto de equilibrio para saber cuánto necesitas facturar.",
+    },
+    {
+      q: "¿Qué debe incluir un presupuesto por escrito?",
+      a: "Tus datos y los del cliente, la descripción detallada de los trabajos, las partidas de materiales y mano de obra, el IVA, el plazo de ejecución, la forma de pago y la validez del presupuesto. En muchas comunidades es obligatorio entregar presupuesto previo por escrito si el cliente lo pide.",
+    },
+    {
+      q: "¿Puedo cobrar por hacer el presupuesto?",
+      a: "Sí, siempre que lo informes antes de hacerlo. Es habitual en reparaciones de electrodomésticos o vehículos, donde el presupuesto requiere desmontar o diagnosticar. Muchas normativas autonómicas de consumo obligan a informar de ese coste por adelantado.",
+    },
   ]}
 >
   <PresupuestoTrabajoTool client:load />

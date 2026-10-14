@@ -4,14 +4,35 @@ import ConcentracionPpmTool from '@/components/tools/ConcentracionPpmTool';
 ---
 
 <CalcLayout slug="concentracion-ppm"
-  whatIs="Las partes por millón (ppm) son una unidad para expresar concentraciones muy bajas: indican cuántas partes de soluto hay por cada millón de partes de disolución. Se calcula como ppm = (masa de soluto / masa de disolución) × 1 000 000. Esta calculadora obtiene la concentración en ppm y su equivalente en porcentaje en masa, y recuerda que en disoluciones acuosas diluidas 1 ppm equivale aproximadamente a 1 miligramo por litro."
-  whyUse="Las ppm son la unidad estándar para medir contaminantes en el agua y el aire, la dureza del agua, la dosis de cloro en una piscina, los nitratos en alimentos o los gases en la atmósfera (como el CO₂). Saber calcularlas es útil en química, control de calidad, medio ambiente y tratamiento de aguas. Esta herramienta convierte masas en ppm al instante y muestra la relación con el porcentaje, evitando errores con los ceros."
+  answer={"Las partes por millón (ppm) indican cuántas unidades de soluto hay por cada millón de unidades de disolución: 5 mg de una sustancia en 1 kg (1.000.000 mg) de disolución son 5 ppm. En disoluciones acuosas diluidas, 1 ppm equivale a 1 mg/L."}
+  howTo={[
+    "Introduce la masa de soluto en miligramos.",
+    "Introduce la masa de la disolución en miligramos.",
+    "Pulsa calcular ppm para obtener la concentración."
+  ]}
+  whatIs={"La calculadora de partes por millón calcula la concentración de una sustancia en ppm a partir de la masa de soluto y la masa de disolución."}
+  whyUse={"Sirve para los problemas de disoluciones de Física y Química, para interpretar análisis de agua del grifo, de piscinas o de acuarios y para entender los límites de contaminantes."}
   faqs={[
-    { q: '¿Qué significa una concentración en ppm?', a: 'Una parte por millón significa una unidad de soluto por cada millón de unidades de disolución. Por ejemplo, 5 ppm de un contaminante en agua quiere decir 5 gramos de ese contaminante por cada millón de gramos (mil kilos) de agua. Es una forma cómoda de expresar concentraciones tan pequeñas que en porcentaje saldrían números con muchos ceros tras la coma.' },
-    { q: '¿Cómo se calculan las ppm?', a: 'Se divide la masa de soluto entre la masa total de la disolución y se multiplica por un millón: ppm = (m_soluto / m_disolución) × 10⁶. Ambas masas deben ir en la misma unidad. Por ejemplo, 5 mg de soluto en 1 000 000 mg (1 kg) de disolución dan exactamente 5 ppm. La calculadora hace esta operación y evita confusiones con las potencias de diez.' },
-    { q: '¿Es lo mismo 1 ppm que 1 mg/L?', a: 'En disoluciones acuosas diluidas, sí, de forma aproximada: como la densidad del agua es 1 kg/L, un litro de disolución pesa alrededor de 1 kg (un millón de miligramos), así que 1 mg de soluto por litro equivale a 1 ppm. Esta equivalencia es muy usada en análisis de aguas, pero deja de ser exacta en disoluciones concentradas o con densidad muy distinta a la del agua.' },
-    { q: '¿Qué relación tienen las ppm con el porcentaje?', a: 'El porcentaje en masa es partes por cien y las ppm son partes por millón, así que 1 % equivale a 10 000 ppm. Para pasar de ppm a porcentaje se divide entre 10 000: 250 ppm son 0,025 %. La calculadora muestra ambos valores a la vez, lo que ayuda a dimensionar lo pequeña que es realmente una concentración expresada en ppm.' },
-    { q: '¿Dónde se usan las ppm en la vida real?', a: 'En el control del agua potable (cloro, nitratos, metales pesados), en la dureza del agua, en las piscinas, en la calidad del aire (CO₂, ozono, partículas), en la seguridad alimentaria y en la agricultura (fertilizantes y pesticidas). Los límites legales de muchos contaminantes se expresan en ppm, por lo que es una unidad clave en medio ambiente y sanidad.' },
+    {
+      q: "¿Qué significa 1 ppm?",
+      a: "Una parte de soluto por cada millón de partes de disolución. En agua, como 1 litro pesa aproximadamente 1 kg, 1 ppm equivale a 1 mg/L. Se estudia en Física y Química de la ESO y del Bachillerato (currículos de la LOMLOE).",
+    },
+    {
+      q: "¿Qué límites marca la ley para el agua del grifo?",
+      a: "El Real Decreto 3/2023 sobre la calidad del agua de consumo fija valores como 50 mg/L (50 ppm) de nitratos, 0,5 mg/L de nitritos en la red, 10 µg/L de plomo y 10 µg/L de arsénico.",
+    },
+    {
+      q: "¿Cuánto cloro debe tener una piscina?",
+      a: "Entre 0,5 y 2 mg/L (ppm) de cloro libre en las piscinas de uso público, según el Real Decreto 742/2013. En el agua del grifo, el cloro libre residual no debe superar 1 mg/L.",
+    },
+    {
+      q: "¿Qué son las ppb?",
+      a: "Partes por mil millones (billion en inglés): 1 ppm = 1.000 ppb. Se usan para contaminantes muy tóxicos a concentraciones muy bajas, como algunos metales pesados.",
+    },
+    {
+      q: "¿Se usan las ppm para gases?",
+      a: "Sí: la concentración de CO₂ en la atmósfera supera las 420 ppm, y en el interior de un aula mal ventilada puede pasar de 1.000-1.500 ppm. Los medidores de CO₂ se usan para comprobar la ventilación.",
+    },
   ]}
 >
   <ConcentracionPpmTool client:load />

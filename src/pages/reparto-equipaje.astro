@@ -4,14 +4,35 @@ import RepartoEquipajeTool from '@/components/tools/RepartoEquipajeTool';
 ---
 
 <CalcLayout slug="reparto-equipaje"
-  whatIs="Esta calculadora reparte un peso total de equipaje entre varias maletas y comprueba si cada una queda dentro del límite de peso de la aerolínea. A partir del peso total que quieres llevar, el número de maletas y el límite por maleta, calcula cuánto pesaría cada una si repartes por igual y, si te pasas, cuántas maletas necesitarías como mínimo para no exceder el límite."
-  whyUse="Equilibrar el peso entre maletas evita los recargos por exceso de equipaje, que suelen ser caros, y los apuros en el mostrador de facturación reorganizando la ropa. Esta herramienta es útil para planificar cuántas maletas llevar y cómo repartir el peso antes de ir al aeropuerto, especialmente cuando viajas en familia o grupo y podéis distribuir el equipaje entre los billetes para aprovechar mejor las franquicias."
+  answer={"Para repartir el peso entre maletas divide el peso total entre el número de maletas y compáralo con el límite de la aerolínea: 40 kg en 2 maletas son 20 kg cada una, dentro del límite habitual de 23 kg de las aerolíneas tradicionales en clase turista."}
+  howTo={[
+    "Introduce el peso total de lo que quieres llevar.",
+    "Indica el número de maletas.",
+    "Escribe el límite de peso por maleta de tu billete y pulsa repartir peso."
+  ]}
+  whatIs={"La calculadora de reparto de equipaje reparte el peso total entre varias maletas, comprueba si alguna supera el límite de la aerolínea y calcula cuántas maletas necesitas como mínimo."}
+  whyUse={"Te ayuda a evitar los cargos por exceso de peso en el aeropuerto, sobre todo en viajes en familia o en grupo con varias maletas facturadas."}
   faqs={[
-    { q: '¿Cómo reparto el peso entre mis maletas?', a: 'Se divide el peso total entre el número de maletas para que cada una lleve la misma cantidad. Por ejemplo, 40 kg en 2 maletas son 20 kg cada una. La calculadora comprueba además si ese peso por maleta queda dentro del límite de la aerolínea, y si te pasas, te indica cuántas maletas necesitarías para no superarlo.' },
-    { q: '¿Cuál es el límite de peso habitual por maleta?', a: 'El límite más común para una maleta facturada es de 23 kg en clase turista, aunque algunas aerolíneas permiten 20 kg o llegan a 32 kg en billetes superiores. El equipaje de mano suele limitarse a 8-10 kg. Consulta siempre las condiciones de tu billete, ya que varían mucho entre compañías, tarifas y destinos. La calculadora te deja ajustar el límite.' },
-    { q: '¿Qué pasa si una maleta supera el límite?', a: 'La aerolínea cobra un recargo por exceso de equipaje, que puede ser bastante caro y a veces se paga por cada kilo de más. Por eso conviene repartir bien el peso antes de facturar. Si una maleta se pasa, mover algo de peso a otra (o a un segundo bulto) suele salir más barato que pagar el exceso, siempre que la otra tenga margen.' },
-    { q: '¿Conviene llevar una maleta grande o dos medianas?', a: 'Depende de la franquicia de tu billete. Si solo incluye una maleta, una grande aprovecha mejor el peso permitido. Si incluye dos, repartir en dos medianas da más flexibilidad y evita superar el límite de una sola. En grupo, distribuir el peso entre todos los billetes disponibles es la forma más eficiente de no pagar excesos.' },
-    { q: '¿El peso de la maleta vacía cuenta?', a: 'Sí. El límite se aplica al peso total facturado, incluida la propia maleta. Una maleta rígida grande puede pesar vacía 4-5 kg, que restan de tu franquicia. Por eso, para maximizar lo que puedes llevar, conviene elegir maletas ligeras. Ten en cuenta el peso del propio equipaje al calcular cuánto contenido puedes meter sin pasarte.' },
+    {
+      q: "¿Cuál es el límite de peso del equipaje facturado?",
+      a: "En las aerolíneas tradicionales (Iberia, Air Europa y la mayoría de aerolíneas europeas) suele ser de 23 kg por maleta en clase turista y de 32 kg en business. Las de bajo coste venden maletas de 20, 23 o 25 kg según la tarifa. Comprueba siempre tu billete.",
+    },
+    {
+      q: "¿Cuánto cuesta el exceso de peso?",
+      a: "Depende de la aerolínea y la ruta: en vuelos dentro de Europa suele costar entre 10 y 20 € por kilo extra, o una tarifa fija por maleta con sobrepeso. Casi siempre sale más barato añadir una segunda maleta al reservar.",
+    },
+    {
+      q: "¿Cuánto puede pesar una maleta como máximo?",
+      a: "Por seguridad laboral de los manipuladores, la mayoría de aerolíneas no aceptan maletas de más de 32 kg; lo que supere ese peso debe enviarse como carga.",
+    },
+    {
+      q: "¿Cómo peso la maleta en casa?",
+      a: "Con una báscula de equipaje de mano o pesándote con y sin la maleta en la báscula de baño y restando. Deja un margen de 1-2 kg por si la báscula del aeropuerto marca algo más.",
+    },
+    {
+      q: "¿Puedo repartir el peso entre las maletas de varios pasajeros?",
+      a: "En muchas aerolíneas el límite es por maleta, no por pasajero, así que una maleta con 26 kg paga exceso aunque otra lleve 18. Algunas permiten sumar los pesos de pasajeros de la misma reserva; consúltalo antes.",
+    },
   ]}
 >
   <RepartoEquipajeTool client:load />

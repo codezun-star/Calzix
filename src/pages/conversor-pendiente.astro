@@ -4,14 +4,35 @@ import ConversorPendienteTool from '@/components/tools/ConversorPendienteTool';
 ---
 
 <CalcLayout slug="conversor-pendiente"
-  whatIs="Este conversor transforma la pendiente o inclinación de una superficie entre sus tres formas de expresarla: porcentaje (%), grados (°) y proporción (1:n). El porcentaje indica cuántos metros se sube por cada 100 metros horizontales; los grados miden el ángulo respecto a la horizontal; y la proporción expresa una unidad vertical por cada n horizontales. Introduce el valor en porcentaje o en grados y obtén los otros dos al instante."
-  whyUse="La pendiente se expresa de forma distinta según el ámbito: las señales de tráfico y carreteras usan el porcentaje, la topografía y la construcción usan grados o proporciones, y los tejados y rampas mezclan los tres. Este conversor es útil para arquitectos, constructores, ciclistas, senderistas y conductores que necesitan entender qué tan empinada es una cuesta, una rampa de accesibilidad o un tejado."
+  answer={"Para pasar de pendiente en porcentaje a grados se usa el arcotangente: una pendiente del 10 % (sube 10 m por cada 100 m en horizontal) equivale a 5,71°, y una del 100 % a 45°. La DGT señaliza las pendientes en porcentaje."}
+  howTo={[
+    "Elige si quieres pasar de porcentaje a grados o de grados a porcentaje.",
+    "Introduce el valor.",
+    "Pulsa convertir para ver el resultado y la relación de desnivel."
+  ]}
+  whatIs={"El conversor de pendiente convierte una inclinación entre porcentaje, grados y relación de desnivel, para carreteras, rampas, tejados o rutas de montaña."}
+  whyUse={"Te ayuda a interpretar las señales de pendiente, el perfil de una etapa ciclista o de una ruta, a diseñar una rampa accesible o a calcular la inclinación de un tejado."}
   faqs={[
-    { q: '¿Qué significa una pendiente del 12 %?', a: 'Significa que por cada 100 metros recorridos en horizontal, se asciende (o desciende) 12 metros en vertical. Una pendiente del 100 % no es vertical, sino de 45°, porque sube lo mismo que avanza. Las señales de carretera indican la pendiente en porcentaje: un 12 % es una cuesta pronunciada para un ciclista y notable para un camión.' },
-    { q: '¿Cómo se pasa de porcentaje a grados?', a: 'Se calcula el arcotangente del porcentaje dividido entre 100. Por ejemplo, una pendiente del 12 % equivale a arctan(0,12) ≈ 6,84°. No es una relación directa: el 100 % son 45°, no 90°. La calculadora aplica esta fórmula trigonométrica automáticamente para darte la equivalencia exacta en grados.' },
-    { q: '¿Qué es la pendiente expresada como proporción 1:n?', a: 'La proporción 1:n indica que por cada unidad que se sube, se avanzan n en horizontal. Una pendiente 1:20 significa subir 1 metro cada 20 metros horizontales, es decir, un 5 %. Es la forma habitual en normativas de accesibilidad: las rampas para sillas de ruedas suelen exigir como máximo 1:12 (8,33 %).' },
-    { q: '¿Qué pendiente máxima debe tener una rampa accesible?', a: 'Las normativas de accesibilidad suelen recomendar una pendiente máxima del 8 % (1:12) para rampas, y hasta el 10 % o 12 % solo en tramos muy cortos. Una pendiente mayor dificulta o impide su uso con silla de ruedas. Este conversor ayuda a comprobar si una rampa cumple, traduciendo entre el porcentaje de la normativa y la proporción del plano.' },
-    { q: '¿Para qué sirve en tejados y construcción?', a: 'La inclinación de un tejado determina cómo evacúa el agua y la nieve y qué materiales se pueden usar. Se expresa en grados, porcentaje o proporción según el país y el oficio. Convertir entre estas unidades permite interpretar planos, calcular la longitud real de la cubierta y elegir tejas adecuadas a la pendiente, evitando filtraciones.' },
+    {
+      q: "¿Qué significa una pendiente del 10 %?",
+      a: "Que por cada 100 m recorridos en horizontal se sube (o baja) 10 m. No es lo mismo que 10°: equivale a unos 5,7°.",
+    },
+    {
+      q: "¿Qué pendientes tienen los puertos de montaña?",
+      a: "Los puertos de la Vuelta a España suelen tener pendientes medias del 6-10 % con rampas mucho más duras: el Angliru, en Asturias, tiene tramos de más del 20 %.",
+    },
+    {
+      q: "¿Qué pendiente máxima puede tener una rampa accesible?",
+      a: "El Código Técnico de la Edificación limita las rampas de los itinerarios accesibles al 10 % en tramos de menos de 3 m, al 8 % en tramos de 3 a 6 m y al 6 % en los demás. En garajes, las rampas pueden ser más pronunciadas.",
+    },
+    {
+      q: "¿Qué pendiente tiene un tejado?",
+      a: "En España, los tejados de teja suelen tener pendientes del 30-45 %; en zonas de mucha lluvia o nieve son mayores. Las cubiertas planas tienen pendientes del 1-5 % para evacuar el agua.",
+    },
+    {
+      q: "¿Cómo se calcula a partir del desnivel?",
+      a: "Pendiente (%) = desnivel ÷ distancia horizontal × 100. Una ruta que sube 300 m en 3 km de distancia horizontal tiene una pendiente media del 10 %.",
+    },
   ]}
 >
   <ConversorPendienteTool client:load />

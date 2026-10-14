@@ -4,14 +4,35 @@ import CosteAlquilerCocheTool from '@/components/tools/CosteAlquilerCocheTool';
 ---
 
 <CalcLayout slug="coste-alquiler-coche"
-  whatIs="Esta calculadora obtiene el coste total de alquilar un coche sumando la tarifa diaria por los días de alquiler, el seguro opcional por día y los extras de pago único (como conductor adicional, silla infantil o GPS). Muestra el coste total del alquiler y el coste medio real por día con todo incluido, que casi siempre es mayor que la tarifa diaria anunciada."
-  whyUse="Las tarifas de alquiler de coche que se anuncian suelen ser solo la base: el seguro a todo riesgo, los extras y los suplementos pueden disparar el precio final. Calcular el coste real con todo incluido ayuda a comparar ofertas de forma justa, a presupuestar un viaje y a no llevarse sorpresas en el mostrador. Es útil para planificar vacaciones, viajes de trabajo o escapadas en las que necesites coche."
+  answer={"El coste total de alquilar un coche es (tarifa diaria + seguro diario) × días + extras: 7 días a 35 € más un seguro sin franquicia de 15 € al día y 30 € de extras suman 380 €, sin contar el combustible."}
+  howTo={[
+    "Introduce la tarifa por día y los días de alquiler.",
+    "Añade el seguro adicional por día, si lo contratas.",
+    "Suma los extras de pago único (silla infantil, segundo conductor) y pulsa calcular."
+  ]}
+  whatIs={"La calculadora de coste de alquiler de coche suma la tarifa diaria, el seguro adicional y los extras para obtener el precio real de un alquiler y el coste por día."}
+  whyUse={"Te ayuda a comparar ofertas de alquiler en tus vacaciones en Canarias, Baleares o la península, y a no llevarte sorpresas al recoger el coche."}
   faqs={[
-    { q: '¿Cómo se calcula el coste total de un alquiler de coche?', a: 'Se suma la tarifa diaria más el seguro diario, se multiplica por el número de días y se añaden los extras de pago único. Por ejemplo, 35 al día de tarifa más 12 de seguro durante 7 días son (35+12)×7 = 329, más 30 de silla infantil = 359 en total. La calculadora también muestra el coste medio por día con todo incluido.' },
-    { q: '¿Por qué el precio final es mayor que la tarifa anunciada?', a: 'Porque la tarifa base no suele incluir el seguro a todo riesgo (que reduce o elimina la franquicia), ni los extras como conductor adicional, GPS, silla infantil o cargos por devolver el coche en otro lugar. Estos suplementos pueden incrementar bastante el precio. Por eso conviene calcular el coste total con todo incluido antes de comparar ofertas.' },
-    { q: '¿Merece la pena contratar el seguro a todo riesgo?', a: 'Depende de tu tolerancia al riesgo. El seguro básico incluido suele dejar una franquicia alta (lo que pagarías en caso de daño). El seguro a todo riesgo la reduce o elimina a cambio de un coste diario. Para viajes largos, conducción en lugares desconocidos o si quieres tranquilidad, suele compensar; valora el coste del seguro frente a la franquicia que asumirías.' },
-    { q: '¿Qué extras suelen cobrar las empresas de alquiler?', a: 'Los más comunes son el conductor adicional, la silla o elevador infantil, el GPS, el cargo por conductor joven o por devolver el vehículo en una oficina distinta a la de recogida, y la política de combustible (lleno-lleno o lleno-vacío). Cada uno tiene su coste; inclúyelos en la calculadora para conocer el precio real del alquiler.' },
-    { q: '¿Cómo puedo ahorrar al alquilar un coche?', a: 'Reservar con antelación, comparar varias empresas, elegir oficinas fuera del aeropuerto (suelen ser más baratas), revisar si tu tarjeta o seguro de viaje ya cubre el coche, optar por la política de combustible lleno-lleno y evitar extras innecesarios. Calcular el coste total con todo incluido de varias opciones es la mejor forma de identificar la oferta realmente más económica.' },
+    {
+      q: "¿Qué es la franquicia?",
+      a: "Es la cantidad que pagas tú en caso de daños o robo, aunque el coche tenga seguro: puede ser de 1.000 a 3.000 €. La empresa bloquea esa cantidad (o una fianza) en tu tarjeta de crédito. El seguro «sin franquicia» o a todo riesgo la elimina, a cambio de un coste diario.",
+    },
+    {
+      q: "¿Qué política de combustible conviene?",
+      a: "La de «lleno/lleno»: recoges el coche con el depósito lleno y lo devuelves lleno. Las políticas de «lleno/vacío» suelen cobrar el depósito completo a un precio superior al de la gasolinera y no devuelven lo que sobra.",
+    },
+    {
+      q: "¿Qué necesito para alquilar un coche en España?",
+      a: "El carné de conducir en vigor (algunas empresas exigen 1 o 2 años de antigüedad), el DNI o pasaporte y una tarjeta de crédito a nombre del conductor principal. Los menores de 25 años suelen pagar un suplemento por conductor joven.",
+    },
+    {
+      q: "¿Qué extras suelen cobrarse?",
+      a: "Segundo conductor, silla infantil (obligatoria para niños de hasta 135 cm), GPS, entrega fuera de horario, recogida en aeropuerto o estación, kilometraje ilimitado si no está incluido y la devolución en otra oficina.",
+    },
+    {
+      q: "¿Qué hago si hay un problema con la empresa de alquiler?",
+      a: "Revisa el coche y haz fotos al recogerlo y al devolverlo. Si te cobran cargos indebidos, reclama por escrito a la empresa y pide la hoja de reclamaciones; también puedes acudir a la oficina de consumo de tu comunidad o a una junta arbitral de consumo.",
+    },
   ]}
 >
   <CosteAlquilerCocheTool client:load />

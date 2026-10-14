@@ -4,14 +4,35 @@ import PotenciaContratadaTool from '@/components/tools/PotenciaContratadaTool';
 ---
 
 <CalcLayout slug="potencia-contratada"
-  whatIs="Esta calculadora te ayuda a estimar qué potencia eléctrica conviene contratar en tu vivienda, a partir de la suma de la potencia de los aparatos que podrías tener encendidos a la vez y un factor de simultaneidad. Como rara vez se usan todos los aparatos al mismo tiempo, el factor de simultaneidad ajusta esa suma a un valor realista. El resultado es la potencia recomendada en kilovatios (kW)."
-  whyUse="La potencia contratada determina una parte fija importante de la factura de la luz: contratar de más significa pagar todos los meses por una potencia que no usas, y contratar de menos provoca que salte el interruptor automático (ICP) cuando enciendes varios aparatos. Ajustar la potencia a tu consumo real es una de las formas más sencillas de ahorrar en la factura eléctrica sin renunciar a nada."
+  answer={"Para elegir la potencia de la luz suma la potencia de los aparatos que funcionan a la vez y aplica un factor de simultaneidad: 6.000 W instalados con un 60 % de simultaneidad son 3,6 kW, así que la potencia normalizada adecuada es 4,6 kW. Cada kW contratado cuesta unos 30-40 € al año."}
+  howTo={[
+    "Introduce la potencia total de los aparatos de tu vivienda en vatios.",
+    "Ajusta el factor de simultaneidad (el porcentaje que suele funcionar a la vez).",
+    "Pulsa calcular para ver la potencia recomendada entre las potencias normalizadas."
+  ]}
+  whatIs={"La calculadora de potencia contratada estima la potencia eléctrica que necesitas contratar a partir de la potencia de tus aparatos y de cuántos funcionan a la vez, y la redondea a las potencias normalizadas en España."}
+  whyUse={"Te ayuda a no pagar de más por una potencia que no usas y a evitar que salte el interruptor de control de potencia, sobre todo al instalar aire acondicionado, placa de inducción, aerotermia o un cargador de coche eléctrico."}
   faqs={[
-    { q: '¿Qué es la potencia contratada?', a: 'Es la cantidad máxima de electricidad que puedes consumir de forma simultánea en tu vivienda, medida en kilovatios (kW). Si intentas usar más, salta el interruptor de control de potencia y se corta la luz. La pagas en la factura como un término fijo mensual, independientemente de cuánta energía consumas después.' },
-    { q: '¿Qué es el factor de simultaneidad?', a: 'Es el porcentaje de la potencia total instalada que realmente usas a la vez. Casi nunca tienes encendidos al mismo tiempo el horno, la lavadora, el aire acondicionado y la vitrocerámica. Un factor del 50-60 % es razonable para una vivienda media; si sueles concentrar el uso (cocinar mientras lavas y planchas), súbelo.' },
-    { q: '¿Qué potencia se contrata habitualmente en una vivienda?', a: 'Una vivienda pequeña o un piso con pocos electrodomésticos suele ir bien con 3,3-4,6 kW. Una vivienda media con cocina eléctrica ronda los 4,6-5,75 kW. Las casas grandes, con aire acondicionado potente o coche eléctrico, pueden necesitar 6,9 kW o más. La calculadora sugiere el escalón estándar más cercano a tu necesidad.' },
-    { q: '¿Cómo sé la potencia de mis electrodomésticos?', a: 'Viene indicada en una etiqueta del aparato o en su manual, en vatios (W). Como referencia: horno 2000-2500 W, vitrocerámica 2000-3000 W por zona, lavadora 2000-2500 W, microondas 800-1200 W, aire acondicionado 1000-2500 W, y la suma del resto (luces, TV, nevera, cargadores) unos 500-1000 W. Suma los que podrías usar a la vez.' },
-    { q: '¿Qué pasa si me quedo corto de potencia?', a: 'Si la suma de lo que enciendes supera la potencia contratada, salta el interruptor de control de potencia y se va la luz hasta que apagas algún aparato y lo rearmas. Si te ocurre a menudo, conviene subir la potencia; si no te ha saltado nunca y pagas bastante de término fijo, probablemente puedas bajarla y ahorrar.' },
+    {
+      q: "¿Qué potencias se pueden contratar?",
+      a: "En las viviendas con contador digital puedes contratar cualquier potencia, pero lo habitual son los valores normalizados de 2,3, 3,45, 4,6, 5,75, 6,9, 8,05 y 9,2 kW en monofásica. La mayoría de pisos tienen entre 3,45 y 5,75 kW.",
+    },
+    {
+      q: "¿Cuánto cuesta cada kW de potencia?",
+      a: "En la tarifa regulada (PVPC), el término de potencia cuesta alrededor de 30-40 € al año por kW con impuestos. Bajar de 5,75 a 4,6 kW puede ahorrar unos 40 € al año. Desde 2021 puedes contratar dos potencias distintas: una para las horas punta y llano y otra para el valle.",
+    },
+    {
+      q: "¿Qué pasa si me quedo corto?",
+      a: "Si encienden a la vez aparatos que superan la potencia contratada, salta el interruptor de control de potencia (ICP) o el contador corta el suministro unos segundos. Tendrás que apagar algún aparato. Si te ocurre a menudo, necesitas más potencia.",
+    },
+    {
+      q: "¿Cuesta dinero cambiar la potencia?",
+      a: "Subir la potencia tiene unos costes regulados (derechos de acceso y de extensión según los kW que aumentes y, a veces, derechos de enganche). Bajarla suele ser gratuito o muy barato. Puede que necesites un certificado de instalación eléctrica si la instalación no admite la nueva potencia.",
+    },
+    {
+      q: "¿Qué potencia necesito con aerotermia o coche eléctrico?",
+      a: "Una bomba de calor puede añadir 2-3 kW en los momentos de máximo consumo, y un cargador de coche eléctrico doméstico, entre 3,7 y 7,4 kW. Con una tarifa de dos potencias puedes contratar más en el periodo valle, cuando se suele cargar el coche, sin encarecer tanto la factura.",
+    },
   ]}
 >
   <PotenciaContratadaTool client:load />

@@ -4,14 +4,35 @@ import AhorroCo2SolarTool from '@/components/tools/AhorroCo2SolarTool';
 ---
 
 <CalcLayout slug="ahorro-co2-solar"
-  whatIs="Esta calculadora estima el CO₂ que evitas emitir gracias a una instalación solar, al sustituir electricidad de la red por energía limpia del sol. A partir de la generación solar anual en kWh y el factor de emisión de la red eléctrica de tu país (los kilos de CO₂ por kWh de tu mix energético), calcula las emisiones evitadas y las traduce a árboles equivalentes y a kilómetros en coche que dejarías de recorrer."
-  whyUse="Más allá del ahorro económico, la energía solar tiene un impacto ambiental real al desplazar generación con combustibles fósiles. Cuantificar el CO₂ evitado ayuda a entender el beneficio ecológico de los paneles, a comunicarlo y a valorar la instalación más allá de la factura. Esta herramienta es útil para particulares y empresas que quieren conocer la contribución climática de su autoconsumo solar."
+  answer={"El CO₂ que evita una instalación solar es su producción por el factor de emisión de la red: 4.500 kWh al año con un factor de 0,12 kg de CO₂ por kWh, una referencia para el mix eléctrico español, evitan unos 540 kg de CO₂ al año."}
+  howTo={[
+    "Introduce la energía que generan tus paneles al año en kWh.",
+    "Ajusta el factor de emisión de la red (0,12 kg de CO₂/kWh por defecto para España).",
+    "Pulsa calcular para ver el CO₂ evitado y sus equivalencias."
+  ]}
+  whatIs={"La calculadora de CO₂ evitado con energía solar estima las emisiones que dejas de producir al sustituir electricidad de la red por energía solar, y las traduce a árboles y kilómetros en coche equivalentes."}
+  whyUse={"Te ayuda a conocer el beneficio ambiental de una instalación de autoconsumo, comunicarlo en una empresa o comunidad de vecinos y completar el cálculo de la huella de carbono."}
   faqs={[
-    { q: '¿Cómo se calcula el CO₂ evitado por la energía solar?', a: 'Se multiplica la energía solar generada (en kWh) por el factor de emisión de la red eléctrica (kg de CO₂ por kWh). Ese factor representa las emisiones que habría generado producir esa misma electricidad con el mix de la red. Por ejemplo, 4.500 kWh solares con un factor de 0,25 evitan 1.125 kg de CO₂ al año.' },
-    { q: '¿Qué es el factor de emisión de la red?', a: 'Es la cantidad media de CO₂ que se emite por cada kWh de electricidad generado en un país, según su mezcla de fuentes (renovables, gas, carbón, nuclear…). Varía mucho: un país con mucha energía renovable o nuclear tiene un factor bajo (0,1-0,2 kg/kWh), mientras que uno dependiente del carbón lo tiene alto (0,4-0,8). Usa el de tu país para un cálculo realista.' },
-    { q: '¿Cuánto CO₂ evita una instalación doméstica típica?', a: 'Una instalación residencial que genere unos 4.000-6.000 kWh al año puede evitar del orden de 1.000 a 2.500 kg de CO₂ anuales, según el factor de emisión de la red. A lo largo de la vida útil de los paneles (25-30 años), esto supone decenas de toneladas de CO₂ no emitidas, una contribución climática muy significativa.' },
-    { q: '¿Los paneles solares tienen huella de fabricación?', a: 'Sí, fabricar e instalar los paneles genera emisiones, pero se compensan rápido: la energía y el CO₂ invertidos en producirlos se recuperan normalmente en 1 a 3 años de funcionamiento. Como los paneles duran décadas, durante la mayor parte de su vida producen energía con una huella neta muy baja. El balance ambiental es claramente positivo.' },
-    { q: '¿El cálculo es exacto?', a: 'Es una estimación orientativa. El CO₂ evitado real depende del factor de emisión exacto en cada momento (que varía hora a hora según qué centrales estén produciendo) y de la generación real de la instalación. Usar el factor medio de tu país da una aproximación fiable del orden de magnitud del beneficio climático de tus paneles.' },
+    {
+      q: "¿Por qué el factor de emisión es tan bajo en España?",
+      a: "Porque la electricidad española tiene una proporción alta y creciente de renovables (eólica, solar e hidráulica) y de nuclear, que no emiten CO₂ al generar. El factor varía cada año según la lluvia, el viento y el uso de centrales de gas; Red Eléctrica publica los datos de emisiones del sistema.",
+    },
+    {
+      q: "¿Cuánto CO₂ evita una instalación doméstica?",
+      a: "Una instalación de 3-4 kWp que produce entre 4.000 y 6.000 kWh al año evita entre 480 y 720 kg de CO₂ al año con un factor de 0,12. En países con más carbón en su mix, la misma instalación evitaría bastante más.",
+    },
+    {
+      q: "¿Los paneles generan emisiones al fabricarse?",
+      a: "Sí, pero se compensan pronto: según la mayoría de análisis de ciclo de vida, un panel recupera la energía y las emisiones de su fabricación en uno a tres años, y dura más de 25.",
+    },
+    {
+      q: "¿Puedo registrar mi reducción de emisiones?",
+      a: "Las empresas y organizaciones pueden inscribir su huella de carbono y sus proyectos de reducción en el Registro de huella de carbono del Ministerio para la Transición Ecológica.",
+    },
+    {
+      q: "¿Qué más puedo hacer para reducir mi huella?",
+      a: "Mejorar el aislamiento, cambiar a bombillas LED, usar electrodomésticos eficientes, sustituir la caldera de gas por aerotermia y reducir los desplazamientos en coche. Calcula tu huella total con la calculadora de huella de carbono.",
+    },
   ]}
 >
   <AhorroCo2SolarTool client:load />

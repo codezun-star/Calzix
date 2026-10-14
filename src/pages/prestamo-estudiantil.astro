@@ -4,14 +4,35 @@ import PrestamoEstudiantilTool from '@/components/tools/PrestamoEstudiantilTool'
 ---
 
 <CalcLayout slug="prestamo-estudiantil"
-  whatIs="Esta calculadora obtiene la cuota mensual de un préstamo estudiantil a partir del importe, el tipo de interés anual y el plazo de devolución en años. Usa la fórmula de amortización francesa (cuota constante) y muestra, además de la cuota, el total que devolverás y los intereses que pagarás a lo largo de la vida del préstamo. Así puedes ver el coste real de financiar tus estudios."
-  whyUse="Financiar una carrera, un máster o un curso con un préstamo es una decisión importante, y conviene conocer de antemano cuánto pagarás cada mes y cuánto te costará en total. Esta herramienta te ayuda a comparar ofertas de préstamo, valorar si la cuota encaja en tu presupuesto futuro y entender el peso de los intereses, para tomar una decisión informada sobre cómo financiar tu formación."
+  answer={"La cuota de un préstamo para estudios se calcula con el sistema francés: 12.000 € al 4 % de interés a 10 años suponen 121,49 € al mes y 2.579 € de intereses en total. Compara la TAE de las ofertas, no solo el tipo nominal."}
+  howTo={[
+    "Introduce el importe del préstamo.",
+    "Escribe el tipo de interés anual.",
+    "Indica el plazo en años y pulsa calcular para ver la cuota, el total a devolver y los intereses."
+  ]}
+  whatIs={"La calculadora de préstamo para estudios calcula la cuota mensual, el total a devolver y los intereses de un préstamo para pagar un grado, un máster o un curso, con el sistema de amortización francés."}
+  whyUse={"Te ayuda a decidir si te compensa financiar un máster o unos estudios, comparar ofertas de bancos y calcular cuánto tendrás que pagar al mes cuando empieces a trabajar."}
   faqs={[
-    { q: '¿Cómo se calcula la cuota de un préstamo estudiantil?', a: 'Con la fórmula de amortización francesa, que reparte el préstamo en cuotas mensuales iguales. La cuota depende del importe, el tipo de interés mensual (el anual dividido entre 12) y el número de meses. Al principio, una parte mayor de cada cuota va a intereses y, con el tiempo, va aumentando la parte que amortiza capital. La calculadora aplica esta fórmula automáticamente.' },
-    { q: '¿Qué son los intereses totales del préstamo?', a: 'Son la diferencia entre todo lo que devuelves (la suma de todas las cuotas) y el importe que te prestaron. Representan el coste de pedir el dinero. Cuanto mayor es el tipo de interés y más largo el plazo, más intereses pagas en total. La calculadora los muestra para que veas cuánto te cuesta realmente el préstamo más allá del capital.' },
-    { q: '¿Conviene un plazo más largo o más corto?', a: 'Un plazo más largo reduce la cuota mensual (más cómoda), pero aumenta los intereses totales que pagas. Un plazo más corto sube la cuota pero abarata el préstamo en conjunto. La decisión depende de tu capacidad de pago: elige la cuota más alta que puedas asumir cómodamente para minimizar los intereses sin ahogar tu presupuesto.' },
-    { q: '¿Qué ventajas tienen los préstamos estudiantiles frente a otros?', a: 'Suelen ofrecer condiciones más favorables que un préstamo personal normal: tipos de interés más bajos, periodos de carencia (no empiezas a pagar hasta acabar los estudios o encontrar empleo) y plazos largos. Algunos son públicos o subvencionados. Conviene comparar la oferta específica, ya que las condiciones varían mucho entre entidades y programas.' },
-    { q: '¿Qué es un periodo de carencia?', a: 'Es un tiempo durante el cual no pagas cuotas (o pagas solo intereses), habitual en préstamos estudiantiles mientras estudias y poco después de terminar. Te da margen hasta tener ingresos. Ten en cuenta que, si durante la carencia se siguen acumulando intereses, el importe a devolver crecerá. Esta calculadora estima la cuota del periodo de amortización, una vez empiezas a pagar.' },
+    {
+      q: "¿Hay préstamos públicos para estudiar en España?",
+      a: "Actualmente no hay un programa estatal general de préstamos universitarios como el de otros países. La financiación pública principal son las becas del Ministerio y de las comunidades autónomas. Muchos bancos ofrecen préstamos para estudios o másteres, a veces con convenios con universidades y escuelas de negocio.",
+    },
+    {
+      q: "¿Qué condiciones tienen los préstamos para estudios?",
+      a: "Suelen permitir un periodo de carencia mientras estudias (pagas solo intereses o nada) y plazos de 5 a 10 años. Algunos exigen avalistas, normalmente los padres. Compara la TAE, las comisiones de apertura y de amortización anticipada y los productos vinculados.",
+    },
+    {
+      q: "¿Me compensa pedir un préstamo para un máster?",
+      a: "Depende de la mejora salarial y de empleo que te aporte. Calcula la cuota y compárala con tu sueldo esperado: lo prudente es que todas tus deudas no superen el 30-35 % de tus ingresos netos. Antes, busca becas del máster, de fundaciones y de tu comunidad autónoma.",
+    },
+    {
+      q: "¿Los intereses del préstamo desgravan?",
+      a: "No existe una deducción general en el IRPF por los intereses de préstamos para estudios. Algunas comunidades autónomas tienen deducciones por gastos educativos o por estudios fuera de la isla o la provincia; consulta las deducciones autonómicas de tu comunidad.",
+    },
+    {
+      q: "¿Qué pasa si no puedo pagar?",
+      a: "Habla con el banco cuanto antes para negociar una carencia o un alargamiento del plazo. Los impagos generan intereses de demora, comisiones y la inclusión en ficheros de morosos, y si hay avalistas, el banco puede reclamarles la deuda.",
+    },
   ]}
 >
   <PrestamoEstudiantilTool client:load />

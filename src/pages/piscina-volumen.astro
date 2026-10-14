@@ -4,14 +4,35 @@ import PiscinaVolumenTool from '@/components/tools/PiscinaVolumenTool';
 ---
 
 <CalcLayout slug="piscina-volumen"
-  whatIs="Esta calculadora obtiene el volumen de agua de una piscina en litros y metros cúbicos, tanto para piscinas rectangulares como circulares, a partir de sus dimensiones y la profundidad media. Además, estima la cantidad orientativa de cloro para una cloración de choque inicial. Conocer el volumen exacto es la base para dosificar correctamente todos los productos químicos del mantenimiento."
-  whyUse="Saber los litros de tu piscina es imprescindible para mantener el agua sana: la dosis de cloro, antialgas, regulador de pH y floculante se calcula siempre en función del volumen. Echar productos a ojo provoca aguas turbias, irritación de ojos y piel, o un gasto innecesario. Esta herramienta te da el volumen para que dosifiques con precisión y mantengas el agua cristalina con el mínimo de producto."
+  answer={"El volumen de una piscina rectangular es largo × ancho × profundidad media: una de 8 × 4 m con 1,5 m de profundidad media tiene 48 m³, es decir, 48.000 litros. Llenarla con agua de la red cuesta unos 90-100 € con un precio de 1,92 €/m³."}
+  howTo={[
+    "Elige la forma de la piscina: rectangular o redonda.",
+    "Introduce el largo y el ancho, o el diámetro, y la profundidad media.",
+    "Pulsa calcular para ver el volumen en m³ y en litros."
+  ]}
+  whatIs={"La calculadora de volumen de piscinas calcula los metros cúbicos y los litros de agua de una piscina rectangular o circular a partir de sus dimensiones y su profundidad media."}
+  whyUse={"Te ayuda a calcular el agua y el coste de llenado, dosificar correctamente el cloro y los productos de mantenimiento y elegir la depuradora adecuada."}
   faqs={[
-    { q: '¿Cómo se calcula el volumen de una piscina?', a: 'En una piscina rectangular se multiplica largo × ancho × profundidad media (todo en metros) para obtener los metros cúbicos, y se multiplican por 1.000 para pasarlos a litros. En una circular se usa el área del círculo (π × radio²) por la profundidad. Por ejemplo, una piscina de 8 × 4 m y 1,5 m de profundidad tiene 48 m³, es decir, 48.000 litros.' },
-    { q: '¿Qué es la profundidad media?', a: 'Si la piscina tiene fondo plano, la profundidad media es simplemente su profundidad. Si el fondo es inclinado (con una zona poco profunda y otra honda), la profundidad media es el promedio entre la parte menos profunda y la más profunda. Usar la profundidad media da un volumen mucho más realista que tomar solo la zona honda.' },
-    { q: '¿Cuánto cloro necesita mi piscina?', a: 'Depende del volumen y del tipo de tratamiento. Para una cloración de choque inicial se usan dosis mayores (en torno a 5-7 gramos de cloro por m³), mientras que el mantenimiento diario requiere bastante menos. Esta calculadora da una estimación orientativa para el choque inicial; sigue siempre las instrucciones del producto concreto y mide el nivel de cloro con un test.' },
-    { q: '¿Por qué es tan importante conocer los litros exactos?', a: 'Porque todos los productos de tratamiento (cloro, pH, antialgas, floculante) se dosifican por metro cúbico o por cada cierto número de litros. Si subestimas el volumen, te quedarás corto y el agua se pondrá verde; si lo sobreestimas, gastarás producto de más y podrías irritar la piel y los ojos de los bañistas. La dosificación precisa parte del volumen.' },
-    { q: '¿Cada cuánto hay que renovar el agua de la piscina?', a: 'Con un buen mantenimiento (filtración diaria, cloración y control del pH), no hace falta vaciar la piscina cada temporada: basta con reponer el agua que se evapora y se pierde con el contralavado del filtro. Solo se vacía por completo cuando el agua está muy degradada o para tareas de mantenimiento del vaso. Conocer el volumen ayuda también a calcular el coste de llenado.' },
+    {
+      q: "¿Cómo calculo la profundidad media?",
+      a: "Suma la profundidad de la zona menos profunda y la de la más profunda y divide entre dos: con 1 m y 2 m, la media es 1,5 m. Si el fondo tiene varias pendientes, divide la piscina en tramos y calcula cada uno.",
+    },
+    {
+      q: "¿Cuánto cuesta llenar una piscina?",
+      a: "Depende del precio del agua en tu municipio, que en España ronda de media 1,92 €/m³ con saneamiento. Una piscina de 48 m³ cuesta unos 90-100 € de agua, aunque algunos ayuntamientos aplican tarifas especiales y en épocas de sequía pueden prohibir el llenado.",
+    },
+    {
+      q: "¿Cuánto cloro necesita una piscina?",
+      a: "Como referencia, se mantiene un nivel de cloro libre de 0,5-2 mg/L y un pH entre 7,2 y 7,6. La dosis exacta depende del producto: sigue las indicaciones del fabricante en función de los m³ de agua. El Real Decreto 742/2013 regula los parámetros en las piscinas de uso público.",
+    },
+    {
+      q: "¿Qué depuradora necesito?",
+      a: "La bomba debe filtrar todo el volumen de la piscina en unas 6-8 horas de funcionamiento. Para 48 m³, una bomba de unos 6-8 m³/h. En verano, con más calor y bañistas, conviene aumentar las horas de filtrado.",
+    },
+    {
+      q: "¿Necesito licencia para hacer una piscina?",
+      a: "Sí, una piscina de obra requiere licencia o comunicación al ayuntamiento, y aumenta el valor catastral de la vivienda, por lo que suele subir el IBI. Las piscinas desmontables normalmente no la necesitan.",
+    },
   ]}
 >
   <PiscinaVolumenTool client:load />

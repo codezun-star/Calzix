@@ -4,14 +4,35 @@ import HormigonLosaTool from '@/components/tools/HormigonLosaTool';
 ---
 
 <CalcLayout slug="hormigon-losa"
-  whatIs="Esta calculadora estima el volumen de hormigón necesario para una losa, solera, contrapiso o cimiento rectangular, multiplicando el largo por el ancho y por el espesor. El resultado se da en metros cúbicos, que es como se pide el hormigón a una planta o como se calcula la mezcla. Además incluye un margen del 10 % por desperdicio y una estimación de sacos de cemento si decides amasarlo tú mismo."
-  whyUse="Calcular bien el hormigón evita dos problemas caros: pedir de menos (y tener que parar la obra para hacer otra amasada que no pega bien con la anterior) o pedir de más (y pagar material que sobra). Es útil para cualquier proyecto de albañilería: una solera de garaje, el contrapiso de una habitación, una base para una piscina o los cimientos de un muro. La herramienta da el volumen exacto y el margen recomendado."
+  answer={"El volumen de hormigón de una losa o solera es largo × ancho × espesor: una solera de 4 × 3 m y 10 cm de espesor necesita 1,2 m³, unos 1,32 m³ con un 10 % de margen. Si la amasas tú, son unos 17 sacos de cemento de 25 kg, además de arena y grava."}
+  howTo={[
+    "Introduce el largo y el ancho de la losa en metros.",
+    "Indica el espesor en centímetros.",
+    "Pulsa calcular para ver los m³ de hormigón y los sacos de cemento aproximados."
+  ]}
+  whatIs={"La calculadora de hormigón para losas calcula el volumen de hormigón necesario para una solera, una losa o una base de hormigón, con un margen de desperdicio y una estimación de los sacos de cemento si lo amasas en obra."}
+  whyUse={"Te ayuda a pedir la cantidad justa de hormigón preparado a la planta o los sacos de cemento al almacén para una solera de garaje, una terraza, la base de una caseta o un camino de jardín."}
   faqs={[
-    { q: '¿Cómo se calcula el volumen de hormigón de una losa?', a: 'Se multiplican las tres dimensiones en metros: largo × ancho × espesor. Si el espesor está en centímetros, se divide entre 100 para pasarlo a metros. Por ejemplo, una losa de 4 × 3 m con 10 cm de espesor: 4 × 3 × 0,10 = 1,2 m³ de hormigón. La calculadora hace esta conversión automáticamente cuando introduces el espesor en centímetros.' },
-    { q: '¿Por qué hay que añadir un margen de desperdicio?', a: 'Porque siempre se pierde algo de hormigón: irregularidades del terreno, una excavación más profunda de lo previsto, lo que queda en la hormigonera o en las herramientas, y pequeños derrames. Un margen del 10 % es lo habitual; para terrenos muy irregulares conviene subir al 15 %. Es mejor que sobre un poco a quedarse corto a mitad del vertido.' },
-    { q: '¿Cuántos sacos de cemento necesito por metro cúbico?', a: 'Depende de la dosificación, pero para un hormigón estándar de uso general se necesitan en torno a 7 sacos de cemento de 50 kg por metro cúbico, además de la arena y la grava en la proporción adecuada (una mezcla típica es 1:2:3 de cemento, arena y grava). La calculadora da una estimación orientativa de sacos por si amasas el hormigón a mano.' },
-    { q: '¿Es mejor amasar el hormigón o pedirlo hecho?', a: 'Para volúmenes pequeños (menos de 1 m³) suele compensar amasarlo a mano o con una hormigonera de alquiler. A partir de 1-2 m³, pedir hormigón preparado a una planta sale más cómodo y garantiza una mezcla homogénea y de resistencia certificada. Por encima de 3-4 m³ casi siempre conviene el camión hormigonera por tiempo y calidad.' },
-    { q: '¿Qué espesor debe tener una losa o solera?', a: 'Depende del uso: una solera de jardín o para peatones suele llevar 8-10 cm; el suelo de un garaje para coches, 12-15 cm; y una losa que deba soportar mucha carga o vehículos pesados, 15-20 cm con armadura de acero. Consulta siempre las recomendaciones técnicas de tu proyecto, ya que el espesor influye directamente en la resistencia.' },
+    {
+      q: "¿Qué espesor debe tener una solera?",
+      a: "Para zonas peatonales y terrazas, entre 8 y 10 cm; para garajes y paso de vehículos ligeros, de 12 a 15 cm con mallazo de acero. Antes del hormigón conviene compactar el terreno y extender una capa de grava o zahorra.",
+    },
+    {
+      q: "¿Me compensa pedir hormigón preparado?",
+      a: "A partir de 1-2 m³ suele compensar pedir hormigón a una planta: llega mezclado con la dosificación correcta y se ahorra mucho trabajo. Las plantas suelen tener un pedido mínimo y cobran el transporte; si el camión no puede acceder, se necesita una bomba.",
+    },
+    {
+      q: "¿Qué hormigón se usa?",
+      a: "Para soleras y losas no estructurales, un hormigón en masa HM-20. Las losas estructurales (forjados, cimentaciones) deben cumplir el Código Estructural y proyectarlas un técnico. En España el cemento se vende normalmente en sacos de 25 kg.",
+    },
+    {
+      q: "¿Cuánto tarda en fraguar?",
+      a: "El hormigón empieza a fraguar en unas horas, se puede pisar a las 24-48 horas y alcanza su resistencia de proyecto a los 28 días. En verano hay que regarlo durante los primeros días para que no se seque demasiado rápido y se agriete.",
+    },
+    {
+      q: "¿Necesito permiso para hacer una solera?",
+      a: "Depende del ayuntamiento: muchas obras menores en el exterior de una vivienda requieren una comunicación previa o declaración responsable. Si cambias la superficie construida o la ocupación de la parcela, consulta la normativa urbanística municipal.",
+    },
   ]}
 >
   <HormigonLosaTool client:load />

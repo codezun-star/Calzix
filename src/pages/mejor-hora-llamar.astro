@@ -4,14 +4,35 @@ import MejorHoraLlamarTool from '@/components/tools/MejorHoraLlamarTool';
 ---
 
 <CalcLayout slug="mejor-hora-llamar"
-  whatIs="Esta calculadora te dice qué hora es en otra zona horaria a partir de tu hora local y la diferencia horaria, y te avisa de si es un buen momento para llamar o si en el destino es de noche o demasiado temprano. Es una forma rápida de evitar despertar a alguien de madrugada al llamar a familiares, amigos o contactos de trabajo que están en otro país o continente."
-  whyUse="Con familiares emigrados, amigos en el extranjero o reuniones de trabajo internacionales, es fácil equivocarse con la diferencia horaria y llamar a una hora intempestiva. Esta herramienta evita esos errores mostrándote la hora local del destino y si cae en un horario razonable. Es muy útil para coordinar videollamadas, llamadas familiares transoceánicas o reuniones con equipos distribuidos por el mundo."
+  answer={"Para llamar desde España a otro país en horario razonable, comprueba la diferencia horaria: si en Madrid son las 18:00, en Nueva York son las 12:00 y en Ciudad de México las 10:00 u 11:00 según la época, buena hora para llamar; en Tokio sería la 1:00 o las 2:00 de la madrugada."}
+  howTo={[
+    "Elige tu zona horaria en España (península y Baleares o Canarias).",
+    "Elige el país o la ciudad a la que llamas.",
+    "Indica la fecha y tu hora local y pulsa comprobar para ver la hora en destino y si es buen momento."
+  ]}
+  whatIs={"La calculadora de la mejor hora para llamar convierte tu hora en España a la hora del país al que llamas, con los cambios de horario de verano de ambos lugares, e indica si es un buen momento para llamar."}
+  whyUse={"Te ayuda a llamar a familiares y amigos en el extranjero, programar videollamadas de trabajo con clientes de otros países y no despertar a nadie de madrugada."}
   faqs={[
-    { q: '¿Cómo sé qué hora es en el otro país?', a: 'Sumando o restando la diferencia horaria a tu hora local. Si en tu ciudad son las 18:00 y el destino tiene 6 horas más, allí son las 00:00. La calculadora hace este ajuste automáticamente: introduces tu hora y la diferencia (positiva si el destino va por delante, negativa si va por detrás) y te muestra la hora local del otro lugar.' },
-    { q: '¿Cuál es una buena hora para llamar?', a: 'En general, entre las 8:00 y las 22:00 hora local del destino se considera un horario razonable para una llamada personal. Para llamadas de trabajo, lo habitual es ceñirse al horario laboral (9:00-18:00). La calculadora te avisa si la hora en el destino cae fuera de la franja diurna razonable, para que no llames de madrugada.' },
-    { q: '¿Dónde encuentro la diferencia horaria de un país?', a: 'La diferencia horaria entre dos lugares depende de sus husos y de si aplican horario de verano. Puedes consultarla en buscadores, apps del tiempo o relojes mundiales. Una vez la conoces, introdúcela en la calculadora con su signo. Recuerda que muchos países cambian la hora dos veces al año, así que la diferencia puede variar según la época.' },
-    { q: '¿Qué pasa con el horario de verano?', a: 'El horario de verano (cuando se adelantan los relojes) modifica temporalmente la diferencia horaria entre países que lo aplican en fechas distintas o no lo aplican. Por eso la diferencia con un mismo destino puede ser de 6 horas en una época y de 5 en otra. Comprueba la diferencia vigente en la fecha concreta antes de introducirla en la calculadora.' },
-    { q: '¿Sirve para programar videollamadas de trabajo?', a: 'Sí, es ideal para encontrar una hora que funcione en ambos lugares. Comprueba qué hora será en el destino cuando a ti te venga bien, y verifica que caiga dentro de su horario laboral. Para equipos en varias zonas, busca la franja en la que la hora sea razonable para todos, normalmente un solapamiento de pocas horas que conviene aprovechar.' },
+    {
+      q: "¿Cuál es la mejor hora para llamar a América desde España?",
+      a: "Por la tarde en España: entre las 15:00 y las 20:00 de la península es por la mañana o mediodía en la costa este de Estados Unidos y en gran parte de Latinoamérica. Para la costa oeste de Estados Unidos, mejor a partir de las 18:00.",
+    },
+    {
+      q: "¿Y para llamar a Asia?",
+      a: "Por la mañana en España: a las 9:00 en Madrid son las 15:00 o 16:00 en China y las 16:00 o 17:00 en Japón, según la época del año.",
+    },
+    {
+      q: "¿Tiene en cuenta el horario de verano?",
+      a: "Sí. La calculadora usa las zonas horarias oficiales (IANA), que incluyen los cambios de hora de cada país. Como no todos cambian el mismo día, la diferencia puede variar unas semanas en marzo y octubre-noviembre.",
+    },
+    {
+      q: "¿Qué hora es en Canarias?",
+      a: "Una hora menos que en la península y Baleares durante todo el año. Si llamas desde Canarias, elige su zona horaria como origen.",
+    },
+    {
+      q: "¿Qué horario se considera adecuado para llamar?",
+      a: "Para llamadas personales, entre las 9:00 y las 21:00 hora local del destino; para llamadas de trabajo, en el horario laboral del país, que no siempre coincide con el español (en muchos países se come antes y se termina la jornada más temprano).",
+    },
   ]}
 >
   <MejorHoraLlamarTool client:load />

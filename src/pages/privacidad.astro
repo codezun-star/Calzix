@@ -1,54 +1,87 @@
 ---
 import LegalLayout from '@/components/layout/LegalLayout.astro';
-import { SITE } from '@/lib/constants/seo';
+import { SITE, TITULAR } from '@/lib/constants/seo';
 ---
 
 <LegalLayout slug="privacidad">
   <h1>Política de privacidad</h1>
 
-  <p>Última actualización: {new Date().toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-
-  <h2>Responsable del sitio</h2>
   <p>
-    <strong>{SITE.name}</strong> es un sitio web de calculadoras online accesible en {SITE.url}.
-    Para cualquier consulta puedes contactar en <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+    Esta política explica cómo se tratan los datos personales en {SITE.name}, de acuerdo con el
+    Reglamento (UE) 2016/679 general de protección de datos (RGPD) y la Ley Orgánica 3/2018, de
+    protección de datos personales y garantía de los derechos digitales (LOPDGDD).
   </p>
 
-  <h2>Datos que recopilamos</h2>
+  <h2>Responsable del tratamiento</h2>
+  <ul>
+    <li><strong>Sitio web:</strong> {SITE.name} ({SITE.url})</li>
+    {TITULAR.nombre && <li><strong>Responsable:</strong> {TITULAR.nombre}</li>}
+    {TITULAR.nif && <li><strong>NIF:</strong> {TITULAR.nif}</li>}
+    {TITULAR.domicilio && <li><strong>Domicilio:</strong> {TITULAR.domicilio}</li>}
+    <li><strong>Contacto:</strong> <a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+  </ul>
+
+  <h2>Los datos de las calculadoras no salen de tu dispositivo</h2>
   <p>
-    {SITE.name} <strong>no recopila ni almacena ningún dato personal</strong>. Todos los cálculos se realizan
-    directamente en tu navegador. No utilizamos formularios de registro ni cuentas de usuario.
-    Los valores que introduces en una calculadora nunca salen de tu dispositivo.
+    {SITE.name} no tiene registro, cuentas de usuario ni formularios. Todos los cálculos se hacen en
+    tu navegador: los valores que introduces (salarios, importes, fechas de nacimiento, notas…) no se
+    envían ni se almacenan en ningún servidor.
+  </p>
+  <p>
+    Para que el sitio funcione como una aplicación, tu navegador guarda en su almacenamiento local
+    (<code>localStorage</code>) las últimas calculadoras que has visitado y algunas preferencias de la
+    interfaz. Esa información permanece en tu dispositivo y puedes borrarla desde la configuración de
+    tu navegador.
   </p>
 
-  <h2>Publicidad</h2>
-  <p>
-    El sitio se financia con publicidad servida por redes externas. Esas redes cargan sus anuncios
-    desde sus propios servidores y pueden usar cookies o identificadores para medir impresiones y
-    limitar la repetición de un mismo anuncio, recibiendo datos técnicos como la dirección IP, el
-    navegador y la página en la que se muestra el anuncio. Nosotros no recibimos esa información ni
-    compartimos con ellas ningún dato tuyo. El detalle está en la
-    <a href="/cookies">política de cookies</a>.
-  </p>
+  <h2>Datos que sí se tratan</h2>
+  <ul>
+    <li>
+      <strong>Correos que nos envías.</strong> Si escribes a {SITE.email}, trataremos tu dirección y el
+      contenido del mensaje solo para responderte. Base jurídica: tu consentimiento al escribirnos y el
+      interés legítimo en atender la consulta (art. 6.1.a y 6.1.f del RGPD). Los conservaremos el tiempo
+      necesario para resolverla.
+    </li>
+    <li>
+      <strong>Datos técnicos de navegación.</strong> El proveedor de alojamiento y de red (Cloudflare)
+      registra datos técnicos como la dirección IP y el navegador para servir las páginas y proteger el
+      sitio frente a ataques, como encargado del tratamiento.
+    </li>
+    <li>
+      <strong>Publicidad.</strong> El sitio se financia con publicidad servida por redes externas, que
+      pueden recibir datos técnicos (dirección IP, dispositivo, navegador, página visitada) y usar
+      cookies o identificadores, como responsables de sus propios tratamientos. El detalle está en la
+      <a href="/cookies">política de cookies</a>.
+    </li>
+  </ul>
 
-  <h2>Cookies</h2>
+  <h2>Transferencias internacionales</h2>
   <p>
-    No utilizamos cookies propias de seguimiento ni analíticas. Sí existen cookies de terceros
-    asociadas a la publicidad. Para más detalle consulta nuestra
-    <a href="/cookies">política de cookies</a>.
-  </p>
-
-  <h2>Servicios de terceros</h2>
-  <p>
-    El sitio puede estar alojado en infraestructura de terceros (p. ej., Cloudflare Pages) y muestra
-    publicidad de redes externas. Consulta sus políticas de privacidad para conocer qué datos
-    técnicos pueden registrar.
+    Algunos proveedores (alojamiento y redes publicitarias) pueden tratar datos fuera del Espacio
+    Económico Europeo. En esos casos, las transferencias deben ampararse en las garantías del RGPD,
+    como el Marco de Privacidad de Datos UE-EE. UU. o las cláusulas contractuales tipo de la Comisión
+    Europea.
   </p>
 
   <h2>Tus derechos</h2>
   <p>
-    Al no almacenar datos personales, no hay datos que rectificar, eliminar ni exportar por nuestra
-    parte. Puedes bloquear las cookies de terceros desde tu navegador en cualquier momento.
-    Si tienes alguna duda, escríbenos a <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+    Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación del
+    tratamiento y portabilidad escribiendo a <a href={`mailto:${SITE.email}`}>{SITE.email}</a>. Si
+    consideras que no se han respetado tus derechos, puedes presentar una reclamación ante la
+    <a href="https://www.aepd.es" rel="noopener" target="_blank">Agencia Española de Protección de
+    Datos (AEPD)</a>.
+  </p>
+
+  <h2>Menores de edad</h2>
+  <p>
+    El sitio no recoge datos de ningún usuario, tampoco de menores. Según la LOPDGDD, los menores de
+    14 años necesitan el consentimiento de sus padres o tutores para cualquier tratamiento de sus
+    datos basado en el consentimiento.
+  </p>
+
+  <h2>Cambios en esta política</h2>
+  <p>
+    Esta política puede actualizarse para adaptarla a cambios legales o del sitio. La versión
+    vigente estará siempre disponible en esta página.
   </p>
 </LegalLayout>

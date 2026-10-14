@@ -17,7 +17,7 @@ export default function HormigonLosaTool() {
       if (isNaN(l) || isNaN(a) || isNaN(e)) throw new Error('Introduce largo, ancho y espesor.');
       if (l <= 0 || a <= 0 || e <= 0) throw new Error('Las medidas deben ser mayores que cero.');
       const vol = l * a * (e / 100);
-      setResult({ vol, volExtra: vol * 1.1, sacos: Math.ceil(vol * 7) });
+      setResult({ vol, volExtra: vol * 1.1, sacos: Math.ceil(vol * 14) }); // ~350 kg de cemento por m³ en sacos de 25 kg
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Error al calcular.');
     }
@@ -48,7 +48,7 @@ export default function HormigonLosaTool() {
             <p className="text-xs text-[var(--color-text-secondary)]">Volumen de hormigón</p>
             <p className="text-2xl font-extrabold text-[var(--color-text)]">{formatNumber(result.vol, 3)} m³</p>
           </div>
-          <p className="text-sm text-[var(--color-text-secondary)]">Con 10 % de desperdicio: <strong>{formatNumber(result.volExtra, 3)} m³</strong>. Si lo amasas tú, necesitarás unos <strong>{result.sacos} sacos de cemento de 50 kg</strong> (más arena y grava).</p>
+          <p className="text-sm text-[var(--color-text-secondary)]">Con 10 % de desperdicio: <strong>{formatNumber(result.volExtra, 3)} m³</strong>. Si lo amasas tú, necesitarás unos <strong>{result.sacos} sacos de cemento de 25 kg</strong> (más arena y grava).</p>
         </div>
       )}
     </div>

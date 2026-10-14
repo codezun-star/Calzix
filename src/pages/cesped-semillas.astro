@@ -4,14 +4,35 @@ import CespedSemillasTool from '@/components/tools/CespedSemillasTool';
 ---
 
 <CalcLayout slug="cesped-semillas"
-  whatIs="Esta calculadora indica cuántos kilos de semilla de césped necesitas para sembrar una superficie, a partir del área en metros cuadrados y la dosis de siembra por metro cuadrado. La dosis recomendada ronda los 30-40 gramos por m² para crear un césped nuevo desde cero, y la mitad (15-20 g/m²) para resembrar o reparar zonas ralas de un césped ya existente."
-  whyUse="Sembrar con la dosis correcta es clave para conseguir un césped denso y uniforme: poner poca semilla deja claros donde crecen malas hierbas, y poner demasiada hace que las plántulas compitan entre sí y salgan débiles. Esta herramienta te da la cantidad exacta de semilla a comprar, evitando quedarte corto a mitad de la siembra o gastar de más, y te indica cuántos sacos necesitas."
+  answer={"Para sembrar césped se usan entre 30 y 40 gramos de semilla por metro cuadrado: un jardín de 80 m² a 35 g/m² necesita 2,8 kg de semilla. Para resembrar zonas calvas basta con la mitad de dosis."}
+  howTo={[
+    "Introduce la superficie que vas a sembrar en m².",
+    "Ajusta la dosis de semilla en gramos por m² (la que indica el envase).",
+    "Pulsa calcular semilla para ver los kilos necesarios."
+  ]}
+  whatIs={"La calculadora de semillas de césped calcula la cantidad de semilla necesaria para sembrar o resembrar un césped según la superficie y la dosis recomendada."}
+  whyUse={"Te ayuda a comprar la cantidad justa de semilla, presupuestar un jardín nuevo y elegir el momento y el tipo de césped adecuado al clima de tu zona."}
   faqs={[
-    { q: '¿Cuánta semilla de césped necesito por metro cuadrado?', a: 'Para un césped nuevo, la dosis habitual es de 30 a 40 gramos por metro cuadrado. Para resembrar un césped existente o reparar calvas, basta con 15-20 g/m². La dosis exacta depende de la mezcla de semillas: las variedades finas y ornamentales suelen sembrarse más densas que las rústicas o deportivas. La calculadora usa 35 g/m² por defecto.' },
-    { q: '¿Cuál es la mejor época para sembrar césped?', a: 'Las mejores épocas son el otoño y la primavera, cuando las temperaturas son suaves (entre 15 y 25 °C) y hay humedad. El otoño suele ser ideal porque el suelo conserva el calor del verano y hay menos competencia de malas hierbas. Evita sembrar en pleno verano (calor extremo) o en invierno (heladas), cuando la germinación es difícil.' },
-    { q: '¿Qué pasa si pongo demasiada semilla?', a: 'Un exceso de semilla hace que las plántulas crezcan demasiado juntas y compitan por la luz, el agua y los nutrientes, dando un césped débil, propenso a enfermedades y que amarillea con facilidad. No por sembrar más sale más denso o más rápido; lo mejor es respetar la dosis recomendada y asegurar un buen riego y contacto con la tierra.' },
-    { q: '¿Cómo siembro para que quede uniforme?', a: 'Divide la semilla en dos mitades y siémbralas en pasadas cruzadas (una en un sentido y otra perpendicular) para repartirla de forma homogénea. Después, pasa un rastrillo suave para enterrar ligeramente las semillas, compacta con un rodillo si puedes y riega con lluvia fina varias veces al día hasta que germine, manteniendo el suelo siempre húmedo.' },
-    { q: '¿Cuánto tarda en crecer el césped sembrado?', a: 'La germinación tarda entre 1 y 3 semanas según la variedad y la temperatura: el ray-grass germina en pocos días, mientras que las festucas y poas tardan más. El césped estará listo para el primer corte cuando alcance unos 8-10 cm, normalmente entre 4 y 8 semanas tras la siembra. Hasta entonces conviene no pisarlo y mantener el riego constante.' },
+    {
+      q: "¿Cuándo se siembra el césped en España?",
+      a: "Las mejores épocas son el otoño (septiembre-octubre) y la primavera (marzo-mayo), con temperaturas suaves. En las zonas de interior y del sur, el otoño es preferible para que el césped se asiente antes del calor del verano.",
+    },
+    {
+      q: "¿Qué césped elegir para un clima caluroso y seco?",
+      a: "Mezclas con festuca arundinacea, que resisten bien el calor y necesitan menos agua, o especies de clima cálido como la grama (cynodon) o el kikuyo, que toleran la sequía pero amarillean en invierno. Para zonas húmedas del norte, mezclas de ray-grass y poa.",
+    },
+    {
+      q: "¿Cuánta agua necesita un césped?",
+      a: "En verano, en el interior y el sur de España, un césped puede necesitar 5-7 litros por m² al día. Es uno de los jardines que más agua consume: en zonas con sequía frecuente, valora alternativas como plantas tapizantes o xerojardinería.",
+    },
+    {
+      q: "¿Cómo se prepara el terreno?",
+      a: "Retira piedras y malas hierbas, cava o labra los primeros 15-20 cm, añade sustrato o arena si el suelo es muy arcilloso, nivela con un rastrillo, siembra a voleo en dos pasadas cruzadas, cubre ligeramente con mantillo y pasa un rodillo. Riega a menudo y poco hasta que germine.",
+    },
+    {
+      q: "¿Cuándo se corta por primera vez?",
+      a: "Cuando alcance unos 8-10 cm de altura, normalmente a las 3-5 semanas de la siembra, cortando solo la parte superior (un tercio de la altura).",
+    },
   ]}
 >
   <CespedSemillasTool client:load />

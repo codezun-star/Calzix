@@ -4,14 +4,35 @@ import TiempoAudiolibroTool from '@/components/tools/TiempoAudiolibroTool';
 ---
 
 <CalcLayout slug="tiempo-audiolibro"
-  whatIs="Esta calculadora estima cuánto dura un audiolibro a partir del número de páginas del libro, las palabras por página y la velocidad de narración. La narración media ronda las 150 palabras por minuto. Además, te deja aplicar un factor de velocidad de reproducción (1×, 1,5×, 2×…) para saber cuánto tardarías escuchándolo más rápido, como permiten la mayoría de aplicaciones de audiolibros."
-  whyUse="Saber la duración de un audiolibro ayuda a planificar tu tiempo de escucha: cuántos días tardarás en terminarlo, si te dará para un viaje o cuántas horas de tus desplazamientos ocupará. También es útil para comparar el tiempo de escucha con el de lectura, o para decidir a qué velocidad reproducirlo. Esta herramienta convierte las páginas de un libro en horas de audio de forma sencilla."
+  answer={"La duración de un audiolibro son las palabras del libro divididas entre la velocidad de narración: 320 páginas con 280 palabras (89.600 palabras) narradas a 150 palabras por minuto duran unas 10 horas; a velocidad 1,5×, unas 6 horas y 40 minutos."}
+  howTo={[
+    "Introduce las páginas del libro y las palabras por página.",
+    "Ajusta la velocidad de narración (unas 150 palabras por minuto).",
+    "Elige la velocidad de reproducción y pulsa calcular para ver la duración."
+  ]}
+  whatIs={"La calculadora de duración de audiolibros estima cuánto dura un audiolibro a partir de la extensión del libro y la velocidad de narración, y cuánto tiempo ahorras escuchándolo más rápido."}
+  whyUse={"Te ayuda a planificar qué escuchar en tus trayectos al trabajo, viajes largos en coche o mientras haces deporte, y a decidir a qué velocidad escucharlo."}
   faqs={[
-    { q: '¿Cuánto dura un audiolibro según sus páginas?', a: 'Como referencia general, un audiolibro dura aproximadamente entre 1,5 y 2 horas por cada 100 páginas, según el tamaño de letra y la densidad de texto. Un libro de 300 páginas suele rondar las 8-10 horas de narración. La calculadora afina esa estimación con las palabras por página y la velocidad de narración que indiques.' },
-    { q: '¿A qué velocidad se narra un audiolibro?', a: 'La narración profesional de audiolibros se sitúa en torno a las 150 palabras por minuto, un ritmo pausado y claro pensado para escuchar cómodamente. Es más lento que la lectura visual (unas 250 ppm), por eso escuchar un libro suele llevar más tiempo que leerlo. Puedes ajustar este valor en la calculadora si conoces el ritmo concreto del narrador.' },
-    { q: '¿Cómo afecta la velocidad de reproducción?', a: 'Las apps de audiolibros permiten acelerar la reproducción (1,25×, 1,5×, 2×…), lo que reduce proporcionalmente la duración. A 1,5×, un audiolibro de 9 horas se escucha en 6. La calculadora incluye este factor para que veas cuánto tardarías a tu velocidad preferida. Muchos oyentes habituales escuchan a 1,5× o 2× sin perder comprensión.' },
-    { q: '¿Por qué tarda más escuchar que leer un libro?', a: 'Porque la velocidad de narración (150 ppm) es menor que la de lectura visual de un lector medio (200-300 ppm). Al escuchar, vas al ritmo del narrador; al leer, marcas tu propio ritmo y puedes saltar o releer. Por eso, a velocidad normal, un audiolibro lleva más tiempo que leer el mismo libro, aunque acelerar la reproducción reduce esa diferencia.' },
-    { q: '¿Cómo calculo las palabras por página de mi libro?', a: 'Una novela media tiene unas 250-300 palabras por página; los libros de bolsillo con letra pequeña pueden llegar a 350-400, y los de letra grande o muy ilustrados, menos. Si quieres más precisión, cuenta las palabras de una línea, multiplícalas por el número de líneas de una página y ajústalo. La calculadora usa 280 como valor medio razonable.' },
+    {
+      q: "¿A qué velocidad se narra un audiolibro?",
+      a: "Los narradores profesionales leen a unas 150-160 palabras por minuto en castellano, algo más despacio que la lectura en silencio. Por eso un audiolibro suele durar más que lo que tardarías en leer el libro.",
+    },
+    {
+      q: "¿Se entiende bien a 1,5×?",
+      a: "Muchas personas comprenden bien a 1,25× o 1,5× tras acostumbrarse. Para textos complejos o en otro idioma, conviene una velocidad normal. Las aplicaciones permiten cambiarla en cualquier momento.",
+    },
+    {
+      q: "¿Dónde escuchar audiolibros gratis?",
+      a: "En eBiblio, el servicio de préstamo digital de las bibliotecas públicas españolas, que incluye audiolibros y se usa gratis con el carné de biblioteca de tu comunidad autónoma. Algunas comunidades tienen además su propia plataforma.",
+    },
+    {
+      q: "¿Cuenta escuchar un audiolibro como leer?",
+      a: "Para la comprensión de la historia, los estudios muestran resultados similares. El Barómetro de Hábitos de Lectura incluye los audiolibros como formato de lectura, cada vez más usado en España.",
+    },
+    {
+      q: "¿Cuánto dura un audiolibro de media?",
+      a: "Una novela de unas 300 páginas dura entre 8 y 12 horas de audio. Con 30 minutos al día de trayecto, la terminarías en unas tres semanas.",
+    },
   ]}
 >
   <TiempoAudiolibroTool client:load />

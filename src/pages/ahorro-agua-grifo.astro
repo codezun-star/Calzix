@@ -4,14 +4,35 @@ import AhorroAguaGrifoTool from '@/components/tools/AhorroAguaGrifoTool';
 ---
 
 <CalcLayout slug="ahorro-agua-grifo"
-  whatIs="Esta calculadora estima el agua y el dinero que ahorras al instalar aireadores (perlizadores) en los grifos, que reducen el caudal sin que se note la pérdida de presión. Comparas el caudal actual de tu grifo con el de un grifo con aireador, indicas los minutos de uso diario, las personas del hogar y el precio del agua, y obtienes el ahorro anual en litros y en la factura."
-  whyUse="Los aireadores son uno de los dispositivos de ahorro de agua más baratos y eficaces: cuestan poco, se instalan en segundos y reducen el consumo del grifo casi a la mitad sin afectar al confort. Esta herramienta cuantifica el ahorro real según tu uso, ayudándote a ver lo rápido que se amortizan y el impacto ambiental y económico de un gesto tan simple. Ideal para hogares concienciados con el ahorro."
+  answer={"Un aireador reduce el caudal del grifo sin perder sensación de presión: pasar de 8 a 5 litros por minuto con 10 minutos de uso al día y 2 personas ahorra 21.900 litros al año, unos 42 € con el agua a 1,92 €/m³, la media en España."}
+  howTo={[
+    "Introduce el caudal actual del grifo y el caudal con aireador.",
+    "Indica los minutos de uso al día y las personas del hogar.",
+    "Escribe el precio del agua por m³ y pulsa calcular para ver el ahorro anual."
+  ]}
+  whatIs={"La calculadora de ahorro de agua en el grifo compara el consumo de un grifo convencional con el de un grifo con aireador o perlizador y calcula el ahorro anual en litros y en euros."}
+  whyUse={"Te ayuda a decidir si te compensa instalar aireadores (cuestan unos pocos euros), reducir tu factura del agua y contribuir al ahorro en un país con sequías frecuentes."}
   faqs={[
-    { q: '¿Qué es un aireador o perlizador de grifo?', a: 'Es una pequeña pieza que se enrosca en la salida del grifo y mezcla aire con el agua, de modo que el chorro parece igual de abundante pero usa menos agua. Reduce el caudal de los 8-12 litros por minuto de un grifo normal a unos 5-6, sin que apenas se note la diferencia al lavarse las manos o fregar. Es muy barato y fácil de instalar.' },
-    { q: '¿Cuánta agua se ahorra con un aireador?', a: 'Puede reducir el consumo del grifo entre un 30 % y un 50 %. En un hogar con varios grifos y un uso diario habitual, eso supone miles de litros al año y un ahorro apreciable en la factura del agua (y también en la del agua caliente, al calentar menos litros). El ahorro exacto depende del caudal y de los minutos de uso, que esta calculadora tiene en cuenta.' },
-    { q: '¿El aireador reduce la presión del agua?', a: 'No reduce la presión de forma molesta: al incorporar aire, el chorro mantiene volumen y fuerza aparentes aunque salga menos agua. Para lavarse, fregar o enjuagar funciona perfectamente. Solo en tareas que requieran llenar recipientes rápido (como una olla grande) se nota que tarda un poco más, algo asumible frente al ahorro que supone.' },
-    { q: '¿En cuánto tiempo se amortiza un aireador?', a: 'Muy rápido. Como cuestan muy poco y el ahorro en agua (y agua caliente) es continuo, suelen amortizarse en pocas semanas o meses, dependiendo del uso. A partir de ahí, todo es ahorro. Es una de las inversiones en eficiencia con mejor relación coste-beneficio del hogar, junto con las bombillas LED.' },
-    { q: '¿Dónde conviene instalar aireadores?', a: 'En todos los grifos de uso frecuente: cocina y lavabos del baño son los prioritarios. En la ducha, el equivalente es un cabezal de bajo consumo. No conviene reducir el caudal donde necesites llenar rápido o en calentadores que requieran un caudal mínimo para encenderse. Revisa la compatibilidad, pero en la mayoría de grifos domésticos el aireador es directo.' },
+    {
+      q: "¿Qué es un aireador?",
+      a: "Es una pieza que se enrosca en la boca del grifo y mezcla aire con el agua, de modo que sale menos agua con la misma sensación de chorro. Reduce el caudal de 10-12 litros por minuto a 5-6, o menos en los modelos más eficientes.",
+    },
+    {
+      q: "¿Cuánta agua se gasta en España por persona?",
+      a: "Según el INE, el consumo doméstico medio es de unos 128 litros por habitante y día. El precio medio del agua, incluido el saneamiento, ronda los 1,92 €/m³, aunque varía mucho entre municipios.",
+    },
+    {
+      q: "¿Cómo mido el caudal de mi grifo?",
+      a: "Llena una jarra de 1 litro y cronometra el tiempo: si tarda 6 segundos, el caudal es de 10 litros por minuto. Repite la medición con el grifo abierto como lo usas normalmente.",
+    },
+    {
+      q: "¿Qué otros cambios ahorran agua?",
+      a: "Alcachofas de ducha de bajo consumo, cisternas de doble descarga, cerrar el grifo al lavarse los dientes, poner la lavadora y el lavavajillas llenos y reparar las fugas. Una cisterna que pierde agua puede desperdiciar más de 100 litros al día.",
+    },
+    {
+      q: "¿Hay restricciones de agua en España?",
+      a: "En episodios de sequía, las administraciones pueden fijar límites de consumo por habitante, prohibir el riego de jardines o el llenado de piscinas y reducir la presión. Consulta el estado de los embalses de tu cuenca en la confederación hidrográfica correspondiente.",
+    },
   ]}
 >
   <AhorroAguaGrifoTool client:load />

@@ -4,14 +4,35 @@ import ConsumoClimatizacionTool from '@/components/tools/ConsumoClimatizacionToo
 ---
 
 <CalcLayout slug="consumo-climatizacion"
-  whatIs="Esta calculadora estima cuánto gastas en electricidad al usar el aire acondicionado o la calefacción eléctrica durante una temporada. A partir de la potencia del equipo en vatios, las horas de uso al día, los meses que lo usas al año y el precio del kilovatio-hora, calcula el consumo total en kWh, el coste de toda la temporada y el gasto mensual aproximado mientras lo tienes en marcha."
-  whyUse="La climatización es uno de los mayores consumos eléctricos del hogar y la principal causa de los picos en la factura en verano e invierno. Conocer su coste real ayuda a usarla de forma más eficiente, a comparar equipos y a decidir si compensa invertir en un aparato más eficiente. Esta herramienta pone cifras concretas a un gasto que muchas veces se subestima hasta que llega la factura."
+  answer={"El consumo de un aire acondicionado o una bomba de calor es su potencia eléctrica por las horas de uso: un equipo de 1.200 W funcionando 6 horas al día durante 3 meses consume unos 650 kWh, alrededor de 97 € con la luz a 0,15 €/kWh."}
+  howTo={[
+    "Introduce la potencia eléctrica del equipo en vatios (no la frigorífica).",
+    "Indica las horas de uso al día y los meses de uso al año.",
+    "Escribe el precio del kWh y pulsa calcular para ver el consumo y el coste."
+  ]}
+  whatIs={"La calculadora de consumo de climatización estima los kWh y el coste en euros de un aire acondicionado, una bomba de calor o un radiador eléctrico según su potencia y el tiempo de uso."}
+  whyUse={"Te ayuda a prever el gasto del aire acondicionado en verano o de la calefacción eléctrica en invierno, comparar equipos y decidir si te compensa uno más eficiente."}
   faqs={[
-    { q: '¿Cómo se calcula el consumo de un aire acondicionado?', a: 'Se multiplica la potencia eléctrica del equipo (en kW) por las horas de uso y por los días de la temporada, lo que da los kWh consumidos; multiplicados por el precio del kWh dan el coste. Por ejemplo, un equipo de 1.200 W usado 6 horas al día durante 3 meses (90 días) consume 1,2 × 6 × 90 = 648 kWh.' },
-    { q: '¿Qué potencia tiene un aire acondicionado típico?', a: 'La potencia eléctrica de un split de habitación ronda los 700-1.500 W, y los equipos para salones grandes o por conductos pueden superar los 2.000-3.000 W. Importante: no confundas la potencia frigorífica (frigorías o BTU, la capacidad de enfriar) con la potencia eléctrica (vatios, lo que consume). En la etiqueta del equipo aparecen ambas.' },
-    { q: '¿Gasta más enfriar o calentar?', a: 'Calentar con resistencias eléctricas (radiadores, convectores) es lo más caro, porque consumen casi tanto como la energía térmica que dan. Los equipos de aire acondicionado con bomba de calor son mucho más eficientes tanto en frío como en calor, ya que mueven calor en lugar de generarlo, dando varias veces más energía térmica que la eléctrica que consumen.' },
-    { q: '¿Cómo puedo reducir el consumo de climatización?', a: 'Con ajustes sencillos: mantener una temperatura moderada (en torno a 24-26 °C en verano y 19-21 °C en invierno), usar el modo automático, cerrar puertas y ventanas, aprovechar las horas más frescas, limpiar los filtros y mejorar el aislamiento de la vivienda. Cada grado de más en verano o de menos en invierno puede subir el consumo en torno a un 7 %.' },
-    { q: '¿Es más eficiente apagarlo al salir o dejarlo encendido?', a: 'Para ausencias largas, lo más eficiente es apagarlo. Para ausencias muy cortas, mantenerlo a una temperatura estable puede evitar el pico de consumo de volver a enfriar o calentar toda la estancia desde cero. Los equipos modernos con tecnología inverter regulan su potencia y son más eficientes manteniendo la temperatura que arrancando y parando continuamente.' },
+    {
+      q: "¿Qué diferencia hay entre potencia frigorífica y eléctrica?",
+      a: "La potencia frigorífica (en frigorías o kW de frío) es el frío que produce el equipo; la eléctrica, la que consume. Un aire acondicionado de 3.000 frigorías (3,5 kW de frío) con un SEER de 6 consume de media unos 600 W. Para calcular el gasto, usa la potencia eléctrica.",
+    },
+    {
+      q: "¿A qué temperatura poner el aire acondicionado?",
+      a: "Entre 25 y 27 °C en verano. Cada grado menos aumenta el consumo alrededor de un 7 %. En los establecimientos públicos y comerciales, la normativa de ahorro energético limita la temperatura de refrigeración a un mínimo de 27 °C.",
+    },
+    {
+      q: "¿Qué son el SEER y el SCOP?",
+      a: "Son los rendimientos estacionales en refrigeración (SEER) y calefacción (SCOP): cuántos kWh de frío o calor produce el equipo por cada kWh eléctrico a lo largo de la temporada. Aparecen en la etiqueta energética: cuanto más altos, menos consume.",
+    },
+    {
+      q: "¿Cuándo es más barato usar el aire acondicionado?",
+      a: "Con tarifas por tramos, en las horas valle y llano. En el PVPC, el precio suele ser más bajo a mediodía en los días soleados, por la energía solar. Un buen aislamiento, toldos y persianas bajadas en las horas de sol reducen mucho el consumo.",
+    },
+    {
+      q: "¿Es más barato calentar con bomba de calor que con radiadores eléctricos?",
+      a: "Sí. Un radiador eléctrico convierte 1 kWh de electricidad en 1 kWh de calor, mientras que una bomba de calor con un SCOP de 4 produce 4 kWh de calor con el mismo consumo, es decir, gasta unas cuatro veces menos.",
+    },
   ]}
 >
   <ConsumoClimatizacionTool client:load />
