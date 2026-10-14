@@ -32,7 +32,7 @@ La potencia aparece en la etiqueta o en el manual del aparato en vatios (W); div
 
 ## Cuánto cuesta el kWh en España en 2026
 
-En el mercado regulado (**PVPC**), el precio varía cada hora. La media de 2026 hasta octubre ronda los **0,15 €/kWh** con impuestos, aunque con fuertes diferencias entre horas y meses. En el mercado libre, depende de tu contrato: muchas tarifas tienen un precio fijo entre 0,12 y 0,18 €/kWh.
+En el mercado regulado (**PVPC**), el precio varía cada hora. La media de 2026 hasta octubre ronda los **0,15 €/kWh** con peajes y cargos y sin impuestos, aunque con fuertes diferencias entre horas y meses. En el mercado libre, depende de tu contrato: muchas tarifas tienen un precio fijo entre 0,12 y 0,18 €/kWh.
 
 Desde 2021, todos los consumidores con menos de 15 kW tienen **tres tramos horarios** (peaje 2.0TD):
 
@@ -50,7 +50,7 @@ Poner la lavadora, el lavavajillas o cargar el coche eléctrico en horas valle r
 
 | Aparato | Potencia típica | Uso típico | Consumo aproximado |
 |---|---|---|---|
-| Frigorífico combi (clase A-C) | — | Siempre encendido | 150-300 kWh/año |
+| Frigorífico combi (clase A-C) | — | Siempre encendido | 100-175 kWh/año |
 | Termo eléctrico 80 L | 1.500-2.000 W | Agua caliente diaria | 1.200-2.000 kWh/año |
 | Lavadora | 2.000 W | Ciclo a 40 °C | 0,5-1 kWh por lavado |
 | Lavavajillas | 1.800 W | Programa eco | 0,8-1 kWh por lavado |

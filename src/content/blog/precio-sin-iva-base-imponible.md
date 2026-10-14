@@ -72,7 +72,7 @@ La diferencia es de 3,65 €. En una factura de 12.100 €, el error sería de m
 
 **Si eres autónomo o empresa:** el IVA que pagas en tus compras para la actividad es deducible en el modelo 303, así que tu coste real es la base imponible. Al comparar presupuestos de proveedores, compara siempre bases.
 
-**Si vas a pedir una factura:** los tickets o facturas simplificadas (permitidos hasta 400 € con IVA incluido, o 3.000 € en ciertos sectores como el comercio minorista o la hostelería) solo indican «IVA incluido». Para deducir el IVA necesitas una factura completa con tus datos fiscales, la base y la cuota desglosadas.
+**Si vas a pedir una factura:** los tickets o facturas simplificadas (permitidos hasta 400 € con IVA incluido, o 3.000 € en ciertos sectores como el comercio minorista o la hostelería) solo indican «IVA incluido». Para deducir el IVA necesitas una factura completa o una factura simplificada en la que consten tu NIF, tu domicilio y la cuota de IVA desglosada; un ticket sin tus datos no sirve.
 
 **Si compras fuera de España:** en compras a empresas de otros países de la Unión Europea con tu NIF-IVA (operaciones intracomunitarias), el vendedor factura sin IVA y tú lo autoliquidas. En las compras particulares de fuera de la UE, el IVA se paga al importar el paquete.
 

@@ -94,4 +94,4 @@ La ley también limita las **comisiones por amortización anticipada**:
 
 ## Calcula tu cuota
 
-La **[calculadora de hipoteca](/calculadora-hipoteca)** de Calzix calcula la cuota mensual, los intereses totales y el coste total con el capital, el plazo y el tipo que elijas. Para ver cómo se reparte cada cuota entre intereses y capital mes a mes, usa la [tabla de amortización](/amortizacion-hipoteca).
+La **[calculadora de hipoteca](/calculadora-hipoteca)** de Calzix calcula la cuota mensual, los intereses totales y el coste total con el capital, el plazo y el tipo que elijas. Para entender cómo se reparte cada cuota entre intereses y capital, consulta la [calculadora de amortización de hipoteca](/amortizacion-hipoteca).

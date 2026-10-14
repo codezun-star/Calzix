@@ -29,8 +29,8 @@ import { SITE, TITULAR } from '@/lib/constants/seo';
   </p>
   <p>
     Para que el sitio funcione como una aplicación, tu navegador guarda en su almacenamiento local
-    (<code>localStorage</code>) las últimas calculadoras que has visitado y algunas preferencias de la
-    interfaz. Esa información permanece en tu dispositivo y puedes borrarla desde la configuración de
+    (<code>localStorage</code>) las últimas calculadoras que has visitado y la fecha del último anuncio
+    emergente (para no repetirlo en cada visita). Esa información permanece en tu dispositivo y puedes borrarla desde la configuración de
     tu navegador.
   </p>
 
@@ -50,7 +50,9 @@ import { SITE, TITULAR } from '@/lib/constants/seo';
     <li>
       <strong>Publicidad.</strong> El sitio se financia con publicidad servida por redes externas, que
       pueden recibir datos técnicos (dirección IP, dispositivo, navegador, página visitada) y usar
-      cookies o identificadores, como responsables de sus propios tratamientos. El detalle está en la
+      cookies o identificadores. {SITE.name} y esas redes son corresponsables de la recogida y la
+      transmisión de esos datos al cargar los anuncios; cada red es responsable de los tratamientos
+      posteriores que realice con ellos. El detalle está en la
       <a href="/cookies">política de cookies</a>.
     </li>
   </ul>
@@ -74,7 +76,9 @@ import { SITE, TITULAR } from '@/lib/constants/seo';
 
   <h2>Menores de edad</h2>
   <p>
-    El sitio no recoge datos de ningún usuario, tampoco de menores. Según la LOPDGDD, los menores de
+    Las calculadoras no recogen datos personales de ningún usuario. Los datos técnicos que reciben el
+    proveedor de alojamiento y las redes publicitarias, descritos más arriba, se tratan con
+    independencia de la edad del visitante. Según la LOPDGDD, los menores de
     14 años necesitan el consentimiento de sus padres o tutores para cualquier tratamiento de sus
     datos basado en el consentimiento.
   </p>

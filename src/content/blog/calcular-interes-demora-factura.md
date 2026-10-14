@@ -53,9 +53,9 @@ Para otras deudas que no son operaciones comerciales (por ejemplo, entre particu
 
 Facturaste **2.420 €** (2.000 € + IVA) con vencimiento a 30 días y tu cliente paga con **75 días de retraso**, en el segundo semestre de 2026.
 
-1. Intereses: 2.420 × 0,104 × 75 ÷ 365 = **51,71 €**
+1. Intereses: 2.420 × 0,104 × 75 ÷ 365 = **51,72 €**
 2. Indemnización por costes de cobro: **40 €**
-3. **Total a reclamar: 2.420 + 51,71 + 40 = 2.511,71 €**
+3. **Total a reclamar: 2.420 + 51,72 + 40 = 2.511,72 €**
 
 ---
 

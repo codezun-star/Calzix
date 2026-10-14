@@ -74,7 +74,7 @@ const pageSchema = {
   audience: SPAIN_AUDIENCE,
   spatialCoverage: SPAIN_PLACE,
   dateModified,
-  datePublished: SITE.datePublished,
+  datePublished: calc?.datePublished ?? SITE.datePublished,
   breadcrumb: { '@id': `${canonical}#breadcrumb` },
   speakable: {
     '@type': 'SpeakableSpecification',
@@ -114,8 +114,8 @@ const breadcrumbSchema = {
 const howToSchema = {
   '@type': 'HowTo',
   '@id': `${canonical}#howto`,
-  name: `Cómo usar la ${calcName}`,
-  description: `Pasos para calcular con la ${calcName} de ${SITE.name}.`,
+  name: `Cómo usar «${calcName}»`,
+  description: `Pasos para calcular con «${calcName}» de ${SITE.name}.`,
   inLanguage: SITE.lang,
   totalTime: 'PT1M',
   estimatedCost: { '@type': 'MonetaryAmount', currency: SITE.currency, value: '0' },
@@ -257,6 +257,14 @@ const graph = jsonLd({
               <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed" set:html={whyUse} />
             </section>
           )}
+
+          <!-- Pasos de uso: visibles y enlazados desde el HowTo del JSON-LD (#paso-N) -->
+          <section class="mt-6 p-5 bg-white rounded-xl border border-[var(--color-border)]" style="border-left: 4px solid var(--color-accent)">
+            <h2 class="text-lg font-bold text-[var(--color-text)] mb-3">Cómo usar la calculadora</h2>
+            <ol class="list-decimal pl-5 space-y-1.5 text-sm text-[var(--color-text-secondary)] leading-relaxed">
+              {howToSteps.map((text, i) => <li id={`paso-${i + 1}`}>{text}</li>)}
+            </ol>
+          </section>
 
           <AdSlot placement="rectangle" class="mt-14" />
 

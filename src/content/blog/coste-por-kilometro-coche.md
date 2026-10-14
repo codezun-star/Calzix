@@ -84,4 +84,4 @@ Como orientación, el coste total de un turismo medio en España suele estar ent
 
 ## Calcula el coste de tu coche
 
-La **[calculadora de coste por kilómetro](/coste-km)** de Calzix suma tus costes fijos y variables y te da el coste real de cada kilómetro. Para un viaje concreto, usa la de [coste del viaje](/coste-viaje), y para saber cuánto gastas en combustible, la de [consumo de combustible](/consumo-combustible). En rutas largas, la calculadora de [paradas para repostar](/paradas-repostaje) te ayuda a planificar.
+La **[calculadora de coste por kilómetro](/coste-km)** de Calzix calcula el coste de cada kilómetro en combustible y mantenimiento; para el coste real, súmale tus costes fijos anuales divididos entre los kilómetros que haces al año, como en el ejemplo. Para un viaje concreto, usa la de [coste del viaje](/coste-viaje), y para saber cuánto gastas en combustible, la de [consumo de combustible](/consumo-combustible). En rutas largas, la calculadora de [paradas para repostar](/paradas-repostaje) te ayuda a planificar.

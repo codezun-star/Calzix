@@ -23,14 +23,13 @@ import { SITE } from '@/lib/constants/seo';
   <p>
     <strong>{SITE.name} no utiliza cookies propias de seguimiento ni herramientas de analítica</strong>
     (no hay Google Analytics, píxeles de redes sociales ni similares). El navegador guarda en
-    <code>localStorage</code> algunos datos necesarios para el funcionamiento del sitio, que nunca se
-    envían a ningún servidor:
+    <code>localStorage</code> algunos datos necesarios para el funcionamiento del sitio (y uno en
+    <code>sessionStorage</code>), que nunca se envían a ningún servidor:
   </p>
   <ul>
     <li><code>calzix:recent</code>: las últimas calculadoras que has visitado, para mostrarlas en el buscador y en el inicio.</li>
-    <li><code>calzix:ad-sticky</code>: si has cerrado la barra de publicidad inferior.</li>
+    <li><code>calzix:ad-sticky</code> (en <code>sessionStorage</code>; se borra al cerrar la pestaña): si has cerrado la barra de publicidad inferior.</li>
     <li><code>calzix:pop</code>: la fecha del último anuncio emergente, para no mostrarlo en cada visita.</li>
-    <li>Preferencias de la interfaz, como la pestaña activa en el inicio.</li>
   </ul>
   <p>
     Además, si instalas la aplicación o la usas sin conexión, el navegador guarda una copia de las
@@ -47,8 +46,8 @@ import { SITE } from '@/lib/constants/seo';
     cookies de terceros, gestionadas por cada red publicitaria según su propia política de privacidad.
   </p>
   <p>
-    Los anuncios se cargan solo cuando están a punto de aparecer en pantalla, así que si no llegas a
-    esa parte de la página no se descargan.
+    Los banners intercalados en el contenido se cargan cuando están a punto de aparecer en pantalla. La barra publicitaria
+    fija inferior (en móvil y tableta), la barra social y el anuncio emergente se cargan al abrir la página, aunque no la recorras.
   </p>
 
   <h2>Cookies del proveedor de alojamiento</h2>

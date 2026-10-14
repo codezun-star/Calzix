@@ -68,7 +68,7 @@ El orden de los descuentos no cambia el resultado. La guía de [descuentos suces
 Desde la reforma de 2021 de la Ley de Ordenación del Comercio Minorista, que traspuso la directiva europea de modernización de la protección de los consumidores, en España:
 
 - En cualquier anuncio de reducción de precio, **el precio anterior debe ser el más bajo** que haya tenido ese producto en los **30 días previos**.
-- Los productos rebajados deben haber estado a la venta antes con ese precio anterior; no se pueden vender como rebajados artículos comprados expresamente para la campaña a menos que se indique.
+- Los productos rebajados deben haber estado a la venta antes con ese precio anterior; no pueden venderse como rebajados artículos deteriorados ni los comprados expresamente para venderlos por debajo de su precio ordinario (art. 24.2 de la Ley de Ordenación del Comercio Minorista).
 - Los productos rebajados tienen la **misma garantía** que los demás: 3 años para los productos nuevos comprados desde 2022.
 - En las compras online tienes **14 días naturales para desistir** sin dar explicaciones, con o sin rebaja.
 

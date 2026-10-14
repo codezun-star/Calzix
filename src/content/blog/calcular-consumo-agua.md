@@ -19,7 +19,7 @@ España es uno de los países europeos con más estrés hídrico, y las sequías
 
 ## Cuánta agua gasta una persona en España
 
-Según la última encuesta del **INE** sobre el suministro y saneamiento del agua, el consumo doméstico medio en España es de unos **128 litros por habitante y día**, con diferencias importantes entre comunidades autónomas. El precio medio del agua (abastecimiento y saneamiento) ronda los **1,92 € por metro cúbico**, aunque en algunas comunidades, como Cataluña, supera los 2,90 €/m³.
+Según la última encuesta del **INE** sobre el suministro y saneamiento del agua, el consumo doméstico medio en España es de unos **128 litros por habitante y día**, con diferencias importantes entre comunidades autónomas. El precio medio del agua (abastecimiento y saneamiento) ronda los **2,02 € por metro cúbico** (INE, datos de 2024), aunque en algunas comunidades es bastante más caro: 2,80 €/m³ en Baleares y 2,72 €/m³ en Cataluña.
 
 Recuerda: **1 m³ = 1.000 litros**. Las compañías miden y facturan el consumo en metros cúbicos.
 
@@ -32,7 +32,7 @@ Recuerda: **1 m³ = 1.000 litros**. Las compañías miden y facturan el consumo 
 **Ejemplo:** una familia de 4 personas con un consumo medio de 128 litros por persona y día:
 
 - 4 × 128 × 30 = 15.360 litros = **15,36 m³ al mes**
-- A 1,92 €/m³: **unos 29,50 € al mes**, sin contar la cuota fija
+- A 2,02 €/m³: **unos 31 € al mes**, sin contar la cuota fija
 
 La forma más fiable es leer tu **contador** dos veces con una semana de diferencia y restar las lecturas.
 

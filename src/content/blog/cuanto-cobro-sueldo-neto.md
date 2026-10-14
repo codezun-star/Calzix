@@ -55,6 +55,8 @@ Trabajador soltero, sin hijos, contrato indefinido y menor de 65 años:
 | 50.000 € | 22,40 % | 35.550 € | 2.539 € | 2.963 € |
 | 60.000 € | 24,44 % | 41.436 € | 2.960 € | 3.453 € |
 
+Con 14 pagas, la columna muestra la media de las 14: como la cotización se calcula con las pagas extra prorrateadas y se descuenta solo en las 12 nóminas ordinarias, cada nómina mensual es algo menor que esa media y cada paga extra, algo mayor (con el SMI, unos 1.091 € al mes y unos 1.184 € en cada paga extra).
+
 Son cifras orientativas: tu nómina real puede variar por complementos, horas extra, retribución en especie, tu convenio o tu comunidad autónoma (que no afecta a la retención, pero sí al resultado de la Renta).
 
 ---

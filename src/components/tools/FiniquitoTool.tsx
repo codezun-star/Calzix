@@ -59,9 +59,12 @@ export default function FiniquitoTool() {
 
       const salarioDia = sa / 365;
 
-      // 1. Días trabajados del mes de la baja (no cobrados todavía).
+      // 1. Días trabajados del mes de la baja (no cobrados todavía), con la nómina
+      // ordinaria: salario mensual / 30. Sin prorrateo, el mensual excluye las pagas
+      // extra, que se liquidan aparte en el punto 3 (evita contarlas dos veces).
       const diaMes = fBaja.getUTCDate();
-      const salarioMes = salarioDia * diaMes;
+      const salarioMensual = prorrateadas ? sa / 12 : sa / 14;
+      const salarioMes = (salarioMensual / 30) * Math.min(diaMes, 30);
 
       // 2. Vacaciones generadas y no disfrutadas.
       const vacaciones = salarioDia * vp;
@@ -149,7 +152,7 @@ export default function FiniquitoTool() {
           </div>
           <p className="text-xs text-[var(--color-text-muted)] leading-relaxed">
             El finiquito tributa en el IRPF y cotiza a la Seguridad Social; la indemnización legal por despido está exenta de IRPF (hasta 180.000 €).
-            Supone pagas extra semestrales (verano y Navidad) y salario diario = salario anual / 365. Si tu contrato es anterior al 12-2-2012, la parte anterior se indemniza a 45 días por año.
+            Supone pagas extra semestrales (verano y Navidad); los días del último mes se pagan a salario mensual / 30, y las vacaciones y la indemnización, a salario anual / 365. Si tu contrato es anterior al 12-2-2012, la parte anterior se indemniza a 45 días por año.
           </p>
         </div>
       )}

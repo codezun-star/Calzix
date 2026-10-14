@@ -29,7 +29,7 @@ Cuando termina una relación laboral, sea por despido, por baja voluntaria o por
 
 ### 1. Salario de los días trabajados del último mes
 
-Si causas baja el día 15, la empresa te debe esos 15 días. Una forma habitual de calcularlo es con el salario diario: **salario bruto anual ÷ 365**.
+Si causas baja el día 15, la empresa te debe esos 15 días de tu nómina ordinaria: **salario mensual ÷ 30 × días trabajados**. Si no tienes las pagas extra prorrateadas, usa el salario mensual sin la parte de las pagas extra, porque estas se liquidan aparte en el punto 3.
 
 ### 2. Vacaciones generadas y no disfrutadas
 
@@ -50,11 +50,11 @@ Horas extra pendientes, comisiones, dietas u otros complementos devengados y no 
 Ana cobra **1.800 € brutos al mes en 14 pagas** (25.200 € al año). Causa baja el **15 de octubre de 2026**, tiene **5 días de vacaciones pendientes** y no tiene las pagas prorrateadas.
 
 - Salario diario: 25.200 ÷ 365 = **69,04 €**
-- Días de octubre: 15 × 69,04 = **1.035,62 €**
+- Días de octubre (nómina ordinaria, sin la parte de las pagas extra, que se liquida aparte): 1.800 ÷ 30 × 15 = **900,00 €**
 - Vacaciones: 5 × 69,04 = **345,21 €**
 - Paga de Navidad (devengo de julio a diciembre): del 1 de julio al 15 de octubre son 107 días. 1.800 × 107 ÷ 182,5 = **1.055,34 €**
 
-**Finiquito bruto: 1.035,62 + 345,21 + 1.055,34 = 2.436,17 €**
+**Finiquito bruto: 900,00 + 345,21 + 1.055,34 = 2.300,55 €**
 
 A esa cantidad se le aplican las retenciones de IRPF y las cotizaciones a la Seguridad Social, como a cualquier nómina.
 

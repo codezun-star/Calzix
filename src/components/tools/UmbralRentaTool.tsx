@@ -14,7 +14,7 @@ interface Resultado {
 const TEXTO: Record<Resultado['nivel'], string> = {
   1: 'Por debajo del umbral 1: optas a todas las cuantías (renta, residencia, variable y matrícula).',
   2: 'Entre el umbral 1 y el 2: optas a residencia, cuantía variable y matrícula, pero no a la cuantía fija de renta.',
-  3: 'Entre el umbral 2 y el 3: solo optas a la beca de matrícula.',
+  3: 'Entre el umbral 2 y el 3: optas a la beca de matrícula y, con nota media de 8 o más, a la cuantía por excelencia académica (50-125 €).',
   0: 'Por encima del umbral 3: no te corresponde ninguna ayuda de la beca general.',
 };
 

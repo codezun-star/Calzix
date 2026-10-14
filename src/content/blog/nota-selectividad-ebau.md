@@ -71,7 +71,7 @@ Si para otro grado esas materias solo ponderaran 0,1, la nota sería 7,72 + 0,8 
 ## Validez de las notas
 
 - La **nota de acceso** no caduca: una vez aprobada la PAU, tienes acceso a la universidad para siempre.
-- Las notas de la **fase de admisión** son válidas para los dos cursos académicos siguientes al de la prueba.
+- - Las notas de la **fase de admisión** son válidas durante el curso que empieza justo después de la prueba y los dos cursos académicos siguientes (tres cursos en total, según el Real Decreto 534/2024).
 - Puedes volver a presentarte para **subir nota** en convocatorias posteriores; se tiene en cuenta la mejor calificación obtenida.
 
 ---

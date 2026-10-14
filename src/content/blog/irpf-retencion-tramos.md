@@ -41,9 +41,9 @@ Ejemplo: **30.000 € brutos anuales**, contrato indefinido, soltero y sin hijos
 
 **1. Restar las cotizaciones a la Seguridad Social del trabajador.** En 2026 suman el 6,50 % para un contrato indefinido (contingencias comunes 4,70 %, desempleo 1,55 %, formación profesional 0,10 % y MEI 0,15 %): 30.000 × 6,5 % = **1.950 €**.
 
-**2. Restar los gastos deducibles.** Todos los trabajadores restan 2.000 € de «otros gastos». Rendimiento neto: 30.000 − 1.950 − 2.000 = **26.050 €**.
+**2. Calcular el rendimiento neto.** Al bruto se le restan las cotizaciones: 30.000 − 1.950 = **28.050 €**.
 
-**3. Aplicar la reducción por rendimientos del trabajo.** Solo para rendimientos netos bajos: 7.302 € si no superan 14.852 €, decreciente hasta desaparecer en 19.747,50 €. Aquí es 0. Base para la retención: **26.050 €**.
+**3. Aplicar la reducción por rendimientos del trabajo y restar los 2.000 € de «otros gastos».** La reducción se calcula sobre ese rendimiento neto, antes de restar los 2.000 €: 7.302 € si no supera 14.852 €, decreciente hasta desaparecer en 19.747,50 €. Aquí es 0. Base para la retención: 28.050 − 2.000 = **26.050 €**.
 
 **4. Aplicar la escala a la base:**
 - 12.450 × 19 % = 2.365,50 €

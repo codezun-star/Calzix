@@ -101,7 +101,7 @@ Los comerciantes minoristas que son personas físicas y venden sin transformar e
 
 **Aplicar un tipo equivocado.** La restauración tributa al 10 %, pero las bebidas alcohólicas compradas en el supermercado van al 21 %. Una reforma de vivienda puede ir al 10 % si cumple los requisitos, pero la de un local va al 21 %.
 
-**Deducir IVA de gastos no afectos.** Solo se puede deducir el IVA de los gastos vinculados a la actividad y con factura completa a nombre del negocio. El ticket simplificado no basta para deducir.
+**Deducir IVA de gastos no afectos.** Solo se puede deducir el IVA de los gastos vinculados a la actividad y con factura completa a nombre del negocio. Solo se puede deducir el IVA de los gastos vinculados a la actividad y con factura a nombre del negocio: completa, o simplificada con tu NIF, tu domicilio y la cuota de IVA desglosada. Un ticket sin tus datos no basta para deducir.
 
 **Olvidar la factura rectificativa.** Si concedes un descuento después de facturar o te devuelven mercancía, debes emitir una factura rectificativa para corregir la base y el IVA.
 

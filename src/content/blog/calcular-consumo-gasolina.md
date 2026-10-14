@@ -90,4 +90,4 @@ La DGT y el IDAE ofrecen cursos y guías de conducción eficiente que pueden aho
 
 ## Calcula el consumo y el coste de tus viajes
 
-Con la **[calculadora de consumo de combustible](/consumo-combustible)** de Calzix calculas tu consumo real en L/100 km y el coste de cualquier trayecto con el precio actual del litro. Si quieres saber cuánto te cuesta de verdad cada kilómetro, incluido el mantenimiento, el seguro y la depreciación, usa la calculadora de [coste por kilómetro](/coste-km).
+Con la **[calculadora de consumo de combustible](/consumo-combustible)** de Calzix calculas los litros y el coste de cualquier trayecto, y lo que paga cada ocupante, a partir del consumo de tu coche y el precio actual del litro. Si quieres saber cuánto te cuesta cada kilómetro en combustible y mantenimiento, usa la calculadora de [coste por kilómetro](/coste-km); el seguro, los impuestos y la depreciación se suman aparte.
